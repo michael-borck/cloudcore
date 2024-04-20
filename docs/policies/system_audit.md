@@ -1,10 +1,6 @@
 ---
-title: System Audits, Monitoring and Assessments
-categories:
-      - "Compliance"
-      - "Security Management"
-      - "Operational Security"
-
+title: "System Audits, Monitoring and Assessments"
+categories: ["Compliance", "Security Management", "Operational Security"]
 ---
 
 CloudCore shall audit, monitor, and assess the access and activity of

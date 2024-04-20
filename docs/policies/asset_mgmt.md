@@ -1,9 +1,6 @@
 ---
 title: "Asset Management"
-categories:
-      - "IT Management"
-      - "Risk Management"
-      - "Asset Inventory"
+categories: ["IT Management", "Risk Management", "Asset Inventory"]
 ---
 
 # Asset Inventory Management

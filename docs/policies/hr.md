@@ -1,9 +1,6 @@
 ---
-title: HR and Personnel Security
-categories:
-      - "Human Resources"
-      - "Employee Management"
-      - "Training"
+title: "HR and Personnel Security"
+categories: ["Human Resources", "Employee Management", "Training"]
 ---
 
 CloudCore is committed to ensuring all workforce members actively address

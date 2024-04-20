@@ -1,9 +1,6 @@
 ---
-title: HIPPA MAppings
-categories:
-      - "Healthcare Compliance"
-      - "Risk Management"
-      - "Data Protection"
+title: "HIPPA MAppings"
+categories: ["Healthcare Compliance", "Risk Management", "Data Protection"]
 ---
 
 ## HIPAA Mappings to CloudCore Policies and Controls

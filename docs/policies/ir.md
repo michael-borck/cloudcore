@@ -1,9 +1,6 @@
 ---
-title: Incident Response
-categories:
-      - "Security Management"
-      - "Incident Response"
-      - "Operational Security"
+title: "Incident Response"
+categories: ["Security Management", "Incident Response", "Operational Security"]
 ---
 
 CloudCore implements an information security incident response process to

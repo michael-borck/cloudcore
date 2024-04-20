@@ -1,9 +1,6 @@
 ---
-title: Security Architecture and Operating Model
-categories:
-      - "IT Management"
-      - "Security Architecture"
-      - "Operational Security"
+title: "Security Architecture and Operating Model"
+categories: ["IT Management", "Security Architecture", "Operational Security"]
 ---
 
 In the digital age, cyber attacks are inevitable. At CloudCore, we are taking a

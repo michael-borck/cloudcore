@@ -1,9 +1,6 @@
 ---
 title: "NIST MAppings"
-categories:
-      - "Compliance"
-      - "Security Management"
-      - "IT Management"
+categories: ["Compliance", "Security Management", "IT Management"]
 ---
 
 Below is a list of NIST SP 800-53 Controls Families and the mappings to

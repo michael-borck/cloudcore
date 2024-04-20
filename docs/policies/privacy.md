@@ -1,9 +1,6 @@
 ---
-title: Privacy and Consent
-categories:
-      - "Privacy"
-      - "Data Protection"
-      - "User Consent"
+title: "Privacy and Consent"
+categories: ["Privacy", "Data Protection", "User Consent"]
 ---
 
 ## Policy Statements

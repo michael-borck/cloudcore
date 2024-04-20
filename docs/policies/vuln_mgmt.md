@@ -1,9 +1,6 @@
 ---
-title: Vulnerability Management
-categories:
-      - "Security Management"
-      - "IT Management"
-      - "Risk Assessment"
+title: "Vulnerability Management"
+categories: ["Security Management", "IT Management", "Risk Assessment"]
 ---
 
 ## Policy Statements

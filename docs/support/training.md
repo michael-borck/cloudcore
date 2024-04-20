@@ -1,9 +1,6 @@
 ---
 title: "Training Register"
-categories:
-      - "Human Resources"
-      - "Training"
-      - "Skills Development"
+categories: ["Human Resources", "Training", "Skills Development"]
 ---
 
 At CloudCore Networks, the Training Register is an essential component of our

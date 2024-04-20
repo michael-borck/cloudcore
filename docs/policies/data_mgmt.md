@@ -1,9 +1,6 @@
 ---
-title: Data Management Policy
-categories:
-      - "Data Lifecycle"
-      - "Backup and Recovery"
-      - "Data Classification"
+title: "Data Management Policy"
+categories: ["Data Lifecycle", "Backup and Recovery", "Data Classification"]
 ---
 
 This policy outlines the requirements and controls/procedures CloudCore has

@@ -1,9 +1,6 @@
 ---
-title: Third Party Security, Vendor Risk Management and Systems/Services Acquisition
-categories:
-      - "Vendor Management"
-      - "Risk Management"
-      - "Compliance"
+title: "Third Party Security, Vendor Risk Management and Systems/Services Acquisition"
+categories: ["Vendor Management", "Risk Management", "Compliance"]
 ---
 
 CloudCore makes every effort to assure all third party organisations are

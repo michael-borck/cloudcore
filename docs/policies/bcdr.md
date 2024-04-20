@@ -1,9 +1,6 @@
 ---
-title: Business Continuity and Disaster Recovery
-categories:
-      - "Risk Management"
-      - "Operational Continuity"
-      - "Disaster Recovery"
+title: "Business Continuity and Disaster Recovery"
+categories: ["Risk Management", "Operational Continuity", "Disaster Recovery"]
 ---
 
 The CloudCore Contingency Plan establishes procedures to recover CloudCore

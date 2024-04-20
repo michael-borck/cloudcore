@@ -1,9 +1,6 @@
 ---
 title: "Approved Vendors"
-categories:
-      - "Vendor Management"
-      - "Procurement"
-      - "Compliance"
+categories: ["Vendor Management", "Procurement", "Compliance"]
 ---
 
 At CloudCore Networks, our commitment to delivering exceptional service and

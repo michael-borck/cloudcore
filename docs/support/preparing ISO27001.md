@@ -1,9 +1,6 @@
 ---
 title: "ISO27001 Prep"
-categories:
-      - "Compliance"
-      - "Security Management"
-      - "Risk Assessment"
+categories: ["Compliance", "Security Management", "Risk Assessment"]
 ---
 
 Preparing for an ISO 27001 certification, which is a specification for an

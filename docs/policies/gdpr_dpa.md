@@ -1,9 +1,6 @@
 ---
-title: GDPR
-categories:
-      - "Compliance"
-      - "Data Protection"
-      - "Privacy"
+title: "GDPR"
+categories: ["Compliance", "Data Protection", "Privacy"]
 ---
 
 ## GDPR Data Processing Agreement/Addendum ("DPA")

@@ -1,9 +1,6 @@
 ---
-title: Data Protection
-categories:
-      - "Data Security"
-      - "Compliance"
-      - "Encryption Standards"
+title: "Data Protection"
+categories: ["Data Security", "Compliance", "Encryption Standards"]
 ---
 
 CloudCore takes the confidentiality and integrity of its customer data very

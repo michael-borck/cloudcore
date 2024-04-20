@@ -1,9 +1,6 @@
 ---
-title: Risk Management
-categories:
-      - "Risk Management"
-      - "Security Management"
-      - "Operational Security"
+title: "Risk Management"
+categories: ["Risk Management", "Security Management", "Operational Security"]
 ---
 
 This policy establishes the scope, objectives, and procedures of CloudCore's

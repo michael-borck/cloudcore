@@ -1,9 +1,6 @@
 ---
-title: Compliance Audits and External Communications
-categories:
-      - "Compliance"
-      - "Audit Management"
-      - "External Communication"
+title: "Compliance Audits and External Communications"
+categories: ["Compliance", "Audit Management", "External Communication"]
 ---
 
 CloudCore may be requested occasionally to share additional details regarding its

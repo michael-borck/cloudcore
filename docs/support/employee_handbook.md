@@ -1,9 +1,6 @@
 ---
-title: Employee Handbook and Policy Quick Reference
-categories:
-      - "Human Resources"
-      - "Training"
-      - "Security Awareness"
+title: "Employee Handbook and Policy Quick Reference"
+categories: ["Human Resources", "Training", "Security Awareness"]
 ---
 
 This is an abridged version of CloudCore's security policy that all
