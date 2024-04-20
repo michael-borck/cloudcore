@@ -1,5 +1,9 @@
 ---
 title: "Configuration and Change Management"
+categories:
+      - "IT Management"
+      - "Change Management"
+      - "Operational Security"
 ---
 
 CloudCore standardises and automates configuration management through the use of

@@ -1,5 +1,9 @@
 ---
 title: "CloudCore Networks Information Security Management System"
+categories:
+      - "Security Management"
+      - "Compliance"
+      - "Risk Management"
 ---
 
 CloudCore Networks is a cloud hosting and managed IT services provider founded

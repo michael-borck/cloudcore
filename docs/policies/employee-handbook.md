@@ -1,5 +1,9 @@
 ---
 title: Employee Handbook and Policy Quick Reference
+categories:
+      - "Human Resources"
+      - "Training"
+      - "Security Awareness"
 ---
 
 This is an abridged version of CloudCore's security policy that all
@@ -23,26 +27,41 @@ doubt, stop and ask.
 
     As a CloudCore employee, I acknowledge that
 
-    * I have reviewed and will comply with company
-      [security policies and procedures][1], [acceptable use][2], and [sanction policies][3].
-    * I accept that my work devices, including approved BYOD devices, and activities on such devices are subject to security monitoring.
-    * I will protect my work devices at remote locations and will not leave devices unattended.
-    * I will ensure my laptops and workstations are securely configured with whole disk encryption, endpoint security agent, malware protection, local firewall, password protected screensaver, and latest security patches.
-    * I will follow documented policies and procedures to protect sensitive and confidential data.
+    * I have reviewed and will comply with company [security policies and
+      procedures][1], [acceptable use][2], and [sanction policies][3].
+    * I accept that my work devices, including approved BYOD devices, and activities
+      on such devices are subject to security monitoring.
+    * I will protect my work devices at remote locations and will not leave devices
+      unattended.
+    * I will ensure my laptops and workstations are securely configured with whole
+      disk encryption, endpoint security agent, malware protection, local firewall,
+      password protected screensaver, and latest security patches.
+      confidential data.
+    * I will follow documented policies and procedures to protect sensitive and
     * I have completed the required [HIPAA awareness training][4].
-    * I understand that customer data and sensitive data may only be stored in approved production environments.
-    * I understand company and regulatory requirements to protect critical data and will NOT
-  
-        * store critical data such as customer data and passwords on online file shares (such as Google Drive, SharePoint, Dropbox), in logs and source codes;
-        * send critical data such as customer data and passwords by email, chat, or similar public communication channels;
-        * post critical data such as customer data and passwords in blogs, support tickets or other public forums; and
+    * I understand that customer data and sensitive data may only be stored in
+      approved production environments.
+    * I understand company and regulatory requirements to protect critical data and
+      will NOT  
+
+        * store critical data such as customer data and passwords on online file shares
+          (such as Google Drive, SharePoint, Dropbox), in logs and source codes;
+        * send critical data such as customer data and passwords by email, chat, or
+          similar public communication channels;
+        * post critical data such as customer data and passwords in blogs, support
+          tickets or other public forums; and
         * discuss patient information in public.
 
-    * I understand that use of paper records and fax transmission for sensitive customer data is not allowed.
-    * I will keep my passwords confidential and will NOT share my individual user passwords with other users.
-    * I will NOT use shared/generic, guest/anonymous, emergency or temporary accounts without explicit approval.
-    * I will regularly back up business data on my user devices to approved data storage media/repositories such as the company SharePoint site.
-    * I will report any incident and suspicious activity to Security and/or my manager.
+    * I understand that use of paper records and fax transmission for sensitive
+      customer data is not allowed.
+    * I will keep my passwords confidential and will NOT share my individual user
+      passwords with other users.
+    * I will NOT use shared/generic, guest/anonymous, emergency or temporary
+      accounts without explicit approval.
+    * I will regularly back up business data on my user devices to approved data
+      storage media/repositories such as the company SharePoint site.
+    * I will report any incident and suspicious activity to Security and/or my
+      manager.
 
 ### Training
 

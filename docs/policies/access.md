@@ -1,5 +1,9 @@
 ---
 title: "Access"
+categories:
+      - "Access Control"
+      - "Security"
+      - "Authentication and Authorization"
 ---
 
 Access to CloudCore systems and application is limited for all users, including

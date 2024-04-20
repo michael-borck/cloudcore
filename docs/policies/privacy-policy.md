@@ -1,5 +1,9 @@
 ---
 title: Privacy Policy
+categories:
+      - "Privacy"
+      - "Data Protection"
+      - "Compliance"
 ---
 
 We at CloudCore (CloudCore and our subsidiaries and affiliates) are committed to

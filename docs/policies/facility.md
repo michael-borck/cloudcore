@@ -1,5 +1,9 @@
 ---
 title: Facility Access and Physical Security
+categories:
+      - "Physical Security"
+      - "Access Control"
+      - "Facility Management"
 ---
 
 It is the goal of CloudCore to provide a safe and secure environment for all

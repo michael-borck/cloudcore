@@ -1,5 +1,9 @@
 ---
 title: Policy Management
+categories:
+      - "Compliance"
+      - "Policy Development"
+      - "Version Control"
 ---
 
 CloudCore implements policies and procedures to maintain compliance and integrity

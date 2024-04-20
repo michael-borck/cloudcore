@@ -1,5 +1,9 @@
 ---
 title: Security Program Overview
+categories:
+      - "Security Management"
+      - "Compliance"
+      - "Operational Security"
 ---
 
 CloudCore is committed to protecting its employees, partners, clients/customers

@@ -1,5 +1,8 @@
 ---
 title: "Network Diagram"
+categories:
+      - "IT Infrastructure"
+      - "Network Management"
 ---
 
 Welcome to our visual representation of the CloudCore Network, designed to

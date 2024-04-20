@@ -1,5 +1,9 @@
 ---
 title: Mobile Device Security and Storage Media Management
+categories:
+      - "IT Management"
+      - "Device Security"
+      - "Data Protection"
 ---
 CloudCore recognises that media containing sensitive data may be reused when
 appropriate steps are taken to ensure that all stored sensitive data has been

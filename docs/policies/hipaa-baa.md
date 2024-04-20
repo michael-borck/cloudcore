@@ -1,5 +1,9 @@
 ---
 title: HIPPA
+categories:
+      - "Healthcare Compliance"
+      - "Data Security"
+      - "Privacy"
 ---
 
 ## CloudCore HIPAA Business Associate Agreement ("BAA")

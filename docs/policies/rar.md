@@ -1,5 +1,9 @@
 ---
 title: Roles, Responsibilities and Training
+categories:
+      - "Human Resources"
+      - "Security Management"
+      - "Training"
 ---
 
 Security and compliance is everyone's responsibility.  CloudCore is committed to

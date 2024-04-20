@@ -1,5 +1,9 @@
 ---
 title: Secure Software Development and Product Security
+ categories:
+      - "IT Management"
+      - "Security Architecture"
+      - "Secure Development"
 ---
 
 CloudCore development team follows the latest security best practices when

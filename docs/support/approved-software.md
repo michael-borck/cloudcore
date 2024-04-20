@@ -1,5 +1,9 @@
 ---
 title: "Approved Software"
+categories:
+      - "IT Management"
+      - "Software"
+      - "Compliance"
 ---
 
 At CloudCore Networks, our commitment to delivering exceptional service and

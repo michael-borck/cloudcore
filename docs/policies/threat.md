@@ -1,5 +1,9 @@
 ---
 title: Threat Detection and Prevention
+categories:
+      - "Security Management"
+      - "Intrusion Detection"
+      - "Threat Intelligence"
 ---
 
 In order to preserve the integrity of data that CloudCore stores, processes, or

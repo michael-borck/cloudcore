@@ -1,5 +1,9 @@
 ---
 title: Key Definitions
+categories:
+      - "Education"
+      - "Communication"
+      - "Compliance"
 ---
 
 * *Application*: An application hosted by CloudCore, either maintained and

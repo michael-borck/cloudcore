@@ -1,5 +1,9 @@
 ---
 title: Cookie Policy
+categories:
+      - "Privacy"
+      - "User Consent"
+      - "Web Technologies"
 ---
 
 We at CloudCore (CloudCore and our subsidiaries and affiliates) are committed to
