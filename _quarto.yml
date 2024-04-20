@@ -1,0 +1,38 @@
+project:
+  type: website
+
+website:
+  title: "CloudCore"
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: About
+        href: about.qmd
+      - text: Pricing
+        href: pricing.qmd
+      - text: Blog
+        href: blog/index.qmd
+      - text: Docs
+        menu:
+          - docs/interviews.qmd
+          - docs/policies.qmd
+          - docs/support.qmd
+    right:
+      - text: Contact US
+        href: contact.qmd
+  page-footer: 
+    center: | 
+      4 Millrose Dr, Malaga, WA 6090 and 11 Newcastle St, Perth, WA 6000  
+      cloudcore@serveur.au, +61 (8) 4587 899  
+      Copyright 2021, CloudCore  
+
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

@@ -1,0 +1,51 @@
+---
+title: "Org Chart"
+---
+Welcome to the organisational chart of CloudCore Networks, designed to elucidate
+the structural hierarchy and functional divisions within our company. This chart
+serves as a visual guide to understand the roles and reporting relationships
+that drive the efficiency and decision-making processes at CloudCore Networks.
+
+In this organisational chart, you will find:
+
+- **Executive Leadership**: Showcasing our top management, including the CEO,
+  CFO, and CTO, who lead the strategic direction and oversight of the company.
+- **Departmental Structure**: Detailed breakdown of our core departments such as
+  Engineering, Sales, Human Resources, and IT Support, along with their
+  respective heads and teams.
+- **Reporting Lines**: Clearly marked lines indicate who reports to whom,
+  highlighting the flow of accountability and communication within the company.
+- **Support and Administrative Roles**: These roles are depicted to show their
+  support to multiple departments, reinforcing the backbone of our corporate
+  operations.
+- **Strategic Units**: Special project teams or innovation units that work on
+  advanced developments to keep our services at the technological forefront.
+
+This organisational chart is an invaluable tool for both current and prospective
+employees, providing a clear picture of our company’s reporting structure and
+operational dynamics. It is designed to help familiarise you with our team and
+to foster an understanding of how various roles and departments interact to
+achieve common goals within CloudCore Networks.
+
+```{mermaid}
+graph TD
+    CEO[Amanda Johnson <br/> CEO] --> CFO
+    CEO --> CIO
+    CEO --> COO
+
+    CIO[Jessica Wong <br/> CIO] --> ITManager[Mark Anderson <br/> IT Manager]
+    ITManager --> InfoSecManager[Julie Park <br/> InfoSec Manager]
+    ITManager --> SysAdmin[Sarah Davies <br/> SysAdmin]
+    ITManager --> SecAnalyst[Juan Peres <br/> SecAnalyst]
+    ITManager --> DPO[Monica Bell <br/> Data Protection Officer]
+    ITManager --> Compliance[James Liu <br/> Compliance Officer]
+
+    COO[Brian Davis <br/> COO] --> Sales[Robert Martines <br/> Sales VP]
+    COO --> Marketing[Sarah Kim <br/> Marketing Director]
+    COO --> HR[Karen Gonsales <br/> HR Director]
+    COO --> Facilities[Mark Evans <br/> Facilities Manager]
+
+    CFO[Michael Stephens <br/> CFO] --> Accounting[Lauren Cooper <br/> Accounting Manager]
+    CFO --> Finance[Neil Wright <br/> Finance Manager]
+    CFO --> Purchasing[Olivia Thompson <br/> Purchasing Manager]
+```

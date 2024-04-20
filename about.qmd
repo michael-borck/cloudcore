@@ -1,0 +1,36 @@
+---
+title: ""
+toc: false
+---
+
+# About 
+
+We are a small passionate team!
+
+
+::: {layout-ncol=3}
+
+::: { .card }
+![](assets/photo-1.avif){ .rounded }
+
+Marcell Ziemann
+
+Principal Strategist 
+:::
+
+::: { .card }
+![](assets/photo-2.avif){ .rounded }
+
+Mark Gonzalez
+
+Information Security Officer
+:::
+
+::: { .card }
+![](assets/photo-3.avif){ .rounded }
+Sarah Thompson
+
+Senior Director 
+:::
+
+:::

@@ -1,0 +1,71 @@
+---
+title: "Network Diagram"
+---
+
+Welcome to our visual representation of the CloudCore Network, designed to
+provide a clear overview of our cloud infrastructure's architecture. This
+diagram, crafted in Mermaid markup, details the interconnections between various
+components essential for maintaining efficient, secure, and scalable cloud
+operations. In this diagram, you will find:
+
+-   **Cloud Data Centers**: The nodes representing our main operational hubs
+    that store and manage data, ensuring high availability and redundancy.
+-   **Networking Equipment**: Including routers, switches, and load balancers
+    that facilitate smooth data flow and optimal distribution of network
+    traffic.
+-   **Security Measures**: Highlighted through firewalls and other security
+    appliances that safeguard our network against potential threats.
+-   **Connectivity Routes**: Illustrated paths show how data travels between
+    components and the external connections that link our network with the
+    internet and other external networks.
+-   **Service Layers**: Depicting various cloud services such as SaaS, PaaS, and
+    IaaS, which demonstrate the versatility and capability of our network to
+    support diverse applications and services.
+
+This network diagram serves as a strategic tool to visualise the relationships
+and operational pathways within our network. It is an essential reference for
+understanding how we manage data flows, ensure security, and deliver services
+efficiently across our cloud infrastructure.
+
+```{mermaid}
+graph TB
+    subgraph "Internet"
+        ISP1[ISP]
+        ISP2[ISP]
+    end
+
+    subgraph "CloudCoreNetworks"
+        subgraph "PublicSubnet"
+            LB[Load Balancer]
+            FW[Firewall]
+        end
+
+        subgraph "AppSubnet"
+            WS[Web Server]
+            AP[App Server]
+            DB[Database]
+        end
+
+        subgraph "ManagementSubnet"
+            DC1[Domain Controller]
+            DC2[Domain Controller]
+        end
+
+        NAT[NAT Device]
+        RTR[Router]
+
+        LB -- HTTPS --> FW
+        FW -- HTTP --> WS
+        WS-- "App Traffic" --> AP
+        AP --- DB
+        DC1 --- DC2
+
+        ISP1 -->|Internet| NAT
+        ISP2 -->|Internet| NAT
+        NAT --> RTR
+        RTR -- "App Subnet" --> AP
+        RTR -- "Mgmt Subnet" --> DC1
+        RTR -- "Mgmt Subnet" --> DC2
+
+    end
+```

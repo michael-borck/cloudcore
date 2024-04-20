@@ -1,0 +1,66 @@
+---
+title: ""
+toc: false
+---
+# Pricing
+
+Simple & Predictable pricing. No Surprises. 
+
+::: {layout-ncol=3}
+
+
+::: { .card }
+<p>Personal</p>
+<h1>Free</h1>
+
+<i class="bi bi-check2-circle">Lifetime Free</i>
+
+<i class="bi bi-check2-circle">Up to 3 Users</i>
+
+<i class="bi bi-check2-circle">20 GB Storage</i>
+
+<i class="bi bi-check2-circle">Basic Integrations</i>
+
+<i class="bi bi-check2-circle">Community Support</i>
+
+[Get Started](){.btn .btn-outline-primary .btn role="button"}
+:::
+
+
+::: { .card }
+<p>Professional</p>
+<h1>$19 month</h1>
+<i class="bi bi-check2-circle">All Free Features</i>
+
+<i class="bi bi-check2-circle">Up to 20 Users</i>
+
+<i class="bi bi-check2-circle">Unlimited Collaborators</i>
+
+<i class="bi bi-check2-circle">Advanced Integrations</i>
+
+<i class="bi bi-check2-circle">Priority Support</i>
+
+[Get Started](){.btn .btn-outline-primary .btn role="button"}
+:::
+
+
+::: { .card }
+<p>Enterprise</p>
+<h1>Custom</h1>
+
+<i class="bi bi-check2-circle">All Pro Features</i>
+
+<i class="bi bi-check2-circle">Unlimited Domains</i>
+
+<i class="bi bi-check2-circle">99.9% Uptime SLA</i>
+
+<i class="bi bi-check2-circle">Dedicated Account Manager</i>
+
+<i class="bi bi-check2-circle">24/7 Support</i>
+
+[Contact Us](){.btn .btn-outline-primary .btn role="button"}
+:::
+
+
+
+:::
