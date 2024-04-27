@@ -7,7 +7,7 @@ toc: false
 # Revolutionary! 
 Unleashing the Power of CloudCore, the Innovators in Cloud Hosting and Managed IT Services! Operating 2 Cutting-Edge Data Centers, Empowering Over 500 Businesses to Soar Beyond Limits with Unparalleled Application Hosting and Sturdy IT Infrastructure! 
 
-![](assets/hero.png)
+![](assets/cloudcore.png)
 :::
 
 ## Everything you need to start a website
@@ -16,30 +16,15 @@ We take the best parts of state-of-the-art tools and add our own innovations.
 
 ::: {layout-ncol=3}
 
-{{< bi briefcase >}} **Bring Your Own Framework**  Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.
+{{< li evyuuwna trigger=loop delay=1000 class=small >}} **Bring Your Own Framework**  Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.
 
-{{< bi filetype-html >}} **100% Static HTML, No JS** CloudCore Solutions renders your entire page to static HTML, removing all JavaScript from your final build by default.
+{{< li lzgmgrnn trigger=loop delay=1000 class=small >}} **100% Static HTML, No JS** CloudCore Solutions renders your entire page to static HTML, removing all JavaScript from your final build by default.
 
-{{< bi database >}} **On-Demand Components** Need some JS? We can automatically hydrate interactive components when they become visible on the page.
+{{< li yxyampao trigger=loop delay=1000 class=small >}} **On-Demand Components** Need some JS? We can automatically hydrate interactive components when they become visible on the page.
 
-{{< bi robot >}} **Broad Integration** We support TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.
+{{< li bxdnmmpl trigger=loop delay=1000 class=small >}} **Broad Integration** We support TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.
 
-{{< bi search >}} **SEO Enabled** Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!
+{{< li vyqvtrtg trigger=loop delay=1000 class=small >}} **SEO Enabled** Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!
 
-{{< bi people >}} **Community** We use open source projects powered by hundreds of contributors making thousands of individual contributions.
-:::
-
-::: {layout-ncol=6}
-
-{{< bi briefcase size=4em >}} 
-
-{{< bi filetype-html size=4em >}}
-
-{{< bi database size=4em >}}
-
-{{< bi robot size=4em >}} 
-
-{{< bi search size=4em >}}
-
-{{< bi people size=4em >}} 
+{{< li kddybgok trigger=loop delay=1000 class=small >}} **Community** We use open source projects powered by hundreds of contributors making thousands of individual contributions.
 :::
