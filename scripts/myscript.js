@@ -20,7 +20,7 @@ function goBack() {
     history.back();
 }
 
-const correctPassword = 'yourPasswordHere';  // Replace 'yourPasswordHere' with your actual password
+const correctPassword = 'GottaCatchEmAll!2024';  // Replace 'yourPasswordHere' with your actual password
 
 function checkPassword() {
     if (getCookie("authenticated") === "true") {
