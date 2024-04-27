@@ -1,0 +1,29 @@
+---
+title: "Customer Support Lead, Samantha Wong"
+image: "samantha_wong.webp"
+about:
+  template: trestles
+  image: samantha_wong.webp
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+---
+Customer Support Lead, Samantha Wong - Manages the support team that interacts directly with clients, handling troubleshooting, customer complaints, and feedback.
+
+**Interview Focus: Samantha Wong**. Students should focus on understanding the critical role of customer support in the success of cloud services. Questions could explore how Samantha’s leadership has evolved the support team, the challenges of maintaining high customer satisfaction in a tech-driven environment, and the processes in place for continuous improvement based on customer feedback.
+
+<!--
+Paste this script at the bottom of your HTML before the </body> tag.
+See more style and config options on our docs
+https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
+-->
+<script
+  data-embed-id="07033f30-341d-460c-9d84-6d551e9cd75d"
+  data-base-api-url="https://chat.serveur.au/api/embed"
+  src="https://chat.serveur.au/embed/anythingllm-chat-widget.min.js">
+</script>
+<!-- AnythingLLM (https://useanything.com) -->

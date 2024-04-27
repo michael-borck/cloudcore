@@ -1,0 +1,30 @@
+---
+title: "Lin's Craft Studio, Samantha Wong"
+image: "jessica_lin.webp"
+about:
+  template: trestles
+  image: jessica_lin.webp
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+---
+Small Business Owner, Jessica Lin - A smaller scale client who values simplicity, cost-effectiveness, and straightforward usability over complex features.
+
+**Interview Focus: Small Business, Jessica Lin**
+Students should focus on understanding how cloud services can be designed to cater to small businesses, emphasising simplicity and efficiency. Questions could explore Jessica's experiences with previous technology solutions, her expectations from CSMP, and specific pain points she hopes the platform will solve.
+
+<!--
+Paste this script at the bottom of your HTML before the </body> tag.
+See more style and config options on our docs
+https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
+-->
+<script
+  data-embed-id="a1d0570e-9aaf-4f67-9648-8fb84d27742c"
+  data-base-api-url="https://chat.serveur.au/api/embed"
+  src="https://chat.serveur.au/embed/anythingllm-chat-widget.min.js">
+</script>
+<!-- AnythingLLM (https://useanything.com) -->

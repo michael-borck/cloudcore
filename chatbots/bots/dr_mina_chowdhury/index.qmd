@@ -1,0 +1,30 @@
+---
+title: "Chief Technology Officer (CTO), Dr Amina Chowdhury"
+image: dr_amina_chowdhury.webp
+about:
+  template: trestles
+  image: dr_amina_chowdhury.webp
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+---
+Chief Technology Officer (CTO), Dr Amina Chowdhury - Focuses on strategic planning and alignment of the platform's capabilities with the broader technology goals of CloudCore Networks.
+
+**Interview Focus: CTO Dr Amina Chowdhury**
+Students should focus on eliciting information about the strategic importance of the CSMP within the broader technology strategy of CloudCore Networks. Questions could delve into how Amina plans to leverage emerging technologies, manage technology transitions, and ensure that the CSMP supports the company’s long-term objectives.
+
+<!--
+Paste this script at the bottom of your HTML before the </body> tag.
+See more style and config options on our docs
+https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
+-->
+<script
+  data-embed-id="a12b4098-07a2-4222-a9f0-a2fa5f06bb20"
+  data-base-api-url="https://chat.serveur.au/api/embed"
+  src="https://chat.serveur.au/embed/anythingllm-chat-widget.min.js">
+</script>
+<!-- AnythingLLM (https://useanything.com) -->

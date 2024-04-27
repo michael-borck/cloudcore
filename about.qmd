@@ -11,23 +11,23 @@ We are a small passionate team!
 ::: {layout-ncol=3}
 
 ::: { .card }
-![](assets/photo-1.avif){ .rounded }
+![](assets/marcell_ziemann.webp){ .rounded }
 
 Marcell Ziemann
 
-Principal Strategist 
+Director 
 :::
 
 ::: { .card }
-![](assets/photo-2.avif){ .rounded }
+![](assets/mark_gonzalez.webp){ .rounded }
 
 Mark Gonzalez
 
-Information Security Officer
+Managing Director
 :::
 
 ::: { .card }
-![](assets/photo-3.avif){ .rounded }
+![](assets/sarah_thompson.webp){ .rounded }
 Sarah Thompson
 
 Senior Director 

@@ -1,0 +1,31 @@
+---
+title: "Cloud Service Operations Manager, Martin Nugyen"
+image: "martin_nugyen.webp"
+about:
+  template: trestles
+  image: martin_nugyen.webp
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+---
+
+Cloud Service Operations Manager, Martin Nugyen - Responsible for overseeing the day-to-day operations of cloud services, ensuring smooth service delivery, and addressing operational challenges.
+
+**Interview Focus: CSO Martin Nugyen**. Students should focus on eliciting information about the operational needs and challenges that Martin's team faces. Questions should aim at understanding how CSMP can improve operational workflows, enhance system monitoring, and automate resource provisioning to meet the dynamic demands of CloudCore Networks' diverse clientele.
+
+<!--
+Paste this script at the bottom of your HTML before the </body> tag.
+See more style and config options on our docs
+https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
+-->
+<script
+  data-embed-id="422c13cc-9cbd-495d-acfa-e4aeafb566b1"
+  data-base-api-url="https://chat.serveur.au/api/embed"
+  src="https://chat.serveur.au/embed/anythingllm-chat-widget.min.js">
+</script>
+<!-- AnythingLLM (https://useanything.com) -->
+

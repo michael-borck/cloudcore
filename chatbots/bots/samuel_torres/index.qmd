@@ -1,0 +1,30 @@
+---
+title: "Security Compliance Officer, Samuel Torres"
+image: samuel_torres.webp
+about:
+  template: trestles
+  image: samuel_torres.webp
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+---
+Security Compliance Officer, Samuel Torres - Ensures the platform adheres to legal and regulatory compliance standards, particularly around data security and privacy.
+
+**Interview Focus: SCO Samuel Torres**
+Students should focus on understanding the complexities of maintaining security and compliance in a global cloud service environment. Questions could explore how Samuel assesses and integrates new compliance requirements, the impact of regulations on CSMP's development, and strategies for managing data security across different jurisdictions.
+
+<!--
+Paste this script at the bottom of your HTML before the </body> tag.
+See more style and config options on our docs
+https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
+-->
+<script
+  data-embed-id="98d0d21b-bbf7-4fb3-a406-4f108986ef87"
+  data-base-api-url="https://chat.serveur.au/api/embed"
+  src="https://chat.serveur.au/embed/anythingllm-chat-widget.min.js">
+</script>
+<!-- AnythingLLM (https://useanything.com) -->

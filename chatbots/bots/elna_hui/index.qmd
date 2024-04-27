@@ -1,0 +1,29 @@
+---
+title: "Enterprise Client (Large Business), Elena Chu"
+image: "elana_hui.webp"
+about:
+  template: trestles
+  image: elana_hui.webp
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+---
+Enterprise Client (Large Business), Elena Chu - Represents a major client who uses extensive cloud services, interested in customization, scalability, and robust integration capabilities.
+
+**Interview Focus: Helana Industries, Elana Chu**. Students should focus on understanding Helena Industries' unique needs and challenges in utilising cloud services. Questions should aim at uncovering detailed requirements for customization, scalability, and integration capabilities of CSMP. This will help in tailoring the platform to meet the needs of large enterprises more effectively.
+
+<!--
+Paste this script at the bottom of your HTML before the </body> tag.
+See more style and config options on our docs
+https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
+-->
+<script
+  data-embed-id="23babe57-ca59-4d0e-8bc9-0206bf0f7b06"
+  data-base-api-url="https://chat.serveur.au/api/embed"
+  src="https://chat.serveur.au/embed/anythingllm-chat-widget.min.js">
+</script>
+<!-- AnythingLLM (https://useanything.com) -->
