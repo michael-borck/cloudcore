@@ -11,6 +11,7 @@ about:
     - icon: github
       text: Github
       href: https://github.com
+categories: ['Client', 'Small Business']
 ---
 Small Business Owner, Jessica Lin - A smaller scale client who values simplicity, cost-effectiveness, and straightforward usability over complex features.
 

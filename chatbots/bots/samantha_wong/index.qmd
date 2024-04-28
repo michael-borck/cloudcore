@@ -11,6 +11,7 @@ about:
     - icon: github
       text: Github
       href: https://github.com
+categories: ['Staff', 'Customer Support']
 ---
 Customer Support Lead, Samantha Wong - Manages the support team that interacts directly with clients, handling troubleshooting, customer complaints, and feedback.
 

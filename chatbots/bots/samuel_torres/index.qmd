@@ -11,6 +11,7 @@ about:
     - icon: github
       text: Github
       href: https://github.com
+categories: ['Staff', 'Security']
 ---
 Security Compliance Officer, Samuel Torres - Ensures the platform adheres to legal and regulatory compliance standards, particularly around data security and privacy.
 

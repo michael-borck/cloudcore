@@ -11,6 +11,7 @@ about:
     - icon: github
       text: Github
       href: https://github.com
+categories: ['Client','Enterprise']
 ---
 Enterprise Client (Large Business), Elena Chu - Represents a major client who uses extensive cloud services, interested in customization, scalability, and robust integration capabilities.
 

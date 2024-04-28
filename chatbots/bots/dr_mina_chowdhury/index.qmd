@@ -11,6 +11,7 @@ about:
     - icon: github
       text: Github
       href: https://github.com
+categories: ['Staff', 'Technology']
 ---
 Chief Technology Officer (CTO), Dr Amina Chowdhury - Focuses on strategic planning and alignment of the platform's capabilities with the broader technology goals of CloudCore Networks.
 
