@@ -13,7 +13,7 @@ website:
         href: pricing.qmd
       - text: Blog
         href: blog/index.qmd
-      - text: ChatBots
+      - text: Staff-Clients
         href: chatbots/index.qmd
       - text: Docs
         menu:
