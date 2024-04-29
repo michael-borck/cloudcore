@@ -1,6 +1,9 @@
 var date = new Date(); // Get current date and time
 var currentHour = date.getHours(); // Extract the hour
 
+console.log('avaialbility.js' + date)
+console.log('availability.js' + currentHour)
+
 // Define business hours
 var startHour = 7; // Business starts at 7 AM
 var endHour = 19; // Business ends at 7 PM
