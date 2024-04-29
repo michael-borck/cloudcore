@@ -13,9 +13,14 @@ about:
       href: https://github.com
 categories: ['Client','Enterprise']
 ---
+<script type="text/javascript" src="../../../scripts/available.js"></script>
+
 Enterprise Client (Large Business), Elena Chu - Represents a major client who uses extensive cloud services, interested in customization, scalability, and robust integration capabilities.
 
 **Interview Focus: Helana Industries, Elana Chu**. Students should focus on understanding Helena Industries' unique needs and challenges in utilising cloud services. Questions should aim at uncovering detailed requirements for customization, scalability, and integration capabilities of CSMP. This will help in tailoring the platform to meet the needs of large enterprises more effectively.
+
+
+**How to Chat:**Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
 
 <!--
 Paste this script at the bottom of your HTML before the </body> tag.

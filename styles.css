@@ -21,3 +21,14 @@ lord-icon.small {
   width: 28px;
   height: 28px;
 }
+
+/* Style for the message */
+#message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+  padding: 20px;
+  text-align: center;
+}

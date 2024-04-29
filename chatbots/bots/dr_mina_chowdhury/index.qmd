@@ -13,10 +13,14 @@ about:
       href: https://github.com
 categories: ['Staff', 'Technology']
 ---
+<script type="text/javascript" src="../../../scripts/available.js"></script>
+
 Chief Technology Officer (CTO), Dr Amina Chowdhury - Focuses on strategic planning and alignment of the platform's capabilities with the broader technology goals of CloudCore Networks.
 
 **Interview Focus: CTO Dr Amina Chowdhury**
-Students should focus on eliciting information about the strategic importance of the CSMP within the broader technology strategy of CloudCore Networks. Questions could delve into how Amina plans to leverage emerging technologies, manage technology transitions, and ensure that the CSMP supports the company’s long-term objectives.
+Students should focus on eliciting information about the strategic importance of the CSMP within the broader technology strategy of CloudCore Networks. Questions could ask how Amina plans to leverage emerging technologies, manage technology transitions, and ensure that the CSMP supports the company’s long-term objectives.
+
+**How to Chat:**Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
 
 <!--
 Paste this script at the bottom of your HTML before the </body> tag.

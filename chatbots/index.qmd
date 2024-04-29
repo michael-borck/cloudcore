@@ -10,5 +10,5 @@ listing:
 page-layout: full
 title-block-banner: true
 ---
-
-<script type="text/javascript" src="../scripts/myscript.js"></script>
+<script type="text/javascript" src="../scripts/available.js"></script>
+<script type="text/javascript" src="../scripts/password.js"></script>

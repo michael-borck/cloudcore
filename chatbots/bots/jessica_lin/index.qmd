@@ -13,10 +13,15 @@ about:
       href: https://github.com
 categories: ['Client', 'Small Business']
 ---
+<script type="text/javascript" src="../../../scripts/available.js"></script>
+
 Small Business Owner, Jessica Lin - A smaller scale client who values simplicity, cost-effectiveness, and straightforward usability over complex features.
 
 **Interview Focus: Small Business, Jessica Lin**
 Students should focus on understanding how cloud services can be designed to cater to small businesses, emphasising simplicity and efficiency. Questions could explore Jessica's experiences with previous technology solutions, her expectations from CSMP, and specific pain points she hopes the platform will solve.
+
+
+**How to Chat:**Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
 
 <!--
 Paste this script at the bottom of your HTML before the </body> tag.
