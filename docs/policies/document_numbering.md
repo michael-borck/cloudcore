@@ -108,7 +108,7 @@ effective document management and compliance tracking.
 | WEBT | Web Technologies|
 
 1. **Document Abbreviations:**
-   - A standarised set of abbreviations for each document type is maintained and
+   - A standardised set of abbreviations for each document type is maintained and
      updated by the Document Control Officer.  This list is publicly accessible
      to all department for reference.
 
