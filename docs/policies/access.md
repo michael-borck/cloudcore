@@ -1,7 +1,21 @@
 ---
-title: "Access"
-categories: ["Access Control", "Security", "Authentication and Authorization"]
+categories:
+- Access Control
+- Security
+- Authentication and Authorization
+description: Access to CloudCore systems and application is limited for all users,
+  including but not limited to workforce members, volunteers, business associates,
+  contracted providers, consultants, and any other entity, is allowable only on a
+  minimum necessary basis.
+title: Access
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Access             |
+| **Doc#**     | POL-SECU-021 |
+| **Version**  | 1.0                                 |
+| **Date**     | 08-07-2023                              |
 
 Access to CloudCore systems and application is limited for all users, including
 but not limited to workforce members, volunteers, business associates,

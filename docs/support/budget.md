@@ -1,7 +1,17 @@
 ---
-title: "Budget 2024"
-categories: ['Financial']
+categories:
+- Financial
+description: The table below outlines the budget allocations for CloudCore Networks
+  for the fiscal year 2024.
+title: Budget 2024
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Budget 2024             |
+| **Doc#**     | DOC-FINA-000 |
+| **Version**  | 1.0                                 |
+| **Date**     | 28-05-2023                              |
 
 The table below outlines the budget allocations for CloudCore Networks for the
 fiscal year 2024. It details the planned quarterly and annual spending across

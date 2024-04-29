@@ -1,7 +1,24 @@
 ---
-title: "GDPR"
-categories: ["Compliance", "Data Protection", "Privacy"]
+categories:
+- Compliance
+- Data Protection
+- Privacy
+description: '## GDPR Data Processing Agreement/Addendum ("DPA")  ## Data Protection
+  Addendum  This Data Protection Addendum (this "Addendum") is made and entered into
+  as of the date appearing on the signature page hereto (the "Effective Date") by
+  and between CloudCore ("Company") and the Supplier named on the signature page hereto,
+  and upon execution shall be incorporated by reference into each agreement for services
+  ("Services Agreement") pursuant to which Supplier may Process (as defined below)
+  Personal Data (as defined below) for, from, or on behalf of Company.'
+title: GDPR
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | GDPR             |
+| **Doc#**     | POL-DATA-000 |
+| **Version**  | 1.0                                 |
+| **Date**     | 22-11-2023                              |
 
 ## GDPR Data Processing Agreement/Addendum ("DPA")
 

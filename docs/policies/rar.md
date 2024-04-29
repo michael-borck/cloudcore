@@ -1,7 +1,18 @@
 ---
-title: "Roles, Responsibilities and Training"
-categories: ["Human Resources", "Security Management", "Training"]
+categories:
+- Human Resources
+- Security Management
+- Training
+description: Security and compliance is everyone's responsibility.
+title: Roles, Responsibilities and Training
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Roles, Responsibilities and Training             |
+| **Doc#**     | POL-SECU-002 |
+| **Version**  | 1.0                                 |
+| **Date**     | 01-04-2023                              |
 
 Security and compliance is everyone's responsibility.  CloudCore is committed to
 ensuring all workforce members actively address security and compliance in their
@@ -248,4 +259,3 @@ functional team, and/or designated individuals through pre-established channels.
 Additionally, each project team maintains team updates at their own committed
 cadence and channel -- for example, daily development standups/scrum or weekly
 team meetings.
-

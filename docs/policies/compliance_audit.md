@@ -1,7 +1,20 @@
 ---
-title: "Compliance Audits and External Communications"
-categories: ["Compliance", "Audit Management", "External Communication"]
+categories:
+- Compliance
+- Audit Management
+- External Communication
+description: CloudCore may be requested occasionally to share additional details regarding
+  its compliance, privacy and security program by an external entity such as a customer,
+  media, legal or law enforcement.
+title: Compliance Audits and External Communications
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Compliance Audits and External Communications             |
+| **Doc#**     | POL-ITMA-001 |
+| **Version**  | 1.0                                 |
+| **Date**     | 14-09-2023                              |
 
 CloudCore may be requested occasionally to share additional details regarding its
 compliance, privacy and security program by an external entity such as a
@@ -118,4 +131,3 @@ Direct all other communication requests to one of the following:
 The status of compliance is tracked via JupiterOne. Compliance dashboards are
 configured with applicable internal and external standards and frameworks. Any
 potential gaps detected are reported on the compliance dashboards.
-

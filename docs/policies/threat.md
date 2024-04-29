@@ -1,7 +1,20 @@
 ---
-title: "Threat Detection and Prevention"
-categories: ["Security Management", "Intrusion Detection", "Threat Intelligence"]
+categories:
+- Security Management
+- Intrusion Detection
+- Threat Intelligence
+description: In order to preserve the integrity of data that CloudCore stores, processes,
+  or transmits for Customers, CloudCore implements strong intrusion detection tools
+  and policies to proactively track and retroactively investigate unauthorised access.
+title: Threat Detection and Prevention
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Threat Detection and Prevention             |
+| **Doc#**     | POL-SECU-016 |
+| **Version**  | 1.0                                 |
+| **Date**     | 17-11-2023                              |
 
 In order to preserve the integrity of data that CloudCore stores, processes, or
 transmits for Customers, CloudCore implements strong intrusion detection tools
@@ -123,4 +136,3 @@ used by the security solutions to analyse events and generate alerts.
 
 The Security and Privacy Officer actively monitors the regulatory compliance
 landscape for updates to regulations such as HIPAA, PCI and GDPR.
-

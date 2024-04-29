@@ -1,7 +1,19 @@
 ---
-title: "HR and Personnel Security"
-categories: ["Human Resources", "Employee Management", "Training"]
+categories:
+- Human Resources
+- Employee Management
+- Training
+description: CloudCore is committed to ensuring all workforce members actively address
+  security and compliance in their roles at CloudCore.
+title: HR and Personnel Security
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | HR and Personnel Security             |
+| **Doc#**     | POL-HUMA-017 |
+| **Version**  | 1.0                                 |
+| **Date**     | 21-09-2023                              |
 
 CloudCore is committed to ensuring all workforce members actively address
 security and compliance in their roles at CloudCore. We encourage self management

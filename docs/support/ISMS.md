@@ -1,7 +1,19 @@
 ---
-title: "CloudCore Networks Information Security Management System"
-categories: ["Security Management", "Compliance", "Risk Management"]
+categories:
+- Security Management
+- Compliance
+- Risk Management
+description: CloudCore Networks is a cloud hosting and managed IT services provider
+  founded in 2010 and headquartered in Perth, Western Australia.
+title: CloudCore Networks Information Security Management System
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | CloudCore Networks Information Security Management System             |
+| **Doc#**     | DOC-RISK-002 |
+| **Version**  | 1.0                                 |
+| **Date**     | 26-07-2023                              |
 
 CloudCore Networks is a cloud hosting and managed IT services provider founded
 in 2010 and headquartered in Perth, Western Australia.

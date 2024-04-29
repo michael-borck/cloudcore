@@ -1,7 +1,19 @@
 ---
-title: "Privacy and Consent"
-categories: ["Privacy", "Data Protection", "User Consent"]
+categories:
+- Privacy
+- Data Protection
+- User Consent
+description: '## Policy Statements  CloudCore is committed to protecting the privacy
+  of our customers.'
+title: Privacy and Consent
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Privacy and Consent             |
+| **Doc#**     | POL-DATA-023 |
+| **Version**  | 1.0                                 |
+| **Date**     | 06-02-2023                              |
 
 ## Policy Statements
 

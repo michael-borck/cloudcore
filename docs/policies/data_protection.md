@@ -1,7 +1,19 @@
 ---
-title: "Data Protection"
-categories: ["Data Security", "Compliance", "Encryption Standards"]
+categories:
+- Data Security
+- Compliance
+- Encryption Standards
+description: CloudCore takes the confidentiality and integrity of its customer data
+  very seriously.
+title: Data Protection
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Data Protection             |
+| **Doc#**     | POL-DATA-004 |
+| **Version**  | 1.0                                 |
+| **Date**     | 25-08-2023                              |
 
 CloudCore takes the confidentiality and integrity of its customer data very
 seriously. As stewards and partners of CloudCore Customers, we strive to assure
@@ -240,4 +252,3 @@ new version is created instead of editing and overwriting existing data.
 
 Additionally, all access to sensitive data is authenticated, and audited via
 logging of the infrastructure, systems and/or application.
-

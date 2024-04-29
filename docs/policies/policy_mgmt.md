@@ -1,7 +1,19 @@
 ---
-title: "Policy Management"
-categories: ["Compliance", "Policy Development", "Version Control"]
+categories:
+- Compliance
+- Policy Development
+- Version Control
+description: CloudCore implements policies and procedures to maintain compliance and
+  integrity of data.
+title: Policy Management
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Policy Management             |
+| **Doc#**     | POL-COMP-019 |
+| **Version**  | 1.0                                 |
+| **Date**     | 04-03-2023                              |
 
 CloudCore implements policies and procedures to maintain compliance and integrity
 of data. The Security Officer and Privacy Officer are responsible for
@@ -193,4 +205,3 @@ If sequencing numbers are included in the policy headings:
 
 Additional documentation related to maintenance of policies is outlined in
 [Roles and Responsibilities](rar.md).
-

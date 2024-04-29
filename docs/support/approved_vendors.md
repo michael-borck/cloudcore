@@ -1,7 +1,20 @@
 ---
-title: "Approved Vendors"
-categories: ["Vendor Management", "Procurement", "Compliance"]
+categories:
+- Vendor Management
+- Procurement
+- Compliance
+description: At CloudCore Networks, our commitment to delivering exceptional service
+  and maintaining the highest standards of security and performance is reflected in
+  our meticulously curated list of Approved Software.
+title: Approved Vendors
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Approved Vendors             |
+| **Doc#**     | DOC-COMP-007 |
+| **Version**  | 1.0                                 |
+| **Date**     | 13-02-2023                              |
 
 At CloudCore Networks, our commitment to delivering exceptional service and
 maintaining the highest standards of security and performance is reflected in

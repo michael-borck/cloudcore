@@ -1,7 +1,18 @@
 ---
-title: "Security Architecture and Operating Model"
-categories: ["IT Management", "Security Architecture", "Operational Security"]
+categories:
+- IT Management
+- Security Architecture
+- Operational Security
+description: In the digital age, cyber attacks are inevitable.
+title: Security Architecture and Operating Model
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Security Architecture and Operating Model             |
+| **Doc#**     | POL-ITMA-026 |
+| **Version**  | 1.0                                 |
+| **Date**     | 07-06-2023                              |
 
 In the digital age, cyber attacks are inevitable. At CloudCore, we are taking a
 “zero trust”, “minimal infrastructure” approach to managing risk and information
@@ -337,4 +348,3 @@ to ensure a smooth delivery process of all systems and applications.
 
 Status for external facing, customer applications and systems is published
 at .
-

@@ -1,7 +1,18 @@
 ---
-title: "Asset Management"
-categories: ["IT Management", "Risk Management", "Asset Inventory"]
+categories:
+- IT Management
+- Risk Management
+- Asset Inventory
+description: '# Asset Inventory Management  You can''t protect what you can''t see.'
+title: Asset Management
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Asset Management             |
+| **Doc#**     | POL-ITMA-009 |
+| **Version**  | 1.0                                 |
+| **Date**     | 19-04-2023                              |
 
 # Asset Inventory Management
 

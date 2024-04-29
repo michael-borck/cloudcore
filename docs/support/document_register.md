@@ -1,7 +1,18 @@
 ---
-title: "Document Register"
-categories: ["Document Management", "Compliance"]
+categories:
+- Document Management
+- Compliance
+description: The document register serves as a comprehensive and systematic catalog
+  of documents related to CloudCore operations.
+title: Document Register
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Document Register             |
+| **Doc#**     | DOC-COMP-006 |
+| **Version**  | 1.0                                 |
+| **Date**     | 18-09-2023                              |
 
 The document register serves as a comprehensive and systematic catalog of
 documents related to CloudCore operations. Its primary purpose is to maintain a

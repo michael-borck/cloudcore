@@ -1,7 +1,19 @@
 ---
-title: "NIST MAppings"
-categories: ["Compliance", "Security Management", "IT Management"]
+categories:
+- Compliance
+- Security Management
+- IT Management
+description: Below is a list of NIST SP 800-53 Controls Families and the mappings
+  to CloudCore policies and controls in place.
+title: NIST MAppings
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | NIST MAppings             |
+| **Doc#**     | DOC-ITMA-005 |
+| **Version**  | 1.0                                 |
+| **Date**     | 25-03-2023                              |
 
 Below is a list of NIST SP 800-53 Controls Families and the mappings to
 CloudCore policies and controls in place.

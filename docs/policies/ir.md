@@ -1,7 +1,21 @@
 ---
-title: "Incident Response"
-categories: ["Security Management", "Incident Response", "Operational Security"]
+categories:
+- Security Management
+- Incident Response
+- Operational Security
+description: CloudCore implements an information security incident response process
+  to consistently detect, respond, and report incidents, minimise loss and destruction,
+  mitigate the weaknesses that were exploited, and restore information system functionality
+  and business continuity as soon as possible.
+title: Incident Response
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Incident Response             |
+| **Doc#**     | POL-SECU-010 |
+| **Version**  | 1.0                                 |
+| **Date**     | 19-11-2023                              |
 
 CloudCore implements an information security incident response process to
 consistently detect, respond, and report incidents, minimise loss and
@@ -514,4 +528,3 @@ and progression, including the following as applicable:
 
 If a more detailed post-mortem is applicable, the Security and/or DevOps team
 will create the write-up and link it in the incident record.
-

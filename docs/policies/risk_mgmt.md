@@ -1,7 +1,19 @@
 ---
-title: "Risk Management"
-categories: ["Risk Management", "Security Management", "Operational Security"]
+categories:
+- Risk Management
+- Security Management
+- Operational Security
+description: This policy establishes the scope, objectives, and procedures of CloudCore's
+  information security risk management process.
+title: Risk Management
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Risk Management             |
+| **Doc#**     | POL-RISK-014 |
+| **Version**  | 1.0                                 |
+| **Date**     | 24-07-2023                              |
 
 This policy establishes the scope, objectives, and procedures of CloudCore's
 information security risk management process. The risk management process is
@@ -434,4 +446,3 @@ Payroll Fraud                    | Low        | Payroll is reviewed by at least 
 Kickbacks / Conflict of Interest | Low        | Team-based vendor review and selection process
 Misuse of Cloud Resources        | Low        | Continuous resource monitoring for all cloud accounts and regions and expense monitoring
 Other IT Fraud                   | Low        | IT assets and resources tracking
-

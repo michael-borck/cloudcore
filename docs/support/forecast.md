@@ -1,7 +1,18 @@
 ---
-title: "Financial Forecast 2024"
-categories: ['Financial']
+categories:
+- Financial
+description: The financial forecast for CloudCore Networks for 2024 details a progressive
+  increase in both projected revenue and expenses over several months, showcasing
+  the company's expected growth trajectory.
+title: Financial Forecast 2024
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Financial Forecast 2024             |
+| **Doc#**     | DOC-FINA-010 |
+| **Version**  | 1.0                                 |
+| **Date**     | 23-06-2023                              |
 
 The financial forecast for CloudCore Networks for 2024 details a progressive
 increase in both projected revenue and expenses over several months, showcasing

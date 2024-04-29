@@ -1,7 +1,20 @@
 ---
-title: "Data Management Policy"
-categories: ["Data Lifecycle", "Backup and Recovery", "Data Classification"]
+categories:
+- Data Lifecycle
+- Backup and Recovery
+- Data Classification
+description: This policy outlines the requirements and controls/procedures CloudCore
+  has implemented to manage the end-to-end data lifecycle, from data creation/acquisition
+  to retention and deletion.
+title: Data Management Policy
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Data Management Policy             |
+| **Doc#**     | POL-DATA-015 |
+| **Version**  | 1.0                                 |
+| **Date**     | 01-03-2023                              |
 
 This policy outlines the requirements and controls/procedures CloudCore has
 implemented to manage the end-to-end data lifecycle, from data

@@ -1,7 +1,20 @@
 ---
-title: "Training Register"
-categories: ["Human Resources", "Training", "Skills Development"]
+categories:
+- Human Resources
+- Training
+- Skills Development
+description: At CloudCore Networks, the Training Register is an essential component
+  of our human resource strategy, meticulously documenting all training activities
+  undertaken by our staff.
+title: Training Register
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Training Register             |
+| **Doc#**     | DOC-HUMA-014 |
+| **Version**  | 1.0                                 |
+| **Date**     | 03-04-2023                              |
 
 At CloudCore Networks, the Training Register is an essential component of our
 human resource strategy, meticulously documenting all training activities

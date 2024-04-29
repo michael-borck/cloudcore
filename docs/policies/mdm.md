@@ -1,7 +1,21 @@
 ---
-title: "Mobile Device Security and Storage Media Management"
-categories: ["IT Management", "Device Security", "Data Protection"]
+categories:
+- IT Management
+- Device Security
+- Data Protection
+description: CloudCore recognises that media containing sensitive data may be reused
+  when appropriate steps are taken to ensure that all stored sensitive data has been
+  effectively rendered inaccessible.
+title: Mobile Device Security and Storage Media Management
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Mobile Device Security and Storage Media Management             |
+| **Doc#**     | POL-DATA-013 |
+| **Version**  | 1.0                                 |
+| **Date**     | 06-09-2023                              |
+
 CloudCore recognises that media containing sensitive data may be reused when
 appropriate steps are taken to ensure that all stored sensitive data has been
 effectively rendered inaccessible. Destruction/disposal of sensitive data shall
@@ -125,5 +139,3 @@ responsible to
 IT and Security provides automated scripts for end-user system configurations
 and/or technical assistance as needed.  Such configurations are audited daily
 using **Jamf** centrally managed by the Security team.
-
-

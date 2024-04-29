@@ -1,7 +1,21 @@
 ---
-title: "HIPPA"
-categories: ["Healthcare Compliance", "Data Security", "Privacy"]
+categories:
+- Healthcare Compliance
+- Data Security
+- Privacy
+description: '## CloudCore HIPAA Business Associate Agreement ("BAA")  ## Introduction  This
+  document includes sample business associate agreement provisions to help covered
+  entities and business associates more easily comply with the business associate
+  contract requirements.'
+title: HIPPA
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | HIPPA             |
+| **Doc#**     | POL-DATA-024 |
+| **Version**  | 1.0                                 |
+| **Date**     | 15-07-2023                              |
 
 ## CloudCore HIPAA Business Associate Agreement ("BAA")
 

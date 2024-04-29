@@ -1,7 +1,20 @@
 ---
-title: "HIPPA MAppings"
-categories: ["Healthcare Compliance", "Risk Management", "Data Protection"]
+categories:
+- Healthcare Compliance
+- Risk Management
+- Data Protection
+description: '## HIPAA Mappings to CloudCore Policies and Controls   Below is a list
+  of HIPAA Safeguards and Requirements and the CloudCore policies and controls in
+  place to meet those.'
+title: HIPPA MAppings
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | HIPPA MAppings             |
+| **Doc#**     | DOC-DATA-004 |
+| **Version**  | 1.0                                 |
+| **Date**     | 07-07-2023                              |
 
 ## HIPAA Mappings to CloudCore Policies and Controls
 

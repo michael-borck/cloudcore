@@ -1,21 +1,25 @@
 ---
-title: "Document Numbering System Policy"
-categories: ["Document Management", "Compliance"]
-description: "The Policy Document Numbering System is established to provide a structured and
-consistent method for assigning document numbers to all policy documents within
-CloudCore."
+categories:
+- Document Management
+- Compliance
+description: The Policy Document Numbering System is established to provide a structured
+  and consistent method for assigning document numbers to all policy documents within
+  CloudCore.
+title: Document Numbering System Policy
 ---
 
-**Title:** Policy Document Numbering System  
-**Doc#:** P-MGMT-002  
-**Version:** 1.0  
-**Date:** April 21, 2024  
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Document Numbering System Policy             |
+| **Doc#**     | POL-COMP-025 |
+| **Version**  | 1.0                                 |
+| **Date**     | 26-11-2023                              |
 
 ## Introduction
 
 The Policy Document Numbering System is established to provide a structured and
 consistent method for assigning document numbers to all policy documents within
-CloudCore. This system ensures easy identification, categorization, and
+CloudCore. This system ensures easy identification, categorisation, and
 retrieval of policy documents across various departments and facilitates
 effective document management and compliance tracking.
 
@@ -48,21 +52,62 @@ effective document management and compliance tracking.
      and updated by the Document Control Officer. This list is publicly
      accessible to all departments for reference.
 
-    | Abbreviation | Category Description                               |
-    |--------------|----------------------------------------------------|
-    | COMP         | Compliance related policies                        |
-    | HR           | Human Resources and personnel-related policies     |
-    | SEC          | Security related policies                          |
-    | DATA         | Data management and protection policies            |
-    | IT           | Information Technology management and operations   |
-    | BCDR         | Business Continuity and Disaster Recovery          |
-    | RISK         | Risk management policies                           |
-    | PRIV         | Privacy and consent management policies            |
-    | MGMT         | General policy management                          |
-    | DEV          | Development, including secure software development |
-    | COMPL        | Specific compliance standards like HIPAA           |
+| Abbreviation | Category Description                               |
+|--- | ---|
+| ACCE | Access Control|
+| ASSE | Asset Inventory|
+| AUDI | Audit Management|
+| AUTH | Authentication and Authorization|
+| BACK | Backup and Recovery|
+| CHAN | Change Management|
+| COMM | Communication|
+| COMP | Compliance|
+| DATA | Data|
+| DATA | Data Classification|
+| DATA | Data Lifecycle|
+| DATA | Data Protection|
+| DATA | Data Security|
+| DEVI | Device Security|
+| DISA | Disaster Recovery|
+| DOCU | Document Management|
+| EDUC | Education|
+| EMPL | Employee Management|
+| ENCR | Encryption Standards|
+| EXTE | External Communication|
+| FACI | Facility Management|
+| FINA | Financial|
+| HEAL | Healthcare Compliance|
+| HUMA | Human Resources|
+| ITIN | IT Infrastructure|
+| ITMA | IT Management|
+| INCI | Incident Response|
+| INTR | Intrusion Detection|
+| NETW | Network Management|
+| OPER | Operational Continuity|
+| OPER | Operational Security|
+| ORGA | Organisational Structure|
+| PHYS | Physical Security|
+| POLI | Policy Development|
+| PRIV | Privacy|
+| PROC | Procurement|
+| REGU | Regulatory Compliance|
+| RISK | Risk Assessment|
+| RISK | Risk Management|
+| SECU | Secure Development|
+| SECU | Security|
+| SECU | Security Architecture|
+| SECU | Security Awareness|
+| SECU | Security Management|
+| SKIL | Skills Development|
+| SOFT | Software|
+| THRE | Threat Intelligence|
+| TRAI | Training|
+| USER | User Consent|
+| VEND | Vendor Management|
+| VERS | Version Control|
+| WEBT | Web Technologies|
 
-3. **Document Abbreviations:**
+1. **Document Abbreviations:**
    - A standarised set of abbreviations for each document type is maintained and
      updated by the Document Control Officer.  This list is publicly accessible
      to all department for reference.

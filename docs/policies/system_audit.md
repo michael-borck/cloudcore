@@ -1,7 +1,21 @@
 ---
-title: "System Audits, Monitoring and Assessments"
-categories: ["Compliance", "Security Management", "Operational Security"]
+categories:
+- Compliance
+- Security Management
+- Operational Security
+description: CloudCore shall audit, monitor, and assess the access and activity of
+  systems and applications that process or store production and/or sensitive data
+  such as personally identifiable information (PII) and electronic protected health
+  information (ePHI) in order to ensure compliance.
+title: System Audits, Monitoring and Assessments
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | System Audits, Monitoring and Assessments             |
+| **Doc#**     | POL-SECU-011 |
+| **Version**  | 1.0                                 |
+| **Date**     | 01-10-2023                              |
 
 CloudCore shall audit, monitor, and assess the access and activity of
 systems and applications that process or store production and/or sensitive data
@@ -410,4 +424,3 @@ system can withstand attacks aimed at circumventing security controls.
    environments, even though the applications may integrate with CloudCore
    Platform API.  Customer applications hosted within the CloudCore environments
    will follow the auditing standards and procedures defined in this document.
-

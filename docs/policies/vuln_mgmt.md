@@ -1,7 +1,20 @@
 ---
-title: "Vulnerability Management"
-categories: ["Security Management", "IT Management", "Risk Assessment"]
+categories:
+- Security Management
+- IT Management
+- Risk Assessment
+description: '## Policy Statements  CloudCore policy requires that:  (a) All product
+  systems must be scanned for vulnerability at least quarterly and with each major
+  change.'
+title: Vulnerability Management
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Vulnerability Management             |
+| **Doc#**     | POL-ITMA-012 |
+| **Version**  | 1.0                                 |
+| **Date**     | 10-09-2023                              |
 
 ## Policy Statements
 
@@ -156,4 +169,3 @@ finding was originally created, the SLA is updated as follow:
   impacted asset owner.
 
 - All Exceptions are reviewed every six months to re-assess its validity.
-

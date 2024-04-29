@@ -1,7 +1,19 @@
 ---
-title: "Key Definitions"
-categories: ["Education", "Communication", "Compliance"]
+categories:
+- Education
+- Communication
+- Compliance
+description: '* *Application*: An application hosted by CloudCore, either maintained
+  and   created by CloudCore, or maintained and created by a Customer or Partner.'
+title: Key Definitions
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Key Definitions             |
+| **Doc#**     | DOC-COMP-012 |
+| **Version**  | 1.0                                 |
+| **Date**     | 14-03-2023                              |
 
 * *Application*: An application hosted by CloudCore, either maintained and
   created by CloudCore, or maintained and created by a Customer or Partner.

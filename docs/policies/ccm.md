@@ -1,7 +1,20 @@
 ---
-title: "Configuration and Change Management"
-categories: ["IT Management", "Change Management", "Operational Security"]
+categories:
+- IT Management
+- Change Management
+- Operational Security
+description: CloudCore standardises and automates configuration management through
+  the use of automation scripts as well as documentation of all changes to production
+  systems and networks.
+title: Configuration and Change Management
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Configuration and Change Management             |
+| **Doc#**     | POL-ITMA-007 |
+| **Version**  | 1.0                                 |
+| **Date**     | 12-07-2023                              |
 
 CloudCore standardises and automates configuration management through the use of
 automation scripts as well as documentation of all changes to production systems

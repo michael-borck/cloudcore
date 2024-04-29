@@ -1,7 +1,19 @@
 ---
-title: "Employee Handbook and Policy Quick Reference"
-categories: ["Human Resources", "Training", "Security Awareness"]
+categories:
+- Human Resources
+- Training
+- Security Awareness
+description: This is an abridged version of CloudCore's security policy that all workforce
+  members are required to be familiar with and comply with.
+title: Employee Handbook and Policy Quick Reference
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Employee Handbook and Policy Quick Reference             |
+| **Doc#**     | DOC-SECU-008 |
+| **Version**  | 1.0                                 |
+| **Date**     | 10-08-2023                              |
 
 This is an abridged version of CloudCore's security policy that all
 workforce members are required to be familiar with and comply with.

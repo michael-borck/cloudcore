@@ -1,7 +1,19 @@
 ---
-title: "Cookie Policy"
-categories: ["Privacy", "User Consent", "Web Technologies"]
+categories:
+- Privacy
+- User Consent
+- Web Technologies
+description: We at CloudCore (CloudCore and our subsidiaries and affiliates) are committed
+  to protecting your privacy.
+title: Cookie Policy
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Cookie Policy             |
+| **Doc#**     | POL-PRIV-018 |
+| **Version**  | 1.0                                 |
+| **Date**     | 18-12-2023                              |
 
 We at CloudCore (CloudCore and our subsidiaries and affiliates) are committed to
 protecting your privacy. We and our partners use cookies and similar

@@ -1,7 +1,19 @@
 ---
-title: "Privacy Policy"
-categories: ["Privacy", "Data Protection", "Compliance"]
+categories:
+- Privacy
+- Data Protection
+- Compliance
+description: We at CloudCore (CloudCore and our subsidiaries and affiliates) are committed
+  to protecting your privacy.
+title: Privacy Policy
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Privacy Policy             |
+| **Doc#**     | POL-DATA-022 |
+| **Version**  | 1.0                                 |
+| **Date**     | 08-01-2023                              |
 
 We at CloudCore (CloudCore and our subsidiaries and affiliates) are committed to
 protecting your privacy. This privacy policy applies to our applications,

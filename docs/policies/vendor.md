@@ -1,7 +1,20 @@
 ---
-title: "Third Party Security, Vendor Risk Management and Systems/Services Acquisition"
-categories: ["Vendor Management", "Risk Management", "Compliance"]
+categories:
+- Vendor Management
+- Risk Management
+- Compliance
+description: CloudCore makes every effort to assure all third party organisations
+  are compliant and do not compromise the integrity, security, and privacy of CloudCore
+  or CloudCore Customer data.
+title: Third Party Security, Vendor Risk Management and Systems/Services Acquisition
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Third Party Security, Vendor Risk Management and Systems/Services Acquisition             |
+| **Doc#**     | POL-RISK-005 |
+| **Version**  | 1.0                                 |
+| **Date**     | 10-06-2023                              |
 
 CloudCore makes every effort to assure all third party organisations are
 compliant and do not compromise the integrity, security, and privacy of
@@ -126,4 +139,3 @@ compliance and legal requirements and does not interfere with the security
 controls. If a risk is identified, additional controls should be identified and
 implemented (or planned) prior to acquisition. An alternative product may be
 considered as a result of the risk analysis.
-

@@ -1,7 +1,19 @@
 ---
-title: "Security Program Overview"
-categories: ["Security Management", "Compliance", "Operational Security"]
+categories:
+- Security Management
+- Compliance
+- Operational Security
+description: CloudCore is committed to protecting its employees, partners, clients/customers
+  and the company itself from damaging acts either malicious or unintentional in nature.
+title: Security Program Overview
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Security Program Overview             |
+| **Doc#**     | DOC-SECU-011 |
+| **Version**  | 1.0                                 |
+| **Date**     | 05-09-2023                              |
 
 CloudCore is committed to protecting its employees, partners, clients/customers
 and the company itself from damaging acts either malicious or unintentional in

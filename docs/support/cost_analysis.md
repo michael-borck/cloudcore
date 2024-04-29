@@ -1,7 +1,18 @@
 ---
-title: "Cost Analysis 2024"
-categories: ['Financial']
+categories:
+- Financial
+description: The provided table showcases the detailed cost analysis for CloudCore
+  Networks for the year 2024, breaking down expenses associated with critical infrastructure
+  and software investments.
+title: Cost Analysis 2024
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Cost Analysis 2024             |
+| **Doc#**     | DOC-FINA-013 |
+| **Version**  | 1.0                                 |
+| **Date**     | 27-06-2023                              |
 
 The provided table showcases the detailed cost analysis for CloudCore Networks
 for the year 2024, breaking down expenses associated with critical
@@ -26,4 +37,3 @@ reliability in their network services.
 : Cost Analysis 2024
 
 (Source)[../../data/cost_analysis_2024./csv]
-

@@ -1,7 +1,19 @@
 ---
-title: "Org Chart"
-categories: ["Organisational Structure", "Human Resources"]
+categories:
+- Organisational Structure
+- Human Resources
+description: Welcome to the organisational chart of CloudCore Networks, designed to
+  elucidate the structural hierarchy and functional divisions within our company.
+title: Org Chart
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Org Chart             |
+| **Doc#**     | DOC-HUMA-000 |
+| **Version**  | 1.0                                 |
+| **Date**     | 19-06-2023                              |
+
 Welcome to the organisational chart of CloudCore Networks, designed to elucidate
 the structural hierarchy and functional divisions within our company. This chart
 serves as a visual guide to understand the roles and reporting relationships

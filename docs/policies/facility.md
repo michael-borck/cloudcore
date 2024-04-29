@@ -1,7 +1,19 @@
 ---
-title: "Facility Access and Physical Security"
-categories: ["Physical Security", "Access Control", "Facility Management"]
+categories:
+- Physical Security
+- Access Control
+- Facility Management
+description: It is the goal of CloudCore to provide a safe and secure environment
+  for all employees.
+title: Facility Access and Physical Security
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Facility Access and Physical Security             |
+| **Doc#**     | POL-SECU-003 |
+| **Version**  | 1.0                                 |
+| **Date**     | 03-08-2023                              |
 
 It is the goal of CloudCore to provide a safe and secure environment for all
 employees. Access to the CloudCore facilities is limited to authorised

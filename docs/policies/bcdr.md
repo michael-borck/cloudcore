@@ -1,7 +1,19 @@
 ---
-title: "Business Continuity and Disaster Recovery"
-categories: ["Risk Management", "Operational Continuity", "Disaster Recovery"]
+categories:
+- Risk Management
+- Operational Continuity
+- Disaster Recovery
+description: The CloudCore Contingency Plan establishes procedures to recover CloudCore
+  following a disruption resulting from a disaster.
+title: Business Continuity and Disaster Recovery
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Business Continuity and Disaster Recovery             |
+| **Doc#**     | POL-RISK-008 |
+| **Version**  | 1.0                                 |
+| **Date**     | 08-11-2023                              |
 
 The CloudCore Contingency Plan establishes procedures to recover CloudCore
 following a disruption resulting from a disaster. This Disaster Recovery Policy
@@ -341,4 +353,3 @@ within a different AWS account and geolocation.
 
 Recovery of production Environments and data should follow the procedures listed
 above and in [Data Management - Backup and Recovery](data-mgmt.md#cp-data-backup)
-

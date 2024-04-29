@@ -1,7 +1,20 @@
 ---
-title: "Secure Software Development and Product Security"
-categories: ["IT Management", "Security Architecture", "Secure Development"]
+categories:
+- IT Management
+- Security Architecture
+- Secure Development
+description: CloudCore development team follows the latest security best practices
+  when developing software, and automates security testing throughout development
+  lifecycle whenever possible.
+title: Secure Software Development and Product Security
 ---
+
+|              |                                     |
+|--------------|-------------------------------------|
+| **Title**    | Secure Software Development and Product Security             |
+| **Doc#**     | POL-ITMA-020 |
+| **Version**  | 1.0                                 |
+| **Date**     | 14-11-2023                              |
 
 CloudCore development team follows the latest security best practices when
 developing software, and automates security testing throughout development
@@ -594,4 +607,3 @@ PagerDuty in the event an error or failure is detected.
 
 Notifications via additional channels such as Slack and email are also
 configured.
-
