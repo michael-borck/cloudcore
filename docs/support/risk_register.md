@@ -3,9 +3,7 @@ categories:
 - Risk Management
 - Security
 - Compliance
-description: A risk register is a critical tool in project management and organisational
-  risk assessment that serves as a comprehensive repository for identifying, documenting,
-  and managing potential risks.
+description: A risk register is a critical tool in project management and organisational risk assessment that serves as a comprehensive repository for identifying, documenting, and managing potential risks.
 title: Risk Register
 ---
 

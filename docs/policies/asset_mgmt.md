@@ -3,7 +3,7 @@ categories:
 - IT Management
 - Risk Management
 - Asset Inventory
-description: '# Asset Inventory Management  You can''t protect what you can''t see.'
+description: 'Asset Inventory Management  You can''t protect what you can''t see.'
 title: Asset Management
 ---
 

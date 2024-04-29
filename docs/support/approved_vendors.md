@@ -3,7 +3,8 @@ categories:
 - Vendor Management
 - Procurement
 - Compliance
-description: At CloudCore Networks, our commitment to delivering exceptional service
+description: |
+  At CloudCore Networks, our commitment to delivering exceptional service
   and maintaining the highest standards of security and performance is reflected in
   our meticulously curated list of Approved Software.
 title: Approved Vendors

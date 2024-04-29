@@ -1,8 +1,7 @@
 ---
 categories:
 - Financial
-description: The table below outlines the budget allocations for CloudCore Networks
-  for the fiscal year 2024.
+description: The table below outlines the budget allocations for CloudCore Networks for the fiscal year 2024.
 title: Budget 2024
 ---
 

@@ -3,8 +3,7 @@ categories:
 - Security Management
 - Compliance
 - Operational Security
-description: CloudCore is committed to protecting its employees, partners, clients/customers
-  and the company itself from damaging acts either malicious or unintentional in nature.
+description: CloudCore is committed to protecting its employees, partners, clients/customers and the company itself from damaging acts either malicious or unintentional in nature.
 title: Security Program Overview
 ---
 

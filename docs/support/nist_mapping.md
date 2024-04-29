@@ -3,8 +3,7 @@ categories:
 - Compliance
 - Security Management
 - IT Management
-description: Below is a list of NIST SP 800-53 Controls Families and the mappings
-  to CloudCore policies and controls in place.
+description: Below is a list of NIST SP 800-53 Controls Families and the mappings to CloudCore policies and controls in place.
 title: NIST MAppings
 ---
 

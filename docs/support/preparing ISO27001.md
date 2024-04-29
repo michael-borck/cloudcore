@@ -3,9 +3,7 @@ categories:
 - Compliance
 - Security Management
 - Risk Assessment
-description: Preparing for an ISO 27001 certification, which is a specification for
-  an information security management system (ISMS), is a significant task for a Chief
-  Information Security Officer (CISO).
+description: Preparing for an ISO 27001 certification, which is a specification for an information security management system (ISMS), is a significant task for a Chief Information Security Officer (CISO).
 title: ISO27001 Prep
 ---
 

@@ -2,8 +2,7 @@
 categories:
 - Organisational Structure
 - Human Resources
-description: Welcome to the organisational chart of CloudCore Networks, designed to
-  elucidate the structural hierarchy and functional divisions within our company.
+description: Welcome to the organisational chart of CloudCore Networks, designed to elucidate the structural hierarchy and functional divisions within our company.
 title: Org Chart
 ---
 

@@ -2,8 +2,7 @@
 categories:
 - Document Management
 - Compliance
-description: The document register serves as a comprehensive and systematic catalog
-  of documents related to CloudCore operations.
+description: The document register serves as a comprehensive and systematic catalog of documents related to CloudCore operations.
 title: Document Register
 ---
 

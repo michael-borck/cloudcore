@@ -3,9 +3,7 @@ categories:
 - Human Resources
 - Training
 - Skills Development
-description: At CloudCore Networks, the Training Register is an essential component
-  of our human resource strategy, meticulously documenting all training activities
-  undertaken by our staff.
+description: At CloudCore Networks, the Training Register is an essential component of our human resource strategy, meticulously documenting all training activities undertaken by our staff.
 title: Training Register
 ---
 

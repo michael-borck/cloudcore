@@ -3,7 +3,7 @@ categories:
 - Privacy
 - Data Protection
 - User Consent
-description: '## Policy Statements  CloudCore is committed to protecting the privacy
+description: 'Policy Statements  CloudCore is committed to protecting the privacy
   of our customers.'
 title: Privacy and Consent
 ---

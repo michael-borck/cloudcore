@@ -3,7 +3,7 @@ categories:
 - Healthcare Compliance
 - Data Security
 - Privacy
-description: '## CloudCore HIPAA Business Associate Agreement ("BAA")  ## Introduction  This
+description: 'CloudCore HIPAA Business Associate Agreement ("BAA")  ## Introduction  This
   document includes sample business associate agreement provisions to help covered
   entities and business associates more easily comply with the business associate
   contract requirements.'

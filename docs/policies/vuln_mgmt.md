@@ -3,7 +3,7 @@ categories:
 - Security Management
 - IT Management
 - Risk Assessment
-description: '## Policy Statements  CloudCore policy requires that:  (a) All product
+description: 'Policy Statements  CloudCore policy requires that:  (a) All product
   systems must be scanned for vulnerability at least quarterly and with each major
   change.'
 title: Vulnerability Management

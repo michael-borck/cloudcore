@@ -2,7 +2,7 @@
 title: "Other"
 listing:
   contents: support
-  sort: "date desc"
+  sort: "title"
   type: grid
   categories: true
   sort-ui: false
@@ -11,4 +11,5 @@ listing:
 page-layout: full
 title-block-banner: true
 ---
+
 <script type="text/javascript" src="../scripts/password.js"></script>

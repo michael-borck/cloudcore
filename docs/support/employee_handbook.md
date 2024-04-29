@@ -3,8 +3,7 @@ categories:
 - Human Resources
 - Training
 - Security Awareness
-description: This is an abridged version of CloudCore's security policy that all workforce
-  members are required to be familiar with and comply with.
+description: This is an abridged version of CloudCore's security policy that all workforce members are required to be familiar with and comply with.
 title: Employee Handbook and Policy Quick Reference
 ---
 

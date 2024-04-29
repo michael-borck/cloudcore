@@ -3,8 +3,7 @@ categories:
 - Education
 - Communication
 - Compliance
-description: '* *Application*: An application hosted by CloudCore, either maintained
-  and   created by CloudCore, or maintained and created by a Customer or Partner.'
+description: 'Application: An application hosted by CloudCore, either maintained and created by CloudCore, or maintained and created by a Customer or Partner.'
 title: Key Definitions
 ---
 

@@ -20,7 +20,6 @@ website:
           - docs/interviews.qmd
           - docs/policies.qmd
           - docs/support.qmd
-          - docs/processing.qmd
     right:
       - text: Contact US
         href: contact.qmd
