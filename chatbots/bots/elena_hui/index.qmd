@@ -1,9 +1,9 @@
 ---
 title: "Enterprise Client (Large Business), Elena Chu"
-image: "elana_hui.webp"
+image: "elena_hui.webp"
 about:
   template: trestles
-  image: elana_hui.webp
+  image: elena_hui.webp
   links:
     - icon: twitter
       text: twitter
