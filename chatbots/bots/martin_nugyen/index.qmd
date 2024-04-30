@@ -30,6 +30,9 @@ https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
 <script
   data-embed-id="422c13cc-9cbd-495d-acfa-e4aeafb566b1"
   data-base-api-url="https://chat.serveur.au/api/embed"
+  data-brand-image-url="https://cloudcore.serveur.au/assets/cloudcore_networks.png"
+  data-assistant-name="Martin Nugyen"
+  data-assistant-icon="martin_nugyen.webp"
   src="https://chat.serveur.au/embed/anythingllm-chat-widget.min.js">
 </script>
 <!-- AnythingLLM (https://useanything.com) -->
