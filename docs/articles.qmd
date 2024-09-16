@@ -1,5 +1,5 @@
 ---
-title: "Articles"
+title: "In the News"
 listing:
   contents: articles
   sort: "title"
