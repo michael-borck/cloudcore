@@ -23,3 +23,14 @@ Students should investigate the complexities of cloud security, including common
 
 **How to Chat:**Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
 
+<!--
+Paste this script at the bottom of your HTML before the </body> tag.
+See more style and config options on our docs
+https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
+-->
+<script
+  data-embed-id="c46d58d4-6cdb-4f4b-affe-23f84162ed4a"
+  data-base-api-url="https://chat.serveur.au/api/embed"
+  src="https://chat.serveur.au/embed/anythingllm-chat-widget.min.js">
+</script>
+<!-- AnythingLLM (https://useanything.com) -->
