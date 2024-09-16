@@ -1,0 +1,24 @@
+---
+title: "Customer Support Lead, Natalie Fischer"
+image: natalie_fischer.webp
+about:
+  template: trestles
+  image: natalie_fischer.webp
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+categories: ['Staff', 'Security']
+---
+<script type="text/javascript" src="../../../scripts/available.js"></script>
+
+**Customer Support Lead, Natalie Fischer -** Manages the customer support team, handling client communications and concerns regarding data privacy and security.
+
+**Interview Focus: Customer Support Lead Natalie Fischer**  
+Students should explore the impact of security breaches on customer trust and the role of transparent communication in managing client relations. Questions could focus on Natalie’s strategies for addressing client concerns during and after incidents, and how she balances customer satisfaction with internal security protocols.
+
+**How to Chat:**Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
+

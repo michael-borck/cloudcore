@@ -1,0 +1,25 @@
+---
+title: "IT Manager, Raj Patel"
+image: raj_patel.webp
+about:
+  template: trestles
+  image: raj_patel.webp
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+categories: ['Staff', 'Technology']
+---
+<script type="text/javascript" src="../../../scripts/available.js"></script>
+
+**IT Manager, Raj Patel -** Manages IT infrastructure, focusing on network security, server management, and ensuring secure operations.
+
+**Interview Focus: IT Manager Raj Patel**  
+Students should explore the technical challenges Raj faces in maintaining secure configurations in a hybrid cloud environment. Questions might focus on how he balances operational efficiency with security requirements, and his strategies for monitoring and securing the company’s IT infrastructure.
+
+
+**How to Chat:**Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
+

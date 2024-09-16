@@ -1,0 +1,24 @@
+---
+title: "Lead Software Developer, Michael Thompson"
+image: michael_thompson.webp
+about:
+  template: trestles
+  image: michael_thompson.webp
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+categories: ['Staff', 'Technology']
+---
+<script type="text/javascript" src="../../../scripts/available.js"></script>
+
+**Lead Software Developer, Michael Thompson -** Leads the development team, ensuring secure coding practices and integrating security into the development lifecycle.
+
+**Interview Focus: Lead Software Developer Michael Thompson**  
+Students should discuss the role of secure coding practices and the challenges of embedding security in a fast-paced development environment. Questions might focus on Michael’s approach to handling vulnerabilities in legacy code, and his strategies for balancing development speed with security.
+
+**How to Chat:**Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
+

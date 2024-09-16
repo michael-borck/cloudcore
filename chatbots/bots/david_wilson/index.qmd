@@ -1,0 +1,25 @@
+---
+title: "Cloud Infrastructure Architect, David Wilson"
+image: david_wilson.webp
+about:
+  template: trestles
+  image: david_wilson.webp
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+categories: ['Staff', 'Technology']
+---
+<script type="text/javascript" src="../../../scripts/available.js"></script>
+
+
+**Cloud Infrastructure Architect, David Wilson -** Designs and manages CloudCore’s cloud infrastructure, focusing on scalability and security.
+
+**Interview Focus: Cloud Infrastructure Architect David Wilson**  
+Students should investigate the complexities of cloud security, including common pitfalls in managing hybrid environments. Questions might address David’s approach to configuration management, the use of automation in securing cloud setups, and his strategies for integrating emerging technologies like zero trust into the cloud infrastructure.
+
+**How to Chat:**Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
+

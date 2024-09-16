@@ -1,0 +1,25 @@
+---
+title: "Data Analyst, Jamal Al-Sayed"
+image: jamal_al_sayed.webp
+about:
+  template: trestles
+  image: jamal_al_sayed.webp
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+categories: ['Staff', 'Technology']
+---
+<script type="text/javascript" src="../../../scripts/available.js"></script>
+
+**Data Analyst, Jamal Al-Sayed -** Analyzes client data to provide insights, relying on data integrity and security for effective analysis.
+
+**Interview Focus: Data Analyst Jamal Al-Sayed**  
+Students should explore how data breaches impact analytics and the importance of data integrity. Questions could address how Jamal ensures data accuracy, the role of secure data pipelines, and his views on strengthening data access policies to protect analytics outputs.
+
+
+**How to Chat:**Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
+

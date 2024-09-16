@@ -1,0 +1,24 @@
+---
+title: "Network Security Specialist, Carlos Mendes "
+image: carlos_mendes.webp
+about:
+  template: trestles
+  image: carlos_mendes.webp
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+categories: ['Staff', 'Security']
+---
+<script type="text/javascript" src="../../../scripts/available.js"></script>
+
+**Network Security Specialist, Carlos Mendes -** Secures CloudCore’s network infrastructure, monitoring and defending against external threats.
+
+**Interview Focus: Network Security Specialist Carlos Mendes**  
+Students should delve into the technical aspects of network security, exploring specific vulnerabilities and the effectiveness of current security tools. Questions might address how Carlos manages network segmentation, intrusion detection, and his strategies for proactive versus reactive security measures.
+
+**How to Chat:**Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
+
