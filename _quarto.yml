@@ -21,6 +21,7 @@ website:
           - docs/policies.qmd
           - docs/support.qmd
           - docs/articles.qmd
+          - docs/logs.qmd
     right:
       - text: Contact US
         href: contact.qmd
