@@ -41,6 +41,7 @@ format:
 
 resources:
   - admin/
+  - CNAME
 
 
 

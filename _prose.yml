@@ -1,0 +1,78 @@
+# Prose.io Configuration for CloudCore Networks
+
+prose:
+  rooturl: ''
+  siteurl: 'https://michael-borck.github.io/cloudcore/'
+  media: 'assets/uploads'
+  
+  metadata:
+    docs/scenarios:
+      - name: "title"
+        field:
+          element: "text"
+          label: "Title"
+          placeholder: "Enter scenario title"
+      - name: "unit"
+        field:
+          element: "select"
+          label: "Unit"
+          options:
+            - name: "Cybersecurity Basics"
+              value: "cybersecurity-basics"
+            - name: "Incident Response"
+              value: "incident-response"
+            - name: "Web Development"
+              value: "web-development"
+            - name: "Systems Analysis"
+              value: "systems-analysis"
+      - name: "categories"
+        field:
+          element: "select"
+          label: "Type"
+          options:
+            - "Article"
+            - "Case Study"
+            - "Exercise"
+            - "Lab"
+      - name: "difficulty"
+        field:
+          element: "select"
+          label: "Difficulty"
+          options:
+            - "Beginner"
+            - "Intermediate"
+            - "Advanced"
+      - name: "description"
+        field:
+          element: "textarea"
+          label: "Description"
+      - name: "date"
+        field:
+          element: "text"
+          label: "Date"
+          value: "CURRENT_DATETIME"
+          
+    docs/articles:
+      - name: "title"
+        field:
+          element: "text"
+          label: "Title"
+      - name: "categories"
+        field:
+          element: "select"
+          label: "Incident Type"
+          options:
+            - "Data Breach"
+            - "Malware"
+            - "Phishing"
+            - "Insider Threat"
+            - "DDoS"
+      - name: "severity"
+        field:
+          element: "select"
+          label: "Severity"
+          options:
+            - "Low"
+            - "Medium"
+            - "High"
+            - "Critical"

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudCore Simple CMS</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .login-form, .cms-interface {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .hidden {
+            display: none;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #0066cc;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0052a3;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .content-type-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .content-type-selector button {
+            flex: 1;
+            background: #6c757d;
+        }
+        .content-type-selector button.active {
+            background: #0066cc;
+        }
+        #preview {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 20px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Form -->
+    <div id="loginForm" class="login-form">
+        <h1>CloudCore CMS Login</h1>
+        <div class="form-group">
+            <label>Password:</label>
+            <input type="password" id="password" placeholder="Enter staff password">
+        </div>
+        <button onclick="login()">Login</button>
+        <div id="loginError" class="error hidden"></div>
+    </div>
+
+    <!-- CMS Interface -->
+    <div id="cmsInterface" class="cms-interface hidden">
+        <h1>CloudCore Content Manager</h1>
+        
+        <div class="content-type-selector">
+            <button onclick="selectContentType('scenario')" id="btn-scenario" class="active">📚 Learning Scenario</button>
+            <button onclick="selectContentType('incident')" id="btn-incident">🚨 Security Incident</button>
+            <button onclick="selectContentType('interview')" id="btn-interview">🎤 Interview</button>
+            <button onclick="selectContentType('policy')" id="btn-policy">📋 Policy</button>
+        </div>
+
+        <form id="contentForm">
+            <!-- Dynamic form fields will be inserted here -->
+        </form>
+
+        <button onclick="generateContent()">Generate Preview</button>
+        <button onclick="saveContent()" style="background: #28a745;">Save to GitHub</button>
+        <button onclick="logout()" style="background: #dc3545; float: right;">Logout</button>
+
+        <div id="preview" class="hidden"></div>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        // Staff password (same as before for consistency)
+        const STAFF_PASSWORD = 'StaffEdit2024!';
+        
+        // GitHub repository details
+        const GITHUB_OWNER = 'michael-borck';
+        const GITHUB_REPO = 'cloudcore';
+        
+        let currentContentType = 'scenario';
+        let githubToken = null;
+
+        // Content type configurations
+        const contentTypes = {
+            scenario: {
+                folder: 'docs/scenarios',
+                fields: [
+                    { name: 'title', label: 'Title', type: 'text', required: true },
+                    { name: 'unit', label: 'Unit', type: 'select', options: [
+                        'cybersecurity-basics', 'incident-response', 'web-development', 'systems-analysis'
+                    ]},
+                    { name: 'categories', label: 'Type', type: 'select', options: [
+                        'Article', 'Case Study', 'Exercise', 'Lab'
+                    ]},
+                    { name: 'difficulty', label: 'Difficulty', type: 'select', options: [
+                        'Beginner', 'Intermediate', 'Advanced'
+                    ]},
+                    { name: 'description', label: 'Description', type: 'textarea' },
+                    { name: 'content', label: 'Content', type: 'textarea', rows: 15 }
+                ]
+            },
+            incident: {
+                folder: 'docs/articles',
+                fields: [
+                    { name: 'title', label: 'Title', type: 'text', required: true },
+                    { name: 'categories', label: 'Incident Type', type: 'select', options: [
+                        'Data Breach', 'Malware', 'Phishing', 'Insider Threat', 'DDoS'
+                    ]},
+                    { name: 'severity', label: 'Severity', type: 'select', options: [
+                        'Low', 'Medium', 'High', 'Critical'
+                    ]},
+                    { name: 'description', label: 'Description', type: 'textarea' },
+                    { name: 'content', label: 'Incident Details', type: 'textarea', rows: 15 }
+                ]
+            },
+            interview: {
+                folder: 'docs/interviews',
+                prefix: 'interview_',
+                fields: [
+                    { name: 'title', label: 'Interviewee Name', type: 'text', required: true },
+                    { name: 'role', label: 'Role', type: 'text' },
+                    { name: 'context', label: 'Interview Context', type: 'select', options: [
+                        'Pre-breach', 'During incident', 'Post-breach', 'General security'
+                    ]},
+                    { name: 'description', label: 'Description', type: 'textarea' },
+                    { name: 'content', label: 'Interview Transcript', type: 'textarea', rows: 15 }
+                ]
+            },
+            policy: {
+                folder: 'docs/policies',
+                fields: [
+                    { name: 'title', label: 'Policy Title', type: 'text', required: true },
+                    { name: 'doc_number', label: 'Document Number', type: 'text', placeholder: 'DOC-XXX-000' },
+                    { name: 'version', label: 'Version', type: 'text', value: '1.0' },
+                    { name: 'categories', label: 'Category', type: 'select', options: [
+                        'Security', 'Compliance', 'HR', 'IT', 'Data Management'
+                    ]},
+                    { name: 'description', label: 'Description', type: 'textarea' },
+                    { name: 'content', label: 'Policy Content', type: 'textarea', rows: 15 }
+                ]
+            }
+        };
+
+        function login() {
+            const password = document.getElementById('password').value;
+            if (password === STAFF_PASSWORD) {
+                // Show GitHub token prompt
+                const token = prompt('Enter your GitHub Personal Access Token:\n(Need one? Go to GitHub Settings > Developer settings > Personal access tokens)');
+                if (token) {
+                    githubToken = token;
+                    document.getElementById('loginForm').classList.add('hidden');
+                    document.getElementById('cmsInterface').classList.remove('hidden');
+                    selectContentType('scenario');
+                }
+            } else {
+                document.getElementById('loginError').textContent = 'Invalid password';
+                document.getElementById('loginError').classList.remove('hidden');
+            }
+        }
+
+        function logout() {
+            githubToken = null;
+            document.getElementById('loginForm').classList.remove('hidden');
+            document.getElementById('cmsInterface').classList.add('hidden');
+            document.getElementById('password').value = '';
+        }
+
+        function selectContentType(type) {
+            currentContentType = type;
+            
+            // Update active button
+            document.querySelectorAll('.content-type-selector button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(`btn-${type}`).classList.add('active');
+            
+            // Build form
+            buildForm(type);
+        }
+
+        function buildForm(type) {
+            const form = document.getElementById('contentForm');
+            const config = contentTypes[type];
+            
+            form.innerHTML = config.fields.map(field => {
+                let input = '';
+                if (field.type === 'select') {
+                    input = `<select id="${field.name}" name="${field.name}">
+                        ${field.options.map(opt => `<option value="${opt}">${opt}</option>`).join('')}
+                    </select>`;
+                } else if (field.type === 'textarea') {
+                    input = `<textarea id="${field.name}" name="${field.name}" rows="${field.rows || 3}"></textarea>`;
+                } else {
+                    input = `<input type="${field.type}" id="${field.name}" name="${field.name}" 
+                             ${field.placeholder ? `placeholder="${field.placeholder}"` : ''} 
+                             ${field.value ? `value="${field.value}"` : ''}>`;
+                }
+                
+                return `<div class="form-group">
+                    <label>${field.label}${field.required ? ' *' : ''}</label>
+                    ${input}
+                </div>`;
+            }).join('');
+        }
+
+        function generateContent() {
+            const config = contentTypes[currentContentType];
+            const formData = {};
+            
+            // Collect form data
+            config.fields.forEach(field => {
+                formData[field.name] = document.getElementById(field.name).value;
+            });
+            
+            // Generate frontmatter
+            const frontmatter = [
+                '---',
+                `title: "${formData.title}"`,
+                `date: ${new Date().toISOString().split('T')[0]}`
+            ];
+            
+            // Add other frontmatter fields
+            Object.entries(formData).forEach(([key, value]) => {
+                if (key !== 'title' && key !== 'content' && value) {
+                    frontmatter.push(`${key}: ${value.includes(' ') ? `"${value}"` : value}`);
+                }
+            });
+            
+            frontmatter.push('---');
+            
+            // Generate full content
+            const fullContent = frontmatter.join('\n') + '\n\n' + (formData.content || '');
+            
+            // Show preview
+            document.getElementById('preview').textContent = fullContent;
+            document.getElementById('preview').classList.remove('hidden');
+        }
+
+        async function saveContent() {
+            const config = contentTypes[currentContentType];
+            const formData = {};
+            
+            // Validate and collect form data
+            for (const field of config.fields) {
+                const value = document.getElementById(field.name).value;
+                if (field.required && !value) {
+                    showMessage(`Please fill in ${field.label}`, 'error');
+                    return;
+                }
+                formData[field.name] = value;
+            }
+            
+            // Generate filename
+            const slug = formData.title.toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-|-$/g, '');
+            const filename = `${config.prefix || ''}${slug}.md`;
+            const filepath = `${config.folder}/${filename}`;
+            
+            // Generate content
+            generateContent();
+            const content = document.getElementById('preview').textContent;
+            
+            try {
+                // Create or update file via GitHub API
+                const response = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${filepath}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${githubToken}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: `Add ${currentContentType}: ${formData.title}`,
+                        content: btoa(unescape(encodeURIComponent(content)))
+                    })
+                });
+                
+                if (response.ok) {
+                    showMessage(`Successfully created ${filename}! Remember to run 'quarto publish gh-pages' to update the live site.`, 'success');
+                    // Clear form
+                    document.getElementById('contentForm').reset();
+                    document.getElementById('preview').classList.add('hidden');
+                } else {
+                    const error = await response.json();
+                    showMessage(`Error: ${error.message}`, 'error');
+                }
+            } catch (error) {
+                showMessage(`Error: ${error.message}`, 'error');
+            }
+        }
+
+        function showMessage(text, type) {
+            const messageEl = document.getElementById('message');
+            messageEl.className = type;
+            messageEl.textContent = text;
+            setTimeout(() => {
+                messageEl.className = '';
+                messageEl.textContent = '';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
