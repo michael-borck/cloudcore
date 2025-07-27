@@ -1,0 +1,201 @@
+// Unit-based access control configuration
+const unitConfig = {
+  // Basic cybersecurity unit
+  "CyberSec101!2024": {
+    unit: "cybersecurity-basics",
+    description: "Introduction to Cybersecurity",
+    accessiblePaths: [
+      "/docs/policies/privacy",
+      "/docs/policies/access",
+      "/docs/support/approved_software",
+      "/chatbots/bots/samuel_torres",
+      "/chatbots/bots/emily_chen"
+    ],
+    hiddenContent: {
+      // Hide sensitive breach info
+      "/docs/articles/data_breach_": "hidden",
+      "/docs/interviews/interview_data_breach_": "hidden"
+    }
+  },
+  
+  // Incident response unit
+  "IncidentResp2024!": {
+    unit: "incident-response",
+    description: "Security Incident Response",
+    accessiblePaths: [
+      "/docs/policies/",
+      "/docs/articles/data_breach_",
+      "/docs/interviews/interview_",
+      "/docs/support/logs/",
+      "/chatbots/bots/"
+    ],
+    hiddenContent: {
+      // Show everything for this unit
+    }
+  },
+  
+  // Web development unit
+  "WebDev2024!": {
+    unit: "web-development",
+    description: "Web Development & Security",
+    accessiblePaths: [
+      "/blog/",
+      "/docs/policies/privacy",
+      "/docs/policies/cookie_policy",
+      "/docs/support/erd",
+      "/chatbots/bots/michael_thompson",
+      "/chatbots/bots/dr_mina_chowdhury"
+    ],
+    hiddenContent: {
+      "/docs/articles/": "hidden",
+      "/docs/support/logs/": "hidden"
+    }
+  },
+  
+  // Systems analysis unit
+  "SysAnalysis2024!": {
+    unit: "systems-analysis",
+    description: "Systems Analysis & Design",
+    accessiblePaths: [
+      "/docs/support/erd",
+      "/docs/support/network_logical",
+      "/docs/support/org_chart",
+      "/docs/policies/sdlc",
+      "/docs/support/cost_analysis",
+      "/chatbots/bots/"
+    ],
+    hiddenContent: {
+      "/docs/articles/data_breach_": "hidden",
+      "/docs/support/logs/": "hidden"
+    }
+  }
+};
+
+// Check if path matches any pattern
+function pathMatches(currentPath, patterns) {
+  return patterns.some(pattern => {
+    // Handle both exact matches and prefix matches
+    if (pattern.endsWith('/')) {
+      return currentPath.startsWith(pattern);
+    }
+    return currentPath === pattern || currentPath.startsWith(pattern + '/');
+  });
+}
+
+// Get unit access based on stored authentication
+function getUnitAccess() {
+  const authData = getCookie("unitAuth");
+  if (!authData) return null;
+  
+  try {
+    const parsed = JSON.parse(decodeURIComponent(authData));
+    return unitConfig[parsed.password] || null;
+  } catch {
+    return null;
+  }
+}
+
+// Check if current page is accessible
+function checkPageAccess() {
+  const unitAccess = getUnitAccess();
+  const currentPath = window.location.pathname;
+  
+  // No auth required for homepage, about, contact
+  const publicPaths = ['/', '/index', '/about', '/contact', '/pricing'];
+  if (pathMatches(currentPath, publicPaths)) {
+    return true;
+  }
+  
+  // Check if authenticated
+  if (!unitAccess) {
+    return false;
+  }
+  
+  // Check if path is explicitly hidden
+  const hiddenPatterns = Object.keys(unitAccess.hiddenContent || {});
+  if (pathMatches(currentPath, hiddenPatterns)) {
+    return false;
+  }
+  
+  // Check if path is accessible
+  return pathMatches(currentPath, unitAccess.accessiblePaths);
+}
+
+// Modified password check function
+function checkUnitPassword() {
+  const unitAccess = getUnitAccess();
+  
+  // Already authenticated for this session
+  if (unitAccess) {
+    if (!checkPageAccess()) {
+      document.body.innerHTML = `
+        <div style="text-align: center; padding: 50px;">
+          <h1>Access Restricted</h1>
+          <p>This content is not available for your unit: ${unitAccess.description}</p>
+          <p><a href="/">Return to Homepage</a></p>
+        </div>
+      `;
+      return false;
+    }
+    return true;
+  }
+  
+  // Need authentication
+  const userPassword = prompt('Please enter your unit password:');
+  if (userPassword === null) {
+    goBack();
+    return false;
+  }
+  
+  const unitData = unitConfig[userPassword];
+  if (!unitData) {
+    document.body.innerHTML = '<h1>Invalid Password</h1>';
+    setTimeout(goBack, 2000);
+    return false;
+  }
+  
+  // Store authentication
+  const authData = {
+    password: userPassword,
+    unit: unitData.unit,
+    timestamp: new Date().getTime()
+  };
+  setCookie("unitAuth", encodeURIComponent(JSON.stringify(authData)), 24);
+  
+  // Check access for current page
+  if (!checkPageAccess()) {
+    document.body.innerHTML = `
+      <div style="text-align: center; padding: 50px;">
+        <h1>Access Granted</h1>
+        <p>Welcome to ${unitData.description}</p>
+        <p>However, this specific page is not part of your unit's curriculum.</p>
+        <p><a href="/">Go to Homepage</a></p>
+      </div>
+    `;
+    return false;
+  }
+  
+  return true;
+}
+
+// Hide navigation items based on unit access
+function updateNavigation() {
+  const unitAccess = getUnitAccess();
+  if (!unitAccess) return;
+  
+  // Hide nav items that aren't accessible
+  document.querySelectorAll('nav a').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && !checkPageAccess(href)) {
+      link.style.display = 'none';
+    }
+  });
+}
+
+// Replace the old checkPassword with unit-based check
+if (typeof checkPassword !== 'undefined') {
+  checkPassword = checkUnitPassword;
+}
+
+// Update navigation on page load
+document.addEventListener('DOMContentLoaded', updateNavigation);
