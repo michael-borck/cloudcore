@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudCore Content Management System</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f7;
+        }
+        .header {
+            background: #1a1a1a;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .container {
+            display: flex;
+            height: calc(100vh - 60px);
+        }
+        .sidebar {
+            width: 250px;
+            background: white;
+            border-right: 1px solid #e1e4e8;
+            overflow-y: auto;
+        }
+        .content-area {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+        .content-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .folder {
+            padding: 1rem;
+            border-bottom: 1px solid #e1e4e8;
+        }
+        .folder h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+            color: #24292e;
+            cursor: pointer;
+        }
+        .folder h3:hover {
+            color: #0366d6;
+        }
+        .file-list {
+            margin-left: 1rem;
+        }
+        .file-item {
+            padding: 0.5rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #586069;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .file-item:hover {
+            background: #f6f8fa;
+            color: #0366d6;
+        }
+        .file-item.active {
+            background: #0366d6;
+            color: white;
+        }
+        .editor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e1e4e8;
+        }
+        .button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        .button-primary {
+            background: #0366d6;
+            color: white;
+        }
+        .button-primary:hover {
+            background: #0256c7;
+        }
+        .button-success {
+            background: #28a745;
+            color: white;
+        }
+        .button-success:hover {
+            background: #218838;
+        }
+        .button-danger {
+            background: #dc3545;
+            color: white;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #24292e;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #e1e4e8;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #0366d6;
+            box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.1);
+        }
+        textarea {
+            resize: vertical;
+            min-height: 400px;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+        }
+        .metadata-editor {
+            background: #f6f8fa;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+        }
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: #586069;
+        }
+        .error {
+            background: #ffeef0;
+            color: #d73a49;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        .success {
+            background: #f0fff4;
+            color: #28a745;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        .login-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .login-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 400px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .hidden {
+            display: none;
+        }
+        .new-file-btn {
+            margin: 0.5rem 1rem;
+            width: calc(100% - 2rem);
+        }
+        .button-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .preview-toggle {
+            margin-bottom: 1rem;
+        }
+        .preview-pane {
+            background: #f6f8fa;
+            padding: 2rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+        .markdown-preview {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+        .markdown-preview h1, .markdown-preview h2, .markdown-preview h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .markdown-preview pre {
+            background: #f6f8fa;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .markdown-preview code {
+            background: #f6f8fa;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .markdown-preview pre code {
+            background: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Modal -->
+    <div id="loginModal" class="login-modal">
+        <div class="login-card">
+            <h2>CloudCore CMS Login</h2>
+            <div class="form-group">
+                <label>GitHub Personal Access Token</label>
+                <input type="password" id="githubToken" placeholder="ghp_xxxxxxxxxxxx">
+                <small style="color: #586069; display: block; margin-top: 0.5rem;">
+                    Need a token? <a href="https://github.com/settings/tokens/new?scopes=repo" target="_blank">Create one here</a> with 'repo' scope
+                </small>
+            </div>
+            <button class="button button-primary" onclick="login()" style="width: 100%;">Login</button>
+            <div id="loginError" class="error hidden" style="margin-top: 1rem;"></div>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="app" class="hidden">
+        <div class="header">
+            <h1>CloudCore Content Management</h1>
+            <div>
+                <span id="username" style="margin-right: 1rem;"></span>
+                <button class="button button-danger" onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="folder">
+                    <h3 onclick="toggleFolder('scenarios')">📚 Learning Scenarios</h3>
+                    <div id="scenarios-files" class="file-list"></div>
+                    <button class="button button-success new-file-btn" onclick="createNew('scenarios')">+ New Scenario</button>
+                </div>
+                
+                <div class="folder">
+                    <h3 onclick="toggleFolder('incidents')">🚨 Security Incidents</h3>
+                    <div id="incidents-files" class="file-list"></div>
+                    <button class="button button-success new-file-btn" onclick="createNew('incidents')">+ New Incident</button>
+                </div>
+                
+                <div class="folder">
+                    <h3 onclick="toggleFolder('interviews')">🎤 Interviews</h3>
+                    <div id="interviews-files" class="file-list"></div>
+                    <button class="button button-success new-file-btn" onclick="createNew('interviews')">+ New Interview</button>
+                </div>
+                
+                <div class="folder">
+                    <h3 onclick="toggleFolder('policies')">📋 Policies</h3>
+                    <div id="policies-files" class="file-list"></div>
+                    <button class="button button-success new-file-btn" onclick="createNew('policies')">+ New Policy</button>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <div class="content-card">
+                    <div id="welcomeMessage">
+                        <h2>Welcome to CloudCore CMS</h2>
+                        <p>Select a file from the sidebar to edit, or create a new one.</p>
+                        <ul>
+                            <li>All changes are saved directly to GitHub</li>
+                            <li>The site will be updated when an administrator publishes</li>
+                            <li>You can edit markdown content and metadata</li>
+                            <li>Preview your changes before saving</li>
+                        </ul>
+                    </div>
+
+                    <div id="editor" class="hidden">
+                        <div class="editor-header">
+                            <h2 id="editorTitle">Edit Content</h2>
+                            <div class="button-group">
+                                <button class="button" onclick="togglePreview()">Preview</button>
+                                <button class="button button-success" onclick="saveFile()">Save</button>
+                                <button class="button button-danger" onclick="deleteFile()">Delete</button>
+                            </div>
+                        </div>
+
+                        <div id="message"></div>
+
+                        <div class="metadata-editor">
+                            <h3>Metadata</h3>
+                            <div id="metadataFields"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Content (Markdown)</label>
+                            <textarea id="contentEditor"></textarea>
+                        </div>
+
+                        <div id="preview" class="preview-pane hidden">
+                            <h3>Preview</h3>
+                            <div id="previewContent" class="markdown-preview"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const GITHUB_OWNER = 'michael-borck';
+        const GITHUB_REPO = 'cloudcore';
+        const GITHUB_BRANCH = 'main';
+        
+        let githubToken = null;
+        let currentFile = null;
+        let currentSha = null;
+        let files = {};
+        
+        const contentTypes = {
+            scenarios: {
+                folder: 'docs/scenarios',
+                fields: ['title', 'unit', 'categories', 'difficulty', 'description', 'date'],
+                defaults: {
+                    unit: 'cybersecurity-basics',
+                    categories: 'Article',
+                    difficulty: 'Beginner'
+                }
+            },
+            incidents: {
+                folder: 'docs/articles',
+                fields: ['title', 'categories', 'severity', 'description', 'date'],
+                defaults: {
+                    categories: 'Data Breach',
+                    severity: 'Medium'
+                }
+            },
+            interviews: {
+                folder: 'docs/interviews',
+                fields: ['title', 'role', 'context', 'description', 'date'],
+                defaults: {
+                    context: 'General security'
+                }
+            },
+            policies: {
+                folder: 'docs/policies',
+                fields: ['title', 'doc_number', 'version', 'categories', 'description', 'date'],
+                defaults: {
+                    version: '1.0',
+                    categories: 'Security'
+                }
+            }
+        };
+
+        // Authentication
+        async function login() {
+            const token = document.getElementById('githubToken').value;
+            if (!token) {
+                showLoginError('Please enter a GitHub token');
+                return;
+            }
+
+            try {
+                // Test the token
+                const response = await fetch('https://api.github.com/user', {
+                    headers: {
+                        'Authorization': `token ${token}`
+                    }
+                });
+
+                if (response.ok) {
+                    const user = await response.json();
+                    githubToken = token;
+                    localStorage.setItem('github_token', token);
+                    document.getElementById('username').textContent = user.login;
+                    document.getElementById('loginModal').classList.add('hidden');
+                    document.getElementById('app').classList.remove('hidden');
+                    loadAllFiles();
+                } else {
+                    showLoginError('Invalid token. Make sure it has repo access.');
+                }
+            } catch (error) {
+                showLoginError('Error connecting to GitHub: ' + error.message);
+            }
+        }
+
+        function logout() {
+            githubToken = null;
+            localStorage.removeItem('github_token');
+            location.reload();
+        }
+
+        function showLoginError(message) {
+            const errorEl = document.getElementById('loginError');
+            errorEl.textContent = message;
+            errorEl.classList.remove('hidden');
+        }
+
+        // File operations
+        async function loadAllFiles() {
+            for (const [type, config] of Object.entries(contentTypes)) {
+                await loadFiles(type, config.folder);
+            }
+        }
+
+        async function loadFiles(type, folder) {
+            const listEl = document.getElementById(`${type}-files`);
+            listEl.innerHTML = '<div class="loading">Loading...</div>';
+
+            try {
+                const response = await fetch(
+                    `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${folder}?ref=${GITHUB_BRANCH}`,
+                    {
+                        headers: {
+                            'Authorization': `token ${githubToken}`
+                        }
+                    }
+                );
+
+                if (response.ok) {
+                    const items = await response.json();
+                    files[type] = items.filter(item => item.name.endsWith('.md') || item.name.endsWith('.qmd'));
+                    
+                    listEl.innerHTML = '';
+                    files[type].forEach(file => {
+                        const fileEl = document.createElement('div');
+                        fileEl.className = 'file-item';
+                        fileEl.textContent = file.name;
+                        fileEl.onclick = () => loadFile(type, file);
+                        listEl.appendChild(fileEl);
+                    });
+
+                    if (files[type].length === 0) {
+                        listEl.innerHTML = '<div style="padding: 0.5rem; color: #586069;">No files yet</div>';
+                    }
+                } else {
+                    listEl.innerHTML = '<div style="padding: 0.5rem; color: #d73a49;">Error loading files</div>';
+                }
+            } catch (error) {
+                listEl.innerHTML = '<div style="padding: 0.5rem; color: #d73a49;">Error: ' + error.message + '</div>';
+            }
+        }
+
+        async function loadFile(type, file) {
+            // Update UI
+            document.querySelectorAll('.file-item').forEach(el => el.classList.remove('active'));
+            event.target.classList.add('active');
+
+            try {
+                const response = await fetch(file.download_url);
+                const content = await response.text();
+                
+                currentFile = { type, path: file.path, name: file.name };
+                currentSha = file.sha;
+
+                // Parse frontmatter and content
+                const { metadata, body } = parseFrontmatter(content);
+                
+                // Show editor
+                document.getElementById('welcomeMessage').classList.add('hidden');
+                document.getElementById('editor').classList.remove('hidden');
+                document.getElementById('editorTitle').textContent = `Edit: ${file.name}`;
+                
+                // Build metadata fields
+                buildMetadataFields(type, metadata);
+                
+                // Set content
+                document.getElementById('contentEditor').value = body;
+                
+                showMessage('');
+            } catch (error) {
+                showMessage('Error loading file: ' + error.message, 'error');
+            }
+        }
+
+        function parseFrontmatter(content) {
+            const parts = content.split('---');
+            if (parts.length < 3) {
+                return { metadata: {}, body: content };
+            }
+
+            const metadata = {};
+            const frontmatter = parts[1].trim();
+            const lines = frontmatter.split('\n');
+            
+            for (const line of lines) {
+                const match = line.match(/^(\w+):\s*(.*)$/);
+                if (match) {
+                    let value = match[2].trim();
+                    // Remove quotes if present
+                    if ((value.startsWith('"') && value.endsWith('"')) || 
+                        (value.startsWith("'") && value.endsWith("'"))) {
+                        value = value.slice(1, -1);
+                    }
+                    metadata[match[1]] = value;
+                }
+            }
+
+            const body = parts.slice(2).join('---').trim();
+            return { metadata, body };
+        }
+
+        function buildMetadataFields(type, metadata) {
+            const config = contentTypes[type];
+            const container = document.getElementById('metadataFields');
+            container.innerHTML = '';
+
+            config.fields.forEach(field => {
+                const div = document.createElement('div');
+                div.className = 'form-group';
+                div.style.marginBottom = '1rem';
+                
+                const label = document.createElement('label');
+                label.textContent = field.charAt(0).toUpperCase() + field.slice(1).replace('_', ' ');
+                label.style.marginBottom = '0.25rem';
+                div.appendChild(label);
+
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.id = `meta-${field}`;
+                input.value = metadata[field] || config.defaults?.[field] || '';
+                input.style.marginBottom = '0';
+                div.appendChild(input);
+
+                container.appendChild(div);
+            });
+        }
+
+        function createNew(type) {
+            currentFile = { type, path: null, name: null };
+            currentSha = null;
+
+            // Show editor
+            document.getElementById('welcomeMessage').classList.add('hidden');
+            document.getElementById('editor').classList.remove('hidden');
+            document.getElementById('editorTitle').textContent = `Create New ${type.slice(0, -1)}`;
+            
+            // Build empty metadata fields
+            buildMetadataFields(type, { date: new Date().toISOString().split('T')[0] });
+            
+            // Clear content
+            document.getElementById('contentEditor').value = '';
+            
+            showMessage('');
+        }
+
+        async function saveFile() {
+            if (!currentFile) return;
+
+            const config = contentTypes[currentFile.type];
+            const metadata = {};
+            
+            // Collect metadata
+            config.fields.forEach(field => {
+                const value = document.getElementById(`meta-${field}`)?.value;
+                if (value) {
+                    metadata[field] = value;
+                }
+            });
+
+            // Build content
+            let content = '---\n';
+            Object.entries(metadata).forEach(([key, value]) => {
+                content += `${key}: "${value}"\n`;
+            });
+            content += '---\n\n';
+            content += document.getElementById('contentEditor').value;
+
+            // Generate filename for new files
+            if (!currentFile.path) {
+                const slug = metadata.title.toLowerCase()
+                    .replace(/[^a-z0-9]+/g, '-')
+                    .replace(/^-|-$/g, '');
+                const filename = `${currentFile.type === 'interviews' ? 'interview_' : ''}${slug}.md`;
+                currentFile.path = `${config.folder}/${filename}`;
+                currentFile.name = filename;
+            }
+
+            try {
+                showMessage('Saving...', 'info');
+
+                const response = await fetch(
+                    `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${currentFile.path}`,
+                    {
+                        method: 'PUT',
+                        headers: {
+                            'Authorization': `token ${githubToken}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            message: currentSha ? `Update ${currentFile.name}` : `Create ${currentFile.name}`,
+                            content: btoa(unescape(encodeURIComponent(content))),
+                            sha: currentSha,
+                            branch: GITHUB_BRANCH
+                        })
+                    }
+                );
+
+                if (response.ok) {
+                    const result = await response.json();
+                    currentSha = result.content.sha;
+                    showMessage('Saved successfully!', 'success');
+                    
+                    // Reload file list
+                    loadFiles(currentFile.type, config.folder);
+                } else {
+                    const error = await response.json();
+                    showMessage('Error saving: ' + error.message, 'error');
+                }
+            } catch (error) {
+                showMessage('Error saving: ' + error.message, 'error');
+            }
+        }
+
+        async function deleteFile() {
+            if (!currentFile || !currentSha) return;
+            
+            if (!confirm(`Are you sure you want to delete ${currentFile.name}?`)) {
+                return;
+            }
+
+            try {
+                const response = await fetch(
+                    `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${currentFile.path}`,
+                    {
+                        method: 'DELETE',
+                        headers: {
+                            'Authorization': `token ${githubToken}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            message: `Delete ${currentFile.name}`,
+                            sha: currentSha,
+                            branch: GITHUB_BRANCH
+                        })
+                    }
+                );
+
+                if (response.ok) {
+                    showMessage('Deleted successfully', 'success');
+                    document.getElementById('editor').classList.add('hidden');
+                    document.getElementById('welcomeMessage').classList.remove('hidden');
+                    loadFiles(currentFile.type, contentTypes[currentFile.type].folder);
+                } else {
+                    const error = await response.json();
+                    showMessage('Error deleting: ' + error.message, 'error');
+                }
+            } catch (error) {
+                showMessage('Error deleting: ' + error.message, 'error');
+            }
+        }
+
+        function toggleFolder(type) {
+            const filesEl = document.getElementById(`${type}-files`);
+            filesEl.style.display = filesEl.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function togglePreview() {
+            const preview = document.getElementById('preview');
+            const button = event.target;
+            
+            if (preview.classList.contains('hidden')) {
+                preview.classList.remove('hidden');
+                button.textContent = 'Hide Preview';
+                
+                // Simple markdown preview (you could use a markdown library here)
+                const content = document.getElementById('contentEditor').value;
+                const html = content
+                    .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+                    .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+                    .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+                    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+                    .replace(/```(.*?)```/gs, '<pre><code>$1</code></pre>')
+                    .replace(/`(.+?)`/g, '<code>$1</code>')
+                    .replace(/\n/g, '<br>');
+                
+                document.getElementById('previewContent').innerHTML = html;
+            } else {
+                preview.classList.add('hidden');
+                button.textContent = 'Preview';
+            }
+        }
+
+        function showMessage(text, type = '') {
+            const messageEl = document.getElementById('message');
+            messageEl.className = type;
+            messageEl.textContent = text;
+            
+            if (type === 'success') {
+                setTimeout(() => {
+                    messageEl.textContent = '';
+                    messageEl.className = '';
+                }, 3000);
+            }
+        }
+
+        // Initialize
+        window.onload = () => {
+            const savedToken = localStorage.getItem('github_token');
+            if (savedToken) {
+                document.getElementById('githubToken').value = savedToken;
+                login();
+            }
+        };
+    </script>
+</body>
+</html>
