@@ -1,8 +1,6 @@
 backend:
-  name: github
-  repo: michael-borck/cloudcore
+  name: git-gateway
   branch: main
-  site_domain: cloudcore.serveur.au
   
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
