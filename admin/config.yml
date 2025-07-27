@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: teaching-repositories/cloudcore
+  repo: michael-borck/cloudcore
   branch: main
   
 media_folder: "assets/uploads"
