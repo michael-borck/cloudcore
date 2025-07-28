@@ -38,10 +38,15 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+    include-after-body:
+      - scripts/available.js
+      - scripts/password.js
+      - scripts/unit-access.js
 
 resources:
   - admin/
   - CNAME
+  - scripts/
 
 
 

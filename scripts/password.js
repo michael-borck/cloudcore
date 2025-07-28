@@ -22,7 +22,7 @@ function goBack() {
     history.back();
 }
 
-const correctPassword = 'GottaCatchEmAll!2024';  // Replace 'yourPasswordHere' with your actual password
+const correctPassword = 'GottaCatchEmAll!2025';  // Replace 'yourPasswordHere' with your actual password
 
 function checkPassword() {
     if (getCookie("authenticated") === "true") {
@@ -42,4 +42,7 @@ function checkPassword() {
     }
 }
 
-checkPassword();
+// Don't run if unit-access.js will handle it
+if (typeof unitConfig === 'undefined') {
+  checkPassword();
+}

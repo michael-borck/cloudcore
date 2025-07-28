@@ -1,7 +1,37 @@
 // Unit-based access control configuration
+
+// Helper functions if not already defined
+if (typeof setCookie === 'undefined') {
+  window.setCookie = function(name, value, hours) {
+    const date = new Date();
+    date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+  }
+}
+
+if (typeof getCookie === 'undefined') {
+  window.getCookie = function(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) === ' ') c = c.substring(1);
+      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+}
+
+if (typeof goBack === 'undefined') {
+  window.goBack = function() {
+    history.back();
+  }
+}
+
 const unitConfig = {
   // Basic cybersecurity unit
-  "CyberSec101!2024": {
+  "CyberSec101!2025": {
     unit: "cybersecurity-basics",
     description: "Introduction to Cybersecurity",
     accessiblePaths: [
@@ -19,7 +49,7 @@ const unitConfig = {
   },
   
   // Incident response unit
-  "IncidentResp2024!": {
+  "IncidentResp2025!": {
     unit: "incident-response",
     description: "Security Incident Response",
     accessiblePaths: [
@@ -35,7 +65,7 @@ const unitConfig = {
   },
   
   // Web development unit
-  "WebDev2024!": {
+  "WebDev2025!": {
     unit: "web-development",
     description: "Web Development & Security",
     accessiblePaths: [
@@ -53,7 +83,7 @@ const unitConfig = {
   },
   
   // Systems analysis unit
-  "SysAnalysis2024!": {
+  "SysAnalysis2025!": {
     unit: "systems-analysis",
     description: "Systems Analysis & Design",
     accessiblePaths: [
@@ -67,6 +97,18 @@ const unitConfig = {
     hiddenContent: {
       "/docs/articles/data_breach_": "hidden",
       "/docs/support/logs/": "hidden"
+    }
+  },
+  
+  // ISYS6014 Information Security Audit and Control - Full access
+  "InfoSecAdtCtrl!2025": {
+    unit: "info-security-audit",
+    description: "ISYS6014 Information Security Audit and Control",
+    accessiblePaths: [
+      "/" // Root access grants access to everything
+    ],
+    hiddenContent: {
+      // Full access - nothing hidden
     }
   }
 };
@@ -192,10 +234,15 @@ function updateNavigation() {
   });
 }
 
-// Replace the old checkPassword with unit-based check
-if (typeof checkPassword !== 'undefined') {
-  checkPassword = checkUnitPassword;
+// Check if we should run password check
+// Only run if not blocked by time restrictions
+if (document.body.innerHTML.indexOf('only available from 7:00 AM to 7:00 PM') === -1) {
+  // Replace the old checkPassword with unit-based check
+  window.checkPassword = checkUnitPassword;
+  
+  // Run the unit password check
+  checkUnitPassword();
+  
+  // Update navigation on page load
+  document.addEventListener('DOMContentLoaded', updateNavigation);
 }
-
-// Update navigation on page load
-document.addEventListener('DOMContentLoaded', updateNavigation);
