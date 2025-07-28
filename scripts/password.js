@@ -42,7 +42,4 @@ function checkPassword() {
     }
 }
 
-// Don't run if unit-access.js will handle it
-if (typeof unitConfig === 'undefined') {
-  checkPassword();
-}
+// Don't run automatically - let unit-access.js handle initialization

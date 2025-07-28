@@ -234,15 +234,26 @@ function updateNavigation() {
   });
 }
 
-// Check if we should run password check
-// Only run if not blocked by time restrictions
-if (document.body.innerHTML.indexOf('only available from 7:00 AM to 7:00 PM') === -1) {
-  // Replace the old checkPassword with unit-based check
-  window.checkPassword = checkUnitPassword;
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if this is a public page
+  const currentPath = window.location.pathname;
+  const publicPaths = ['/', '/index', '/index.html', '/about', '/about.html', '/contact', '/contact.html', '/pricing', '/pricing.html'];
+  const isPublicPage = publicPaths.some(path => currentPath === path || currentPath.endsWith(path));
   
-  // Run the unit password check
-  checkUnitPassword();
+  // Only run password check on non-public pages
+  if (!isPublicPage) {
+    // Check if we should run password check
+    // Only run if not blocked by time restrictions
+    if (document.body.innerHTML.indexOf('only available from 7:00 AM to 7:00 PM') === -1) {
+      // Replace the old checkPassword with unit-based check
+      window.checkPassword = checkUnitPassword;
+      
+      // Run the unit password check
+      checkUnitPassword();
+    }
+  }
   
-  // Update navigation on page load
-  document.addEventListener('DOMContentLoaded', updateNavigation);
-}
+  // Always update navigation based on access
+  updateNavigation();
+});
