@@ -143,7 +143,7 @@ function checkPageAccess() {
   const currentPath = window.location.pathname;
   
   // No auth required for homepage, about, contact
-  const publicPaths = ['/', '/index', '/about', '/contact', '/pricing'];
+  const publicPaths = ['/', '/index', '/index.html', '/about', '/about.html', '/contact', '/contact.html', '/pricing', '/pricing.html'];
   if (pathMatches(currentPath, publicPaths)) {
     return true;
   }
