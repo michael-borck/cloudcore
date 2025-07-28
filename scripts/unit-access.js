@@ -230,11 +230,44 @@ function updateNavigation() {
   const unitAccess = getUnitAccess();
   if (!unitAccess) return;
   
+  console.log('Updating navigation for unit:', unitAccess.unit);
+  
   // Hide nav items that aren't accessible
   document.querySelectorAll('nav a').forEach(link => {
     const href = link.getAttribute('href');
-    if (href && !checkPageAccess(href)) {
-      link.style.display = 'none';
+    if (!href) return;
+    
+    // Convert relative URLs to absolute paths for checking
+    let checkPath = href;
+    if (href.startsWith('../')) {
+      // Handle relative paths
+      const currentPath = window.location.pathname;
+      const pathParts = currentPath.split('/').filter(p => p);
+      pathParts.pop(); // Remove current file
+      const upLevels = (href.match(/\.\.\//g) || []).length;
+      for (let i = 0; i < upLevels; i++) {
+        pathParts.pop();
+      }
+      checkPath = '/' + pathParts.join('/') + '/' + href.replace(/\.\.\//g, '');
+    } else if (!href.startsWith('/') && !href.startsWith('http')) {
+      // Handle relative paths without ../
+      const currentDir = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+      checkPath = currentDir + '/' + href;
+    }
+    
+    // Normalize the path
+    checkPath = checkPath.replace(/\/+/g, '/').replace(/\/$/, '') || '/';
+    
+    console.log('Checking nav link:', href, '->', checkPath);
+    
+    // Don't hide links to public pages or external links
+    if (href.startsWith('http') || href.startsWith('mailto:')) {
+      return;
+    }
+    
+    if (!checkPageAccess(checkPath)) {
+      console.log('Hiding nav link:', href);
+      link.parentElement.style.display = 'none';
     }
   });
 }
@@ -259,6 +292,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // Always update navigation based on access
-  updateNavigation();
+  // Always update navigation based on access (but only if authenticated)
+  if (getUnitAccess()) {
+    updateNavigation();
+  }
 });
