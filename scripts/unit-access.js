@@ -127,20 +127,23 @@ function pathMatches(currentPath, patterns) {
 // Get unit access based on stored authentication
 function getUnitAccess() {
   const authData = getCookie("unitAuth");
+  console.log('Getting unit access, cookie value:', authData);
   if (!authData) return null;
   
   try {
     const parsed = JSON.parse(decodeURIComponent(authData));
+    console.log('Parsed auth data:', parsed);
     return unitConfig[parsed.password] || null;
-  } catch {
+  } catch (e) {
+    console.error('Error parsing auth data:', e);
     return null;
   }
 }
 
 // Check if current page is accessible
-function checkPageAccess() {
+function checkPageAccess(checkPath) {
   const unitAccess = getUnitAccess();
-  const currentPath = window.location.pathname;
+  const currentPath = checkPath || window.location.pathname;
   
   // No auth required for homepage, about, contact
   const publicPaths = ['/', '/index', '/index.html', '/about', '/about.html', '/contact', '/contact.html', '/pricing', '/pricing.html'];
@@ -202,7 +205,9 @@ function checkUnitPassword() {
     unit: unitData.unit,
     timestamp: new Date().getTime()
   };
-  setCookie("unitAuth", encodeURIComponent(JSON.stringify(authData)), 24);
+  const cookieValue = encodeURIComponent(JSON.stringify(authData));
+  console.log('Setting unitAuth cookie:', cookieValue);
+  setCookie("unitAuth", cookieValue, 24);
   
   // Check access for current page
   if (!checkPageAccess()) {
