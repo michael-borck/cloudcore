@@ -4,14 +4,137 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CloudCore Content Manager</title>
-  <link href="https://unpkg.com/netlify-cms@^2.0.0/dist/cms.css" rel="stylesheet" />
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    .button {
+      display: inline-block;
+      background: #0066cc;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      margin: 1rem 0;
+    }
+    .button:hover {
+      background: #0052a3;
+    }
+    .section {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: #f8f9fa;
+      border-radius: 4px;
+    }
+    .step {
+      margin: 1rem 0;
+    }
+    .step-number {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background: #0066cc;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 30px;
+      margin-right: 10px;
+    }
+    code {
+      background: #e9ecef;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .option {
+      padding: 1.5rem;
+      background: #f8f9fa;
+      border-radius: 4px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-  <script>
-    // Initialize the CMS
-    CMS.init();
-  </script>
+  <div class="container">
+    <h1>CloudCore Content Management</h1>
+    
+    <p>Welcome to the CloudCore content management system. Choose how you'd like to work with content:</p>
+    
+    <div class="options">
+      <div class="option">
+        <h2>📝 Edit Content</h2>
+        <p>Use Prose.io to create and edit content with GitHub integration</p>
+        <a href="https://prose.io/#michael-borck/cloudcore" class="button" target="_blank">Open in Prose.io</a>
+      </div>
+      
+      <div class="option">
+        <h2>👁️ Preview Content</h2>
+        <p>View and preview content using our simple CMS viewer</p>
+        <a href="/admin/simple-cms.html" class="button">Open Preview Tool</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Getting Started with Prose.io</h2>
+      
+      <div class="step">
+        <span class="step-number">1</span>
+        Click "Open in Prose.io" above
+      </div>
+      
+      <div class="step">
+        <span class="step-number">2</span>
+        Authorize with GitHub (first time only)
+      </div>
+      
+      <div class="step">
+        <span class="step-number">3</span>
+        Navigate to the content folder:
+        <ul>
+          <li><code>docs/scenarios/</code> - Learning scenarios</li>
+          <li><code>docs/articles/</code> - Security incidents</li>
+          <li><code>docs/interviews/</code> - Character interviews</li>
+          <li><code>docs/policies/</code> - Company policies</li>
+          <li><code>blog/posts/</code> - Blog posts</li>
+        </ul>
+      </div>
+      
+      <div class="step">
+        <span class="step-number">4</span>
+        Create new files or edit existing ones
+      </div>
+      
+      <div class="step">
+        <span class="step-number">5</span>
+        Save with a descriptive commit message
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>📖 Full Documentation</h3>
+      <p>For detailed instructions, see the <a href="https://github.com/michael-borck/cloudcore/blob/main/STAFF_ONBOARDING_PROSE.md" target="_blank">Staff Onboarding Guide</a></p>
+    </div>
+  </div>
 </body>
 </html>
