@@ -227,10 +227,31 @@ function checkUnitPassword() {
 
 // Hide navigation items based on unit access
 function updateNavigation() {
+  // Don't hide anything if user is not authenticated - public pages should show all nav
   const unitAccess = getUnitAccess();
-  if (!unitAccess) return;
+  if (!unitAccess) {
+    console.log('No authentication - showing all navigation items');
+    // Make sure all nav items are visible
+    document.querySelectorAll('nav a').forEach(link => {
+      if (link.parentElement) {
+        link.parentElement.style.display = '';
+      }
+    });
+    return;
+  }
   
   console.log('Updating navigation for unit:', unitAccess.unit);
+  
+  // For full access units, show everything
+  if (unitAccess.accessiblePaths.includes('/')) {
+    console.log('Full access unit - showing all navigation items');
+    document.querySelectorAll('nav a').forEach(link => {
+      if (link.parentElement) {
+        link.parentElement.style.display = '';
+      }
+    });
+    return;
+  }
   
   // Hide nav items that aren't accessible
   document.querySelectorAll('nav a').forEach(link => {
@@ -268,6 +289,9 @@ function updateNavigation() {
     if (!checkPageAccess(checkPath)) {
       console.log('Hiding nav link:', href);
       link.parentElement.style.display = 'none';
+    } else {
+      // Make sure accessible links are visible
+      link.parentElement.style.display = '';
     }
   });
 }
@@ -292,8 +316,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // Always update navigation based on access (but only if authenticated)
-  if (getUnitAccess()) {
-    updateNavigation();
-  }
+  // Always update navigation - it will show all items if not authenticated
+  updateNavigation();
 });
