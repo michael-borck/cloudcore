@@ -97,14 +97,14 @@ function hideProtectedContent() {
         window.originalContent = document.body.innerHTML;
     }
     
-    // Replace with login form
+    // Replace with login form using CSS variables
     document.body.innerHTML = `
         <div id="login-container" style="
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--cc-gradient, linear-gradient(135deg, #667eea 0%, #764ba2 100%));
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         ">
             <div style="

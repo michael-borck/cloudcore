@@ -1,20 +1,91 @@
-/* css styles */
-.rounded {
-    box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
-    border-radius: 60px;
-    width: 100%;
-  }
-
-.card {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  text-align: center;
+/* CloudCore Theme Variables */
+:root {
+  /* Brand Colors - Purple/Blue Gradient Theme */
+  --cc-primary: #667eea;      /* Primary purple */
+  --cc-primary-dark: #5a67d8; /* Darker purple for hover */
+  --cc-secondary: #764ba2;    /* Secondary purple */
+  --cc-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  
+  /* Neutral Colors */
+  --cc-dark: #2d3748;
+  --cc-gray-dark: #4a5568;
+  --cc-gray: #718096;
+  --cc-gray-light: #cbd5e0;
+  --cc-light: #f7fafc;
+  --cc-white: #ffffff;
+  
+  /* Semantic Colors */
+  --cc-success: #48bb78;
+  --cc-warning: #ed8936;
+  --cc-danger: #f56565;
+  --cc-info: #4299e1;
+  
+  /* Shadows & Effects */
+  --cc-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --cc-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --cc-shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.2);
+  --cc-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* On mouse-over, add a deeper shadow */
+/* Override Quarto/Bootstrap primary colors */
+.navbar {
+  background: var(--cc-gradient) !important;
+  box-shadow: var(--cc-shadow);
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+  color: var(--cc-white) !important;
+  transition: var(--cc-transition);
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--cc-light) !important;
+  transform: translateY(-1px);
+}
+
+/* Buttons with CloudCore theme */
+.btn-primary, 
+.quarto-color-scheme-toggle {
+  background: var(--cc-gradient) !important;
+  border: none !important;
+  box-shadow: var(--cc-shadow);
+  transition: var(--cc-transition);
+}
+
+.btn-primary:hover,
+.quarto-color-scheme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--cc-shadow-lg);
+}
+
+/* Links with brand color */
+a {
+  color: var(--cc-primary);
+  transition: var(--cc-transition);
+}
+
+a:hover {
+  color: var(--cc-secondary);
+}
+
+/* Existing styles with theme updates */
+.rounded {
+  box-shadow: var(--cc-shadow);
+  border-radius: 60px;
+  width: 100%;
+}
+
+.card {
+  box-shadow: var(--cc-shadow);
+  transition: var(--cc-transition);
+  text-align: center;
+  border: 1px solid var(--cc-gray-light);
+  border-radius: 8px;
+}
+
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: var(--cc-shadow-lg);
+  transform: translateY(-4px);
 }
 
 lord-icon.small {
@@ -22,13 +93,131 @@ lord-icon.small {
   height: 28px;
 }
 
-/* Style for the message */
-#message {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 2px solid black;
-  padding: 20px;
-  text-align: center;
+/* Access control badges and alerts */
+.alert-info {
+  background: linear-gradient(135deg, #e6f2ff 0%, #f0e6ff 100%);
+  border: 1px solid var(--cc-primary);
+  color: var(--cc-gray-dark);
+}
+
+.alert-warning {
+  background: linear-gradient(135deg, #fffaf0 0%, #fff5f5 100%);
+  border: 1px solid var(--cc-warning);
+  color: var(--cc-gray-dark);
+}
+
+.alert-success {
+  background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+  border: 1px solid var(--cc-success);
+  color: var(--cc-gray-dark);
+}
+
+/* Access level indicator consistent theming */
+#access-indicator {
+  background: var(--cc-gradient) !important;
+  color: var(--cc-white) !important;
+  box-shadow: var(--cc-shadow-lg);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Consistent form styling */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+  border: 2px solid var(--cc-gray-light);
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: var(--cc-transition);
+  font-family: inherit;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--cc-primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Code blocks with brand colors */
+pre {
+  border-left: 4px solid var(--cc-primary);
+  background: var(--cc-light);
+}
+
+code {
+  color: var(--cc-secondary);
+  background: rgba(102, 126, 234, 0.1);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* Table styling */
+table {
+  border-collapse: collapse;
+}
+
+thead {
+  background: var(--cc-gradient);
+  color: var(--cc-white);
+}
+
+tbody tr:hover {
+  background: rgba(102, 126, 234, 0.05);
+}
+
+/* Footer with gradient */
+.page-footer {
+  background: var(--cc-gradient);
+  color: var(--cc-white);
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+.page-footer a {
+  color: var(--cc-white);
+  text-decoration: underline;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading animation for async content */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #access-indicator {
+    right: 10px;
+    top: 70px;
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .navbar, 
+  #access-indicator,
+  .page-footer {
+    display: none !important;
+  }
 }
