@@ -22,7 +22,7 @@ and data according to their risk level.
 
 The CloudCore security program and policies are developed on the principles that
 (1) security is everyone's responsibility and (2) self-management is best
-encouraged by rewarding the right behaviours. [Quick Reference / Employee Handbook](employee-handbook.md)
+encouraged by rewarding the right behaviours. [Quick Reference / Employee Handbook](employee_handbook.md)
 
 ## Controls and Procedures
 
@@ -73,7 +73,7 @@ contain two main sections:
 * Controls and Procedures
 
 All policy documents are maintained, reviewed, updated and approved following
-standards and procedures outlined in [Policy Management](policy-mgmt.md).
+standards and procedures outlined in [Policy Management](policy_mgmt.md).
 
 ## Review and Reporting
 

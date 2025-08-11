@@ -85,14 +85,14 @@ the following steps:
 A list of [approved vendors / contractors][1] is maintained by the Security and
 Operations teams.
 
-[1]: approved-vendors.md
+[1]: approved_vendors.md
 
 ### Vendor Contractual Agreements
 
 **HIPAA.** If the vendor needs access to PHI/ePHI, the vendor must be HIPAA
 compliant and a [Business Associate Agreement (BAA)][BAA] is required.
 
-[BAA]: hipaa-baa.md
+[BAA]: hipaa_baa.md
 
 
 **SLA for Service Providers.** For network and infrastructure service providers
@@ -100,9 +100,9 @@ that support production and/or critical operations at CloudCore, a
 Service Level Agreement (SLA) is defined and included in the service contract.
 
 As appropriate, the executed agreement(s) are linked or attached to the vendor
-on the [approved vendors list][1].
+on the [approved vendors list][2].
 
-[1]: approved-vendors.md
+[2]: approved_vendors.md
 
 ### Monitoring Vendor Risks
 
@@ -122,11 +122,11 @@ setting up alarms for service interruption using automation.
 ### Software and Systems Acquisition Process
 
 CloudCore Security maintains
-a list of [pre-approved business software][1] and
-a list of [approved vendors / contractors][2].
+a list of [pre-approved business software][3] and
+a list of [approved vendors / contractors][4].
 
-[1]: approved-software.md
-[2]: approved-vendors.md
+[3]: approved_software.md
+[4]: approved_vendors.md
 
 If additional commercial software, hardware system, or cloud services is needed,
 a request should be submitted through CloudCore internal service

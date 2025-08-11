@@ -18,7 +18,7 @@ Founded in 2019, CloudCore Networks emerged from a vision to provide enterprise-
 - **Local Expertise**: Australian-owned and operated with data sovereignty guarantee
 - **Proven Track Record**: 99.9% uptime SLA consistently exceeded for 5 years
 - **Security First**: ISO 27001:2013 certified with comprehensive compliance
-- ** 24/7 Support**: Local support team available round the clock
+- **24/7 Support**: Local support team available round the clock
 - **Innovation Driven**: Continuous investment in cutting-edge technologies
 
 

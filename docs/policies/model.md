@@ -335,15 +335,15 @@ architecture that encompasses all of CloudCore's operations
 and provides high data confidentiality, integrity, and availability.
 
 An overview of CloudCore's architecture can be found in
-[Security Architecture](cp-model-architecture.md).
+Security Architecture.
 CloudCore uses a highly scalable cloud architecture to
 provide system quality at all times.
 
 All systems are monitored and measured in real time as described in
-[Application Service Event Recovery](cp-bcdr-app.md).
+Application Service Event Recovery.
 
 CloudCore uses DevOps methodology as described in
-[Software Development Process](cp-sdlc-dev.md)
+Software Development Process
 to ensure a smooth delivery process of all systems and applications.
 
 Status for external facing, customer applications and systems is published

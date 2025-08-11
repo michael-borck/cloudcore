@@ -65,6 +65,7 @@ Australia
 
 ## Request a Consultation
 
+```{=html}
 <form class="contact-form" action="#" method="post">
   <div class="form-row">
     <div class="form-group">
@@ -107,6 +108,7 @@ Australia
   
   <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
 </form>
+```
 
 ## Connect With Us
 

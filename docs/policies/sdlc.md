@@ -355,7 +355,7 @@ environments. Health checks are performed regularly or automated in production.
 
 Software vulnerability identified through any of the above processes shall be
 reported and tracked following CloudCore Vulnerability Management process
-as defined in the [Vulnerability Management Policy and Procedures](vuln-mgmt.md).
+as defined in the [Vulnerability Management Policy and Procedures](vuln_mgmt.md).
 
 
 ### Secure Design and Application Threat Modeling
@@ -589,14 +589,14 @@ breach notification, should a breach occurs that impact their PHI.
 
 Follow the requirements listed in the following documents:
 
-- [Data Classification Model](data-mgmt.md#data-classification-model);
-- [Data Handling Requirements](data-mgmt.md#data-handling-requirements-matrix);
-- [Data Protection Policy and Procedures](data-protection.md); and
-- [Backup and Recovery Process](data-mgmt.md#backup-and-recovery).
+- [Data Classification Model](data_mgmt.md#data-classification-model);
+- [Data Handling Requirements](data_mgmt.md#data-handling-requirements-matrix);
+- [Data Protection Policy and Procedures](data_protection.md); and
+- [Backup and Recovery Process](data_mgmt.md#backup-and-recovery).
 
 #### Risk Analysis and Compliance Assessment
 
-Read the [latest assessment report](assessments/hipaa-latest.md) for more
+Read the latest assessment report for more
 details on CloudCore's HIPAA compliance.
 
 ### Production System Monitoring and Paging

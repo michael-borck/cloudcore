@@ -37,7 +37,7 @@ CloudCore policy requires that:
 data must be encrypted.
 
 (b) Critical data as defined in [CloudCore data classification model
-data-management](data-mgmt.md) may not be stored on mobile devices or removable
+data-management](data_mgmt.md) may not be stored on mobile devices or removable
 media such as USB flash drives.
 
 (c) All destruction/disposal of sensitive data storage media will be done in

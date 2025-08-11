@@ -204,9 +204,9 @@ absolute minimum.
     * Where possible, passwords should be stored in a hashed format using a
       salted cryptographic hash function (SHA-256 or stronger NIST compliant standard).
     * Passwords that must be stored in non-hashed format must be encrypted at
-      rest pursuant to the requirements in [Data Protection](data-protection.md).
+      rest pursuant to the requirements in [Data Protection](data_protection.md).
     * Transmitted passwords must be encrypted in flight pursuant to the
-      requirements in [Data Protection](data-protection.md).
+      requirements in [Data Protection](data_protection.md).
 
 5. Each information system automatically requires users to change passwords at a
    pre-determined interval as determined by the system owner and/or Security,
@@ -530,14 +530,14 @@ following conditions and processes it accordingly:
   submitted by the employee or his/her manager via the Internal Help portal or
   an email request to Security team;
 * As the result of a Access Review, as defined in 
-  [System Auditing](system-audit.md).
+  [System Auditing](system_audit.md).
 * Non-standard access is revoked by default after 30 days of inactivity, unless
   an exception/extension is requested and approved.
 
 ### Access Reviews
 
 * All access to CloudCore systems and services are reviewed and updated following
-  the procedures specified in [System Auditing](system-audit.md) to ensure proper
+  the procedures specified in [System Auditing](system_audit.md) to ensure proper
   authorisations are in place commensurate with job functions.
 * In cases of increased risk or known attempted unauthorised access, immediate
   steps are taken by the Security and Privacy Officer to limit access and reduce

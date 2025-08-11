@@ -111,8 +111,8 @@ unattended in public.
 (d) Device encryption must be enabled for all mobile devices accessing company
 data, such as whole-disk encryption for all laptops.
 
-(e) Use only legal, [approved software](approved-software.md) with a valid
-license installed through a [pre-approved application store](approved-software.md). 
+(e) Use only legal, [approved software](approved_software.md) with a valid
+license installed through a [pre-approved application store](approved_software.md). 
 Do not use personal software for business purposes and vice versa.
 
 (f) Encrypt all email messages containing sensitive or confidential data.

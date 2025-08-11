@@ -35,7 +35,7 @@ disaster.
 CloudCore policy requires that
 
 (a) Data should be classified at time of creation or acquisition according to
-the [CloudCore data classification model](data-mgmt.md#data-classification-model),
+the [CloudCore data classification model](data_mgmt.md#data-classification-model),
 by labeling or tagging the data.
 
 (b) Maintain an up-to-date inventory and data flows mapping of all critical

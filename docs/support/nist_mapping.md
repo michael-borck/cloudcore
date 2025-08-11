@@ -39,8 +39,8 @@ PM | Program Management                     | [Security Program Overview][10]; [
 
 [1]: access.md
 [2]: rar.md
-[3]: compliance-audit.md
-[4]: risk-mgmt.md
+[3]: compliance_audit.md
+[4]: risk_mgmt.md
 [5]: ccm.md
 [6]: bcdr.md
 [7]: ir.md
@@ -50,10 +50,10 @@ PM | Program Management                     | [Security Program Overview][10]; [
 [11]: model.md
 [12]: hr.md
 [13]: vendor.md
-[14]: data-mgmt.md
-[15]: data-protection.md
+[14]: data_mgmt.md
+[15]: data_protection.md
 [16]: threat.md
 [17]: sdlc.md
-[18]: vuln-mgmt.md
-[19]: system-audit.md
-[20]: policy-mgmt.md
+[18]: vuln_mgmt.md
+[19]: system_audit.md
+[20]: policy_mgmt.md

@@ -123,7 +123,7 @@ then include the institution identifier.
 #### Backup and Recovery
 
 For details on the backup and recovery process, see controls and procedures
-defined in [Data Management](data-mgmt.md).
+defined in [Data Management](data_mgmt.md).
 
 #### Monitoring
 

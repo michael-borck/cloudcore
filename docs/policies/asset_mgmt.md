@@ -21,7 +21,7 @@ to maintain an accurate and up-to-date inventory of both its physical and
 digital assets.
 
 More details on data inventory and data lifecycle management is documented
-separately in [Data Management](data-mgmt.md).
+separately in [Data Management](data_mgmt.md).
 
 ## Policy Statements
 

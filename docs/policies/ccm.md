@@ -77,7 +77,7 @@ in the event of failure.
       and services provided by each cloud provider.
     * IT assets database is used to generate the diagrams and asset lists
       required by the Risk Assessment phase of CloudCore's
-      [Risk Management procedures](risk-mgmt.md)
+      [Risk Management procedures](risk_mgmt.md)
     * CloudCore Change Management process ensures that all asset inventory
       created by automation is reconciled against real changes to production
       systems. This process includes periodic manual audits and approvals.
@@ -203,7 +203,7 @@ alerted to the security team.
       protected from unauthorised access.
     * Configuring authentication to the centralised Directory Services servers.
     * Configuring audit logging as described in the [Auditing Policy
-      section](system-audit.md).
+      section](system_audit.md).
 
 1. **Windows System Hardening:** Windows systems have their baseline security
    configuration applied via the combination of Group Policy settings and/or
@@ -224,7 +224,7 @@ alerted to the security team.
     * Configuring the system clock to point to approved NTP servers and ensuring
       that modifying system time cannot be performed by unprivileged users.
     * Configuring audit logging as described in the [Auditing Policy
-      section](system-audit.md).
+      section](system_audit.md).
 
 1. Any additional configuration changes applied to hardened Windows systems must
    be clearly documented by the implementer and reviewed by the Security team.

@@ -80,7 +80,7 @@ complete the following security training:
 
     - [Roles, Responsibilities and Training](rar.md)
     - [HR and Personnel Security](hr.md)
-    - [Data Classification and Handling](data-mgmt.md#data-classification-model)
+    - [Data Classification and Handling](data_mgmt.md#data-classification-model)
 
 * **HIPAA awareness** training
 
@@ -94,8 +94,8 @@ complete the following security training:
 
         - [Product Security and Secure Software Development](sdlc.md)
         - [HIPAA Best Practices for Software Development](sdlc.md#hipaa-best-practices-for-software-development)
-        - [Data Management](data-mgmt.md)
-        - [Data Protection](data-protection.md)
+        - [Data Management](data_mgmt.md)
+        - [Data Protection](data_protection.md)
         - [Configuration and Change Management](ccm.md)
 
     - all members of the **Administrative**, **Marketing** and **Procurement**
@@ -107,8 +107,8 @@ complete the following security training:
       teams must review the following policies and procedures
 
         - [Business Continuity and Disaster Recovery](bcdr.md)
-        - [Compliance Audits and External Communications](compliance-audit.md)
-        - [Risk Management](risk-mgmt.md)
+        - [Compliance Audits and External Communications](compliance_audit.md)
+        - [Risk Management](risk_mgmt.md)
 
     - all members of the **HR** and **Facilities** teams must review the following
       policies and procedures
@@ -142,7 +142,7 @@ unattended in public.
 (d) Device encryption must be enabled for all mobile devices accessing company
 data, such as whole-disk encryption for all laptops.
 
-(e) Use only legal, [approved software](approved-software.md) with a valid
+(e) Use only legal, [approved software](approved_software.md) with a valid
 license. Do not use personal software for business purposes and vice versa.
 
 (f) Encrypt all email messages containing sensitive or confidential data.

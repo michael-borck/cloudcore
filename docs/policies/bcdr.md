@@ -352,4 +352,4 @@ reconstructed from code, and the data restored from Glacier that is hosted
 within a different AWS account and geolocation.
 
 Recovery of production Environments and data should follow the procedures listed
-above and in [Data Management - Backup and Recovery](data-mgmt.md#cp-data-backup)
+above and in [Data Management - Backup and Recovery](data_mgmt.md#cp-data-backup)

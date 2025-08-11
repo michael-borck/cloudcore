@@ -37,35 +37,38 @@ website:
           - docs/articles.qmd
           - docs/logs.qmd
     right:
+      - text: Educational Site
+        href: legal.qmd
       - text: Contact Us
         href: contact.qmd
-  page-footer: 
-    center: | 
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>CloudCore Networks</h4>
-          <p>Enterprise cloud infrastructure solutions</p>
-          <p>ISO 27001:2013 Certified</p>
-        </div>
-        <div class="footer-section">
-          <h4>Contact</h4>
-          <p>Perth: 11 Newcastle St, WA 6000<br>
-          Malaga: 4 Millrose Dr, WA 6090<br>
-          Email: info@cloudcore.com.au<br>
-          Phone: +61 (8) 4587 8990</p>
-        </div>
-        <div class="footer-section">
-          <h4>Legal</h4>
-          <p><a href="/legal.html">Legal Disclaimer</a> | <a href="/legal.html#privacy-data-collection">Privacy</a><br>
-          <a href="/legal.html#license">MIT License</a> | <a href="/legal.html#security-notice">Security Notice</a></p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2024 CloudCore Networks (Fictional). All rights reserved. | 
-        <a href="/credits.html">Open Source Credits</a> | 
-        <a href="https://lordicon.com/">Icons by Lordicon.com</a> | 
-        <a href="/legal.html">Educational Disclaimer</a></p>
-      </div>
+  page-footer:
+    center: 
+      - text: |
+          <div class="footer-content">
+            <div class="footer-section">
+              <h4>CloudCore Networks</h4>
+              <p>Enterprise cloud infrastructure solutions</p>
+              <p>ISO 27001:2013 Certified</p>
+            </div>
+            <div class="footer-section">
+              <h4>Contact</h4>
+              <p>Perth: 11 Newcastle St, WA 6000<br>
+              Malaga: 4 Millrose Dr, WA 6090<br>
+              Email: info@cloudcore.com.au<br>
+              Phone: +61 (8) 4587 8990</p>
+            </div>
+            <div class="footer-section">
+              <h4>Legal</h4>
+              <p><a href="/legal.html">Legal Disclaimer</a> | <a href="/legal.html#privacy-data-collection">Privacy</a><br>
+              <a href="/legal.html#license">MIT License</a> | <a href="/legal.html#security-notice">Security Notice</a></p>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>© 2024 CloudCore Networks (Fictional). All rights reserved. | 
+            <a href="/credits.html">Open Source Credits</a> | 
+            <a href="https://lordicon.com/">Icons by Lordicon.com</a> | 
+            <a href="/legal.html">Educational Disclaimer</a></p>
+          </div>
 
 
 format:
@@ -76,12 +79,6 @@ format:
     include-in-header:
       - text: |
           <script src="/scripts/simple-timeline-access.js"></script>
-    include-before-body:
-      - text: |
-          <div class="educational-banner">
-            📚 <strong>Educational Site:</strong> This is a fictional company for teaching purposes only. 
-            <a href="/legal.html">View Legal Disclaimer</a>
-          </div>
 
 resources:
   - admin/

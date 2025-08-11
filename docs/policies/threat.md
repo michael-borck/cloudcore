@@ -44,7 +44,7 @@ detection or prevention.
     * The malware signature database is kept up to date, changes are pushed
       continuously.
     * Logs of virus scans and alerts are maintained according to the
-      requirements outlined in [System Auditing](system-audit.md).
+      requirements outlined in [System Auditing](system_audit.md).
 
 2. Detected malware is evaluated and removed following the established [incident
    response process](ir.md).

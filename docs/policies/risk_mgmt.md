@@ -60,11 +60,11 @@ approved and accepted by senior management.
 #### Acceptable Risk Levels
 
 Risks that are either low impact or low probability, based on the scoring
-mechanism defined in [risk assessment process](cp-risk-assess.md), are generally
+mechanism defined in the risk assessment process, are generally
 considered acceptable.
 
 All other risks must be individually reviewed and managed according to the
-[risk management process](cp-risk-mgmt.md).
+the risk management process.
 
 
 ### Risk Management Process
