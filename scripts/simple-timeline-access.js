@@ -88,6 +88,94 @@ function createAccessToken(password, schedule) {
 }
 
 /**
+ * Hide protected content to prevent information leakage
+ * This prevents users from seeing sensitive content behind the password prompt
+ */
+function hideProtectedContent() {
+    // Store original content
+    if (!window.originalContent) {
+        window.originalContent = document.body.innerHTML;
+    }
+    
+    // Replace with loading/authentication screen
+    document.body.innerHTML = `
+        <div style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        ">
+            <div style="
+                background: white;
+                border-radius: 10px;
+                padding: 40px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+                max-width: 500px;
+                text-align: center;
+            ">
+                <div style="
+                    font-size: 48px;
+                    margin-bottom: 20px;
+                ">🔐</div>
+                
+                <h1 style="
+                    color: #333;
+                    margin-bottom: 20px;
+                    font-size: 28px;
+                ">Authentication Required</h1>
+                
+                <p style="
+                    color: #666;
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                ">This section contains protected CloudCore content.</p>
+                
+                <p style="
+                    color: #999;
+                    font-size: 14px;
+                ">Please enter your unit password when prompted.</p>
+                
+                <div style="
+                    margin-top: 30px;
+                    padding: 20px;
+                    background: #f8f9fa;
+                    border-radius: 5px;
+                ">
+                    <div style="
+                        color: #666;
+                        font-size: 14px;
+                    ">
+                        <strong>Valid unit codes:</strong><br>
+                        ISYS6018 | ISYS2001 | MGMT5000
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+/**
+ * Restore protected content after successful authentication
+ */
+function showProtectedContent() {
+    if (window.originalContent) {
+        document.body.innerHTML = window.originalContent;
+        // Re-run any scripts that might have been on the page
+        const scripts = document.querySelectorAll('script[data-embed-id]');
+        scripts.forEach(script => {
+            const newScript = document.createElement('script');
+            Array.from(script.attributes).forEach(attr => {
+                newScript.setAttribute(attr.name, attr.value);
+            });
+            newScript.textContent = script.textContent;
+            script.parentNode.replaceChild(newScript, script);
+        });
+    }
+}
+
+/**
  * Main access control function
  */
 function checkAccess() {
@@ -97,6 +185,9 @@ function checkAccess() {
         return;
     }
     
+    // PRIVACY FIX: Hide protected content immediately before authentication
+    hideProtectedContent();
+    
     // Check for valid token first
     const existingToken = isTokenValid();
     if (existingToken) {
@@ -104,6 +195,7 @@ function checkAccess() {
         const schedule = UNIT_SCHEDULES[existingToken.password];
         if (schedule) {
             const accessLevel = getCurrentAccessLevel(schedule);
+            showProtectedContent(); // Reveal content after validation
             applyAccessLevel(accessLevel, schedule.unit);
             return;
         }
@@ -132,6 +224,9 @@ function checkAccess() {
     
     // Determine current access level based on date
     const accessLevel = getCurrentAccessLevel(schedule);
+    
+    // Reveal content after successful authentication
+    showProtectedContent();
     
     // Apply access restrictions
     applyAccessLevel(accessLevel, schedule.unit);
