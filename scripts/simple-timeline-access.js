@@ -4,31 +4,39 @@
  * 
  * Units supported:
  * - ISYS6018: Information Security Audit and Control
- * - ISYS2001: Systems Analysis (example)
- * - MGMT5000: AI Strategy (example)
+ * - ISYS2002: Systems Analysis and Design
+ * - ISYS6014: Knowledge Management and Intelligent Systems
+ * - ISAD5001: Information Systems Analysis and Design
  */
 
 // Configuration - Update these each semester
 const UNIT_SCHEDULES = {
-    // ISYS6018 - Security Audit
+    // ISYS6018 - Information Security Audit and Control
     'SecurityAudit2025': {
-        unit: 'ISYS6018 - Security Audit',
+        unit: 'ISYS6018 - Information Security Audit and Control',
         consultantDate: '2025-07-29T00:00:00',  // Week 2
         auditorDate: '2025-09-16T00:00:00'      // Week 9
     },
     
-    // ISYS2001 - Systems Analysis (adjust dates as needed)
-    'SystemsAnalysis2025': {
-        unit: 'ISYS2001 - Systems Analysis', 
+    // ISYS2002 - Systems Analysis and Design
+    'SystemsAnalysisDesign2025': {
+        unit: 'ISYS2002 - Systems Analysis and Design', 
         consultantDate: '2025-08-05T00:00:00',  // Week 3
         auditorDate: '2025-09-23T00:00:00'      // Week 10
     },
     
-    // MGMT5000 - AI Strategy (adjust dates as needed)
-    'AIStrategy2025': {
-        unit: 'MGMT5000 - AI Strategy',
+    // ISYS6014 - Knowledge Management and Intelligent Systems
+    'KnowledgeManagement2025': {
+        unit: 'ISYS6014 - Knowledge Management and Intelligent Systems',
         consultantDate: '2025-08-12T00:00:00',  // Week 4
         auditorDate: '2025-10-07T00:00:00'      // Week 12
+    },
+    
+    // ISAD5001 - Information Systems Analysis and Design
+    'InfoSystemsAnalysis2025': {
+        unit: 'ISAD5001 - Information Systems Analysis and Design',
+        consultantDate: '2025-08-05T00:00:00',  // Week 3
+        auditorDate: '2025-09-23T00:00:00'      // Week 10
     }
 };
 
@@ -104,14 +112,15 @@ function hideProtectedContent() {
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: var(--cc-gradient, linear-gradient(135deg, #667eea 0%, #764ba2 100%));
+            background: var(--bs-body-bg, #ffffff);
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         ">
             <div style="
                 background: white;
                 border-radius: 10px;
                 padding: 40px;
-                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+                box-shadow: 0 10px 40px rgba(102, 126, 234, 0.15);
+                border: 1px solid rgba(102, 126, 234, 0.1);
                 max-width: 450px;
                 width: 90%;
             ">
@@ -165,7 +174,7 @@ function hideProtectedContent() {
                         font-size: 16px;
                         font-weight: 600;
                         color: white;
-                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                        background: var(--cc-gradient, linear-gradient(135deg, #667eea 0%, #764ba2 100%));
                         border: none;
                         border-radius: 6px;
                         cursor: pointer;
