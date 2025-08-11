@@ -37,32 +37,98 @@ const TEST_MODE = false;
 const TEST_DATE = '2025-09-17T00:00:00'; // Change this to test different dates
 
 /**
+ * Check if current page requires protection
+ */
+function isProtectedPage() {
+    const path = window.location.pathname;
+    // Only protect /chatbots/ and /docs/ sections
+    return path.includes('/chatbots/') || path.includes('/docs/');
+}
+
+/**
+ * Check if access token is still valid (24 hours)
+ */
+function isTokenValid() {
+    const tokenData = localStorage.getItem('cloudcore_token');
+    if (!tokenData) return false;
+    
+    try {
+        const token = JSON.parse(tokenData);
+        const now = new Date().getTime();
+        const tokenAge = now - token.timestamp;
+        const twentyFourHours = 24 * 60 * 60 * 1000;
+        
+        // Check if token is less than 24 hours old
+        if (tokenAge < twentyFourHours) {
+            return token;
+        }
+    } catch (e) {
+        // Invalid token format
+    }
+    
+    // Token expired or invalid
+    localStorage.removeItem('cloudcore_token');
+    localStorage.removeItem('cloudcore_password');
+    return false;
+}
+
+/**
+ * Create access token with 24-hour validity
+ */
+function createAccessToken(password, schedule) {
+    const token = {
+        password: password,
+        unit: schedule.unit,
+        timestamp: new Date().getTime(),
+        expires: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString()
+    };
+    localStorage.setItem('cloudcore_token', JSON.stringify(token));
+    localStorage.setItem('cloudcore_password', password);
+    return token;
+}
+
+/**
  * Main access control function
  */
 function checkAccess() {
-    // Get stored password or prompt for one
-    let password = localStorage.getItem('cloudcore_password');
-    
-    if (!password) {
-        password = prompt('Enter your unit access password:');
-        if (!password) return;
-        
-        if (!UNIT_SCHEDULES[password]) {
-            alert('Invalid password. Please check with your instructor.');
-            return;
-        }
-        
-        localStorage.setItem('cloudcore_password', password);
-    }
-    
-    // Get the schedule for this password
-    const schedule = UNIT_SCHEDULES[password];
-    if (!schedule) {
-        // Invalid stored password, clear and retry
-        localStorage.removeItem('cloudcore_password');
-        checkAccess();
+    // Check if this page needs protection
+    if (!isProtectedPage()) {
+        // Public page - no restrictions
         return;
     }
+    
+    // Check for valid token first
+    const existingToken = isTokenValid();
+    if (existingToken) {
+        // Valid token exists, use it
+        const schedule = UNIT_SCHEDULES[existingToken.password];
+        if (schedule) {
+            const accessLevel = getCurrentAccessLevel(schedule);
+            applyAccessLevel(accessLevel, schedule.unit);
+            return;
+        }
+    }
+    
+    // No valid token, prompt for password
+    const password = prompt('Enter your unit access password to access this section:');
+    
+    // Check if user cancelled or entered blank
+    if (!password || password.trim() === '') {
+        // Redirect to home page
+        window.location.href = '/';
+        return;
+    }
+    
+    // Validate password
+    const schedule = UNIT_SCHEDULES[password];
+    if (!schedule) {
+        alert('Invalid password. Please check with your instructor.');
+        window.location.href = '/';
+        return;
+    }
+    
+    // Create token for 24 hours
+    createAccessToken(password, schedule);
     
     // Determine current access level based on date
     const accessLevel = getCurrentAccessLevel(schedule);
@@ -162,32 +228,73 @@ function createPlaceholder(requiredLevel) {
 }
 
 /**
- * Handle chatbot access (hide for non-auditor levels)
+ * Handle chatbot access (require at least consultant level)
+ * Chatbots should only be available:
+ * 1. With at least consultant access (not public)
+ * 2. During business hours (7am-7pm weekdays) - handled by available.js
  */
 function handleChatbotAccess(level) {
-    if (level !== 'auditor') {
-        // Hide all chatbot embeds
-        document.querySelectorAll('script[data-embed-id]').forEach(script => {
-            if (!script.nextElementSibling?.classList.contains('chatbot-placeholder')) {
-                script.style.display = 'none';
-                
-                const placeholder = document.createElement('div');
-                placeholder.className = 'chatbot-placeholder alert alert-warning';
-                placeholder.innerHTML = `
-                    <h5>🤖 Employee Interview Unavailable</h5>
-                    <p>Employee interviews require <strong>Full Audit</strong> access (Week 9+).</p>
-                `;
-                script.parentNode.insertBefore(placeholder, script.nextSibling);
-            }
-        });
-    } else {
-        // Show chatbots for auditor level
+    // Check if we're on a chatbot page
+    const isChatbotPage = window.location.pathname.includes('/chatbots/') || 
+                          document.querySelector('script[data-embed-id]');
+    
+    if (!isChatbotPage) return;
+    
+    // Require at least consultant access for any chatbot
+    if (level === 'public') {
+        // Block access entirely for public level
+        const chatbotEmbeds = document.querySelectorAll('script[data-embed-id]');
+        
+        if (chatbotEmbeds.length > 0) {
+            // Replace entire page content with access denied message
+            document.body.innerHTML = `
+                <div class="container mt-5">
+                    <div class="alert alert-danger text-center">
+                        <h1>🔒 Access Denied</h1>
+                        <h3>Employee Interviews Require Consultant Access</h3>
+                        <p class="lead">You need at least consultant-level access to interview CloudCore employees.</p>
+                        <p>Please enter your unit password to gain access.</p>
+                        <button class="btn btn-primary" onclick="promptForPassword()">Enter Password</button>
+                        <button class="btn btn-secondary" onclick="window.location.href='/'">Return to Home</button>
+                    </div>
+                </div>
+            `;
+            
+            // Add function to prompt for password
+            window.promptForPassword = function() {
+                localStorage.removeItem('cloudcore_password');
+                location.reload();
+            };
+        }
+    } else if (level === 'consultant') {
+        // Consultant level - show chatbots but add notice
         document.querySelectorAll('script[data-embed-id]').forEach(script => {
             script.style.display = '';
             
-            // Remove placeholder if present
-            if (script.nextElementSibling?.classList.contains('chatbot-placeholder')) {
-                script.nextElementSibling.remove();
+            // Add a notice that this is consultant-level access
+            if (!script.previousElementSibling?.classList.contains('access-notice')) {
+                const notice = document.createElement('div');
+                notice.className = 'access-notice alert alert-info mb-3';
+                notice.innerHTML = `
+                    <small><strong>Note:</strong> You have consultant-level access to this employee interview. 
+                    Full audit access may reveal additional information.</small>
+                `;
+                script.parentNode.insertBefore(notice, script);
+            }
+        });
+    } else if (level === 'auditor') {
+        // Full auditor access - show everything
+        document.querySelectorAll('script[data-embed-id]').forEach(script => {
+            script.style.display = '';
+            
+            // Add auditor notice
+            if (!script.previousElementSibling?.classList.contains('access-notice')) {
+                const notice = document.createElement('div');
+                notice.className = 'access-notice alert alert-success mb-3';
+                notice.innerHTML = `
+                    <small><strong>Full Access:</strong> You have auditor-level access to this employee interview.</small>
+                `;
+                script.parentNode.insertBefore(notice, script);
             }
         });
     }
@@ -197,9 +304,28 @@ function handleChatbotAccess(level) {
  * Add access level indicator to page
  */
 function addAccessIndicator(level, unitName) {
+    // Only show indicator on protected pages
+    if (!isProtectedPage()) return;
+    
     // Remove existing indicator if present
     const existing = document.getElementById('access-indicator');
     if (existing) existing.remove();
+    
+    // Get token info for expiry display
+    const tokenData = localStorage.getItem('cloudcore_token');
+    let expiryInfo = '';
+    if (tokenData) {
+        try {
+            const token = JSON.parse(tokenData);
+            const expiryDate = new Date(token.expires);
+            const hoursLeft = Math.round((expiryDate - new Date()) / (1000 * 60 * 60));
+            expiryInfo = `<div style="font-size: 11px; margin-top: 2px; opacity: 0.9;">
+                Access expires in ${hoursLeft} hours
+            </div>`;
+        } catch (e) {
+            // Invalid token
+        }
+    }
     
     // Create new indicator
     const indicator = document.createElement('div');
@@ -232,12 +358,14 @@ function addAccessIndicator(level, unitName) {
         <div style="font-size: 12px; margin-top: 2px;">
             Access: ${level.toUpperCase()}
         </div>
+        ${expiryInfo}
     `;
     
     // Add click handler to change password
     indicator.onclick = () => {
-        if (confirm('Change unit password?')) {
+        if (confirm('Change unit password or clear access?')) {
             localStorage.removeItem('cloudcore_password');
+            localStorage.removeItem('cloudcore_token');
             location.reload();
         }
     };

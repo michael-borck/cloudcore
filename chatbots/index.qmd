@@ -1,5 +1,5 @@
 ---
-title: "ChatBots"
+title: "Employee Interviews (ChatBots)"
 listing:
   contents: bots
   sort: "date desc"
@@ -10,5 +10,11 @@ listing:
 page-layout: full
 title-block-banner: true
 ---
-<script type="text/javascript" src="../scripts/available.js"></script>
-<script type="text/javascript" src="../scripts/password.js"></script>
+
+<div class="alert alert-warning">
+<h4>Access Requirements</h4>
+<ul>
+<li><strong>Consultant or Auditor access required</strong> (not available with public access)</li>
+<li><strong>Available 7:00 AM - 7:00 PM weekdays only</strong> (employees are not available outside business hours)</li>
+</ul>
+</div>

@@ -3,8 +3,6 @@ title: ""
 toc: false
 ---
 
-<script src="scripts/simple-timeline-access.js"></script>
-
 ::: {layout-ncol=2}
 # Revolutionary! 
 Unleashing the Power of CloudCore, the Innovators in Cloud Hosting and Managed IT Services! Operating 2 Cutting-Edge Data Centers, Empowering Over 500 Businesses to Soar Beyond Limits with Unparalleled Application Hosting and Sturdy IT Infrastructure! 

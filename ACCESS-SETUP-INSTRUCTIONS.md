@@ -15,12 +15,34 @@ The CloudCore site now has a simple multi-unit timeline access system that provi
 
 ## How It Works
 
-1. **Students enter their unit password** when first accessing the site
-2. **Content automatically unlocks** based on the current date and their unit's schedule
-3. **Three access levels:**
-   - **Public:** Always available
-   - **Consultant:** Unlocks on unit-specific date (policies, documentation)
-   - **Auditor:** Unlocks on later date (full evidence, chatbots)
+1. **Only `/docs/` and `/chatbots/` sections require passwords** - all other pages are public
+2. **24-hour access tokens** - enter password once, access for 24 hours in same browser
+3. **Blank passwords properly rejected** - redirects to home page
+4. **Content automatically unlocks** based on the current date and unit's schedule
+
+## Access Levels
+
+- **Public pages** (no password needed): Home, About, Pricing, Blog, Contact
+- **Protected sections** (password required): 
+  - `/docs/` - Documentation, policies, evidence
+  - `/chatbots/` - Employee interviews
+
+Within protected sections:
+- **Public level:** No access (redirected to home)
+- **Consultant level:** Policies, documentation, chatbot access (during business hours)
+- **Auditor level:** Full evidence, enhanced chatbot access
+
+## Security Features
+
+1. **24-Hour Token System**
+   - Password creates a token valid for 24 hours
+   - No need to re-enter password for each page
+   - Token expires automatically after 24 hours
+   - Shows hours remaining in access indicator
+
+2. **Chatbot Double Protection**
+   - **Password Protection:** Requires at least consultant-level access
+   - **Time Restriction:** Only available 7 AM - 7 PM weekdays
 
 ## Updating for Next Semester
 
