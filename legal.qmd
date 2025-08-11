@@ -1,0 +1,172 @@
+---
+title: "Legal Disclaimer & About This Site"
+toc: true
+---
+
+## Educational Disclaimer
+
+**IMPORTANT NOTICE:** CloudCore Networks is a **fictional company** created solely for educational purposes. This website is used as a teaching tool for information security, systems analysis, and technology courses at various Australian universities.
+
+### Fictional Nature
+
+- **All company information, services, and claims are entirely fictional**
+- **All employees, executives, and testimonials are fictitious characters**
+- **Any resemblance to real persons, living or dead, or actual companies is purely coincidental**
+- **The offices, data centers, and contact information listed do not exist**
+- **This is NOT a real cloud services provider**
+
+## Educational Purpose
+
+This simulated corporate website is designed to provide students with:
+
+- A realistic environment for security auditing exercises
+- Practice in information security assessment and compliance
+- Experience with vulnerability identification
+- Understanding of corporate website structures
+- Training in professional documentation review
+
+### Course Usage
+
+This site is currently used in:
+- ISYS6018 - Information Security Audit and Control
+- ISYS2001 - Systems Analysis and Design  
+- MGMT5000 - AI Strategy and Implementation
+
+## AI-Generated Content
+
+### Large Language Model Disclosure
+
+Significant portions of this website, including text content, code, and chatbot personalities, were generated with the assistance of:
+- **Claude** (Anthropic) - Primary content generation and code development
+- **ChatGPT** (OpenAI) - Additional content creation
+- **GitHub Copilot** - Code suggestions and completion
+
+### Chatbot Disclaimer
+
+The employee interview chatbots on this site:
+- Are powered by AI language models
+- May generate unpredictable or incorrect responses
+- Do not represent real people or actual company positions
+- May occasionally produce inappropriate content despite safeguards
+- Should not be relied upon for factual information
+
+**If you encounter inappropriate, offensive, or concerning content from any chatbot, please report it immediately to your course coordinator.**
+
+## Technology Stack
+
+This website demonstrates modern web development practices using:
+
+### Core Technologies
+- **[Quarto](https://quarto.org/)** - Open source scientific and technical publishing system
+- **[GitHub Pages](https://pages.github.com/)** - Static website hosting
+- **HTML5/CSS3/JavaScript** - Frontend technologies
+- **[Bootstrap](https://getbootstrap.com/)** - CSS framework (via Quarto)
+
+### Third-Party Services
+- **[AnythingLLM](https://anythingllm.com/)** - Chatbot integration platform
+- **[Lordicon](https://lordicon.com/)** - Animated icon library
+
+### Hosting & Deployment
+- **Static Site Generation** - No server-side processing
+- **Client-side Access Control** - JavaScript-based authentication (intentionally weak for educational purposes)
+- **Version Control** - Git/GitHub for source management
+
+## Open Source Acknowledgments
+
+This project is built on and gratefully acknowledges the following open source projects:
+
+### Direct Dependencies
+- [Quarto](https://github.com/quarto-dev/quarto-cli) - MIT License
+- [Bootstrap](https://github.com/twbs/bootstrap) - MIT License
+- [Lordicon Library](https://lordicon.com/) - Free tier icons
+
+### Development Tools
+- [Visual Studio Code](https://code.visualstudio.com/) - Development environment
+- [Git](https://git-scm.com/) - Version control
+- [Node.js](https://nodejs.org/) - JavaScript runtime
+
+### Inspiration & Learning
+- OWASP WebGoat Project - Security education methodology
+- DVWA (Damn Vulnerable Web Application) - Vulnerable app design patterns
+- Various security education platforms
+
+## Security Notice
+
+### Intentional Vulnerabilities
+
+This website **intentionally contains security vulnerabilities** for educational purposes, including but not limited to:
+- Weak client-side authentication
+- Exposed credentials in JavaScript
+- Information disclosure vulnerabilities
+- Insufficient access controls
+- Missing security headers
+
+**DO NOT** use any code, patterns, or techniques from this site in production applications.
+
+### Responsible Disclosure
+
+While vulnerabilities are intentional, if you discover a security issue that could:
+- Compromise the GitHub repository
+- Affect other GitHub Pages sites
+- Impact the hosting infrastructure
+
+Please responsibly disclose it to: [course coordinator email]
+
+## Privacy & Data Collection
+
+### What We Collect
+- **No personal data is intentionally collected**
+- **No cookies are used for tracking**
+- **No analytics services are implemented**
+
+### What GitHub May Collect
+As this site is hosted on GitHub Pages, GitHub may collect:
+- Basic visitor analytics
+- IP addresses for security
+- Standard web server logs
+
+Refer to [GitHub's Privacy Policy](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement) for details.
+
+## License
+
+### MIT License
+
+Copyright (c) 2024 CloudCore Networks (Educational Project)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+### Additional Terms for Educational Use
+
+- Students may fork and modify this project for course assignments
+- Instructors may adapt this project for teaching purposes
+- Commercial use of the CloudCore brand or identity is prohibited
+- The fictional nature of the company must be clearly maintained
+
+## Contact
+
+For questions about this educational project:
+
+**Course Coordinators:**
+- ISYS6018: [Coordinator Contact]
+- ISYS2001: [Coordinator Contact]
+- MGMT5000: [Coordinator Contact]
+
+**Technical Issues:**
+- GitHub Repository: [github.com/michael-borck/cloudcore](https://github.com/michael-borck/cloudcore)
+- Report Issues: [GitHub Issues](https://github.com/michael-borck/cloudcore/issues)
+
+## Accessibility
+
+We strive to make this educational resource accessible to all students. If you encounter accessibility barriers, please contact your course coordinator for assistance or alternative materials.
+
+## Last Updated
+
+This legal disclaimer was last updated: November 2024
+
+---
+
+*Remember: This is a fictional company website created for educational purposes. Do not attempt to purchase services or contact the listed business addresses.*

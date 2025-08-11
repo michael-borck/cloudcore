@@ -1,3 +1,22 @@
+/* Educational Banner */
+.educational-banner {
+  background: #fff3cd;
+  border-bottom: 2px solid #ffc107;
+  padding: 8px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #856404;
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+}
+
+.educational-banner a {
+  color: #856404;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 /* CloudCore Theme Variables */
 :root {
   /* Brand Colors - Purple/Blue Gradient Theme */

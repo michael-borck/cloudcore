@@ -56,12 +56,15 @@ website:
         </div>
         <div class="footer-section">
           <h4>Legal</h4>
-          <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a><br>
-          <a href="#">Service Level Agreement</a> | <a href="#">Security</a></p>
+          <p><a href="/legal.html">Legal Disclaimer</a> | <a href="/legal.html#privacy-data-collection">Privacy</a><br>
+          <a href="/legal.html#license">MIT License</a> | <a href="/legal.html#security-notice">Security Notice</a></p>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2024 CloudCore Networks. All rights reserved. | <a href="https://lordicon.com/">Icons by Lordicon.com</a></p>
+        <p>© 2024 CloudCore Networks (Fictional). All rights reserved. | 
+        <a href="/credits.html">Open Source Credits</a> | 
+        <a href="https://lordicon.com/">Icons by Lordicon.com</a> | 
+        <a href="/legal.html">Educational Disclaimer</a></p>
       </div>
 
 
@@ -73,6 +76,12 @@ format:
     include-in-header:
       - text: |
           <script src="/scripts/simple-timeline-access.js"></script>
+    include-before-body:
+      - text: |
+          <div class="educational-banner">
+            📚 <strong>Educational Site:</strong> This is a fictional company for teaching purposes only. 
+            <a href="/legal.html">View Legal Disclaimer</a>
+          </div>
 
 resources:
   - admin/

@@ -1,0 +1,141 @@
+---
+title: "Open Source Credits"
+toc: true
+---
+
+## Acknowledgments
+
+CloudCore Networks (Educational Project) is built on the shoulders of giants. We gratefully acknowledge the following open source projects and their contributors.
+
+## Core Technologies
+
+### Quarto
+- **Project:** [quarto.org](https://quarto.org/)
+- **License:** MIT
+- **GitHub:** [github.com/quarto-dev/quarto-cli](https://github.com/quarto-dev/quarto-cli)
+- **Usage:** Static site generation, markdown processing, and document rendering
+
+### Bootstrap
+- **Project:** [getbootstrap.com](https://getbootstrap.com/)
+- **License:** MIT
+- **GitHub:** [github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
+- **Usage:** CSS framework and responsive design components
+
+### GitHub Pages
+- **Project:** [pages.github.com](https://pages.github.com/)
+- **License:** GitHub Terms of Service
+- **Usage:** Static website hosting and deployment
+
+## JavaScript Libraries
+
+### Lordicon
+- **Project:** [lordicon.com](https://lordicon.com/)
+- **License:** Free tier with attribution
+- **Usage:** Animated icons throughout the site
+
+## Development Tools
+
+### Visual Studio Code
+- **Project:** [code.visualstudio.com](https://code.visualstudio.com/)
+- **License:** MIT
+- **GitHub:** [github.com/microsoft/vscode](https://github.com/microsoft/vscode)
+- **Usage:** Primary development environment
+
+### Git
+- **Project:** [git-scm.com](https://git-scm.com/)
+- **License:** GPL v2
+- **GitHub:** [github.com/git/git](https://github.com/git/git)
+- **Usage:** Version control
+
+### Node.js
+- **Project:** [nodejs.org](https://nodejs.org/)
+- **License:** MIT
+- **GitHub:** [github.com/nodejs/node](https://github.com/nodejs/node)
+- **Usage:** JavaScript runtime for build tools
+
+## AI Assistance
+
+### Claude (Anthropic)
+- **Project:** [anthropic.com](https://www.anthropic.com/)
+- **Usage:** Content generation, code development, and site architecture
+
+### ChatGPT (OpenAI)
+- **Project:** [openai.com](https://www.openai.com/)
+- **Usage:** Additional content creation and ideation
+
+### GitHub Copilot
+- **Project:** [github.com/features/copilot](https://github.com/features/copilot)
+- **Usage:** Code suggestions and completion
+
+## Educational Inspiration
+
+### OWASP WebGoat
+- **Project:** [owasp.org/www-project-webgoat](https://owasp.org/www-project-webgoat/)
+- **License:** GNU GPL v2
+- **Usage:** Inspiration for educational security scenarios
+
+### DVWA (Damn Vulnerable Web Application)
+- **Project:** [dvwa.co.uk](https://dvwa.co.uk/)
+- **License:** GPL v3
+- **Usage:** Vulnerable application design patterns
+
+## Image Resources
+
+### Stock Photography
+All profile images are AI-generated or from royalty-free sources:
+- Generated using DALL-E and Midjourney
+- No real person's likeness is used
+
+### Icons and Graphics
+- Lordicon animated icons (with attribution)
+- Custom SVG graphics
+- Bootstrap Icons (MIT License)
+
+## Fonts
+
+### System Font Stack
+Using native system fonts for optimal performance:
+- -apple-system (macOS/iOS)
+- BlinkMacSystemFont (macOS Chrome)
+- Segoe UI (Windows)
+- Roboto (Android)
+- Helvetica Neue, Arial (fallbacks)
+
+## Contributing
+
+This educational project welcomes contributions. If you'd like to add your project to these credits or contribute to CloudCore:
+
+1. Fork the repository
+2. Add your acknowledgment
+3. Submit a pull request
+
+## License Compliance
+
+We take open source licenses seriously. If you believe we've used your project incorrectly or without proper attribution, please contact us immediately at the repository issues page.
+
+## Special Thanks
+
+- **University Teaching Staff** who use this platform for education
+- **Students** who provide feedback and find creative vulnerabilities
+- **Open Source Community** for making projects like this possible
+- **Security Researchers** who inspire better security education
+
+## How to Give Attribution
+
+If you fork or use this project:
+
+```markdown
+Based on CloudCore Networks Educational Project
+https://github.com/michael-borck/cloudcore
+MIT License - Educational Use
+```
+
+## Updates
+
+This credits page was last updated: November 2024
+
+To suggest additions or corrections, please open an issue on [GitHub](https://github.com/michael-borck/cloudcore/issues).
+
+---
+
+*"If I have seen further it is by standing on the shoulders of Giants" - Isaac Newton*
