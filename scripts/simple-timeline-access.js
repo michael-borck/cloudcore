@@ -114,16 +114,16 @@ function checkAccess() {
     
     // Check if user cancelled or entered blank
     if (!password || password.trim() === '') {
-        // Redirect to home page
-        window.location.href = '/';
+        // Show access denied message
+        showAccessDeniedMessage('No password entered');
         return;
     }
     
     // Validate password
     const schedule = UNIT_SCHEDULES[password];
     if (!schedule) {
-        alert('Invalid password. Please check with your instructor.');
-        window.location.href = '/';
+        // Show invalid password message
+        showAccessDeniedMessage('Invalid password');
         return;
     }
     
@@ -135,6 +135,112 @@ function checkAccess() {
     
     // Apply access restrictions
     applyAccessLevel(accessLevel, schedule.unit);
+}
+
+/**
+ * Show access denied message and redirect
+ */
+function showAccessDeniedMessage(reason) {
+    // Replace page content with access denied message
+    document.body.innerHTML = `
+        <div style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        ">
+            <div style="
+                background: white;
+                border-radius: 10px;
+                padding: 40px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+                max-width: 500px;
+                text-align: center;
+            ">
+                <div style="
+                    font-size: 48px;
+                    margin-bottom: 20px;
+                ">🔒</div>
+                
+                <h1 style="
+                    color: #333;
+                    margin-bottom: 20px;
+                    font-size: 28px;
+                ">Access Denied</h1>
+                
+                <p style="
+                    color: #666;
+                    margin-bottom: 10px;
+                    font-size: 18px;
+                ">${reason === 'No password entered' ? 
+                    'You need to enter a valid unit password to access this section.' : 
+                    'The password you entered is incorrect.'}</p>
+                
+                <p style="
+                    color: #999;
+                    margin-bottom: 30px;
+                    font-size: 14px;
+                ">This section contains protected CloudCore documentation and employee interviews 
+                that require proper authentication.</p>
+                
+                <div style="
+                    color: #666;
+                    font-size: 14px;
+                    margin-bottom: 20px;
+                ">
+                    <strong>Valid unit codes:</strong><br>
+                    ISYS6018 | ISYS2001 | MGMT5000
+                </div>
+                
+                <p style="
+                    color: #007bff;
+                    font-size: 16px;
+                    margin-bottom: 20px;
+                ">Redirecting to home page in <span id="countdown">5</span> seconds...</p>
+                
+                <div>
+                    <button onclick="location.reload()" style="
+                        background: #007bff;
+                        color: white;
+                        border: none;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 16px;
+                        margin-right: 10px;
+                    ">Try Again</button>
+                    
+                    <button onclick="window.location.href='/'" style="
+                        background: #6c757d;
+                        color: white;
+                        border: none;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 16px;
+                    ">Go Home Now</button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Countdown and redirect
+    let seconds = 5;
+    const countdownElement = document.getElementById('countdown');
+    
+    const countdown = setInterval(() => {
+        seconds--;
+        if (countdownElement) {
+            countdownElement.textContent = seconds;
+        }
+        
+        if (seconds <= 0) {
+            clearInterval(countdown);
+            window.location.href = '/';
+        }
+    }, 1000);
 }
 
 /**
@@ -246,25 +352,8 @@ function handleChatbotAccess(level) {
         const chatbotEmbeds = document.querySelectorAll('script[data-embed-id]');
         
         if (chatbotEmbeds.length > 0) {
-            // Replace entire page content with access denied message
-            document.body.innerHTML = `
-                <div class="container mt-5">
-                    <div class="alert alert-danger text-center">
-                        <h1>🔒 Access Denied</h1>
-                        <h3>Employee Interviews Require Consultant Access</h3>
-                        <p class="lead">You need at least consultant-level access to interview CloudCore employees.</p>
-                        <p>Please enter your unit password to gain access.</p>
-                        <button class="btn btn-primary" onclick="promptForPassword()">Enter Password</button>
-                        <button class="btn btn-secondary" onclick="window.location.href='/'">Return to Home</button>
-                    </div>
-                </div>
-            `;
-            
-            // Add function to prompt for password
-            window.promptForPassword = function() {
-                localStorage.removeItem('cloudcore_password');
-                location.reload();
-            };
+            // Show chatbot-specific access denied message
+            showAccessDeniedMessage('Chatbot access requires authentication');
         }
     } else if (level === 'consultant') {
         // Consultant level - show chatbots but add notice
