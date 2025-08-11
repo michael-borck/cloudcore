@@ -105,14 +105,18 @@ function hideProtectedContent() {
         window.originalContent = document.body.innerHTML;
     }
     
-    // Replace with login form using CSS variables
+    // Get the computed background color of the body
+    const computedStyle = window.getComputedStyle(document.body);
+    const bodyBg = computedStyle.backgroundColor || '#ffffff';
+    
+    // Replace with login form using computed background
     document.body.innerHTML = `
         <div id="login-container" style="
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: var(--bs-body-bg, #ffffff);
+            background: ${bodyBg};
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         ">
             <div style="
