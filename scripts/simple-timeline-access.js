@@ -199,38 +199,24 @@ function hideProtectedContent() {
                         font-size: 13px;
                         margin: 0 0 10px 0;
                         font-weight: 500;
-                    ">Available Unit Codes:</p>
+                    ">Units Using This Site:</p>
                     <div style="
                         display: flex;
-                        justify-content: space-around;
-                        flex-wrap: wrap;
-                        gap: 10px;
+                        flex-direction: column;
+                        gap: 8px;
+                        font-size: 13px;
+                        color: #555;
                     ">
-                        <code style="
-                            background: white;
-                            padding: 5px 10px;
-                            border-radius: 4px;
-                            font-size: 12px;
-                            color: #667eea;
-                            border: 1px solid #e1e4e8;
-                        ">SecurityAudit2025</code>
-                        <code style="
-                            background: white;
-                            padding: 5px 10px;
-                            border-radius: 4px;
-                            font-size: 12px;
-                            color: #667eea;
-                            border: 1px solid #e1e4e8;
-                        ">SystemsAnalysis2025</code>
-                        <code style="
-                            background: white;
-                            padding: 5px 10px;
-                            border-radius: 4px;
-                            font-size: 12px;
-                            color: #667eea;
-                            border: 1px solid #e1e4e8;
-                        ">AIStrategy2025</code>
+                        <div>• ISYS6018 - Information Security Audit & Control</div>
+                        <div>• ISYS2001 - Systems Analysis & Design</div>
+                        <div>• MGMT5000 - AI Strategy & Implementation</div>
                     </div>
+                    <p style="
+                        color: #888;
+                        font-size: 11px;
+                        margin: 10px 0 0 0;
+                        font-style: italic;
+                    ">Contact your unit coordinator for access credentials</p>
                 </div>
                 
                 <div style="
@@ -389,7 +375,7 @@ function showAccessDeniedMessage(reason) {
                     font-size: 14px;
                     margin-bottom: 20px;
                 ">
-                    <strong>Valid unit codes:</strong><br>
+                    <strong>Authorized Units:</strong><br>
                     ISYS6018 | ISYS2001 | MGMT5000
                 </div>
                 
