@@ -1,5 +1,5 @@
 ---
-title: "Lin's Craft Studio, Samantha Wong"
+title: "Small Business Owner, Jessica Lin"
 image: "jessica_lin.webp"
 about:
   template: trestles
@@ -15,10 +15,10 @@ categories: ['Client', 'Small Business']
 ---
 <script type="text/javascript" src="../../../scripts/available.js"></script>
 
-Small Business Owner, Jessica Lin - A smaller scale client who values simplicity, cost-effectiveness, and straightforward usability over complex features.
+**Small Business Owner, Jessica Lin -** Jessica is the founder and owner of Lin's Craft Studio, a thriving small business specializing in handmade crafts and artisanal home decor based in Melbourne, Australia. In her mid-thirties and passionate about crafts and sustainable living, Jessica has grown her business from a local market stall to a nationwide online store over five years. Despite limited technical expertise, she recognizes the value of leveraging technology to streamline operations. Jessica represents a typical small business owner who uses CloudCore Networks' CSMP to manage various business aspects efficiently, prioritizing simplicity, cost-effectiveness, and straightforward usability. She requires mobile accessibility for managing her business while attending craft fairs and values predictable pricing with flexible payment structures that match her fluctuating cash flow.
 
-**Interview Focus: Small Business, Jessica Lin**
-Students should focus on understanding how cloud services can be designed to cater to small businesses, emphasising simplicity and efficiency. Questions could explore Jessica's experiences with previous technology solutions, her expectations from CSMP, and specific pain points she hopes the platform will solve.
+**Interview Focus: Small Business Owner Jessica Lin**  
+Students should explore Jessica's perspective on how cloud services can be designed and priced to meet small business needs. Questions should address her specific requirements from CSMP including inventory management, order processing, customer relationship management, and financial reporting features, her experiences with technology adoption and user interface preferences, budget constraints and pricing model preferences (pay-as-you-go vs. fixed pricing), the importance of mobile accessibility for on-the-go business management, her need for scalable solutions that can grow with her business, and challenges she faces with complex technology solutions. Students should inquire about her expectations for simplicity, customer support needs, and how cloud services can address pain points specific to small business operations.
 
 
 **How to Chat:**Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
