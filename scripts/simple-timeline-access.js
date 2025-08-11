@@ -88,8 +88,8 @@ function createAccessToken(password, schedule) {
 }
 
 /**
- * Hide protected content to prevent information leakage
- * This prevents users from seeing sensitive content behind the password prompt
+ * Hide protected content and show login form
+ * This prevents users from seeing sensitive content before authentication
  */
 function hideProtectedContent() {
     // Store original content
@@ -97,9 +97,9 @@ function hideProtectedContent() {
         window.originalContent = document.body.innerHTML;
     }
     
-    // Replace with loading/authentication screen
+    // Replace with login form
     document.body.innerHTML = `
-        <div style="
+        <div id="login-container" style="
             display: flex;
             justify-content: center;
             align-items: center;
@@ -112,48 +112,182 @@ function hideProtectedContent() {
                 border-radius: 10px;
                 padding: 40px;
                 box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-                max-width: 500px;
-                text-align: center;
+                max-width: 450px;
+                width: 90%;
             ">
-                <div style="
-                    font-size: 48px;
-                    margin-bottom: 20px;
-                ">🔐</div>
-                
-                <h1 style="
-                    color: #333;
-                    margin-bottom: 20px;
-                    font-size: 28px;
-                ">Authentication Required</h1>
-                
-                <p style="
-                    color: #666;
-                    margin-bottom: 10px;
-                    font-size: 16px;
-                ">This section contains protected CloudCore content.</p>
-                
-                <p style="
-                    color: #999;
-                    font-size: 14px;
-                ">Please enter your unit password when prompted.</p>
-                
-                <div style="
-                    margin-top: 30px;
-                    padding: 20px;
-                    background: #f8f9fa;
-                    border-radius: 5px;
-                ">
+                <div style="text-align: center; margin-bottom: 30px;">
                     <div style="
+                        font-size: 48px;
+                        margin-bottom: 20px;
+                    ">🔐</div>
+                    
+                    <h1 style="
+                        color: #333;
+                        margin-bottom: 10px;
+                        font-size: 28px;
+                    ">CloudCore Access Portal</h1>
+                    
+                    <p style="
                         color: #666;
-                        font-size: 14px;
-                    ">
-                        <strong>Valid unit codes:</strong><br>
-                        ISYS6018 | ISYS2001 | MGMT5000
+                        font-size: 16px;
+                        margin: 0;
+                    ">Enter your unit password to continue</p>
+                </div>
+                
+                <form id="login-form" style="margin-bottom: 20px;">
+                    <div style="margin-bottom: 20px;">
+                        <label for="password" style="
+                            display: block;
+                            color: #555;
+                            font-size: 14px;
+                            font-weight: 500;
+                            margin-bottom: 8px;
+                        ">Unit Password</label>
+                        <input type="password" id="password" name="password" 
+                            placeholder="Enter your unit password" 
+                            style="
+                                width: 100%;
+                                padding: 12px;
+                                font-size: 16px;
+                                border: 2px solid #e1e4e8;
+                                border-radius: 6px;
+                                box-sizing: border-box;
+                                transition: border-color 0.3s;
+                            "
+                            onfocus="this.style.borderColor='#667eea'"
+                            onblur="this.style.borderColor='#e1e4e8'"
+                            required>
                     </div>
+                    
+                    <button type="submit" style="
+                        width: 100%;
+                        padding: 12px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: white;
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                        border: none;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition: transform 0.2s, box-shadow 0.2s;
+                    "
+                    onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(102,126,234,0.4)'"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                        Access Protected Content
+                    </button>
+                </form>
+                
+                <div id="error-message" style="
+                    display: none;
+                    padding: 10px;
+                    background: #fee;
+                    border: 1px solid #fcc;
+                    border-radius: 4px;
+                    color: #c00;
+                    font-size: 14px;
+                    margin-bottom: 20px;
+                "></div>
+                
+                <div style="
+                    padding: 15px;
+                    background: #f6f8fa;
+                    border-radius: 6px;
+                    border-left: 4px solid #667eea;
+                ">
+                    <p style="
+                        color: #555;
+                        font-size: 13px;
+                        margin: 0 0 10px 0;
+                        font-weight: 500;
+                    ">Available Unit Codes:</p>
+                    <div style="
+                        display: flex;
+                        justify-content: space-around;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                    ">
+                        <code style="
+                            background: white;
+                            padding: 5px 10px;
+                            border-radius: 4px;
+                            font-size: 12px;
+                            color: #667eea;
+                            border: 1px solid #e1e4e8;
+                        ">SecurityAudit2025</code>
+                        <code style="
+                            background: white;
+                            padding: 5px 10px;
+                            border-radius: 4px;
+                            font-size: 12px;
+                            color: #667eea;
+                            border: 1px solid #e1e4e8;
+                        ">SystemsAnalysis2025</code>
+                        <code style="
+                            background: white;
+                            padding: 5px 10px;
+                            border-radius: 4px;
+                            font-size: 12px;
+                            color: #667eea;
+                            border: 1px solid #e1e4e8;
+                        ">AIStrategy2025</code>
+                    </div>
+                </div>
+                
+                <div style="
+                    text-align: center;
+                    margin-top: 20px;
+                ">
+                    <a href="/" style="
+                        color: #667eea;
+                        text-decoration: none;
+                        font-size: 14px;
+                    ">← Return to Home</a>
                 </div>
             </div>
         </div>
     `;
+    
+    // Add form submission handler
+    setTimeout(() => {
+        const form = document.getElementById('login-form');
+        if (form) {
+            form.addEventListener('submit', handleLoginSubmit);
+        }
+    }, 0);
+}
+
+/**
+ * Handle login form submission
+ */
+function handleLoginSubmit(e) {
+    e.preventDefault();
+    
+    const passwordInput = document.getElementById('password');
+    const errorMessage = document.getElementById('error-message');
+    const password = passwordInput.value.trim();
+    
+    // Check if password is empty
+    if (!password) {
+        errorMessage.textContent = 'Please enter a password';
+        errorMessage.style.display = 'block';
+        return;
+    }
+    
+    // Validate password
+    const schedule = UNIT_SCHEDULES[password];
+    if (!schedule) {
+        errorMessage.textContent = 'Invalid password. Please check your unit code and try again.';
+        errorMessage.style.display = 'block';
+        passwordInput.value = '';
+        passwordInput.focus();
+        return;
+    }
+    
+    // Create token for 24 hours
+    createAccessToken(password, schedule);
+    
+    // Reload the page to apply access
+    window.location.reload();
 }
 
 /**
@@ -185,9 +319,6 @@ function checkAccess() {
         return;
     }
     
-    // PRIVACY FIX: Hide protected content immediately before authentication
-    hideProtectedContent();
-    
     // Check for valid token first
     const existingToken = isTokenValid();
     if (existingToken) {
@@ -195,41 +326,14 @@ function checkAccess() {
         const schedule = UNIT_SCHEDULES[existingToken.password];
         if (schedule) {
             const accessLevel = getCurrentAccessLevel(schedule);
-            showProtectedContent(); // Reveal content after validation
             applyAccessLevel(accessLevel, schedule.unit);
             return;
         }
     }
     
-    // No valid token, prompt for password
-    const password = prompt('Enter your unit access password to access this section:');
-    
-    // Check if user cancelled or entered blank
-    if (!password || password.trim() === '') {
-        // Show access denied message
-        showAccessDeniedMessage('No password entered');
-        return;
-    }
-    
-    // Validate password
-    const schedule = UNIT_SCHEDULES[password];
-    if (!schedule) {
-        // Show invalid password message
-        showAccessDeniedMessage('Invalid password');
-        return;
-    }
-    
-    // Create token for 24 hours
-    createAccessToken(password, schedule);
-    
-    // Determine current access level based on date
-    const accessLevel = getCurrentAccessLevel(schedule);
-    
-    // Reveal content after successful authentication
-    showProtectedContent();
-    
-    // Apply access restrictions
-    applyAccessLevel(accessLevel, schedule.unit);
+    // No valid token, show login form
+    hideProtectedContent();
+    // Login form will handle authentication via form submission
 }
 
 /**
