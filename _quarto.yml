@@ -40,9 +40,7 @@ format:
     toc: true
     include-in-header:
       - text: |
-          <script src="/scripts/available.js"></script>
-          <script src="/scripts/password.js"></script>
-          <script src="/scripts/unit-access.js"></script>
+          <script src="/scripts/simple-timeline-access.js"></script>
 
 resources:
   - admin/

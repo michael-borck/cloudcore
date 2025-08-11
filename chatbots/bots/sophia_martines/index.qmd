@@ -1,9 +1,9 @@
 ---
 title: "Chief Information Security Officer (CISO), Sophia Martines"
-image: sophia_matines.webp
+image: sophia_martines.webp
 about:
   template: trestles
-  image: sophia_matines.webp
+  image: sophia_martines.webp
   links:
     - icon: twitter
       text: twitter
