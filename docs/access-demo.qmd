@@ -173,8 +173,9 @@ Your access level is indicated in the top-right corner of the page. Content avai
 
 | Unit | Consultant Access | Full Audit Access |
 |------|------------------|-------------------|
-| ISYS6018 - Security Audit | Week 2 (July 29) | Week 9 (Sept 16) |
-| ISYS2001 - Systems Analysis | Week 3 (Aug 5) | Week 10 (Sept 23) |
-| MGMT5000 - AI Strategy | Week 4 (Aug 12) | Week 12 (Oct 7) |
+| ISYS6018 - Information Security Audit and Control | Week 2 (July 29) | Week 9 (Sept 16) |
+| ISYS2002 - Systems Analysis and Design | Week 3 (Aug 5) | Week 10 (Sept 23) |
+| ISYS6014 - Knowledge Management and Intelligent Systems | Week 4 (Aug 12) | Week 12 (Oct 7) |
+| ISAD5001 - Information Systems Analysis and Design | Week 3 (Aug 5) | Week 10 (Sept 23) |
 
 To change your unit password, click on the access indicator and confirm.
