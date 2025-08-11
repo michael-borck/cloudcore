@@ -3,28 +3,89 @@ title: ""
 toc: false
 ---
 
-::: {layout-ncol=2}
-# Revolutionary! 
-Unleashing the Power of CloudCore, the Innovators in Cloud Hosting and Managed IT Services! Operating 2 Cutting-Edge Data Centers, Empowering Over 500 Businesses to Soar Beyond Limits with Unparalleled Application Hosting and Sturdy IT Infrastructure! 
+::: {.hero-section}
+# Enterprise Cloud Infrastructure for Modern Business
 
-![](assets/cloudcore_networks.png)
+### Trusted by 500+ organizations worldwide with 99.9% uptime guarantee
+
+::: {.trust-metrics}
+::: {.metric}
+**500+**
+Active Clients
 :::
 
-## Everything you need to start a website
+::: {.metric}
+**99.9%**
+Uptime SLA
+:::
 
-We take the best parts of state-of-the-art tools and add our own innovations.
+::: {.metric}
+**2**
+Data Centers
+:::
 
-::: {layout-ncol=3}
+::: {.metric}
+**24/7**
+Support
+:::
+:::
 
-{{< li evyuuwna trigger=loop delay=1000 class=small >}} **Bring Your Own Framework**  Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.
+[Schedule a Demo](contact.qmd){.btn .btn-primary .btn-lg role="button"}
+[View Solutions](#solutions){.btn .btn-outline-primary .btn-lg role="button"}
+:::
 
-{{< li lzgmgrnn trigger=loop delay=1000 class=small >}} **100% Static HTML, No JS** CloudCore Solutions renders your entire page to static HTML, removing all JavaScript from your final build by default.
+## Why CloudCore Networks?
 
-{{< li yxyampao trigger=loop delay=1000 class=small >}} **On-Demand Components** Need some JS? We can automatically hydrate interactive components when they become visible on the page.
+We combine enterprise-grade infrastructure with innovative cloud solutions to power your digital transformation.
 
-{{< li bxdnmmpl trigger=loop delay=1000 class=small >}} **Broad Integration** We support TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.
+::: {layout-ncol=3 #solutions}
 
-{{< li vyqvtrtg trigger=loop delay=1000 class=small >}} **SEO Enabled** Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!
+::: {.feature-card}
+{{< li evyuuwna trigger=loop delay=1000 class=small >}} **Cloud Hosting**  
+Enterprise-grade infrastructure with automated scaling, load balancing, and global CDN distribution for optimal performance.
+:::
 
-{{< li kddybgok trigger=loop delay=1000 class=small >}} **Community** We use open source projects powered by hundreds of contributors making thousands of individual contributions.
+::: {.feature-card}
+{{< li lzgmgrnn trigger=loop delay=1000 class=small >}} **Managed Services**  
+Full-stack management including 24/7 monitoring, automated backups, security patches, and dedicated support team.
+:::
+
+::: {.feature-card}
+{{< li yxyampao trigger=loop delay=1000 class=small >}} **Security & Compliance**  
+ISO 27001 certified with end-to-end encryption, DDoS protection, and compliance with GDPR, HIPAA, and SOC 2.
+:::
+
+::: {.feature-card}
+{{< li bxdnmmpl trigger=loop delay=1000 class=small >}} **DevOps Integration**  
+Seamless CI/CD pipelines, container orchestration with Kubernetes, and infrastructure as code support.
+:::
+
+::: {.feature-card}
+{{< li vyqvtrtg trigger=loop delay=1000 class=small >}} **High Availability**  
+Multi-region deployment, automatic failover, and 99.9% uptime SLA with transparent status monitoring.
+:::
+
+::: {.feature-card}
+{{< li kddybgok trigger=loop delay=1000 class=small >}} **Expert Support**  
+Dedicated account managers, 24/7 technical support, and access to cloud architects for optimization.
+:::
+:::
+
+## Trusted by Industry Leaders
+
+::: {.testimonial-section}
+> "CloudCore transformed our infrastructure, reducing costs by 40% while improving performance. Their team's expertise and 24/7 support have been invaluable."
+
+**Sarah Mitchell**  
+*CTO, TechVentures Inc.*
+:::
+
+## Security & Compliance
+
+::: {.certifications}
+- **ISO 27001:2013** Certified Information Security Management
+- **SOC 2 Type II** Audited Security Controls
+- **GDPR** Compliant Data Protection
+- **HIPAA** Healthcare Information Security
+- **PCI DSS** Payment Card Industry Standards
 :::

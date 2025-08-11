@@ -1,67 +1,142 @@
 ---
-title: ""
+title: "Plans & Pricing"
 toc: false
 ---
-# Pricing
+# Transparent Pricing for Every Scale
 
-Simple & Predictable pricing. No Surprises. 
+Choose the plan that fits your needs. All plans include our core security features and 24/7 monitoring. 
 
 ::: {layout-ncol=3}
 
 
-::: { .card }
-<p>Personal</p>
-<h1>Free</h1>
+::: { .card .pricing-card }
+<div class="plan-header">
+<p class="plan-type">Starter</p>
+<h2>$299<span class="period">/month</span></h2>
+<p class="plan-description">Perfect for small businesses and startups</p>
+</div>
 
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}}Lifetime Free
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Up to 10 Virtual Machines
 
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}}Up to 3 Users
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} 1TB SSD Storage
 
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}}20 GB Storage
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} 10TB Monthly Transfer
 
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}}Basic Integrations
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Daily Automated Backups
 
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}}Community Support
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Business Hours Support
 
-[Get Started](){.btn .btn-outline-primary .btn role="button"}
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} 99.5% Uptime SLA
+
+[Start Free Trial](contact.qmd){.btn .btn-outline-primary .btn-block role="button"}
 :::
 
 
-::: { .card }
-<p>Professional</p>
-<h1>$19 month</h1>
+::: { .card .pricing-card .featured }
+<div class="badge-popular">MOST POPULAR</div>
+<div class="plan-header">
+<p class="plan-type">Professional</p>
+<h2>$999<span class="period">/month</span></h2>
+<p class="plan-description">Ideal for growing businesses</p>
+</div>
 
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}}All 'Free' features
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Up to 50 Virtual Machines
 
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}}Up to 20 Users
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} 5TB SSD Storage
 
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}}Unlimited Collaborators
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} 50TB Monthly Transfer
 
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}}Advanced Integrations
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Hourly Automated Backups
 
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}}Priority Support
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} 24/7 Priority Support
 
-[Get Started](){.btn .btn-outline-primary .btn role="button"}
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} 99.9% Uptime SLA
+
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Load Balancing Included
+
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Advanced Security Suite
+
+[Get Started](contact.qmd){.btn .btn-primary .btn-block role="button"}
 :::
 
 
-::: { .card }
-<p>Enterprise</p>
-<h1>Custom</h1>
+::: { .card .pricing-card }
+<div class="plan-header">
+<p class="plan-type">Enterprise</p>
+<h2>Custom</h2>
+<p class="plan-description">Tailored solutions for large organizations</p>
+</div>
 
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}}All 'Pro' features
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Unlimited Resources
 
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}}Unlimited Domains
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Custom Storage Solutions
 
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}}99.99% Uptime
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Unlimited Transfer
 
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}}Account Manager
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Real-time Replication
 
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}}24/7 Support
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Dedicated Account Manager
 
-[Contact Us](){.btn .btn-outline-primary .btn role="button"}
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} 99.99% Uptime SLA
+
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Custom Integrations
+
+{{< li oqdmuxru trigger=loop delay=1000 class=small >}} On-Premise Options
+
+[Contact Sales](contact.qmd){.btn .btn-outline-primary .btn-block role="button"}
 :::
 
+## All Plans Include
 
+::: {layout-ncol=4}
+::: {.included-feature}
+✓ **SSL Certificates**  
+Free SSL for all domains
+:::
+
+::: {.included-feature}
+✓ **DDoS Protection**  
+Advanced threat mitigation
+:::
+
+::: {.included-feature}
+✓ **Global CDN**  
+Fast content delivery
+:::
+
+::: {.included-feature}
+✓ **API Access**  
+Full REST API
+:::
+:::
+
+## Compare Plans
+
+| Feature | Starter | Professional | Enterprise |
+|---------|---------|--------------|------------|
+| Virtual Machines | Up to 10 | Up to 50 | Unlimited |
+| Storage | 1TB SSD | 5TB SSD | Custom |
+| Monthly Transfer | 10TB | 50TB | Unlimited |
+| Backup Frequency | Daily | Hourly | Real-time |
+| Support Level | Business Hours | 24/7 Priority | Dedicated Team |
+| Uptime SLA | 99.5% | 99.9% | 99.99% |
+| Load Balancing | - | ✓ | ✓ |
+| Multi-Region | - | Optional | ✓ |
+| Compliance Reports | - | Monthly | Weekly |
+| Custom Integrations | - | - | ✓ |
+
+## Frequently Asked Questions
+
+**Can I change plans anytime?**  
+Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.
+
+**Is there a setup fee?**  
+No, we don't charge any setup fees. You only pay for the resources you use.
+
+**What payment methods do you accept?**  
+We accept all major credit cards, bank transfers, and can arrange enterprise invoicing.
+
+**Do you offer discounts for annual billing?**  
+Yes, save 20% when you pay annually. Contact our sales team for details.
 
 :::

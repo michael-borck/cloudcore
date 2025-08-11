@@ -2,19 +2,33 @@ project:
   type: website
 
 website:
-  title: "CloudCore"
+  title: "CloudCore Networks"
   navbar:
     left:
       - text: Home
         href: index.qmd
+      - text: Solutions
+        menu:
+          - text: Cloud Hosting
+            href: index.qmd#solutions
+          - text: Managed Services
+            href: index.qmd#solutions
+          - text: Security & Compliance
+            href: index.qmd#solutions
       - text: About
         href: about.qmd
       - text: Pricing
         href: pricing.qmd
-      - text: Blog
-        href: blog/index.qmd
-      - text: Staff-Clients
-        href: chatbots/index.qmd
+      - text: Resources
+        menu:
+          - text: Documentation
+            href: docs/policies.qmd
+          - text: Support Center
+            href: docs/support.qmd
+          - text: Blog
+            href: blog/index.qmd
+          - text: Customer Portal
+            href: chatbots/index.qmd
       - text: Docs
         menu:
           - docs/interviews.qmd
@@ -23,14 +37,32 @@ website:
           - docs/articles.qmd
           - docs/logs.qmd
     right:
-      - text: Contact US
+      - text: Contact Us
         href: contact.qmd
   page-footer: 
     center: | 
-      4 Millrose Dr, Malaga, WA 6090 and 11 Newcastle St, Perth, WA 6000  
-      cloudcore@serveur.au, +61 (8) 4587 899  
-      Copyright 2021, CloudCore  
-      <a href="https://lordicon.com/">Icons by Lordicon.com</a>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>CloudCore Networks</h4>
+          <p>Enterprise cloud infrastructure solutions</p>
+          <p>ISO 27001:2013 Certified</p>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Perth: 11 Newcastle St, WA 6000<br>
+          Malaga: 4 Millrose Dr, WA 6090<br>
+          Email: info@cloudcore.com.au<br>
+          Phone: +61 (8) 4587 8990</p>
+        </div>
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a><br>
+          <a href="#">Service Level Agreement</a> | <a href="#">Security</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 CloudCore Networks. All rights reserved. | <a href="https://lordicon.com/">Icons by Lordicon.com</a></p>
+      </div>
 
 
 format:
