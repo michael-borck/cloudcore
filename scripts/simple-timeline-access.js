@@ -221,8 +221,9 @@ function hideProtectedContent() {
                         color: #555;
                     ">
                         <div>• ISYS6018 - Information Security Audit & Control</div>
-                        <div>• ISYS2001 - Systems Analysis & Design</div>
-                        <div>• MGMT5000 - AI Strategy & Implementation</div>
+                        <div>• ISYS2002 - Systems Analysis & Design</div>
+                        <div>• ISYS6014 - Knowledge Management & Intelligent Systems</div>
+                        <div>• ISAD5001 - Information Systems Analysis & Design</div>
                     </div>
                     <p style="
                         color: #888;
