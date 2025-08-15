@@ -1,0 +1,15 @@
+{
+  "name": "cloudcore-netlify-functions",
+  "version": "1.0.0",
+  "description": "Netlify Functions for CloudCore admin interface",
+  "main": "index.js",
+  "dependencies": {
+    "@octokit/rest": "^20.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["netlify", "functions", "github", "cloudcore"],
+  "author": "CloudCore Admin System",
+  "license": "MIT"
+}
