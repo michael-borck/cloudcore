@@ -18,29 +18,8 @@ jobs:
           # No R installation needed for HTML-only site
           tinytex: false
 
-      - name: Check for R dependencies
-        id: check-r
-        run: |
-          if find . -name "*.qmd" -exec grep -l "```{r" {} \; | head -1; then
-            echo "r_needed=true" >> $GITHUB_OUTPUT
-          else
-            echo "r_needed=false" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Setup R (only if needed)
-        if: steps.check-r.outputs.r_needed == 'true'
-        uses: r-lib/actions/setup-r@v2
-        with:
-          r-version: '4.3.2'
-
-      - name: Install R dependencies (only if needed)
-        if: steps.check-r.outputs.r_needed == 'true'
-        run: |
-          if [ -f "renv.lock" ]; then
-            R -e "install.packages('renv'); renv::restore()"
-          elif [ -f "_requirements.txt" ]; then
-            R -e "install.packages(readLines('_requirements.txt'))"
-          fi
+      # Skip R setup for HTML-only Quarto site
+      # R dependencies can be added back if needed in the future
 
       - name: Render Quarto site
         run: quarto render
