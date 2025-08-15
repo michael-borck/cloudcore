@@ -1,0 +1,155 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CloudCore Unit Access Configuration",
+  "description": "Schema for configuring unit-based access control with allowed/denied lists and time release",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+$"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "defaults": {
+      "type": "object",
+      "properties": {
+        "accessMode": {
+          "type": "string",
+          "enum": ["time-based", "scenario-based", "combined"]
+        },
+        "publicPages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "protectedSections": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["accessMode", "publicPages", "protectedSections"]
+    },
+    "units": {
+      "type": "object",
+      "patternProperties": {
+        "^[A-Z]{3,4}\\d{4}$": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string",
+              "minLength": 8
+            },
+            "timeRelease": {
+              "type": "object",
+              "properties": {
+                "consultant": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "auditor": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              },
+              "required": ["consultant", "auditor"]
+            },
+            "accessRules": {
+              "type": "object",
+              "properties": {
+                "mode": {
+                  "type": "string",
+                  "enum": ["time-based", "scenario-based", "combined"]
+                },
+                "scenarioConfig": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["name", "description"]
+                },
+                "customRules": {
+                  "type": "object",
+                  "properties": {
+                    "allowed": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "denied": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "timeSpecific": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "path": {
+                            "type": "string"
+                          },
+                          "availableFrom": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "availableUntil": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "level": {
+                            "type": "string",
+                            "enum": ["consultant", "auditor"]
+                          }
+                        },
+                        "required": ["path", "availableFrom", "level"]
+                      }
+                    }
+                  },
+                  "required": ["allowed", "denied", "timeSpecific"]
+                }
+              },
+              "required": ["mode", "scenarioConfig", "customRules"]
+            }
+          },
+          "required": ["name", "password", "timeRelease", "accessRules"]
+        }
+      }
+    },
+    "accessModes": {
+      "type": "object",
+      "patternProperties": {
+        "^(time-based|scenario-based|combined)$": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "behavior": {
+              "type": "string"
+            }
+          },
+          "required": ["description", "behavior"]
+        }
+      }
+    }
+  },
+  "required": ["version", "defaults", "units", "accessModes"]
+}

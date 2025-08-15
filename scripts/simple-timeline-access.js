@@ -1,48 +1,159 @@
 /**
- * CloudCore Simple Multi-Unit Timeline Access System
- * One site, multiple units, different schedules
+ * CloudCore Enhanced Multi-Unit Access System
+ * Supports time-based, scenario-based, and combined access control
  * 
- * Units supported:
- * - ISYS6018: Information Security Audit and Control
- * - ISYS2002: Systems Analysis and Design
- * - ISYS6014: Knowledge Management and Intelligent Systems
- * - ISAD5001: Information Systems Analysis and Design
+ * Features:
+ * - JSON-based configuration
+ * - Allowed/denied resource lists
+ * - Time-specific access rules
+ * - Multiple access modes per unit
+ * - Fallback to legacy configuration
  */
 
-// Configuration - Update these each semester
-const UNIT_SCHEDULES = {
+// Global configuration objects
+let ACCESS_CONFIG = null;
+let UNIT_SCHEDULES = {};
+
+// Legacy fallback configuration - used if JSON config fails to load
+const LEGACY_UNIT_SCHEDULES = {
     // ISYS6018 - Information Security Audit and Control
     'SecurityAudit2025': {
         unit: 'ISYS6018 - Information Security Audit and Control',
-        consultantDate: '2025-07-29T00:00:00',  // Week 2
-        auditorDate: '2025-09-16T00:00:00'      // Week 9
+        consultantDate: '2025-07-29T00:00:00',
+        auditorDate: '2025-09-16T00:00:00'
     },
     
     // ISYS2002 - Systems Analysis and Design
     'SystemsAnalysisDesign2025': {
         unit: 'ISYS2002 - Systems Analysis and Design', 
-        consultantDate: '2025-08-05T00:00:00',  // Week 3
-        auditorDate: '2025-09-23T00:00:00'      // Week 10
+        consultantDate: '2025-08-05T00:00:00',
+        auditorDate: '2025-09-23T00:00:00'
     },
     
     // ISYS6014 - Knowledge Management and Intelligent Systems
     'KnowledgeManagement2025': {
         unit: 'ISYS6014 - Knowledge Management and Intelligent Systems',
-        consultantDate: '2025-08-12T00:00:00',  // Week 4
-        auditorDate: '2025-10-07T00:00:00'      // Week 12
+        consultantDate: '2025-08-12T00:00:00',
+        auditorDate: '2025-10-07T00:00:00'
     },
     
     // ISAD5001 - Information Systems Analysis and Design
     'InfoSystemsAnalysis2025': {
         unit: 'ISAD5001 - Information Systems Analysis and Design',
-        consultantDate: '2025-08-05T00:00:00',  // Week 3
-        auditorDate: '2025-09-23T00:00:00'      // Week 10
+        consultantDate: '2025-08-05T00:00:00',
+        auditorDate: '2025-09-23T00:00:00'
     }
 };
 
 // For testing - set to true and change testDate to simulate different dates
 const TEST_MODE = false;
 const TEST_DATE = '2025-09-17T00:00:00'; // Change this to test different dates
+
+/**
+ * Load configuration from JSON file
+ */
+async function loadAccessConfig() {
+    try {
+        const response = await fetch('/config/unit-access.json');
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
+        ACCESS_CONFIG = await response.json();
+        
+        // Convert JSON config to UNIT_SCHEDULES format for backward compatibility
+        UNIT_SCHEDULES = {};
+        for (const [unitCode, unitConfig] of Object.entries(ACCESS_CONFIG.units)) {
+            UNIT_SCHEDULES[unitConfig.password] = {
+                unit: unitConfig.name,
+                unitCode: unitCode,
+                consultantDate: unitConfig.timeRelease.consultant,
+                auditorDate: unitConfig.timeRelease.auditor,
+                accessRules: unitConfig.accessRules
+            };
+        }
+        
+        console.log('Access configuration loaded successfully', ACCESS_CONFIG.version);
+        return true;
+    } catch (error) {
+        console.warn('Failed to load access configuration, using legacy fallback:', error.message);
+        UNIT_SCHEDULES = LEGACY_UNIT_SCHEDULES;
+        return false;
+    }
+}
+
+/**
+ * Check if path matches a pattern (supports wildcards)
+ */
+function pathMatches(path, pattern) {
+    // Convert pattern to regex
+    const regexPattern = pattern
+        .replace(/\*/g, '.*')  // * becomes .*
+        .replace(/\?/g, '.')   // ? becomes .
+        .replace(/\[/g, '\\[') // escape brackets
+        .replace(/\]/g, '\\]');
+    
+    const regex = new RegExp('^' + regexPattern + '$', 'i');
+    return regex.test(path);
+}
+
+/**
+ * Check if current path/resource is allowed based on unit configuration
+ */
+function isResourceAllowed(path, unitConfig, currentLevel) {
+    if (!unitConfig.accessRules) {
+        // No custom rules, use default behavior
+        return true;
+    }
+    
+    const { mode, customRules } = unitConfig.accessRules;
+    const now = TEST_MODE ? new Date(TEST_DATE) : new Date();
+    
+    // Check time-specific rules first
+    for (const timeRule of customRules.timeSpecific) {
+        if (pathMatches(path, timeRule.path)) {
+            const availableFrom = new Date(timeRule.availableFrom);
+            const availableUntil = timeRule.availableUntil ? new Date(timeRule.availableUntil) : null;
+            
+            // Check if current time is within availability window
+            const inTimeWindow = now >= availableFrom && (!availableUntil || now <= availableUntil);
+            
+            // Check if user has required access level
+            const hasRequiredLevel = timeRule.level === 'consultant' ? 
+                (currentLevel === 'consultant' || currentLevel === 'auditor') :
+                currentLevel === 'auditor';
+            
+            if (!inTimeWindow || !hasRequiredLevel) {
+                return false;
+            }
+        }
+    }
+    
+    // Check denied list
+    for (const deniedPattern of customRules.denied) {
+        if (pathMatches(path, deniedPattern)) {
+            return false;
+        }
+    }
+    
+    // For scenario-based mode, check allowed list
+    if (mode === 'scenario-based') {
+        // If there's an allowed list, path must be in it
+        if (customRules.allowed.length > 0) {
+            return customRules.allowed.some(pattern => pathMatches(path, pattern));
+        }
+        // If no allowed list, allow everything not denied
+        return true;
+    }
+    
+    // For combined mode, check allowed list for additional restrictions
+    if (mode === 'combined' && customRules.allowed.length > 0) {
+        return customRules.allowed.some(pattern => pathMatches(path, pattern));
+    }
+    
+    // Default: allow if not explicitly denied
+    return true;
+}
 
 /**
  * Check if current page requires protection
@@ -312,7 +423,10 @@ function showProtectedContent() {
 /**
  * Main access control function
  */
-function checkAccess() {
+async function checkAccess() {
+    // Load configuration first
+    await loadAccessConfig();
+    
     // Check if this page needs protection
     if (!isProtectedPage()) {
         // Public page - no restrictions
@@ -326,7 +440,15 @@ function checkAccess() {
         const schedule = UNIT_SCHEDULES[existingToken.password];
         if (schedule) {
             const accessLevel = getCurrentAccessLevel(schedule);
-            applyAccessLevel(accessLevel, schedule.unit);
+            
+            // Check if current page/resource is allowed
+            const currentPath = window.location.pathname;
+            if (!isResourceAllowed(currentPath, schedule, accessLevel)) {
+                showResourceDeniedMessage(schedule, accessLevel);
+                return;
+            }
+            
+            applyAccessLevel(accessLevel, schedule.unit, schedule);
             return;
         }
     }
@@ -460,13 +582,13 @@ function getCurrentAccessLevel(schedule) {
 }
 
 /**
- * Apply access restrictions based on level
+ * Apply access restrictions based on level and unit configuration
  */
-function applyAccessLevel(level, unitName) {
+function applyAccessLevel(level, unitName, unitConfig) {
     // Add access indicator
-    addAccessIndicator(level, unitName);
+    addAccessIndicator(level, unitName, unitConfig);
     
-    // Hide/show content based on access level
+    // Hide/show content based on access level and unit rules
     const consultantElements = document.querySelectorAll('[data-access="consultant"]');
     const auditorElements = document.querySelectorAll('[data-access="auditor"]');
     
@@ -475,17 +597,155 @@ function applyAccessLevel(level, unitName) {
         consultantElements.forEach(el => hideElement(el));
         auditorElements.forEach(el => hideElement(el));
     } else if (level === 'consultant') {
-        // Show consultant, hide auditor
-        consultantElements.forEach(el => showElement(el));
-        auditorElements.forEach(el => hideElement(el));
+        // Show consultant, check auditor based on rules
+        consultantElements.forEach(el => {
+            if (isElementAllowed(el, unitConfig, level)) {
+                showElement(el);
+            } else {
+                hideElement(el);
+            }
+        });
+        auditorElements.forEach(el => {
+            if (isElementAllowed(el, unitConfig, level)) {
+                showElement(el);
+            } else {
+                hideElement(el);
+            }
+        });
     } else if (level === 'auditor') {
-        // Show everything
-        consultantElements.forEach(el => showElement(el));
-        auditorElements.forEach(el => showElement(el));
+        // Show content based on unit rules
+        consultantElements.forEach(el => {
+            if (isElementAllowed(el, unitConfig, level)) {
+                showElement(el);
+            } else {
+                hideElement(el);
+            }
+        });
+        auditorElements.forEach(el => {
+            if (isElementAllowed(el, unitConfig, level)) {
+                showElement(el);
+            } else {
+                hideElement(el);
+            }
+        });
     }
     
-    // Handle chatbot access (only for auditor level)
-    handleChatbotAccess(level);
+    // Handle chatbot access with unit-specific rules
+    handleChatbotAccess(level, unitConfig);
+}
+
+/**
+ * Check if a specific content element is allowed based on unit configuration
+ */
+function isElementAllowed(element, unitConfig, currentLevel) {
+    // If no unit config or access rules, use default behavior
+    if (!unitConfig || !unitConfig.accessRules) {
+        return true;
+    }
+    
+    // Get element identifier (could be data attribute, class, or content)
+    const elementId = element.getAttribute('data-resource-id') || 
+                     element.getAttribute('data-access') || 
+                     element.className || 
+                     'unknown';
+    
+    // Check against unit's access rules
+    return isResourceAllowed(`/element/${elementId}`, unitConfig, currentLevel);
+}
+
+/**
+ * Show resource denied message for specific resources
+ */
+function showResourceDeniedMessage(unitConfig, currentLevel) {
+    const currentPath = window.location.pathname;
+    document.body.innerHTML = `
+        <div style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        ">
+            <div style="
+                background: white;
+                border-radius: 10px;
+                padding: 40px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+                max-width: 500px;
+                text-align: center;
+            ">
+                <div style="
+                    font-size: 48px;
+                    margin-bottom: 20px;
+                ">🚫</div>
+                
+                <h1 style="
+                    color: #333;
+                    margin-bottom: 20px;
+                    font-size: 28px;
+                ">Resource Not Available</h1>
+                
+                <p style="
+                    color: #666;
+                    margin-bottom: 10px;
+                    font-size: 18px;
+                ">This resource is not included in your unit's scenario configuration.</p>
+                
+                <div style="
+                    background: #f8f9fa;
+                    border-radius: 8px;
+                    padding: 20px;
+                    margin: 20px 0;
+                    border-left: 4px solid #667eea;
+                ">
+                    <p style="
+                        color: #555;
+                        margin: 0 0 10px 0;
+                        font-weight: 500;
+                    ">Your Access Details:</p>
+                    <div style="
+                        color: #666;
+                        font-size: 14px;
+                    ">
+                        <div><strong>Unit:</strong> ${unitConfig.unit}</div>
+                        <div><strong>Access Level:</strong> ${currentLevel.toUpperCase()}</div>
+                        <div><strong>Scenario:</strong> ${unitConfig.accessRules?.scenarioConfig?.name || 'Default'}</div>
+                    </div>
+                </div>
+                
+                <p style="
+                    color: #999;
+                    margin-bottom: 30px;
+                    font-size: 14px;
+                ">This resource has been excluded from your learning scenario. 
+                Contact your unit coordinator if you believe this is an error.</p>
+                
+                <div>
+                    <button onclick="history.back()" style="
+                        background: #007bff;
+                        color: white;
+                        border: none;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 16px;
+                        margin-right: 10px;
+                    ">Go Back</button>
+                    
+                    <button onclick="window.location.href='/docs/'" style="
+                        background: #6c757d;
+                        color: white;
+                        border: none;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 16px;
+                    ">Browse Available Content</button>
+                </div>
+            </div>
+        </div>
+    `;
 }
 
 /**
@@ -533,17 +793,26 @@ function createPlaceholder(requiredLevel) {
 }
 
 /**
- * Handle chatbot access (require at least consultant level)
+ * Handle chatbot access with unit-specific rules
  * Chatbots should only be available:
  * 1. With at least consultant access (not public)
  * 2. During business hours (7am-7pm weekdays) - handled by available.js
+ * 3. Based on unit's access configuration
  */
-function handleChatbotAccess(level) {
+function handleChatbotAccess(level, unitConfig) {
     // Check if we're on a chatbot page
     const isChatbotPage = window.location.pathname.includes('/chatbots/') || 
                           document.querySelector('script[data-embed-id]');
     
     if (!isChatbotPage) return;
+    
+    const currentPath = window.location.pathname;
+    
+    // Check if this chatbot is allowed for this unit
+    if (!isResourceAllowed(currentPath, unitConfig, level)) {
+        showResourceDeniedMessage(unitConfig, level);
+        return;
+    }
     
     // Require at least consultant access for any chatbot
     if (level === 'public') {
@@ -563,15 +832,17 @@ function handleChatbotAccess(level) {
             if (!script.previousElementSibling?.classList.contains('access-notice')) {
                 const notice = document.createElement('div');
                 notice.className = 'access-notice alert alert-info mb-3';
+                const scenarioName = unitConfig?.accessRules?.scenarioConfig?.name || 'Standard Access';
                 notice.innerHTML = `
-                    <small><strong>Note:</strong> You have consultant-level access to this employee interview. 
-                    Full audit access may reveal additional information.</small>
+                    <small><strong>Scenario:</strong> ${scenarioName} | 
+                    <strong>Access Level:</strong> Consultant | 
+                    Some content may be restricted based on your unit's configuration.</small>
                 `;
                 script.parentNode.insertBefore(notice, script);
             }
         });
     } else if (level === 'auditor') {
-        // Full auditor access - show everything
+        // Full auditor access - show everything allowed
         document.querySelectorAll('script[data-embed-id]').forEach(script => {
             script.style.display = '';
             
@@ -579,8 +850,10 @@ function handleChatbotAccess(level) {
             if (!script.previousElementSibling?.classList.contains('access-notice')) {
                 const notice = document.createElement('div');
                 notice.className = 'access-notice alert alert-success mb-3';
+                const scenarioName = unitConfig?.accessRules?.scenarioConfig?.name || 'Full Access';
                 notice.innerHTML = `
-                    <small><strong>Full Access:</strong> You have auditor-level access to this employee interview.</small>
+                    <small><strong>Scenario:</strong> ${scenarioName} | 
+                    <strong>Full Access:</strong> You have auditor-level access within your unit's scenario configuration.</small>
                 `;
                 script.parentNode.insertBefore(notice, script);
             }
@@ -589,9 +862,9 @@ function handleChatbotAccess(level) {
 }
 
 /**
- * Add access level indicator to page
+ * Add access level indicator to page with scenario information
  */
-function addAccessIndicator(level, unitName) {
+function addAccessIndicator(level, unitName, unitConfig) {
     // Only show indicator on protected pages
     if (!isProtectedPage()) return;
     
@@ -608,11 +881,20 @@ function addAccessIndicator(level, unitName) {
             const expiryDate = new Date(token.expires);
             const hoursLeft = Math.round((expiryDate - new Date()) / (1000 * 60 * 60));
             expiryInfo = `<div style="font-size: 11px; margin-top: 2px; opacity: 0.9;">
-                Access expires in ${hoursLeft} hours
+                Expires in ${hoursLeft}h
             </div>`;
         } catch (e) {
             // Invalid token
         }
+    }
+    
+    // Get scenario information
+    const scenarioInfo = unitConfig?.accessRules?.scenarioConfig || null;
+    let scenarioDisplay = '';
+    if (scenarioInfo) {
+        scenarioDisplay = `<div style="font-size: 10px; margin-top: 2px; opacity: 0.8;">
+            ${scenarioInfo.name}
+        </div>`;
     }
     
     // Create new indicator
@@ -632,29 +914,35 @@ function addAccessIndicator(level, unitName) {
         right: 20px;
         background: ${colors[level]};
         color: white;
-        padding: 10px 20px;
-        border-radius: 25px;
-        font-size: 14px;
+        padding: 12px 18px;
+        border-radius: 20px;
+        font-size: 13px;
         font-weight: 500;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         z-index: 9999;
         cursor: pointer;
+        max-width: 250px;
+        line-height: 1.3;
     `;
     
     indicator.innerHTML = `
-        <div>${unitName}</div>
-        <div style="font-size: 12px; margin-top: 2px;">
-            Access: ${level.toUpperCase()}
+        <div style="font-weight: 600;">${unitConfig?.unitCode || 'Unknown'}</div>
+        <div style="font-size: 11px; margin-top: 2px;">
+            ${level.toUpperCase()} Access
         </div>
+        ${scenarioDisplay}
         ${expiryInfo}
     `;
     
-    // Add click handler to change password
+    // Add click handler with more options
     indicator.onclick = () => {
-        if (confirm('Change unit password or clear access?')) {
+        const action = confirm('Click OK to change password/unit, or Cancel to view scenario details');
+        if (action) {
             localStorage.removeItem('cloudcore_password');
             localStorage.removeItem('cloudcore_token');
             location.reload();
+        } else if (scenarioInfo) {
+            alert(`Scenario: ${scenarioInfo.name}\n\nDescription: ${scenarioInfo.description}\n\nAccess Mode: ${unitConfig.accessRules.mode}`);
         }
     };
     
@@ -669,6 +957,32 @@ if (document.readyState === 'loading') {
 } else {
     checkAccess();
 }
+
+/**
+ * Debug function for testing access rules
+ */
+window.debugAccessConfig = function() {
+    console.log('Current ACCESS_CONFIG:', ACCESS_CONFIG);
+    console.log('Current UNIT_SCHEDULES:', UNIT_SCHEDULES);
+    
+    const token = localStorage.getItem('cloudcore_token');
+    if (token) {
+        try {
+            const parsedToken = JSON.parse(token);
+            console.log('Current token:', parsedToken);
+            const schedule = UNIT_SCHEDULES[parsedToken.password];
+            if (schedule) {
+                console.log('Unit config:', schedule);
+                console.log('Current access level:', getCurrentAccessLevel(schedule));
+                console.log('Current path allowed:', isResourceAllowed(window.location.pathname, schedule, getCurrentAccessLevel(schedule)));
+            }
+        } catch (e) {
+            console.error('Invalid token:', e);
+        }
+    } else {
+        console.log('No token found');
+    }
+};
 
 /**
  * Add custom styles
