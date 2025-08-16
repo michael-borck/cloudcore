@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function checkAuthentication() {
     const auth = sessionStorage.getItem('ucAuth');
     if (!auth) {
-        window.location.href = '/admin/login.html';
+        window.location.href = '/login.html';
         return;
     }
 
@@ -28,7 +28,7 @@ function checkAuthentication() {
 
         if (loginAge > sessionTimeout) {
             sessionStorage.removeItem('ucAuth');
-            window.location.href = '/admin/login.html';
+            window.location.href = '/login.html';
             return;
         }
 
@@ -43,13 +43,13 @@ function checkAuthentication() {
 
     } catch (error) {
         sessionStorage.removeItem('ucAuth');
-        window.location.href = '/admin/login.html';
+        window.location.href = '/login.html';
     }
 }
 
 function logout() {
     sessionStorage.removeItem('ucAuth');
-    window.location.href = '/admin/login.html';
+    window.location.href = '/login.html';
 }
 
 // Initialize Quill editor

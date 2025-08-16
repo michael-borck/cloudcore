@@ -150,17 +150,17 @@
         <div class="auth-section">
             <h3>🔐 Authentication Required</h3>
             <p>Unit Coordinators: Access your personalized dashboard to manage unit content and student access controls.</p>
-            <a href="/admin/login.html" class="login-btn">Unit Coordinator Login</a>
+            <a href="/login.html" class="login-btn">Unit Coordinator Login</a>
         </div>
 
         <div class="tools-grid">
-            <a href="/admin/access-manager.html" class="tool-card">
+            <a href="/access-manager.html" class="tool-card">
                 <span class="icon">🎛️</span>
                 <h3>Access Manager</h3>
                 <p>Configure unit-based access controls, scenarios, and resource permissions (Local Development)</p>
             </a>
 
-            <a href="/admin/test-access.html" class="tool-card">
+            <a href="/test-access.html" class="tool-card">
                 <span class="icon">🧪</span>
                 <h3>Access Tester</h3>
                 <p>Test and validate access configurations for different units and access levels</p>
@@ -200,7 +200,7 @@
 
                 if (loginAge < sessionTimeout) {
                     // User is logged in, redirect to dashboard
-                    window.location.href = '/admin/dashboard.html';
+                    window.location.href = '/dashboard.html';
                 }
             } catch (error) {
                 sessionStorage.removeItem('ucAuth');
@@ -222,7 +222,7 @@
                     authSection.innerHTML = `
                         <h3>✅ Logged in as ${authData.name}</h3>
                         <p>Access your dashboard or logout to switch accounts.</p>
-                        <a href="/admin/dashboard.html" class="login-btn">Go to Dashboard</a>
+                        <a href="/dashboard.html" class="login-btn">Go to Dashboard</a>
                         <button onclick="logout()" class="login-btn" style="background: #dc3545; margin-left: 10px;">Logout</button>
                     `;
                 } catch (error) {
