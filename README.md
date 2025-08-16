@@ -73,15 +73,18 @@ The platform uses a sophisticated unit-based access control system:
 ## 📁 Repository Structure
 
 ```
-├── docs/              # Educational content (policies, interviews, logs)
-├── chatbots/          # AI character interfaces
-├── blog/              # Technical articles and tutorials
-├── assets/            # Images and media files
-├── scripts/           # Access control JavaScript
-├── config/            # Unit access configuration
-├── cloudcore-admin/   # Admin interface (deployed to Vercel)
-├── _backstories/      # Character development and scenarios
-└── data/              # Sample financial and operational data
+├── docs/                    # Educational content (policies, interviews, logs)
+├── chatbots/               # AI character interfaces
+│   ├── bots/              # Individual character interfaces (.qmd files)
+│   └── _backstories/      # Character development and scenarios
+│       ├── [character files]  # Used by chatbot provider
+│       └── development/       # Archived development files
+├── blog/                   # Technical articles and tutorials
+├── assets/                 # Images and media files
+├── scripts/                # Access control JavaScript
+├── config/                 # Unit access configuration
+├── cloudcore-admin/        # Admin interface (deployed to Vercel)
+└── data/                   # Sample financial and operational data
 ```
 
 ## 🤝 Contributing
