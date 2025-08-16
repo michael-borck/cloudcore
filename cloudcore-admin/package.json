@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "vercel dev",
-    "build": "echo 'No build needed - static files'",
+    "build": "echo 'Build complete'",
     "start": "vercel dev"
   },
   "dependencies": {
