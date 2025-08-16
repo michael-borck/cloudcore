@@ -93,6 +93,9 @@ function showSection(sectionName) {
         case 'files':
             loadFileExplorer();
             break;
+        case 'password':
+            loadPasswordSettings();
+            break;
         case 'settings':
             loadUnitSettings();
             break;
@@ -566,6 +569,163 @@ function showMessage(message, type) {
                 }
             }, 3000);
         }
+    }
+}
+
+// Password Management Functions
+async function loadPasswordSettings() {
+    try {
+        // Update unit name in password section
+        if (authData.unit) {
+            document.getElementById('unitNamePassword').textContent = authData.unit;
+        }
+
+        // Load current password from config
+        const currentPassword = currentConfig?.units?.[authData.unit]?.password || '';
+        document.getElementById('currentPassword').value = currentPassword;
+
+        // Load password history
+        await loadPasswordHistory();
+
+    } catch (error) {
+        console.error('Error loading password settings:', error);
+        showMessage('Failed to load password settings', 'error');
+    }
+}
+
+function togglePasswordVisibility(inputId) {
+    const input = document.getElementById(inputId);
+    const button = input.parentNode.querySelector('.btn-toggle-password');
+    
+    if (input.type === 'password') {
+        input.type = 'text';
+        button.textContent = '🙈';
+    } else {
+        input.type = 'password';
+        button.textContent = '👁️';
+    }
+}
+
+function generatePassword() {
+    const adjectives = ['Secure', 'Strong', 'Safe', 'Smart', 'Audit', 'System', 'Digital', 'Cyber', 'Tech', 'Info'];
+    const nouns = ['Guardian', 'Shield', 'Key', 'Lock', 'Code', 'Access', 'Portal', 'Gateway', 'Network', 'Data'];
+    const year = new Date().getFullYear();
+    
+    const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+    const noun = nouns[Math.floor(Math.random() * nouns.length)];
+    const randomNum = Math.floor(Math.random() * 100);
+    
+    const generatedPassword = `${adjective}${noun}${year}${randomNum}`;
+    
+    document.getElementById('newPassword').value = generatedPassword;
+    document.getElementById('confirmPassword').value = generatedPassword;
+}
+
+async function updatePassword() {
+    const newPassword = document.getElementById('newPassword').value.trim();
+    const confirmPassword = document.getElementById('confirmPassword').value.trim();
+
+    // Validation
+    if (!newPassword) {
+        showMessage('Please enter a new password', 'error');
+        return;
+    }
+
+    if (newPassword !== confirmPassword) {
+        showMessage('Passwords do not match', 'error');
+        return;
+    }
+
+    if (newPassword.length < 6) {
+        showMessage('Password must be at least 6 characters long', 'error');
+        return;
+    }
+
+    try {
+        showMessage('Updating password...', 'info');
+
+        // Update the config with new password
+        const updatedConfig = { ...currentConfig };
+        if (!updatedConfig.units[authData.unit]) {
+            updatedConfig.units[authData.unit] = {};
+        }
+        
+        updatedConfig.units[authData.unit].password = newPassword;
+        updatedConfig.lastUpdated = new Date().toISOString();
+
+        // Save to GitHub
+        await githubAPI('write', 'config/unit-access.json', JSON.stringify(updatedConfig, null, 2), 
+            `Update password for ${authData.unit} via admin interface`);
+
+        // Update local config
+        currentConfig = updatedConfig;
+
+        // Update current password display
+        document.getElementById('currentPassword').value = newPassword;
+
+        // Clear form
+        document.getElementById('newPassword').value = '';
+        document.getElementById('confirmPassword').value = '';
+
+        // Add to history
+        await addPasswordHistoryEntry('Password updated successfully');
+
+        showMessage('Password updated successfully!', 'success');
+
+    } catch (error) {
+        console.error('Error updating password:', error);
+        showMessage('Failed to update password. Please try again.', 'error');
+    }
+}
+
+async function loadPasswordHistory() {
+    try {
+        // This is a simple implementation - in a real system you'd want actual audit logs
+        const historyContainer = document.getElementById('passwordHistory');
+        
+        const historyItems = [
+            {
+                date: new Date().toLocaleDateString(),
+                action: 'Password management interface loaded'
+            }
+        ];
+
+        if (historyItems.length === 0) {
+            historyContainer.innerHTML = '<div class="no-data">No password changes recorded</div>';
+            return;
+        }
+
+        historyContainer.innerHTML = historyItems.map(item => `
+            <div class="history-item">
+                <div class="history-date">${item.date}</div>
+                <div class="history-action">${item.action}</div>
+            </div>
+        `).join('');
+
+    } catch (error) {
+        console.error('Error loading password history:', error);
+        document.getElementById('passwordHistory').innerHTML = 
+            '<div class="error">Failed to load password history</div>';
+    }
+}
+
+async function addPasswordHistoryEntry(action) {
+    try {
+        // In a real implementation, you might want to log these changes
+        // to a separate audit file or system
+        const historyContainer = document.getElementById('passwordHistory');
+        
+        const newEntry = document.createElement('div');
+        newEntry.className = 'history-item';
+        newEntry.innerHTML = `
+            <div class="history-date">${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}</div>
+            <div class="history-action">${action}</div>
+        `;
+        
+        historyContainer.insertBefore(newEntry, historyContainer.firstChild);
+
+    } catch (error) {
+        console.error('Error adding password history entry:', error);
     }
 }
 
