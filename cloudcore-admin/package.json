@@ -1,0 +1,17 @@
+{
+  "name": "cloudcore-uc-admin",
+  "version": "1.0.0",
+  "description": "CloudCore UC Admin Interface",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build needed - static files'",
+    "start": "vercel dev"
+  },
+  "dependencies": {
+    "@octokit/rest": "^20.0.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
