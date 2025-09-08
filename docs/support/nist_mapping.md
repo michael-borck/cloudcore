@@ -37,23 +37,23 @@ SC | System and Communications Protection   | [Data Management][14]; [Data Prote
 SI | System and Information Integrity       | [Data Management][14]; [Data Protection][15]; [Product Security & Secure Software Development][17]; [Vulnerability Management][18];and [System Audits, Monitoring & Assessments][19]
 PM | Program Management                     | [Security Program Overview][10]; [Roles and Responsibilities][2]; and [Policy Management][20]
 
-[1]: access.md
-[2]: rar.md
-[3]: compliance_audit.md
-[4]: risk_mgmt.md
-[5]: ccm.md
-[6]: bcdr.md
-[7]: ir.md
-[8]: breach.md
-[9]: facility.md
-[10]: program.md
-[11]: model.md
-[12]: hr.md
-[13]: vendor.md
-[14]: data_mgmt.md
-[15]: data_protection.md
-[16]: threat.md
-[17]: sdlc.md
-[18]: vuln_mgmt.md
-[19]: system_audit.md
-[20]: policy_mgmt.md
+[1]: ../policies/access.md
+[2]: ../policies/rar.md
+[3]: ../policies/compliance_audit.md
+[4]: ../policies/risk_mgmt.md
+[5]: ../policies/ccm.md
+[6]: ../policies/bcdr.md
+[7]: ../policies/ir.md
+[8]: ../policies/breach.md
+[9]: ../policies/facility.md
+[10]: ../support/program.md
+[11]: ../policies/model.md
+[12]: ../policies/hr.md
+[13]: ../policies/vendor.md
+[14]: ../policies/data_mgmt.md
+[15]: ../policies/data_protection.md
+[16]: ../policies/threat.md
+[17]: ../policies/sdlc.md
+[18]: ../policies/vuln_mgmt.md
+[19]: ../policies/system_audit.md
+[20]: ../policies/policy_mgmt.md

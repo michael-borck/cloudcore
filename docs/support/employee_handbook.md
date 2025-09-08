@@ -78,9 +78,9 @@ complete the following security training:
 
 * **General security policy and procedures** training, including
 
-    - [Roles, Responsibilities and Training](rar.md)
-    - [HR and Personnel Security](hr.md)
-    - [Data Classification and Handling](data_mgmt.md#data-classification-model)
+    - [Roles, Responsibilities and Training](../policies/rar.md)
+    - [HR and Personnel Security](../policies/hr.md)
+    - [Data Classification and Handling](../policies/data_mgmt.md#data-classification-model)
 
 * **HIPAA awareness** training
 
@@ -92,34 +92,34 @@ complete the following security training:
     - all members of the **Development/Engineering** team must carefully review
       the following policies and procedures
 
-        - [Product Security and Secure Software Development](sdlc.md)
-        - [HIPAA Best Practices for Software Development](sdlc.md#hipaa-best-practices-for-software-development)
-        - [Data Management](data_mgmt.md)
-        - [Data Protection](data_protection.md)
-        - [Configuration and Change Management](ccm.md)
+        - [Product Security and Secure Software Development](../policies/sdlc.md)
+        - [HIPAA Best Practices for Software Development](../policies/sdlc.md#hipaa-best-practices-for-software-development)
+        - [Data Management](../policies/data_mgmt.md)
+        - [Data Protection](../policies/data_protection.md)
+        - [Configuration and Change Management](../policies/ccm.md)
 
     - all members of the **Administrative**, **Marketing** and **Procurement**
       teams must review the following policies and procedures
 
-        - [Third Party Security, Vendor Risk Management and Systems/Services Acquisition](vendor.md)
+        - [Third Party Security, Vendor Risk Management and Systems/Services Acquisition](../policies/vendor.md)
     
     - all members of the **Administrative** and **Senior Leadership/Executive**
       teams must review the following policies and procedures
 
-        - [Business Continuity and Disaster Recovery](bcdr.md)
-        - [Compliance Audits and External Communications](compliance_audit.md)
-        - [Risk Management](risk_mgmt.md)
+        - [Business Continuity and Disaster Recovery](../policies/bcdr.md)
+        - [Compliance Audits and External Communications](../policies/compliance_audit.md)
+        - [Risk Management](../policies/risk_mgmt.md)
 
     - all members of the **HR** and **Facilities** teams must review the following
       policies and procedures
 
-        - [HR and Personnel Security](hr.md)
-        - [Facility Access and Physical Security](facility.md)
+        - [HR and Personnel Security](../policies/hr.md)
+        - [Facility Access and Physical Security](../policies/facility.md)
 
     - all team members responsible for **Product Management** and
       **Business Development** must review the following policies and procedures
 
-        - [Privacy and Consent](privacy.md)
+        - [Privacy and Consent](../policies/privacy.md)
 
     - all members of the **Security**, **Compliance** and **IT** teams must
       review all policies and procedures in its entirety
@@ -128,7 +128,7 @@ complete the following security training:
 
 CloudCore policy requires that:
 
-(a) Per CloudCore [security architecture](model.md), all workforce
+(a) Per CloudCore [security architecture](../policies/model.md), all workforce
 members are primarily considered as remote users and therefore must follow all
 system access controls and procedures for remote access.
 
@@ -142,7 +142,7 @@ unattended in public.
 (d) Device encryption must be enabled for all mobile devices accessing company
 data, such as whole-disk encryption for all laptops.
 
-(e) Use only legal, [approved software](approved_software.md) with a valid
+(e) Use only legal, [approved software](../policies/approved_software.md) with a valid
 license. Do not use personal software for business purposes and vice versa.
 
 (f) Encrypt all email messages containing sensitive or confidential data.
@@ -175,7 +175,7 @@ manage according to company security policy and standards. You are responsible
 to
 
 * configure the system to meeting the [configuration and management
-  requirements](ccm.md), including password policy, screen protection timeout,
+  requirements](../policies/ccm.md), including password policy, screen protection timeout,
   host firewall, etc.;
 
 * ensure the required anti-malware protection and security monitoring agent is
@@ -243,4 +243,4 @@ channels:
   *See the [Whistleblower Policy section in the HR Security Policy][5] for
   additional details.*
 
-  [5]: hr.md#whistleblower-policy
+  [5]: ../policies/hr.md#whistleblower-policy

@@ -73,7 +73,7 @@ contain two main sections:
 * Controls and Procedures
 
 All policy documents are maintained, reviewed, updated and approved following
-standards and procedures outlined in [Policy Management](policy_mgmt.md).
+standards and procedures outlined in [Policy Management](../policies/policy_mgmt.md).
 
 ## Review and Reporting
 

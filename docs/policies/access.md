@@ -262,12 +262,12 @@ absolute minimum.
     * Where possible, passwords should be stored in a hashed format using a
       salted cryptographic hash function (SHA-256 or stronger NIST compliant standard).
     * Passwords that must be stored in non-hashed format must be encrypted at
-      rest pursuant to the requirements in [Data Protection](data-protection.md).
+      rest pursuant to the requirements in [Data Protection](data_protection.md).
 
     > **BROKEN LINK:** Data Protection policy link non-functional since site restructure.
 
     * Transmitted passwords must be encrypted in flight pursuant to the
-      requirements in [Data Protection](data-protection.md).
+      requirements in [Data Protection](data_protection.md).
 
 5. Each information system automatically requires users to change passwords at a
    pre-determined interval as determined by the system owner and/or Security,
