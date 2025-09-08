@@ -11,7 +11,8 @@ title: CloudCore Datasets Overview
 **File:** `cloudcore-sales-data.csv`  
 **Records:** 138 rows  
 **Time Period:** 2023-2024 (8 quarters)  
-**Purpose:** Trend analysis and regional performance comparison using Datawrapper
+**Purpose:** Trend analysis and regional performance comparison using Datawrapper  
+**Download:** [cloudcore-sales-data.csv](../../data/cloudcore-sales-data.csv)
 
 ### Business Context
 CloudCore has been experiencing mixed performance across its product portfolio and regions. Management needs to understand which products and regions are driving growth versus decline to make informed strategic decisions about resource allocation and market focus.
@@ -46,7 +47,8 @@ CloudCore has been experiencing mixed performance across its product portfolio a
 ## Dataset 2: CloudCore Customer Satisfaction Data
 **File:** `cloudcore-customer-data.csv`  
 **Records:** 200 rows  
-**Purpose:** Customer segmentation and satisfaction analysis using ML Playground clustering
+**Purpose:** Customer segmentation and satisfaction analysis using ML Playground clustering  
+**Download:** [cloudcore-customer-data.csv](../../data/cloudcore-customer-data.csv)
 
 ### Business Context
 CloudCore's customer satisfaction scores vary significantly across different customer segments. The company needs to understand which customer characteristics correlate with satisfaction levels to improve service delivery and reduce churn risk.
@@ -90,7 +92,8 @@ CloudCore's customer satisfaction scores vary significantly across different cus
 **File:** `cloudcore-support-data.csv`  
 **Records:** 100 rows  
 **Time Period:** July-October 2024  
-**Purpose:** Pattern identification and service quality analysis
+**Purpose:** Pattern identification and service quality analysis  
+**Download:** [cloudcore-support-data.csv](../../data/cloudcore-support-data.csv)
 
 ### Business Context
 CloudCore's support team handles various types of customer issues with varying resolution times and outcomes. Understanding patterns in support requests helps identify systemic problems and improve service delivery efficiency.
@@ -125,6 +128,33 @@ CloudCore's support team handles various types of customer issues with varying r
 - **Industry Patterns:** Education sector experiences most issues, Finance sector least
 - **Priority Correlation:** High priority tickets don't always resolve fastest
 - **Satisfaction Drivers:** Resolution time and outcome strongly correlate with satisfaction ratings
+
+---
+
+## Dataset 4: CloudCore Cost Analysis Data
+**File:** `cost_analysis_2024.csv`  
+**Records:** 6 rows  
+**Purpose:** Infrastructure cost analysis and depreciation planning  
+**Download:** [cost_analysis_2024.csv](../../data/cost_analysis_2024.csv)
+
+### Business Context
+CloudCore's infrastructure investment requires careful cost management and depreciation planning. This dataset provides itemised costs for major infrastructure components to support financial planning and budgeting exercises.
+
+### Field Definitions
+
+| Field Name | Data Type | Description | Business Significance | Example Values |
+|------------|-----------|-------------|----------------------|----------------|
+| Item | Text | Infrastructure component name | Asset identification | Server, Workstation |
+| Unit Cost | Currency | Cost per individual item (AUD) | Per-unit investment | 4000, 1500 |
+| Quantity | Integer | Number of units purchased | Scale of investment | 2, 10 |
+| Total Cost | Currency | Total expenditure for item type | Budget impact | 8000, 15000 |
+| Depreciation (Years) | Integer | Expected useful life for accounting | Asset lifecycle planning | 5, 3, 10 |
+
+### Key Patterns for Analysis
+- **High-Value Items:** Software Suite ($12,000) has longest depreciation period (10 years)
+- **Volume Purchases:** Workstations represent highest total investment ($15,000 for 10 units)
+- **Lifecycle Planning:** Hardware items depreciate faster (3-5 years) than software (10 years)
+- **Cost Distribution:** Total infrastructure investment of $44,500 across 5 categories
 
 ---
 

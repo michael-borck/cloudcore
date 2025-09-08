@@ -33,4 +33,4 @@ environment.
 
 : Budget 2024 {#tbl-budget}
 
-[Source](../../data/Budget_2024.csv)
+[Source](../../data/budget_2024.csv)
