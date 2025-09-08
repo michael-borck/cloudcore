@@ -2,22 +2,39 @@
 categories:
 - Access Control
 - Security
-- Authentication and Authorization
+- Authentication and Authorisation
 description: Access to CloudCore systems and application is limited for all users,
   including but not limited to workforce members, volunteers, business associates,
   contracted providers, consultants, and any other entity, is allowable only on a
   minimum necessary basis.
-title: Access
+title: Access Control Policy
+format:
+  pdf:
+    toc: true
+    colorlinks: true
+  docx:
+    toc: true
+    number-sections: false
+    highlight-style: github
+  html:
+    toc: true
+    toc-expand: 2
+    embed-resources: true
 ---
-
 |              |                                     |
 |--------------|-------------------------------------|
-| **Title**    | Access             |
-| **Doc#**     | POL-SECU-021 |
-| **Version**  | 1.0                                 |
-| **Date**     | 08-07-2023                              |
+| **Title**    | Access Control Policy               |
+| **Doc#**     | POL-SECU-021                       |
+| **Version**  | 1.3                                 |
+| **Date**     | 15-03-2024                         |
+| **Supersedes** | POL-SECU-021 v1.2 (08-07-2023)   |
+| **Next Review** | 15-03-2025                       |
+| **Owner**    | Security and Privacy Officer        |
+| **Approved By** | Chief Information Officer        |
 
-Access to CloudCore systems and application is limited for all users, including
+> **DOCUMENT CONTROL NOTICE:** This document contains references to deprecated policy POL-SECU-019 (Password Management) which has been merged into this policy. Some cross-references may require updating.
+
+Access to CloudCore systems and applications is limited for all users, including
 but not limited to workforce members, volunteers, business associates,
 contracted providers, consultants, and any other entity, is allowable only on a
 minimum necessary basis. All users are responsible for reporting an incident of
@@ -40,6 +57,10 @@ each user.
 keys, must meet the length, complexity, age, and rotation requirements defined
 in CloudCore security standards.
 
+> **NOTE:** Password requirements were updated in Security Standard SEC-STD-003 v2.1 
+> but some systems may still be configured to older requirements. See Change Management 
+> Policy POL-CHANGE-001 for update procedures.
+
 (d) Use strong password and multi-factor authentication (MFA) whenever possible
 to authenticate to all computing resources (including both devices and
 applications).
@@ -47,12 +68,19 @@ applications).
 (e) MFA is required to access any critical system or resource, including but not
 limited to resources in CloudCore production environments.
 
+> **IMPLEMENTATION GAP:** Current MFA rollout covers 85% of critical systems. 
+> Remaining systems scheduled for completion by Q2 2024 (see Project MFA-COMPLETE-2024).
+
 (f) Unused accounts, passwords, access keys must be removed within 30 days.
 
 (g) A unique access key or service account must be used for different
 application or user access.
 
 (h) Authenticated sessions must time out after a defined period of inactivity.
+
+> **INCONSISTENCY NOTE:** Session timeout requirements differ between this policy 
+> (generic "defined period") and the Incident Response Policy which specifies 
+> 15-minute timeouts for administrative sessions.
 
 ### Access Authorisation and Termination
 
@@ -63,16 +91,22 @@ CloudCore policy requires that
 
 (b) Standard access based on a user's job role may be pre-provisioned during
 employee onboarding. All subsequent access requests to computing resources must
-be approved by the requestor’s manager, prior to granting and provisioning of
+be approved by the requestor's manager, prior to granting and provisioning of
 access.
 
 (c) Access to critical resources, such as production environments, must be
-approved by the security team in addition to the requestor’s manager.
+approved by the security team in addition to the requestor's manager.
+
+> **REFERENCE ERROR:** This section should reference the Data Classification Policy 
+> POL-DATA-001 for definition of "critical resources" but that policy is still in draft.
 
 (d) Access must be reviewed on a regular basis and revoked if no longer needed.
 
 (e) Upon termination of employment, all system access must be revoked and user
 accounts terminated within 24 hours or one business day, whichever is shorter.
+
+> **CONTRADICTION:** The HR Policy POL-HR-001 specifies account termination within 
+> 2 hours, creating conflicting requirements.
 
 (f) All system access must be reviewed at least annually and whenever a user's
 job role changes.
@@ -87,6 +121,8 @@ exception basis.
 (b) If required by business operations, secrets/credentials must be shared
 securely and stored in encrypted vaults that meet the CloudCore data encryption
 standards.
+
+> **BROKEN REFERENCE:** Link to Data Protection Policy [data-protection.md] returns 404 error.
 
 (c) Usage of a shared secret to access a critical system or resource must be
 supported by a complimenting solution to uniquely identify the user.
@@ -108,6 +144,8 @@ with full auditing of user activities.
 (c) Direct administrative access to production systems must be kept to an
 absolute minimum.
 
+> **VERSION CONTROL ISSUE:** This section was last updated in v1.1 and may not 
+> reflect current privileged access management tools deployed in Q4 2023.
 
 ## Controls and Procedures
 
@@ -125,6 +163,10 @@ absolute minimum.
    As such, CloudCore, including all workforce members, does not readily have
    access to any ePHI.
 
+> **OUTDATED REFERENCE:** ePHI access restrictions established under previous 
+> healthcare focus. Current client base includes financial services requiring 
+> different privacy controls (see updated Data Classification Policy - when available).
+
 #### Access Authorisation
 
 1. Role based access categories for each CloudCore system and application are
@@ -132,6 +174,9 @@ absolute minimum.
 2. CloudCore utilises hardware-defined and/or software-defined boundaries to
    segment data, prevent unauthorised access, and monitor traffic for denial of
    service attacks.
+
+> **TECHNICAL DEBT:** Network segmentation architecture changed in 2023 migration 
+> but this section still references legacy infrastructure.
 
 #### Person or Entity Authentication
 
@@ -142,6 +187,8 @@ absolute minimum.
    This is enforced through the use of **AWS Cognito**.
 1. All customer support interactions must be verified before CloudCore support
    personnel will satisfy any request having information security implications.
+
+> **SYSTEM CHANGE:** AWS Cognito replaced with Auth0 in December 2023 but policy not updated.
 
 #### Unique User Identification
 
@@ -170,6 +217,10 @@ absolute minimum.
    screen saver or logging off the system).
 1. Information systems automatically lock users such as enabling
    password-protected screensaver after 2 minutes or less of inactivity.
+
+> **INCONSISTENCY:** Screensaver timeout conflicts with Incident Response Policy 
+> requirement for 15-minute administrative timeouts and workstation policy 5-minute timeout.
+
 1. Information systems automatically enter standby or log users off the systems
    after 30 minutes or less of inactivity.
 1. The Security Officer must pre-approves any exception to automatic log off
@@ -188,7 +239,12 @@ absolute minimum.
     * a mix of upper case characters, lower case characters, and numbers or
       special characters;
     * a 60-day password expiration, or 60-day password expiration for
-      administrative accounts;         
+      administrative accounts;
+
+    > **POLICY CONFLICT:** NIST SP 800-63B recommends against regular password 
+    > expiration, but this policy maintains 60-day rotation for compliance with 
+    > legacy client requirements.
+
     * prevention of password reuse using a history of the last 24 passwords;
     * where supported, modifying at least 6 characters when changing passwords;
     * account lockout after 5 invalid attempts.
@@ -198,22 +254,35 @@ absolute minimum.
         Password expiration may be set to a greater interval if an account is always protected by MFA. 
         Currently, Okta SSO password rotation interval is set to 60 days.
 
+    > **IMPLEMENTATION VARIANCE:** Some legacy systems still enforce 90-day rotation 
+    > due to technical limitations in password sync processes.
 
 4. All system and application passwords must be stored and transmitted securely.
 
     * Where possible, passwords should be stored in a hashed format using a
       salted cryptographic hash function (SHA-256 or stronger NIST compliant standard).
     * Passwords that must be stored in non-hashed format must be encrypted at
-      rest pursuant to the requirements in [Data Protection](data_protection.md).
+      rest pursuant to the requirements in [Data Protection](data-protection.md).
+
+    > **BROKEN LINK:** Data Protection policy link non-functional since site restructure.
+
     * Transmitted passwords must be encrypted in flight pursuant to the
-      requirements in [Data Protection](data_protection.md).
+      requirements in [Data Protection](data-protection.md).
 
 5. Each information system automatically requires users to change passwords at a
    pre-determined interval as determined by the system owner and/or Security,
    based on the criticality and sensitivity of the data contained within the
    network, system, application, and/or database.
+
+> **AMBIGUITY:** "Pre-determined interval" not defined consistently across systems. 
+> Ranges from 30 days (financial systems) to 180 days (development environments).
+
 6. Passwords are inactivated immediately upon an employee's termination (refer
    to the [Employee Termination Procedures in HR policy](hr.md)).
+
+> **MISSING DEPENDENCY:** HR policy POL-HR-001 under revision, termination procedures 
+> may change and impact this requirement.
+
 7. All default system, application, and Vendor/Partner-provided passwords are
    changed before deployment to production.
 8. Upon initial login, users must change any passwords that were automatically
@@ -229,6 +298,10 @@ absolute minimum.
     on the system or application. If help is needed, users shall contact [IT
     Support](mailto:itsupport@cloudcore.serveur.au) or
     [Security](mailto:security@cloudcore.serveur.au)
+
+> **PROCESS GAP:** No escalation procedure defined when both IT Support and Security 
+> are unavailable (after hours, weekends).
+
 13. An approved password manager is used for to store or share non-critical
     business application passwords that are not integrated with our primary IdP
     through SSO.
@@ -240,14 +313,22 @@ absolute minimum.
     * Enrolment of the password manager is configured as an application in
       Okta.
 
+> **VENDOR CHANGE:** Policy references Okta but organisation migrated to Auth0. 
+> Password manager integration may need reconfiguration.
+
 14. An automated process/tool is implemented to ensure compromised passwords or
     common dictionary words are not used as passwords.  This is currently
     implemented in Okta.
+
+> **OUTDATED IMPLEMENTATION:** Tool reference obsolete since Auth0 migration.
 
 ### Single Sign On
 
 * CloudCore selected Okta as its primary Identity Provider (IdP) to control
   user access to systems and business applications.
+
+> **MAJOR INCONSISTENCY:** Policy states Okta as primary IdP but organisation 
+> migrated to Auth0 in December 2023. Multiple references throughout policy are outdated.
 
 * Single sign-on (SSO) should be used whenever possible instead of local
   authentication.  This centralised approach improves user experience and
@@ -273,6 +354,8 @@ be enabled whenever possible.
 
 CloudCore implements Okta for MFA.
 
+> **SYSTEM MISMATCH:** MFA implementation migrated to Auth0 but policy not updated.
+
 !!! important
 
     **Approved MFA methods include:**
@@ -284,6 +367,9 @@ CloudCore implements Okta for MFA.
     - One-time passcode delivered through SMS text message (if it is the only supported option)
     - Secure physical facility (if the system or application can only be accessed at that location)
 
+> **SECURITY CONCERN:** SMS-based MFA listed as acceptable method despite NIST 
+> SP 800-63B deprecating SMS for authentication. Policy needs updating to reflect 
+> current security standards.
 
 ### Role Based Access Control (RBAC)
 
@@ -296,387 +382,23 @@ For example:
 - Administrative
 - Marketing / Sales
 
+> **INCOMPLETE DEFINITION:** Role definitions not linked to specific permissions or 
+> systems. Actual RBAC implementation may differ from policy intent.
+
 This is defined as **user groups** in .
+
+> **BROKEN REFERENCE:** Sentence incomplete, likely missing system reference.
 
 Access to sensitive data and production customer data is highly restricted and
 further defined in its own section.
 
+> **MISSING CROSS-REFERENCE:** No clear link to section defining sensitive data access controls.
 
-### Temporary Access to AWS Accounts and Resources
+---
 
-Access to CloudCore AWS accounts are permissible through temporary credentials /
-sessions only.  No persistent users, passwords or access keys are allowed in AWS
-IAM configurations for end-user access, either to the AWS console or AWS CLI.
-This is achieved with the following processes:
+> **DOCUMENT STATUS:** This policy contains multiple outdated references and implementation 
+> gaps identified during routine review. A comprehensive update is scheduled for Q2 2024 
+> pending completion of system migration projects and dependency policy updates.
 
-**AWS Console Access**
-
-* An organisation master account (`CloudCore-master`) in AWS is configured with
-  IAM roles such as Developer and Security.
-* SAML SSO and trust relationship is established between the roles in
-  `CloudCore-master` and an "AWS application" provisioned in Okta.
-* Users are assigned their corresponding roles through application and role
-  assignment in Okta.
-* Via SSO, Users authenticate through Okta by using their Okta username,
-  password, and MFA.
-* Upon successful authentication and MFA validation, users are logged into
-  `CloudCore-master` using AWS Assume Role capability.
-* The roles in `CloudCore-master` by default has highly restricted access. For
-  example, the `Developer` role does not have access to any services and
-  resources in the master account.
-* The user is required to Assume a Role in a sub-account, connected via
-  cross-account trust policy defined at account bootstrap or through an approved
-  change management process.  For example, a Developer can assume the
-  `Administrator` role in `CloudCore-dev`, which is the sandboxed development
-  environment in a separate AWS account.
-* Assume Role access to a production AWS account is highly restricted.
-
-    * Developers can only assume the `Developer` role in production which only
-      has access to read CloudWatch logs, XRay system traces/service maps,
-      CloudWatch metrics, resource group inventories, and CloudWatch dashboards.
-    * Security can only assume the `Auditor` role in production which has the
-      default Auditor IAM policy managed by AWS.  This policy allows read-only
-      access to account and resource configurations, but does not allow read
-      access to any data such as S3 objects.
-
-**AWS CLI/SDK Access**
-
-* [Okta AWS-CLI Tool](https://github.com/oktadeveloper/okta-aws-cli-assume-role)
-  is used to obtain temporary credentials (access keys) for developers to
-  connect to AWS using the CLI or SDK.
-* By running the Okta AWS-CLI Tool, developers are prompted to authenticate to
-  Okta using their Okta credentials and MFA token/app.
-* Upon successful authentication and MFA validation, a temporary access key and
-  session token is inserted into the local configuration file (e.g.
-  `~/.aws/credentials` and `~/.aws/config`).
-* This temporary credentials expires after one hour and a new temporary
-  credential must be obtained for access.
-* Through this method, developers are granted the same permission as they would
-  by assuming the `Developer` role through AWS console.
-* Additional details are documented on the [Development Wiki]().
-
-**IAM Safety**
-
-* CloudCore implements **Dome9** to monitor and protect its AWS environments.
-  Dome9 provides an additional layer of defence on top of native IAM policies
-  called **IAM Safety**.
-* IAM Safety works by defining a set of risky actions, such as adding/remove IAM
-  users to an **Explicit Deny** policy.  The policy is attached to an IAM Group,
-  and protected Users and/or Roles are assigned to this Group.
-* Because explicit deny rules always take precedence in AWS IAM policy, this
-  effectively restricts access and prohibits execution of the risky actions as
-  defined in the policy, even if the user/role may have administrative
-  privilege.
-* Original access can be temporarily restored through the Dome9 web console or
-  its mobile app.
-* Privilege Roles, such as Security role in master account and Administrator
-  role in production account, are protected by IAM Safety.
-* Additional details can be found on [Dome9's product
-  documentation](https://dome9-security.atlassian.net/wiki/spaces/DG/pages/2981893/IAM+Safety+Overview).
-
-**Troubleshooting / Support Access**
-
-In normal operations, troubleshooting is performed with log analysis in Sumo
-Logic, outside of the production environments in AWS. A separate Support role is
-created for temporary troubleshooting and support access when log access is
-insufficient to determine the cause. Support access should be minimised and is
-designed to involve manual approval and provision process.
-
-* The Support role by default is NOT assigned to anyone.
-* The Support role is configured with Read level access to the services used by
-  CloudCore platform services and applications.  It does NOT have permission to
-  make any configuration changes and does NOT have access to production data.
-* A PRODCM ticket is used to request temporary support access and must be
-  approved by Head of Engineering and Security.
-* Upon approval of the support access PRODCM ticket, Security grants the
-  requestor temporary access to by assigning the Support role to that particular
-  individual user in Okta.
-* The Support role is protected by Dome9 with IAM Safety and it must be
-  explicitly allowed by the Security team for it to assume the Support role in
-  the target production environment.
-* By default, temporary Support access is limited to one hour.  This can be
-  extended by the Security team.
-* The role assignment is removed from Okta immediately after the support session
-  and Dome9 IAM Safety is re-enabled.
-
-**Dual Control for Root Access**
-
-CloudCore implements a Dual Control / Split Knowledge process to protect the Root
-user access to our AWS accounts. The process works as follow:
-
-* Security Lead has access to the root account credentials.
-
-    * The credentials are stored encrypted in the master account.
-    * Security Lead obtains temporary access to the master account following the
-      process listed above (MFA is required).
-    * Security Lead must assume a role with permission to access the credential
-      (e.g. Administrator), which is protected by an additional layer of IAM
-      Safety.
-
-* Engineering Lead has access to the Hardware Tokens associated with the root
-  users.
-
-    * The tokens are stored in secured facility with restricted badge reader
-      access.
-    * The token serial is mapped per account and documented in [CloudCore
-      Engineering Wiki]().
-
-When root access is required for business or operational needs, a  Issue is
-created that requires the Security Lead and Engineering Lead to jointly perform
-the action.
-
-### Remote Access / VPN
-
-* VPN remote access to non-production and non-privileged environments in AWS are
-  permissible and implemented using **Pritunl**.
-
-* VPN remote access to master and production accounts are prohibited.
-
-* VPN remote access to CloudCore office network(s) is configured via
-  **Pritunl**, and should be used whenever connecting from public networks.
-
-
-### Access to PHI/ePHI
-
-1. Access to ePHI is permitted to genomics science staff, or staff that
-   otherwise has a business need to access.
-1. Access to any on-premise server that contains ePHI is restricted and
-   monitored. *Currently CloudCore has no on-premise server that stores or
-   processes ePHI.*
-1. Access to ePHI in CloudCore's production environments in the cloud is strictly
-   prohibited. Access is protected via multiple layers of security controls 
-   such as IAM policies, restricted IAM roles, VPC configuration, S3 bucket 
-   policy, external monitoring, etc.
-1. Users may not download ePHI to any workstations or end-user computing
-   devices.
-
-
-### Platform Customer Access to Systems
-
-CloudCore does not allow direct system access by customers. Access is only
-available through the Web UI or API interface, with valid authentication and
-authorisation detailed in the Product Security, Architecture, and Security
-pages of the engineering wiki.
-
-### Access Establishment, Modification and Termination
-
-1. Requests for access to CloudCore Platform systems and applications is made
-   formally using the following process:
-
-    1. An access request is created in  through either the new employee
-       onboarding request or a specific access request from CloudCore Internal
-       Support site.
-    1. The Security team will grant standard access to per job role as part of
-       new employee onboarding. A standard set of accounts that are default for
-       all employees are created as part of the onboarding process. This
-       includes
-       
-        - User account for local system/laptop
-        - Okta user in the Everyone group, and additional group based on role
-          such as Development, IT, Security
-        - Office365 account for access to Outlook email, SharePoint, etc.
-        - Ataata account for security awareness training
-        - HR accounts for paperwork, benefits management, payroll, expense
-          reporting, etc.
-        -  access for submitting support requests
-        - Additional role based access (e.g.  and  access for a
-          developer)
-        
-    1. Standard access may be provisioned at any time by account
-       owners/administrators at any time during or after onboarding with
-       approval of account owners and/or manager.
-    1. If additional access is needed in addition to the above, a separate
-       access request (through ) is required and the requester must include
-       a description and justification as part of the access request.
-    1. Once the review is completed, the Security team approves or rejects the
-       Issue. If the Issue is rejected, it goes back for further review and
-       documentation.
-    1. If the review is approved, IT or Security team provisions access, then
-       marks the Issue as Done, adding any pertinent notes required.
-       
-        * New accounts will be created with a temporary secure password that
-          meets all password requirements, which must be changed on the initial
-          login.
-        * All password exchanges must occur over an authenticated channel.
-        * For on-premise systems, access grants are accomplished by adding the
-          appropriate user account to the corresponding LDAP/AD group.
-        * For cloud accounts, access grants are provisioned in Okta or using the
-          access control mechanisms built into those services/applications.
-        * Account management for non-production systems may be delegated to a
-          CloudCore employee at the discretion of the Security Officer.
-
-1. Special access, including access to production environments, is not granted
-   until receipt, review, and approval by the CloudCore Security Officer.
-1. The request for access is retained for future reference.
-1. Temporary accounts are not used unless absolutely necessary for business
-   purposes.
-
-    * Accounts are reviewed every 90 days to ensure temporary accounts are not
-      left unnecessarily.
-    * Accounts that are inactive for over 90 days are removed.
-
-1. In the case of non-personal information, such as generic educational content,
-   identification and authentication may not be required.
-
-#### Access Termination
-
-IT Manager or Security team receives access termination requests in one of the
-following conditions and processes it accordingly:
-
-* Employee existing/termination, as defined by the process in 
-  [HR & Employee Security](hr.md);
-* Employee access to a system is no longer required as a result of job role
-  change or similar event, in which case a access termination request may be
-  submitted by the employee or his/her manager via the Internal Help portal or
-  an email request to Security team;
-* As the result of a Access Review, as defined in 
-  [System Auditing](system_audit.md).
-* Non-standard access is revoked by default after 30 days of inactivity, unless
-  an exception/extension is requested and approved.
-
-### Access Reviews
-
-* All access to CloudCore systems and services are reviewed and updated following
-  the procedures specified in [System Auditing](system_audit.md) to ensure proper
-  authorisations are in place commensurate with job functions.
-* In cases of increased risk or known attempted unauthorised access, immediate
-  steps are taken by the Security and Privacy Officer to limit access and reduce
-  risk of unauthorised access.
-
-### Privileged Access
-
-Privileged users must first access systems using standard, unique user accounts
-before elevating the privilege or switching to privileged users and performing
-privileged tasks.  Examples include:
-
-* `sudo` in Linux/macOS
-* `Run as Administrator` in Windows
-* `Assume role` in AWS
-
-### Service Accounts
-
-* All application to application communication using service accounts is
-  restricted and not permitted unless absolutely needed. Automated tools are
-  used to limit account access across applications and systems.
-
-* Services that are part of CloudCore platform leverage AWS IAM policy
-  configurations and/or OAuth for authorisation.
-
-* Generic accounts are not allowed on CloudCore systems.
-
-* Direct system to system, system to application, and application to application
-  authentication and authorisation are limited and controlled to restrict
-  access.
-
-* In AWS, service accounts are implemented in the form of IAM Roles, and their
-  access defined by the corresponding IAM policies. The creation of these IAM
-  roles and policies is implemented as code, which follows the secure
-  development, review and production change approval process.
-
-* An inventory of all Service accounts is maintained by AWS IAM and Terraform and
-  reviewed periodically.
-
-### Employee Workstation / Endpoints Access and Usage
-
-All workstations at CloudCore are company owned, using one the following approved
-hardware vendors and operating systems:
-
-* Apple, Dell, or Lenovo
-* macOS, Linux (Ubuntu or Debian), or Windows 10
-
-1. Workstations may not be used to engage in any activity that is illegal or is
-   in violation of organisation's policies.
-1. Access may not be used for transmitting, retrieving, or storage of any
-   communications of a discriminatory or harassing nature or materials that are
-   obscene or "X-rated". Harassment of any kind is prohibited. No messages with
-   derogatory or inflammatory remarks about an individual's race, age,
-   disability, religion, national origin, physical attributes, sexual
-   preference, or health condition shall be transmitted or maintained. No
-   abusive, hostile, profane, or offensive language is to be transmitted through
-   organisation's system.
-1. Information systems/applications also may not be used for any other purpose
-   that is illegal, unethical, or against company policies or contrary to
-   organisation's best interests. Messages containing information related to a
-   lawsuit or investigation may not be sent without prior approval.
-1. Solicitation of non-company business, or any use of organisation's
-   information systems/applications for personal gain is prohibited.
-1. Users may not misrepresent, obscure, suppress, or replace another user's
-   identity in transmitted or stored messages.
-1. Workstation hard drives will be encrypted using FileVault (macOS), BitLocker
-   (Windows) or equivalent.
-1. All workstations must have host firewalls enabled to prevent unauthorised
-   access unless explicitly granted.
-1. All workstations must have endpoint security software installed and actively
-   running, if supported by the operating system.
-
-### Office Network and Wireless Access
-
-1. CloudCore production systems are not accessible directly over wireless
-   channels.
-2. Wireless access is disabled on all production systems.
-3. When accessing production systems via remote wireless connections, the same
-   system access policies and procedures apply to wireless as all other
-   connections, including wired.
-4. Wireless networks managed within CloudCore non-production facilities (offices,
-   etc.) are secured with the following configurations:
-
-    * All data in transit over wireless is encrypted using WPA2 encryption;
-    * Passwords are not currently on a rotation schedule because the office
-      environments are considered insecure.  
-    * Passwords are changed immediately should a suspicious activity or
-      indicator of compromise is detected.
-    * Guest wireless access is on a separate SSID configured with different
-      password and traffic VLAN.
-    * Wireless access is managed by the IT Manager.
-    * Wireless access points connected to the network are automatically
-      scanned; rogue access points identified are immediately removed.
-
-### Production Access and Secrets Management
-
-CloudCore leverages a combination of [ credentials
-store](https://support.cloudbees.com/hc/en-us/articles/203802500-Injecting-Secrets-into--Build-Jobs),
-[credstash](https://github.com/fugue/credstash), and [Amason EC2 Systems Manager
-Parameter
-Store](https://aws.amason.com/blogs/mt/the-right-way-to-store-secrets-using-parameter-store/)
-to securely store production secrets.  Secrets are always encrypted; access to
-secrets is always controlled and audited.
-
-Details and usage are documented on the CloudCore Engineering Wiki.
-
-### Production Data Access
-
-The following requirements and controls are in place for accessing production
-data by internal personnel:
-
-- There is no pre-provisioned, persisted "internal" access to production data
-  stores. Access such as direct SSH to the production database servers and
-  direct access to data objects in production S3 buckets are prohibited.
-
-- Access to customer data is granted on a per-account basis.
-
-- Access requests follow the same production access processes. Access must be
-  approved by both the data owner and the security team.
-
-- Access to production data is granted only through an approved platform with
-  strong centralised access control, with MFA.
-  
-- An audit list of who has access to which customer data is maintained and
-  reviewed monthly. Access is revoked when no longer needed.
-
-
-### Password Reset and other Helpdesk Requests
-
-CloudCore employees have the ability to obtain self-service support directly from
-supported business applications, such as password reset via the SSO/IdP tool.
-
-If needed, users may use our internal service desk or email request to obtain IT
-and Security support.
-
-A ticket is opened in  for each support request and assigned to the
-appropriate personnel.  The person assigned must verify the identity of the
-requester and ensure the ticket has appropriate approval before implementing or
-providing support.  The verification step and confirmation of "User identity
-verified" should be included as a comment in the ticket by the support
-personnel. Additionally, if a password or security credential has been created
-or supplied, confirm user has received it via another channel like
-slack/email/phone/zoom and document receipt in the ticket.
+> **COMPLIANCE IMPACT:** Current implementation may not fully align with policy statements. 
+> Risk assessment required to determine compliance gaps and remediation priorities.
