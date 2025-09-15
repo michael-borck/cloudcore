@@ -1,0 +1,201 @@
+Customer_ID,Age,Gender,Industry,Company_Size,Tenure_Months,Primary_Product,Monthly_Usage_Hours,Support_Tickets_6M,Satisfaction_Score,Renewal_Likelihood,Region,Contract_Value_AUD
+CC001,34,Female,Healthcare,Large,18,DataVault,145,2,8.2,High,Metro,2400
+CC002,42,Male,Finance,Medium,36,CloudSync,89,1,7.8,High,North,1800
+CC003,29,Female,Education,Small,8,SecureLink,67,4,6.1,Medium,South,850
+CC004,51,Male,Manufacturing,Large,24,DataVault,198,0,9.1,High,East,3200
+CC005,38,Female,Technology,Medium,12,Analytics Pro,112,3,7.2,Medium,West,1200
+CC006,45,Male,Retail,Small,42,CloudSync,73,2,8.5,High,Central,950
+CC007,31,Female,Healthcare,Medium,15,SecureLink,94,5,5.8,Low,Metro,1100
+CC008,56,Male,Finance,Large,48,DataVault,234,1,8.9,High,North,4100
+CC009,27,Female,Education,Small,6,Analytics Pro,45,7,4.2,Low,South,650
+CC010,39,Male,Manufacturing,Medium,21,CloudSync,156,2,7.6,Medium,East,1950
+CC011,33,Female,Technology,Large,30,DataVault,167,1,8.4,High,West,2800
+CC012,49,Male,Retail,Small,18,SecureLink,82,3,6.9,Medium,Central,890
+CC013,36,Female,Healthcare,Medium,9,Analytics Pro,78,6,5.5,Low,Metro,980
+CC014,52,Male,Finance,Large,39,CloudSync,201,0,9.3,High,North,2650
+CC015,28,Female,Education,Small,12,SecureLink,58,8,3.9,Low,South,720
+CC016,41,Male,Manufacturing,Medium,27,DataVault,189,2,8.1,High,East,2300
+CC017,35,Female,Technology,Large,15,Analytics Pro,134,4,6.8,Medium,West,1450
+CC018,47,Male,Retail,Small,33,CloudSync,91,1,8.0,High,Central,1100
+CC019,32,Female,Healthcare,Medium,6,SecureLink,103,9,4.1,Low,Metro,1250
+CC020,54,Male,Finance,Large,45,DataVault,267,0,9.2,High,North,3900
+CC021,26,Female,Education,Small,15,Analytics Pro,52,5,5.1,Low,South,780
+CC022,43,Male,Manufacturing,Medium,24,CloudSync,174,3,7.4,Medium,East,2100
+CC023,37,Female,Technology,Large,18,DataVault,156,1,8.6,High,West,2500
+CC024,50,Male,Retail,Small,36,SecureLink,76,2,7.1,Medium,Central,920
+CC025,30,Female,Healthcare,Medium,12,Analytics Pro,89,7,4.8,Low,Metro,1080
+CC026,58,Male,Finance,Large,42,CloudSync,223,1,8.8,High,North,2900
+CC027,25,Female,Education,Small,9,SecureLink,61,6,5.3,Low,South,750
+CC028,44,Male,Manufacturing,Medium,30,DataVault,192,2,8.3,High,East,2400
+CC029,39,Female,Technology,Large,21,Analytics Pro,145,3,7.0,Medium,West,1600
+CC030,53,Male,Retail,Small,27,CloudSync,87,1,7.9,High,Central,1050
+CC031,31,Female,Healthcare,Medium,18,SecureLink,98,4,6.4,Medium,Metro,1200
+CC032,46,Male,Finance,Large,48,DataVault,245,0,9.4,High,North,3600
+CC033,28,Female,Education,Small,6,Analytics Pro,41,8,3.7,Low,South,620
+CC034,40,Male,Manufacturing,Medium,33,CloudSync,168,2,7.7,Medium,East,2050
+CC035,34,Female,Technology,Large,24,DataVault,179,1,8.7,High,West,2700
+CC036,48,Male,Retail,Small,39,SecureLink,84,3,6.8,Medium,Central,980
+CC037,29,Female,Healthcare,Medium,15,Analytics Pro,95,5,5.6,Low,Metro,1150
+CC038,55,Male,Finance,Large,36,CloudSync,210,1,8.6,High,North,2750
+CC039,27,Female,Education,Small,12,SecureLink,66,7,4.5,Low,South,810
+CC040,42,Male,Manufacturing,Medium,27,DataVault,185,2,8.0,High,East,2350
+CC041,36,Female,Technology,Large,18,Analytics Pro,128,4,6.6,Medium,West,1400
+CC042,51,Male,Retail,Small,30,CloudSync,93,1,7.8,High,Central,1120
+CC043,33,Female,Healthcare,Medium,9,SecureLink,105,6,5.2,Low,Metro,1280
+CC044,57,Male,Finance,Large,45,DataVault,259,0,9.1,High,North,3800
+CC045,24,Female,Education,Small,18,Analytics Pro,48,9,3.5,Low,South,690
+CC046,41,Male,Manufacturing,Medium,21,CloudSync,162,3,7.3,Medium,East,1980
+CC047,35,Female,Technology,Large,30,DataVault,172,1,8.5,High,West,2600
+CC048,49,Male,Retail,Small,24,SecureLink,79,2,7.2,Medium,Central,910
+CC049,32,Female,Healthcare,Medium,12,Analytics Pro,86,8,4.9,Low,Metro,1040
+CC050,56,Male,Finance,Large,39,CloudSync,216,0,9.0,High,North,2850
+CC051,26,Female,Education,Small,15,SecureLink,63,5,5.7,Low,South,770
+CC052,43,Male,Manufacturing,Medium,36,DataVault,196,2,8.2,High,East,2450
+CC053,38,Female,Technology,Large,15,Analytics Pro,141,3,6.9,Medium,West,1550
+CC054,52,Male,Retail,Small,33,CloudSync,88,1,7.6,Medium,Central,1080
+CC055,30,Female,Healthcare,Medium,21,SecureLink,101,4,6.1,Medium,Metro,1230
+CC056,59,Male,Finance,Large,48,DataVault,271,0,9.3,High,North,4000
+CC057,23,Female,Education,Small,6,Analytics Pro,39,10,3.1,Low,South,580
+CC058,44,Male,Manufacturing,Medium,24,CloudSync,171,2,7.5,Medium,East,2080
+CC059,37,Female,Technology,Large,27,DataVault,183,1,8.4,High,West,2550
+CC060,50,Male,Retail,Small,42,SecureLink,81,3,6.7,Medium,Central,950
+CC061,31,Female,Healthcare,Medium,18,Analytics Pro,92,6,5.4,Low,Metro,1110
+CC062,54,Male,Finance,Large,33,CloudSync,205,1,8.7,High,North,2700
+CC063,28,Female,Education,Small,9,SecureLink,59,7,4.3,Low,South,730
+CC064,41,Male,Manufacturing,Medium,30,DataVault,188,2,8.1,High,East,2380
+CC065,36,Female,Technology,Large,21,Analytics Pro,135,4,6.7,Medium,West,1480
+CC066,48,Male,Retail,Small,36,CloudSync,95,1,7.7,Medium,Central,1140
+CC067,33,Female,Healthcare,Medium,15,SecureLink,107,5,5.9,Low,Metro,1300
+CC068,58,Male,Finance,Large,42,DataVault,253,0,9.2,High,North,3700
+CC069,25,Female,Education,Small,12,Analytics Pro,44,8,4.0,Low,South,650
+CC070,42,Male,Manufacturing,Medium,27,CloudSync,165,3,7.4,Medium,East,2020
+CC071,35,Female,Technology,Large,24,DataVault,175,1,8.6,High,West,2650
+CC072,51,Male,Retail,Small,39,SecureLink,83,2,7.0,Medium,Central,970
+CC073,29,Female,Healthcare,Medium,6,Analytics Pro,81,9,4.6,Low,Metro,980
+CC074,55,Male,Finance,Large,45,CloudSync,219,1,8.9,High,North,2950
+CC075,27,Female,Education,Small,18,SecureLink,65,6,5.0,Low,South,790
+CC076,43,Male,Manufacturing,Medium,33,DataVault,199,2,8.3,High,East,2500
+CC077,38,Female,Technology,Large,18,Analytics Pro,148,3,7.1,Medium,West,1620
+CC078,53,Male,Retail,Small,30,CloudSync,90,1,7.8,High,Central,1090
+CC079,32,Female,Healthcare,Medium,24,SecureLink,109,4,6.3,Medium,Metro,1330
+CC080,57,Male,Finance,Large,36,DataVault,262,0,9.0,High,North,3850
+CC081,24,Female,Education,Small,9,Analytics Pro,42,11,2.8,Low,South,610
+CC082,45,Male,Manufacturing,Medium,21,CloudSync,159,2,7.2,Medium,East,1950
+CC083,34,Female,Technology,Large,30,DataVault,169,1,8.8,High,West,2580
+CC084,49,Male,Retail,Small,27,SecureLink,77,3,6.9,Medium,Central,890
+CC085,31,Female,Healthcare,Medium,12,Analytics Pro,88,7,5.1,Low,Metro,1070
+CC086,56,Male,Finance,Large,48,CloudSync,228,0,9.1,High,North,3050
+CC087,26,Female,Education,Small,15,SecureLink,62,5,5.8,Low,South,760
+CC088,44,Male,Manufacturing,Medium,36,DataVault,201,2,8.4,High,East,2520
+CC089,39,Female,Technology,Large,15,Analytics Pro,131,4,6.4,Medium,West,1430
+CC090,52,Male,Retail,Small,33,CloudSync,92,1,7.9,High,Central,1110
+CC091,30,Female,Healthcare,Medium,21,SecureLink,104,6,5.5,Low,Metro,1270
+CC092,58,Male,Finance,Large,42,DataVault,274,0,9.4,High,North,4050
+CC093,23,Female,Education,Small,6,Analytics Pro,37,12,2.5,Low,South,550
+CC094,41,Male,Manufacturing,Medium,24,CloudSync,167,3,7.6,Medium,East,2040
+CC095,37,Female,Technology,Large,27,DataVault,181,1,8.5,High,West,2620
+CC096,50,Male,Retail,Small,42,SecureLink,85,2,7.1,Medium,Central,990
+CC097,32,Female,Healthcare,Medium,18,Analytics Pro,94,8,4.7,Low,Metro,1140
+CC098,54,Male,Finance,Large,39,CloudSync,213,1,8.8,High,North,2800
+CC099,28,Female,Education,Small,9,SecureLink,57,9,4.1,Low,South,700
+CC100,42,Male,Manufacturing,Medium,30,DataVault,194,2,8.2,High,East,2420
+CC101,36,Female,Technology,Large,12,Analytics Pro,125,5,6.2,Medium,West,1360
+CC102,48,Male,Retail,Small,36,CloudSync,89,1,7.5,Medium,Central,1070
+CC103,33,Female,Healthcare,Medium,15,SecureLink,111,7,5.3,Low,Metro,1350
+CC104,59,Male,Finance,Large,45,DataVault,266,0,9.3,High,North,3900
+CC105,25,Female,Education,Small,12,Analytics Pro,46,10,3.3,Low,South,670
+CC106,43,Male,Manufacturing,Medium,27,CloudSync,173,2,7.7,Medium,East,2110
+CC107,35,Female,Technology,Large,24,DataVault,177,1,8.7,High,West,2680
+CC108,51,Male,Retail,Small,39,SecureLink,82,3,6.8,Medium,Central,960
+CC109,29,Female,Healthcare,Medium,6,Analytics Pro,83,11,4.4,Low,Metro,1010
+CC110,55,Male,Finance,Large,48,CloudSync,225,0,9.2,High,North,3000
+CC111,27,Female,Education,Small,18,SecureLink,68,4,5.9,Low,South,830
+CC112,44,Male,Manufacturing,Medium,33,DataVault,203,2,8.1,High,East,2540
+CC113,38,Female,Technology,Large,18,Analytics Pro,139,3,6.8,Medium,West,1520
+CC114,53,Male,Retail,Small,30,CloudSync,96,1,7.4,Medium,Central,1150
+CC115,31,Female,Healthcare,Medium,24,SecureLink,106,5,6.0,Medium,Metro,1290
+CC116,57,Male,Finance,Large,36,DataVault,258,0,9.1,High,North,3800
+CC117,24,Female,Education,Small,9,Analytics Pro,40,13,2.6,Low,South,590
+CC118,45,Male,Manufacturing,Medium,21,CloudSync,161,3,7.1,Medium,East,1970
+CC119,34,Female,Technology,Large,30,DataVault,165,1,8.9,High,West,2590
+CC120,49,Male,Retail,Small,27,SecureLink,75,2,7.3,Medium,Central,870
+CC121,32,Female,Healthcare,Medium,12,Analytics Pro,90,9,4.8,Low,Metro,1090
+CC122,56,Male,Finance,Large,42,CloudSync,220,1,8.6,High,North,2900
+CC123,26,Female,Education,Small,15,SecureLink,64,6,5.4,Low,South,780
+CC124,43,Male,Manufacturing,Medium,36,DataVault,197,2,8.3,High,East,2480
+CC125,39,Female,Technology,Large,15,Analytics Pro,143,4,6.5,Medium,West,1570
+CC126,52,Male,Retail,Small,33,CloudSync,94,1,7.8,High,Central,1130
+CC127,30,Female,Healthcare,Medium,21,SecureLink,108,8,5.1,Low,Metro,1320
+CC128,58,Male,Finance,Large,48,DataVault,269,0,9.4,High,North,3950
+CC129,23,Female,Education,Small,6,Analytics Pro,35,14,2.3,Low,South,520
+CC130,41,Male,Manufacturing,Medium,24,CloudSync,169,2,7.3,Medium,East,2060
+CC131,37,Female,Technology,Large,27,DataVault,179,1,8.6,High,West,2640
+CC132,50,Male,Retail,Small,42,SecureLink,87,3,6.6,Medium,Central,1020
+CC133,33,Female,Healthcare,Medium,18,Analytics Pro,96,10,4.2,Low,Metro,1160
+CC134,54,Male,Finance,Large,39,CloudSync,211,1,8.9,High,North,2780
+CC135,28,Female,Education,Small,9,SecureLink,55,7,4.7,Low,South,680
+CC136,42,Male,Manufacturing,Medium,30,DataVault,190,2,8.4,High,East,2400
+CC137,36,Female,Technology,Large,21,Analytics Pro,127,5,6.1,Medium,West,1380
+CC138,48,Male,Retail,Small,36,CloudSync,91,1,7.6,Medium,Central,1100
+CC139,31,Female,Healthcare,Medium,15,SecureLink,113,9,4.9,Low,Metro,1380
+CC140,59,Male,Finance,Large,45,DataVault,272,0,9.2,High,North,4000
+CC141,25,Female,Education,Small,12,Analytics Pro,48,12,3.0,Low,South,690
+CC142,43,Male,Manufacturing,Medium,27,CloudSync,175,3,7.4,Medium,East,2130
+CC143,35,Female,Technology,Large,24,DataVault,173,1,8.8,High,West,2700
+CC144,51,Male,Retail,Small,39,SecureLink,79,2,7.2,Medium,Central,920
+CC145,29,Female,Healthcare,Medium,6,Analytics Pro,79,15,3.8,Low,Metro,960
+CC146,55,Male,Finance,Large,48,CloudSync,227,0,9.3,High,North,3020
+CC147,27,Female,Education,Small,18,SecureLink,70,3,6.2,Medium,South,850
+CC148,44,Male,Manufacturing,Medium,33,DataVault,205,2,8.0,High,East,2560
+CC149,38,Female,Technology,Large,18,Analytics Pro,145,6,6.3,Medium,West,1590
+CC150,53,Male,Retail,Small,30,CloudSync,98,1,7.5,Medium,Central,1180
+CC151,32,Female,Healthcare,Medium,24,SecureLink,110,11,4.5,Low,Metro,1340
+CC152,57,Male,Finance,Large,36,DataVault,260,0,9.0,High,North,3820
+CC153,24,Female,Education,Small,9,Analytics Pro,43,16,2.1,Low,South,630
+CC154,45,Male,Manufacturing,Medium,21,CloudSync,163,2,7.0,Medium,East,1990
+CC155,34,Female,Technology,Large,30,DataVault,171,1,8.7,High,West,2610
+CC156,49,Male,Retail,Small,27,SecureLink,81,3,6.4,Medium,Central,940
+CC157,31,Female,Healthcare,Medium,12,Analytics Pro,87,13,3.9,Low,Metro,1050
+CC158,56,Male,Finance,Large,42,CloudSync,222,1,8.7,High,North,2920
+CC159,26,Female,Education,Small,15,SecureLink,66,5,5.6,Low,South,800
+CC160,43,Male,Manufacturing,Medium,36,DataVault,199,2,8.2,High,East,2500
+CC161,39,Female,Technology,Large,15,Analytics Pro,137,7,5.8,Low,West,1500
+CC162,52,Male,Retail,Small,33,CloudSync,96,1,7.7,Medium,Central,1160
+CC163,30,Female,Healthcare,Medium,21,SecureLink,105,14,4.0,Low,Metro,1280
+CC164,58,Male,Finance,Large,48,DataVault,271,0,9.5,High,North,3980
+CC165,23,Female,Education,Small,6,Analytics Pro,33,17,1.9,Low,South,490
+CC166,41,Male,Manufacturing,Medium,24,CloudSync,171,3,6.9,Medium,East,2080
+CC167,37,Female,Technology,Large,27,DataVault,185,1,8.5,High,West,2720
+CC168,50,Male,Retail,Small,42,SecureLink,89,2,6.8,Medium,Central,1040
+CC169,33,Female,Healthcare,Medium,18,Analytics Pro,98,18,3.4,Low,Metro,1190
+CC170,54,Male,Finance,Large,39,CloudSync,215,1,8.8,High,North,2820
+CC171,28,Female,Education,Small,9,SecureLink,53,8,4.4,Low,South,650
+CC172,42,Male,Manufacturing,Medium,30,DataVault,192,2,8.1,High,East,2440
+CC173,36,Female,Technology,Large,21,Analytics Pro,129,8,5.7,Low,West,1410
+CC174,48,Male,Retail,Small,36,CloudSync,93,1,7.3,Medium,Central,1120
+CC175,31,Female,Healthcare,Medium,15,SecureLink,115,12,4.3,Low,Metro,1400
+CC176,59,Male,Finance,Large,45,DataVault,274,0,9.1,High,North,4050
+CC177,25,Female,Education,Small,12,Analytics Pro,50,19,2.7,Low,South,720
+CC178,43,Male,Manufacturing,Medium,27,CloudSync,177,2,7.2,Medium,East,2150
+CC179,35,Female,Technology,Large,24,DataVault,175,1,8.9,High,West,2730
+CC180,51,Male,Retail,Small,39,SecureLink,83,3,6.5,Medium,Central,970
+CC181,29,Female,Healthcare,Medium,6,Analytics Pro,75,20,3.1,Low,Metro,910
+CC182,55,Male,Finance,Large,48,CloudSync,229,0,9.4,High,North,3040
+CC183,27,Female,Education,Small,18,SecureLink,72,4,5.8,Low,South,870
+CC184,44,Male,Manufacturing,Medium,33,DataVault,207,2,7.9,High,East,2580
+CC185,38,Female,Technology,Large,18,Analytics Pro,147,9,5.5,Low,West,1610
+CC186,53,Male,Retail,Small,30,CloudSync,100,1,7.1,Medium,Central,1200
+CC187,32,Female,Healthcare,Medium,24,SecureLink,112,15,3.8,Low,Metro,1360
+CC188,57,Male,Finance,Large,36,DataVault,262,0,8.9,High,North,3840
+CC189,24,Female,Education,Small,9,Analytics Pro,45,21,2.4,Low,South,660
+CC190,45,Male,Manufacturing,Medium,21,CloudSync,165,3,6.8,Medium,East,2010
+CC191,34,Female,Technology,Large,30,DataVault,173,1,8.6,High,West,2650
+CC192,49,Male,Retail,Small,27,SecureLink,85,2,6.7,Medium,Central,990
+CC193,31,Female,Healthcare,Medium,12,Analytics Pro,89,22,2.9,Low,Metro,1080
+CC194,56,Male,Finance,Large,42,CloudSync,224,1,8.5,High,North,2940
+CC195,26,Female,Education,Small,15,SecureLink,68,6,5.2,Low,South,820
+CC196,43,Male,Manufacturing,Medium,36,DataVault,201,2,8.0,High,East,2520
+CC197,39,Female,Technology,Large,15,Analytics Pro,141,10,5.3,Low,West,1540
+CC198,52,Male,Retail,Small,33,CloudSync,102,1,6.9,Medium,Central,1220
+CC199,30,Female,Healthcare,Medium,21,SecureLink,107,16,3.6,Low,Metro,1300
+CC200,58,Male,Finance,Large,48,DataVault,276,0,9.3,High,North,4080

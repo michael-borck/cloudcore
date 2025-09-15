@@ -1,0 +1,145 @@
+Region,Product,Quarter,Year,Revenue_AUD,Units_Sold,Sales_Rep,Customer_Segment
+North,CloudSync,Q1,2024,89500,450,Sarah Chen,Enterprise
+North,CloudSync,Q2,2024,94200,485,Sarah Chen,Enterprise
+North,CloudSync,Q3,2024,87300,420,Sarah Chen,Enterprise
+North,CloudSync,Q4,2024,78900,380,Sarah Chen,Enterprise
+North,DataVault,Q1,2024,156000,780,Sarah Chen,Enterprise
+North,DataVault,Q2,2024,162400,812,Sarah Chen,Enterprise
+North,DataVault,Q3,2024,149800,749,Sarah Chen,Enterprise
+North,DataVault,Q4,2024,134500,672,Sarah Chen,Enterprise
+North,SecureLink,Q1,2024,67200,224,Sarah Chen,SME
+North,SecureLink,Q2,2024,71500,238,Sarah Chen,SME
+North,SecureLink,Q3,2024,69800,232,Sarah Chen,SME
+North,SecureLink,Q4,2024,58900,196,Sarah Chen,SME
+North,Analytics Pro,Q1,2024,43200,120,Sarah Chen,SME
+North,Analytics Pro,Q2,2024,48600,135,Sarah Chen,SME
+North,Analytics Pro,Q3,2024,45900,127,Sarah Chen,SME
+North,Analytics Pro,Q4,2024,38700,107,Sarah Chen,SME
+South,CloudSync,Q1,2024,76800,384,Marcus Wong,Enterprise
+South,CloudSync,Q2,2024,82400,412,Marcus Wong,Enterprise
+South,CloudSync,Q3,2024,85600,428,Marcus Wong,Enterprise
+South,CloudSync,Q4,2024,91200,456,Marcus Wong,Enterprise
+South,DataVault,Q1,2024,134600,673,Marcus Wong,Enterprise
+South,DataVault,Q2,2024,141200,706,Marcus Wong,Enterprise
+South,DataVault,Q3,2024,148900,744,Marcus Wong,Enterprise
+South,DataVault,Q4,2024,155700,778,Marcus Wong,Enterprise
+South,SecureLink,Q1,2024,58400,194,Marcus Wong,SME
+South,SecureLink,Q2,2024,62100,207,Marcus Wong,SME
+South,SecureLink,Q3,2024,65800,219,Marcus Wong,SME
+South,SecureLink,Q4,2024,69500,231,Marcus Wong,SME
+South,Analytics Pro,Q1,2024,38900,108,Marcus Wong,SME
+South,Analytics Pro,Q2,2024,41700,115,Marcus Wong,SME
+South,Analytics Pro,Q3,2024,44200,122,Marcus Wong,SME
+South,Analytics Pro,Q4,2024,47800,132,Marcus Wong,SME
+East,CloudSync,Q1,2024,95400,477,Emma Taylor,Enterprise
+East,CloudSync,Q2,2024,89700,448,Emma Taylor,Enterprise
+East,CloudSync,Q3,2024,82100,410,Emma Taylor,Enterprise
+East,CloudSync,Q4,2024,74500,372,Emma Taylor,Enterprise
+East,DataVault,Q1,2024,167800,839,Emma Taylor,Enterprise
+East,DataVault,Q2,2024,159200,796,Emma Taylor,Enterprise
+East,DataVault,Q3,2024,145600,728,Emma Taylor,Enterprise
+East,DataVault,Q4,2024,128900,644,Emma Taylor,Enterprise
+East,SecureLink,Q1,2024,72400,241,Emma Taylor,SME
+East,SecureLink,Q2,2024,68900,229,Emma Taylor,SME
+East,SecureLink,Q3,2024,63200,210,Emma Taylor,SME
+East,SecureLink,Q4,2024,59800,199,Emma Taylor,SME
+East,Analytics Pro,Q1,2024,46800,130,Emma Taylor,SME
+East,Analytics Pro,Q2,2024,44100,122,Emma Taylor,SME
+East,Analytics Pro,Q3,2024,40500,112,Emma Taylor,SME
+East,Analytics Pro,Q4,2024,37200,103,Emma Taylor,SME
+West,CloudSync,Q1,2024,81200,406,David Kim,Enterprise
+West,CloudSync,Q2,2024,86800,434,David Kim,Enterprise
+West,CloudSync,Q3,2024,92500,462,David Kim,Enterprise
+West,CloudSync,Q4,2024,98700,493,David Kim,Enterprise
+West,DataVault,Q1,2024,142300,711,David Kim,Enterprise
+West,DataVault,Q2,2024,151600,758,David Kim,Enterprise
+West,DataVault,Q3,2024,164200,821,David Kim,Enterprise
+West,DataVault,Q4,2024,176800,884,David Kim,Enterprise
+West,SecureLink,Q1,2024,61500,205,David Kim,SME
+West,SecureLink,Q2,2024,65200,217,David Kim,SME
+West,SecureLink,Q3,2024,70100,233,David Kim,SME
+West,SecureLink,Q4,2024,74900,249,David Kim,SME
+West,Analytics Pro,Q1,2024,41200,114,David Kim,SME
+West,Analytics Pro,Q2,2024,43800,121,David Kim,SME
+West,Analytics Pro,Q3,2024,47500,131,David Kim,SME
+West,Analytics Pro,Q4,2024,51200,142,David Kim,SME
+Central,CloudSync,Q1,2024,73500,367,Lisa Rodriguez,Enterprise
+Central,CloudSync,Q2,2024,78200,391,Lisa Rodriguez,Enterprise
+Central,CloudSync,Q3,2024,75800,379,Lisa Rodriguez,Enterprise
+Central,CloudSync,Q4,2024,69400,347,Lisa Rodriguez,Enterprise
+Central,DataVault,Q1,2024,128700,643,Lisa Rodriguez,Enterprise
+Central,DataVault,Q2,2024,136800,684,Lisa Rodriguez,Enterprise
+Central,DataVault,Q3,2024,132400,662,Lisa Rodriguez,Enterprise
+Central,DataVault,Q4,2024,121500,607,Lisa Rodriguez,Enterprise
+Central,SecureLink,Q1,2024,55800,186,Lisa Rodriguez,SME
+Central,SecureLink,Q2,2024,59400,198,Lisa Rodriguez,SME
+Central,SecureLink,Q3,2024,57600,192,Lisa Rodriguez,SME
+Central,SecureLink,Q4,2024,52100,173,Lisa Rodriguez,SME
+Central,Analytics Pro,Q1,2024,36400,101,Lisa Rodriguez,SME
+Central,Analytics Pro,Q2,2024,39100,108,Lisa Rodriguez,SME
+Central,Analytics Pro,Q3,2024,38200,106,Lisa Rodriguez,SME
+Central,Analytics Pro,Q4,2024,34800,96,Lisa Rodriguez,SME
+Metro,CloudSync,Q1,2024,102500,512,Alex Patel,Enterprise
+Metro,CloudSync,Q2,2024,108900,544,Alex Patel,Enterprise
+Metro,CloudSync,Q3,2024,95700,478,Alex Patel,Enterprise
+Metro,CloudSync,Q4,2024,87200,436,Alex Patel,Enterprise
+Metro,DataVault,Q1,2024,179400,897,Alex Patel,Enterprise
+Metro,DataVault,Q2,2024,190600,953,Alex Patel,Enterprise
+Metro,DataVault,Q3,2024,167300,836,Alex Patel,Enterprise
+Metro,DataVault,Q4,2024,152800,764,Alex Patel,Enterprise
+Metro,SecureLink,Q1,2024,78600,262,Alex Patel,SME
+Metro,SecureLink,Q2,2024,83400,278,Alex Patel,SME
+Metro,SecureLink,Q3,2024,73200,244,Alex Patel,SME
+Metro,SecureLink,Q4,2024,66900,223,Alex Patel,SME
+Metro,Analytics Pro,Q1,2024,51300,142,Alex Patel,SME
+Metro,Analytics Pro,Q2,2024,54700,151,Alex Patel,SME
+Metro,Analytics Pro,Q3,2024,48100,133,Alex Patel,SME
+Metro,Analytics Pro,Q4,2024,43900,121,Alex Patel,SME
+North,CloudSync,Q1,2023,85200,426,Sarah Chen,Enterprise
+North,CloudSync,Q2,2023,88700,443,Sarah Chen,Enterprise
+North,CloudSync,Q3,2023,91800,459,Sarah Chen,Enterprise
+North,CloudSync,Q4,2023,86500,432,Sarah Chen,Enterprise
+North,DataVault,Q1,2023,148600,743,Sarah Chen,Enterprise
+North,DataVault,Q2,2023,153200,766,Sarah Chen,Enterprise
+North,DataVault,Q3,2023,159400,797,Sarah Chen,Enterprise
+North,DataVault,Q4,2023,154800,774,Sarah Chen,Enterprise
+South,CloudSync,Q1,2023,72300,361,Marcus Wong,Enterprise
+South,CloudSync,Q2,2023,75600,378,Marcus Wong,Enterprise
+South,CloudSync,Q3,2023,78400,392,Marcus Wong,Enterprise
+South,CloudSync,Q4,2023,74900,374,Marcus Wong,Enterprise
+South,DataVault,Q1,2023,126800,634,Marcus Wong,Enterprise
+South,DataVault,Q2,2023,131400,657,Marcus Wong,Enterprise
+South,DataVault,Q3,2023,136200,681,Marcus Wong,Enterprise
+South,DataVault,Q4,2023,132700,663,Marcus Wong,Enterprise
+East,CloudSync,Q1,2023,98200,491,Emma Taylor,Enterprise
+East,CloudSync,Q2,2023,95700,478,Emma Taylor,Enterprise
+East,CloudSync,Q3,2023,92400,462,Emma Taylor,Enterprise
+East,CloudSync,Q4,2023,96800,484,Emma Taylor,Enterprise
+East,DataVault,Q1,2023,172300,861,Emma Taylor,Enterprise
+East,DataVault,Q2,2023,168900,844,Emma Taylor,Enterprise
+East,DataVault,Q3,2023,164700,823,Emma Taylor,Enterprise
+East,DataVault,Q4,2023,169500,847,Emma Taylor,Enterprise
+West,CloudSync,Q1,2023,77800,389,David Kim,Enterprise
+West,CloudSync,Q2,2023,80100,400,David Kim,Enterprise
+West,CloudSync,Q3,2023,83500,417,David Kim,Enterprise
+West,CloudSync,Q4,2023,79600,398,David Kim,Enterprise
+West,DataVault,Q1,2023,136400,682,David Kim,Enterprise
+West,DataVault,Q2,2023,140200,701,David Kim,Enterprise
+West,DataVault,Q3,2023,145800,729,David Kim,Enterprise
+West,DataVault,Q4,2023,139700,698,David Kim,Enterprise
+Central,CloudSync,Q1,2023,69800,349,Lisa Rodriguez,Enterprise
+Central,CloudSync,Q2,2023,72500,362,Lisa Rodriguez,Enterprise
+Central,CloudSync,Q3,2023,75100,375,Lisa Rodriguez,Enterprise
+Central,CloudSync,Q4,2023,71400,357,Lisa Rodriguez,Enterprise
+Central,DataVault,Q1,2023,122600,613,Lisa Rodriguez,Enterprise
+Central,DataVault,Q2,2023,127100,635,Lisa Rodriguez,Enterprise
+Central,DataVault,Q3,2023,131800,659,Lisa Rodriguez,Enterprise
+Central,DataVault,Q4,2023,125300,626,Lisa Rodriguez,Enterprise
+Metro,CloudSync,Q1,2023,105800,529,Alex Patel,Enterprise
+Metro,CloudSync,Q2,2023,109200,546,Alex Patel,Enterprise
+Metro,CloudSync,Q3,2023,112600,563,Alex Patel,Enterprise
+Metro,CloudSync,Q4,2023,107400,537,Alex Patel,Enterprise
+Metro,DataVault,Q1,2023,185200,926,Alex Patel,Enterprise
+Metro,DataVault,Q2,2023,191500,957,Alex Patel,Enterprise
+Metro,DataVault,Q3,2023,197300,986,Alex Patel,Enterprise
+Metro,DataVault,Q4,2023,188600,943,Alex Patel,Enterprise

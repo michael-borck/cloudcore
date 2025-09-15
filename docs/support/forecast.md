@@ -32,4 +32,4 @@ company for a stronger financial performance through the year.
 
 : Financial Forecast 2024
 
-(Source)[../../data/financial_forecast_2024.csv]
+[Source](../../data/financial_forecast_2024.csv)

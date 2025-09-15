@@ -1,0 +1,101 @@
+Ticket_ID,Customer_ID,Date_Created,Category,Subcategory,Priority,Resolution_Hours,Customer_Segment,Product,Industry,Outcome,Satisfaction_Rating,Follow_Up_Required
+TK001,CC009,2024-07-15,Technical,Login Issues,High,2.5,Small,Analytics Pro,Education,Resolved,3,No
+TK002,CC034,2024-07-16,Billing,Invoice Discrepancy,Medium,24.0,Medium,CloudSync,Manufacturing,Resolved,4,No
+TK003,CC067,2024-07-17,Technical,Performance Issues,High,8.5,Medium,SecureLink,Healthcare,Resolved,2,Yes
+TK004,CC112,2024-07-18,Training,Feature Questions,Low,4.0,Medium,DataVault,Manufacturing,Resolved,5,No
+TK005,CC045,2024-07-19,Technical,Data Import Error,High,48.0,Small,Analytics Pro,Education,Escalated,1,Yes
+TK006,CC078,2024-07-20,Account,User Management,Medium,6.0,Small,CloudSync,Retail,Resolved,4,No
+TK007,CC123,2024-07-21,Technical,Connectivity Issues,High,12.0,Small,SecureLink,Education,Resolved,2,Yes
+TK008,CC156,2024-07-22,Billing,Payment Processing,Medium,18.0,Small,SecureLink,Retail,Resolved,3,No
+TK009,CC189,2024-07-23,Training,User Onboarding,Low,2.0,Small,Analytics Pro,Education,Resolved,2,Yes
+TK010,CC023,2024-07-24,Technical,API Integration,High,36.0,Large,DataVault,Technology,Resolved,4,No
+TK011,CC198,2024-07-25,Account,Access Rights,Medium,8.0,Small,CloudSync,Retail,Resolved,4,No
+TK012,CC089,2024-07-26,Technical,Dashboard Error,High,16.0,Large,Analytics Pro,Technology,Resolved,3,Yes
+TK013,CC145,2024-07-27,Training,Report Generation,Low,6.0,Medium,Analytics Pro,Healthcare,Resolved,2,Yes
+TK014,CC167,2024-07-28,Technical,Backup Failure,High,72.0,Large,DataVault,Technology,Escalated,1,Yes
+TK015,CC031,2024-07-29,Billing,Contract Renewal,Medium,12.0,Medium,SecureLink,Healthcare,Resolved,3,No
+TK016,CC104,2024-07-30,Account,Password Reset,Low,1.0,Large,DataVault,Finance,Resolved,5,No
+TK017,CC172,2024-07-31,Technical,Sync Issues,High,24.0,Medium,DataVault,Manufacturing,Resolved,3,Yes
+TK018,CC086,2024-08-01,Training,Advanced Features,Low,4.0,Large,CloudSync,Finance,Resolved,5,No
+TK019,CC151,2024-08-02,Technical,Mobile App Crash,High,6.0,Medium,SecureLink,Healthcare,Resolved,2,Yes
+TK020,CC193,2024-08-03,Account,Licence Upgrade,Medium,48.0,Medium,Analytics Pro,Healthcare,Escalated,1,Yes
+TK021,CC118,2024-08-04,Technical,Export Function,Medium,8.0,Medium,CloudSync,Manufacturing,Resolved,4,No
+TK022,CC075,2024-08-05,Training,Policy Compliance,Low,12.0,Small,SecureLink,Education,Resolved,3,Yes
+TK023,CC140,2024-08-06,Technical,Server Timeout,High,4.0,Large,DataVault,Finance,Resolved,4,No
+TK024,CC165,2024-08-07,Billing,Refund Request,Medium,36.0,Small,Analytics Pro,Education,Resolved,2,No
+TK025,CC092,2024-08-08,Account,Multi-Factor Auth,Medium,3.0,Large,DataVault,Finance,Resolved,5,No
+TK026,CC187,2024-08-09,Technical,Memory Leak,High,18.0,Medium,SecureLink,Healthcare,Resolved,2,Yes
+TK027,CC129,2024-08-10,Training,Dashboard Setup,Low,5.0,Small,Analytics Pro,Education,Resolved,1,Yes
+TK028,CC062,2024-08-11,Technical,Email Integration,Medium,14.0,Large,CloudSync,Finance,Resolved,4,No
+TK029,CC107,2024-08-12,Account,Team Management,Low,2.0,Large,DataVault,Technology,Resolved,5,No
+TK030,CC181,2024-08-13,Technical,Widget Malfunction,High,48.0,Medium,Analytics Pro,Healthcare,Escalated,1,Yes
+TK031,CC036,2024-08-14,Billing,Overage Charges,Medium,24.0,Small,SecureLink,Retail,Resolved,3,No
+TK032,CC170,2024-08-15,Training,Security Settings,Low,8.0,Large,CloudSync,Finance,Resolved,4,No
+TK033,CC095,2024-08-16,Technical,File Corruption,High,36.0,Large,DataVault,Technology,Resolved,3,Yes
+TK034,CC153,2024-08-17,Account,Role Permissions,Medium,6.0,Small,Analytics Pro,Education,Resolved,2,Yes
+TK035,CC074,2024-08-18,Technical,Search Function,Medium,10.0,Large,CloudSync,Finance,Resolved,4,No
+TK036,CC131,2024-08-19,Training,Automation Setup,Low,12.0,Large,DataVault,Technology,Resolved,5,No
+TK037,CC199,2024-08-20,Technical,Calendar Sync,High,8.0,Medium,SecureLink,Healthcare,Resolved,2,Yes
+TK038,CC117,2024-08-21,Billing,Tax Calculation,Medium,18.0,Small,Analytics Pro,Education,Resolved,1,Yes
+TK039,CC056,2024-08-22,Account,Subscription Change,Low,4.0,Large,DataVault,Finance,Resolved,5,No
+TK040,CC184,2024-08-23,Technical,Load Balancing,High,24.0,Medium,DataVault,Manufacturing,Resolved,4,No
+TK041,CC098,2024-08-24,Training,Report Scheduling,Low,6.0,Large,CloudSync,Finance,Resolved,5,No
+TK042,CC175,2024-08-25,Technical,Database Lock,High,72.0,Medium,SecureLink,Healthcare,Escalated,1,Yes
+TK043,CC141,2024-08-26,Account,Data Migration,Medium,48.0,Small,Analytics Pro,Education,Resolved,2,Yes
+TK044,CC080,2024-08-27,Technical,Notification Issues,Medium,12.0,Large,DataVault,Finance,Resolved,4,No
+TK045,CC163,2024-08-28,Training,Workflow Design,Low,8.0,Medium,SecureLink,Healthcare,Resolved,2,Yes
+TK046,CC126,2024-08-29,Technical,Memory Allocation,High,16.0,Small,CloudSync,Retail,Resolved,3,Yes
+TK047,CC088,2024-08-30,Billing,Currency Conversion,Medium,6.0,Medium,DataVault,Manufacturing,Resolved,4,No
+TK048,CC169,2024-08-31,Account,Backup Recovery,High,36.0,Medium,Analytics Pro,Healthcare,Resolved,2,Yes
+TK049,CC110,2024-09-01,Technical,Session Timeout,Medium,4.0,Large,CloudSync,Finance,Resolved,5,No
+TK050,CC157,2024-09-02,Training,Integration Guide,Low,10.0,Medium,Analytics Pro,Healthcare,Resolved,1,Yes
+TK051,CC064,2024-09-03,Technical,Certificate Error,High,8.0,Medium,DataVault,Manufacturing,Resolved,4,No
+TK052,CC194,2024-09-04,Account,Audit Logging,Medium,18.0,Large,CloudSync,Finance,Resolved,5,No
+TK053,CC108,2024-09-05,Technical,Plugin Conflict,High,24.0,Small,SecureLink,Retail,Resolved,3,Yes
+TK054,CC177,2024-09-06,Billing,Proration Issues,Medium,12.0,Small,Analytics Pro,Education,Resolved,2,No
+TK055,CC040,2024-09-07,Training,Data Visualisation,Low,6.0,Medium,DataVault,Manufacturing,Resolved,4,No
+TK056,CC185,2024-09-08,Technical,Performance Tuning,High,48.0,Large,Analytics Pro,Technology,Escalated,2,Yes
+TK057,CC122,2024-09-09,Account,Compliance Check,Medium,8.0,Large,CloudSync,Finance,Resolved,5,No
+TK058,CC159,2024-09-10,Technical,Webhook Failure,High,12.0,Small,SecureLink,Education,Resolved,3,Yes
+TK059,CC083,2024-09-11,Training,Collaboration Tools,Low,4.0,Large,DataVault,Technology,Resolved,5,No
+TK060,CC196,2024-09-12,Technical,Query Optimisation,Medium,16.0,Medium,DataVault,Manufacturing,Resolved,4,No
+TK061,CC146,2024-09-13,Billing,Service Credits,Medium,24.0,Large,CloudSync,Finance,Resolved,5,No
+TK062,CC173,2024-09-14,Account,Single Sign-On,High,6.0,Large,Analytics Pro,Technology,Resolved,3,Yes
+TK063,CC114,2024-09-15,Technical,Cache Issues,Medium,10.0,Small,CloudSync,Retail,Resolved,3,No
+TK064,CC191,2024-09-16,Training,Mobile Interface,Low,8.0,Large,DataVault,Technology,Resolved,5,No
+TK065,CC068,2024-09-17,Technical,Encryption Error,High,18.0,Large,DataVault,Finance,Resolved,4,No
+TK066,CC179,2024-09-18,Account,Feature Request,Low,72.0,Large,DataVault,Technology,Escalated,4,No
+TK067,CC102,2024-09-19,Technical,Batch Processing,Medium,14.0,Small,CloudSync,Retail,Resolved,3,Yes
+TK068,CC161,2024-09-20,Training,Customisation Guide,Low,12.0,Large,Analytics Pro,Technology,Resolved,2,Yes
+TK069,CC050,2024-09-21,Billing,Late Payment Fee,Medium,4.0,Large,CloudSync,Finance,Resolved,4,No
+TK070,CC188,2024-09-22,Technical,Token Expiration,High,6.0,Large,DataVault,Finance,Resolved,5,No
+TK071,CC125,2024-09-23,Account,Profile Update,Low,2.0,Large,Analytics Pro,Technology,Resolved,4,No
+TK072,CC171,2024-09-24,Technical,Third-party API,High,36.0,Small,SecureLink,Education,Resolved,2,Yes
+TK073,CC094,2024-09-25,Training,Best Practices,Low,8.0,Medium,CloudSync,Manufacturing,Resolved,4,No
+TK074,CC182,2024-09-26,Technical,Scaling Issues,High,24.0,Large,CloudSync,Finance,Resolved,5,No
+TK075,CC137,2024-09-27,Account,Data Retention,Medium,16.0,Large,Analytics Pro,Technology,Resolved,3,Yes
+TK076,CC060,2024-09-28,Technical,Workflow Error,Medium,12.0,Small,SecureLink,Retail,Resolved,3,No
+TK077,CC148,2024-09-29,Billing,Discount Application,Medium,8.0,Medium,DataVault,Manufacturing,Resolved,4,No
+TK078,CC106,2024-09-30,Training,Performance Metrics,Low,6.0,Medium,CloudSync,Manufacturing,Resolved,4,No
+TK079,CC195,2024-10-01,Technical,Resource Limits,High,18.0,Small,SecureLink,Education,Resolved,2,Yes
+TK080,CC072,2024-10-02,Account,Downgrade Request,Medium,12.0,Small,SecureLink,Retail,Resolved,3,No
+TK081,CC155,2024-10-03,Technical,Connection Pool,High,24.0,Large,DataVault,Technology,Resolved,4,No
+TK082,CC118,2024-10-04,Training,Analytics Setup,Low,10.0,Medium,CloudSync,Manufacturing,Resolved,4,No
+TK083,CC174,2024-10-05,Technical,Metadata Error,Medium,14.0,Small,CloudSync,Retail,Resolved,3,Yes
+TK084,CC038,2024-10-06,Billing,Usage Tracking,Medium,6.0,Large,CloudSync,Finance,Resolved,5,No
+TK085,CC197,2024-10-07,Account,Export Settings,Low,4.0,Large,Analytics Pro,Technology,Resolved,3,No
+TK086,CC130,2024-10-08,Technical,Memory Overflow,High,48.0,Medium,CloudSync,Manufacturing,Escalated,2,Yes
+TK087,CC091,2024-10-09,Training,Security Policies,Low,8.0,Medium,SecureLink,Healthcare,Resolved,2,Yes
+TK088,CC168,2024-10-10,Technical,Rate Limiting,Medium,12.0,Small,SecureLink,Retail,Resolved,3,No
+TK089,CC052,2024-10-11,Account,Team Collaboration,Low,6.0,Medium,DataVault,Manufacturing,Resolved,4,No
+TK090,CC183,2024-10-12,Technical,Version Control,High,16.0,Small,SecureLink,Education,Resolved,3,Yes
+TK091,CC116,2024-10-13,Billing,Auto-renewal,Medium,8.0,Large,DataVault,Finance,Resolved,5,No
+TK092,CC149,2024-10-14,Training,Dashboard Customisation,Low,12.0,Large,Analytics Pro,Technology,Resolved,3,Yes
+TK093,CC076,2024-10-15,Technical,File Upload Limit,Medium,10.0,Medium,DataVault,Manufacturing,Resolved,4,No
+TK094,CC192,2024-10-16,Account,Privacy Settings,Medium,4.0,Small,SecureLink,Retail,Resolved,3,No
+TK095,CC134,2024-10-17,Technical,Service Discovery,High,20.0,Large,CloudSync,Finance,Resolved,4,No
+TK096,CC178,2024-10-18,Training,Integration Testing,Low,14.0,Medium,CloudSync,Manufacturing,Resolved,4,No
+TK097,CC100,2024-10-19,Technical,Load Testing,High,36.0,Medium,DataVault,Manufacturing,Resolved,4,No
+TK098,CC166,2024-10-20,Account,Notification Preferences,Low,2.0,Medium,CloudSync,Manufacturing,Resolved,4,No
+TK099,CC044,2024-10-21,Billing,Invoice Format,Medium,6.0,Large,DataVault,Finance,Resolved,5,No
+TK100,CC190,2024-10-22,Technical,Data Consistency,High,24.0,Medium,CloudSync,Manufacturing,Resolved,4,No
