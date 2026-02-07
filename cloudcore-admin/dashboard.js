@@ -1,740 +1,452 @@
-// CloudCore UC Dashboard JavaScript
+/**
+ * CloudCore Lecturer Dashboard
+ * Uses cloudcore-api for all backend operations
+ */
 
 // Global state
-let authData = null;
-let currentConfig = null;
-let quillEditor = null;
-let currentEditingFile = null;
+let currentUser = null;
+let currentUnit = null;
+let units = [];
 
 // Initialize dashboard
-document.addEventListener('DOMContentLoaded', function() {
-    checkAuthentication();
-    initializeEditor();
-    loadDashboardData();
+document.addEventListener('DOMContentLoaded', async function() {
+    await checkAuthentication();
+    await loadDashboardData();
+    setupEventListeners();
 });
 
-// Authentication and initialization
-function checkAuthentication() {
-    const auth = sessionStorage.getItem('ucAuth');
-    if (!auth) {
-        window.location.href = '/login.html';
+// ============================================================================
+// Authentication
+// ============================================================================
+
+async function checkAuthentication() {
+    const session = CloudCoreAPI.init();
+
+    if (!session) {
+        window.location.href = 'login.html';
         return;
     }
 
-    try {
-        authData = JSON.parse(auth);
-        const loginAge = Date.now() - authData.loginTime;
-        const sessionTimeout = 8 * 60 * 60 * 1000; // 8 hours
+    currentUser = session.lecturer;
 
-        if (loginAge > sessionTimeout) {
-            sessionStorage.removeItem('ucAuth');
-            window.location.href = '/login.html';
-            return;
-        }
+    // Update UI with user info
+    document.getElementById('userBadge').textContent =
+        `${currentUser.name} (${currentUser.is_admin ? 'Admin' : 'Lecturer'})`;
 
-        // Update user badge
-        document.getElementById('userBadge').textContent = 
-            `${authData.name} (${authData.role === 'admin' ? 'Admin' : authData.unit})`;
-        
-        // Update unit name in access control
-        if (authData.unit) {
-            document.getElementById('unitName').textContent = authData.unit;
-        }
-
-    } catch (error) {
-        sessionStorage.removeItem('ucAuth');
-        window.location.href = '/login.html';
+    // Show/hide admin-only elements
+    if (currentUser.is_admin) {
+        document.querySelectorAll('.admin-only').forEach(el => el.style.display = 'block');
     }
 }
 
 function logout() {
-    sessionStorage.removeItem('ucAuth');
-    window.location.href = '/login.html';
+    CloudCoreAPI.logout();
+    window.location.href = 'login.html';
 }
 
-// Initialize Quill editor
-function initializeEditor() {
-    quillEditor = new Quill('#editor', {
-        theme: 'snow',
-        modules: {
-            toolbar: [
-                ['bold', 'italic', 'underline', 'strike'],
-                ['blockquote', 'code-block'],
-                [{ 'header': 1 }, { 'header': 2 }],
-                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-                ['link', 'image'],
-                ['clean']
-            ]
-        }
-    });
-}
+// ============================================================================
+// Dashboard Data Loading
+// ============================================================================
 
-// Navigation
-function showSection(sectionName) {
-    // Remove active class from all nav items and sections
-    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-    document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
-
-    // Add active class to selected nav item and section
-    event.target.classList.add('active');
-    document.getElementById(sectionName).classList.add('active');
-
-    // Load section-specific data
-    switch(sectionName) {
-        case 'overview':
-            loadOverviewData();
-            break;
-        case 'content':
-            loadContentFiles();
-            break;
-        case 'access':
-            loadAccessConfig();
-            break;
-        case 'files':
-            loadFileExplorer();
-            break;
-        case 'password':
-            loadPasswordSettings();
-            break;
-        case 'settings':
-            loadUnitSettings();
-            break;
-    }
-}
-
-// Load dashboard data
 async function loadDashboardData() {
-    await loadAccessConfig();
-    await loadOverviewData();
-}
-
-async function refreshData() {
-    showMessage('Refreshing data...', 'info');
-    await loadDashboardData();
-    showMessage('Data refreshed successfully!', 'success');
-}
-
-// Overview section
-async function loadOverviewData() {
     try {
-        // Load file count
-        const files = await githubAPI('list', '');
-        document.getElementById('totalFiles').textContent = files.files ? files.files.length : '0';
+        showLoading(true);
 
-        // Load access config stats
-        if (currentConfig && authData.unit) {
-            const unitConfig = currentConfig.units[authData.unit];
-            if (unitConfig) {
-                document.getElementById('allowedResources').textContent = 
-                    unitConfig.accessRules.customRules.allowed.length;
-                document.getElementById('deniedResources').textContent = 
-                    unitConfig.accessRules.customRules.denied.length;
-            }
-        }
+        // Load units
+        units = await CloudCoreAPI.listUnits();
 
-        // Show last update time
-        document.getElementById('lastUpdate').textContent = new Date().toLocaleDateString();
+        // Populate unit selector
+        const unitSelect = document.getElementById('unitSelect');
+        unitSelect.innerHTML = '<option value="">Select a unit...</option>';
 
-    } catch (error) {
-        console.error('Error loading overview:', error);
-        showMessage('Error loading overview data', 'error');
-    }
-}
-
-// Content management
-async function loadContentFiles() {
-    const container = document.getElementById('contentList');
-    container.innerHTML = '<div class="loading">Loading content files...</div>';
-
-    try {
-        const response = await githubAPI('list', 'docs');
-        const files = response.files || [];
-
-        if (files.length === 0) {
-            container.innerHTML = '<div class="info">No content files found. Create your first content file!</div>';
-            return;
-        }
-
-        let html = '';
-        files.forEach(file => {
-            if (file.type === 'file' && (file.name.endsWith('.qmd') || file.name.endsWith('.md'))) {
-                html += `
-                    <div class="file-item">
-                        <div class="file-info">
-                            <div class="file-icon">📄</div>
-                            <div class="file-details">
-                                <h4>${file.name}</h4>
-                                <div class="file-meta">Modified: ${new Date().toLocaleDateString()}</div>
-                            </div>
-                        </div>
-                        <div class="file-actions">
-                            <button class="btn btn-primary" onclick="editFile('${file.path}')">Edit</button>
-                            <button class="btn btn-danger" onclick="deleteFile('${file.path}')">Delete</button>
-                        </div>
-                    </div>
-                `;
-            }
+        units.forEach(unit => {
+            const option = document.createElement('option');
+            option.value = unit.code;
+            option.textContent = `${unit.code} - ${unit.name}`;
+            unitSelect.appendChild(option);
         });
 
-        container.innerHTML = html || '<div class="info">No content files found.</div>';
-
-    } catch (error) {
-        console.error('Error loading content files:', error);
-        container.innerHTML = '<div class="error">Error loading content files</div>';
-    }
-}
-
-// Access control
-async function loadAccessConfig() {
-    try {
-        const response = await githubAPI('read', 'config/unit-access.json');
-        currentConfig = JSON.parse(response.content);
-
-        if (authData.unit && currentConfig.units[authData.unit]) {
-            const unitConfig = currentConfig.units[authData.unit];
-            renderResourceList('allowed', unitConfig.accessRules.customRules.allowed);
-            renderResourceList('denied', unitConfig.accessRules.customRules.denied);
+        // If user has only one unit, select it automatically
+        if (units.length === 1) {
+            unitSelect.value = units[0].code;
+            await selectUnit(units[0].code);
         }
 
+        showLoading(false);
+
     } catch (error) {
-        console.error('Error loading access config:', error);
-        showMessage('Error loading access configuration', 'error');
+        showError('Failed to load dashboard data: ' + error.message);
+        showLoading(false);
     }
 }
 
-function renderResourceList(type, resources) {
-    const container = document.getElementById(type + 'List');
-    container.innerHTML = '';
-
-    resources.forEach((resource, index) => {
-        const div = document.createElement('div');
-        div.className = `resource-item ${type}`;
-        div.innerHTML = `
-            <span>${resource}</span>
-            <button class="btn btn-danger" style="padding: 4px 8px; font-size: 12px;" 
-                    onclick="removeResource('${type}', ${index})">×</button>
-        `;
-        container.appendChild(div);
-    });
-}
-
-function addResource(type) {
-    const input = document.getElementById(type + 'Input');
-    const path = input.value.trim();
-
-    if (!path) {
-        showMessage('Please enter a resource path', 'error');
-        return;
-    }
-
-    if (!authData.unit || !currentConfig.units[authData.unit]) {
-        showMessage('Unit configuration not found', 'error');
-        return;
-    }
-
-    const unitConfig = currentConfig.units[authData.unit];
-    const list = unitConfig.accessRules.customRules[type];
-
-    if (list.includes(path)) {
-        showMessage('Resource already in list', 'error');
-        return;
-    }
-
-    list.push(path);
-    renderResourceList(type, list);
-    input.value = '';
-    
-    showMessage(`Added to ${type} list: ${path}`, 'success');
-}
-
-function removeResource(type, index) {
-    if (!authData.unit || !currentConfig.units[authData.unit]) return;
-
-    const unitConfig = currentConfig.units[authData.unit];
-    const list = unitConfig.accessRules.customRules[type];
-    const removed = list.splice(index, 1)[0];
-    
-    renderResourceList(type, list);
-    showMessage(`Removed from ${type} list: ${removed}`, 'success');
-}
-
-async function saveAccessConfig() {
-    if (!currentConfig) {
-        showMessage('No configuration to save', 'error');
+async function selectUnit(unitCode) {
+    if (!unitCode) {
+        currentUnit = null;
+        document.getElementById('unitDetails').style.display = 'none';
         return;
     }
 
     try {
-        // Update timestamp
-        currentConfig.lastUpdated = new Date().toISOString();
+        showLoading(true);
 
-        const response = await githubAPI('write', 'config/unit-access.json', 
-            JSON.stringify(currentConfig, null, 2), 
-            `Update access configuration for ${authData.unit}`);
+        currentUnit = await CloudCoreAPI.getUnit(unitCode);
 
-        if (response.success) {
-            showMessage('Access configuration saved successfully!', 'success');
-        } else {
-            showMessage('Error saving configuration', 'error');
-        }
+        // Show unit details section
+        document.getElementById('unitDetails').style.display = 'block';
+
+        // Populate unit info
+        document.getElementById('unitCode').textContent = currentUnit.code;
+        document.getElementById('unitName').value = currentUnit.name || '';
+        document.getElementById('unitPassword').value = currentUnit.password || '';
+        document.getElementById('consultantDate').value = currentUnit.consultant_date?.split('T')[0] || '';
+        document.getElementById('auditorDate').value = currentUnit.auditor_date?.split('T')[0] || '';
+        document.getElementById('accessMode').value = currentUnit.access_mode || 'time-based';
+
+        // Load visibility rules
+        await loadVisibilityRules();
+
+        // Load unit files
+        await loadUnitFiles();
+
+        showLoading(false);
 
     } catch (error) {
-        console.error('Error saving access config:', error);
-        showMessage('Error saving access configuration', 'error');
+        showError('Failed to load unit: ' + error.message);
+        showLoading(false);
     }
 }
 
-// File manager
-async function loadFileExplorer() {
-    const container = document.getElementById('fileExplorer');
-    container.innerHTML = '<div class="loading">Loading file structure...</div>';
-
-    try {
-        const response = await githubAPI('list', '');
-        const files = response.files || [];
-
-        let html = '<div class="file-list">';
-        files.forEach(file => {
-            const icon = file.type === 'dir' ? '📁' : '📄';
-            html += `
-                <div class="file-item">
-                    <div class="file-info">
-                        <div class="file-icon">${icon}</div>
-                        <div class="file-details">
-                            <h4>${file.name}</h4>
-                            <div class="file-meta">${file.type} - ${file.size || 0} bytes</div>
-                        </div>
-                    </div>
-                    <div class="file-actions">
-                        ${file.type === 'file' ? `
-                            <button class="btn btn-primary" onclick="editFile('${file.path}')">Edit</button>
-                            <button class="btn btn-danger" onclick="deleteFile('${file.path}')">Delete</button>
-                        ` : `
-                            <button class="btn btn-secondary" onclick="exploreFolder('${file.path}')">Open</button>
-                        `}
-                    </div>
-                </div>
-            `;
-        });
-        html += '</div>';
-
-        container.innerHTML = html;
-
-    } catch (error) {
-        console.error('Error loading file explorer:', error);
-        container.innerHTML = '<div class="error">Error loading files</div>';
-    }
-}
-
-// Unit settings
-function loadUnitSettings() {
-    if (!authData.unit || !currentConfig.units[authData.unit]) return;
-
-    const unitConfig = currentConfig.units[authData.unit];
-    document.getElementById('scenarioName').value = 
-        unitConfig.accessRules.scenarioConfig.name || '';
-    document.getElementById('scenarioDescription').value = 
-        unitConfig.accessRules.scenarioConfig.description || '';
-    document.getElementById('accessMode').value = 
-        unitConfig.accessRules.mode || 'time-based';
-}
+// ============================================================================
+// Unit Settings
+// ============================================================================
 
 async function saveUnitSettings() {
-    if (!authData.unit || !currentConfig.units[authData.unit]) {
-        showMessage('Unit configuration not found', 'error');
-        return;
-    }
+    if (!currentUnit) return;
 
-    const unitConfig = currentConfig.units[authData.unit];
-    unitConfig.accessRules.scenarioConfig.name = document.getElementById('scenarioName').value;
-    unitConfig.accessRules.scenarioConfig.description = document.getElementById('scenarioDescription').value;
-    unitConfig.accessRules.mode = document.getElementById('accessMode').value;
+    const data = {
+        name: document.getElementById('unitName').value,
+        password: document.getElementById('unitPassword').value,
+        consultant_date: document.getElementById('consultantDate').value || null,
+        auditor_date: document.getElementById('auditorDate').value || null,
+        access_mode: document.getElementById('accessMode').value
+    };
 
-    await saveAccessConfig();
-}
-
-// Content editor
-function openEditor(mode, filePath = null) {
-    currentEditingFile = filePath;
-    
-    if (mode === 'new') {
-        document.getElementById('editorTitle').textContent = 'Create New Content';
-        document.getElementById('fileName').value = '';
-        quillEditor.setContents([]);
-    } else if (mode === 'edit' && filePath) {
-        document.getElementById('editorTitle').textContent = 'Edit Content';
-        document.getElementById('fileName').value = filePath.split('/').pop();
-        loadFileContent(filePath);
-    }
-
-    document.getElementById('editorModal').style.display = 'block';
-}
-
-async function loadFileContent(filePath) {
     try {
-        const response = await githubAPI('read', filePath);
-        // Convert markdown/qmd to delta format for Quill
-        quillEditor.setText(response.content);
+        showLoading(true);
+        await CloudCoreAPI.updateUnit(currentUnit.code, data);
+        showSuccess('Unit settings saved');
+        showLoading(false);
     } catch (error) {
-        console.error('Error loading file:', error);
-        showMessage('Error loading file content', 'error');
+        showError('Failed to save: ' + error.message);
+        showLoading(false);
     }
 }
 
-function closeEditor() {
-    document.getElementById('editorModal').style.display = 'none';
-    currentEditingFile = null;
-}
+// ============================================================================
+// Visibility Rules
+// ============================================================================
 
-async function saveContent() {
-    const fileName = document.getElementById('fileName').value.trim();
-    const content = quillEditor.getText();
-
-    if (!fileName || !content) {
-        showMessage('Please provide file name and content', 'error');
-        return;
-    }
-
-    // Determine file path
-    let filePath = fileName.startsWith('/') ? fileName.substring(1) : fileName;
-    if (currentEditingFile && currentEditingFile !== fileName) {
-        filePath = currentEditingFile;
-    } else if (!filePath.includes('/')) {
-        filePath = 'docs/' + filePath;
-    }
+async function loadVisibilityRules() {
+    if (!currentUnit) return;
 
     try {
-        const response = await githubAPI('write', filePath, content, 
-            `${currentEditingFile ? 'Update' : 'Create'} ${filePath} via admin interface`);
+        const rules = await CloudCoreAPI.getVisibilityRules(currentUnit.code);
 
-        if (response.success) {
-            showMessage('Content saved successfully!', 'success');
-            closeEditor();
-            // Refresh content list if we're on that section
-            if (document.getElementById('content').classList.contains('active')) {
-                loadContentFiles();
-            }
-        } else {
-            showMessage('Error saving content', 'error');
-        }
+        const rulesContainer = document.getElementById('visibilityRules');
+        rulesContainer.innerHTML = '';
 
-    } catch (error) {
-        console.error('Error saving content:', error);
-        showMessage('Error saving content', 'error');
-    }
-}
-
-async function editFile(filePath) {
-    openEditor('edit', filePath);
-}
-
-async function deleteFile(filePath) {
-    if (!confirm(`Are you sure you want to delete ${filePath}?`)) {
-        return;
-    }
-
-    try {
-        const response = await githubAPI('delete', filePath, null, 
-            `Delete ${filePath} via admin interface`);
-
-        if (response.success) {
-            showMessage('File deleted successfully!', 'success');
-            // Refresh current view
-            if (document.getElementById('content').classList.contains('active')) {
-                loadContentFiles();
-            } else if (document.getElementById('files').classList.contains('active')) {
-                loadFileExplorer();
-            }
-        } else {
-            showMessage('Error deleting file', 'error');
-        }
-
-    } catch (error) {
-        console.error('Error deleting file:', error);
-        showMessage('Error deleting file', 'error');
-    }
-}
-
-// File upload
-function openUploadModal() {
-    document.getElementById('uploadModal').style.display = 'block';
-}
-
-function closeUploadModal() {
-    document.getElementById('uploadModal').style.display = 'none';
-    document.getElementById('fileUpload').value = '';
-    document.getElementById('uploadPath').value = 'docs/';
-}
-
-async function uploadFiles() {
-    const fileInput = document.getElementById('fileUpload');
-    const uploadPath = document.getElementById('uploadPath').value.trim();
-    const files = fileInput.files;
-
-    if (!files.length) {
-        showMessage('Please select files to upload', 'error');
-        return;
-    }
-
-    for (let i = 0; i < files.length; i++) {
-        const file = files[i];
-        const filePath = `${uploadPath}${uploadPath.endsWith('/') ? '' : '/'}${file.name}`;
-
-        try {
-            const content = await readFileAsText(file);
-            const response = await githubAPI('upload', filePath, content, 
-                `Upload ${file.name} via admin interface`);
-
-            if (response.success) {
-                showMessage(`Uploaded ${file.name} successfully!`, 'success');
-            } else {
-                showMessage(`Error uploading ${file.name}`, 'error');
-            }
-
-        } catch (error) {
-            console.error('Error uploading file:', error);
-            showMessage(`Error uploading ${file.name}`, 'error');
-        }
-    }
-
-    closeUploadModal();
-    // Refresh file explorer if active
-    if (document.getElementById('files').classList.contains('active')) {
-        loadFileExplorer();
-    }
-}
-
-function readFileAsText(file) {
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = e => resolve(e.target.result);
-        reader.onerror = reject;
-        reader.readAsText(file);
-    });
-}
-
-// GitHub API wrapper
-async function githubAPI(operation, path, content = null, message = null) {
-    try {
-        const response = await fetch('/api/github-api', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${authData.token}`
-            },
-            body: JSON.stringify({
-                operation,
-                path,
-                content,
-                message
-            })
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}`);
-        }
-
-        return await response.json();
-
-    } catch (error) {
-        console.error('GitHub API error:', error);
-        throw error;
-    }
-}
-
-// Utility functions
-function showMessage(message, type) {
-    // Remove existing messages
-    document.querySelectorAll('.error, .success, .info').forEach(el => {
-        if (!el.closest('.content-section')) { // Don't remove static messages
-            el.remove();
-        }
-    });
-
-    // Create new message
-    const messageDiv = document.createElement('div');
-    messageDiv.className = type;
-    messageDiv.textContent = message;
-    
-    // Insert at top of current section
-    const activeSection = document.querySelector('.content-section.active');
-    if (activeSection) {
-        activeSection.insertBefore(messageDiv, activeSection.firstChild);
-        
-        // Auto-remove success messages
-        if (type === 'success') {
-            setTimeout(() => {
-                if (messageDiv.parentNode) {
-                    messageDiv.remove();
-                }
-            }, 3000);
-        }
-    }
-}
-
-// Password Management Functions
-async function loadPasswordSettings() {
-    try {
-        // Update unit name in password section
-        if (authData.unit) {
-            document.getElementById('unitNamePassword').textContent = authData.unit;
-        }
-
-        // Load current password from config
-        const currentPassword = currentConfig?.units?.[authData.unit]?.password || '';
-        document.getElementById('currentPassword').value = currentPassword;
-
-        // Load password history
-        await loadPasswordHistory();
-
-    } catch (error) {
-        console.error('Error loading password settings:', error);
-        showMessage('Failed to load password settings', 'error');
-    }
-}
-
-function togglePasswordVisibility(inputId) {
-    const input = document.getElementById(inputId);
-    const button = input.parentNode.querySelector('.btn-toggle-password');
-    
-    if (input.type === 'password') {
-        input.type = 'text';
-        button.textContent = '🙈';
-    } else {
-        input.type = 'password';
-        button.textContent = '👁️';
-    }
-}
-
-function generatePassword() {
-    const adjectives = ['Secure', 'Strong', 'Safe', 'Smart', 'Audit', 'System', 'Digital', 'Cyber', 'Tech', 'Info'];
-    const nouns = ['Guardian', 'Shield', 'Key', 'Lock', 'Code', 'Access', 'Portal', 'Gateway', 'Network', 'Data'];
-    const year = new Date().getFullYear();
-    
-    const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
-    const noun = nouns[Math.floor(Math.random() * nouns.length)];
-    const randomNum = Math.floor(Math.random() * 100);
-    
-    const generatedPassword = `${adjective}${noun}${year}${randomNum}`;
-    
-    document.getElementById('newPassword').value = generatedPassword;
-    document.getElementById('confirmPassword').value = generatedPassword;
-}
-
-async function updatePassword() {
-    const newPassword = document.getElementById('newPassword').value.trim();
-    const confirmPassword = document.getElementById('confirmPassword').value.trim();
-
-    // Validation
-    if (!newPassword) {
-        showMessage('Please enter a new password', 'error');
-        return;
-    }
-
-    if (newPassword !== confirmPassword) {
-        showMessage('Passwords do not match', 'error');
-        return;
-    }
-
-    if (newPassword.length < 6) {
-        showMessage('Password must be at least 6 characters long', 'error');
-        return;
-    }
-
-    try {
-        showMessage('Updating password...', 'info');
-
-        // Update the config with new password
-        const updatedConfig = { ...currentConfig };
-        if (!updatedConfig.units[authData.unit]) {
-            updatedConfig.units[authData.unit] = {};
-        }
-        
-        updatedConfig.units[authData.unit].password = newPassword;
-        updatedConfig.lastUpdated = new Date().toISOString();
-
-        // Save to GitHub
-        await githubAPI('write', 'config/unit-access.json', JSON.stringify(updatedConfig, null, 2), 
-            `Update password for ${authData.unit} via admin interface`);
-
-        // Update local config
-        currentConfig = updatedConfig;
-
-        // Update current password display
-        document.getElementById('currentPassword').value = newPassword;
-
-        // Clear form
-        document.getElementById('newPassword').value = '';
-        document.getElementById('confirmPassword').value = '';
-
-        // Add to history
-        await addPasswordHistoryEntry('Password updated successfully');
-
-        showMessage('Password updated successfully!', 'success');
-
-    } catch (error) {
-        console.error('Error updating password:', error);
-        showMessage('Failed to update password. Please try again.', 'error');
-    }
-}
-
-async function loadPasswordHistory() {
-    try {
-        // This is a simple implementation - in a real system you'd want actual audit logs
-        const historyContainer = document.getElementById('passwordHistory');
-        
-        const historyItems = [
-            {
-                date: new Date().toLocaleDateString(),
-                action: 'Password management interface loaded'
-            }
-        ];
-
-        if (historyItems.length === 0) {
-            historyContainer.innerHTML = '<div class="no-data">No password changes recorded</div>';
+        if (rules.length === 0) {
+            rulesContainer.innerHTML = '<p class="no-data">No visibility rules configured. All content follows default access.</p>';
             return;
         }
 
-        historyContainer.innerHTML = historyItems.map(item => `
-            <div class="history-item">
-                <div class="history-date">${item.date}</div>
-                <div class="history-action">${item.action}</div>
-            </div>
-        `).join('');
+        rules.forEach(rule => {
+            const ruleEl = document.createElement('div');
+            ruleEl.className = `rule-item ${rule.is_visible ? 'allow' : 'deny'}`;
+            ruleEl.innerHTML = `
+                <div class="rule-info">
+                    <span class="rule-pattern">${escapeHtml(rule.path_pattern)}</span>
+                    <span class="rule-type">${rule.is_visible ? 'ALLOW' : 'DENY'}</span>
+                    ${rule.access_level ? `<span class="rule-level">${rule.access_level}</span>` : ''}
+                    ${rule.available_from ? `<span class="rule-date">From: ${rule.available_from.split('T')[0]}</span>` : ''}
+                </div>
+                <button class="btn-delete" onclick="deleteVisibilityRule(${rule.id})">Delete</button>
+            `;
+            rulesContainer.appendChild(ruleEl);
+        });
 
     } catch (error) {
-        console.error('Error loading password history:', error);
-        document.getElementById('passwordHistory').innerHTML = 
-            '<div class="error">Failed to load password history</div>';
+        showError('Failed to load visibility rules: ' + error.message);
     }
 }
 
-async function addPasswordHistoryEntry(action) {
+async function addVisibilityRule() {
+    if (!currentUnit) return;
+
+    const pattern = document.getElementById('newRulePattern').value.trim();
+    const isVisible = document.getElementById('newRuleType').value === 'allow';
+    const accessLevel = document.getElementById('newRuleLevel').value || null;
+
+    if (!pattern) {
+        showError('Please enter a path pattern');
+        return;
+    }
+
     try {
-        // In a real implementation, you might want to log these changes
-        // to a separate audit file or system
-        const historyContainer = document.getElementById('passwordHistory');
-        
-        const newEntry = document.createElement('div');
-        newEntry.className = 'history-item';
-        newEntry.innerHTML = `
-            <div class="history-date">${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}</div>
-            <div class="history-action">${action}</div>
-        `;
-        
-        historyContainer.insertBefore(newEntry, historyContainer.firstChild);
+        showLoading(true);
+
+        await CloudCoreAPI.addVisibilityRule(currentUnit.code, {
+            path_pattern: pattern,
+            is_visible: isVisible,
+            access_level: accessLevel
+        });
+
+        // Clear form
+        document.getElementById('newRulePattern').value = '';
+        document.getElementById('newRuleType').value = 'allow';
+        document.getElementById('newRuleLevel').value = '';
+
+        // Reload rules
+        await loadVisibilityRules();
+
+        showSuccess('Rule added');
+        showLoading(false);
 
     } catch (error) {
-        console.error('Error adding password history entry:', error);
+        showError('Failed to add rule: ' + error.message);
+        showLoading(false);
     }
 }
 
-// Close modals when clicking outside
-window.onclick = function(event) {
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
+async function deleteVisibilityRule(ruleId) {
+    if (!currentUnit) return;
+
+    if (!confirm('Delete this visibility rule?')) return;
+
+    try {
+        showLoading(true);
+        await CloudCoreAPI.deleteVisibilityRule(currentUnit.code, ruleId);
+        await loadVisibilityRules();
+        showSuccess('Rule deleted');
+        showLoading(false);
+    } catch (error) {
+        showError('Failed to delete rule: ' + error.message);
+        showLoading(false);
+    }
+}
+
+// ============================================================================
+// File Management
+// ============================================================================
+
+async function loadUnitFiles() {
+    if (!currentUnit) return;
+
+    try {
+        const response = await CloudCoreAPI.listUnitFiles(currentUnit.code);
+
+        const filesContainer = document.getElementById('unitFiles');
+        filesContainer.innerHTML = '';
+
+        if (!response.files || response.files.length === 0) {
+            filesContainer.innerHTML = '<p class="no-data">No files uploaded for this unit.</p>';
+            return;
+        }
+
+        response.files.forEach(file => {
+            const fileEl = document.createElement('div');
+            fileEl.className = 'file-item';
+            fileEl.innerHTML = `
+                <div class="file-info">
+                    <span class="file-name">${escapeHtml(file.name)}</span>
+                    <span class="file-size">${formatFileSize(file.size)}</span>
+                </div>
+                <button class="btn-delete" onclick="deleteFile('${escapeHtml(file.path)}')">Delete</button>
+            `;
+            filesContainer.appendChild(fileEl);
+        });
+
+    } catch (error) {
+        showError('Failed to load files: ' + error.message);
+    }
+}
+
+async function uploadFile() {
+    if (!currentUnit) return;
+
+    const fileInput = document.getElementById('fileUpload');
+    const file = fileInput.files[0];
+
+    if (!file) {
+        showError('Please select a file');
+        return;
+    }
+
+    try {
+        showLoading(true);
+        await CloudCoreAPI.uploadFile(currentUnit.code, file);
+
+        // Clear input and reload
+        fileInput.value = '';
+        await loadUnitFiles();
+
+        showSuccess('File uploaded');
+        showLoading(false);
+
+    } catch (error) {
+        showError('Failed to upload: ' + error.message);
+        showLoading(false);
+    }
+}
+
+async function deleteFile(path) {
+    if (!currentUnit) return;
+
+    if (!confirm('Delete this file?')) return;
+
+    try {
+        showLoading(true);
+
+        // Extract just the filename from the full path
+        const filename = path.split('/').pop();
+        await CloudCoreAPI.deleteFile(currentUnit.code, filename);
+
+        await loadUnitFiles();
+        showSuccess('File deleted');
+        showLoading(false);
+
+    } catch (error) {
+        showError('Failed to delete: ' + error.message);
+        showLoading(false);
+    }
+}
+
+// ============================================================================
+// Admin Functions
+// ============================================================================
+
+async function showLecturers() {
+    if (!currentUser.is_admin) return;
+
+    try {
+        const lecturers = await CloudCoreAPI.listLecturers();
+
+        let html = '<h3>Lecturers</h3><table class="data-table"><thead><tr><th>Name</th><th>Email</th><th>Admin</th><th>Units</th></tr></thead><tbody>';
+
+        lecturers.forEach(l => {
+            html += `<tr>
+                <td>${escapeHtml(l.name)}</td>
+                <td>${escapeHtml(l.email)}</td>
+                <td>${l.is_admin ? 'Yes' : 'No'}</td>
+                <td>${l.units.join(', ') || '-'}</td>
+            </tr>`;
+        });
+
+        html += '</tbody></table>';
+
+        document.getElementById('adminContent').innerHTML = html;
+        document.getElementById('adminModal').style.display = 'block';
+
+    } catch (error) {
+        showError('Failed to load lecturers: ' + error.message);
+    }
+}
+
+async function showGitStatus() {
+    if (!currentUser.is_admin) return;
+
+    try {
+        const status = await CloudCoreAPI.gitStatus();
+        const history = await CloudCoreAPI.gitHistory(10);
+
+        let html = '<h3>Git Status</h3>';
+        html += `<p><strong>Branch:</strong> ${status.current_branch}</p>`;
+        html += `<p><strong>Clean:</strong> ${status.clean ? 'Yes' : 'No'}</p>`;
+
+        if (!status.clean) {
+            html += '<p><strong>Changes:</strong></p><ul>';
+            status.modified.forEach(f => html += `<li>Modified: ${escapeHtml(f)}</li>`);
+            status.staged.forEach(f => html += `<li>Staged: ${escapeHtml(f)}</li>`);
+            status.untracked.forEach(f => html += `<li>Untracked: ${escapeHtml(f)}</li>`);
+            html += '</ul>';
+        }
+
+        html += '<h4>Recent Commits</h4><ul>';
+        history.forEach(c => {
+            html += `<li><code>${c.sha}</code> - ${escapeHtml(c.message)} (${c.author})</li>`;
+        });
+        html += '</ul>';
+
+        document.getElementById('adminContent').innerHTML = html;
+        document.getElementById('adminModal').style.display = 'block';
+
+    } catch (error) {
+        showError('Failed to load git status: ' + error.message);
+    }
+}
+
+function closeAdminModal() {
+    document.getElementById('adminModal').style.display = 'none';
+}
+
+// ============================================================================
+// Event Listeners
+// ============================================================================
+
+function setupEventListeners() {
+    // Unit selector
+    document.getElementById('unitSelect').addEventListener('change', (e) => {
+        selectUnit(e.target.value);
+    });
+
+    // Close modal on outside click
+    document.getElementById('adminModal').addEventListener('click', (e) => {
+        if (e.target.id === 'adminModal') {
+            closeAdminModal();
         }
     });
-};
+}
+
+// ============================================================================
+// UI Helpers
+// ============================================================================
+
+function showLoading(show) {
+    document.getElementById('loadingOverlay').style.display = show ? 'flex' : 'none';
+}
+
+function showError(message) {
+    const toast = document.getElementById('toast');
+    toast.className = 'toast error';
+    toast.textContent = message;
+    toast.style.display = 'block';
+
+    setTimeout(() => {
+        toast.style.display = 'none';
+    }, 5000);
+}
+
+function showSuccess(message) {
+    const toast = document.getElementById('toast');
+    toast.className = 'toast success';
+    toast.textContent = message;
+    toast.style.display = 'block';
+
+    setTimeout(() => {
+        toast.style.display = 'none';
+    }, 3000);
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+function formatFileSize(bytes) {
+    if (!bytes) return '-';
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+}

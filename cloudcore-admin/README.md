@@ -1,106 +1,76 @@
-# CloudCore Admin Tools
+# CloudCore Lecturer Dashboard
 
-This directory contains administrative tools for managing the CloudCore access control system.
+Web-based dashboard for lecturers to manage their unit's content and access settings. Connects to cloudcore-api for backend operations.
 
-## Quick Start
+## Setup
 
-### 1. Configure Unit Access
-Open `access-manager.html` in your browser to:
-- Select a unit from the dropdown
-- Configure scenario settings
-- Add/remove allowed and denied resources
-- Export configuration for deployment
+The dashboard requires cloudcore-api to be running. Configure the API URL in `cloudcore-api.js`:
 
-### 2. Test Configuration
-Open `test-access.html` in your browser to:
-- Test access rules for different units
-- Simulate different access levels and dates
-- Validate configuration before deployment
+```javascript
+baseUrl: window.location.hostname === 'localhost'
+    ? 'http://localhost:8001'
+    : 'https://cloudcore-api.serveur.au',
+```
 
-## Files in This Directory
+## Files
 
-| File | Purpose | When to Use |
-|------|---------|-------------|
-| `access-manager.html` | Visual configuration editor | Setting up unit scenarios |
-| `test-access.html` | Access rule testing tool | Validating configurations |
-| `README.md` | This documentation | Reference and help |
+| File | Purpose |
+|------|---------|
+| `index.html` | Landing page with login link |
+| `login.html` | Authentication (email/password) |
+| `dashboard.html` | Main management interface |
+| `dashboard.js` | Dashboard logic |
+| `cloudcore-api.js` | API client library |
 
-## Quick Reference
+## Features
 
-### Access Modes
-- **time-based**: Traditional time-release system
-- **scenario-based**: Only allowed content, ignores time
-- **combined**: Time-release + allowed/denied lists
+### For All Lecturers
+- **Unit Settings**: Update name, password, access dates
+- **Visibility Rules**: Control which content is visible to students
+- **File Uploads**: Upload unit-specific materials
+- **Password Reset**: Self-service via email
 
-### Path Patterns
-- `/docs/policies/*` - All files in policies folder
-- `/chatbots/bots/karen_lee/*` - Specific employee folder
-- `/docs/interviews.qmd` - Exact file
+### For Admins
+- View all lecturers and their unit assignments
+- Git status and commit history
+- Manage all units
 
-### Typical Workflow
-1. Open access-manager.html
-2. Select unit to configure
-3. Set scenario name and description
-4. Choose access mode
-5. Add allowed/denied resources
-6. Export configuration
-7. Test with test-access.html
-8. Deploy to /config/unit-access.json
+## Access Modes
 
-## Common Scenarios
+| Mode | Description |
+|------|-------------|
+| `time-based` | Content unlocks at consultant/auditor dates |
+| `scenario-based` | Only allowed content visible, ignores dates |
+| `combined` | Time release AND allow/deny lists |
 
-### Security Audit Unit
-- Mode: scenario-based
-- Allowed: Security policies, logs, security staff interviews
-- Denied: HR content, non-security staff
+## Visibility Rules
 
-### Business Analysis Unit  
-- Mode: combined
-- Allowed: Business policies, management interviews
-- Denied: Technical logs, security details
-- Time-release: Interviews unlock week 3
+Path patterns control what students can access:
 
-### Traditional Unit
-- Mode: time-based
-- No custom restrictions
-- Uses existing consultant/auditor dates
+```
+/docs/policies/*           - All files in policies folder
+/chatbots/bots/karen_lee/* - Specific employee folder
+/docs/interviews.qmd       - Exact file
+```
 
-## Troubleshooting
+Rules can be:
+- **Allow** - Explicitly grant access
+- **Deny** - Explicitly block access
+- Scoped to **consultant** or **auditor** access level
 
-### Configuration Not Loading
-1. Check JSON syntax
-2. Verify file is at `/config/unit-access.json`
-3. Check browser console for errors
+## Authentication
 
-### Access Not Working as Expected
-1. Use test-access.html to debug
-2. Check path patterns match exactly
-3. Verify access mode is correct
+- JWT tokens stored in sessionStorage
+- 24-hour token expiry
+- Password reset via email codes
+- Rate-limited login (5 attempts/minute)
 
-### Need Help?
-- Review ENHANCED-ACCESS-SYSTEM.md for full documentation
-- Use browser console for debug information
-- Test with legacy fallback if needed
+## Development
 
-## Security Notes
+Run cloudcore-api locally:
+```bash
+cd /path/to/cloudcore-api
+python -m src.server
+```
 
-⚠️ **Important Security Considerations:**
-
-1. **Admin tools are client-side only** - no server authentication
-2. **Configuration files contain passwords** - manage access carefully  
-3. **Test thoroughly** before deploying to production
-4. **Keep backups** of working configurations
-
-## Quick Tips
-
-💡 **Pro Tips:**
-
-- Use the site tree in access-manager to click-add resources
-- Test with different dates to validate time-specific rules
-- Export configurations with descriptive filenames
-- Use scenario descriptions to document the intent
-- Test edge cases (exactly on date boundaries)
-
----
-
-*Tools developed for CloudCore educational platform*
+Then open `index.html` in a browser.

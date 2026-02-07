@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloudCore UC Login</title>
+    <title>CloudCore Lecturer Login</title>
     <style>
         * {
             margin: 0;
@@ -61,8 +61,7 @@
             color: #495057;
         }
 
-        .form-group input,
-        .form-group select {
+        .form-group input {
             width: 100%;
             padding: 12px;
             border: 2px solid #e9ecef;
@@ -71,8 +70,7 @@
             transition: border-color 0.3s;
         }
 
-        .form-group input:focus,
-        .form-group select:focus {
+        .form-group input:focus {
             outline: none;
             border-color: #667eea;
         }
@@ -88,7 +86,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.2s, box-shadow 0.2s;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .login-btn:hover {
@@ -100,6 +98,16 @@
             opacity: 0.6;
             transform: none;
             cursor: not-allowed;
+        }
+
+        .forgot-link {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
         }
 
         .error {
@@ -145,7 +153,6 @@
 
         .loading {
             display: none;
-            color: #667eea;
         }
 
         .spinner {
@@ -164,165 +171,243 @@
             100% { transform: rotate(360deg); }
         }
 
-        .rate-limit-info {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            color: #856404;
-            padding: 10px;
-            border-radius: 4px;
-            font-size: 12px;
+        /* Forgot password form (hidden by default) */
+        .forgot-form {
+            display: none;
+        }
+
+        .back-link {
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
             margin-top: 15px;
+        }
+
+        .back-link:hover {
+            color: #667eea;
         }
     </style>
 </head>
 <body>
     <div class="login-container">
         <div class="logo">🔐</div>
-        <h1 class="title">Unit Coordinator Login</h1>
-        <p class="subtitle">Access your unit's content management interface</p>
+        <h1 class="title">Lecturer Login</h1>
+        <p class="subtitle">Access your unit management dashboard</p>
 
         <div id="messages"></div>
 
+        <!-- Login Form -->
         <form id="loginForm">
             <div class="form-group">
-                <label for="unit">Unit:</label>
-                <select id="unit" required>
-                    <option value="">Select your unit...</option>
-                    <option value="ISYS6018">ISYS6018 - Information Security Audit and Control</option>
-                    <option value="ISYS2002">ISYS2002 - Systems Analysis and Design</option>
-                    <option value="ISYS6014">ISYS6014 - Knowledge Management and Intelligent Systems</option>
-                    <option value="ISAD5001">ISAD5001 - Information Systems Analysis and Design</option>
-                </select>
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="your.email@university.edu" required>
             </div>
 
             <div class="form-group">
-                <label for="token">Access Token:</label>
-                <input type="password" id="token" placeholder="Enter your unit coordinator token" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
             </div>
 
             <button type="submit" class="login-btn" id="loginBtn">
                 <span class="loading">
                     <span class="spinner"></span>
-                    Authenticating...
+                    Signing in...
                 </span>
                 <span class="default-text">Sign In</span>
             </button>
+
+            <a href="#" class="forgot-link" onclick="showForgotForm(); return false;">Forgot password?</a>
+        </form>
+
+        <!-- Forgot Password Form -->
+        <form id="forgotForm" class="forgot-form">
+            <div class="form-group">
+                <label for="resetEmail">Email:</label>
+                <input type="email" id="resetEmail" placeholder="your.email@university.edu" required>
+            </div>
+
+            <button type="submit" class="login-btn" id="forgotBtn">
+                <span class="loading">
+                    <span class="spinner"></span>
+                    Sending...
+                </span>
+                <span class="default-text">Send Reset Code</span>
+            </button>
+
+            <a href="#" class="back-link" onclick="showLoginForm(); return false;">← Back to login</a>
+        </form>
+
+        <!-- Reset Password Form -->
+        <form id="resetForm" class="forgot-form">
+            <div class="form-group">
+                <label for="resetCode">Reset Code:</label>
+                <input type="text" id="resetCode" placeholder="6-digit code from email" required maxlength="6">
+            </div>
+
+            <div class="form-group">
+                <label for="newPassword">New Password:</label>
+                <input type="password" id="newPassword" placeholder="Minimum 8 characters" required minlength="8">
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm new password" required>
+            </div>
+
+            <button type="submit" class="login-btn" id="resetBtn">
+                <span class="loading">
+                    <span class="spinner"></span>
+                    Resetting...
+                </span>
+                <span class="default-text">Reset Password</span>
+            </button>
+
+            <a href="#" class="back-link" onclick="showLoginForm(); return false;">← Back to login</a>
         </form>
 
         <div class="info-panel">
-            <h4>For Unit Coordinators:</h4>
+            <h4>For Lecturers:</h4>
             <p>• Manage your unit's content and access controls</p>
-            <p>• Upload and edit course materials</p>
-            <p>• Configure student access to resources</p>
-            <p>• Version-controlled changes with rollback capability</p>
-        </div>
-
-        <div class="rate-limit-info">
-            ⚠️ Login attempts are rate-limited for security. Please contact admin if you experience issues.
+            <p>• Configure visibility rules for students</p>
+            <p>• Upload course materials</p>
+            <p>• Set release dates for content</p>
         </div>
     </div>
 
+    <script src="cloudcore-api.js"></script>
     <script>
-        // Rate limiting variables
-        let loginAttempts = 0;
-        const maxAttempts = 5;
-        const rateLimitWindow = 15 * 60 * 1000; // 15 minutes
-        let lastAttemptTime = 0;
+        let resetEmail = '';
 
+        // Check if already logged in
+        const session = CloudCoreAPI.init();
+        if (session) {
+            showMessage('Already logged in. Redirecting...', 'success');
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 1000);
+        }
+
+        // Login form handler
         document.getElementById('loginForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            // Check rate limiting
-            const now = Date.now();
-            if (now - lastAttemptTime < rateLimitWindow && loginAttempts >= maxAttempts) {
-                showMessage('Too many login attempts. Please wait 15 minutes before trying again.', 'error');
-                return;
-            }
 
-            // Reset attempts if window has passed
-            if (now - lastAttemptTime > rateLimitWindow) {
-                loginAttempts = 0;
-            }
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
 
-            const unit = document.getElementById('unit').value;
-            const token = document.getElementById('token').value;
-
-            if (!unit || !token) {
-                showMessage('Please select a unit and enter your access token.', 'error');
-                return;
-            }
-
-            // Show loading state
-            toggleLoading(true);
+            toggleLoading('loginBtn', true);
 
             try {
-                const response = await fetch('/api/auth', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ token, unit })
-                });
+                const lecturer = await CloudCoreAPI.login(email, password);
+                showMessage(`Welcome, ${lecturer.name}! Redirecting...`, 'success');
 
-                const data = await response.json();
-
-                if (response.ok && data.success) {
-                    // Store authentication data
-                    sessionStorage.setItem('ucAuth', JSON.stringify({
-                        token: token,
-                        role: data.role,
-                        units: data.units,
-                        unit: data.unit,
-                        name: data.name,
-                        loginTime: Date.now()
-                    }));
-
-                    showMessage(`Welcome, ${data.name}! Redirecting to dashboard...`, 'success');
-                    
-                    // Redirect to dashboard
-                    setTimeout(() => {
-                        window.location.href = '/dashboard.html';
-                    }, 1500);
-
-                } else {
-                    loginAttempts++;
-                    lastAttemptTime = now;
-                    showMessage(data.error || 'Authentication failed', 'error');
-                }
+                setTimeout(() => {
+                    window.location.href = 'dashboard.html';
+                }, 1000);
 
             } catch (error) {
-                loginAttempts++;
-                lastAttemptTime = now;
-                console.error('Login error:', error);
-                showMessage('Connection error. Please try again.', 'error');
+                showMessage(error.message, 'error');
             }
 
-            toggleLoading(false);
+            toggleLoading('loginBtn', false);
         });
+
+        // Forgot password form handler
+        document.getElementById('forgotForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            resetEmail = document.getElementById('resetEmail').value;
+            toggleLoading('forgotBtn', true);
+
+            try {
+                await CloudCoreAPI.forgotPassword(resetEmail);
+                showMessage('If an account exists, a reset code has been sent to your email.', 'success');
+
+                // Show reset form
+                setTimeout(() => {
+                    showResetForm();
+                }, 1500);
+
+            } catch (error) {
+                showMessage(error.message, 'error');
+            }
+
+            toggleLoading('forgotBtn', false);
+        });
+
+        // Reset password form handler
+        document.getElementById('resetForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const code = document.getElementById('resetCode').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (newPassword !== confirmPassword) {
+                showMessage('Passwords do not match', 'error');
+                return;
+            }
+
+            toggleLoading('resetBtn', true);
+
+            try {
+                await CloudCoreAPI.resetPassword(resetEmail, code, newPassword);
+                showMessage('Password reset successful! You can now log in.', 'success');
+
+                setTimeout(() => {
+                    showLoginForm();
+                }, 2000);
+
+            } catch (error) {
+                showMessage(error.message, 'error');
+            }
+
+            toggleLoading('resetBtn', false);
+        });
+
+        function showLoginForm() {
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('forgotForm').style.display = 'none';
+            document.getElementById('resetForm').style.display = 'none';
+            document.querySelector('.title').textContent = 'Lecturer Login';
+            document.querySelector('.subtitle').textContent = 'Access your unit management dashboard';
+            document.getElementById('messages').innerHTML = '';
+        }
+
+        function showForgotForm() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('forgotForm').style.display = 'block';
+            document.getElementById('resetForm').style.display = 'none';
+            document.querySelector('.title').textContent = 'Reset Password';
+            document.querySelector('.subtitle').textContent = 'Enter your email to receive a reset code';
+            document.getElementById('messages').innerHTML = '';
+        }
+
+        function showResetForm() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('forgotForm').style.display = 'none';
+            document.getElementById('resetForm').style.display = 'block';
+            document.querySelector('.title').textContent = 'Enter Reset Code';
+            document.querySelector('.subtitle').textContent = 'Check your email for the 6-digit code';
+            document.getElementById('messages').innerHTML = '';
+        }
 
         function showMessage(message, type) {
             const messagesDiv = document.getElementById('messages');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = type;
-            messageDiv.textContent = message;
-            
-            // Clear previous messages
-            messagesDiv.innerHTML = '';
-            messagesDiv.appendChild(messageDiv);
+            messagesDiv.innerHTML = `<div class="${type}">${message}</div>`;
 
-            // Auto-hide success messages
             if (type === 'success') {
                 setTimeout(() => {
-                    messageDiv.remove();
-                }, 3000);
+                    messagesDiv.innerHTML = '';
+                }, 5000);
             }
         }
 
-        function toggleLoading(isLoading) {
-            const btn = document.getElementById('loginBtn');
+        function toggleLoading(btnId, isLoading) {
+            const btn = document.getElementById(btnId);
             const loading = btn.querySelector('.loading');
             const defaultText = btn.querySelector('.default-text');
-            
+
             if (isLoading) {
                 loading.style.display = 'inline';
                 defaultText.style.display = 'none';
@@ -334,41 +419,8 @@
             }
         }
 
-        // Check if already logged in
-        const existingAuth = sessionStorage.getItem('ucAuth');
-        if (existingAuth) {
-            try {
-                const auth = JSON.parse(existingAuth);
-                const loginAge = Date.now() - auth.loginTime;
-                const sessionTimeout = 8 * 60 * 60 * 1000; // 8 hours
-
-                if (loginAge < sessionTimeout) {
-                    showMessage('Already logged in. Redirecting...', 'success');
-                    setTimeout(() => {
-                        window.location.href = '/dashboard.html';
-                    }, 1000);
-                } else {
-                    // Session expired
-                    sessionStorage.removeItem('ucAuth');
-                }
-            } catch (error) {
-                sessionStorage.removeItem('ucAuth');
-            }
-        }
-
-        // Auto-focus token field when unit is selected
-        document.getElementById('unit').addEventListener('change', function() {
-            if (this.value) {
-                document.getElementById('token').focus();
-            }
-        });
-
-        // Enter key handling
-        document.getElementById('token').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                document.getElementById('loginForm').dispatchEvent(new Event('submit'));
-            }
-        });
+        // Auto-focus email field
+        document.getElementById('email').focus();
     </script>
 </body>
 </html>
