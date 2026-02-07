@@ -288,8 +288,40 @@ const ChatbotBooking = {
                 // Access granted - show chat
                 this.grantAccess(access);
 
+            } else if (access.access === 'appointment_missed') {
+                // Appointment window has passed - they missed it
+                const apt = access.appointment;
+                statusDiv.innerHTML = `
+                    <div style="
+                        background: #f8d7da;
+                        border: 1px solid #f5c6cb;
+                        color: #721c24;
+                        padding: 15px;
+                        border-radius: 8px;
+                        text-align: left;
+                    ">
+                        <strong>Appointment Missed</strong>
+                        <p style="margin: 10px 0 0 0;">
+                            Your interview with ${this.escapeHtml(access.employee_name)} was scheduled for:<br>
+                            <strong>${BookingAPI.formatDateTime(apt.scheduled_start)}</strong><br>
+                            but the appointment window has now closed.
+                        </p>
+                        <button onclick="ChatbotBooking.openBooking()" style="
+                            margin-top: 10px;
+                            padding: 10px 20px;
+                            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                            color: white;
+                            border: none;
+                            border-radius: 6px;
+                            cursor: pointer;
+                            font-weight: 600;
+                        ">Book New Appointment</button>
+                    </div>
+                `;
+                this.showOptions();
+
             } else if (access.access === 'has_appointment_not_now') {
-                // Has appointment but not active
+                // Has appointment but it's in the future
                 const apt = access.appointment;
                 statusDiv.innerHTML = `
                     <div style="
