@@ -70,6 +70,9 @@ format:
     include-in-header:
       - text: |
           <script src="/scripts/simple-timeline-access.js"></script>
+          <script src="/scripts/booking-api.js"></script>
+          <script src="/scripts/booking-modal.js"></script>
+          <script src="/scripts/chatbot-booking.js"></script>
 
 resources:
   - admin/
