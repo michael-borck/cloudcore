@@ -20,7 +20,7 @@ description: Internal memo from the CEO requesting an independent AI readiness a
 **MEMORANDUM**
 
 **TO:** Board of Directors, Cloudcore Networks
-**FROM:** Amanda Johnson, Chief Executive Officer
+**FROM:** Marcell Ziemann, Chief Executive Officer
 **DATE:** 15 January 2026
 **RE:** Request for Independent AI Readiness Assessment
 
@@ -101,6 +101,6 @@ Either outcome is valuable.
 
 ---
 
-*Amanda Johnson*
+*Marcell Ziemann*
 *Chief Executive Officer*
 *Cloudcore Networks*
