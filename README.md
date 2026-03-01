@@ -1,5 +1,9 @@
 # CloudCore Networks Educational Platform
 
+<!-- BADGES:START -->
+[![css](https://img.shields.io/badge/-css-1572b6?style=flat-square)](https://github.com/topics/css) [![cybersecurity](https://img.shields.io/badge/-cybersecurity-f44336?style=flat-square)](https://github.com/topics/cybersecurity) [![educational-platform](https://img.shields.io/badge/-educational--platform-blue?style=flat-square)](https://github.com/topics/educational-platform) [![javascript](https://img.shields.io/badge/-javascript-f7df1e?style=flat-square)](https://github.com/topics/javascript) [![lua](https://img.shields.io/badge/-lua-blue?style=flat-square)](https://github.com/topics/lua) [![quarto](https://img.shields.io/badge/-quarto-blue?style=flat-square)](https://github.com/topics/quarto) [![static-site-generator](https://img.shields.io/badge/-static--site--generator-blue?style=flat-square)](https://github.com/topics/static-site-generator) [![systems-analysis](https://img.shields.io/badge/-systems--analysis-blue?style=flat-square)](https://github.com/topics/systems-analysis) [![web-design](https://img.shields.io/badge/-web--design-blue?style=flat-square)](https://github.com/topics/web-design) [![demo](https://img.shields.io/badge/-demo-blue?style=flat-square)](https://github.com/topics/demo)
+<!-- BADGES:END -->
+
 Welcome to CloudCore Networks Educational Platform - a comprehensive cybersecurity and systems analysis learning environment designed for university students and professionals.
 
 ## 🏗️ Platform Architecture
