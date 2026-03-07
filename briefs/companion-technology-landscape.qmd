@@ -1,0 +1,210 @@
+---
+title: "Companion Notes"
+subtitle: "Technology Landscape and Resource Assessment — Source Tracing"
+format:
+  html:
+    toc: true
+  pdf:
+    toc: true
+  docx:
+    toc: true
+---
+
+This companion document traces every detail in the Technology Landscape and Resource Assessment to either a specific location on the Cloudcore website or flags it as an assumption invented for the brief.
+
+## Part 1: Facts Sourced from the Cloudcore Website
+
+### Technology Stack — Systems and Purposes
+
+Every system named in the technology stack table is sourced from the repo. No systems were invented.
+
+| System | Source |
+|--------|--------|
+| VMware vSphere (~2,500 VMs) | `chatbots/_backstories/david_wilson_cloud_infrastructure_architect.md` |
+| AWS (hybrid partner, US-East Ohio default) | Same file; also `docs/policies/` (configuration management policy) |
+| Azure (hybrid partner) | `david_wilson_cloud_infrastructure_architect.md` |
+| Terraform (~70% IaC coverage) | Same file |
+| Ansible | Same file; also `docs/interviews/system_administrator.qmd` |
+| Chef | `docs/policies/configuration_change_management.qmd` |
+| Salt | Same policy document |
+| Kubernetes (limited adoption, internal apps) | `chatbots/_backstories/michael_thompson_lead_software_developer.md` |
+| Prometheus + Grafana | `chatbots/_backstories/mark_gonzalez_cto.md` |
+| Splunk SIEM (500-800 daily alerts) | Same file; alert count from `docs/policies/` |
+| CrowdStrike EDR | `mark_gonzalez_cto.md` |
+| Palo Alto firewalls | Same file; also `chatbots/_backstories/carlos_mendes_networks_specialist.md` |
+| Cisco switches (802.1x) | `carlos_mendes_networks_specialist.md`; also `docs/interviews/network_engineer.qmd` |
+| Tenable.io (weekly scans, 15-day patching) | `docs/policies/configuration_change_management.qmd` |
+| Auth0 (migrated from Okta Dec 2023) | `docs/policies/access_control.qmd` |
+| HubSpot | `chatbots/_backstories/tom_bradley_marketing_manager.md` |
+| ServiceNow (PRODCM) | `docs/policies/change_management.qmd` |
+| JupiterOne (CMDB) | `docs/policies/asset_management.qmd` |
+| Atlassian (Jira, Confluence) | `docs/policies/approved_software.qmd` |
+| Office 365 | Same file |
+| Slack | Same file |
+| GitHub Actions + ArgoCD | `michael_thompson_lead_software_developer.md` |
+| PostgreSQL | Same file |
+| Python (FastAPI), React | Same file |
+| Legacy PHP | Same file |
+| Power BI, Excel | `chatbots/_backstories/jamal_al_sayed_data_analyst.md` |
+| PagerDuty | `mark_gonzalez_cto.md` |
+
+### Technology Gaps (Confirmed Missing)
+
+| Gap | Source |
+|-----|--------|
+| No data warehouse or data lake | `jamal_al_sayed_data_analyst.md`, `mark_gonzalez_cto.md` |
+| No ML/AI platform | `mark_gonzalez_cto.md` |
+| No MLOps or model management | Same file |
+| No GPU clusters | `david_wilson_cloud_infrastructure_architect.md` |
+| No data science talent | `mark_gonzalez_cto.md`, `karen_lee_hr_manager.md` |
+| Data siloed across systems | `jamal_al_sayed_data_analyst.md` |
+| Basic BI tools only | Same file |
+
+### Data Flow — Silos and Manual Processes
+
+| Detail | Source |
+|--------|--------|
+| Data siloed: service usage, support tickets, billing, performance metrics | `jamal_al_sayed_data_analyst.md` |
+| Manual data assembly for cross-system reporting | Same file |
+| ~40% of employees over-provisioned | `karen_lee_hr_manager.md` |
+| Access provisioning requires manual coordination (HR, IT, managers) | Same file |
+| Billing reconciliation is manual | Inferred from `aisha_rahman_cfo.md` (tight margins, manual processes) |
+| Security alerts triaged manually | `sophia_martines_ciso.md` (alert fatigue context) |
+
+### Resource Availability
+
+| Detail | Source |
+|--------|--------|
+| All team headcounts | See Brief 2 companion for specific sources |
+| CSMP as major competing project | `chatbots/_backstories/csmp_project.md` |
+| Security team needs 3+ more people | `sophia_martines_ciso.md` |
+| IT team of 4, understaffed | `chatbots/_backstories/raj_patel_it_manager.md` |
+| Data team stretched thin (2 people) | `jamal_al_sayed_data_analyst.md` |
+| 15% annual turnover | `karen_lee_hr_manager.md` |
+| Board wants profitability in 2 years | `aisha_rahman_cfo.md` |
+| CTO estimates 6-12 months for AI | `mark_gonzalez_cto.md` |
+| Data team estimates 6-12 months for data prep | `jamal_al_sayed_data_analyst.md` |
+
+### Vendor Relationships
+
+The approved vendor list comes directly from `docs/policies/approved_vendors.qmd` (DOC-COMP-007). All vendor names are sourced.
+
+### Change Initiative: ISO 27001
+
+| Detail | Source |
+|--------|--------|
+| Took nearly 2 years (target was shorter) | `sophia_martines_ciso.md` |
+| Achieved ~18 months ago | Same file |
+| Sophia led it | Same file |
+| Enterprise clients require it | `marcell_ziemann_ceo.md` |
+
+### Change Initiative: Auth0 Migration
+
+| Detail | Source |
+|--------|--------|
+| Migration from Okta to Auth0 in December 2023 | `docs/policies/access_control.qmd` (references both systems) |
+| Policies still reference Okta as primary IdP | Same policy document (multiple sections still say "Okta") |
+| Session timeout and MFA configuration inconsistencies | Same policy document (conflicting timeout values documented) |
+
+### Cross-References
+
+All website URLs reference real pages on the Cloudcore site.
+
+---
+
+## Part 2: Assumptions and Invented Details
+
+### All System Deployment Dates
+
+No deployment dates exist anywhere in the repo. Every date in the "Deployed" column was invented to create a plausible technology timeline:
+
+| System | Invented Date | Reasoning |
+|--------|--------------|-----------|
+| VMware | ~2014 | Company founded 2010; virtualisation would have been early infrastructure |
+| Cisco switches | ~2014 | Core networking, deployed with initial data centre |
+| Office 365 | ~2015 | Standard productivity suite, early adoption |
+| PostgreSQL | ~2015 | Core database, needed early |
+| Chef | ~2015 | Early configuration management before Ansible adoption |
+| Legacy PHP | ~2012 | Described as pre-dating current standards; 2+ years old at time of breach |
+| Salt | ~2016 | Secondary config tool, deployed before Ansible |
+| Atlassian | ~2016 | Project management, mid-stage adoption |
+| Palo Alto firewalls | ~2017 | Network security, pre-dates security build-up |
+| AWS | ~2018 | Hybrid cloud partnership |
+| Slack | ~2018 | Team communication |
+| Ansible | ~2019 | Replacing Chef; more modern tooling |
+| Azure | ~2019 | Secondary cloud partner |
+| Terraform | ~2020 | IaC adoption alongside Ansible |
+| Prometheus + Grafana | ~2020 | Modern monitoring stack |
+| Splunk SIEM | ~2021 | Security build-up period |
+| Tenable.io | ~2021 | Vulnerability scanning, same period |
+| GitHub Actions | ~2021 | CI/CD modernisation |
+| Python (FastAPI) + React | ~2021 | Application stack modernisation |
+| CrowdStrike | ~2022 | EDR deployment, security maturation |
+| HubSpot | ~2022 | CRM migration (see below) |
+| JupiterOne | ~2022 | Asset management |
+| Kubernetes | ~2022 | Limited adoption, recent |
+| ArgoCD | ~2022 | GitOps, tied to Kubernetes |
+| Power BI | ~2022 | BI adoption by data team |
+| ServiceNow | ~2023 | Change management, recent deployment |
+| Auth0 | Dec 2023 | This date IS sourced (from policy docs) |
+
+### Data Flow Diagram
+
+The diagram structure is invented. The repo confirms data silos and manual processes but does not contain a data flow diagram. The specific connections shown (and gaps highlighted) are inferred from backstory descriptions of how teams work.
+
+### Vendor AI Relevance Assessments
+
+The "Relevance to AI" column in the vendor table was invented. The repo lists approved vendors but does not assess their AI capabilities. The AI capabilities noted (e.g., Splunk ML analytics, HubSpot predictive features, CrowdStrike AI threat detection) are real product features but their applicability to Cloudcore was assumed.
+
+### Change Initiative: CRM Consolidation (2021-2022)
+
+**This entire story was invented.** The repo establishes the following facts that support it:
+
+- HubSpot is the current CRM — `tom_bradley_marketing_manager.md`
+- CRM data has quality issues (duplicates, missing fields) — `jamal_al_sayed_data_analyst.md`, `tom_bradley_marketing_manager.md`
+- Sales team adoption of HubSpot is incomplete — inferred from `tom_bradley_marketing_manager.md` (marketing uses it; sales pipeline tracking not mentioned)
+- No integration between CRM and billing/support — `jamal_al_sayed_data_analyst.md`
+
+The following details were invented:
+
+- The existence of a prior "legacy contact management system"
+- The migration being a defined project (2021-2022)
+- The project running 3 months late and 40% over budget
+- Sales team continuing to use spreadsheets (plausible but not confirmed)
+- Data quality problems being specifically caused by migration (backstories confirm the problems exist but not their origin)
+- Post-migration cleanup never being resourced
+
+### Auth0 Migration — Framing as "Partial Success"
+
+The technical facts are sourced (migration happened, policies not updated). The framing as a "partial success" and the narrative about missing change management planning were invented. The repo simply shows the gap exists without characterising it.
+
+### ISO 27001 — Narrative Details
+
+The repo confirms it took nearly 2 years. The following details were invented:
+
+- Initial target was 12 months
+- "Staff resistance to new processes" (plausible but not stated)
+- "Documentation burden strained a small team" (plausible but not stated)
+- Specific "lessons for AI" framing
+
+### Resource Availability Table — "Available for AI Work" Column
+
+The repo gives team sizes and current responsibilities. The assessment of how much capacity could be allocated to AI work (e.g., "1 to 2 engineers could be partially allocated") was invented based on the described workloads.
+
+### Competing Commitments — Specific Details
+
+- "ISO 27001 surveillance audit expected within 6 months" — invented; the repo confirms certification but does not mention a surveillance audit timeline
+- "SOC 2 Type II renewal" requiring annual recertification — standard practice, not explicitly stated in repo
+- Post-breach remediation described as "multi-quarter programme" — inferred from scope of changes described, not explicitly stated
+
+### Budget Commentary
+
+The statement that "$250,000 envelope is tight for any initiative that requires both a specialist hire and platform investment" is analysis, not sourced fact. The individual cost components ($180-250K salary from Karen Lee's backstory; platform costs invented) support this conclusion.
+
+### Timeline Pressures Framing
+
+The individual facts are sourced (board expectations, CTO timeline, data analyst timeline). The framing as "timeline pressures" and the implication of conflict between them was composed for the brief.
+
+---
+
+*This companion document is for instructor reference. It is not intended for student distribution unless adapted.*

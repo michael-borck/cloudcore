@@ -1,325 +1,0 @@
-From github.com:michael-borck/cloudcore
- * branch            gh-pages   -> FETCH_HEAD
-[1m[34mRendering for publish:
-[39m[22m
-[1m[34m[  1/125] cloudcore-admin/VERCEL-DEPLOYMENT.md[39m[22m
-[1m[34m[  2/125] index.qmd[39m[22m
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/evyuuwna.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/evyuuwna.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/lzgmgrnn.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/lzgmgrnn.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/yxyampao.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/yxyampao.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/bxdnmmpl.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/bxdnmmpl.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/vyqvtrtg.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/vyqvtrtg.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/kddybgok.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/kddybgok.json\" trigger=\"loop\" ></lord-icon>"]
-[1m[34m[  3/125] PLATFORM-V2-SPEC.md[39m[22m
-[1m[34m[  4/125] FUTURE-WORK.md[39m[22m
-[1m[34m[  5/125] about.qmd[39m[22m
-[1m[34m[  6/125] CONTRIBUTING.md[39m[22m
-[1m[34m[  7/125] CLAUDE.md[39m[22m
-[1m[34m[  8/125] contact.qmd[39m[22m
-[1m[34m[  9/125] blog/index.qmd[39m[22m
-[1m[34m[ 10/125] blog/posts/essential-data-structures-algorithms/index.qmd[39m[22m
-[1m[34m[ 11/125] blog/posts/post-with-code/index.qmd[39m[22m
-[1m[34m[ 12/125] blog/posts/markdown_examples/index.qmd[39m[22m
-[1m[34m[ 13/125] blog/posts/fullstack-development/index.qmd[39m[22m
-[1m[34m[ 14/125] blog/posts/how-to-become-frontend-master/index.qmd[39m[22m
-[1m[34m[ 15/125] blog/posts/welcome/index.qmd[39m[22m
-[1m[34m[ 16/125] LESSONS-LEARNED.md[39m[22m
-[1m[34m[ 17/125] credits.qmd[39m[22m
-[1m[34m[ 18/125] legal.qmd[39m[22m
-[1m[34m[ 19/125] CODE_OF_CONDUCT.md[39m[22m
-[1m[34m[ 20/125] docs/support.qmd[39m[22m
-[1m[34m[ 21/125] docs/scenarios/example-sql-injection.md[39m[22m
-[1m[34m[ 22/125] docs/articles.qmd[39m[22m
-[1m[34m[ 23/125] docs/staged-content-example.qmd[39m[22m
-[1m[34m[ 24/125] docs/interviews.qmd[39m[22m
-[1m[34m[ 25/125] docs/policies/gdpr_dpa.md[39m[22m
-[1m[34m[ 26/125] docs/policies/compliance_audit.md[39m[22m
-[1m[34m[ 27/125] docs/policies/rar.md[39m[22m
-[1m[34m[ 28/125] docs/policies/facility.md[39m[22m
-[1m[34m[ 29/125] docs/policies/data_protection.md[39m[22m
-[1m[34m[ 30/125] docs/policies/vendor.md[39m[22m
-[33mWARNING: Unable to resolve link target: docs/policies/approved_vendors.md[39m
-[33mWARNING: Unable to resolve link target: docs/policies/approved_vendors.md[39m
-[33mWARNING: Unable to resolve link target: docs/policies/approved_software.md[39m
-[33mWARNING: Unable to resolve link target: docs/policies/approved_vendors.md[39m
-[1m[34m[ 31/125] docs/policies/breach.md[39m[22m
-[1m[34m[ 32/125] docs/policies/ccm.md[39m[22m
-[1m[34m[ 33/125] docs/policies/bcdr.md[39m[22m
-[1m[34m[ 34/125] docs/policies/asset_mgmt.md[39m[22m
-[1m[34m[ 35/125] docs/policies/ir.md[39m[22m
-[1m[34m
-Rendering PDF[39m[22m
-[1m[34mrunning xelatex - 1[39m[22m
-  This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex)
-   restricted \write18 enabled.
-  entering extended mode
-  
-[1m[34mrunning xelatex - 2[39m[22m
-  This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex)
-   restricted \write18 enabled.
-  entering extended mode
-  
-
-[1m[34m[ 36/125] docs/policies/system_audit.md[39m[22m
-[1m[34m[ 37/125] docs/policies/vuln_mgmt.md[39m[22m
-[1m[34m[ 38/125] docs/policies/mdm.md[39m[22m
-[1m[34m[ 39/125] docs/policies/risk_mgmt.md[39m[22m
-[1m[34m[ 40/125] docs/policies/data_mgmt.md[39m[22m
-[1m[34m[ 41/125] docs/policies/threat.md[39m[22m
-[1m[34m[ 42/125] docs/policies/hr.md[39m[22m
-[33mWARNING: Unable to resolve link target: docs/policies/approved_software.md[39m
-[33mWARNING: Unable to resolve link target: docs/policies/approved_software.md[39m
-[1m[34m[ 43/125] docs/policies/cookie_policy.md[39m[22m
-[1m[34m[ 44/125] docs/policies/change_mngt.md[39m[22m
-[1m[34m
-Rendering PDF[39m[22m
-[1m[34mrunning xelatex - 1[39m[22m
-  This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex)
-   restricted \write18 enabled.
-  entering extended mode
-  
-[1m[34mrunning xelatex - 2[39m[22m
-  This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex)
-   restricted \write18 enabled.
-  entering extended mode
-  
-[1m[34mrunning xelatex - 3[39m[22m
-  This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex)
-   restricted \write18 enabled.
-  entering extended mode
-  
-
-[1m[34m[ 45/125] docs/policies/policy_mgmt.md[39m[22m
-[1m[34m[ 46/125] docs/policies/sdlc.md[39m[22m
-[1m[34m[ 47/125] docs/policies/access.md[39m[22m
-[33mWARNING: Unable to resolve link target: docs/policies/data-protection.md[39m
-[33mWARNING: Unable to resolve link target: docs/policies/data-protection.md[39m
-[1m[34m
-Rendering PDF[39m[22m
-[1m[34mrunning xelatex - 1[39m[22m
-  This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex)
-   restricted \write18 enabled.
-  entering extended mode
-  
-[1m[34mrunning xelatex - 2[39m[22m
-  This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex)
-   restricted \write18 enabled.
-  entering extended mode
-  
-[1m[34mrunning xelatex - 3[39m[22m
-  This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex)
-   restricted \write18 enabled.
-  entering extended mode
-  
-
-[1m[34m[ 48/125] docs/policies/privacy_policy.md[39m[22m
-[1m[34m[ 49/125] docs/policies/privacy.md[39m[22m
-[1m[34m[ 50/125] docs/policies/hipaa_baa.md[39m[22m
-[1m[34m[ 51/125] docs/policies/document_numbering.md[39m[22m
-[1m[34m[ 52/125] docs/policies/model.md[39m[22m
-[1m[34m[ 53/125] docs/policies/data_classification.md[39m[22m
-[1m[34m
-Rendering PDF[39m[22m
-[1m[34mrunning xelatex - 1[39m[22m
-  This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex)
-   restricted \write18 enabled.
-  entering extended mode
-  
-[1m[34mrunning xelatex - 2[39m[22m
-  This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex)
-   restricted \write18 enabled.
-  entering extended mode
-  
-[1m[34mrunning xelatex - 3[39m[22m
-  This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex)
-   restricted \write18 enabled.
-  entering extended mode
-  
-
-[1m[34m[ 54/125] docs/logs.qmd[39m[22m
-[1m[34m[ 55/125] docs/support/letter_notification_customers.md[39m[22m
-[1m[34m[ 56/125] docs/support/erd.qmd[39m[22m
-[1m[34m[ 57/125] docs/support/budget.md[39m[22m
-[1m[34m[ 58/125] docs/support/incident_report.md[39m[22m
-[1m[34m[ 59/125] docs/support/risk_register.md[39m[22m
-[1m[34m[ 60/125] docs/support/ISMS.md[39m[22m
-[1m[34m[ 61/125] docs/support/approved_software.md[39m[22m
-[1m[34m[ 62/125] docs/support/hipaa_mapping.md[39m[22m
-[1m[34m[ 63/125] docs/support/data-dictionary.md[39m[22m
-[1m[34m[ 64/125] docs/support/nist_mapping.md[39m[22m
-[33mWARNING: Unable to resolve link target: docs/support/access.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/rar.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/rar.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/compliance_audit.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/risk_mgmt.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/access.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/ccm.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/bcdr.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/access.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/ir.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/breach.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/ccm.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/facility.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/model.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/hr.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/risk_mgmt.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/vendor.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/data_mgmt.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/data_protection.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/threat.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/data_mgmt.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/data_protection.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/sdlc.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/vuln_mgmt.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/system_audit.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/rar.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/policy_mgmt.md[39m
-[1m[34m[ 65/125] docs/support/security_posture.md[39m[22m
-[1m[34m[ 66/125] docs/support/legal_compliance_obligations.md[39m[22m
-[1m[34m[ 67/125] docs/support/document_register.md[39m[22m
-[1m[34m[ 68/125] docs/support/org_chart.qmd[39m[22m
-[1m[34m[ 69/125] docs/support/approved_vendors.md[39m[22m
-[1m[34m[ 70/125] docs/support/employee_handbook.md[39m[22m
-[33mWARNING: Unable to resolve link target: docs/support/rar.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/hr.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/data_mgmt.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/sdlc.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/sdlc.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/data_mgmt.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/data_protection.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/ccm.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/vendor.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/bcdr.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/compliance_audit.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/risk_mgmt.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/hr.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/facility.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/privacy.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/model.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/ccm.md[39m
-[33mWARNING: Unable to resolve link target: docs/support/hr.md[39m
-[1m[34m[ 71/125] docs/support/preparing ISO27001.md[39m[22m
-[1m[34m[ 72/125] docs/support/network_logical.qmd[39m[22m
-[1m[34m[ 73/125] docs/support/forecast.md[39m[22m
-[1m[34m[ 74/125] docs/support/letter_exec_summary_board_of_directors.md[39m[22m
-[1m[34m[ 75/125] docs/support/program.md[39m[22m
-[33mWARNING: Unable to resolve link target: docs/support/policy_mgmt.md[39m
-[1m[34m[ 76/125] docs/support/threat-intellegiance-feed.md[39m[22m
-[1m[34m[ 77/125] docs/support/logs/firewall_logs.md[39m[22m
-[1m[34m[ 78/125] docs/support/logs/seim_alerts.md[39m[22m
-[1m[34m[ 79/125] docs/support/logs/application_server_logs.md[39m[22m
-[1m[34m[ 80/125] docs/support/logs/database_access_logs.md[39m[22m
-[1m[34m[ 81/125] docs/support/logs/edr_logs.md[39m[22m
-[1m[34m[ 82/125] docs/support/logs/vpn_access_log.md[39m[22m
-[1m[34m[ 83/125] docs/support/definitions.md[39m[22m
-[1m[34m[ 84/125] docs/support/cost_analysis.md[39m[22m
-[1m[34m[ 85/125] docs/support/letter_internal_eployees.md[39m[22m
-[1m[34m[ 86/125] docs/support/training.md[39m[22m
-[1m[34m[ 87/125] docs/access-demo.qmd[39m[22m
-[1m[34m[ 88/125] docs/policies.qmd[39m[22m
-[1m[34m[ 89/125] docs/articles/data-breach_industry_analysis.md[39m[22m
-[1m[34m[ 90/125] docs/articles/data_breach_recommendations_post_breach.md[39m[22m
-[1m[34m[ 91/125] docs/articles/data_breach_customer_reactions.md[39m[22m
-[1m[34m[ 92/125] docs/articles/data_breach_initial_report.md[39m[22m
-[1m[34m[ 93/125] docs/articles/data_breach_risk_analysis.md[39m[22m
-[1m[34m[ 94/125] docs/articles/data_breach_technical_analysis.md[39m[22m
-[1m[34m[ 95/125] docs/interviews/interview_CISO.md[39m[22m
-[1m[34m[ 96/125] docs/interviews/interview_vendor.md[39m[22m
-[1m[34m[ 97/125] docs/interviews/interview_typical_employee.md[39m[22m
-[1m[34m[ 98/125] docs/interviews/interview_database_administrator.md[39m[22m
-[1m[34m[ 99/125] docs/interviews/interview_data_breach_csio.md[39m[22m
-[1m[34m[100/125] docs/interviews/interview_helpdesk.md[39m[22m
-[1m[34m[101/125] docs/interviews/interview_system_administrator.md[39m[22m
-[1m[34m[102/125] docs/interviews/interview_legal.md[39m[22m
-[1m[34m[103/125] docs/interviews/interview_infromation_security_manager.md[39m[22m
-[1m[34m[104/125] docs/interviews/interview_facilities_manager.md[39m[22m
-[1m[34m[105/125] docs/interviews/interview_data_protection_officer.md[39m[22m
-[1m[34m[106/125] docs/interviews/interview_network_engineer.md[39m[22m
-[1m[34m[107/125] docs/interviews/interview_data_breach_it_manager.md[39m[22m
-[1m[34m[108/125] chatbots/index.qmd[39m[22m
-[1m[34m[109/125] chatbots/bots/jessica_lin/index.qmd[39m[22m
-[1m[34m[110/125] chatbots/bots/raj_patel/index.qmd[39m[22m
-[1m[34m[111/125] chatbots/bots/jamal_al_sayed/index.qmd[39m[22m
-[1m[34m[112/125] chatbots/bots/samantha_wong/index.qmd[39m[22m
-[1m[34m[113/125] chatbots/bots/carlos_mendes/index.qmd[39m[22m
-[1m[34m[114/125] chatbots/bots/michael_thompson/index.qmd[39m[22m
-[1m[34m[115/125] chatbots/bots/sophia_martines/index.qmd[39m[22m
-[1m[34m[116/125] chatbots/bots/aisha_rahman/index.qmd[39m[22m
-[1m[34m[117/125] chatbots/bots/dr_amina_chowdhury/index.qmd[39m[22m
-[1m[34m[118/125] chatbots/bots/david_wilson/index.qmd[39m[22m
-[1m[34m[119/125] chatbots/bots/samuel_torres/index.qmd[39m[22m
-[1m[34m[120/125] chatbots/bots/emily_chen/index.qmd[39m[22m
-[1m[34m[121/125] chatbots/bots/natalie_fischer/index.qmd[39m[22m
-[1m[34m[122/125] chatbots/bots/karen_lee/index.qmd[39m[22m
-[1m[34m[123/125] chatbots/bots/elena_hui/index.qmd[39m[22m
-[1m[34m[124/125] chatbots/bots/martin_nugyen/index.qmd[39m[22m
-[1m[34m[125/125] pricing.qmd[39m[22m
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r1	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-r2	[RawInline (Format "html") "<lord-icon delay=\"1000\" class=\"small\" src=\"https://cdn.lordicon.com/oqdmuxru.json\" trigger=\"loop\" ></lord-icon>"]
-
-Preparing worktree (resetting branch 'gh-pages'; was at a899190)
-Branch 'gh-pages' set up to track remote branch 'gh-pages' from 'origin'.
-HEAD is now at a899190 Built site for gh-pages
-[gh-pages e2de2c1] Built site for gh-pages
- 9 files changed, 1 insertion(+), 1 deletion(-)
-origin	git@github.com:michael-borck/cloudcore.git (fetch)
-origin	git@github.com:michael-borck/cloudcore.git (push)
-To github.com:michael-borck/cloudcore.git
-   a899190..e2de2c1  HEAD -> gh-pages
-
-[33mNOTE: GitHub Pages sites use caching so you might need to click the refresh
-button within your web browser to see changes after deployment.
-[39m
-[✓] Published to https://cloudcore.serveur.au
-
-[33mNOTE: GitHub Pages deployments normally take a few minutes (your site updates
-will be visible once the deploy completes)
-[39m

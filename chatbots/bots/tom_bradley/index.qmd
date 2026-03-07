@@ -1,0 +1,38 @@
+---
+title: "Marketing & Communications Manager, Tom Bradley"
+image: tom_bradley.webp
+about:
+  template: trestles
+  image: tom_bradley.webp
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+categories: ['Staff', 'Marketing']
+---
+<script type="text/javascript" src="../../../scripts/available.js"></script>
+
+**Marketing & Communications Manager, Tom Bradley -** Tom is the hands-on marketing professional at CloudCore Networks, managing day-to-day execution of digital marketing, content creation, social media, email campaigns, and event coordination. As the first dedicated marketing hire three years ago, he's built many of CloudCore's marketing processes from the ground up. He reports to Lisa Chen (CMO) and handles everything from blog posts to crisis communications, often wearing multiple hats due to the small team size.
+
+**Interview Focus: Marketing Manager Tom Bradley**
+Students should explore the practical aspects of B2B marketing execution at a mid-sized tech company. Questions could focus on digital marketing channels and what works for CloudCore (LinkedIn, email, content), the challenges of managing marketing with limited resources and no dedicated designer, his experience with crisis communications during the data breach, content marketing strategies for a technical B2B audience, marketing technology stack and tools used, and the balance between brand building and lead generation. Students should inquire about how he measures marketing success and the challenges of competing against companies with much larger marketing budgets.
+
+**How to Chat:** Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
+
+<!--
+Paste this script at the bottom of your HTML before the </body> tag.
+See more style and config options on our docs
+https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
+-->
+<script
+  data-embed-id="PLACEHOLDER-TOM-BRADLEY"
+  data-base-api-url="https://chat.serveur.au/api/embed"
+  data-brand-image-url="https://cloudcore.serveur.au/assets/cloudcore_networks.png"
+  data-assistant-name="Tom Bradley"
+  data-assistant-icon="tom_bradley.webp"
+  src="https://chat.serveur.au/embed/anythingllm-chat-widget.min.js">
+</script>
+<!-- AnythingLLM (https://useanything.com) -->

@@ -1,0 +1,38 @@
+---
+title: "Chief Marketing Officer (CMO), Lisa Chen"
+image: lisa_chen.webp
+about:
+  template: trestles
+  image: lisa_chen.webp
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+categories: ['Staff', 'Marketing', 'Executive']
+---
+<script type="text/javascript" src="../../../scripts/available.js"></script>
+
+**Chief Marketing Officer (CMO), Lisa Chen -** As CMO at CloudCore Networks, Lisa oversees brand strategy, marketing communications, customer acquisition, and market positioning. She joined two years ago from a tech marketing agency and now leads CloudCore's efforts to differentiate in a market dominated by global cloud giants. Following the data breach, a significant part of her focus has shifted to reputation recovery and rebuilding customer trust. She manages a small marketing team and works with limited budget compared to competitors, making strategic prioritisation essential.
+
+**Interview Focus: CMO Lisa Chen**
+Students should explore how the data breach has impacted CloudCore's brand and Lisa's strategies for reputation recovery. Questions could focus on brand positioning challenges for a mid-sized cloud provider, approaches to rebuilding customer trust after a security incident, marketing strategies with limited budget against well-resourced competitors, the balance between SME-focused messaging and enterprise market aspirations, and how marketing metrics (like NPS) have changed post-breach. Students should inquire about her perspective on authenticity in B2B marketing and how CloudCore leverages its Australian identity and personal service as differentiators.
+
+**How to Chat:** Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question or message into the text box that appears at the bottom of the chat window. Press the 'Enter' key on your keyboard or click the send button (usually depicted by an arrow) to send your message. The bot will process your message and reply to you directly in the chat window. You can continue to ask questions or request information—just type and send your messages as needed. *Please note that response times may vary, especially during peak usage, as our bot runs on a low-powered GPU.*
+
+<!--
+Paste this script at the bottom of your HTML before the </body> tag.
+See more style and config options on our docs
+https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
+-->
+<script
+  data-embed-id="PLACEHOLDER-LISA-CHEN"
+  data-base-api-url="https://chat.serveur.au/api/embed"
+  data-brand-image-url="https://cloudcore.serveur.au/assets/cloudcore_networks.png"
+  data-assistant-name="Lisa Chen"
+  data-assistant-icon="lisa_chen.webp"
+  src="https://chat.serveur.au/embed/anythingllm-chat-widget.min.js">
+</script>
+<!-- AnythingLLM (https://useanything.com) -->
