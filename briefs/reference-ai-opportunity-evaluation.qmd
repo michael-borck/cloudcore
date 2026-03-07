@@ -182,9 +182,9 @@ All six assessments (data readiness, stakeholder support, ethical risk flags) we
 
 | Reference | Status |
 |-----------|--------|
-| Chatbot profiles at cloudcore.serveur.au/chatbots/ | SOURCED — real pages |
-| Security docs at cloudcore.serveur.au/docs/ | SOURCED — real pages |
-| Data files at cloudcore.serveur.au/data/ | SOURCED — real pages |
+| Chatbot profiles at cloudcore.eduserver.au/chatbots/ | SOURCED — real pages |
+| Security docs at cloudcore.eduserver.au/docs/ | SOURCED — real pages |
+| Data files at cloudcore.eduserver.au/data/ | SOURCED — real pages |
 
 ---
 

@@ -344,9 +344,9 @@ Against the proposed $250,000 AI investment envelope, these benchmarks illustrat
 
 For additional context, the following resources are available on the Cloudcore Networks website:
 
-- **Security policies and data handling:** The data classification policy (draft), data protection policy, and access control policy are available at [cloudcore.serveur.au/docs/policies/](https://cloudcore.serveur.au/docs/policies/)
-- **Breach incident documentation:** Detailed security logs from the September 2024 breach, including database query logs, firewall alerts, and SIEM correlation events, are available at [cloudcore.serveur.au/docs/logs/](https://cloudcore.serveur.au/docs/logs/)
-- **Risk assessment frameworks:** ISO 27005 and NIST SP 800-30 templates used by Cloudcore are documented at [cloudcore.serveur.au/docs/support/risk_assessment_frameworks](https://cloudcore.serveur.au/docs/support/risk_assessment_frameworks)
+- **Security policies and data handling:** The data classification policy (draft), data protection policy, and access control policy are available at [cloudcore.eduserver.au/docs/policies/](https://cloudcore.eduserver.au/docs/policies/)
+- **Breach incident documentation:** Detailed security logs from the September 2024 breach, including database query logs, firewall alerts, and SIEM correlation events, are available at [cloudcore.eduserver.au/docs/logs/](https://cloudcore.eduserver.au/docs/logs/)
+- **Risk assessment frameworks:** ISO 27005 and NIST SP 800-30 templates used by Cloudcore are documented at [cloudcore.eduserver.au/docs/support/risk_assessment_frameworks](https://cloudcore.eduserver.au/docs/support/risk_assessment_frameworks)
 
 ---
 

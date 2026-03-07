@@ -6,8 +6,8 @@
 const BookingAPI = {
     // API base URL - switches between local dev and production
     baseUrl: window.location.hostname === 'localhost'
-        ? 'http://localhost:8080/api'
-        : 'https://booking-api.serveur.au/api',
+        ? (typeof CloudCoreConfig !== 'undefined' ? CloudCoreConfig.bookingApiLocalUrl : 'http://localhost:8080/api')
+        : (typeof CloudCoreConfig !== 'undefined' ? CloudCoreConfig.bookingApiUrl : 'https://booking-api.eduserver.au/api'),
 
     // Student identification (set during booking flow)
     studentEmail: null,

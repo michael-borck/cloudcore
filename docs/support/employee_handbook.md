@@ -231,7 +231,7 @@ channels:
 
 * (preferred) “Report a security incident” by creating an issue on
    and/or via the
-  [internal help desk](](mailto:security@cloudcore.serveur.au)
+  [internal help desk](](mailto:security@cloudcore.eduserver.au)
 
 * For non-sensitive, non-confidential security issues and concerns, employees
   may post questions on CloudCore’s #infosec Slack channel.

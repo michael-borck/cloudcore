@@ -9,7 +9,7 @@ The dashboard requires cloudcore-api to be running. Configure the API URL in `cl
 ```javascript
 baseUrl: window.location.hostname === 'localhost'
     ? 'http://localhost:8001'
-    : 'https://cloudcore-api.serveur.au',
+    : 'https://cloudcore-api.eduserver.au',
 ```
 
 ## Files

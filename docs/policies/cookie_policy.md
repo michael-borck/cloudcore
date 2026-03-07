@@ -111,7 +111,7 @@ advertising, with corresponding user opt-outs:
 ## CONTACT US
 
 If you have questions about our use of cookies and similar technologies, please
-contact us at privacy@cloudcore.serveur.au.
+contact us at privacy@cloudcore.eduserver.au.
 
 Privacy Officer  
 CloudCore  

@@ -314,9 +314,9 @@ This document reproduces every detail from the Technology Landscape and Resource
 
 | Reference | Status |
 |-----------|--------|
-| Support docs at cloudcore.serveur.au/docs/support/ | SOURCED — real pages |
-| Policies at cloudcore.serveur.au/docs/policies/ | SOURCED — real pages |
-| Logs at cloudcore.serveur.au/docs/logs/ | SOURCED — real pages |
+| Support docs at cloudcore.eduserver.au/docs/support/ | SOURCED — real pages |
+| Policies at cloudcore.eduserver.au/docs/policies/ | SOURCED — real pages |
+| Logs at cloudcore.eduserver.au/docs/logs/ | SOURCED — real pages |
 
 ---
 

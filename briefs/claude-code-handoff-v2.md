@@ -2,7 +2,7 @@
 
 ## What This Is
 
-Cloudcore Networks is a fictional Perth-based cloud computing company used as a case study across university courses. The full website repo is in this repository and the site is live at https://cloudcore.serveur.au/.
+Cloudcore Networks is a fictional Perth-based cloud computing company used as a case study across university courses. The full website repo is in this repository and the site is live at https://cloudcore.eduserver.au/.
 
 I need three new case briefs (Modules 2, 3, and 4) that release organisational detail week by week. Each brief supports a specific workshop activity and gives students concrete data to work with.
 

@@ -69,6 +69,7 @@ format:
     toc: true
     include-in-header:
       - text: |
+          <script src="/scripts/config.js"></script>
           <script src="/scripts/simple-timeline-access.js"></script>
           <script src="/scripts/booking-api.js"></script>
           <script src="/scripts/booking-modal.js"></script>

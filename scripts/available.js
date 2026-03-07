@@ -27,7 +27,7 @@ if (!isPublicPage && !testMode) {
         document.body.innerHTML = '<h1 id="message">This page is only available from 7:00 AM to 7:00 PM on weekdays.</h1>';
         // Redirect after 2 seconds
         setTimeout(function() {
-            window.location.href = 'https://cloudcore.serveur.au'; // Redirect to the homepage
+            window.location.href = (typeof CloudCoreConfig !== 'undefined' ? CloudCoreConfig.siteUrl : '') + '/'; // Redirect to the homepage
         }, 2000);
     }
 }

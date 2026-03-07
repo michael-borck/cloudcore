@@ -25,6 +25,6 @@ Practice bot - simple chat for testing the booking flow
 -->
 <script
   data-embed-id="practice-bot-test"
-  data-base-api-url="https://chat.serveur.au/api/embed"
-  src="https://chat.serveur.au/embed/anythingllm-chat-widget.min.js">
+  data-base-api-url="https://chat.eduserver.au/api/embed"
+  src="https://chat.eduserver.au/embed/anythingllm-chat-widget.min.js">
 </script>

@@ -74,7 +74,7 @@ by CloudCore workforce members for Customers or directly by CloudCore Customers.
 The following process is used to request audit reports:
 
 1. A request may be sent by email to
-   [compliance@cloudcore.serveur.au](mailto:compliance@cloudcore.serveur.au)
+   [compliance@cloudcore.eduserver.au](mailto:compliance@cloudcore.eduserver.au)
    or by submitting a request via CloudCore Internal Support Portal
    or Email. In the request, please specify the type of report being requested
    and any required timelines for the report.
@@ -115,15 +115,15 @@ Direct all other communication requests to one of the following:
 
 * For incident reporting, vulnerability disclosure and other security related
   inquiries:
-    - [security@cloudcore.serveur.au](mailto:security@cloudcore.serveur.au)
+    - [security@cloudcore.eduserver.au](mailto:security@cloudcore.eduserver.au)
     - <>
 
 * For privacy concerns, including report of violation:
-    - [privacy@cloudcore.serveur.au](mailto:privacy@cloudcore.serveur.au)
+    - [privacy@cloudcore.eduserver.au](mailto:privacy@cloudcore.eduserver.au)
     - <>
 
 * For all compliance related issues, including request of audit reports:
-    - [compliance@cloudcore.serveur.au](mailto:compliance@cloudcore.serveur.au)
+    - [compliance@cloudcore.eduserver.au](mailto:compliance@cloudcore.eduserver.au)
 
 
 ### Continuous Compliance Monitoring

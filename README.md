@@ -9,7 +9,7 @@ Welcome to CloudCore Networks Educational Platform - a comprehensive cybersecuri
 ## 🏗️ Platform Architecture
 
 ### **Student Learning Site (GitHub Pages)**
-- **URL:** https://cloudcore.serveur.au
+- **URL:** https://cloudcore.eduserver.au
 - **Purpose:** Educational content, interactive chatbots, documentation
 - **Technology:** Quarto static site generator
 - **Features:** Unit-based access control, time-release content, educational scenarios
@@ -60,7 +60,7 @@ vercel dev
 
 ## 🏫 For Students
 
-1. **Visit the learning site:** https://cloudcore.serveur.au
+1. **Visit the learning site:** https://cloudcore.eduserver.au
 2. **Enter your unit password** (provided by your Unit Coordinator)
 3. **Explore scenarios:** Access time-released content based on your unit
 4. **Interact with staff:** Chat with AI-powered CloudCore employees

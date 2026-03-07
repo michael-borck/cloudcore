@@ -4,7 +4,7 @@
 
 CloudCore Networks is an educational simulation of a cloud services company. Students interact with the site to gather information for assignments - reviewing policies, analysing documents, and interviewing AI employees (chatbots).
 
-**Live site:** https://cloudcore.serveur.au
+**Live site:** https://cloudcore.eduserver.au
 
 ---
 

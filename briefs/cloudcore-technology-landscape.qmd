@@ -286,9 +286,9 @@ For implementation planning, the following constraints are the most significant:
 
 For additional context, the following resources are available on the Cloudcore Networks website:
 
-- **System and network documentation:** The support section at [cloudcore.serveur.au/docs/support/](https://cloudcore.serveur.au/docs/support/) includes network diagrams, the ERD, and the organisational chart
-- **Security policies:** Current security and compliance policies are published at [cloudcore.serveur.au/docs/policies/](https://cloudcore.serveur.au/docs/policies/), including the access control, change management, and data classification policies referenced in this document
-- **Incident logs:** Detailed logs from the September 2024 breach, including VPN, database, firewall, and SIEM entries, are available at [cloudcore.serveur.au/docs/logs/](https://cloudcore.serveur.au/docs/logs/)
+- **System and network documentation:** The support section at [cloudcore.eduserver.au/docs/support/](https://cloudcore.eduserver.au/docs/support/) includes network diagrams, the ERD, and the organisational chart
+- **Security policies:** Current security and compliance policies are published at [cloudcore.eduserver.au/docs/policies/](https://cloudcore.eduserver.au/docs/policies/), including the access control, change management, and data classification policies referenced in this document
+- **Incident logs:** Detailed logs from the September 2024 breach, including VPN, database, firewall, and SIEM entries, are available at [cloudcore.eduserver.au/docs/logs/](https://cloudcore.eduserver.au/docs/logs/)
 
 ---
 

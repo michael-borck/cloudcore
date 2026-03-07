@@ -292,12 +292,12 @@ absolute minimum.
 10. All passwords used in configuration scripts are secured and encrypted.
 11. If a user believes their user ID has been compromised, they are required to
     immediately report the incident to the 
-    [Security team](mailto:security@cloudcore.serveur.au).
+    [Security team](mailto:security@cloudcore.eduserver.au).
 12. In cases where a user has forgotten their password, password reset
     procedures provided by the IdP shall be followed. The exact process depends
     on the system or application. If help is needed, users shall contact [IT
-    Support](mailto:itsupport@cloudcore.serveur.au) or
-    [Security](mailto:security@cloudcore.serveur.au)
+    Support](mailto:itsupport@cloudcore.eduserver.au) or
+    [Security](mailto:security@cloudcore.eduserver.au)
 
 > **PROCESS GAP:** No escalation procedure defined when both IT Support and Security 
 > are unavailable (after hours, weekends).

@@ -29,7 +29,7 @@ https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
 -->
 <script
   data-embed-id="a29bb8f0-da32-4053-8bd3-65129cdf5dc0"
-  data-base-api-url="https://chat.serveur.au/api/embed"
-  src="https://chat.serveur.au/embed/anythingllm-chat-widget.min.js">
+  data-base-api-url="https://chat.eduserver.au/api/embed"
+  src="https://chat.eduserver.au/embed/anythingllm-chat-widget.min.js">
 </script>
 <!-- AnythingLLM (https://useanything.com) -->

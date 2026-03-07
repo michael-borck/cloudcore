@@ -327,9 +327,9 @@ This document reproduces every detail from the Data Infrastructure Audit Results
 
 | Reference | Status |
 |-----------|--------|
-| Policies at cloudcore.serveur.au/docs/policies/ | SOURCED — real pages |
-| Logs at cloudcore.serveur.au/docs/logs/ | SOURCED — real pages |
-| Risk frameworks at cloudcore.serveur.au/docs/support/risk_assessment_frameworks | SOURCED — real page |
+| Policies at cloudcore.eduserver.au/docs/policies/ | SOURCED — real pages |
+| Logs at cloudcore.eduserver.au/docs/logs/ | SOURCED — real pages |
+| Risk frameworks at cloudcore.eduserver.au/docs/support/risk_assessment_frameworks | SOURCED — real page |
 
 ---
 

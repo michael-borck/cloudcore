@@ -30,7 +30,7 @@ Marcell sees customer experience as Cloudcore's most urgent strategic priority. 
 
 **Tension point:** Marcell wants visible progress to satisfy the board and counter competitor messaging, but Sophia Martines (CISO) insists that governance frameworks must be in place before any AI system touches customer data. This creates a speed-versus-governance friction that any implementation plan will need to address.
 
-For the full interview, see the [CEO chatbot profile](https://cloudcore.serveur.au/chatbots/bots/marcell_ziemann/).
+For the full interview, see the [CEO chatbot profile](https://cloudcore.eduserver.au/chatbots/bots/marcell_ziemann/).
 
 ---
 
@@ -46,7 +46,7 @@ Mark believes predictive maintenance offers the best ratio of technical feasibil
 
 **Tension point:** Mark wants to build capability in-house and start with internal operational use cases. Aisha Rahman (CFO) questions whether the company can afford the 6 to 12 month runway and $180,000 to $250,000 salary cost of hiring even one ML engineer when a vendor solution might deliver faster results.
 
-For the full interview, see the [CTO chatbot profile](https://cloudcore.serveur.au/chatbots/bots/mark_gonzalez/).
+For the full interview, see the [CTO chatbot profile](https://cloudcore.eduserver.au/chatbots/bots/mark_gonzalez/).
 
 ---
 
@@ -62,7 +62,7 @@ Sarah's operational data tells a clear story: churn rose to 8 percent annually f
 
 **Tension point:** Marcell and Mark see efficiency gains from automation; Sarah prioritises staff retention and customer relationship quality. She supports AI in principle but will push back on any initiative that threatens her team's morale or introduces impersonal customer interactions.
 
-For the full interview, see the [COO chatbot profile](https://cloudcore.serveur.au/chatbots/bots/sarah_thompson/).
+For the full interview, see the [COO chatbot profile](https://cloudcore.eduserver.au/chatbots/bots/sarah_thompson/).
 
 ---
 
@@ -92,7 +92,7 @@ Sophia's team of 8 is stretched thin, managing over 40 vendor integrations and m
 
 **Tension point:** Marcell wants visible AI progress to satisfy the board; Sophia insists on governance-first. This is the sharpest disagreement on the executive team and will need to be resolved in any implementation roadmap.
 
-For the full interview, see the [CISO chatbot profile](https://cloudcore.serveur.au/chatbots/bots/sophia_martines/) and the [security policies](https://cloudcore.serveur.au/docs/policies/) on the Cloudcore website.
+For the full interview, see the [CISO chatbot profile](https://cloudcore.eduserver.au/chatbots/bots/sophia_martines/) and the [security policies](https://cloudcore.eduserver.au/docs/policies/) on the Cloudcore website.
 
 ---
 
@@ -241,9 +241,9 @@ These tensions are not dysfunctional; they reflect legitimate strategic trade-of
 
 For additional context, the following resources are available on the Cloudcore Networks website:
 
-- **Executive interviews:** Individual chatbot profiles for each executive are available at [cloudcore.serveur.au/chatbots/](https://cloudcore.serveur.au/chatbots/), where students can ask follow-up questions about positions and concerns
-- **Security incident documentation:** Incident logs, articles, and policy documents at [cloudcore.serveur.au/docs/](https://cloudcore.serveur.au/docs/) provide context for the breach that shapes executive attitudes toward risk
-- **Financial and operational data:** Raw datasets including customer, sales, and support data are available at [cloudcore.serveur.au/data/](https://cloudcore.serveur.au/data/) for independent analysis
+- **Executive interviews:** Individual chatbot profiles for each executive are available at [cloudcore.eduserver.au/chatbots/](https://cloudcore.eduserver.au/chatbots/), where students can ask follow-up questions about positions and concerns
+- **Security incident documentation:** Incident logs, articles, and policy documents at [cloudcore.eduserver.au/docs/](https://cloudcore.eduserver.au/docs/) provide context for the breach that shapes executive attitudes toward risk
+- **Financial and operational data:** Raw datasets including customer, sales, and support data are available at [cloudcore.eduserver.au/data/](https://cloudcore.eduserver.au/data/) for independent analysis
 
 ---
 
