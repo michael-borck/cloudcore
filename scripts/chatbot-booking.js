@@ -15,10 +15,13 @@ const ChatbotBooking = {
     chatWidgetScript: null,
     chatWidgetHidden: false,
 
+    // Whether the booking API is available
+    bookingAvailable: false,
+
     /**
      * Initialize booking integration
      */
-    init() {
+    async init() {
         // Only run on chatbot pages
         const path = window.location.pathname;
         const match = path.match(/\/chatbots\/bots\/([^\/]+)/);
@@ -34,6 +37,17 @@ const ChatbotBooking = {
             this.employeeName = this.employeeId?.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
         }
 
+        // Check if the booking API is reachable before setting up booking UI
+        this.bookingAvailable = await this.checkBookingAPI();
+
+        if (!this.bookingAvailable) {
+            // Booking API not available — fall back to direct chatbot access
+            // Chat widget remains visible (pre-booking behavior)
+            console.log('Booking API not available — chatbot access is open.');
+            return;
+        }
+
+        // Booking API is available — enforce appointment-based access
         // Hide the chat widget initially
         this.hideChatWidget();
 
@@ -42,6 +56,23 @@ const ChatbotBooking = {
 
         // Check if student already has verified access
         this.checkExistingAccess();
+    },
+
+    /**
+     * Check if the booking API is reachable
+     * Returns true if API responds, false otherwise
+     */
+    async checkBookingAPI() {
+        try {
+            const response = await fetch(BookingAPI.baseUrl + '/employees', {
+                method: 'GET',
+                signal: AbortSignal.timeout(3000)
+            });
+            return response.ok;
+        } catch (e) {
+            // Network error, timeout, or API not running
+            return false;
+        }
     },
 
     /**
