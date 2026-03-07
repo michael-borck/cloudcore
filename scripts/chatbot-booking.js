@@ -29,6 +29,9 @@ const ChatbotBooking = {
 
         this.employeeId = match[1];
 
+        // Help bot is freely accessible — no booking required
+        if (this.employeeId === 'help_bot') return;
+
         // Extract employee name from page
         const pageTitle = document.querySelector('h1, .title');
         if (pageTitle) {
