@@ -27,7 +27,7 @@ See more style and config options on our docs
 https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
 -->
 <script
-  data-embed-id="mark-gonzalez-cto"
+  data-embed-id="6b6a93cb-529b-492b-be4f-b6a782155fe4"
   data-base-api-url="https://chat.eduserver.au/api/embed"
   src="https://chat.eduserver.au/embed/anythingllm-chat-widget.min.js">
 </script>

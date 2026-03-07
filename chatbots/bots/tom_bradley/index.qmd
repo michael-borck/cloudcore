@@ -27,7 +27,7 @@ See more style and config options on our docs
 https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
 -->
 <script
-  data-embed-id="PLACEHOLDER-TOM-BRADLEY"
+  data-embed-id="0278dd04-5afe-48fa-b0d7-89fbeda2cb27"
   data-base-api-url="https://chat.eduserver.au/api/embed"
   data-brand-image-url="https://cloudcore.eduserver.au/assets/cloudcore_networks.png"
   data-assistant-name="Tom Bradley"

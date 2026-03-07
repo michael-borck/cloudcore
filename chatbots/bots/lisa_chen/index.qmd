@@ -27,7 +27,7 @@ See more style and config options on our docs
 https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
 -->
 <script
-  data-embed-id="PLACEHOLDER-LISA-CHEN"
+  data-embed-id="34f0dc61-78eb-4270-b7cc-710ee0c14880"
   data-base-api-url="https://chat.eduserver.au/api/embed"
   data-brand-image-url="https://cloudcore.eduserver.au/assets/cloudcore_networks.png"
   data-assistant-name="Lisa Chen"
