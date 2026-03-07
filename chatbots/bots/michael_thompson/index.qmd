@@ -13,7 +13,6 @@ about:
       href: https://github.com
 categories: ['Staff', 'Technology']
 ---
-<script type="text/javascript" src="../../../scripts/available.js"></script>
 
 **Lead Software Developer, Michael Thompson -** As Lead Software Developer at CloudCore Networks, Michael heads the development team and ensures secure coding practices are consistently applied across all software projects. He is a creative problem-solver passionate about coding and software development best practices, known for his enthusiasm for innovative security solutions. However, Michael often finds himself frustrated when security measures slow down development, grappling with the challenge of balancing robust security with pressure to meet tight deadlines and deliver features quickly. The recent data breach was traced back to an insecure API endpoint with inadequate validation and error handling, highlighting significant oversight in the development process and placing increased scrutiny on Michael's team to tighten security controls.
 

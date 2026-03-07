@@ -13,7 +13,6 @@ about:
       href: https://github.com
 categories: ['Staff', 'Executive']
 ---
-<script type="text/javascript" src="../../../scripts/available.js"></script>
 
 **Chief Executive Officer (CEO), Marcell Ziemann -** As CEO at CloudCore Networks, Marcell provides strategic leadership and sets the company's direction in a competitive cloud services market. He is forward-thinking and focused on market positioning and competitive advantage. Marcell recently commissioned an independent AI readiness assessment, recognizing both the potential of AI and the sobering reality that 70-85% of AI projects fail. He balances growth ambitions with operational realities while managing board relations and stakeholder expectations.
 

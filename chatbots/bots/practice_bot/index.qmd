@@ -4,7 +4,6 @@ about:
   template: trestles
 categories: ['Practice', 'Test']
 ---
-<script type="text/javascript" src="../../../scripts/available.js"></script>
 
 **Practice Bot - Booking System Test** - This is a test chatbot for practicing the appointment booking system. Unlike CloudCore staff members, this bot doesn't discuss company matters - it's just here for casual conversation about topics like the weather, hobbies, or general questions.
 

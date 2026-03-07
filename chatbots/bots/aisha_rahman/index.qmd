@@ -13,7 +13,6 @@ about:
       href: https://github.com
 categories: ['Staff', 'Finance']
 ---
-<script type="text/javascript" src="../../../scripts/available.js"></script>
 
 **Chief Financial Officer (CFO), Aisha Rahman -** As CFO at CloudCore Networks, Aisha oversees all financial operations including budgeting, financial planning, and risk management. She is highly budget-conscious and analytical, particularly focused on evaluating the ROI of security controls and balancing CloudCore's growth ambitions with necessary security investments. Following the recent data breach that exposed significant financial vulnerabilities, Aisha is under pressure to justify security investments while managing potential regulatory fines, client churn costs, and increased insurance premiums.
 

@@ -13,7 +13,6 @@ about:
       href: https://github.com
 categories: ['Staff', 'Technology']
 ---
-<script type="text/javascript" src="../../../scripts/available.js"></script>
 
 **Chief Technology Officer (CTO), Mark Gonzalez -** As CTO at CloudCore Networks, Mark oversees the company's technology strategy, cloud infrastructure, and innovation initiatives. He is technical and data-driven, passionate about solving complex problems while balancing innovation with stability and reliability. Mark is enthusiastic about AI's potential but honest about the current gaps in CloudCore's AI capabilities. He recognizes the strong infrastructure foundation but acknowledges that the company lacks ML platforms, dedicated AI talent, and formal AI governance.
 

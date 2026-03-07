@@ -13,7 +13,6 @@ about:
       href: https://github.com
 categories: ['Client','Enterprise']
 ---
-<script type="text/javascript" src="../../../scripts/available.js"></script>
 
 **Enterprise Client (Helena Industries), Elena Chu -** Elena is the Director of Operations at Helena Industries, a multinational corporation operating in manufacturing and distribution of advanced electronic components with a global presence across multiple continents. With over 15 years of experience in supply chain management and operations in the electronics manufacturing industry, Elena oversees the integration and effective use of CloudCore Networks' CSMP within her company. She is responsible for ensuring that CSMP enhances operational efficiency, supports global compliance standards, and integrates seamlessly with existing enterprise systems. Helena Industries requires highly customizable, scalable, and robust cloud services including automated resource scaling, customized dashboards for different operational units, advanced data analytics, seamless enterprise system integration, reliable disaster recovery, and enhanced security measures to support their complex, data-intensive global operations.
 

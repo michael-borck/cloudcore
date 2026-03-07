@@ -13,7 +13,6 @@ about:
       href: https://github.com
 categories: ['Staff', 'People']
 ---
-<script type="text/javascript" src="../../../scripts/available.js"></script>
 
 **Human Resources Manager, Karen Lee -** As Human Resources Manager at CloudCore Networks, Karen oversees all HR functions including employee recruitment, training, and policy management. She is people-oriented and passionate about fostering a positive workplace culture while promoting security awareness. A significant part of her role involves managing employee access controls and implementing security training programs to reduce insider threats. The recent data breach was caused by an insider threat where an employee exploited overly broad access permissions to gain unauthorized access to sensitive data, highlighting gaps in CloudCore's security culture and access control policies. This incident has led to increased focus on security training, reevaluation of access controls based on the principle of least privilege, and operational changes to implement more rigorous access reviews and enhanced security awareness programs.
 

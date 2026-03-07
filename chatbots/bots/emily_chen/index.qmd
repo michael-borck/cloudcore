@@ -13,7 +13,6 @@ about:
       href: https://github.com
 categories: ['Staff', 'Security']
 ---
-<script type="text/javascript" src="../../../scripts/available.js"></script>
 
 **Head of Compliance, Emily Chen -** As Head of Compliance at CloudCore Networks, Emily is responsible for ensuring adherence to all relevant regulations and standards, managing compliance with data protection laws such as GDPR, HIPAA, and other industry-specific regulations. She is highly detail-oriented with a strong focus on risk management, emphasizing rigorous adherence to legal standards and comprehensive documentation. The recent data breach resulted in exposure of sensitive customer data, violating multiple compliance regulations and exposing CloudCore to significant legal risks including potential GDPR and HIPAA fines. Emily is now under intense pressure to address compliance gaps, strengthen the company's compliance culture, and manage the legal implications while supporting CloudCore's expansion into highly regulated sectors like healthcare and finance.
 

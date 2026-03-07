@@ -13,7 +13,6 @@ about:
       href: https://github.com
 categories: ['Staff', 'Customer Support']
 ---
-<script type="text/javascript" src="../../../scripts/available.js"></script>
 
 **Customer Support Lead, Samantha Wong -** As Customer Support Lead at CloudCore Networks, Samantha oversees the team responsible for interacting directly with clients, with over a decade of experience in customer service and support within the technology sector. In her late thirties, she is known for her empathetic leadership style and strategic approach to customer service, with expertise in building effective support teams and deep understanding of tech support challenges in cloud services. Samantha's responsibilities include troubleshooting and problem resolution, handling customer complaints through structured processes, and collecting and acting on customer feedback as crucial input for continuous improvement. She has implemented comprehensive training programs, standardized procedures, advanced diagnostic tools, and feedback loops to ensure her team provides exceptional service and turns potentially negative experiences into opportunities for improvement and customer satisfaction.
 

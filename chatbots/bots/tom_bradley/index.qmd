@@ -13,7 +13,6 @@ about:
       href: https://github.com
 categories: ['Staff', 'Marketing']
 ---
-<script type="text/javascript" src="../../../scripts/available.js"></script>
 
 **Marketing & Communications Manager, Tom Bradley -** Tom is the hands-on marketing professional at CloudCore Networks, managing day-to-day execution of digital marketing, content creation, social media, email campaigns, and event coordination. As the first dedicated marketing hire three years ago, he's built many of CloudCore's marketing processes from the ground up. He reports to Lisa Chen (CMO) and handles everything from blog posts to crisis communications, often wearing multiple hats due to the small team size.
 

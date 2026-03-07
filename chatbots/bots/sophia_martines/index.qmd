@@ -13,7 +13,6 @@ about:
       href: https://github.com
 categories: ['Staff', 'Security']
 ---
-<script type="text/javascript" src="../../../scripts/available.js"></script>
 
 **Chief Information Security Officer (CISO), Sophia Martines -** As CISO at CloudCore Networks, Sophia is responsible for defining and implementing the company's overall security strategy as it grows and expands into enterprise markets, increasing the complexity and stakes of security needs. She is a strategic thinker who prioritizes compliance and risk management, known for her meticulous approach to aligning security initiatives with business objectives and her risk-averse approach to security planning. The recent data breach was caused by a sophisticated phishing attack that compromised senior employee credentials, bypassing multi-factor authentication and exploiting multiple vulnerabilities including misconfigured cloud infrastructure, insufficient access controls, outdated security protocols, and third-party integration weaknesses. This incident has severely damaged customer trust, exposed CloudCore to regulatory penalties, caused significant financial losses, and increased the risk of future attacks.
 

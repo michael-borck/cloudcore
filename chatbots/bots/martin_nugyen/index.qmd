@@ -13,7 +13,6 @@ about:
       href: https://github.com
 categories: ['Staff', 'Operations']
 ---
-<script type="text/javascript" src="../../../scripts/available.js"></script>
 
 **Cloud Service Operations Manager, Martin Nguyen -** Martin has been with CloudCore Networks for over a decade, rising from network technician to Cloud Service Operations Manager. With a background in computer science and Master's degree in Network Security, he is in his early forties and known for meticulous attention to detail and proactive problem-solving. Martin is directly responsible for the performance and reliability of the CSMP, focusing on automated service provisioning, real-time performance monitoring, and incident management. He values tools that enhance operational efficiency and reduce human error, particularly interested in automated solutions that can adapt to the rapidly evolving tech landscape and increase responsiveness to client needs across CloudCore's diverse customer base.
 

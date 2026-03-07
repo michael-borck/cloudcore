@@ -13,7 +13,6 @@ about:
       href: https://github.com
 categories: ['Staff', 'Marketing', 'Executive']
 ---
-<script type="text/javascript" src="../../../scripts/available.js"></script>
 
 **Chief Marketing Officer (CMO), Lisa Chen -** As CMO at CloudCore Networks, Lisa oversees brand strategy, marketing communications, customer acquisition, and market positioning. She joined two years ago from a tech marketing agency and now leads CloudCore's efforts to differentiate in a market dominated by global cloud giants. Following the data breach, a significant part of her focus has shifted to reputation recovery and rebuilding customer trust. She manages a small marketing team and works with limited budget compared to competitors, making strategic prioritisation essential.
 

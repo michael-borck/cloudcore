@@ -13,7 +13,6 @@ about:
       href: https://github.com
 categories: ['Staff', 'Security']
 ---
-<script type="text/javascript" src="../../../scripts/available.js"></script>
 
 **Network Security Specialist, Carlos Mendes -** As Network Security Specialist at CloudCore Networks, Carlos is responsible for protecting the company's complex network infrastructure including firewalls, VPNs, and intrusion detection systems. He is highly technical and detail-oriented, with deep expertise in network defense mechanisms and a proactive approach to threat identification. The recent data breach was caused by an unsecured network segment that allowed attackers to move laterally within the network, highlighting the challenges of securing CloudCore's multi-tier architecture. Carlos is now focused on strengthening network segmentation and improving monitoring capabilities to prevent future lateral movement attacks.
 

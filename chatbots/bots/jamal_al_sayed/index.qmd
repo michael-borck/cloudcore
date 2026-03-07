@@ -13,7 +13,6 @@ about:
       href: https://github.com
 categories: ['Staff', 'Technology']
 ---
-<script type="text/javascript" src="../../../scripts/available.js"></script>
 
 **Data Analyst, Jamal Al-Sayed -** As Data Analyst at CloudCore Networks, Jamal plays a vital role in analyzing client data to provide actionable insights for business decisions. He is highly analytical and inquisitive with a keen eye for detail, deeply concerned about data integrity and the potential impact of security breaches on analysis accuracy. The recent data breach involved unauthorized access that led to manipulation of critical datasets, directly compromising the integrity of Jamal's analytics work and potentially misleading client decision-making. This incident has resulted in increased scrutiny of his analyses, operational delays due to additional validation requirements, and erosion of client trust in CloudCore's data analytics services. Jamal is now focused on strengthening data access policies and ensuring robust data pipeline security.
 

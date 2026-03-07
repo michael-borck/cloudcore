@@ -13,7 +13,6 @@ about:
       href: https://github.com
 categories: ['Staff', 'Technology']
 ---
-<script type="text/javascript" src="../../../scripts/available.js"></script>
 
 
 **Cloud Infrastructure Architect, David Wilson -** As Cloud Infrastructure Architect at CloudCore Networks, David is responsible for designing and managing the company's cloud infrastructure, ensuring both scalability and security for clients ranging from SMEs to large enterprises. He is forward-thinking and passionate about cloud security, particularly interested in exploring technologies like zero trust architectures and advanced container security. The recent data breach was traced back to a configuration error in the cloud environment that David's team managed, highlighting the challenges of maintaining secure configurations in CloudCore's complex hybrid cloud setup. David is now focused on implementing more rigorous configuration management and exploring automation tools to prevent similar misconfigurations.

@@ -13,7 +13,6 @@ about:
       href: https://github.com
 categories: ['Client', 'Small Business']
 ---
-<script type="text/javascript" src="../../../scripts/available.js"></script>
 
 **Small Business Owner, Jessica Lin -** Jessica is the founder and owner of Lin's Craft Studio, a thriving small business specializing in handmade crafts and artisanal home decor based in Melbourne, Australia. In her mid-thirties and passionate about crafts and sustainable living, Jessica has grown her business from a local market stall to a nationwide online store over five years. Despite limited technical expertise, she recognizes the value of leveraging technology to streamline operations. Jessica represents a typical small business owner who uses CloudCore Networks' CSMP to manage various business aspects efficiently, prioritizing simplicity, cost-effectiveness, and straightforward usability. She requires mobile accessibility for managing her business while attending craft fairs and values predictable pricing with flexible payment structures that match her fluctuating cash flow.
 

@@ -13,7 +13,6 @@ about:
       href: https://github.com
 categories: ['Staff', 'Security']
 ---
-<script type="text/javascript" src="../../../scripts/available.js"></script>
 
 **Security Compliance Officer, Samuel Torres -** As Security Compliance Officer at CloudCore Networks based in Perth, Australia, Samuel has over 15 years of experience in IT security focusing on compliance and data protection, with expertise in developing comprehensive security policies and conducting risk assessments. In his early forties, Samuel is known for his meticulous attention to detail and no-compromise approach to security and compliance. He is responsible for ensuring that the CSMP meets all legal and regulatory compliance standards related to data security and privacy, including Australian Privacy Principles, GDPR, HIPAA, and other international regulations. Samuel develops compliance strategies, maintains robust security frameworks with encryption and access controls, and conducts regular audits and reporting to ensure adherence to evolving global regulations.
 

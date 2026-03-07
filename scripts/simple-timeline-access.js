@@ -421,18 +421,103 @@ function showProtectedContent() {
 }
 
 /**
+ * Check if current time is within business hours (7am-7pm weekdays)
+ * Returns true if within hours or bypassed via ?test=true
+ */
+function isWithinBusinessHours() {
+    // Allow bypass with ?test=true URL parameter
+    if (new URLSearchParams(window.location.search).get('test') === 'true') {
+        console.log('Business hours check bypassed via ?test=true');
+        return true;
+    }
+
+    const now = TEST_MODE ? new Date(TEST_DATE) : new Date();
+    const hour = now.getHours();
+    const day = now.getDay(); // 0 = Sunday, 6 = Saturday
+
+    // Business hours: 7am-7pm, Monday-Friday
+    if (hour < 7 || hour >= 19 || day === 0 || day === 6) {
+        return false;
+    }
+    return true;
+}
+
+/**
+ * Show outside business hours message and redirect
+ */
+function showOutsideHoursMessage() {
+    document.body.innerHTML = `
+        <div style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        ">
+            <div style="
+                background: white;
+                border-radius: 10px;
+                padding: 40px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+                max-width: 500px;
+                text-align: center;
+            ">
+                <div style="font-size: 48px; margin-bottom: 20px;">🕐</div>
+                <h1 style="color: #333; margin-bottom: 20px; font-size: 28px;">Outside Business Hours</h1>
+                <p style="color: #666; font-size: 18px; margin-bottom: 10px;">
+                    CloudCore Networks offices are closed.
+                </p>
+                <p style="color: #999; font-size: 16px; margin-bottom: 30px;">
+                    Protected content is available <strong>7:00 AM – 7:00 PM, Monday to Friday</strong>.
+                </p>
+                <p style="color: #007bff; font-size: 16px; margin-bottom: 20px;">
+                    Redirecting to home page in <span id="countdown">5</span> seconds...
+                </p>
+                <button onclick="window.location.href='/'" style="
+                    background: #667eea;
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 16px;
+                ">Go Home Now</button>
+            </div>
+        </div>
+    `;
+
+    let seconds = 5;
+    const countdownEl = document.getElementById('countdown');
+    const countdown = setInterval(() => {
+        seconds--;
+        if (countdownEl) countdownEl.textContent = seconds;
+        if (seconds <= 0) {
+            clearInterval(countdown);
+            window.location.href = '/';
+        }
+    }, 1000);
+}
+
+/**
  * Main access control function
  */
 async function checkAccess() {
     // Load configuration first
     await loadAccessConfig();
-    
+
     // Check if this page needs protection
     if (!isProtectedPage()) {
         // Public page - no restrictions
         return;
     }
-    
+
+    // Check business hours before anything else
+    if (!isWithinBusinessHours()) {
+        showOutsideHoursMessage();
+        return;
+    }
+
     // Check for valid token first
     const existingToken = isTokenValid();
     if (existingToken) {

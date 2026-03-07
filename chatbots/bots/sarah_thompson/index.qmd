@@ -13,7 +13,6 @@ about:
       href: https://github.com
 categories: ['Staff', 'Operations']
 ---
-<script type="text/javascript" src="../../../scripts/available.js"></script>
 
 **Chief Operating Officer (COO), Sarah Thompson -** As COO at CloudCore Networks, Sarah leads service delivery operations and ensures operational excellence across the organization. She is process-oriented and customer-centric, constantly balancing efficiency improvements with maintaining high service quality standards. Sarah is focused on scaling operations sustainably while managing cross-functional coordination challenges and SLA commitments to clients.
 
