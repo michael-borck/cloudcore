@@ -27,7 +27,7 @@ website:
             href: docs/support.qmd
           - text: Blog
             href: blog/index.qmd
-          - text: Customer Portal
+          - text: Consultant Portal
             href: chatbots/index.qmd
       - text: Docs
         menu:
