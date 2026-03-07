@@ -5,8 +5,11 @@ var isPublicPage = publicPaths.some(function(path) {
     return currentPath === path || currentPath.endsWith(path);
 });
 
+// Allow bypass with ?test=true URL parameter
+var testMode = new URLSearchParams(window.location.search).get('test') === 'true';
+
 // Only apply time restrictions to non-public pages
-if (!isPublicPage) {
+if (!isPublicPage && !testMode) {
     var date = new Date(); // Get current date and time
     var currentHour = date.getHours(); // Extract the hour
     var currentDay = date.getDay(); // Get the current day of the week (0 = Sunday, 6 = Saturday)
