@@ -1,7 +1,9 @@
 ---
 title: "Help Bot"
+image: "help_bot.webp"
 about:
   template: trestles
+  image: help_bot.webp
 categories: ['Help', 'Guide']
 ---
 
