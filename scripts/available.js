@@ -19,12 +19,13 @@ if (!isPublicPage && !testMode) {
 
     // Define business hours
     var startHour = 7; // Business starts at 7 AM
-    var endHour = 19; // Business ends at 7 PM
+    var endHour = (currentDay === 2) ? 20 : 19; // Tuesday ends at 8 PM, other weekdays at 7 PM
 
     // Check if the current time is outside business hours or if it's a weekend (Saturday or Sunday)
     if (currentHour < startHour || currentHour >= endHour || currentDay === 0 || currentDay === 6) {
         // If outside business hours or on a weekend, display the message
-        document.body.innerHTML = '<h1 id="message">This page is only available from 7:00 AM to 7:00 PM on weekdays.</h1>';
+        var endTimeMsg = (currentDay === 2) ? '8:00 PM' : '7:00 PM';
+        document.body.innerHTML = '<h1 id="message">This page is only available from 7:00 AM to ' + endTimeMsg + ' on weekdays (Tuesday hours extended to 8:00 PM).</h1>';
         // Redirect after 2 seconds
         setTimeout(function() {
             window.location.href = (typeof CloudCoreConfig !== 'undefined' ? CloudCoreConfig.siteUrl : '') + '/'; // Redirect to the homepage
