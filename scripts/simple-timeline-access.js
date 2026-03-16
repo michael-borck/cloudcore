@@ -435,8 +435,13 @@ function isWithinBusinessHours() {
     const hour = now.getHours();
     const day = now.getDay(); // 0 = Sunday, 6 = Saturday
 
-    // Business hours: 7am-7pm, Monday-Friday
-    if (hour < 7 || hour >= 19 || day === 0 || day === 6) {
+    // Business hours: Monday-Friday
+    // Tuesday: 4am-8pm (extended for lab sessions)
+    // Other weekdays: 7am-7pm
+    var startHour = (day === 2) ? 4 : 7;
+    var endHour = (day === 2) ? 20 : 19;
+
+    if (hour < startHour || hour >= endHour || day === 0 || day === 6) {
         return false;
     }
     return true;
@@ -469,7 +474,8 @@ function showOutsideHoursMessage() {
                     CloudCore Networks offices are closed.
                 </p>
                 <p style="color: #999; font-size: 16px; margin-bottom: 30px;">
-                    Protected content is available <strong>7:00 AM – 7:00 PM, Monday to Friday</strong>.
+                    Protected content is available <strong>7:00 AM – 7:00 PM, Monday to Friday</strong>
+                    (Tuesday hours extended: <strong>4:00 AM – 8:00 PM</strong>).
                 </p>
                 <p style="color: #007bff; font-size: 16px; margin-bottom: 20px;">
                     Redirecting to home page in <span id="countdown">5</span> seconds...
@@ -881,7 +887,7 @@ function createPlaceholder(requiredLevel) {
  * Handle chatbot access with unit-specific rules
  * Chatbots should only be available:
  * 1. With at least consultant access (not public)
- * 2. During business hours (7am-7pm weekdays) - handled by available.js
+ * 2. During business hours (weekdays) - handled by isWithinBusinessHours()
  * 3. Based on unit's access configuration
  */
 function handleChatbotAccess(level, unitConfig) {

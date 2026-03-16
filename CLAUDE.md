@@ -21,7 +21,7 @@ CloudCore Networks is an educational platform built with Quarto static site gene
 - **Static Site Generator**: Quarto with Cosmo HTML theme
 - **Content Format**: Quarto Markdown (`.qmd` files)
 - **Styling**: Custom CSS (`styles.css`)
-- **Scripts**: Custom JavaScript for access control (`scripts/available.js`, `scripts/password.js`)
+- **Scripts**: Custom JavaScript for access control (`scripts/simple-timeline-access.js`, `scripts/password.js`)
 - **Chatbot Integration**: AnythingLLM embedded widgets
 
 ### Project Structure
