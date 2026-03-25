@@ -1,5 +1,11 @@
 project:
   type: website
+  render:
+    - "!CLAUDE.md"
+    - "!CODE_OF_CONDUCT.md"
+    - "!CONTRIBUTING.md"
+    - "!README.md"
+    - "*"
 
 website:
   title: "CloudCore Networks"
