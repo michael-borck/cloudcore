@@ -420,6 +420,23 @@ function showProtectedContent() {
     }
 }
 
+// Public holidays when access is restricted (same as weekends)
+const PUBLIC_HOLIDAYS = [
+    '2026-04-03', // Good Friday
+    '2026-04-06', // Easter Monday
+    '2026-05-27', // Reconciliation Day
+];
+
+/**
+ * Check if a date falls on a public holiday
+ */
+function isPublicHoliday(date) {
+    const dateStr = date.getFullYear() + '-' +
+        String(date.getMonth() + 1).padStart(2, '0') + '-' +
+        String(date.getDate()).padStart(2, '0');
+    return PUBLIC_HOLIDAYS.includes(dateStr);
+}
+
 /**
  * Check if current time is within business hours (7am-7pm weekdays)
  * Returns true if within hours or bypassed via ?test=true
@@ -435,13 +452,18 @@ function isWithinBusinessHours() {
     const hour = now.getHours();
     const day = now.getDay(); // 0 = Sunday, 6 = Saturday
 
+    // Weekends and public holidays are closed
+    if (day === 0 || day === 6 || isPublicHoliday(now)) {
+        return false;
+    }
+
     // Business hours: Monday-Friday
-    // Tuesday: 4am-8pm (extended for lab sessions)
+    // Tuesday: 7am-8pm (extended for lab sessions)
     // Other weekdays: 7am-7pm
-    var startHour = (day === 2) ? 4 : 7;
+    var startHour = 7;
     var endHour = (day === 2) ? 20 : 19;
 
-    if (hour < startHour || hour >= endHour || day === 0 || day === 6) {
+    if (hour < startHour || hour >= endHour) {
         return false;
     }
     return true;
@@ -473,9 +495,13 @@ function showOutsideHoursMessage() {
                 <p style="color: #666; font-size: 18px; margin-bottom: 10px;">
                     CloudCore Networks offices are closed.
                 </p>
-                <p style="color: #999; font-size: 16px; margin-bottom: 30px;">
-                    Protected content is available <strong>7:00 AM – 7:00 PM, Monday to Friday</strong>
-                    (Tuesday hours extended: <strong>4:00 AM – 8:00 PM</strong>).
+                <p style="color: #999; font-size: 16px; margin-bottom: 10px;">
+                    Protected content is available during normal business hours:<br>
+                    <strong>7:00 AM – 7:00 PM, Monday to Friday</strong>
+                    (Tuesday extended to <strong>8:00 PM</strong>).
+                </p>
+                <p style="color: #999; font-size: 14px; margin-bottom: 30px;">
+                    Access is restricted on weekends and public holidays.
                 </p>
                 <p style="color: #007bff; font-size: 16px; margin-bottom: 20px;">
                     Redirecting to home page in <span id="countdown">5</span> seconds...
