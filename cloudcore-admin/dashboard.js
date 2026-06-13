@@ -102,9 +102,14 @@ async function selectUnit(unitCode) {
         document.getElementById('consultantDate').value = currentUnit.consultant_date?.split('T')[0] || '';
         document.getElementById('auditorDate').value = currentUnit.auditor_date?.split('T')[0] || '';
         document.getElementById('accessMode').value = currentUnit.access_mode || 'time-based';
+        document.getElementById('scenarioName').value = currentUnit.scenario_name || '';
+        document.getElementById('scenarioDescription').value = currentUnit.scenario_description || '';
 
         // Load visibility rules
         await loadVisibilityRules();
+
+        // Load employees
+        await loadEmployees();
 
         // Load unit files
         await loadUnitFiles();
@@ -129,7 +134,9 @@ async function saveUnitSettings() {
         password: document.getElementById('unitPassword').value,
         consultant_date: document.getElementById('consultantDate').value || null,
         auditor_date: document.getElementById('auditorDate').value || null,
-        access_mode: document.getElementById('accessMode').value
+        access_mode: document.getElementById('accessMode').value,
+        scenario_name: document.getElementById('scenarioName').value || null,
+        scenario_description: document.getElementById('scenarioDescription').value || null
     };
 
     try {
@@ -232,6 +239,65 @@ async function deleteVisibilityRule(ruleId) {
         showLoading(false);
     } catch (error) {
         showError('Failed to delete rule: ' + error.message);
+        showLoading(false);
+    }
+}
+
+// ============================================================================
+// Employees (hide/show per unit)
+// ============================================================================
+
+async function loadEmployees() {
+    if (!currentUnit) return;
+
+    try {
+        const employees = await CloudCoreAPI.listUnitEmployees(currentUnit.code);
+
+        const container = document.getElementById('employeeList');
+        container.innerHTML = '';
+
+        if (!employees || employees.length === 0) {
+            container.innerHTML = '<p class="no-data">No employees found on the site.</p>';
+            return;
+        }
+
+        employees.forEach(emp => {
+            const el = document.createElement('div');
+            el.className = 'file-item';
+            if (emp.hidden) el.style.opacity = '0.55';
+            const btnClass = emp.hidden ? 'btn btn-secondary' : 'btn-delete';
+            const btnLabel = emp.hidden ? 'Show' : 'Hide';
+            el.innerHTML = `
+                <div class="file-info">
+                    <span class="file-name">${escapeHtml(emp.name)}</span>
+                    <span class="file-size">${emp.hidden ? 'Hidden' : 'Visible'}</span>
+                </div>
+                <button class="${btnClass}" onclick="toggleEmployee('${escapeHtml(emp.id)}', ${emp.hidden})">${btnLabel}</button>
+            `;
+            container.appendChild(el);
+        });
+
+    } catch (error) {
+        showError('Failed to load employees: ' + error.message);
+    }
+}
+
+async function toggleEmployee(employeeId, currentlyHidden) {
+    if (!currentUnit) return;
+
+    try {
+        showLoading(true);
+        if (currentlyHidden) {
+            await CloudCoreAPI.showEmployee(currentUnit.code, employeeId);
+        } else {
+            await CloudCoreAPI.hideEmployee(currentUnit.code, employeeId);
+        }
+        await loadEmployees();
+        await loadVisibilityRules();  // a hide is a visibility rule — keep both in sync
+        showSuccess(currentlyHidden ? 'Employee shown' : 'Employee hidden');
+        showLoading(false);
+    } catch (error) {
+        showError('Failed to update employee: ' + error.message);
         showLoading(false);
     }
 }
@@ -383,6 +449,57 @@ async function showGitStatus() {
 
     } catch (error) {
         showError('Failed to load git status: ' + error.message);
+    }
+}
+
+async function showOrphans() {
+    if (!currentUser.is_admin) return;
+
+    try {
+        showLoading(true);
+        const orphans = await CloudCoreAPI.listOrphans();
+        showLoading(false);
+
+        let html = '<h3>Orphaned Files</h3>';
+        html += '<p class="no-data" style="text-align:left;padding:0 0 12px;">Upload files on disk that no unit references (e.g. left behind after a unit was deleted).</p>';
+
+        if (!orphans || orphans.length === 0) {
+            html += '<p class="no-data">No orphaned files. Nothing to clean up.</p>';
+        } else {
+            html += '<table class="data-table"><thead><tr><th>Path</th><th>Size</th><th>Reason</th><th></th></tr></thead><tbody>';
+            orphans.forEach(o => {
+                html += `<tr>
+                    <td><code>${escapeHtml(o.path)}</code></td>
+                    <td>${formatFileSize(o.size)}</td>
+                    <td>${escapeHtml(o.reason)}</td>
+                    <td><button class="btn-delete" onclick="deleteOrphanFile('${escapeHtml(o.path)}')">Delete</button></td>
+                </tr>`;
+            });
+            html += '</tbody></table>';
+        }
+
+        document.getElementById('adminContent').innerHTML = html;
+        document.getElementById('adminModal').style.display = 'block';
+
+    } catch (error) {
+        showLoading(false);
+        showError('Failed to load orphaned files: ' + error.message);
+    }
+}
+
+async function deleteOrphanFile(path) {
+    if (!currentUser.is_admin) return;
+    if (!confirm(`Permanently delete this orphaned file?\n\n${path}`)) return;
+
+    try {
+        showLoading(true);
+        await CloudCoreAPI.deleteOrphan(path);
+        showLoading(false);
+        showSuccess('Orphaned file deleted');
+        await showOrphans();  // refresh the list
+    } catch (error) {
+        showLoading(false);
+        showError('Failed to delete: ' + error.message);
     }
 }
 

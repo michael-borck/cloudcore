@@ -139,6 +139,22 @@ const CloudCoreAPI = {
     },
 
     // ========================================================================
+    // Employee visibility (per unit)
+    // ========================================================================
+
+    async listUnitEmployees(unitCode) {
+        return this._fetch(`/units/${unitCode}/employees`);
+    },
+
+    async hideEmployee(unitCode, employeeId) {
+        return this._fetch(`/units/${unitCode}/employees/${employeeId}/hide`, 'POST');
+    },
+
+    async showEmployee(unitCode, employeeId) {
+        return this._fetch(`/units/${unitCode}/employees/${employeeId}/show`, 'POST');
+    },
+
+    // ========================================================================
     // Files
     // ========================================================================
 
@@ -172,6 +188,15 @@ const CloudCoreAPI = {
 
     async deleteFile(unitCode, path) {
         return this._fetch(`/files/units/${unitCode}/${path}`, 'DELETE');
+    },
+
+    // Orphaned uploads (admin) — files on disk no unit references
+    async listOrphans() {
+        return this._fetch('/files/orphans');
+    },
+
+    async deleteOrphan(path) {
+        return this._fetch(`/files/orphans?path=${encodeURIComponent(path)}`, 'DELETE');
     },
 
     // ========================================================================
