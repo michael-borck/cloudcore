@@ -120,6 +120,13 @@ const BookingAPI = {
         return this.request(`/employees/${employeeId}/slots?days=${days}`);
     },
 
+    /**
+     * Get a student's meeting usage with an employee (drives the "use wisely" note)
+     */
+    async getMeetingStatus(employeeId, email) {
+        return this.request(`/employees/${employeeId}/meeting-status?email=${encodeURIComponent(email)}`);
+    },
+
     // =========================================================================
     // Appointment Endpoints
     // =========================================================================

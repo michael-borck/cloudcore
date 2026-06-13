@@ -225,6 +225,12 @@ const BookingModal = {
                 color: #004085;
             }
 
+            .booking-message.warning {
+                background: #fff3cd;
+                border: 1px solid #ffeeba;
+                color: #856404;
+            }
+
             .booking-loading {
                 text-align: center;
                 padding: 40px;
@@ -456,6 +462,27 @@ const BookingModal = {
         `;
 
         try {
+            // How many meetings does this student have left with this employee?
+            // Senior staff are capped ("use wisely"); regular staff are unlimited.
+            let status = null;
+            try {
+                const student = BookingAPI.getStudent();
+                if (student && student.email) {
+                    status = await BookingAPI.getMeetingStatus(this.employeeId, student.email);
+                }
+            } catch (e) { /* non-fatal — just show slots without the note */ }
+
+            // Cap already used up — don't offer slots at all.
+            if (status && !status.unlimited && status.remaining === 0) {
+                content.innerHTML = `
+                    <div class="booking-message warning">${this.escapeHtml(status.message)}</div>
+                    <button class="booking-btn booking-btn-secondary" onclick="BookingModal.close()">
+                        Close
+                    </button>
+                `;
+                return;
+            }
+
             const response = await BookingAPI.getSlots(this.employeeId);
             const availableSlots = response.slots.filter(s => s.available);
 
@@ -474,7 +501,12 @@ const BookingModal = {
             // Group slots by date
             const grouped = BookingAPI.groupSlotsByDate(availableSlots);
 
-            let html = `
+            let html = '';
+            // "Use wisely" note for capped (senior) staff.
+            if (status && !status.unlimited) {
+                html += `<div class="booking-message warning">${this.escapeHtml(status.message)}</div>`;
+            }
+            html += `
                 <div class="booking-message info">
                     Select a time slot for your appointment.
                 </div>
