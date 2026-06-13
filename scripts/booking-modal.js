@@ -231,6 +231,28 @@ const BookingModal = {
                 color: #856404;
             }
 
+            .booking-propose {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                margin: 10px 0;
+            }
+            .booking-propose label {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 12px;
+                font-weight: 500;
+            }
+            .booking-propose input {
+                flex: 1;
+                max-width: 70%;
+                padding: 8px 10px;
+                border: 2px solid #e9ecef;
+                border-radius: 6px;
+                font-size: 14px;
+            }
+
             .booking-loading {
                 text-align: center;
                 padding: 40px;
@@ -462,17 +484,18 @@ const BookingModal = {
         `;
 
         try {
+            const student = BookingAPI.getStudent();
+
             // How many meetings does this student have left with this employee?
             // Senior staff are capped ("use wisely"); regular staff are unlimited.
             let status = null;
             try {
-                const student = BookingAPI.getStudent();
                 if (student && student.email) {
                     status = await BookingAPI.getMeetingStatus(this.employeeId, student.email);
                 }
-            } catch (e) { /* non-fatal — just show slots without the note */ }
+            } catch (e) { /* non-fatal — propose-3 still works without the note */ }
 
-            // Cap already used up — don't offer slots at all.
+            // Cap already used up — don't offer a booking at all.
             if (status && !status.unlimited && status.remaining === 0) {
                 content.innerHTML = `
                     <div class="booking-message warning">${this.escapeHtml(status.message)}</div>
@@ -483,80 +506,87 @@ const BookingModal = {
                 return;
             }
 
-            const response = await BookingAPI.getSlots(this.employeeId);
-            const availableSlots = response.slots.filter(s => s.available);
-
-            if (availableSlots.length === 0) {
-                content.innerHTML = `
-                    <div class="booking-message info">
-                        No available slots for the next 14 days. Please check back later.
-                    </div>
-                    <button class="booking-btn booking-btn-secondary" onclick="BookingModal.close()">
-                        Close
-                    </button>
-                `;
-                return;
-            }
-
-            // Group slots by date
-            const grouped = BookingAPI.groupSlotsByDate(availableSlots);
+            // Employee availability constraints for the hint + input minimums.
+            const emp = await BookingAPI.getEmployee(this.employeeId);
+            const dayNames = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+            const days = (emp.available_days || []).map(d => dayNames[d]).join(', ');
+            const hours = `${emp.business_start_hour}:00–${emp.business_end_hour}:00`;
+            const notice = emp.min_notice_hours ? ` · at least ${emp.min_notice_hours}h notice` : '';
+            const earliest = new Date(Date.now() + (emp.min_notice_hours || 0) * 3600 * 1000);
+            const minAttr = this._toLocalInput(earliest);
 
             let html = '';
-            // "Use wisely" note for capped (senior) staff.
             if (status && !status.unlimited) {
                 html += `<div class="booking-message warning">${this.escapeHtml(status.message)}</div>`;
             }
             html += `
                 <div class="booking-message info">
-                    Select a time slot for your appointment.
+                    Propose three times that suit you, and ${this.escapeHtml(emp.name)}'s office
+                    will confirm one.<br>
+                    <small>Available: ${days} · ${hours}${notice}</small>
                 </div>
-                <div class="booking-slots">
-            `;
-
-            grouped.forEach(group => {
-                html += `
-                    <div class="booking-date-group">
-                        <div class="booking-date-header">${group.date}</div>
-                        <div class="booking-slot-grid">
-                `;
-
-                group.slots.forEach(slot => {
-                    const time = BookingAPI.formatTime(slot.start);
-                    const slotClass = slot.available ? '' : 'unavailable';
-                    html += `
-                        <div class="booking-slot ${slotClass}"
-                             data-slot-start="${slot.start}"
-                             onclick="BookingModal.selectSlot(this, '${slot.start}')">
-                            ${time}
-                        </div>
-                    `;
-                });
-
-                html += '</div></div>';
-            });
-
-            html += '</div>';
-            html += `
+                <div class="booking-propose">
+                    <label>Option 1 <input type="datetime-local" class="booking-propose-time" min="${minAttr}"></label>
+                    <label>Option 2 <input type="datetime-local" class="booking-propose-time" min="${minAttr}"></label>
+                    <label>Option 3 <input type="datetime-local" class="booking-propose-time" min="${minAttr}"></label>
+                </div>
                 <div style="margin-top: 20px; display: flex; gap: 10px;">
                     <button class="booking-btn booking-btn-secondary" onclick="BookingAPI.clearStudent(); BookingModal.showEmailStep();">
                         Change Email
                     </button>
-                    <button id="booking-confirm-btn" class="booking-btn booking-btn-primary" disabled
-                            onclick="BookingModal.confirmBooking()">
-                        Book Selected Slot
+                    <button id="booking-confirm-btn" class="booking-btn booking-btn-primary"
+                            onclick="BookingModal.requestTimes()">
+                        Request these times
                     </button>
                 </div>
             `;
-
             content.innerHTML = html;
 
         } catch (error) {
             content.innerHTML = `
                 <div class="booking-message error">
-                    Failed to load available slots: ${this.escapeHtml(error.message)}
+                    Couldn't load booking options: ${this.escapeHtml(error.message)}
                 </div>
                 <button class="booking-btn booking-btn-secondary" onclick="BookingModal.close()">
                     Close
+                </button>
+            `;
+        }
+    },
+
+    // Format a Date as YYYY-MM-DDTHH:MM (local) for <input type="datetime-local">
+    _toLocalInput(d) {
+        const pad = n => String(n).padStart(2, '0');
+        return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}` +
+               `T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+    },
+
+    // Offer-3: submit the proposed times; the office confirms one.
+    async requestTimes() {
+        const times = Array.from(document.querySelectorAll('.booking-propose-time'))
+            .map(i => i.value).filter(Boolean);
+        if (times.length === 0) {
+            alert('Please propose at least one time.');
+            return;
+        }
+
+        const btn = document.getElementById('booking-confirm-btn');
+        btn.disabled = true;
+        btn.textContent = 'Requesting...';
+
+        try {
+            const result = await BookingAPI.requestAppointment(this.employeeId, times);
+            if (result.success) {
+                this.showConfirmation(result);
+            } else {
+                throw new Error(result.message);
+            }
+        } catch (error) {
+            const content = document.getElementById('booking-slots-content');
+            content.innerHTML = `
+                <div class="booking-message error">${this.escapeHtml(error.message)}</div>
+                <button class="booking-btn booking-btn-secondary" onclick="BookingModal.showSlotsStep()">
+                    Try Again
                 </button>
             `;
         }

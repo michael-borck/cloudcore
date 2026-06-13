@@ -127,6 +127,37 @@ const BookingAPI = {
         return this.request(`/employees/${employeeId}/meeting-status?email=${encodeURIComponent(email)}`);
     },
 
+    /**
+     * Get employee info incl. availability constraints (days, hours, notice)
+     */
+    async getEmployee(employeeId) {
+        return this.request(`/employees/${employeeId}`);
+    },
+
+    /**
+     * Offer-3: propose several times; the office confirms one.
+     * @param {string} employeeId
+     * @param {string[]} proposedTimes - datetime-local strings (local = sim timezone)
+     */
+    async requestAppointment(employeeId, proposedTimes, options = {}) {
+        const student = this.getStudent();
+        if (!student) {
+            throw new Error('Please enter your student email before booking.');
+        }
+        const payload = {
+            student_email: student.email,
+            student_name: student.name,
+            unit_code: student.unitCode,
+            employee_id: employeeId,
+            proposed_times: proposedTimes,
+            ...options
+        };
+        return this.request('/appointments/request', {
+            method: 'POST',
+            body: JSON.stringify(payload)
+        });
+    },
+
     // =========================================================================
     // Appointment Endpoints
     // =========================================================================
