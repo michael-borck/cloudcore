@@ -250,6 +250,17 @@ const ChatbotBooking = {
                     <p style="color: #666; font-size: 14px; margin: 0;">
                         Click the <strong>+</strong> button in the lower right corner to open the chat.
                     </p>
+                    <button onclick="ChatbotBooking.downloadConversation()" style="
+                        margin-top: 15px;
+                        margin-right: 8px;
+                        padding: 8px 16px;
+                        background: #667eea;
+                        color: white;
+                        border: none;
+                        border-radius: 6px;
+                        font-size: 13px;
+                        cursor: pointer;
+                    ">Download conversation</button>
                     <button onclick="ChatbotBooking.endSession()" style="
                         margin-top: 15px;
                         padding: 8px 16px;
@@ -260,6 +271,9 @@ const ChatbotBooking = {
                         font-size: 13px;
                         cursor: pointer;
                     ">End Interview</button>
+                    <p style="color: #888; font-size: 12px; margin-top: 10px;">
+                        Tip: download your conversation before ending — you'll need it for your submission.
+                    </p>
                 </div>
             </div>
         `;
@@ -506,6 +520,48 @@ const ChatbotBooking = {
         } catch (e) {
             sessionStorage.removeItem('chatbot_access');
         }
+    },
+
+    /**
+     * Download the current conversation as a text file.
+     *
+     * Best-effort: the AnythingLLM widget renders into the light DOM, so we grab
+     * the richest widget container's text. This helps the conscientious student;
+     * it cannot recover a conversation after a cache clear — that needs the
+     * server-side session_id -> embed_chats capture (separate, planned).
+     */
+    downloadConversation() {
+        const roots = document.querySelectorAll(
+            '[id*="anything-llm"], [class*="anything-llm"], [class*="allm-"]');
+        let text = '';
+        roots.forEach(r => {
+            const t = (r.innerText || '').trim();
+            if (t.length > text.length) text = t;  // the chat window has the most text
+        });
+
+        if (!text || text.length < 5) {
+            alert('Could not read the conversation automatically. Please open the chat '
+                + 'and copy the messages into your submission manually.');
+            return;
+        }
+
+        const access = JSON.parse(sessionStorage.getItem('chatbot_access') || '{}');
+        const student = (typeof BookingAPI !== 'undefined' && BookingAPI.getStudent()) || {};
+        const header = 'CloudCore Networks — interview transcript\n'
+            + `Employee: ${access.employeeId || this.employeeId || ''}\n`
+            + `Student: ${student.email || ''}\n`
+            + `Downloaded: ${new Date().toLocaleString()}\n`
+            + '\n----------------------------------------\n\n';
+
+        const blob = new Blob([header + text], { type: 'text/plain' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `cloudcore-interview-${access.employeeId || 'chat'}-`
+            + `${new Date().toISOString().slice(0, 10)}.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(a.href);
     },
 
     /**
