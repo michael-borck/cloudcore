@@ -69,7 +69,7 @@ BACKSTORY_MAP = {
     "dr_amina_chowdhury": "chief_technology_officer_dr_amina_chowdhury.md",
     "jessica_lin": "client_small_business_jessica_lin.md",
     "samuel_torres": "security_compliance_officer_samuel_torres.md",
-    "elena_chu": "client_hellana_industries_elana_chu.md",
+    "elena_chu": "client_helena_industries_elena_chu.md",
     "david_wilson": "david_wilson_cloud_infrastructure_architect.md",
     "raj_patel": "raj_patel_it_manager.md",
     "aisha_rahman": "aisha_rahman_cfo.md",
