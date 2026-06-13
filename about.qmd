@@ -39,7 +39,7 @@ Founded in 2019, CloudCore Networks emerged from a vision to provide enterprise-
 ![](assets/mark_gonzalez.webp){ .rounded }
 
 **Mark Gonzalez**  
-*Chief Technology Officer*
+*Chief Information Officer*
 
 Cloud architecture expert with 15+ years experience. AWS and Azure certified solutions architect. 
 :::

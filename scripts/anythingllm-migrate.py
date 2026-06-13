@@ -81,7 +81,7 @@ BACKSTORY_MAP = {
     "sophia_martines": "sophia_martines_ciso.md",
     "lisa_chen": "lisa_chen_cmo.md",
     "tom_bradley": "tom_bradley_marketing_manager.md",
-    "mark_gonzalez": "mark_gonzalez_cto.md",
+    "mark_gonzalez": "mark_gonzalez_cio.md",
     "sarah_thompson": "sarah_thompson_coo.md",
     "marcell_ziemann": "marcell_ziemann_ceo.md",
 }
