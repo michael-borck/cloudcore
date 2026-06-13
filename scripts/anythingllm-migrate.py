@@ -23,8 +23,13 @@ from datetime import datetime
 # Configuration
 # ============================================================================
 
-API_KEY = "REDACTED-KEY-ROTATED"
-BASE_URL = "https://chat.eduserver.au/api/v1"
+# Admin credential for the AnythingLLM management API — NOT used by the published
+# site (that embeds a public widget id). Export before running:
+#   export ANYTHINGLLM_API_KEY=...   (AnythingLLM -> Settings -> API Keys)
+API_KEY = os.environ.get("ANYTHINGLLM_API_KEY", "")
+if not API_KEY:
+    raise SystemExit("Set ANYTHINGLLM_API_KEY in the environment before running.")
+BASE_URL = os.environ.get("ANYTHINGLLM_BASE_URL", "https://chat.eduserver.au/api/v1")
 BOTS_DIR = Path("chatbots/bots")
 BACKSTORIES_DIR = Path("chatbots/_backstories")
 
@@ -207,6 +212,7 @@ def phase3_create_workspaces():
                 "openAiTemp": 0.7,
                 "openAiHistory": 20,
                 "chatMode": "query",
+                "similarityThreshold": 0,
                 "topN": 8,
             })
 

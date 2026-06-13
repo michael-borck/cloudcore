@@ -421,10 +421,17 @@ function showProtectedContent() {
 }
 
 // Public holidays when access is restricted (same as weekends)
+// Western Australia public holidays
 const PUBLIC_HOLIDAYS = [
+    '2026-01-01', // New Year's Day
+    '2026-01-26', // Australia Day
+    '2026-03-02', // Labour Day (WA)
     '2026-04-03', // Good Friday
     '2026-04-06', // Easter Monday
-    '2026-05-27', // Reconciliation Day
+    '2026-06-01', // Western Australia Day
+    '2026-09-28', // King's Birthday (WA)
+    '2026-12-25', // Christmas Day
+    '2026-12-28', // Boxing Day (observed — 26 Dec falls on Saturday)
 ];
 
 /**

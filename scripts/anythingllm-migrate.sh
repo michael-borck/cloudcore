@@ -10,8 +10,10 @@
 
 set -e
 
-API_KEY="REDACTED-KEY-ROTATED"
-BASE_URL="https://chat.eduserver.au/api/v1"
+# Admin credential for the AnythingLLM management API (not used by the published
+# site). Export ANYTHINGLLM_API_KEY before running — see the .py variant.
+API_KEY="${ANYTHINGLLM_API_KEY:?Set ANYTHINGLLM_API_KEY in the environment}"
+BASE_URL="${ANYTHINGLLM_BASE_URL:-https://chat.eduserver.au/api/v1}"
 BOTS_DIR="chatbots/bots"
 BACKSTORIES_DIR="chatbots/_backstories"
 
