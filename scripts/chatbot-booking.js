@@ -488,6 +488,9 @@ const ChatbotBooking = {
 
         // Show the chat widget
         this.showChatWidget();
+
+        // Link this student to the widget's chat session once it has spun up.
+        setTimeout(() => this.recordChatSession(), 5000);
     },
 
     /**
@@ -523,37 +526,79 @@ const ChatbotBooking = {
     },
 
     /**
-     * Download the current conversation as a text file.
-     *
-     * Best-effort: the AnythingLLM widget renders into the light DOM, so we grab
-     * the richest widget container's text. This helps the conscientious student;
-     * it cannot recover a conversation after a cache clear — that needs the
-     * server-side session_id -> embed_chats capture (separate, planned).
+     * Link this chat to the student so their transcript is retrievable by email
+     * later (durable, survives a cache clear). The AnythingLLM widget stores its
+     * session id at localStorage `allm_{embedId}_session_id`.
      */
-    downloadConversation() {
+    recordChatSession() {
+        try {
+            const script = this.chatWidgetScript || document.querySelector('script[data-embed-id]');
+            const embedId = script && (script.dataset ? script.dataset.embedId
+                                                       : script.getAttribute('data-embed-id'));
+            if (!embedId) return;
+            const sessionId = localStorage.getItem('allm_' + embedId + '_session_id');
+            if (!sessionId) return;
+
+            const access = JSON.parse(sessionStorage.getItem('chatbot_access') || '{}');
+            const student = (typeof BookingAPI !== 'undefined' && BookingAPI.getStudent()) || {};
+            const email = student.email || access.email;
+            if (!email) return;
+
+            BookingAPI.recordSession({
+                student_email: email,
+                employee_id: this.employeeId || access.employeeId,
+                embed_id: embedId,
+                session_id: sessionId,
+                appointment_id: access.appointmentId || null
+            }).catch(() => {});
+        } catch (e) { /* non-fatal */ }
+    },
+
+    /**
+     * Download the conversation. Preferred path: pull the durable transcript from
+     * the server by email (survives a cache clear). Falls back to grabbing the
+     * widget's on-screen text if the server has nothing yet.
+     */
+    async downloadConversation() {
+        const access = JSON.parse(sessionStorage.getItem('chatbot_access') || '{}');
+        const student = (typeof BookingAPI !== 'undefined' && BookingAPI.getStudent()) || {};
+        const email = student.email || access.email;
+
+        this.recordChatSession();  // make sure this session is linked first
+
+        if (email && typeof BookingAPI !== 'undefined') {
+            try {
+                const conv = await BookingAPI.getConversation(email, this.employeeId);
+                if (conv && conv.transcript && conv.transcript.trim().length > 0) {
+                    this._downloadText(conv.transcript, access, email);
+                    return;
+                }
+            } catch (e) { /* fall through to the on-screen grab */ }
+        }
+
+        // Fallback: whatever is visible in the widget right now.
         const roots = document.querySelectorAll(
             '[id*="anything-llm"], [class*="anything-llm"], [class*="allm-"]');
         let text = '';
         roots.forEach(r => {
             const t = (r.innerText || '').trim();
-            if (t.length > text.length) text = t;  // the chat window has the most text
+            if (t.length > text.length) text = t;
         });
-
         if (!text || text.length < 5) {
-            alert('Could not read the conversation automatically. Please open the chat '
-                + 'and copy the messages into your submission manually.');
+            alert('Could not retrieve your conversation yet. If you have just chatted, '
+                + 'wait a moment and try again, or copy the messages in manually.');
             return;
         }
+        this._downloadText(text, access, email);
+    },
 
-        const access = JSON.parse(sessionStorage.getItem('chatbot_access') || '{}');
-        const student = (typeof BookingAPI !== 'undefined' && BookingAPI.getStudent()) || {};
+    _downloadText(body, access, email) {
         const header = 'CloudCore Networks — interview transcript\n'
             + `Employee: ${access.employeeId || this.employeeId || ''}\n`
-            + `Student: ${student.email || ''}\n`
+            + `Student: ${email || ''}\n`
             + `Downloaded: ${new Date().toLocaleString()}\n`
             + '\n----------------------------------------\n\n';
-
-        const blob = new Blob([header + text], { type: 'text/plain' });
+        const blob = new Blob([header + body], { type: 'text/plain' });
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
         a.download = `cloudcore-interview-${access.employeeId || 'chat'}-`
@@ -568,6 +613,7 @@ const ChatbotBooking = {
      * End the current session
      */
     async endSession() {
+        this.recordChatSession();  // capture the session link before they leave
         const stored = sessionStorage.getItem('chatbot_access');
         if (stored) {
             try {

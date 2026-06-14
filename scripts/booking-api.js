@@ -135,6 +135,26 @@ const BookingAPI = {
     },
 
     /**
+     * Link the student to the AnythingLLM embed session they're using, so their
+     * transcript can be retrieved later by email.
+     */
+    async recordSession(payload) {
+        return this.request('/conversations/record', {
+            method: 'POST',
+            body: JSON.stringify(payload)
+        });
+    },
+
+    /**
+     * Fetch a student's stored transcript(s) from AnythingLLM by email.
+     */
+    async getConversation(email, employeeId = '') {
+        const q = `email=${encodeURIComponent(email)}` +
+                  (employeeId ? `&employee_id=${encodeURIComponent(employeeId)}` : '');
+        return this.request(`/conversations?${q}`);
+    },
+
+    /**
      * Offer-3: propose several times; the office confirms one.
      * @param {string} employeeId
      * @param {string[]} proposedTimes - datetime-local strings (local = sim timezone)
