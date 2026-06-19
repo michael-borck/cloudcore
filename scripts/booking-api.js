@@ -147,11 +147,24 @@ const BookingAPI = {
 
     /**
      * Fetch a student's stored transcript(s) from AnythingLLM by email.
+     * STAFF-ONLY (needs the analytics key) — for grading/recovery, not students.
      */
     async getConversation(email, employeeId = '') {
         const q = `email=${encodeURIComponent(email)}` +
                   (employeeId ? `&employee_id=${encodeURIComponent(employeeId)}` : '');
         return this.request(`/conversations?${q}`);
+    },
+
+    /**
+     * Student self-download: fetch transcripts for the (embed, session) pairs the
+     * browser holds. No key — possession of the session id is the credential.
+     * Sent in the body so session ids don't land in server logs.
+     */
+    async conversationsBySessions(sessions) {
+        return this.request('/conversations/by-sessions', {
+            method: 'POST',
+            body: JSON.stringify({ sessions })
+        });
     },
 
     /**

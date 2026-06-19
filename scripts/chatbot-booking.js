@@ -260,7 +260,7 @@ const ChatbotBooking = {
                         border-radius: 6px;
                         font-size: 13px;
                         cursor: pointer;
-                    ">Download conversation</button>
+                    ">Download my conversations</button>
                     <button onclick="ChatbotBooking.endSession()" style="
                         margin-top: 15px;
                         padding: 8px 16px;
@@ -555,28 +555,92 @@ const ChatbotBooking = {
     },
 
     /**
-     * Download the conversation. Preferred path: pull the durable transcript from
-     * the server by email (survives a cache clear). Falls back to grabbing the
-     * widget's on-screen text if the server has nothing yet.
+     * Every AnythingLLM session this browser holds — one per chatbot the student
+     * has used. The localStorage key is `allm_{embedId}_session_id`.
+     */
+    sweepSessions() {
+        const out = [];
+        for (let i = 0; i < localStorage.length; i++) {
+            const k = localStorage.key(i);
+            const m = k && k.match(/^allm_(.+)_session_id$/);
+            if (m) {
+                const sid = localStorage.getItem(k);
+                if (sid) out.push({ embed_id: m[1], session_id: sid });
+            }
+        }
+        return out;
+    },
+
+    /**
+     * Download conversations. Pulls the durable transcript(s) from the server by
+     * the session ids this browser holds (a student can only ever fetch their own
+     * sessions). One conversation → download it; several → show a chooser with
+     * "download all" + per-conversation links. Falls back to the on-screen text.
      */
     async downloadConversation() {
+        this.recordChatSession();  // make sure the current session is linked first
+
+        const pairs = this.sweepSessions();
+        if (pairs.length === 0) return this._downloadOnScreen();
+
+        let data;
+        try {
+            data = await BookingAPI.conversationsBySessions(pairs);
+        } catch (e) {
+            return this._downloadOnScreen();
+        }
+        const sessions = (data && data.sessions) || [];
+        if (sessions.length <= 1) {
+            this._downloadText(data.transcript || '', {}, this._email());
+            return;
+        }
+        this._showChooser(sessions, data.transcript);
+    },
+
+    _showChooser(sessions, combined) {
+        this._chooserData = { sessions, combined };
+        const host = document.getElementById('active-session') || document.body;
+        let panel = document.getElementById('conversation-chooser');
+        if (!panel) {
+            panel = document.createElement('div');
+            panel.id = 'conversation-chooser';
+            panel.style.cssText = 'margin-top:15px;padding:12px;background:#f8f9fa;'
+                + 'border-radius:8px;text-align:left;';
+            host.appendChild(panel);
+        }
+        let html = '<strong>Your conversations</strong>'
+            + '<div style="margin:10px 0;"><button onclick="ChatbotBooking._downloadCombined()" '
+            + 'style="padding:6px 12px;background:#667eea;color:#fff;border:none;border-radius:6px;'
+            + `cursor:pointer;">Download all (${sessions.length})</button></div>`
+            + '<ul style="list-style:none;padding:0;margin:0;">';
+        sessions.forEach((s, i) => {
+            html += `<li style="padding:4px 0;"><a href="#" onclick="ChatbotBooking._downloadOne(${i});return false;">`
+                + `${this.escapeHtml(s.employee_name)}</a> <span style="color:#888;font-size:12px;">`
+                + `(${s.turns.length} messages)</span></li>`;
+        });
+        panel.innerHTML = html + '</ul>';
+    },
+
+    _downloadCombined() {
+        if (this._chooserData) this._downloadText(this._chooserData.combined, {}, this._email());
+    },
+
+    _downloadOne(i) {
+        const s = this._chooserData && this._chooserData.sessions[i];
+        if (!s) return;
+        const body = s.turns.map(t =>
+            (String(t.role).toLowerCase() === 'user' ? 'Student' : s.employee_name)
+            + ': ' + t.content).join('\n');
+        this._downloadText(`=== ${s.employee_name} ===\n${body}`, {}, this._email());
+    },
+
+    _email() {
         const access = JSON.parse(sessionStorage.getItem('chatbot_access') || '{}');
         const student = (typeof BookingAPI !== 'undefined' && BookingAPI.getStudent()) || {};
-        const email = student.email || access.email;
+        return student.email || access.email || '';
+    },
 
-        this.recordChatSession();  // make sure this session is linked first
-
-        if (email && typeof BookingAPI !== 'undefined') {
-            try {
-                const conv = await BookingAPI.getConversation(email, this.employeeId);
-                if (conv && conv.transcript && conv.transcript.trim().length > 0) {
-                    this._downloadText(conv.transcript, access, email);
-                    return;
-                }
-            } catch (e) { /* fall through to the on-screen grab */ }
-        }
-
-        // Fallback: whatever is visible in the widget right now.
+    _downloadOnScreen() {
         const roots = document.querySelectorAll(
             '[id*="anything-llm"], [class*="anything-llm"], [class*="allm-"]');
         let text = '';
@@ -585,11 +649,11 @@ const ChatbotBooking = {
             if (t.length > text.length) text = t;
         });
         if (!text || text.length < 5) {
-            alert('Could not retrieve your conversation yet. If you have just chatted, '
-                + 'wait a moment and try again, or copy the messages in manually.');
+            alert('No saved conversations found in this browser. If you cleared your '
+                + 'cache, ask your lecturer to retrieve them for you.');
             return;
         }
-        this._downloadText(text, access, email);
+        this._downloadText(text, {}, this._email());
     },
 
     _downloadText(body, access, email) {
