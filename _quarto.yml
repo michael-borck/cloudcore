@@ -10,6 +10,8 @@ project:
 website:
   title: "CloudCore Networks"
   navbar:
+    logo: assets/logo.svg
+    logo-alt: "CloudCore Networks"
     left:
       - text: Home
         href: index.qmd
@@ -48,7 +50,7 @@ website:
       - text: Contact Us
         href: contact.qmd
   page-footer:
-    background: "#2c3e50"
+    background: "#0f172a"
     left: |
       **CloudCore Networks**  
       Enterprise cloud infrastructure solutions  
@@ -74,6 +76,8 @@ format:
     css: styles.css
     toc: true
     include-in-header:
+      - text: |
+          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
       - text: |
           <script src="/scripts/config.js"></script>
           <script src="/scripts/simple-timeline-access.js"></script>
