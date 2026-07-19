@@ -14,3 +14,7 @@ __pycache__/
 
 # Instructor-only material — must never be pushed to the public repo
 _instructor/
+
+# Character persona ground-truth — students must discover this by interviewing
+# the bots, not by reading the repo. Public repo: must stay untracked.
+chatbots/_backstories/
