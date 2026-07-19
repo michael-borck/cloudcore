@@ -12,7 +12,7 @@ title: Asset Management
 | **Title**    | Asset Management             |
 | **Doc#**     | POL-ITMA-009 |
 | **Version**  | 1.0                                 |
-| **Date**     | 19-04-2023                              |
+| **Date**     | 19-04-2024                              |
 
 # Asset Inventory Management
 

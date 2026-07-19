@@ -14,7 +14,7 @@ title: Third Party Security, Vendor Risk Management and Systems/Services Acquisi
 | **Title**    | Third Party Security, Vendor Risk Management and Systems/Services Acquisition             |
 | **Doc#**     | POL-RISK-005 |
 | **Version**  | 1.0                                 |
-| **Date**     | 10-06-2023                              |
+| **Date**     | 10-06-2024                              |
 
 CloudCore makes every effort to assure all third party organisations are
 compliant and do not compromise the integrity, security, and privacy of

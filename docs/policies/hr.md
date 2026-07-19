@@ -13,7 +13,7 @@ title: HR and Personnel Security
 | **Title**    | HR and Personnel Security             |
 | **Doc#**     | POL-HUMA-017 |
 | **Version**  | 1.0                                 |
-| **Date**     | 21-09-2023                              |
+| **Date**     | 21-09-2024                              |
 
 CloudCore is committed to ensuring all workforce members actively address
 security and compliance in their roles at CloudCore. We encourage self management

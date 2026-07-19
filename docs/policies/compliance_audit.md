@@ -14,7 +14,7 @@ title: Compliance Audits and External Communications
 | **Title**    | Compliance Audits and External Communications             |
 | **Doc#**     | POL-ITMA-001 |
 | **Version**  | 1.0                                 |
-| **Date**     | 14-09-2023                              |
+| **Date**     | 14-09-2024                              |
 
 CloudCore may be requested occasionally to share additional details regarding its
 compliance, privacy and security program by an external entity such as a

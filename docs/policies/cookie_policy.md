@@ -13,7 +13,7 @@ title: Cookie Policy
 | **Title**    | Cookie Policy             |
 | **Doc#**     | POL-PRIV-018 |
 | **Version**  | 1.0                                 |
-| **Date**     | 18-12-2023                              |
+| **Date**     | 18-12-2024                              |
 
 We at CloudCore (CloudCore and our subsidiaries and affiliates) are committed to
 protecting your privacy. We and our partners use cookies and similar

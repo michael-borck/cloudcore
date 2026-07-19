@@ -1,0 +1,61 @@
+---
+title: "Network Architecture — Reference Design"
+---
+
+*Reference network architecture for the CloudCore production environment (Perth primary site). Prepared by CloudCore Infrastructure Engineering. Reviewed 29-06-2026.*
+
+## Network architecture
+
+```{mermaid}
+flowchart TB
+    Internet(["Internet<br/>Clients · Partners"])
+
+    subgraph SITE ["CloudCore Network"]
+      direction TB
+      EDGE["Edge Router"]
+
+      subgraph DMZ ["DMZ — 10.10.10.0/24"]
+        VPN["VPN Concentrator"]
+        WEB["Public Web / Portal"]
+        ERRDB[("Customer Database")]
+      end
+
+      subgraph APP ["Application VLAN — 10.10.20.0/24"]
+        APPS["App Servers<br/>(DataVault / Analytics Pro / CloudSync)"]
+        DB2[("Customer DB Replica")]
+      end
+
+      subgraph MGMT ["Management VLAN"]
+        JUMP["Jump Host"]
+        ADM["Admin Workstations"]
+        BKP[("Backup Server")]
+      end
+    end
+
+    Internet --> EDGE
+    EDGE --> DMZ
+    EDGE --> APP
+    EDGE --> MGMT
+
+    VPN --> WEB
+    WEB --> ERRDB
+    WEB --> APPS
+    APPS --> DB2
+    APPS --> ERRDB
+
+    JUMP --> DMZ
+    JUMP --> APP
+    ADM --> JUMP
+    JUMP --> BKP
+    APP --> BKP
+    DMZ --> BKP
+```
+
+## Design notes
+
+- The customer database is hosted within the DMZ to give the public web portal and partner integrations low-latency, direct access.
+- A shared management VLAN lets the jump host and admin workstations reach every segment without re-authenticating between zones.
+- Application and database services share a single internal VLAN (`10.10.20.0/24`) to keep routing simple.
+- Backups are written from both the application and DMZ segments to a central backup server for consolidated retention.
+
+*Currency: AUD. Reviewed 29-06-2026.*

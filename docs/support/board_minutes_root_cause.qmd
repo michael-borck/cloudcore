@@ -1,0 +1,73 @@
+---
+title: "Minutes — Board of Directors Meeting (Extract): CCN-BR-0925"
+categories:
+  - Governance
+  - Incident Response
+description: "Extract of board minutes discussing the September 2025 data breach and root-cause position."
+---
+
+|              |                                              |
+|--------------|----------------------------------------------|
+| **Document** | Board of Directors — Minutes (Extract)       |
+| **Meeting** | Ordinary Board Meeting                       |
+| **Company** | CloudCore Networks Pty Ltd                   |
+| **Date** | 26-09-2025                                   |
+| **Location** | Level 4, 11 Newcastle Street, Perth WA 6000 (Boardroom) |
+| **Chair** | Marcell Ziemann (CEO)                        |
+| **Classification** | Confidential — Board               |
+
+## Attendees
+
+- **Marcell Ziemann** — CEO (Chair)
+- **Aisha Rahman** — CFO
+- **Sarah Thompson** — COO
+- Non-executive directors: D. Halloran, P. Whitcombe, R. Iyer
+- **In attendance:** Sophia Martines (CISO), Emily Chen (Head of Compliance), Gerald Whitfield (Meridian Assurance — item 7 only)
+
+## Extract — Item 7: Data Security Incident (CCN-BR-0925)
+
+**7.1** The Chair tabled an update on the data security incident detected on
+12-09-2025. The CISO, Ms Martines, summarised the position: unauthorised access
+to the customer database had been identified and contained; approximately
+250,000 customer records were assessed as affected.
+
+**7.2 Root cause.** After discussion, the Board **accepted management's
+characterisation of the incident as an isolated social-engineering failure** —
+namely, a successful phishing attack against a single administrator, leading to
+credential compromise. The Board noted that this aligns with the public
+communications issued 13–18 September 2025 and recorded its view that the
+incident did **not** reflect a systemic control failure.
+
+**7.3 Scope of review.** The Board **declined** a motion (proposed by
+non-executive director R. Iyer, seconded by P. Whitcombe) to commission an
+independent external review of the incident. The Board accepted Ms Martines'
+recommendation that the matter be handled through the existing internal
+investigation process.
+
+**7.4 Firewall and network controls.** The Board noted the Networks Team's
+traffic analysis (dated 22-09-2025), which found no segmentation breach or
+rule-set drift, and recorded satisfaction that network controls were **not** a
+contributing factor.
+
+**7.5 Regulatory and reputational.** The Board noted Ms Chen's advice on
+notification obligations and directed that the company continue to describe the
+incident publicly as a targeted phishing attack.
+
+**7.6 ISO 27001 certification.** The Board reaffirmed the company's position as
+ISO 27001 certified and noted that the certification remains valid; the incident
+does not, in management's view, require re-certification activity.
+
+## Resolutions
+
+1. The root cause of incident CCN-BR-0925 is recorded as an isolated
+   social-engineering (phishing) failure against a single administrator account.
+2. No independent external review will be commissioned at this time.
+3. Public communications will continue to describe the incident as a targeted
+   phishing attack.
+
+*Minutes confirmed as a true and correct record.*
+
+---
+
+*Extract prepared 26-09-2025. Full minutes held in the company secretariat.
+Classification: Confidential — Board.*

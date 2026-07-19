@@ -14,7 +14,7 @@ title: Secure Software Development and Product Security
 | **Title**    | Secure Software Development and Product Security             |
 | **Doc#**     | POL-ITMA-020 |
 | **Version**  | 1.0                                 |
-| **Date**     | 14-11-2023                              |
+| **Date**     | 14-11-2024                              |
 
 CloudCore development team follows the latest security best practices when
 developing software, and automates security testing throughout development

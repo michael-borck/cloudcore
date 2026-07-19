@@ -1,0 +1,66 @@
+---
+title: "Organisational Chart — Current Structure (Authoritative)"
+---
+
+*Authoritative current organisational structure (2026). Suits **ISYS6018** (security accountability & segregation of duties), **ISYS2002 / ISAD5001** (stakeholder mapping), and **ISYS6020** (executive decision authority). Reviewed 29-06-2026.*
+
+::: {.callout-note appearance="simple"}
+This is the **current, authoritative** org chart for CloudCore Networks. It reflects the post-2023 executive structure: a single CEO with five C-suite direct reports (CTO, CIO, CFO, CISO, COO) plus the CMO and Head of Compliance. The CISO reports **directly to the CEO** (independent of IT) with a dotted line to the board audit committee.
+:::
+
+## Current organisational structure — 2026
+
+```{mermaid}
+flowchart TB
+    CEO["Marcell Ziemann<br/>Chief Executive Officer"]
+
+    CEO --> CTO["Dr Amina Chowdhury<br/>Chief Technology Officer<br/>(CSMP initiative)"]
+    CEO --> CIO["Mark Gonzalez<br/>Chief Information Officer"]
+    CEO --> CFO["Aisha Rahman<br/>Chief Financial Officer"]
+    CEO --> CISO["Sophia Martines<br/>Chief Information Security Officer"]
+    CEO --> COO["Sarah Thompson<br/>Chief Operating Officer"]
+    CEO --> CMO["Lisa Chen<br/>Chief Marketing Officer"]
+    CEO --> HOC["Emily Chen<br/>Head of Compliance"]
+
+    CTO --> CSMP["CSMP Platform Team"]
+
+    CIO --> DEV["Michael Thompson<br/>Lead Software Developer"]
+    CIO --> ITM["Raj Patel<br/>IT Manager"]
+    CIO --> ARCH["David Wilson<br/>Cloud Infrastructure Architect"]
+    CIO --> OPS["Martin Nguyen<br/>Cloud Service Ops Manager"]
+    CIO --> DATA["Jamal Al-Sayed<br/>Data Analyst"]
+
+    CISO --> SEC["Carlos Mendes<br/>Network Security Specialist"]
+    CISO --> COMP["Samuel Torres<br/>Security Compliance Officer"]
+
+    COO --> SUP["Samantha Wong<br/>Customer Support Lead"]
+    COO --> HR["Karen Lee<br/>HR Manager"]
+
+    CMO --> MKT["Tom Bradley<br/>Marketing Manager"]
+
+    CISO -. dotted line .-> BOARD["Board Audit Committee"]
+    HOC -. works closely with .-> CISO
+
+    classDef cSuite fill:#1f3a5f,color:#fff,stroke:#0f2238,stroke-width:1px;
+    classDef head fill:#2e6da4,color:#fff,stroke:#1f4e79,stroke-width:1px;
+    class CEO,CTO,CIO,CFO,CISO,COO,CMO,HOC cSuite;
+    class DEV,ITM,ARCH,OPS,DATA,SEC,COMP,SUP,HR,MKT,CSMP head;
+```
+
+## Reporting lines & accountability
+
+| Executive | Reports to | Direct remit |
+|-----------|-----------|--------------|
+| **Dr Amina Chowdhury** — CTO | CEO | Technology strategy & architecture; CSMP platform direction |
+| **Mark Gonzalez** — CIO | CEO | IT operations, cloud infrastructure, internal platforms, engineering |
+| **Aisha Rahman** — CFO | CEO | Finance, budgeting, financial risk & ROI |
+| **Sophia Martines** — CISO | CEO (dotted line to board audit committee) | Security strategy, governance, risk & compliance oversight |
+| **Sarah Thompson** — COO | CEO | Service delivery, customer support, HR, operational efficiency |
+| **Lisa Chen** — CMO | CEO | Marketing & brand |
+| **Emily Chen** — Head of Compliance | CEO (partners with CISO) | Regulatory compliance, internal & external audit liaison |
+
+::: {.callout-important appearance="simple"}
+**Segregation-of-duties note for auditors.** The CISO is **independent of the CIO/CTO** (direct CEO line), which is the intended control design. The Head of Compliance also reports to the CEO but operationally partners with the CISO — auditors should confirm this collaboration is documented, not assumed.
+:::
+
+*Currency: AUD. ~47 staff headcount (note: some internal sources cite a higher figure — this variance is a known documentation inconsistency). Document reviewed 29-06-2026.*

@@ -1,0 +1,76 @@
+---
+title: "Risk Record — Closure: Network Segmentation Ruleset Drift (CCN-RISK-2025-014)"
+categories:
+  - Risk Management
+  - Security
+description: "Risk register record documenting closure of a firewall segmentation risk identified in July 2025."
+---
+
+|              |                                              |
+|--------------|----------------------------------------------|
+| **Document** | Risk Record (Closure)                        |
+| **Risk ID** | CCN-RISK-2025-014                            |
+| **Register** | CloudCore Enterprise Risk Register (DOC-RISK-001) |
+| **Version** | 2.0 (Closed)                                 |
+| **Risk owner** | Networks Specialist — Carlos Mendes        |
+| **Risk raised** | 14-07-2025                                |
+| **Risk closed** | 28-08-2025                                |
+| **Closure status** | Accepted — No Further Action           |
+
+## 1. Risk Description
+
+**As originally raised (14-07-2025):**
+
+> Potential drift between the documented network architecture and the live rule
+> set on the Malaga primary data-centre internal firewall (CCN-FW-CORE-01),
+> specifically the segmentation rule governing traffic between the administrative
+> VPN segment and the customer-data zone (hosting DB-Server-01). Stale or
+> overly-permissive rules in this zone could permit lateral movement from a
+> compromised administrative account to the customer database.
+
+| Field | Value at raising |
+|---|---|
+| Inherent likelihood | Medium |
+| Inherent impact | High |
+| Inherent rating | **High** |
+| Existing controls | Perimeter firewall; admin VPN; MFA on admin accounts |
+
+## 2. Assessment and Treatment
+
+The risk was reviewed by the Networks team in conjunction with the CISO. The
+following treatment was determined:
+
+| Field | Value |
+|---|---|
+| Treatment option | **Accept** |
+| Rationale | Rule set reviewed against the 2025 architecture diagram; reviewed sample judged current and consistent with operational requirements. No changes required at this time. |
+| Residual likelihood | Low |
+| Residual impact | High |
+| **Residual rating** | **Medium → Accepted** |
+
+::: {.callout-note appearance="simple"}
+**Reviewer comment (28-08-2025):** "Core rule set reviewed during the July change
+window. Rules align with current segmentation model. Treating as accepted; will
+re-examine at the next semi-annual review." — C. Mendes, Networks Specialist.
+:::
+
+## 3. Closure
+
+| Field | Detail |
+|---|---|
+| Date closed | 28-08-2025 |
+| Closed by | Carlos Mendes (Networks Specialist) |
+| Approved by | Sophia Martines (CISO) |
+| Closure disposition | **Accepted — No Further Action** |
+| Next review | Semi-annual firewall review (scheduled 02-2026) |
+| Linked change requests | None |
+
+## 4. Sign-off
+
+The risk is recorded as **CLOSED** in the Enterprise Risk Register as of
+28-08-2025. No compensating or corrective actions remain open against this record.
+
+---
+
+*Record extracted from the CloudCore Enterprise Risk Register (DOC-RISK-001).
+Closure approved 28-08-2025.*

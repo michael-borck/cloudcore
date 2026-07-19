@@ -1,0 +1,133 @@
+---
+title: "AI Governance Considerations"
+description: "The responsible-AI obligations and risks CloudCore Networks must govern — Australian Privacy Principles, the Notifiable Data Breaches scheme, human-in-the-loop, model risk and vendor risk — applied to its candidate AI use-cases."
+categories:
+  - AI Strategy
+  - ISYS6020
+  - Governance
+---
+
+::: {callout-note}
+## ISYS6020 — should we, responsibly?
+
+A positive NPV is necessary but not sufficient. This page covers the obligations and risks that apply to CloudCore's AI ambitions **regardless of payback** — because the company that asks these questions is the same one that, in September 2025, detected a breach of ~250,000 records only after prolonged unauthorised access. For CloudCore, AI governance is not hypothetical: the failure mode it guards against has already happened.
+:::
+
+## 1. Why governance is the gate, not the afterthought
+
+Two facts frame everything below:
+
+1. **CloudCore processes personal and commercial data for ~500 clients**, much of it in regulated sectors (healthcare, finance) visible in the customer dataset. AI that touches this data inherits every obligation CloudCore already carries — plus new ones.
+2. **The company's controls were recently found wanting.** The public breach account cites phishing and compromised credentials; the internal account is a six-factor failure including delayed detection. Either way, a governance framework that the company could not reliably *operate* under load is a fragile foundation for automated decision-making.
+
+The discipline this page applies is simple: **govern the decision, not just the model.** An AI system that is technically excellent but makes an unlawful, unfair or unexplainable decision about a customer is a liability, not an asset.
+
+## 2. Australian privacy law & the Notifiable Data Breaches scheme
+
+CloudCore is an **Australian APP entity** under the *Privacy Act 1988* (Cth) and must comply with the **13 Australian Privacy Principles (APPs)**. The principles most load-bearing for AI are:
+
+| APP | Obligation | Why it bites AI |
+|---|---|---|
+| **APP 1** | Openly manage personal information; have a clear privacy policy | An AI system that uses personal data is part of "information handling" and must be reflected in policy |
+| **APP 3** | Only collect personal information reasonably necessary; collect lawfully and fairly | Scraping or re-purposing client data to train a model is a *collection* act |
+| **APP 5** | Notify individuals of collection, including purpose | "Train a churn model" is a purpose that may need disclosure |
+| **APP 6** | Use/disclose personal information only for the purpose collected, unless an exception applies | **Secondary use of data to train AI is a key risk** — re-purposing needs a lawful basis |
+| **APP 7** | Direct-marketing rules | A churn model that triggers retention offers can stray into direct-marketing rules |
+| **APP 8** | Cross-border disclosure accountability | Routing inference through an overseas SaaS path is a disclosure — central to the RAG build-vs-buy decision |
+| **APP 11** | Take reasonable steps to protect personal information | Security of the model, its training data and its outputs |
+| **APP 13** | Correct inaccurate personal information | A wrong prediction or profile must be correctable |
+
+::: {callout-warning}
+**The Notifiable Data Breaches (NDB) scheme.** Under Part IIIC of the Act, an "eligible data breach" — unauthorised access to or loss of personal information likely to cause *serious harm* — must be notified to the OAIC and affected individuals. An AI system that *exposes* personal data (a leaky model, a prompt-injection on a RAG system, a mis-routed ticket) can itself create an eligible data breach. CloudCore has already lived one NDB event; an AI programme multiplies the surface area.
+:::
+
+Beyond the Act, two voluntary-but-influential frameworks shape what "good" looks like in 2026:
+
+- **Australia's AI Ethics Principles** (8 principles: human/social wellbeing, fairness, privacy, reliability/safety, transparency/explainability, contestability, accountability, sustainability).
+- **The Voluntary AI Safety Standard** (10 guardrails, 2024) and the progressing policy debate on **mandatory guardrails for high-risk AI**. A defensible CloudCore strategy treats the voluntary standard as the *minimum* and anticipates the mandatory direction.
+
+## 3. Human-in-the-loop — a spectrum, not a switch
+
+The reflex "keep a human in the loop" is too blunt. The right question is **at which point** a human intervenes, and with what authority. A graduated model:
+
+| Level | Automation | Human role | CloudCore example |
+|---|---|---|---|
+| **1 — Inform** | AI suggests only | Human decides, may ignore | RAG policy search (cites sources; human reads) |
+| **2 — Recommend** | AI recommends; human acts | Human reviews before action | Support-triage routing (agent confirms) |
+| **3 — Concur** | AI acts, human confirms in batch | Human samples/audits | Churn-retention prioritisation (manager signs off the list) |
+| **4 — Act with override** | AI acts; human can intervene | Human monitors, can halt | (Not advised for client-affecting decisions yet) |
+| **5 — Autonomous** | AI decides and acts | None | **Do not use** for any decision affecting a customer's data, money or service |
+
+**Mapping the three candidate use-cases:**
+
+- **Support triage → Level 2.** The model routes and drafts; the agent owns the response. Low risk, but ticket text must be screened for personal data before any model that learns from it.
+- **Churn prediction → Level 3, never above.** The model prioritises *which* at-risk clients to contact; a human account manager decides the offer and makes the call. **The model must never auto-cancel, auto-price or auto-communicate.** A false positive that triggers a "we notice you might leave" message to a satisfied client is reputational damage, not a tuning problem.
+- **RAG policy search → Level 1, with a hard refusal rule.** The assistant cites a source document for every answer and, below a confidence threshold, *declines to answer* rather than hallucinate. In a regulated context a confident wrong policy answer is worse than no answer.
+
+::: {callout-important}
+**The contestability requirement (APP & ethics).** Any AI-influenced decision that affects a customer must be **explainable** (what did the model consider?) and **contestable** (can a human override it?). This is why Level 4–5 is excluded for client-affecting decisions at CloudCore's current maturity — the company cannot yet guarantee either property.
+:::
+
+## 4. Model risk management
+
+A model is an asset that *decays*. Four risk classes must be governed through the lifecycle:
+
+- **Validation before release.** Defined training/test splits, documented features, measured performance against a pre-agreed acceptance threshold, and a record of *what the model is bad at* (failure modes), not just its average score.
+- **Drift after release.** Customer behaviour, product mix and threat patterns change; a churn model trained on 2026 data silently degrades. Monitoring for data and concept drift is mandatory, with a retraining cadence.
+- **Bias and fairness.** A churn or pricing model that systematically disadvantages a region, industry or company size is both an ethics failure and a legal exposure. Fairness testing across the dataset's `region` and `industry` dimensions is a baseline control.
+- **Robustness & security.** Prompt-injection and data-poisoning are real attack surfaces — especially salient for a company that was breached via a third-party vulnerability. Models handling free text (`ticket_text`, `review_text`) need input sanitisation and adversarial testing.
+
+::: {callout-tip}
+**Make the model-risk policy explicit.** CloudCore already has a [security-architecture / operating-model policy](../policies/model.md). Extending it with an AI-specific addendum — acceptance criteria, monitoring, a model registry, and a retirement process — is item 5 in the [technology-landscape roadmap](technology-landscape.qmd#4-prioritised-remediation-roadmap) and is cheap relative to the risk it contains.
+:::
+
+## 5. Use-case risk register
+
+| Use-case | Top governance risk | Primary control | Residual risk |
+|---|---|---|---|
+| Support triage | Personal data in ticket text leaking into a vendor model | Mask PII pre-inference; AU-resident or DPA-covered vendor; Level 2 HITL | Low |
+| Churn prediction | Unlawful secondary use of customer data; unfair targeting; direct-marketing breach | APP 5/6 disclosure; fairness testing by region/industry; Level 3 HITL; explicit retention-offer governance | Medium |
+| RAG policy search | Hallucinated policy advice acted upon; access-control bypass | Mandatory citation + refusal below threshold; access controls mirror source docs; Level 1 HITL | Medium |
+| (Future) Log anomaly | Alert fatigue or missed critical alerts; autonomous response | Detection only — never auto-response; human SOC acts | Medium |
+
+## 6. Vendor & third-party model risk
+
+Most of CloudCore's first AI will be **bought or API-sourced**, not built. That shifts risk to procurement and contracts:
+
+- **Data residency (APP 8).** Does inference run in Australia? Post-breach, an overseas inference path for internal policy or customer data is a governance regression. This is the decisive factor in the [RAG build decision](ai-cost-benefit.qmd#5-case-c-rag-policy-knowledge-search-where-governance-beats-economics).
+- **Training-data provenance.** Will the vendor train its foundation model on CloudCore's data? This must be contractually excluded.
+- **Model changes.** A vendor that silently updates its model invalidates the validation CloudCore performed — contracts must require change notification and re-validation rights.
+- **Audit & exit.** SOC 2 / ISO coverage, the right to audit, and a clean data-extraction path on termination.
+
+A vendor that is cheaper but fails any of these is not cheaper — it is unbudgeted risk.
+
+## 7. A lightweight AI-governance operating model
+
+Governance that is not *operated* is decoration (the breach proved this). A minimum viable model for a ~47-person company:
+
+```{mermaid}
+flowchart TD
+    R["AI Risk & Review Forum<br/>(CIO + DPO + Compliance + AI Product Owner)"] --> G
+    G["AI-use intake & classification<br/>low / medium / high risk"] --> A
+    A{"Approval gate"}
+    A -->|low| P["Proceed — Level 1-2 HITL"]
+    A -->|medium| H["HITL + fairness + monitoring plan"]
+    A -->|high| F["Full model-risk assessment<br/>+ exec sign-off"]
+    P --> M["Model registry + monitoring"]
+    H --> M
+    F --> M
+    M --> I{"Incident?"}
+    I -->|yes| IR["AI incident process<br/>→ consider NDB notification"]
+    I -->|no| R2["Periodic review & retirement"]
+```
+
+- **One accountable owner per use-case** (model risk is never "the team's").
+- **An intake question**: *does this decision affect a person's data, money or service?* If yes → high-risk path.
+- **A model registry** recording purpose, data, owner, HITL level, acceptance metrics and review date.
+- **An AI incident process** wired into the existing breach-response process, with a standing question: *could this be an eligible data breach under the NDB scheme?*
+
+## 8. The through-line
+
+Every governance choice above reduces to one principle: **for a company that was breached because controls existed but were not reliably operated, the test of an AI initiative is not whether it is built, but whether the company can prove — to a regulator, a client and its own board — that the decision it makes is lawful, fair, explainable and correctable.**
+
+That test is what separates an AI investment that compounds trust from one that simply expands the attack surface.

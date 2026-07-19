@@ -1,0 +1,91 @@
+---
+title: "MEMORANDUM — Preliminary Assessment: Suspected Insider Involvement (CCN-BR-0925)"
+categories:
+  - Incident Response
+  - Investigations
+description: "Internal investigation memorandum proposing a former contractor as the primary suspect in the September 2025 breach."
+---
+
+|              |                                              |
+|--------------|----------------------------------------------|
+| **Document** | Preliminary Assessment Memorandum            |
+| **Incident** | CCN-BR-0925                                  |
+| **Classification** | Confidential — Investigation       |
+| **From** | Detective Sergeant-style triage note prepared for the Incident Response Team |
+| **To** | Incident Response Lead; CISO (Sophia Martines); HR Manager (Karen Lee) |
+| **Date** | 19-09-2025                                   |
+| **Status** | Working hypothesis — superseded by later findings |
+
+::: {.callout-important appearance="simple"}
+**Assessment (preliminary).** Available indicators are most consistent with
+**malicious action by a former contractor** with privileged database access, rather
+than an external intrusion. Recommend priority focus on Mr Marcus Reilly, contract
+Database Administrator, engaged March–June 2025.
+:::
+
+## 1. Purpose
+
+This memorandum records a preliminary working hypothesis developed during the
+early stages of the investigation into incident **CCN-BR-0925** (unauthorised
+access to the customer database, detected 12-09-2025). It is issued to focus
+evidence-gathering and is **not** a final root-cause determination.
+
+## 2. Indicators Considered
+
+The following observations led the team toward an insider hypothesis:
+
+1. **Privileged database access.** The compromised activity involved direct,
+   high-volume queries against the `customer_data` table on DB-Server-01. Such
+   queries are most naturally executed by an actor already familiar with the
+   schema — i.e. a former DBA — rather than an opportunistic external attacker.
+2. **No external malware recovered.** Forensic imaging of the affected endpoints
+   has not, at the time of writing, recovered a phishing payload or credential
+   harvester. The absence of malware is more consistent with legitimate-credentials misuse.
+3. **Knowledge of schema and export tooling.** The exfiltration script closely
+   mirrors the structure of an internal DataVault export routine that only a small
+   number of engineers, including the former contractor, had previously worked on.
+4. **Timing.** Mr Reilly's contract concluded on 27-06-2025 under circumstances
+   described by HR as "not entirely amicable." The breach occurred approximately
+   eleven weeks later — a pattern sometimes associated with vindictive ex-employees.
+
+## 3. Subject Profile
+
+| Field | Detail |
+|---|---|
+| Name | Marcus T. Reilly |
+| Engagement | Contract Database Administrator (DataVault migration) |
+| Period engaged | 03-03-2025 to 27-06-2025 |
+| Access at exit | `dbo` on `customer_data`; VPN group `contractors-db` |
+| Account status at time of breach | **Disabled** (per HR offboarding 30-06-2025) |
+| Line manager | Jamal Al-Sayed (Data Analyst) |
+
+## 4. Indicative Timeline (Subject's Hypothesised Involvement)
+
+| Date | Event |
+|---|---|
+| 03-03-2025 | Contractor onboarded; DBA access provisioned |
+| 27-06-2025 | Contract concluded |
+| 30-06-2025 | Offboarding checklist initiated; accounts flagged for disablement |
+| 11-09-2025 | Unauthorised access to customer database (per monitoring) |
+| 12-09-2025 | Breach detected by SOC |
+
+## 5. Recommended Actions
+
+1. Seize and preserve Mr Reilly's issued laptop and any removable media (HR to
+   coordinate with Legal).
+2. Review the offboarding log to confirm whether DBA credentials were rotated at
+   exit; flag any gap as a potential access-control failure.
+3. Request telecommunications and access records for the subject for the period
+   28-06-2025 to 13-09-2025.
+4. De-prioritise the phishing/MFA-bypass line of enquiry pending further evidence.
+
+## 6. Caveats
+
+This is a preliminary assessment based on early indicators and should be treated
+as one working hypothesis among several. It is subject to revision as forensic
+evidence matures.
+
+---
+
+*Prepared 19-09-2025 by the Incident Response triage cell. Filed to CCN-BR-0925
+investigation record. Classification: Confidential — Investigation.*

@@ -1,0 +1,128 @@
+---
+title: "User Personas"
+---
+
+::: {.callout-note appearance="simple" title="Scenario — Customer Relations Manager (ISYS2002 / ISAD5001, Preset B)"}
+**Requirements elicitation artefact.** Three personas representing the primary users of the proposed CRM. They are composites built from interviews and the operational data (support tickets, sales pipeline, satisfaction scores). Use them to test design decisions: *"Would this work for Priya? For Daniel? For David?"*
+:::
+
+## Persona 1 — Priya Nair, Customer Relations Manager (the sponsor)
+
+::: {.callout-quote appearance="simple"}
+> "I do not need more software. I need one version of the truth, and proof we are looking after our clients."
+:::
+
+| Attribute | Detail |
+|-----------|--------|
+| **Role** | Customer Relations Manager (newly created role, late 2025) |
+| **Reports to** | Chief Operating Officer |
+| **Based** | Perth HQ (11 Newcastle Street); travels to Malaga DC monthly |
+| **Tenure** | 4 months in role; 6 years in SaaS customer-success roles previously |
+| **Tech savviness** | High — comfortable with dashboards, wary of over-engineered tools |
+
+**Background.** Priya was hired after the September 2025 incident made it clear no one owned the customer record end-to-end. She is building the function from nothing: no team structure, no tooling, no established metrics. She is simultaneously the project sponsor and its first power user.
+
+**Goals.**
+
+- Stand up a single, trusted customer record within the year.
+- Produce the monthly board pack herself, in under an hour, without asking three people for exports.
+- Show a measurable improvement in renewal catch-rate to justify her role's existence.
+
+**Frustrations.**
+
+- Four spreadsheet versions in circulation; no way to prove which is right.
+- Renewals that lapse because a row was filtered out of a sheet.
+- Being asked to defend numbers she did not generate and cannot trace.
+
+**A day in the life.** Monday: reconcile the weekend's support tickets against the renewal calendar by hand. Wednesday: chase three sales reps for pipeline updates over email. Friday: assemble the board pack from four spreadsheet exports.
+
+**What "good" looks like for her.** One screen that answers "which clients are at risk this quarter, and what is each worth?" — with a number she can defend.
+
+**Design implications.** Golden record (F01), audit trail (F02), board dashboard (F11), and data migration tooling (F16) are her priorities. She will resist features that add maintenance without clear return.
+
+---
+
+## Persona 2 — Daniel Pereira, Support Agent
+
+::: {.callout-quote appearance="simple"}
+> "The customer is on hold and I am hunting through a shared drive for their contract. That is my job, apparently."
+:::
+
+| Attribute | Detail |
+|-----------|--------|
+| **Role** | Customer Support Agent (reports to Samantha Wong, Support Lead) |
+| **Based** | Malaga primary data centre (4 Millrose Drive); one week in three remote from home |
+| **Tenure** | 2 years |
+| **Products supported** | DataVault, CloudSync, Analytics Pro |
+| **Tech savviness** | Medium-high — power user of the helpdesk app, impatient with manual steps |
+
+**Background.** Daniel handles roughly 25 tickets a week across the three products. He is good at his job and his satisfaction scores reflect it, but he loses time on every call to context-gathering that the system should have done for him.
+
+**Goals.**
+
+- Open a ticket and *immediately* see the customer's products, contract value, renewal date, and recent interactions.
+- Resolve more tickets on first contact.
+- Spot at-risk customers before they churn, not after.
+
+**Frustrations.**
+
+- The helpdesk app shows a ticket number and little else.
+- The customer master spreadsheet lives on a Perth network share that is painfully slow from his home connection.
+- He maintains a personal Excel triage sheet because the official tool does not give him what he needs.
+
+**A day in the life.** Logs in, opens the helpdesk queue, opens a second window to the shared drive, opens a third to his own triage sheet. Cross-references the three by hand for every other call. Fields a call from an at-risk client he did not know was at risk.
+
+**What "good" looks like for him.** A single screen — ideally on a tablet he can carry on the DC floor — that puts the customer in front of him the moment a ticket opens.
+
+**Design implications.** Support context screen (F03), helpdesk integration not replacement (F04), at-risk flag (F05), automated CSAT (F20), and mobile/tablet-friendly access. He is the canary for usability: if it slows him down, the team will not adopt it.
+
+---
+
+## Persona 3 — David Kim, Sales Representative
+
+::: {.callout-quote appearance="simple"}
+> "I found out my biggest account was unhappy when they told me they were leaving. The support team had known for a month."
+:::
+
+| Attribute | Detail |
+|-----------|--------|
+| **Role** | Sales Representative — West region, Enterprise segment |
+| **Based** | Perth HQ; on the road across regional WA 2–3 days a week |
+| **Tenure** | 3 years; top-quartile performer |
+| **Products sold** | DataVault, CloudSync, Analytics Pro + Managed Services |
+| **Tech savviness** | Medium — lives in Outlook and Excel; expects consumer-grade mobile UX |
+
+**Background.** David carries a large Enterprise book. His pipeline workbook is meticulous — and entirely his own. He is territorial about it, which is both his strength (he knows his accounts) and the project's risk (he will resist sharing).
+
+**Goals.**
+
+- Never lose a renewal or an expansion to a blind spot again.
+- Spend more time in front of clients and less doing pipeline admin.
+- Get a heads-up the moment one of his accounts shows trouble.
+
+**Frustrations.**
+
+- He learns about client dissatisfaction too late — usually from the client.
+- Monday-morning pipeline exports to his manager are dead time.
+- Nothing works properly on his phone while he is driving between Geraldton and Perth.
+
+**A day in the life.** Monday: export pipeline, reformat, email manager. Tuesday–Thursday: on the road, checking Outlook on his phone, unable to reach the spreadsheet. Friday: debrief, update the workbook from memory.
+
+**What "good" looks like for him.** A pipeline he updates once, alerts that tell him when an account is wobble, and a mobile app that actually works between towns.
+
+**Design implications.** Shared pipeline (F06), support-to-sales alerts (F07), renewal workflow (F08), and mobile app (F09) — the cluster where Sales and the CFO collide hardest. Adoption hinges on whether the tool feels like it works *for* him.
+
+---
+
+## Using these personas
+
+| Decision to test | Ask… |
+|------------------|------|
+| Should we ship mobile in phase 1? | Could David do his job without it? Can the CFO's cost concern be answered? |
+| Do we replace the helpdesk? | What does Daniel lose? What does Samantha risk? |
+| Who owns the customer record? | Whose definition of "at risk" do Priya, Daniel, and David each trust? |
+| Is the AI chatbot worth it? | Which persona actually benefits, and is that benefit worth F12's effort? |
+
+::: {.callout-tip appearance="simple" title="Teaching note"}
+Each persona leans toward a different feature cluster (Priya → governance/reporting; Daniel → context/integration; David → mobility/alerts). When students prioritise, ask them to name *which persona they are designing for* — surfacing implicit bias in their own backlog choices.
+:::

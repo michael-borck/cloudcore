@@ -13,7 +13,7 @@ title: Data Protection
 | **Title**    | Data Protection             |
 | **Doc#**     | POL-DATA-004 |
 | **Version**  | 1.0                                 |
-| **Date**     | 25-08-2023                              |
+| **Date**     | 25-08-2024                              |
 
 CloudCore takes the confidentiality and integrity of its customer data very
 seriously. As stewards and partners of CloudCore Customers, we strive to assure

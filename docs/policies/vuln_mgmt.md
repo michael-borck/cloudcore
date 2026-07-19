@@ -14,7 +14,7 @@ title: Vulnerability Management
 | **Title**    | Vulnerability Management             |
 | **Doc#**     | POL-ITMA-012 |
 | **Version**  | 1.0                                 |
-| **Date**     | 10-09-2023                              |
+| **Date**     | 10-09-2024                              |
 
 ## Policy Statements
 

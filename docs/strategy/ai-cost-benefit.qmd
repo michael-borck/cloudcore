@@ -1,0 +1,187 @@
+---
+title: "AI Cost–Benefit Analysis"
+description: "A worked build-vs-buy, total-cost-of-ownership and payback analysis for three candidate AI use-cases at CloudCore Networks, in AUD, to support the ISYS6020 AI-strategy business case."
+categories:
+  - AI Strategy
+  - ISYS6020
+  - Business Case
+---
+
+::: {callout-note}
+## ISYS6020 — from register to business case
+
+This page takes the three highest-priority opportunities from the [opportunity pipeline](ai-opportunity-pipeline.qmd) and asks the question that actually commits capital: **for each one, should we build it, buy it, or wait?**
+
+The three were chosen because together they span the full decision space — **buy-favoured** (support triage), **build-favoured** (churn prediction), and **economics-vs-governance** (RAG policy search) — so the methodology, not just the answers, transfers to any future opportunity.
+:::
+
+## 1. How to read this analysis
+
+Every figure below is an **assumption, not a fact**. The value of the exercise is in making the assumptions visible and challengeable, then seeing whether the decision *survives* reasonable changes to them. Three disciplines govern the numbers:
+
+1. **Conservative benefits.** Where an effect is uncertain (retention conversion, handling-time savings) we model the low end and show sensitivity, not the headline.
+2. **Full cost of ownership.** Licensing is never the whole cost — integration, change management, model monitoring, retraining and the staff time to run the thing are all counted.
+3. **AUD, real loaded rates.** Labour is costed at fully-loaded Australian rates, not headline salaries.
+
+### Shared assumptions
+
+| Assumption | Value | Basis |
+|---|---|---|
+| Discount rate (NPV) | **9%** | Proxy for CloudCore's cost of capital as a private SME |
+| NPV horizon | **3 years** | Matches a typical strategic-planning cycle before re-baseline |
+| Loaded support/ops labour | **$75 / hour** | Fully-loaded Australian L2/L3 support rate |
+| Loaded engineering labour | **$100 / hour** | Fully-loaded software/ML engineering rate |
+| Blended knowledge-worker rate | **$80 / hour** | Across compliance, support, sales-admin roles |
+| Annual support ticket volume | **~8,000** | Annualised from operational scale across ~500 clients; the 400-row `cloudcore_support_tickets.csv` is a teaching sample, not annual volume |
+
+::: {callout-warning}
+**Reconcile before you trust.** The customer dataset reconciles cleanly to company-level revenue: 400 clients × ~$9,858 MRR × 12 ≈ **$47M**, consistent with the ~$45M AUD canon. Students should still pressure-test every assumption above — the mark of a defensible business case is that it *still holds* when the assumptions move.
+:::
+
+## 2. The build-vs-buy decision
+
+Before the numbers, the frame. Five factors determine whether an opportunity should be built in-house, bought as a product, or delivered through a managed service:
+
+| Factor | Favours **Buy** | Favours **Build** |
+|---|---|---|
+| **Maturity** | The task is a solved commodity (routing, transcription) | The task is novel to our context |
+| **Data as moat** | The value is in the tool, not the data | Our proprietary data *is* the advantage |
+| **Differentiation** | Customers don't care how it works | It could become a marketed capability |
+| **Governance control** | Vendor meets our controls (SOC 2, AU residency) | We need full control of the model & data path |
+| **Time-to-value** | Speed matters more than customisation | We can afford a build cycle for fit |
+
+No opportunity scores purely one way. The analysis below weights these against the dollars.
+
+---
+
+## 3. Case A — Support-ticket triage  *(buy-favoured)*
+
+::: {callout-important}
+**Recap.** 400 tickets show a 12× spread in resolution time (Critical 2.8 hrs → Low 33.3 hrs) and a free-text `ticket_text` field used by humans but never by automation. The opportunity is to auto-classify and route on creation. See [pipeline §3.1](ai-opportunity-pipeline.qmd#31-support-ticket-triage-intelligent-routing).
+:::
+
+**Benefit model (annual).** Auto-classification + suggested-response retrieval removes ~0.20 hrs of active handling per ticket (**$120,000**), plus reduced mis-routing of urgent cases worth a conservative **$30,000** in SLA-risk avoidance. **Total ≈ $150,000 / yr.**
+
+### Total cost of ownership (3-year)
+
+| Cost component | **Buy** (e.g. Zendesk AI / Fin) | **Build** (in-house classifier) |
+|---|---:|---:|
+| Year-0 setup (integration, config, change mgmt) | $25,000 | $60,000 |
+| Annual run (licence / hosting + 0.1–0.2 FTE) | $16,400 | $26,000 |
+| **3-year TCO** | **$74,200** | **$138,000** |
+
+### Verdict
+
+| Metric | Buy | Build |
+|---|---:|---:|
+| Payback period | **2.2 months** | 5.8 months |
+| 3-year NPV @ 9% | **$313,000** | $254,000 |
+
+**Recommendation: BUY.** Triage is a mature, commoditised task where vendor scale beats in-house effort on *every* metric. The free-text field is a standard NLP input that off-the-shelf tooling handles well. The only reason to build would be a strategic intent to own the support-AI stack — which is not justified at CloudCore's scale.
+
+---
+
+## 4. Case B — Customer churn prediction  *(build-vs-buy is genuinely close)*
+
+::: {callout-important}
+**Recap.** 148 of 400 clients (37%) carry `churn_flag = 1`, an at-risk pool of **~$14.6M annualised recurring revenue**. Churned clients are visibly different beforehand (lower satisfaction, more tickets, lower MRR), giving a clean supervised-learning problem with a real label. See [pipeline §3.2](ai-opportunity-pipeline.qmd#32-customer-churn-prediction-retention-targeting).
+:::
+
+**Benefit model (annual).** A model prioritises the at-risk cohort for targeted retention outreach (account-manager call + tailored offer at ~$1,500/client to contact all 148 = **$222,000** intervention cost). The benefit is the *incremental* clients retained versus reactive retention alone. Because recovery rate is the dominant uncertainty, it is modelled as a sensitivity:
+
+| Net recovery of at-risk cohort | Clients retained | Gross ARR retained | **Net annual benefit** (after intervention + run) |
+|---|---:|---:|---:|
+| Low — 5% | 7 | $690,000 | **$451,000** |
+| Base — 8% | 12 | $1,166,000 | **$888,000** |
+| High — 12% | 18 | $1,750,000 | **$1,472,000** |
+
+### Total cost of ownership (3-year)
+
+| Cost component | **Buy** (e.g. Gainsight CS / ChurnZero) | **Build** (in-house model + MLOps) |
+|---|---:|---:|
+| Year-0 setup (implementation / build) | $30,000 | $95,000 |
+| Annual run (licence / 0.3 FTE + infra) | $40,000 | $56,000 |
+| **3-year TCO** | **$150,000** | **$263,000** |
+
+### Verdict
+
+| Metric | Buy | Build |
+|---|---:|---:|
+| Payback period (base case) | **~1 month** | 1.3 months |
+| 3-year NPV @ 9% (base case) | **$2,260,000** | $2,154,000 |
+
+**Recommendation: BUILD — despite a marginally lower headline NPV.** The economics are effectively a tie (both strongly positive, both pay back inside the first quarter), so the decision turns on the five build-vs-buy factors rather than the dollars:
+
+- **Data is the moat.** CloudCore's churn signal lives in *its own* customer, support-ticket and review text. A vendor model never sees that proprietary combination.
+- **Differentiation.** Retention intelligence is close enough to a sellable capability (a "we predict and prevent churn" Managed Services feature) that owning it has strategic option value.
+- **Reusability.** The same feature store and label pipeline feeds the lead-scoring and capacity opportunities later.
+
+The honest caveat: this recommendation holds *because* the build path includes a committed **retention workflow**, not just a model. A churn model without someone acting on its output is a dashboard, not a business case.
+
+---
+
+## 5. Case C — RAG policy & knowledge search  *(where governance beats economics)*
+
+::: {callout-important}
+**Recap.** 31 policies plus registers and mappings are searched by asking people or grep-ing folders. Post-breach, fast *accurate* policy lookup is a control. The corpus is clean, versioned and internal — an ideal retrieval-augmented-generation substrate. See [pipeline §3.3](ai-opportunity-pipeline.qmd#33-rag-policy-internal-knowledge-search).
+:::
+
+**Benefit model (annual).** ~35 knowledge workers query policy ~3×/week, saving ~12 minutes each versus today — **$87,000** in recovered time — plus a conservative **$40,000** in compliance-error / audit-finding avoidance. **Total ≈ $127,000 / yr.**
+
+### Total cost of ownership (3-year)
+
+| Cost component | **Buy** (e.g. M365 Copilot / Glean) | **Build** (RAG over policy corpus) |
+|---|---:|---:|
+| Year-0 setup (rollout / build + grounding) | $15,000 | $62,000 |
+| Annual run (per-seat licence / LLM API + 0.15 FTE) | $22,500 | $28,000 |
+| **3-year TCO** | **$82,700** | **$146,000** |
+
+### Verdict
+
+| Metric | Buy | Build |
+|---|---:|---:|
+| Payback period | **1.7 months** | 7.5 months |
+| 3-year NPV @ 9% | **$250,000** | $190,000 |
+
+**Recommendation: BUILD — overriding the economics.** On pure dollars, buy wins comfortably. The decision flips for three reasons that the NPV cannot see:
+
+- **Data sovereignty.** After a 250,000-record breach, routing internal policy and access decisions through an overseas SaaS inference path is a governance regression, not an improvement. A self-hosted or AU-resident RAG keeps the data path inside controls CloudCore owns.
+- **Grounding control.** A policy answer must cite a specific, versioned document and refuse when uncertain. A bought assistant offers weaker control over citation and refusal behaviour — exactly the failure mode that matters in a regulated context.
+- **Proving ground.** This is the lowest-risk place to build AI governance muscle (human-in-the-loop, evaluation, model risk) *before* any client-facing AI ships.
+
+The teaching point: a cost–benefit that ignores governance risk produces the wrong answer for a post-breach company. See [AI governance considerations](ai-governance-considerations.qmd).
+
+---
+
+## 6. Portfolio view
+
+| Case | Recommendation | Year-0 investment | 3-yr NPV (base) | Payback | Primary risk |
+|---|---|---:|---:|---|---|
+| A. Support triage | **Buy** | $25,000 | $313,000 | 2 mo | Low |
+| B. Churn prediction | **Build** | $95,000 | $2,154,000 | 1–3 mo | Retention workflow converts prediction → revenue |
+| C. RAG policy search | **Build** | $62,000 | $190,000 | 7–8 mo | Hallucination in a regulated context |
+
+**Total Year-0 capital at risk across all three: ~$182,000** (Buy A + Build B + Build C). For context, the CEO's board memo frames the failure mode to avoid as *"a premature $500K investment in AI that fails due to organisational unreadiness."* A staged $182K portfolio with independent gates is an order of magnitude under that threshold — and every line pays back inside the first year on base-case assumptions.
+
+```{mermaid}
+flowchart LR
+    A[Board approval:<br/>staged $182K portfolio] --> B[Gate 1 — Q3 2026]
+    B --> C1[Buy: Support triage<br/>2-mo payback]
+    B --> C2[Build: Churn model +<br/>retention workflow]
+    B --> C3[Build: RAG policy search]
+    C1 --> D{Review Q1 2027:<br/>did benefits materialise?}
+    C2 --> D
+    C3 --> D
+    D -->|Yes| E[Scale to next<br/>3 opportunities]
+    D -->|No| F[Stop / pivot —<br/>capital preserved]
+```
+
+## 7. What this analysis does *not* settle
+
+- **Whether CloudCore can execute.** A positive NPV assumes the data, talent and platform exist. The [technology landscape](technology-landscape.qmd) tests that assumption — and several opportunities above are gated on gaps it reveals.
+- **Whether CloudCore *should*.** Positive economics is necessary, not sufficient. The [governance page](ai-governance-considerations.qmd) covers the Privacy Act, human-in-the-loop and model-risk obligations that apply regardless of payback.
+- **The precision of the numbers.** These are planning-grade estimates (±25–40%) designed to discriminate *go / no-go / wait*, not to set a budget. Any case proceeding past a gate earns a tighter estimate before commitment.
+
+::: {callout-tip}
+**For students.** A defensible AI-strategy business case is not the one with the highest NPV — it is the one whose recommendation *does not change* when you halve the benefits and double the costs. Re-run each case above under that stress test: which recommendations survive, and which flip? That surviving set is the strategy you can defend to a board.
+:::

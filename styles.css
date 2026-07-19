@@ -397,6 +397,19 @@ lord-icon.small { width: 28px; height: 28px; }
   opacity: 0.18;
   font-family: Georgia, serif;
 }
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+.testimonials .testimonial-section {
+  margin: 0;
+  padding: 1.6rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.testimonials .testimonial-section::before { font-size: 3rem; }
 
 /* ----------  Certifications  ---------- */
 .certifications,
@@ -417,6 +430,13 @@ lord-icon.small { width: 28px; height: 28px; }
 .certifications-grid strong { color: var(--cc-ink); }
 
 /* ----------  Pricing  ---------- */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+  margin: 2rem 0 0;
+}
 .pricing-card {
   position: relative;
   padding: 0;
@@ -426,15 +446,36 @@ lord-icon.small { width: 28px; height: 28px; }
   overflow: hidden;
 }
 .pricing-card .plan-header { padding: 1.75rem 1.75rem 1.25rem; }
-.pricing-card ul,
-.pricing-card p { padding: 0 1.75rem; }
 .pricing-card .btn { margin: 1.25rem 1.75rem 1.75rem; }
+
+/* Clean checkmark feature list */
+.pricing-card ul {
+  list-style: none;
+  padding: 0 1.75rem;
+  margin: 0 0 0.5rem;
+}
+.pricing-card ul li {
+  position: relative;
+  padding: 0.35rem 0 0.35rem 1.6rem;
+  color: var(--cc-ink-2);
+  font-size: 0.94rem;
+  line-height: 1.4;
+}
+.pricing-card ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  color: var(--cc-success);
+  font-weight: 700;
+}
 
 .pricing-card.featured {
   border-color: var(--cc-accent);
-  border-width: 1px;
-  box-shadow: var(--cc-shadow);
-  transform: none;
+  border-width: 2px;
+  box-shadow: var(--cc-shadow-lg);
+  transform: scale(1.03);
+  z-index: 2;
 }
 .pricing-card.featured::before {
   content: "";
@@ -494,6 +535,20 @@ lord-icon.small { width: 28px; height: 28px; }
   font-size: 0.92rem;
 }
 .included-feature strong { color: var(--cc-ink); display: block; margin-bottom: 0.15rem; }
+
+/* ----------  Image bands / figures  ---------- */
+.hero-band { margin: 0 0 2.5rem; }
+.hero-band img,
+.section-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--cc-radius-lg);
+  border: 1px solid var(--cc-border);
+  box-shadow: var(--cc-shadow);
+}
+.section-figure { margin: 1.5rem 0; }
+.section-figure img { max-height: 360px; object-fit: cover; }
 
 /* ----------  Contact  ---------- */
 .contact-section {
@@ -628,6 +683,9 @@ header#title-block-header {
   border-bottom: 1px solid var(--cc-border);
   margin-bottom: 1.5rem;
 }
+/* Homepage: the hero serves as the page header, so suppress the title block
+   (the document <title> / SEO metadata is still emitted in <head>). */
+body:has(.hero-section) header#title-block-header { display: none; }
 .quarto-title-banner h1,
 .title h1,
 #title-block-header h1 {
@@ -719,6 +777,8 @@ header#title-block-header {
   .form-row { grid-template-columns: 1fr; }
   #access-indicator { right: 10px; top: 70px; font-size: 12px; padding: 8px 16px; }
   .pricing-card.featured { transform: none; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .hero-band img, .section-figure img { max-height: 240px; }
 }
 
 /* ----------  Print  ---------- */

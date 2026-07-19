@@ -5,6 +5,10 @@ project:
     - "!CODE_OF_CONDUCT.md"
     - "!CONTRIBUTING.md"
     - "!README.md"
+    - "!docs/access-demo.qmd"
+    - "!docs/staged-content-example.qmd"
+    - "!docs/registry.qmd"
+    - "!_instructor"
     - "*"
 
 website:
@@ -13,16 +17,17 @@ website:
     logo: assets/logo.svg
     logo-alt: "CloudCore Networks"
     left:
-      - text: Home
-        href: index.qmd
       - text: Solutions
         menu:
+          - text: Overview
+            href: solutions.qmd
+          - text: "---"
           - text: Cloud Hosting
-            href: index.qmd#solutions
+            href: solutions.qmd#cloud-hosting
           - text: Managed Services
-            href: index.qmd#solutions
+            href: solutions.qmd#managed-services
           - text: Security & Compliance
-            href: index.qmd#solutions
+            href: solutions.qmd#security-compliance
       - text: About
         href: about.qmd
       - text: Pricing
@@ -35,20 +40,29 @@ website:
             href: docs/support.qmd
           - text: Blog
             href: blog/index.qmd
-          - text: Consultant Portal
+          - text: "---"
+          - text: Meet the Team
             href: chatbots/index.qmd
-      - text: Docs
-        menu:
-          - docs/interviews.qmd
-          - docs/policies.qmd
-          - docs/support.qmd
-          - docs/articles.qmd
-          - docs/logs.qmd
+          - text: Interviews
+            href: docs/interviews.qmd
+          - text: Articles
+            href: docs/articles.qmd
+          - text: System Logs
+            href: docs/logs.qmd
+          - text: "---"
+          - text: Data Dictionary
+            href: docs/data-dictionary.qmd
+          - text: AI Strategy
+            href: docs/strategy/ai-opportunity-pipeline.qmd
+          - text: Systems Analysis
+            href: docs/systems-analysis/crm-current-state.qmd
+          - text: Network & Org Diagrams
+            href: docs/diagrams/network-current.qmd
     right:
-      - text: Educational Site
-        href: legal.qmd
-      - text: Contact Us
+      - text: Contact
         href: contact.qmd
+      - text: About This Site
+        href: legal.qmd
   page-footer:
     background: "#0f172a"
     left: |
@@ -59,17 +73,16 @@ website:
       **Contact**  
       Perth: 11 Newcastle St, WA 6000  
       Malaga: 4 Millrose Dr, WA 6090  
+      Sydney (DR): 100 Harris St, Pyrmont NSW 2009  
       Email: info@cloudcore.com.au  
       Phone: +61 (8) 4587 8990
     right: |
-      **Legal**  
-      [Legal Disclaimer](/legal.html) | [Privacy](/legal.html#privacy-data-collection)  
+      **Legal & Credits**  
+      [Legal & Educational Disclaimer](/legal.html) | [Privacy](/legal.html#privacy-data-collection)  
       [MIT License](/legal.html#license) | [Security Notice](/legal.html#security-notice)  
       
-      © 2024 CloudCore Networks (Fictional). All rights reserved.  
-      [Open Source Credits](/credits.html) | [Icons by Lordicon.com](https://lordicon.com/) | [Educational Disclaimer](/legal.html)
-
-
+      © 2026 CloudCore Networks (Fictional). All rights reserved.  
+      [Open Source Credits](/credits.html) | [Icons by Lordicon.com](https://lordicon.com/)
 format:
   html:
     theme: cosmo
@@ -84,6 +97,7 @@ format:
           <script src="/scripts/booking-api.js"></script>
           <script src="/scripts/booking-modal.js"></script>
           <script src="/scripts/chatbot-booking.js"></script>
+          <script src="/scripts/educational-notice.js"></script>
 
 resources:
   - admin/

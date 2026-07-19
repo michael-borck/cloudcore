@@ -1,0 +1,78 @@
+---
+title: "Current-State Customer Management"
+---
+
+::: {.callout-note appearance="simple" title="Scenario — Customer Relations Manager (ISYS2002 / ISAD5001, Preset B)"}
+**Requirements elicitation artefact.** This page records CloudCore Networks' *as-is* customer-management environment, as observed by a student analyst during site visits to the Perth head office (Level 4, 11 Newcastle Street, Perth WA 6000) and the Malaga primary data centre (4 Millrose Drive, Malaga WA 6090) in early 2026. It is the starting point for eliciting requirements for a proposed customer relationship management (CRM) system. Use it alongside the stakeholder needs, feature backlog, personas, and data-flow artefacts in this section.
+:::
+
+## 1. Background
+
+CloudCore Networks Pty Ltd, founded in **2010**, supplies three named products — **DataVault** (object storage and backup), **Analytics Pro** (business intelligence and reporting), and **CloudSync** (file sync and share) — together with the managed service lines **Cloud Hosting**, **Managed Services**, and **Security & Compliance**. It serves approximately **500 clients**, predominantly Australian small and medium enterprises (SMEs), from offices in Perth and Sydney and a disaster-recovery presence in Pyrmont, NSW.
+
+Revenue has grown roughly **25% year on year** to about **$45M AUD**, but the back-office tooling that tracks those clients has not kept pace. Customer information is spread across at least **seven separate stores**, and the staff who rely on it — around **47** people across the two cities — reconcile the differences by hand, mostly in spreadsheets and email.
+
+## 2. Current tooling inventory
+
+There is no single system of record for customers. Each function maintains its own tools:
+
+| Store | Owner | Format | Holds | Refresh |
+|-------|-------|--------|-------|---------|
+| Client master spreadsheet | Customer Relations | Excel (`.xlsx`) on a network share | ~500 client records, primary product, contract value (AUD), renewal date | Manual, weekly |
+| Support ticket system | Support (S. Wong) | In-house helpdesk web app **plus** a parallel Excel triage sheet | Tickets, resolution hours, satisfaction ratings | Real-time (app); weekly (sheet) |
+| Sales pipeline | Sales | One Excel workbook per representative + Outlook tasks | Opportunities, quarter, forecast | Manual, daily |
+| Billing ledger | Finance (CFO) | Xero + monthly CSV exports | Invoices, payments, contract value | Daily |
+| Email correspondence | Everyone | Microsoft 365 mailboxes | Ad-hoc customer threads, commitments | Real-time |
+| Onboarding folder | Customer Relations | SharePoint + Word templates | New-client setup checklists | Event-driven |
+| Renewal calendar | Customer Relations | Shared Outlook calendar | Renewal due dates | Manual |
+
+A handful of these tools — notably the helpdesk app and Xero — hold structured data. Everything else is a spreadsheet or a document that a human must open, read, and re-key.
+
+## 3. The customer lifecycle as it runs today
+
+The lifecycle crosses four functions that rarely share a live view of the same customer:
+
+1. **Lead to prospect (Sales).** A representative captures a lead in their personal pipeline workbook. When the deal closes, they email Customer Relations a partially completed Word "new client" template. There is no validation; required fields are frequently left blank.
+2. **Onboarding (Customer Relations).** A relations coordinator transcribes the template into the client master spreadsheet and starts a SharePoint checklist. Product provisioning (DataVault tenancy, CloudSync seat count, Analytics Pro workspace) is requested from IT by email.
+3. **Active service & support (Support).** Support tickets are logged in the helpdesk app, but the agent often cannot see the client's contract value, renewal date, or recent sales activity because that data lives in spreadsheets they cannot open.
+4. **Billing (Finance).** Invoices are generated in Xero against contract values that Customer Relations re-keyed. Discrepancies between the spreadsheet and Xero are common and resolved by phone.
+5. **Renewal (Customer Relations).** The renewal calendar is populated by hand from the master spreadsheet. A missed row means a renewal lapses without contact — a known source of avoidable churn.
+
+## 4. Observed pain points
+
+::: {.callout-warning appearance="simple" title="Why a CRM is on the table"}
+The September 2025 security incident — in which **~250,000 customer records** were affected — exposed how fragile this manual record-keeping is. Compiling the list of affected customers and their contact details for notification required staff to manually cross-reference the master spreadsheet, the billing exports, and individual mailboxes. A consolidated, queryable customer record would have shortened that response considerably. (This artefact records the *process* impact only; root-cause analysis sits with the security audit workstream.)
+:::
+
+| # | Pain point | Evidence | Affected function |
+|---|------------|----------|-------------------|
+| P1 | **Siloed data** — no single customer view | Support cannot see contract value or renewal date while on a call | Support, Sales |
+| P2 | **Manual re-keying** between systems | New-client details typed from Word → Excel → Xero by three different people | Customer Relations, Finance |
+| P3 | **Spreadsheet version drift** | Two copies of the master sheet were in circulation during a recent audit | Customer Relations |
+| P4 | **Churn risk is invisible** | Client `CC009` raised 7 tickets in six months and their satisfaction fell to 4.2/10, yet Sales continued to upsell — the support signal never reached the account owner | Support ↔ Sales |
+| P5 | **Renewal drops** | At least one enterprise renewal lapsed without contact because its row was filtered out of the master sheet | Customer Relations |
+| P6 | **No audit trail** for customer data changes | It is impossible to say *who* updated a record or *when* | All |
+| P7 | **Duplicated contact records** | The same client appears under "Acme Pty Ltd", "Acme", and "ACME" across stores | All |
+| P8 | **Reporting is manual** | The monthly board pack is assembled by exporting and pivoting four spreadsheets | Customer Relations, Finance |
+
+## 5. Scale and stress factors
+
+- **Volume:** ~500 active clients, ~6,000 support tickets per year, and a pipeline of several hundred opportunities at any time.
+- **Growth:** ~25% annual growth means the manual model must absorb ~125 new clients a year without proportionally more relations staff.
+- **Geography:** Staff are split between Perth (HQ + Malaga DC) and Sydney (DR site). A spreadsheet on a Perth network share is slow and fragile for Sydney colleagues.
+- **Products:** Three named products and three service lines means each client relationship has multiple concurrent subscriptions, contract values, and renewal dates — a structure spreadsheets model poorly.
+
+## 6. In-scope / out-of-scope for the CRM project
+
+::: {.callout-important appearance="simple" title="Boundary (as stated by the sponsor)"}
+**In scope:** the customer record, contact management, the support-to-sales handoff, renewal tracking, and basic customer reporting.
+
+**Out of scope (for now):** replacing the helpdesk ticketing engine, replacing Xero, and the security-incident workstream. The CRM must *integrate* with these, not replace them.
+:::
+
+## 7. Questions this artefact raises for elicitation
+
+- Which store should become the authoritative "golden record" during migration?
+- What is the minimum data set a support agent needs on screen during a call?
+- How should contract value (AUD) and renewal risk be surfaced to Sales?
+- Who is the data owner for each field, and who may change it?

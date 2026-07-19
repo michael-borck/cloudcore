@@ -8,7 +8,7 @@ description: |
 title: Threat Intelligence Feed Summary
 ---
 
-**Date:** September 14, 2024  
+**Date:** September 14, 2025  
 **Prepared By:** CloudCore Threat Intelligence Team
 
 ---
@@ -61,7 +61,7 @@ CloudCore must review its API security practices, ensuring robust validation and
 
 **Incident:**  
 - **Target:** CloudAxis, a provider of enterprise cloud solutions with a focus on large corporations.
-- **Date:** September 2, 2024
+- **Date:** September 2, 2025
 - **Summary:** Attackers compromised a third-party software provider used by CloudAxis for system monitoring. Through the compromised software, ransomware was deployed across CloudAxis’s infrastructure, encrypting critical files and disrupting services for several days. The attackers demanded a ransom in cryptocurrency to provide the decryption keys.
 
 **Tactics and Techniques:**
@@ -81,7 +81,7 @@ CloudCore should strengthen its supply chain risk management practices, ensuring
 
 **Incident:**  
 - **Target:** CloudNova, a cloud service provider with a focus on education and non-profit sectors.
-- **Date:** September 5, 2024
+- **Date:** September 5, 2025
 - **Summary:** Attackers exploited a zero-day vulnerability in CloudNova’s cloud management software, which allowed them to escalate privileges and gain root access to several critical systems. The breach led to unauthorised data access and manipulation, significantly impacting CloudNova’s reputation and operations. The vulnerability was not publicly known, and patches were not available at the time of the attack.
 
 **Tactics and Techniques:**
@@ -101,7 +101,7 @@ CloudCore should invest in advanced threat detection capabilities, including beh
 
 **Incident:**  
 - **Target:** SecureCloud Inc., a cloud provider specialising in secure data storage solutions.
-- **Date:** September 10, 2024
+- **Date:** September 10, 2025
 - **Summary:** A disgruntled employee with access to sensitive data repositories intentionally leaked confidential customer data to external parties. The employee exploited overly broad access privileges and inadequate monitoring of internal activities. The breach was discovered only after the data was published on a public forum, causing significant reputational damage.
 
 **Tactics and Techniques:**

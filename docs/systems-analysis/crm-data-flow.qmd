@@ -1,0 +1,103 @@
+---
+title: "Current-State Data Flow"
+---
+
+::: {.callout-note appearance="simple" title="Scenario — Customer Relations Manager (ISYS2002 / ISAD5001, Preset B)"}
+**Requirements elicitation artefact.** A plain-text description of how customer data *currently* moves between the Support, Sales, and Billing functions at CloudCore Networks. There is **no diagram here** — the diagrams workstream owns visuals. This narrative is intended as the source material from which students construct their own data-flow diagrams (context, level-1, etc.) during modelling exercises.
+:::
+
+## 1. Purpose and scope
+
+This document describes the **as-is** flow of customer data across the three functions that touch a client most often — **Sales**, **Support**, and **Billing** (Finance) — together with the **Customer Relations** team that sits between them. It covers the period from lead capture through to renewal, identifies the data stores involved, and flags where data is duplicated, delayed, or lost.
+
+It does **not** describe the proposed CRM (that is the target state), and it does **not** cover product-provisioning data flows inside DataVault, CloudSync, or Analytics Pro — only the customer-management flows that surround them.
+
+## 2. External entities
+
+The following actors and systems sit outside CloudCore's customer-management process but exchange data with it:
+
+- **Customers** (~500, mostly Australian SMEs) — raise tickets, receive invoices, respond to renewal outreach.
+- **Microsoft 365** — the email and calendar platform all staff use for ad-hoc correspondence.
+- **Xero** — the external accounting package owned by Finance.
+- **The in-house helpdesk web application** — treated here as external to the customer-management process because it is owned by the IT/Support tooling stack, not by Customer Relations.
+- **Product provisioning (IT)** — receives setup requests by email; returns tenancy details by email.
+- **The Board** — receives the monthly customer pack.
+
+## 3. Data stores (current state)
+
+| ID | Data store | Location / format | Owner | Notes |
+|----|-----------|-------------------|-------|-------|
+| D1 | Client master spreadsheet | Network share (Perth), Excel `.xlsx` | Customer Relations | De facto "system of record", but not authoritative |
+| D2 | Support ticket log | Helpdesk web app (structured) + parallel Excel triage sheet | Support | Two copies, partially overlapping |
+| D3 | Sales pipeline workbooks | One Excel file per representative, on personal drives / OneDrive | Sales | Six separate files, no schema |
+| D4 | Billing ledger | Xero + monthly CSV exports | Finance (CFO) | Authoritative for money, not for relationships |
+| D5 | Email correspondence | Microsoft 365 mailboxes | Everyone | Unstructured; commitments live here |
+| D6 | Onboarding folder | SharePoint + Word templates | Customer Relations | Event-driven, rarely updated after setup |
+| D7 | Renewal calendar | Shared Outlook calendar | Customer Relations | Populated by hand from D1 |
+
+## 4. Processes and the flows between them
+
+The narrative below follows a customer through the lifecycle. Each numbered step is a process; the arrows describe the data that moves.
+
+### 4.1 Lead capture to closed deal (Sales)
+
+1. **Capture lead.** A Sales representative enters lead details into **their personal pipeline workbook (D3)**. No data leaves Sales at this stage.
+2. **Close deal.** On close, the representative emails a partially completed **Word "new client" template** as an attachment to Customer Relations. → *Flow: D3 → D5 (email) → Customer Relations inbox.* There is no validation; fields are frequently blank or inconsistent ("Acme" vs "ACME Pty Ltd").
+
+### 4.2 Onboarding (Customer Relations)
+
+3. **Create client record.** A Customer Relations coordinator manually transcribes the Word template into the **client master spreadsheet (D1)**. → *Flow: email (D5) → D1.* This is the first point at which the customer exists in the shared record, and it is a manual, error-prone step.
+4. **Request provisioning.** The coordinator emails IT to provision the product (DataVault tenancy, CloudSync seats, Analytics Pro workspace). → *Flow: D1 → D5 (email) → IT.* IT returns tenancy details by email, which are then typed back into D1.
+5. **Open onboarding checklist.** A SharePoint item (D6) is created from a Word template. → *Flow: D1 → D6.*
+
+### 4.3 Active service (Support)
+
+6. **Log a ticket.** When a customer contacts Support, an agent creates a ticket in the **helpdesk app**. The ticket carries the customer ID and product, but **not** the contract value, renewal date, or recent sales activity (those live in D1 and D3, which the agent cannot open). → *Flow: Customer → D2.*
+7. **Triage (the parallel sheet).** Because the helpdesk app lacks context, the agent also logs a row in the **Excel triage sheet (D2)** with the details they had to look up manually. → *Flow: D2 (app) → D2 (sheet).* Two stores now hold overlapping, slightly different data.
+8. **Resolution & CSAT.** On resolution, the helpdesk app records resolution hours and (sometimes) a satisfaction rating. → *Flow: D2.* This signal is **not** forwarded to Sales.
+
+### 4.4 Billing (Finance)
+
+9. **Invoice generation.** Finance raises invoices in **Xero (D4)** against the contract value. The contract value was re-keyed from D1 into Xero at setup and is *not* kept in sync. → *Flow: D1 → D4 (manual, one-time, drifts).*
+10. **Discrepancy handling.** When the invoiced value drifts from the spreadsheet value, Finance resolves it by phone with Customer Relations. → *Flow: D4 ↔ D5 (phone/email) ↔ D1.* There is no system-level reconciliation.
+11. **Monthly export.** Finance exports a CSV from Xero for the board pack. → *Flow: D4 → CSV.*
+
+### 4.5 Renewal (Customer Relations)
+
+12. **Populate renewal calendar.** A coordinator copies renewal dates from **D1** into the **shared Outlook calendar (D7)**. → *Flow: D1 → D7.* If a row is filtered out or deleted in D1, the renewal silently disappears from D7.
+13. **Renewal outreach.** When a renewal falls due, Customer Relations contacts the customer — but the account's Sales representative (who owns the relationship) is often **not** notified, because D3 and D7 are not linked. → *Flow: D7 → Customer (and optionally D5), but not → D3.*
+
+## 5. Where the flow breaks
+
+These are the failure points a target-state design must address:
+
+- **Fork at onboarding (step 3).** A single manual transcription creates the canonical record. Every downstream error traces here.
+- **The support context gap (step 6).** Support reads D2 but cannot read D1 or D3, so agents operate blind to relationship context.
+- **The support-to-sales silence (step 8).** Satisfaction and ticket-frequency signals die in D2 and never reach the account owner in D3. This is the root of the "I found out they were leaving when they told me" failure.
+- **Billing drift (steps 9–10).** D1 and D4 are not synchronised; money and relationship data diverge over time.
+- **The renewal blind spot (steps 12–13).** D7 depends on a hand-copy from D1, and D3 is never told. Renewals lapse silently.
+- **No audit trail anywhere.** None of D1–D7 records *who* changed a field or *when*.
+
+## 6. Data duplication map (text)
+
+The same logical fact about a customer is held in multiple stores with no master:
+
+| Fact | Held in | Authoritative? |
+|------|---------|----------------|
+| Customer name & contact | D1, D2, D3, D5, D6 | No (D1 is de facto, not enforced) |
+| Contract value (AUD) | D1, D4 | D4 for money; D1 drifts |
+| Products subscribed | D1, D2, D6 | D1 (drifts from provisioning) |
+| Renewal date | D1, D7 | D1 (drifts); D7 is a copy |
+| Satisfaction / ticket history | D2 | D2 (but invisible to Sales) |
+| Pipeline / opportunities | D3 | D3 (per-rep; not shared) |
+
+## 7. Modelling prompts for students
+
+1. **Context diagram.** Draw the CloudCore customer-management process as a single process with the external entities from Section 2. What crosses the boundary?
+2. **Level-1 DFD.** Decompose into the processes in Section 4. Which stores (D1–D7) does each process read and write?
+3. **Identify the data store that should become the golden record.** Justify the choice against the duplication map in Section 6.
+4. **Model the "broken" flows** from Section 5 as missing arrows on your DFD. A correct target-state diagram will show those arrows restored.
+
+::: {.callout-tip appearance="simple" title="Teaching note"}
+This narrative deliberately mirrors the structure of a level-1 data-flow diagram (processes, stores, external entities, flows) so students can translate it directly. Resist the temptation to draw it for them — the modelling *is* the learning.
+:::

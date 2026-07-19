@@ -1,0 +1,21 @@
+---
+title: "FinOps on Australian Cloud Infrastructure: Cutting Costs Without Cutting Corners"
+author: "Aisha Rahman"
+date: "2025-12-08"
+categories: [finops, cost-optimisation]
+image: ../../../assets/cloud-network.jpg
+---
+
+Cloud spend has a way of creeping upward until it quietly becomes one of an organisation's largest line items. Through our work hosting Australian business workloads, we see the same pattern repeatedly: environments sized for peak load, forgotten development instances, and storage tiers that never get revisited. A disciplined FinOps practice brings that spend back under control without throttling the teams that depend on it.
+
+### Visibility Before Optimisation
+
+You cannot optimise what you cannot see. The first step is always attribution — tagging every resource by team, environment, and business unit so costs land where the decisions are made. With per-tenant cost dashboards, our customers can see exactly which workload drives each dollar and forecast spend before the monthly invoice arrives.
+
+### Right-Size, Then Commit
+
+Most waste comes from over-provisioning. We profile utilisation and right-size instances to actual demand, replacing fixed allocations with autoscaling where traffic is variable. For predictable baseline load, committed-use discounts and reserved capacity lower unit cost materially. The combination — elastic for the spikes, reserved for the floor — typically trims 20 to 30 percent from a mature footprint.
+
+### Optimise Without Cutting Corners
+
+Cost reduction must never erode reliability or security. We preserve multi-zone redundancy, immutable backups, and encryption everywhere, and we evaluate every change against its availability impact. FinOps done well is not about spending less — it is about spending deliberately, so every dollar funds capacity that genuinely serves the business.

@@ -14,7 +14,7 @@ title: Data Management Policy
 | **Title**    | Data Management Policy             |
 | **Doc#**     | POL-DATA-015 |
 | **Version**  | 1.0                                 |
-| **Date**     | 01-03-2023                              |
+| **Date**     | 01-03-2024                              |
 
 This policy outlines the requirements and controls/procedures CloudCore has
 implemented to manage the end-to-end data lifecycle, from data

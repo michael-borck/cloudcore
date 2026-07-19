@@ -1,0 +1,401 @@
+ticket_id,customer_id,date,product,region,channel,priority,resolution_hours,satisfaction_rating,ticket_text
+TK0009,CC0319,2025-01-01,Analytics Pro,NSW,Phone,Low,42.30,3,"[Analytics Pro] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0111,CC0185,2025-01-01,DataVault,NSW,Portal,Medium,16.30,3,"[DataVault] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0187,CC0085,2025-01-01,Analytics Pro,NSW,Chat,Medium,14.60,4,"[Analytics Pro] Very professional service, communication was clear and timely."
+TK0268,CC0211,2025-01-06,DataVault,NSW,Chat,Medium,13.00,4,"[DataVault] Painless process, would recommend CloudCore support to anyone."
+TK0043,CC0136,2025-01-08,DataVault,NSW,Phone,Low,38.80,4,"[DataVault] Issue resolved quickly, team was responsive and helpful throughout."
+TK0292,CC0185,2025-01-11,DataVault,NSW,Portal,Medium,15.40,2,"[DataVault] Not happy with the handling, communication was poor throughout."
+TK0218,CC0172,2025-01-12,CloudSync,QLD,Email,Low,43.70,3,"[CloudSync] Problem was addressed eventually, response time could be better."
+TK0349,CC0334,2025-01-20,Analytics Pro,WA,Portal,Low,19.30,4,"[Analytics Pro] Issue resolved quickly, team was responsive and helpful throughout."
+TK0222,CC0387,2025-01-27,CloudSync,QLD,Portal,Medium,11.40,4,"[CloudSync] Painless process, would recommend CloudCore support to anyone."
+TK0046,CC0130,2025-01-31,DataVault,VIC,Chat,Medium,2.20,2,[DataVault] Support did not seem to understand the urgency of our situation.
+TK0294,CC0031,2025-02-01,Analytics Pro,QLD,Portal,Medium,13.40,5,"[Analytics Pro] Great support experience, engineer understood the problem immediately."
+TK0360,CC0072,2025-02-02,Analytics Pro,WA,Portal,Medium,13.10,4,"[Analytics Pro] Very professional service, communication was clear and timely."
+TK0052,CC0062,2025-02-04,CloudSync,NSW,Chat,Low,39.50,3,"[CloudSync] Support was okay, had to explain the situation more than once."
+TK0200,CC0185,2025-02-05,DataVault,NSW,Portal,Low,44.30,4,"[DataVault] Great support experience, engineer understood the problem immediately."
+TK0261,CC0058,2025-02-06,DataVault,NSW,Portal,Medium,5.20,4,"[DataVault] Very professional service, communication was clear and timely."
+TK0015,CC0291,2025-02-07,DataVault,NSW,Portal,Low,33.50,5,[DataVault] Fixed within the hour and followed up to confirm everything was working.
+TK0087,CC0255,2025-02-10,CloudSync,NSW,Portal,Medium,14.00,4,[CloudSync] Fixed within the hour and followed up to confirm everything was working.
+TK0177,CC0087,2025-02-11,CloudSync,NSW,Portal,Medium,18.30,2,[CloudSync] Took far too long to resolve and disrupted our operations significantly.
+TK0391,CC0175,2025-02-11,CloudSync,NSW,Portal,Medium,9.40,4,"[CloudSync] Very professional service, communication was clear and timely."
+TK0308,CC0339,2025-02-12,CloudSync,NSW,Email,Medium,4.70,4,[CloudSync] Fixed within the hour and followed up to confirm everything was working.
+TK0058,CC0361,2025-02-13,CloudSync,WA,Phone,High,5.70,5,[CloudSync] Fixed within the hour and followed up to confirm everything was working.
+TK0363,CC0208,2025-02-16,DataVault,QLD,Phone,Medium,11.50,4,"[DataVault] Very professional service, communication was clear and timely."
+TK0124,CC0255,2025-02-17,CloudSync,NSW,Chat,Low,29.30,3,"[CloudSync] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0097,CC0390,2025-02-22,DataVault,VIC,Phone,Medium,8.50,3,"[DataVault] It works now, though the process felt a bit clunky."
+TK0116,CC0032,2025-03-13,CloudSync,NSW,Phone,Medium,8.30,3,"[CloudSync] It works now, though the process felt a bit clunky."
+TK0220,CC0264,2025-03-15,Analytics Pro,QLD,Email,Critical,2.50,4,"[Analytics Pro] Painless process, would recommend CloudCore support to anyone."
+TK0069,CC0010,2025-03-16,CloudSync,NSW,Email,Low,61.60,3,"[CloudSync] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0273,CC0316,2025-03-16,Analytics Pro,NSW,Chat,High,4.80,4,"[Analytics Pro] Painless process, would recommend CloudCore support to anyone."
+TK0001,CC0060,2025-03-17,DataVault,SA,Portal,Medium,15.40,3,"[DataVault] Problem was addressed eventually, response time could be better."
+TK0300,CC0109,2025-03-17,DataVault,NSW,Email,Low,43.10,3,[DataVault] Resolved but took longer than expected to get a response.
+TK0393,CC0024,2025-03-17,Analytics Pro,VIC,Email,Low,43.20,4,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0180,CC0256,2025-03-18,CloudSync,VIC,Phone,High,9.00,4,"[CloudSync] Issue resolved quickly, team was responsive and helpful throughout."
+TK0251,CC0374,2025-03-18,CloudSync,VIC,Portal,Low,37.70,2,"[CloudSync] Not happy with the handling, communication was poor throughout."
+TK0109,CC0149,2025-03-19,Analytics Pro,VIC,Portal,Low,12.80,3,"[Analytics Pro] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0125,CC0151,2025-03-21,Analytics Pro,NSW,Portal,Medium,11.60,5,"[Analytics Pro] Great support experience, engineer understood the problem immediately."
+TK0210,CC0278,2025-03-25,CloudSync,VIC,Portal,Medium,13.30,4,[CloudSync] Fixed within the hour and followed up to confirm everything was working.
+TK0024,CC0251,2025-03-30,DataVault,QLD,Phone,Low,20.80,4,"[DataVault] Great support experience, engineer understood the problem immediately."
+TK0044,CC0260,2025-03-30,CloudSync,SA,Portal,Low,49.50,3,[CloudSync] Resolved but took longer than expected to get a response.
+TK0225,CC0291,2025-03-30,DataVault,NSW,Portal,Medium,11.70,4,"[DataVault] Issue resolved quickly, team was responsive and helpful throughout."
+TK0054,CC0228,2025-04-02,DataVault,QLD,Email,High,5.50,4,"[DataVault] Very professional service, communication was clear and timely."
+TK0017,CC0247,2025-04-04,DataVault,VIC,Portal,Low,31.10,4,"[DataVault] Very professional service, communication was clear and timely."
+TK0096,CC0137,2025-04-04,Analytics Pro,NSW,Phone,Medium,8.90,3,"[Analytics Pro] Problem was addressed eventually, response time could be better."
+TK0005,CC0134,2025-04-06,DataVault,NSW,Portal,High,3.40,5,[DataVault] Fixed within the hour and followed up to confirm everything was working.
+TK0366,CC0235,2025-04-06,DataVault,VIC,Phone,Low,41.50,3,"[DataVault] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0174,CC0122,2025-04-09,Analytics Pro,VIC,Email,Medium,2.50,3,"[Analytics Pro] Problem was addressed eventually, response time could be better."
+TK0374,CC0104,2025-04-10,CloudSync,VIC,Chat,Low,61.10,2,"[CloudSync] Frustrating experience, had to follow up multiple times for a simple fix."
+TK0279,CC0005,2025-04-12,CloudSync,VIC,Portal,Medium,14.30,2,[CloudSync] Took far too long to resolve and disrupted our operations significantly.
+TK0075,CC0059,2025-04-17,CloudSync,NSW,Email,Low,25.50,2,[CloudSync] Support did not seem to understand the urgency of our situation.
+TK0361,CC0336,2025-04-23,DataVault,SA,Chat,High,4.10,4,"[DataVault] Issue resolved quickly, team was responsive and helpful throughout."
+TK0392,CC0399,2025-04-23,DataVault,NSW,Portal,Medium,13.80,4,"[DataVault] Very professional service, communication was clear and timely."
+TK0250,CC0325,2025-04-24,Analytics Pro,QLD,Phone,High,4.60,3,"[Analytics Pro] It works now, though the process felt a bit clunky."
+TK0055,CC0081,2025-04-25,CloudSync,SA,Portal,Critical,6.00,4,"[CloudSync] Painless process, would recommend CloudCore support to anyone."
+TK0219,CC0153,2025-04-25,CloudSync,VIC,Email,Medium,14.70,3,[CloudSync] Resolved but took longer than expected to get a response.
+TK0110,CC0379,2025-04-27,CloudSync,WA,Portal,Medium,20.70,5,"[CloudSync] Great support experience, engineer understood the problem immediately."
+TK0164,CC0155,2025-04-29,Analytics Pro,VIC,Chat,Medium,15.70,3,"[Analytics Pro] Support was okay, had to explain the situation more than once."
+TK0013,CC0165,2025-05-03,DataVault,NSW,Portal,Medium,17.50,5,"[DataVault] Issue resolved quickly, team was responsive and helpful throughout."
+TK0047,CC0189,2025-05-04,DataVault,VIC,Portal,Medium,8.20,3,"[DataVault] Problem was addressed eventually, response time could be better."
+TK0165,CC0107,2025-05-05,DataVault,QLD,Phone,High,7.60,3,"[DataVault] Problem was addressed eventually, response time could be better."
+TK0175,CC0355,2025-05-06,CloudSync,VIC,Phone,Medium,8.90,4,"[CloudSync] Issue resolved quickly, team was responsive and helpful throughout."
+TK0335,CC0400,2025-05-06,Analytics Pro,NSW,Chat,Medium,5.30,5,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0106,CC0114,2025-05-07,Analytics Pro,WA,Chat,Low,33.10,3,"[Analytics Pro] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0307,CC0321,2025-05-08,Analytics Pro,QLD,Chat,High,2.30,4,"[Analytics Pro] Painless process, would recommend CloudCore support to anyone."
+TK0168,CC0022,2025-05-10,DataVault,WA,Phone,Medium,9.60,3,"[DataVault] It works now, though the process felt a bit clunky."
+TK0283,CC0109,2025-05-18,DataVault,NSW,Email,Medium,9.80,4,[DataVault] Fixed within the hour and followed up to confirm everything was working.
+TK0301,CC0151,2025-05-18,Analytics Pro,NSW,Portal,Medium,8.00,4,"[Analytics Pro] Very professional service, communication was clear and timely."
+TK0137,CC0061,2025-05-19,Analytics Pro,NSW,Phone,Medium,12.50,3,"[Analytics Pro] Problem was addressed eventually, response time could be better."
+TK0272,CC0059,2025-05-19,CloudSync,NSW,Phone,Medium,8.50,4,"[CloudSync] Issue resolved quickly, team was responsive and helpful throughout."
+TK0173,CC0175,2025-05-20,CloudSync,NSW,Phone,High,5.60,5,"[CloudSync] Painless process, would recommend CloudCore support to anyone."
+TK0263,CC0114,2025-05-20,Analytics Pro,WA,Portal,Medium,13.20,3,"[Analytics Pro] It works now, though the process felt a bit clunky."
+TK0098,CC0255,2025-05-23,CloudSync,NSW,Email,High,10.70,4,"[CloudSync] Great support experience, engineer understood the problem immediately."
+TK0227,CC0245,2025-05-23,CloudSync,NSW,Chat,Low,38.30,3,"[CloudSync] Support was okay, had to explain the situation more than once."
+TK0285,CC0093,2025-05-23,Analytics Pro,VIC,Portal,Medium,10.60,3,"[Analytics Pro] Support was okay, had to explain the situation more than once."
+TK0306,CC0334,2025-05-29,CloudSync,WA,Phone,Medium,8.80,3,"[CloudSync] It works now, though the process felt a bit clunky."
+TK0317,CC0166,2025-05-30,DataVault,VIC,Portal,Medium,12.90,5,"[DataVault] Great support experience, engineer understood the problem immediately."
+TK0389,CC0134,2025-06-03,Analytics Pro,NSW,Chat,Medium,6.60,4,"[Analytics Pro] Painless process, would recommend CloudCore support to anyone."
+TK0169,CC0040,2025-06-04,DataVault,VIC,Chat,Low,28.00,5,"[DataVault] Great support experience, engineer understood the problem immediately."
+TK0036,CC0383,2025-06-06,CloudSync,QLD,Portal,High,6.70,4,"[CloudSync] Great support experience, engineer understood the problem immediately."
+TK0014,CC0248,2025-06-08,CloudSync,SA,Phone,Low,53.70,2,"[CloudSync] Not happy with the handling, communication was poor throughout."
+TK0276,CC0193,2025-06-12,DataVault,WA,Email,Low,28.50,4,[DataVault] Fixed within the hour and followed up to confirm everything was working.
+TK0048,CC0026,2025-06-17,Analytics Pro,QLD,Email,Medium,9.70,4,"[Analytics Pro] Very professional service, communication was clear and timely."
+TK0056,CC0248,2025-06-18,CloudSync,SA,Phone,Low,34.90,3,"[CloudSync] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0160,CC0318,2025-06-18,DataVault,WA,Phone,Medium,16.70,4,"[DataVault] Very professional service, communication was clear and timely."
+TK0216,CC0249,2025-06-18,Analytics Pro,WA,Phone,High,6.60,4,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0122,CC0193,2025-06-20,DataVault,WA,Chat,Low,51.60,2,"[DataVault] Frustrating experience, had to follow up multiple times for a simple fix."
+TK0235,CC0016,2025-06-20,Analytics Pro,NSW,Email,Medium,10.60,4,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0351,CC0055,2025-06-20,CloudSync,VIC,Email,Medium,20.50,4,"[CloudSync] Issue resolved quickly, team was responsive and helpful throughout."
+TK0104,CC0138,2025-06-22,Analytics Pro,QLD,Phone,Low,43.40,3,"[Analytics Pro] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0118,CC0020,2025-06-23,DataVault,NSW,Email,Medium,11.50,5,[DataVault] Fixed within the hour and followed up to confirm everything was working.
+TK0136,CC0300,2025-06-23,Analytics Pro,VIC,Email,Medium,5.30,4,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0275,CC0172,2025-06-26,Analytics Pro,QLD,Portal,Medium,9.30,4,"[Analytics Pro] Painless process, would recommend CloudCore support to anyone."
+TK0387,CC0172,2025-06-26,DataVault,QLD,Email,Critical,3.20,5,"[DataVault] Issue resolved quickly, team was responsive and helpful throughout."
+TK0338,CC0391,2025-07-06,Analytics Pro,VIC,Email,Low,34.30,3,"[Analytics Pro] Support was okay, had to explain the situation more than once."
+TK0359,CC0196,2025-07-06,DataVault,NSW,Email,Medium,13.40,3,"[DataVault] It works now, though the process felt a bit clunky."
+TK0127,CC0111,2025-07-10,Analytics Pro,NSW,Portal,Low,46.40,3,"[Analytics Pro] Problem was addressed eventually, response time could be better."
+TK0134,CC0213,2025-07-10,CloudSync,VIC,Email,Low,37.00,3,"[CloudSync] Problem was addressed eventually, response time could be better."
+TK0215,CC0338,2025-07-14,CloudSync,WA,Phone,Critical,4.00,5,"[CloudSync] Very professional service, communication was clear and timely."
+TK0242,CC0362,2025-07-14,CloudSync,SA,Phone,Medium,10.90,3,"[CloudSync] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0049,CC0325,2025-07-16,Analytics Pro,QLD,Email,High,4.90,3,"[Analytics Pro] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0101,CC0138,2025-07-16,DataVault,QLD,Phone,Medium,9.60,4,"[DataVault] Great support experience, engineer understood the problem immediately."
+TK0100,CC0031,2025-07-20,Analytics Pro,QLD,Portal,Medium,10.00,3,"[Analytics Pro] Problem was addressed eventually, response time could be better."
+TK0339,CC0088,2025-07-21,Analytics Pro,NSW,Phone,Critical,2.50,3,"[Analytics Pro] It works now, though the process felt a bit clunky."
+TK0290,CC0093,2025-07-22,CloudSync,VIC,Email,Low,48.90,3,"[CloudSync] Problem was addressed eventually, response time could be better."
+TK0068,CC0367,2025-07-25,Analytics Pro,NSW,Phone,Medium,20.80,3,"[Analytics Pro] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0380,CC0377,2025-07-26,CloudSync,QLD,Email,High,8.00,5,"[CloudSync] Painless process, would recommend CloudCore support to anyone."
+TK0384,CC0202,2025-07-27,CloudSync,NSW,Phone,Medium,15.20,4,[CloudSync] Fixed within the hour and followed up to confirm everything was working.
+TK0021,CC0265,2025-07-31,Analytics Pro,NSW,Portal,Medium,17.40,4,"[Analytics Pro] Issue resolved quickly, team was responsive and helpful throughout."
+TK0190,CC0233,2025-08-01,CloudSync,WA,Portal,Medium,11.10,4,[CloudSync] Fixed within the hour and followed up to confirm everything was working.
+TK0061,CC0029,2025-08-04,Analytics Pro,VIC,Email,Medium,10.40,4,"[Analytics Pro] Issue resolved quickly, team was responsive and helpful throughout."
+TK0310,CC0016,2025-08-09,Analytics Pro,NSW,Chat,Medium,12.10,4,"[Analytics Pro] Painless process, would recommend CloudCore support to anyone."
+TK0057,CC0318,2025-08-10,Analytics Pro,WA,Phone,Medium,11.30,4,"[Analytics Pro] Very professional service, communication was clear and timely."
+TK0295,CC0294,2025-08-17,CloudSync,NSW,Email,Medium,9.10,4,"[CloudSync] Painless process, would recommend CloudCore support to anyone."
+TK0090,CC0385,2025-08-19,Analytics Pro,QLD,Portal,High,4.80,3,"[Analytics Pro] Problem was addressed eventually, response time could be better."
+TK0039,CC0096,2025-08-20,DataVault,NSW,Chat,Medium,3.10,4,[DataVault] Fixed within the hour and followed up to confirm everything was working.
+TK0113,CC0303,2025-08-20,Analytics Pro,NSW,Email,Medium,7.60,5,"[Analytics Pro] Great support experience, engineer understood the problem immediately."
+TK0303,CC0294,2025-08-20,CloudSync,NSW,Email,Low,26.50,2,"[CloudSync] Not happy with the handling, communication was poor throughout."
+TK0011,CC0270,2025-08-22,CloudSync,NSW,Chat,Medium,21.00,5,"[CloudSync] Painless process, would recommend CloudCore support to anyone."
+TK0063,CC0314,2025-08-22,Analytics Pro,NSW,Portal,Medium,16.40,5,"[Analytics Pro] Very professional service, communication was clear and timely."
+TK0214,CC0022,2025-08-22,DataVault,WA,Portal,Low,34.50,2,[DataVault] Slow response and the issue kept recurring after the supposed fix.
+TK0379,CC0382,2025-08-24,DataVault,SA,Email,Medium,9.20,3,"[DataVault] Problem was addressed eventually, response time could be better."
+TK0126,CC0228,2025-08-26,DataVault,QLD,Phone,Medium,12.00,4,"[DataVault] Painless process, would recommend CloudCore support to anyone."
+TK0271,CC0265,2025-08-26,DataVault,NSW,Phone,Low,23.00,3,[DataVault] Resolved but took longer than expected to get a response.
+TK0143,CC0039,2025-08-29,Analytics Pro,WA,Email,Medium,17.70,4,"[Analytics Pro] Painless process, would recommend CloudCore support to anyone."
+TK0144,CC0177,2025-08-30,DataVault,VIC,Email,High,3.50,4,"[DataVault] Very professional service, communication was clear and timely."
+TK0358,CC0159,2025-09-01,DataVault,WA,Email,Medium,13.50,5,"[DataVault] Very professional service, communication was clear and timely."
+TK0162,CC0159,2025-09-02,CloudSync,WA,Email,Low,36.40,4,"[CloudSync] Great support experience, engineer understood the problem immediately."
+TK0132,CC0312,2025-09-04,CloudSync,NSW,Email,High,7.40,3,"[CloudSync] Problem was addressed eventually, response time could be better."
+TK0051,CC0374,2025-09-12,Analytics Pro,VIC,Portal,High,0.10,4,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0199,CC0059,2025-09-12,CloudSync,NSW,Email,Low,19.70,3,"[CloudSync] It works now, though the process felt a bit clunky."
+TK0311,CC0034,2025-09-12,DataVault,QLD,Phone,High,6.50,3,[DataVault] Resolved but took longer than expected to get a response.
+TK0342,CC0267,2025-09-12,DataVault,WA,Email,Low,29.30,3,[DataVault] Resolved but took longer than expected to get a response.
+TK0072,CC0178,2025-09-13,DataVault,QLD,Portal,High,3.50,3,[DataVault] Resolved but took longer than expected to get a response.
+TK0032,CC0060,2025-09-14,DataVault,SA,Portal,High,1.80,4,"[DataVault] Issue resolved quickly, team was responsive and helpful throughout."
+TK0038,CC0119,2025-09-16,DataVault,VIC,Portal,Medium,14.50,2,[DataVault] Took far too long to resolve and disrupted our operations significantly.
+TK0198,CC0063,2025-09-16,DataVault,VIC,Email,Low,28.80,3,"[DataVault] Support was okay, had to explain the situation more than once."
+TK0176,CC0133,2025-09-17,DataVault,QLD,Portal,Low,42.60,2,"[DataVault] Frustrating experience, had to follow up multiple times for a simple fix."
+TK0257,CC0264,2025-09-17,Analytics Pro,QLD,Phone,Critical,1.20,3,"[Analytics Pro] It works now, though the process felt a bit clunky."
+TK0316,CC0313,2025-09-17,DataVault,SA,Phone,High,5.70,3,[DataVault] Resolved but took longer than expected to get a response.
+TK0243,CC0330,2025-09-18,Analytics Pro,NSW,Email,Medium,16.50,3,"[Analytics Pro] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0245,CC0387,2025-09-18,CloudSync,QLD,Portal,Medium,15.10,4,"[CloudSync] Issue resolved quickly, team was responsive and helpful throughout."
+TK0092,CC0217,2025-09-19,DataVault,VIC,Phone,High,7.30,4,[DataVault] Fixed within the hour and followed up to confirm everything was working.
+TK0197,CC0207,2025-09-19,DataVault,VIC,Email,Critical,1.80,4,"[DataVault] Painless process, would recommend CloudCore support to anyone."
+TK0230,CC0339,2025-09-19,CloudSync,NSW,Email,Medium,10.70,3,"[CloudSync] It works now, though the process felt a bit clunky."
+TK0148,CC0016,2025-09-20,Analytics Pro,NSW,Email,Medium,7.00,4,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0252,CC0181,2025-09-22,Analytics Pro,NSW,Phone,Medium,12.10,4,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0206,CC0353,2025-09-23,Analytics Pro,NSW,Email,Medium,8.50,3,"[Analytics Pro] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0149,CC0268,2025-09-24,Analytics Pro,WA,Chat,Medium,19.50,3,"[Analytics Pro] It works now, though the process felt a bit clunky."
+TK0244,CC0340,2025-09-24,CloudSync,SA,Phone,Medium,12.00,3,"[CloudSync] Support was okay, had to explain the situation more than once."
+TK0353,CC0068,2025-09-24,CloudSync,NSW,Email,Medium,9.40,3,"[CloudSync] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0350,CC0297,2025-09-26,CloudSync,NSW,Phone,Low,34.40,3,"[CloudSync] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0385,CC0246,2025-09-27,DataVault,SA,Chat,High,5.80,4,[DataVault] Fixed within the hour and followed up to confirm everything was working.
+TK0062,CC0217,2025-09-28,DataVault,VIC,Email,Medium,11.10,3,"[DataVault] Problem was addressed eventually, response time could be better."
+TK0191,CC0350,2025-09-28,CloudSync,NSW,Portal,High,7.80,4,[CloudSync] Fixed within the hour and followed up to confirm everything was working.
+TK0205,CC0298,2025-09-28,DataVault,NSW,Phone,Medium,8.80,3,"[DataVault] Support was okay, had to explain the situation more than once."
+TK0010,CC0274,2025-09-29,CloudSync,SA,Portal,Medium,3.60,1,[CloudSync] Slow response and the issue kept recurring after the supposed fix.
+TK0234,CC0163,2025-09-30,Analytics Pro,NSW,Portal,Medium,8.30,5,"[Analytics Pro] Painless process, would recommend CloudCore support to anyone."
+TK0356,CC0154,2025-09-30,Analytics Pro,VIC,Email,Critical,3.00,4,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0093,CC0111,2025-10-01,Analytics Pro,NSW,Email,Low,32.70,4,"[Analytics Pro] Great support experience, engineer understood the problem immediately."
+TK0152,CC0016,2025-10-01,Analytics Pro,NSW,Email,Medium,8.80,3,"[Analytics Pro] Support was okay, had to explain the situation more than once."
+TK0258,CC0226,2025-10-01,CloudSync,WA,Portal,High,8.80,2,[CloudSync] Took far too long to resolve and disrupted our operations significantly. Worried about credential reset requirements after the incident notification.
+TK0107,CC0007,2025-10-02,DataVault,VIC,Portal,High,3.40,1,[DataVault] Slow response and the issue kept recurring after the supposed fix.
+TK0326,CC0137,2025-10-02,DataVault,NSW,Phone,Critical,1.20,4,"[DataVault] Issue resolved quickly, team was responsive and helpful throughout."
+TK0157,CC0129,2025-10-03,DataVault,WA,Phone,High,2.10,3,"[DataVault] Support was okay, had to explain the situation more than once."
+TK0280,CC0352,2025-10-03,Analytics Pro,VIC,Email,Critical,3.30,3,"[Analytics Pro] Problem was addressed eventually, response time could be better."
+TK0232,CC0076,2025-10-04,Analytics Pro,VIC,Chat,Low,43.00,2,"[Analytics Pro] Frustrating experience, had to follow up multiple times for a simple fix."
+TK0185,CC0100,2025-10-05,DataVault,VIC,Portal,Medium,6.50,4,[DataVault] Fixed within the hour and followed up to confirm everything was working.
+TK0188,CC0019,2025-10-06,Analytics Pro,VIC,Chat,Low,19.80,4,"[Analytics Pro] Great support experience, engineer understood the problem immediately."
+TK0192,CC0301,2025-10-06,CloudSync,VIC,Email,High,7.10,2,[CloudSync] Took far too long to resolve and disrupted our operations significantly.
+TK0286,CC0320,2025-10-06,DataVault,SA,Email,Critical,3.20,4,[DataVault] Fixed within the hour and followed up to confirm everything was working.
+TK0395,CC0107,2025-10-07,Analytics Pro,QLD,Phone,Critical,5.00,4,"[Analytics Pro] Very professional service, communication was clear and timely."
+TK0128,CC0141,2025-10-08,Analytics Pro,VIC,Portal,Medium,12.60,4,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0249,CC0390,2025-10-08,DataVault,VIC,Email,Low,43.40,2,[DataVault] Took far too long to resolve and disrupted our operations significantly.
+TK0289,CC0117,2025-10-08,Analytics Pro,VIC,Email,High,3.80,3,[Analytics Pro] Resolved but took longer than expected to get a response.
+TK0309,CC0054,2025-10-08,Analytics Pro,WA,Email,High,4.50,3,"[Analytics Pro] It works now, though the process felt a bit clunky."
+TK0336,CC0168,2025-10-08,DataVault,QLD,Chat,High,4.10,4,"[DataVault] Great support experience, engineer understood the problem immediately."
+TK0372,CC0389,2025-10-08,DataVault,QLD,Chat,Medium,7.20,3,"[DataVault] Problem was addressed eventually, response time could be better."
+TK0390,CC0178,2025-10-08,CloudSync,QLD,Portal,Medium,13.10,4,"[CloudSync] Very professional service, communication was clear and timely."
+TK0070,CC0203,2025-10-09,Analytics Pro,QLD,Email,High,7.20,3,"[Analytics Pro] Problem was addressed eventually, response time could be better."
+TK0364,CC0298,2025-10-09,DataVault,NSW,Portal,Medium,13.30,4,[DataVault] Fixed within the hour and followed up to confirm everything was working.
+TK0112,CC0350,2025-10-10,CloudSync,NSW,Portal,Medium,24.70,3,"[CloudSync] Support was okay, had to explain the situation more than once."
+TK0147,CC0166,2025-10-10,DataVault,VIC,Email,High,8.00,4,"[DataVault] Very professional service, communication was clear and timely."
+TK0333,CC0099,2025-10-10,DataVault,SA,Email,Medium,8.80,4,"[DataVault] Issue resolved quickly, team was responsive and helpful throughout."
+TK0007,CC0331,2025-10-11,DataVault,WA,Email,High,6.00,4,"[DataVault] Issue resolved quickly, team was responsive and helpful throughout. Worried about credential reset requirements after the incident notification."
+TK0065,CC0346,2025-10-11,Analytics Pro,VIC,Email,Low,25.60,3,"[Analytics Pro] It works now, though the process felt a bit clunky."
+TK0376,CC0292,2025-10-11,CloudSync,WA,Portal,Medium,11.00,3,"[CloudSync] Problem was addressed eventually, response time could be better."
+TK0085,CC0178,2025-10-12,Analytics Pro,QLD,Phone,High,5.50,3,[Analytics Pro] Resolved but took longer than expected to get a response.
+TK0236,CC0249,2025-10-12,CloudSync,WA,Portal,Low,28.20,1,[CloudSync] Took far too long to resolve and disrupted our operations significantly. Concerned about the data breach impact on our account and compliance obligations.
+TK0108,CC0068,2025-10-14,CloudSync,NSW,Chat,Low,49.70,3,"[CloudSync] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0166,CC0198,2025-10-15,CloudSync,SA,Portal,Medium,20.00,5,"[CloudSync] Very professional service, communication was clear and timely."
+TK0084,CC0113,2025-10-16,Analytics Pro,VIC,Portal,Low,14.50,3,"[Analytics Pro] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0012,CC0389,2025-10-18,Analytics Pro,QLD,Email,Medium,15.50,2,[Analytics Pro] Support did not seem to understand the urgency of our situation.
+TK0159,CC0056,2025-10-19,DataVault,NSW,Portal,Critical,2.50,3,"[DataVault] It works now, though the process felt a bit clunky."
+TK0266,CC0094,2025-10-19,Analytics Pro,NSW,Phone,Medium,14.80,3,"[Analytics Pro] Problem was addressed eventually, response time could be better."
+TK0287,CC0138,2025-10-19,CloudSync,QLD,Email,Critical,5.90,4,"[CloudSync] Issue resolved quickly, team was responsive and helpful throughout."
+TK0296,CC0177,2025-10-19,DataVault,VIC,Email,High,4.60,4,[DataVault] Fixed within the hour and followed up to confirm everything was working.
+TK0305,CC0314,2025-10-19,Analytics Pro,NSW,Portal,High,3.00,5,"[Analytics Pro] Great support experience, engineer understood the problem immediately."
+TK0006,CC0142,2025-10-20,Analytics Pro,SA,Email,High,5.70,4,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0105,CC0156,2025-10-20,Analytics Pro,VIC,Portal,Medium,8.00,3,"[Analytics Pro] Support was okay, had to explain the situation more than once."
+TK0018,CC0181,2025-10-21,Analytics Pro,NSW,Email,Medium,11.40,4,"[Analytics Pro] Painless process, would recommend CloudCore support to anyone."
+TK0212,CC0070,2025-10-21,Analytics Pro,WA,Email,High,4.20,2,[Analytics Pro] Took far too long to resolve and disrupted our operations significantly.
+TK0327,CC0284,2025-10-21,CloudSync,VIC,Phone,Low,42.10,3,"[CloudSync] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0223,CC0164,2025-10-23,DataVault,QLD,Portal,Medium,15.90,3,"[DataVault] Support was okay, had to explain the situation more than once."
+TK0027,CC0248,2025-10-24,CloudSync,SA,Portal,Low,15.20,2,[CloudSync] Slow response and the issue kept recurring after the supposed fix.
+TK0201,CC0090,2025-10-24,DataVault,QLD,Portal,Medium,7.80,4,"[DataVault] Great support experience, engineer understood the problem immediately."
+TK0140,CC0241,2025-10-28,DataVault,QLD,Portal,Low,20.90,3,[DataVault] Resolved but took longer than expected to get a response.
+TK0277,CC0392,2025-10-28,CloudSync,NSW,Chat,High,7.10,4,[CloudSync] Fixed within the hour and followed up to confirm everything was working.
+TK0377,CC0036,2025-10-29,DataVault,SA,Portal,Medium,8.00,4,"[DataVault] Painless process, would recommend CloudCore support to anyone."
+TK0153,CC0164,2025-10-30,DataVault,QLD,Email,Low,29.50,4,"[DataVault] Painless process, would recommend CloudCore support to anyone."
+TK0103,CC0056,2025-10-31,DataVault,NSW,Email,Medium,6.80,4,"[DataVault] Painless process, would recommend CloudCore support to anyone."
+TK0281,CC0119,2025-10-31,DataVault,VIC,Chat,Medium,9.30,4,[DataVault] Fixed within the hour and followed up to confirm everything was working.
+TK0034,CC0231,2025-11-01,Analytics Pro,NSW,Phone,Medium,7.00,3,[Analytics Pro] Resolved but took longer than expected to get a response.
+TK0081,CC0364,2025-11-01,Analytics Pro,QLD,Email,Critical,4.20,4,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0293,CC0335,2025-11-01,CloudSync,QLD,Phone,Low,45.30,2,"[CloudSync] Not happy with the handling, communication was poor throughout."
+TK0050,CC0243,2025-11-02,Analytics Pro,QLD,Email,Medium,12.50,5,"[Analytics Pro] Issue resolved quickly, team was responsive and helpful throughout."
+TK0089,CC0203,2025-11-02,Analytics Pro,QLD,Email,Low,20.60,3,"[Analytics Pro] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0141,CC0326,2025-11-02,Analytics Pro,NSW,Email,Medium,15.70,5,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0348,CC0016,2025-11-02,Analytics Pro,NSW,Phone,Low,48.40,2,[Analytics Pro] Slow response and the issue kept recurring after the supposed fix.
+TK0204,CC0302,2025-11-03,Analytics Pro,NSW,Chat,Medium,10.90,4,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0381,CC0346,2025-11-03,CloudSync,VIC,Portal,High,4.50,3,"[CloudSync] Problem was addressed eventually, response time could be better."
+TK0388,CC0373,2025-11-03,DataVault,QLD,Email,High,5.50,4,"[DataVault] Issue resolved quickly, team was responsive and helpful throughout."
+TK0226,CC0117,2025-11-05,DataVault,VIC,Portal,Medium,25.50,4,"[DataVault] Issue resolved quickly, team was responsive and helpful throughout."
+TK0284,CC0192,2025-11-05,CloudSync,QLD,Phone,High,6.10,4,"[CloudSync] Great support experience, engineer understood the problem immediately."
+TK0246,CC0088,2025-11-06,Analytics Pro,NSW,Email,Medium,13.90,3,"[Analytics Pro] Support was okay, had to explain the situation more than once."
+TK0095,CC0201,2025-11-07,DataVault,NSW,Portal,Low,19.80,3,"[DataVault] Support was okay, had to explain the situation more than once."
+TK0322,CC0297,2025-11-07,Analytics Pro,NSW,Chat,Medium,5.30,5,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0394,CC0192,2025-11-08,CloudSync,QLD,Portal,Medium,20.60,2,"[CloudSync] Frustrating experience, had to follow up multiple times for a simple fix."
+TK0399,CC0194,2025-11-08,CloudSync,WA,Phone,High,2.00,3,"[CloudSync] Support was okay, had to explain the situation more than once. Following the recent security incident we needed urgent reassurance and guidance."
+TK0291,CC0045,2025-11-09,CloudSync,NSW,Portal,Critical,1.90,3,"[CloudSync] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0299,CC0158,2025-11-09,Analytics Pro,NSW,Phone,Critical,3.40,4,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0320,CC0267,2025-11-10,DataVault,WA,Portal,High,7.30,4,[DataVault] Fixed within the hour and followed up to confirm everything was working. Following the recent security incident we needed urgent reassurance and guidance.
+TK0163,CC0147,2025-11-11,CloudSync,QLD,Phone,High,6.30,3,[CloudSync] Resolved but took longer than expected to get a response.
+TK0196,CC0077,2025-11-11,DataVault,WA,Phone,Critical,2.30,3,"[DataVault] Problem was addressed eventually, response time could be better."
+TK0267,CC0295,2025-11-12,Analytics Pro,SA,Email,Medium,14.10,3,"[Analytics Pro] Problem was addressed eventually, response time could be better."
+TK0083,CC0288,2025-11-13,Analytics Pro,WA,Email,Medium,14.10,4,"[Analytics Pro] Very professional service, communication was clear and timely."
+TK0193,CC0171,2025-11-13,DataVault,QLD,Email,Medium,6.60,3,[DataVault] Resolved but took longer than expected to get a response.
+TK0255,CC0201,2025-11-13,DataVault,NSW,Chat,Medium,13.30,4,"[DataVault] Very professional service, communication was clear and timely."
+TK0254,CC0356,2025-11-14,Analytics Pro,QLD,Phone,Medium,14.20,4,"[Analytics Pro] Very professional service, communication was clear and timely."
+TK0123,CC0245,2025-11-15,CloudSync,NSW,Email,High,5.50,5,[CloudSync] Fixed within the hour and followed up to confirm everything was working.
+TK0172,CC0149,2025-11-15,Analytics Pro,VIC,Portal,Medium,6.40,4,"[Analytics Pro] Painless process, would recommend CloudCore support to anyone."
+TK0060,CC0265,2025-11-16,Analytics Pro,NSW,Email,Medium,18.30,3,"[Analytics Pro] Support was okay, had to explain the situation more than once."
+TK0150,CC0386,2025-11-16,DataVault,VIC,Email,Low,13.40,3,"[DataVault] Support was okay, had to explain the situation more than once."
+TK0179,CC0116,2025-11-16,CloudSync,QLD,Email,High,7.30,4,[CloudSync] Fixed within the hour and followed up to confirm everything was working.
+TK0033,CC0138,2025-11-17,DataVault,QLD,Phone,High,3.80,2,"[DataVault] Frustrating experience, had to follow up multiple times for a simple fix."
+TK0314,CC0181,2025-11-19,Analytics Pro,NSW,Chat,High,2.90,3,"[Analytics Pro] It works now, though the process felt a bit clunky."
+TK0346,CC0321,2025-11-19,DataVault,QLD,Email,Medium,11.40,3,"[DataVault] Problem was addressed eventually, response time could be better."
+TK0269,CC0031,2025-11-20,Analytics Pro,QLD,Portal,Medium,17.70,2,"[Analytics Pro] Frustrating experience, had to follow up multiple times for a simple fix."
+TK0371,CC0079,2025-11-20,Analytics Pro,VIC,Portal,High,4.20,3,"[Analytics Pro] Support was okay, had to explain the situation more than once."
+TK0073,CC0012,2025-11-22,CloudSync,QLD,Phone,Low,21.50,5,"[CloudSync] Painless process, would recommend CloudCore support to anyone."
+TK0131,CC0110,2025-11-22,CloudSync,VIC,Portal,Medium,7.80,3,"[CloudSync] Support was okay, had to explain the situation more than once."
+TK0319,CC0088,2025-11-22,Analytics Pro,NSW,Email,Medium,5.70,4,"[Analytics Pro] Great support experience, engineer understood the problem immediately."
+TK0332,CC0361,2025-11-22,DataVault,WA,Phone,Medium,9.10,4,"[DataVault] Painless process, would recommend CloudCore support to anyone. Requested confirmation our backups were not exposed in the September incident."
+TK0041,CC0193,2025-11-23,CloudSync,WA,Chat,High,8.50,4,"[CloudSync] Great support experience, engineer understood the problem immediately. Requested confirmation our backups were not exposed in the September incident."
+TK0171,CC0232,2025-11-23,CloudSync,VIC,Chat,Low,38.30,4,"[CloudSync] Issue resolved quickly, team was responsive and helpful throughout."
+TK0178,CC0195,2025-11-23,DataVault,NSW,Portal,Low,19.20,4,"[DataVault] Painless process, would recommend CloudCore support to anyone."
+TK0370,CC0124,2025-11-23,DataVault,VIC,Phone,High,2.80,4,[DataVault] Fixed within the hour and followed up to confirm everything was working.
+TK0004,CC0217,2025-11-24,DataVault,VIC,Phone,Medium,18.10,4,"[DataVault] Painless process, would recommend CloudCore support to anyone."
+TK0025,CC0010,2025-11-24,CloudSync,NSW,Portal,Low,34.00,2,"[CloudSync] Frustrating experience, had to follow up multiple times for a simple fix."
+TK0221,CC0110,2025-11-24,Analytics Pro,VIC,Email,High,4.70,4,"[Analytics Pro] Very professional service, communication was clear and timely."
+TK0026,CC0203,2025-11-25,CloudSync,QLD,Chat,Low,56.50,2,[CloudSync] Support did not seem to understand the urgency of our situation.
+TK0213,CC0159,2025-11-25,CloudSync,WA,Phone,High,5.30,4,"[CloudSync] Painless process, would recommend CloudCore support to anyone. Worried about credential reset requirements after the incident notification."
+TK0253,CC0083,2025-11-25,DataVault,VIC,Email,Low,24.80,3,"[DataVault] Support was okay, had to explain the situation more than once."
+TK0181,CC0085,2025-11-26,Analytics Pro,NSW,Email,Critical,3.00,4,"[Analytics Pro] Very professional service, communication was clear and timely."
+TK0259,CC0091,2025-11-26,CloudSync,NSW,Portal,High,4.90,3,[CloudSync] Resolved but took longer than expected to get a response.
+TK0020,CC0321,2025-11-27,CloudSync,QLD,Phone,Medium,22.70,5,"[CloudSync] Great support experience, engineer understood the problem immediately."
+TK0375,CC0303,2025-11-27,CloudSync,NSW,Email,Medium,2.30,4,"[CloudSync] Very professional service, communication was clear and timely."
+TK0189,CC0067,2025-11-28,DataVault,NSW,Email,Medium,9.30,3,"[DataVault] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0238,CC0303,2025-11-28,Analytics Pro,NSW,Portal,Medium,15.20,4,"[Analytics Pro] Very professional service, communication was clear and timely."
+TK0365,CC0233,2025-11-29,CloudSync,WA,Email,High,4.10,2,"[CloudSync] Not happy with the handling, communication was poor throughout."
+TK0019,CC0392,2025-11-30,CloudSync,NSW,Chat,High,6.20,3,[CloudSync] Resolved but took longer than expected to get a response.
+TK0368,CC0226,2025-11-30,Analytics Pro,WA,Portal,Medium,6.80,3,[Analytics Pro] Resolved but took longer than expected to get a response.
+TK0086,CC0110,2025-12-01,CloudSync,VIC,Email,Medium,9.90,5,"[CloudSync] Very professional service, communication was clear and timely."
+TK0130,CC0048,2025-12-01,CloudSync,QLD,Phone,Medium,13.90,4,"[CloudSync] Issue resolved quickly, team was responsive and helpful throughout."
+TK0260,CC0291,2025-12-01,DataVault,NSW,Portal,Critical,1.40,3,[DataVault] Resolved but took longer than expected to get a response.
+TK0270,CC0346,2025-12-01,CloudSync,VIC,Portal,Critical,2.50,3,"[CloudSync] Support was okay, had to explain the situation more than once."
+TK0256,CC0031,2025-12-02,Analytics Pro,QLD,Portal,Low,9.10,4,"[Analytics Pro] Painless process, would recommend CloudCore support to anyone."
+TK0278,CC0382,2025-12-03,DataVault,SA,Phone,Medium,15.70,3,"[DataVault] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0304,CC0364,2025-12-03,Analytics Pro,QLD,Email,High,6.90,4,"[Analytics Pro] Painless process, would recommend CloudCore support to anyone."
+TK0344,CC0354,2025-12-03,DataVault,NSW,Phone,Low,19.20,2,"[DataVault] Not happy with the handling, communication was poor throughout."
+TK0369,CC0392,2025-12-03,Analytics Pro,NSW,Phone,High,6.10,4,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0066,CC0399,2025-12-04,DataVault,NSW,Portal,Medium,8.00,3,"[DataVault] It works now, though the process felt a bit clunky."
+TK0297,CC0024,2025-12-04,Analytics Pro,VIC,Phone,High,4.00,3,"[Analytics Pro] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0298,CC0291,2025-12-04,CloudSync,NSW,Email,High,0.10,3,"[CloudSync] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0202,CC0385,2025-12-05,CloudSync,QLD,Phone,Medium,17.20,3,"[CloudSync] Support was okay, had to explain the situation more than once."
+TK0328,CC0014,2025-12-06,DataVault,SA,Phone,Medium,14.50,4,"[DataVault] Very professional service, communication was clear and timely."
+TK0264,CC0032,2025-12-07,Analytics Pro,NSW,Email,Medium,17.30,3,"[Analytics Pro] It works now, though the process felt a bit clunky."
+TK0237,CC0351,2025-12-08,CloudSync,NSW,Portal,Medium,19.30,4,"[CloudSync] Great support experience, engineer understood the problem immediately."
+TK0325,CC0246,2025-12-09,CloudSync,SA,Phone,High,6.30,4,"[CloudSync] Issue resolved quickly, team was responsive and helpful throughout."
+TK0378,CC0399,2025-12-09,DataVault,NSW,Portal,Medium,13.20,3,"[DataVault] It works now, though the process felt a bit clunky."
+TK0228,CC0180,2025-12-10,Analytics Pro,SA,Email,Critical,2.60,3,[Analytics Pro] Resolved but took longer than expected to get a response.
+TK0229,CC0041,2025-12-10,CloudSync,WA,Email,Medium,8.50,3,"[CloudSync] Issue sorted after a couple of attempts, acceptable outcome overall. Concerned about the data breach impact on our account and compliance obligations."
+TK0135,CC0172,2025-12-12,CloudSync,QLD,Email,Critical,2.60,4,"[CloudSync] Painless process, would recommend CloudCore support to anyone."
+TK0037,CC0132,2025-12-14,CloudSync,SA,Portal,Critical,2.10,4,"[CloudSync] Very professional service, communication was clear and timely."
+TK0318,CC0091,2025-12-15,CloudSync,NSW,Email,Medium,11.40,4,[CloudSync] Fixed within the hour and followed up to confirm everything was working.
+TK0355,CC0063,2025-12-16,DataVault,VIC,Chat,Medium,9.20,2,"[DataVault] Not happy with the handling, communication was poor throughout."
+TK0337,CC0335,2025-12-18,DataVault,QLD,Chat,Medium,13.70,4,"[DataVault] Issue resolved quickly, team was responsive and helpful throughout."
+TK0077,CC0184,2025-12-26,DataVault,VIC,Email,Medium,16.30,5,[DataVault] Fixed within the hour and followed up to confirm everything was working.
+TK0194,CC0007,2025-12-26,DataVault,VIC,Portal,High,4.00,3,[DataVault] Resolved but took longer than expected to get a response.
+TK0241,CC0068,2025-12-26,CloudSync,NSW,Email,High,7.80,3,"[CloudSync] It works now, though the process felt a bit clunky."
+TK0183,CC0044,2025-12-27,Analytics Pro,SA,Portal,Medium,11.00,4,"[Analytics Pro] Issue resolved quickly, team was responsive and helpful throughout."
+TK0031,CC0334,2025-12-31,Analytics Pro,WA,Chat,Medium,2.80,3,"[Analytics Pro] Support was okay, had to explain the situation more than once."
+TK0158,CC0362,2026-01-02,CloudSync,SA,Portal,High,4.00,4,[CloudSync] Fixed within the hour and followed up to confirm everything was working.
+TK0133,CC0229,2026-01-03,CloudSync,QLD,Chat,High,7.90,4,"[CloudSync] Very professional service, communication was clear and timely."
+TK0146,CC0159,2026-01-03,CloudSync,WA,Portal,Medium,13.40,5,"[CloudSync] Painless process, would recommend CloudCore support to anyone. Requested confirmation our backups were not exposed in the September incident."
+TK0343,CC0347,2026-01-03,Analytics Pro,QLD,Phone,High,2.50,4,"[Analytics Pro] Painless process, would recommend CloudCore support to anyone."
+TK0154,CC0249,2026-01-06,DataVault,WA,Phone,High,1.70,2,"[DataVault] Not happy with the handling, communication was poor throughout. Concerned about the data breach impact on our account and compliance obligations."
+TK0262,CC0286,2026-01-09,DataVault,WA,Phone,Low,22.30,2,[DataVault] Support did not seem to understand the urgency of our situation. Requested confirmation our backups were not exposed in the September incident.
+TK0386,CC0294,2026-01-13,CloudSync,NSW,Chat,Medium,14.50,4,"[CloudSync] Issue resolved quickly, team was responsive and helpful throughout."
+TK0329,CC0218,2026-01-14,Analytics Pro,VIC,Email,Low,19.90,3,"[Analytics Pro] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0023,CC0196,2026-01-15,DataVault,NSW,Portal,High,5.00,5,"[DataVault] Painless process, would recommend CloudCore support to anyone."
+TK0400,CC0181,2026-01-17,Analytics Pro,NSW,Phone,Medium,19.70,2,"[Analytics Pro] Not happy with the handling, communication was poor throughout."
+TK0091,CC0192,2026-01-18,CloudSync,QLD,Chat,Critical,2.20,4,"[CloudSync] Issue resolved quickly, team was responsive and helpful throughout."
+TK0340,CC0080,2026-01-18,DataVault,NSW,Chat,Medium,15.30,4,"[DataVault] Issue resolved quickly, team was responsive and helpful throughout."
+TK0330,CC0319,2026-01-19,Analytics Pro,NSW,Portal,Medium,12.90,3,"[Analytics Pro] Support was okay, had to explain the situation more than once."
+TK0003,CC0379,2026-01-20,CloudSync,WA,Phone,Medium,7.40,4,"[CloudSync] Painless process, would recommend CloudCore support to anyone."
+TK0114,CC0321,2026-01-25,Analytics Pro,QLD,Chat,High,2.10,3,"[Analytics Pro] Support was okay, had to explain the situation more than once."
+TK0324,CC0091,2026-01-25,CloudSync,NSW,Phone,High,8.80,2,[CloudSync] Support did not seem to understand the urgency of our situation.
+TK0040,CC0122,2026-01-29,DataVault,VIC,Chat,High,3.10,3,"[DataVault] Support was okay, had to explain the situation more than once."
+TK0121,CC0348,2026-01-31,CloudSync,QLD,Phone,Medium,25.50,2,[CloudSync] Support did not seem to understand the urgency of our situation.
+TK0155,CC0120,2026-01-31,Analytics Pro,QLD,Email,Critical,3.40,5,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0334,CC0100,2026-01-31,DataVault,VIC,Portal,Critical,2.30,3,"[DataVault] It works now, though the process felt a bit clunky."
+TK0203,CC0156,2026-02-02,Analytics Pro,VIC,Email,High,7.10,2,"[Analytics Pro] Not happy with the handling, communication was poor throughout."
+TK0064,CC0008,2026-02-08,Analytics Pro,QLD,Email,High,3.90,4,"[Analytics Pro] Issue resolved quickly, team was responsive and helpful throughout."
+TK0265,CC0374,2026-02-08,Analytics Pro,VIC,Phone,Medium,17.20,3,"[Analytics Pro] Support was okay, had to explain the situation more than once."
+TK0042,CC0177,2026-02-10,Analytics Pro,VIC,Phone,Medium,16.90,4,"[Analytics Pro] Painless process, would recommend CloudCore support to anyone."
+TK0151,CC0233,2026-02-10,CloudSync,WA,Email,Critical,3.00,2,[CloudSync] Support did not seem to understand the urgency of our situation.
+TK0207,CC0385,2026-02-14,Analytics Pro,QLD,Phone,Low,24.30,4,"[Analytics Pro] Very professional service, communication was clear and timely."
+TK0211,CC0058,2026-02-14,DataVault,NSW,Phone,Medium,3.00,3,"[DataVault] It works now, though the process felt a bit clunky."
+TK0224,CC0248,2026-02-16,CloudSync,SA,Email,High,5.00,3,"[CloudSync] Support was okay, had to explain the situation more than once."
+TK0002,CC0031,2026-02-17,Analytics Pro,QLD,Email,Low,23.30,4,"[Analytics Pro] Painless process, would recommend CloudCore support to anyone."
+TK0209,CC0379,2026-02-18,CloudSync,WA,Portal,Critical,1.60,4,"[CloudSync] Painless process, would recommend CloudCore support to anyone."
+TK0120,CC0212,2026-02-19,CloudSync,QLD,Chat,High,3.00,3,[CloudSync] Resolved but took longer than expected to get a response.
+TK0367,CC0185,2026-02-20,DataVault,NSW,Portal,Medium,8.20,4,"[DataVault] Painless process, would recommend CloudCore support to anyone."
+TK0067,CC0376,2026-02-21,CloudSync,VIC,Chat,High,7.20,3,"[CloudSync] Problem was addressed eventually, response time could be better."
+TK0079,CC0063,2026-02-21,DataVault,VIC,Portal,High,5.20,3,"[DataVault] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0354,CC0362,2026-02-23,DataVault,SA,Chat,Critical,3.10,4,"[DataVault] Issue resolved quickly, team was responsive and helpful throughout."
+TK0396,CC0118,2026-02-25,DataVault,QLD,Portal,Low,22.20,4,"[DataVault] Painless process, would recommend CloudCore support to anyone."
+TK0028,CC0328,2026-02-27,Analytics Pro,NSW,Email,Medium,5.10,4,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0302,CC0107,2026-02-27,DataVault,QLD,Phone,Medium,16.60,4,"[DataVault] Very professional service, communication was clear and timely."
+TK0231,CC0101,2026-02-28,DataVault,QLD,Portal,Low,27.90,4,"[DataVault] Painless process, would recommend CloudCore support to anyone."
+TK0239,CC0373,2026-02-28,DataVault,QLD,Email,Medium,10.30,4,"[DataVault] Painless process, would recommend CloudCore support to anyone."
+TK0129,CC0233,2026-03-01,CloudSync,WA,Portal,Medium,10.10,3,"[CloudSync] Support was okay, had to explain the situation more than once."
+TK0182,CC0302,2026-03-03,DataVault,NSW,Portal,High,3.30,4,[DataVault] Fixed within the hour and followed up to confirm everything was working.
+TK0078,CC0116,2026-03-04,Analytics Pro,QLD,Portal,High,2.00,2,"[Analytics Pro] Not happy with the handling, communication was poor throughout."
+TK0142,CC0052,2026-03-07,DataVault,NSW,Portal,Medium,11.00,2,[DataVault] Support did not seem to understand the urgency of our situation.
+TK0362,CC0282,2026-03-08,Analytics Pro,QLD,Email,High,5.50,2,"[Analytics Pro] Frustrating experience, had to follow up multiple times for a simple fix."
+TK0059,CC0321,2026-03-11,DataVault,QLD,Portal,Medium,10.80,3,"[DataVault] Support was okay, had to explain the situation more than once."
+TK0029,CC0123,2026-03-14,DataVault,SA,Phone,Low,33.60,3,"[DataVault] Problem was addressed eventually, response time could be better."
+TK0016,CC0160,2026-03-18,CloudSync,WA,Portal,Medium,14.80,2,[CloudSync] Took far too long to resolve and disrupted our operations significantly. Concerned about the data breach impact on our account and compliance obligations.
+TK0117,CC0207,2026-03-19,DataVault,VIC,Email,Medium,13.20,3,"[DataVault] It works now, though the process felt a bit clunky."
+TK0382,CC0098,2026-03-24,Analytics Pro,WA,Phone,Critical,2.50,3,[Analytics Pro] Resolved but took longer than expected to get a response. Requested confirmation our backups were not exposed in the September incident.
+TK0145,CC0391,2026-03-31,DataVault,VIC,Portal,Medium,9.40,2,"[DataVault] Not happy with the handling, communication was poor throughout."
+TK0247,CC0395,2026-04-02,CloudSync,NSW,Chat,High,4.00,2,[CloudSync] Slow response and the issue kept recurring after the supposed fix.
+TK0274,CC0382,2026-04-02,Analytics Pro,SA,Email,High,7.40,3,"[Analytics Pro] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0139,CC0233,2026-04-10,CloudSync,WA,Portal,Medium,9.50,2,"[CloudSync] Not happy with the handling, communication was poor throughout."
+TK0341,CC0113,2026-04-10,CloudSync,VIC,Phone,Critical,3.40,4,[CloudSync] Fixed within the hour and followed up to confirm everything was working.
+TK0208,CC0328,2026-04-11,Analytics Pro,NSW,Phone,Medium,7.40,4,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0074,CC0380,2026-04-14,DataVault,WA,Email,Critical,2.70,2,[DataVault] Support did not seem to understand the urgency of our situation.
+TK0186,CC0018,2026-04-15,DataVault,NSW,Email,Medium,9.00,2,[DataVault] Took far too long to resolve and disrupted our operations significantly.
+TK0082,CC0394,2026-04-16,CloudSync,VIC,Email,Medium,18.80,3,"[CloudSync] Problem was addressed eventually, response time could be better."
+TK0071,CC0348,2026-04-17,CloudSync,QLD,Chat,Medium,6.10,3,"[CloudSync] Support was okay, had to explain the situation more than once."
+TK0383,CC0087,2026-04-17,CloudSync,NSW,Email,Medium,9.90,2,[CloudSync] Slow response and the issue kept recurring after the supposed fix.
+TK0167,CC0057,2026-04-18,CloudSync,QLD,Portal,Low,42.90,4,[CloudSync] Fixed within the hour and followed up to confirm everything was working.
+TK0352,CC0133,2026-04-22,CloudSync,QLD,Email,Medium,21.20,1,"[CloudSync] Frustrating experience, had to follow up multiple times for a simple fix."
+TK0094,CC0366,2026-04-23,DataVault,SA,Chat,Critical,2.80,4,"[DataVault] Very professional service, communication was clear and timely."
+TK0022,CC0039,2026-04-24,Analytics Pro,WA,Portal,Low,34.20,2,[Analytics Pro] Support did not seem to understand the urgency of our situation.
+TK0282,CC0392,2026-04-24,CloudSync,NSW,Chat,High,4.10,3,"[CloudSync] Problem was addressed eventually, response time could be better."
+TK0099,CC0256,2026-04-26,CloudSync,VIC,Email,Low,32.90,2,[CloudSync] Slow response and the issue kept recurring after the supposed fix.
+TK0217,CC0013,2026-04-28,CloudSync,VIC,Phone,Low,23.00,3,"[CloudSync] Problem was addressed eventually, response time could be better."
+TK0156,CC0267,2026-05-07,DataVault,WA,Chat,High,7.40,3,"[DataVault] Support was okay, had to explain the situation more than once."
+TK0233,CC0375,2026-05-08,CloudSync,NSW,Email,Critical,3.30,3,"[CloudSync] Support was okay, had to explain the situation more than once."
+TK0080,CC0239,2026-05-10,Analytics Pro,QLD,Chat,High,3.70,4,"[Analytics Pro] Issue resolved quickly, team was responsive and helpful throughout."
+TK0240,CC0356,2026-05-12,Analytics Pro,QLD,Email,High,8.00,3,"[Analytics Pro] It works now, though the process felt a bit clunky."
+TK0115,CC0379,2026-05-15,CloudSync,WA,Phone,High,5.00,4,"[CloudSync] Very professional service, communication was clear and timely. Worried about credential reset requirements after the incident notification."
+TK0138,CC0020,2026-05-15,DataVault,NSW,Email,Critical,1.80,4,"[DataVault] Issue resolved quickly, team was responsive and helpful throughout."
+TK0195,CC0200,2026-05-17,Analytics Pro,VIC,Phone,High,6.80,3,"[Analytics Pro] It works now, though the process felt a bit clunky."
+TK0008,CC0133,2026-05-18,CloudSync,QLD,Portal,Medium,9.00,3,"[CloudSync] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0321,CC0154,2026-05-19,Analytics Pro,VIC,Chat,High,6.20,3,[Analytics Pro] Resolved but took longer than expected to get a response.
+TK0373,CC0340,2026-05-19,CloudSync,SA,Email,Medium,17.70,2,"[CloudSync] Not happy with the handling, communication was poor throughout."
+TK0397,CC0250,2026-05-25,DataVault,NSW,Email,Medium,20.50,4,[DataVault] Fixed within the hour and followed up to confirm everything was working.
+TK0076,CC0263,2026-05-27,DataVault,QLD,Phone,High,6.40,3,"[DataVault] Issue sorted after a couple of attempts, acceptable outcome overall."
+TK0347,CC0389,2026-05-27,Analytics Pro,QLD,Portal,Medium,8.60,3,[Analytics Pro] Resolved but took longer than expected to get a response.
+TK0045,CC0287,2026-05-29,DataVault,NSW,Email,Low,12.30,3,"[DataVault] Problem was addressed eventually, response time could be better."
+TK0345,CC0020,2026-05-30,CloudSync,NSW,Phone,Low,64.50,2,"[CloudSync] Frustrating experience, had to follow up multiple times for a simple fix."
+TK0357,CC0088,2026-06-01,DataVault,NSW,Email,Critical,2.50,4,"[DataVault] Painless process, would recommend CloudCore support to anyone."
+TK0030,CC0161,2026-06-02,DataVault,NSW,Email,Medium,18.80,3,[DataVault] Resolved but took longer than expected to get a response.
+TK0184,CC0257,2026-06-04,CloudSync,VIC,Portal,Critical,2.20,3,"[CloudSync] Problem was addressed eventually, response time could be better."
+TK0035,CC0086,2026-06-06,DataVault,NSW,Phone,Critical,2.70,3,"[DataVault] Problem was addressed eventually, response time could be better."
+TK0088,CC0094,2026-06-08,Analytics Pro,NSW,Phone,High,3.80,3,"[Analytics Pro] It works now, though the process felt a bit clunky."
+TK0102,CC0358,2026-06-08,DataVault,NSW,Email,Low,35.30,3,"[DataVault] Support was okay, had to explain the situation more than once."
+TK0161,CC0290,2026-06-11,DataVault,WA,Email,Critical,2.10,4,"[DataVault] Painless process, would recommend CloudCore support to anyone. Worried about credential reset requirements after the incident notification."
+TK0323,CC0210,2026-06-11,DataVault,VIC,Chat,Medium,10.70,4,"[DataVault] Very professional service, communication was clear and timely."
+TK0313,CC0239,2026-06-15,Analytics Pro,QLD,Chat,Medium,15.50,5,"[Analytics Pro] Great support experience, engineer understood the problem immediately."
+TK0288,CC0282,2026-06-16,DataVault,QLD,Phone,Critical,2.70,3,"[DataVault] Problem was addressed eventually, response time could be better."
+TK0398,CC0029,2026-06-16,Analytics Pro,VIC,Portal,Low,32.20,3,"[Analytics Pro] Support was okay, had to explain the situation more than once."
+TK0119,CC0294,2026-06-19,CloudSync,NSW,Portal,Low,45.00,3,"[CloudSync] Support was okay, had to explain the situation more than once."
+TK0170,CC0214,2026-06-24,DataVault,WA,Phone,High,3.80,4,"[DataVault] Issue resolved quickly, team was responsive and helpful throughout. Following the recent security incident we needed urgent reassurance and guidance."
+TK0312,CC0279,2026-06-24,Analytics Pro,NSW,Phone,Medium,6.80,4,[Analytics Pro] Fixed within the hour and followed up to confirm everything was working.
+TK0315,CC0172,2026-06-25,CloudSync,QLD,Portal,High,4.50,4,"[CloudSync] Great support experience, engineer understood the problem immediately."
+TK0248,CC0148,2026-06-27,DataVault,QLD,Email,Low,31.40,3,"[DataVault] Support was okay, had to explain the situation more than once."
+TK0331,CC0016,2026-06-27,Analytics Pro,NSW,Phone,Low,26.50,2,[Analytics Pro] Took far too long to resolve and disrupted our operations significantly.
+TK0053,CC0346,2026-06-29,CloudSync,VIC,Chat,Critical,2.10,4,"[CloudSync] Painless process, would recommend CloudCore support to anyone."

@@ -14,7 +14,7 @@ title: Threat Detection and Prevention
 | **Title**    | Threat Detection and Prevention             |
 | **Doc#**     | POL-SECU-016 |
 | **Version**  | 1.0                                 |
-| **Date**     | 17-11-2023                              |
+| **Date**     | 17-11-2024                              |
 
 In order to preserve the integrity of data that CloudCore stores, processes, or
 transmits for Customers, CloudCore implements strong intrusion detection tools

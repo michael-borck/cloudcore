@@ -13,7 +13,7 @@ title: Policy Management
 | **Title**    | Policy Management             |
 | **Doc#**     | POL-COMP-019 |
 | **Version**  | 1.0                                 |
-| **Date**     | 04-03-2023                              |
+| **Date**     | 04-03-2024                              |
 
 CloudCore implements policies and procedures to maintain compliance and integrity
 of data. The Security Officer and Privacy Officer are responsible for

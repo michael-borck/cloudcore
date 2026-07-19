@@ -1,0 +1,85 @@
+---
+title: "Feature Backlog (with Conflicting Priorities)"
+---
+
+::: {.callout-note appearance="simple" title="Scenario — Customer Relations Manager (ISYS2002 / ISAD5001, Preset B)"}
+**Requirements elicitation artefact.** A backlog of candidate CRM features. The priorities below are **deliberately conflicting** — each stakeholder has rated the same features differently. This file is designed for prioritisation exercises: MoSCoW, RICE, ICE, and WSJF all work against it. Do *not* treat the ratings as agreed; they are individual stakeholder positions to be reconciled.
+:::
+
+## 1. How to read this backlog
+
+Each feature carries:
+
+- **Requester** — who asked for it (and therefore who will defend it).
+- **Business value** — the analyst's rough rating (H/M/L).
+- **Effort** — a T-shirt size for delivery rough-order.
+- **MoSCoW as rated by each stakeholder** — the source of the conflict.
+
+The MoSCoW columns are: **Must**, **Should**, **Could**, **Won't (this time)**. Where stakeholders disagree, the row is marked ⚠️ in the *Conflict* column — these are the rows worth arguing over in class.
+
+| Code | Meaning |
+|------|---------|
+| CRM | Customer Relations Manager (Priya Nair) |
+| SUP | Support Lead (Samantha Wong) |
+| SAL | Sales |
+| CFO | Chief Financial Officer (Aisha Rahman) |
+
+## 2. The backlog
+
+| ID | Feature | Requester | Value | Effort | CRM | SUP | SAL | CFO | Conflict |
+|----|---------|-----------|-------|--------|-----|-----|-----|-----|----------|
+| F01 | **Single customer record** (golden record, dedup of contacts) | CRM | H | L | Must | Must | Must | Must | — |
+| F02 | **Full audit trail** (who/when for every field change) | CRM | H | M | Must | Could | Won't | Must | ⚠️ |
+| F03 | **Support context screen** (contract, products, recent tickets on call open) | SUP | H | M | Should | Must | Could | Should | ⚠️ |
+| F04 | **Helpdesk integration** (read tickets into CRM; do not replace engine) | SUP | H | M | Must | Must | Should | Should | — |
+| F05 | **At-risk customer flag** (low satisfaction + ticket frequency) | SUP | H | S | Should | Must | Must | Could | ⚠️ |
+| F06 | **Shared sales pipeline** (entered once, visible to manager) | SAL | H | M | Must | Could | Must | Should | ⚠️ |
+| F07 | **Support-to-sales alerts** (new high-priority ticket / satisfaction drop) | SAL | H | S | Should | Should | Must | Could | ⚠️ |
+| F08 | **Renewal workflow** (reminders to the account owner, not just Customer Relations) | SAL | H | M | Must | Should | Must | Must | — |
+| F09 | **Mobile app** (pipeline + alerts on the road) | SAL | M | L | Could | Won't | Must | Won't | ⚠️ |
+| F10 | **Xero two-way sync** (contract value ↔ invoiced value) | CFO | H | M | Must | Could | Should | Must | ⚠️ |
+| F11 | **Board dashboard** (active clients, at-risk renewals, revenue by product) | CRM | M | S | Must | Could | Should | Should | ⚠️ |
+| F12 | **AI chatbot for customer self-service** ( deflect tier-1 queries ) | SAL | M | XL | Could | Won't | Must | Won't | ⚠️ |
+| F13 | **Marketing campaign module** (email blasts, lead scoring) | SAL | L | L | Won't | Won't | Must | Won't | ⚠️ |
+| F14 | **Custom report builder** (ad-hoc queries for Finance/Audit) | CFO | M | M | Should | Could | Could | Must | ⚠️ |
+| F15 | **Single sign-on (SSO)** with Microsoft 365 | CRM | M | S | Should | Should | Should | Must | — |
+| F16 | **Data migration tooling** (spreadsheet → golden record, with dedup) | CRM | H | L | Must | Should | Should | Should | — |
+| F17 | **Role-based access control** (field-level, e.g. contract value visibility) | CFO | H | M | Should | Should | Could | Must | ⚠️ |
+| F18 | **Australian data residency** option (hosting in AU) | CFO | H | S | Must | Could | Could | Must | — |
+| F19 | **WhatsApp / SMS customer comms** channel | SAL | L | M | Won't | Could | Must | Won't | ⚠️ |
+| F20 | **Automated CSAT survey** after ticket closure | SUP | M | S | Should | Must | Could | Could | ⚠️ |
+
+## 3. The conflicts worth teaching with
+
+::: {.callout-warning appearance="simple" title="Conflict cluster A — Mobile and AI: feature temptation vs. cost"}
+**F09 (Mobile app)** and **F12 (AI chatbot)** are both rated **Must by Sales** but **Won't by the CFO**. Sales argues neither revenue nor retention is possible if reps and customers cannot reach the system on their terms; the CFO argues both are high-effort, high-recurring-cost features with unproven return. This is the classic *value-vs-cost* tension and a clean target for a RICE or WSJF exercise.
+:::
+
+::: {.callout-warning appearance="simple" title="Conflict cluster B — Whose data, and who can see it"}
+**F02 (Audit trail)**, **F06 (Shared pipeline)**, and **F17 (Role-based access)** collide on ownership. Sales rates shared pipeline Must but rates the audit trail Won't — they want visibility without surveillance. The CFO rates the audit trail Must (defensibility) but Sales rates it Won't (overhead). The CRM manager sits in the middle. This cluster is a good fit for a *stakeholder-mapping + negotiation* exercise.
+:::
+
+::: {.callout-warning appearance="simple" title="Conflict cluster C — Replace or integrate the helpdesk"}
+**F03 (Context screen)** and **F04 (Helpdesk integration)** are Must for Support, but Sales leans toward a single unified UI that implicitly deepens the change. Samantha Wong has stated (see stakeholder needs, N4) she does **not** want the helpdesk engine replaced. Resolving F03/F04 against F12 (AI chatbot, which presumes a different support model) is where the architecture and the politics meet.
+:::
+
+## 4. Conflicts summarised
+
+| Cluster | Features at odds | Underlying tension |
+|---------|------------------|--------------------|
+| A | F09, F12 vs. CFO | Feature temptation vs. total cost of ownership |
+| B | F02, F06, F17 | Data ownership & surveillance vs. shared visibility |
+| C | F03, F04 vs. F12 | Integrate the existing engine vs. replace with AI-first model |
+| D | F08 vs. F10 | Renewal catch-rate (revenue) vs. billing accuracy (defensibility) — both "Must", competing for the same effort budget |
+| E | F11 vs. F14 | Dashboards (CRM) vs. auditable custom reports (CFO) — different definitions of "good reporting" |
+
+## 5. Prioritisation exercise prompts
+
+1. **MoSCoW.** Force the class to converge the four stakeholder columns into a single agreed MoSCoW rating per feature. Which conflicts resolve easily? Which need a trade-off?
+2. **RICE.** Score Reach, Impact, Confidence, Effort for F09, F12, F13, F19 (the "temptation" features). Does RICE rescue any of them from CFO rejection?
+3. **WSJF / Cost-of-delay.** Sequence F08 (renewals) and F10 (Xero sync) — which delivers more protected revenue per week of effort?
+4. **Stakeholder mapping.** For conflict cluster B, map each stakeholder's power/interest and propose a negotiation outcome.
+
+::: {.callout-tip appearance="simple" title="Teaching note"}
+There is deliberately **no "correct" prioritisation** here. The artefact tests whether students can surface and negotiate trade-offs, not whether they can guess the answer the lecturer has in mind. Encourage explicit, defended trade-off logs.
+:::

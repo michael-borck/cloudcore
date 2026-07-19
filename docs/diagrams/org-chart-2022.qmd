@@ -1,0 +1,36 @@
+---
+title: "Organisational Chart (2022)"
+---
+
+*CloudCore Networks organisational chart, 2022. Reviewed 10-01-2022.*
+
+## Organisational structure — 2022
+
+```{mermaid}
+flowchart TB
+    CEO["Marcell Ziemann<br/>Chief Executive Officer"]
+
+    CEO --> CTO["Mark Gonzalez<br/>Chief Technology Officer"]
+    CEO --> CFO["Aisha Rahman<br/>Chief Financial Officer"]
+    CEO --> CDO["Priya Nair<br/>Chief Data Officer"]
+    CEO --> OPS["James Whitfield<br/>Director of Operations"]
+
+    CTO --> CISO["Sophia Martines<br/>Chief Information Security Officer"]
+    CTO --> DEV["Michael Thompson<br/>Lead Developer"]
+    CTO --> ITM["Raj Patel<br/>IT Manager"]
+    CTO --> ARCH["David Wilson<br/>Infrastructure Architect"]
+
+    CDO --> DATA["Jamal Al-Sayed<br/>Data Analyst"]
+    CDO --> BI["Analytics Team"]
+
+    OPS --> SUP["Support Team"]
+    OPS --> HR["HR"]
+```
+
+## Reporting notes
+
+- Technology, security, and engineering report to the Chief Technology Officer.
+- The Chief Data Officer owns data and analytics.
+- Operations, including support and HR, report to the Director of Operations.
+
+*Currency: AUD. Organisational chart, 10-01-2022.*

@@ -1,0 +1,114 @@
+---
+title: "Network Architecture — Current State (Authoritative)"
+---
+
+*Authoritative current-state network diagram. Suits **ISYS6018** (Week 9, security audit & control) as the reference "as-built", and **ISYS2002 / ISAD5001** systems-analysis current-state modelling. Reviewed 29-06-2026.*
+
+::: {.callout-note appearance="simple"}
+This is the **current, authoritative** network architecture for CloudCore Networks. It supersedes *Architecture v2.1 (superseded 2024)*. Two production data-centre footprints are in scope: the **Perth primary DC** (4 Millrose Drive, Malaga WA) and the **Sydney DR site** (Lvl 12, 100 Harris Street, Pyrmont NSW 2009), with cloud egress to **AWS** and **Azure**.
+:::
+
+## Logical network zones
+
+```{mermaid}
+flowchart TB
+    Internet(["Internet<br/>Clients · Partners · Remote Staff"])
+
+    subgraph HQ ["Perth HQ — 11 Newcastle St"]
+      STAFF["Staff Wi-Fi / Wired<br/>via ZTNA client"]
+    end
+
+    subgraph PDC ["Perth Primary DC — 4 Millrose Dr, Malaga WA"]
+      direction TB
+      NGFW1["NGFW — FortiGate 6000<br/>(perimeter + IPS)"]
+
+      subgraph DMZ ["DMZ Zone — 10.10.10.0/24"]
+        VPN["VPN Concentrator<br/>IPsec / SSL"]
+        WAF["WAF + Reverse Proxy"]
+        PORTAL["Client Portal &<br/>API Gateway"]
+      end
+
+      subgraph APP ["Application Zone — 10.10.20.0/24"]
+        DV["DataVault<br/>Storage Nodes"]
+        AP["Analytics Pro<br/>Reporting Services"]
+        CS["CloudSync<br/>Sync Engine"]
+      end
+
+      subgraph DB ["Database Zone — 10.10.30.0/24 (isolated)"]
+        CDB[("Customer DB<br/>Cluster (HA)")]
+        BKP[("Backup Repository")]
+      end
+
+      subgraph MGMT ["Management Zone — 10.10.99.0/24 (restricted)"]
+        JUMP["Bastion / Jump Host"]
+        SIEM["SOC Monitoring<br/>Splunk SIEM"]
+        IAM["Identity (AD)<br/>+ MFA / PAM"]
+      end
+    end
+
+    subgraph SYDDR ["Sydney DR Site — Lvl 12, 100 Harris St, Pyrmont NSW"]
+      NGFW2["NGFW — FortiGate (DR)"]
+      RCDB[("Customer DB<br/>Async Replica")]
+      RDV["DataVault Standby<br/>(warm)"]
+    end
+
+    subgraph AWS ["AWS — ap-southeast-2 (Sydney)"]
+      AWSDV[("S3 / DataVault<br/>Offsite Backup")]
+      AWSLZ["VPC Workloads<br/>(Cloud Hosting)"]
+    end
+
+    subgraph AZURE ["Azure — Australia East"]
+      AZBK[("Blob Backup<br/>& DR Archive")]
+    end
+
+    Internet --> NGFW1
+    STAFF --> Internet
+    NGFW1 --> VPN
+    NGFW1 --> WAF
+    WAF --> PORTAL
+    PORTAL --> DV
+    PORTAL --> AP
+    PORTAL --> CS
+    DV --> CDB
+    AP --> CDB
+    CS --> CDB
+    DV --> BKP
+    CDB --> BKP
+
+    IAM --> JUMP
+    JUMP -. privileged, logged .-> DV
+    JUMP -. privileged, logged .-> CDB
+    SIEM -. telemetry .-> APP
+    SIEM -. telemetry .-> DB
+
+    NGFW1 ==>|"Site-to-site VPN<br/>(encrypted trunk)"| NGFW2
+    CDB -. async replication .-> RCDB
+    DV -. async replication .-> RDV
+
+    NGFW1 ==>|"AWS Direct Connect"| AWS
+    NGFW1 ==>|"Azure ExpressRoute"| AZURE
+    BKP -. scheduled offsite .-> AWSDV
+    BKP -. scheduled offsite .-> AZBK
+```
+
+## Zone model & trust boundaries
+
+| Zone | CIDR | Purpose | Trust |
+|------|------|---------|-------|
+| **Internet / VPN** | n/a | Untrusted ingress; client & partner VPN termination | Untrusted |
+| **DMZ** | `10.10.10.0/24` | Public-facing services: portal, API gateway, VPN concentrator, WAF | Semi-trusted |
+| **Application** | `10.10.20.0/24` | DataVault, Analytics Pro, CloudSync service nodes | Trusted (internal) |
+| **Database** | `10.10.30.0/24` | Customer DB cluster and backup repository; **no direct internet path** | Restricted |
+| **Management** | `10.10.99.0/24` | Bastion/jump host, SIEM, identity (AD + MFA/PAM); reaches other zones only via PAM | Restricted (privileged) |
+
+::: {.callout-important appearance="simple"}
+**Design intent for auditors.** The database zone has **no route to the internet** and is reachable only from the application zone on application-specific ports, plus the bastion over PAM-brokered, logged sessions. Inter-zone traffic is enforced by the perimeter NGFW and internal segment firewalls. The management zone does **not** bridge into the DMZ.
+:::
+
+## Resilience & cloud egress
+
+- **Sydney DR site** receives asynchronous database and DataVault replication over an encrypted site-to-site trunk; application tier is *warm* (failover-eligible, not active-active).
+- **AWS** (ap-southeast-2) is reached over AWS Direct Connect and hosts Cloud Hosting VPC workloads and offsite S3 backups of the DataVault repository.
+- **Azure** (Australia East) is reached over ExpressRoute and holds a DR-archive copy of backups.
+
+*Currency: AUD. Locations: Perth WA (HQ + primary DC) and Pyrmont NSW 2009 (DR). Document reviewed 29-06-2026.*

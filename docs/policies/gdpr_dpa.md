@@ -17,7 +17,7 @@ title: GDPR
 | **Title**    | GDPR             |
 | **Doc#**     | POL-DATA-000 |
 | **Version**  | 1.0                                 |
-| **Date**     | 22-11-2023                              |
+| **Date**     | 22-11-2024                              |
 
 ## GDPR Data Processing Agreement/Addendum ("DPA")
 

@@ -20,7 +20,7 @@ Ready to discuss your cloud needs? Our solution architects are standing by.
 **Phone**: +61 (8) 4587 8991  
 **Hours**: Monday-Friday, 9:00 AM - 6:00 PM AWST
 
-[Schedule a Demo](mailto:sales@cloudcore.com.au?subject=Demo%20Request){.btn .btn-primary role="button"}
+[Schedule a Demo](mailto:sales@cloudcore.com.au?subject=Demo%20Request){.btn .btn-primary role="button" data-edu="open a demo request with our sales team"}
 :::
 
 ::: {.contact-section}
@@ -32,14 +32,14 @@ Existing customers can access 24/7 support through our portal.
 **Phone**: +61 (8) 4587 8999  
 **Hours**: 24/7/365
 
-[Open Support Ticket](mailto:support@cloudcore.com.au?subject=Support%20Request){.btn .btn-outline-primary role="button"}
+[Open Support Ticket](mailto:support@cloudcore.com.au?subject=Support%20Request){.btn .btn-outline-primary role="button" data-edu="submit a support ticket to our 24/7 help desk"}
 :::
 
 :::
 
 ## Our Offices
 
-::: {layout-ncol=2}
+::: {layout-ncol=3}
 
 ::: {.office-card}
 ### Perth CBD
@@ -63,13 +63,24 @@ Australia
 **Hours**: 24/7 Secure Facility
 :::
 
+::: {.office-card}
+### Sydney (DR Site)
+**Disaster Recovery**  
+Level 12, 100 Harris Street  
+Pyrmont, NSW 2009  
+Australia  
+
+**On-call**: +61 (2) 8231 4600  
+**Hours**: Unstaffed — automated failover
+:::
+
 :::
 
 ## Request a Consultation
 
 ```{=html}
 <script src="/scripts/contact-form.js"></script>
-<form id="consultation-form" class="contact-form" action="#" method="post">
+  <form id="consultation-form" class="contact-form" action="#" method="post" data-edu="send your message to our team — a consultant would respond within one business day">
   <div class="form-row">
     <div class="form-group">
       <label for="name">Full Name *</label>
@@ -126,7 +137,7 @@ Stay updated with CloudCore news and insights.
 
 ## Service Status
 
-Check the current status of all CloudCore services: [status.cloudcore.com.au](https://status.cloudcore.com.au)
+Check the current status of all CloudCore services: [status.cloudcore.com.au](https://status.cloudcore.com.au){data-edu="open the live CloudCore service status dashboard"}
 
 ---
 

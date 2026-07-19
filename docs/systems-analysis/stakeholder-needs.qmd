@@ -1,0 +1,146 @@
+---
+title: "Stakeholder Needs"
+---
+
+::: {.callout-note appearance="simple" title="Scenario — Customer Relations Manager (ISYS2002 / ISAD5001, Preset B)"}
+**Requirements elicitation artefact.** Recorded needs and expectations for a proposed CRM, gathered from interviews with the four key stakeholder groups. These are *elicited* statements — some are explicit ("I want…"), others are *latent* needs inferred from observed frustrations. Treat the conflicts between them (Section 6) as material for prioritisation and negotiation exercises.
+:::
+
+## 1. Stakeholders at a glance
+
+| Stakeholder | Representative | Role in the project | Primary interest |
+|-------------|----------------|---------------------|------------------|
+| Customer Relations Manager | **Priya Nair** (sponsor) | Project sponsor; owns the customer record | One trusted view of every client |
+| Support Lead | **Samantha Wong** | Key user; runs the support team | Speed and context on every call |
+| Sales | Sales team (6 reps) | Key user; owns revenue | Pipeline visibility, no admin |
+| Chief Financial Officer | **Aisha Rahman** | Approves spend; owns billing | Cost control, defensible reporting |
+
+## 2. Customer Relations Manager — Priya Nair (sponsor)
+
+**Context.** Priya was appointed to a newly created role in late 2025, partly in response to the September 2025 incident exposing how scattered customer records were. She owns the business case.
+
+**Goals.** Establish a single, authoritative customer record; stop the manual re-keying; produce board-ready reporting without a week of spreadsheet work; demonstrate that the investment paid for itself within 18 months.
+
+**Frustrations.** "I have four versions of the truth and no way to tell which is right." Spreadsheet version drift during the last audit. Renewals that lapsed because a row was filtered out.
+
+**Stated needs.**
+
+- A single client record that Support, Sales, and Finance all read from.
+- An audit trail — who changed what, and when.
+- A dashboard she can show the board: active clients, at-risk renewals, revenue by product.
+
+**Latent needs (inferred).**
+
+- She needs the new system to *legitimise* her new role — visible early wins matter to her as much as features do.
+- She is wary of a long, risky implementation; she will favour a phased rollout over a "big bang".
+
+**Success criteria.** One record per client; < 5 minutes to produce the board pack; measurable reduction in re-keying.
+
+## 3. Support Lead — Samantha Wong
+
+**Context.** Samantha manages the support team that handles roughly 6,000 tickets a year across the three products. Her agents sit in Perth and Sydney.
+
+**Goals.** Resolve tickets faster; give agents enough context to avoid putting customers on hold while they "go and look something up"; stop satisfaction scores sliding on high-volume clients.
+
+**Frustrations.** An agent on a call cannot see the client's contract value, renewal date, or recent sales contact — that data lives in spreadsheets they cannot open. The parallel Excel triage sheet exists *because* the helpdesk app does not hold enough context. (See the current-state artefact, pain point P4.)
+
+**Stated needs.**
+
+- The customer's contract, products, and recent interactions on screen *before* she picks up the call.
+- A flag for at-risk customers (low satisfaction, frequent tickets) so they get senior attention.
+- Ability to log a ticket without switching between three systems.
+
+**Latent needs (inferred).**
+
+- She does **not** want the helpdesk engine replaced — her team knows it and retraining cost is a real worry. She needs *integration*, not substitution.
+- Mobile/tablet access for agents working from the Malaga DC floor.
+
+**Success criteria.** First-contact resolution rate up; average handle time down; no customer "falls through the cracks" between support and their account owner.
+
+::: {.callout-tip appearance="simple" title="Direct quote (interview)"}
+> "If my agent can see, in one glance, that this customer has DataVault, renewed in March, and has raised four tickets this quarter — half my problems disappear. Today they see a ticket number and nothing else."
+> — Samantha Wong
+:::
+
+## 4. Sales
+
+**Context.** Six representatives cover regions (North, South, East, West, Central, Metro) and sell the three named products plus service lines. They each keep a personal Excel pipeline.
+
+**Goals.** Close more, faster; never miss a renewal or an expansion opportunity; spend time selling, not doing admin.
+
+**Frustrations.** They find out a client is unhappy *after* a renewal is lost. They cannot see support activity on their accounts. Re-keying pipeline data into email updates is dead time.
+
+**Stated needs.**
+
+- A pipeline that updates itself and is visible to the manager without a Monday-morning export.
+- Alerts when one of *their* clients raises a high-priority ticket or their satisfaction drops.
+- Renewal reminders that come to them, not just to Customer Relations.
+- **Mobile access** — reps are on the road between Perth and regional WA constantly.
+
+**Latent needs (inferred).**
+
+- Each rep protects their own pipeline as "theirs"; a shared system raises territorial anxiety. Adoption will depend on whether it feels like a tool *for* them or surveillance *of* them.
+
+**Success criteria.** Pipeline entered once; expansion leads generated from support signals; renewal catch-rate up.
+
+## 5. Chief Financial Officer — Aisha Rahman
+
+**Context.** Aisha owns the budget and the billing ledger (Xero). She will sign off the business case.
+
+**Goals.** Control cost; protect revenue; ensure any new system has a defensible return; keep billing data accurate and auditable.
+
+**Frustrations.** Contract values in the spreadsheet drift from the values in Xero, causing invoice disputes. The board pack numbers are assembled by hand and are hard to defend under scrutiny.
+
+**Stated needs.**
+
+- A clear total cost of ownership (TCO) — licence, implementation, integration, ongoing — before approval.
+- Two-way sync with Xero so contract value and invoiced value always agree.
+- Reporting she can stand behind in front of the board and the auditors.
+
+**Latent needs (inferred).**
+
+- She is **sceptical of "shiny" features** that do not map to a dollar return. Anything labelled "AI" will receive extra scrutiny — she was burned by a previous tool that over-promised.
+- She prefers a vendor with references she can call over the cheapest option.
+
+**Success criteria.** TCO within the approved envelope; zero invoice disputes traceable to data drift; demonstrable revenue protection from renewal catch-rate.
+
+::: {.callout-warning appearance="simple" title="Watch the price-tag language"}
+Aisha will react badly to open-ended commitments. When presenting options, frame cost in **AUD** with a fixed implementation cap and a capped annual licence, and separate "must-have" from "nice-to-have" so she can cut scope cleanly.
+:::
+
+## 6. Where the needs conflict
+
+These tensions are intentional material for prioritisation and negotiation. They are not problems to "fix" by picking one side.
+
+| # | Conflict | Side A | Side B |
+|---|----------|--------|--------|
+| C1 | **Speed of rollout vs. cost control** | Priya wants visible wins fast (phased) | Aisha wants a capped, predictable spend |
+| C2 | **Helpdesk: integrate vs. replace** | Samantha: integrate, do not replace | Some Sales reps want a single unified UI (implies deeper change) |
+| C3 | **Whose data is it?** | Sales: "my pipeline" | Priya: one shared record |
+| C4 | **Mobile first?** | Sales: mobile is non-negotiable | Support: desktop context is what matters |
+| C5 | **Feature breadth vs. TCO** | Sales & Support want more features | Aisha wants the thinnest defensible scope |
+| C6 | **Reporting depth** | Priya wants board dashboards | Aisha wants defensible, auditable figures (different definitions of "good report") |
+
+## 7. Consolidated needs register (summary)
+
+| ID | Need | Source | Type |
+|----|------|--------|------|
+| N1 | Single authoritative customer record | Priya | Functional |
+| N2 | Full audit trail of record changes | Priya | Functional / Non-functional |
+| N3 | Context screen for support agents | Samantha | Functional |
+| N4 | Integrate with — do not replace — the helpdesk | Samantha | Constraint |
+| N5 | At-risk customer flagging | Samantha | Functional |
+| N6 | Self-updating pipeline visible to management | Sales | Functional |
+| N7 | Support-to-sales alerts (ticket/satisfaction) | Sales | Functional |
+| N8 | Renewal reminders routed to the account owner | Sales | Functional |
+| N9 | Mobile access | Sales | Non-functional |
+| N10 | Two-way Xero sync | Aisha | Functional / Constraint |
+| N11 | Defensible, auditable reporting | Aisha | Non-functional |
+| N12 | Fixed, capped TCO in AUD | Aisha | Constraint |
+| N13 | Phased rollout (no big-bang) | Priya | Constraint |
+
+## 8. Suggested next steps for elicitation
+
+- Run a prioritisation workshop (MoSCoW or RICE) against needs N1–N13 — see the feature backlog artefact.
+- Confirm constraints N4, N10, N12, N13 with written sign-off before solution shortlisting.
+- Validate the latent needs with a second round of interviews; do not design against inferences alone.

@@ -15,7 +15,7 @@ title: System Audits, Monitoring and Assessments
 | **Title**    | System Audits, Monitoring and Assessments             |
 | **Doc#**     | POL-SECU-011 |
 | **Version**  | 1.0                                 |
-| **Date**     | 01-10-2023                              |
+| **Date**     | 01-10-2024                              |
 
 CloudCore shall audit, monitor, and assess the access and activity of
 systems and applications that process or store production and/or sensitive data

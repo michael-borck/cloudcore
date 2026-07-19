@@ -13,7 +13,7 @@ title: Risk Management
 | **Title**    | Risk Management             |
 | **Doc#**     | POL-RISK-014 |
 | **Version**  | 1.0                                 |
-| **Date**     | 24-07-2023                              |
+| **Date**     | 24-07-2024                              |
 
 This policy establishes the scope, objectives, and procedures of CloudCore's
 information security risk management process. The risk management process is

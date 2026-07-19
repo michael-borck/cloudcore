@@ -14,7 +14,7 @@ title: Mobile Device Security and Storage Media Management
 | **Title**    | Mobile Device Security and Storage Media Management             |
 | **Doc#**     | POL-DATA-013 |
 | **Version**  | 1.0                                 |
-| **Date**     | 06-09-2023                              |
+| **Date**     | 06-09-2024                              |
 
 CloudCore recognises that media containing sensitive data may be reused when
 appropriate steps are taken to ensure that all stored sensitive data has been

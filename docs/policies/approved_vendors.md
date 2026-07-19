@@ -15,7 +15,7 @@ title: Approved Vendors
 | **Title**    | Approved Vendors             |
 | **Doc#**     | DOC-COMP-007 |
 | **Version**  | 1.0                                 |
-| **Date**     | 13-02-2023                              |
+| **Date**     | 13-02-2024                              |
 
 At CloudCore Networks, our commitment to delivering exceptional service and
 maintaining the highest standards of security and performance is reflected in

@@ -1,0 +1,113 @@
+---
+title: "Third-Party Security Risk Attestation — CloudCore Networks Pty Ltd"
+categories:
+  - Vendor Management
+  - Security Assessment
+  - Compliance
+description: "Independent third-party security risk assessment and attestation for CloudCore Networks Pty Ltd, prepared by Meridian Assurance Pty Ltd."
+---
+
+|              |                                              |
+|--------------|----------------------------------------------|
+| **Document** | Third-Party Security Risk Attestation        |
+| **Prepared for** | CloudCore Networks Pty Ltd               |
+| **Prepared by**  | Meridian Assurance Pty Ltd (ABN 44 118 902 557) |
+| **Reference** | MA-ATST-2025-CCN-019                        |
+| **Version**  | 1.0 (Final)                                  |
+| **Assessment period** | 01-07-2025 to 22-08-2025           |
+| **Issue date** | 04-09-2025                                |
+| **Classification** | Confidential — Client Copy              |
+
+::: {.callout-note appearance="simple"}
+**Overall Risk Rating: LOW**
+
+Meridian Assurance is satisfied, on the basis of the evidence reviewed during the
+assessment period, that CloudCore Networks Pty Ltd operates a mature information
+security management programme aligned to ISO/IEC 27001:2022. No material
+control deficiencies were identified. The residual risk position is assessed as
+**Low** and is considered acceptable for the purposes of third-party vendor
+onboarding and continued data-sharing arrangements.
+:::
+
+## 1. Scope and Methodology
+
+This attestation reports the findings of an independent security risk assessment
+performed by Meridian Assurance Pty Ltd ("Meridian") at the request of CloudCore
+Networks Pty Ltd ("CloudCore", "the Organisation"). The assessment covered the
+information security controls governing CloudCore's hosted customer environment,
+including the primary production data centre at 4 Millrose Drive, Malaga WA and
+the disaster-recovery facility in Pyrmont, NSW.
+
+The assessment comprised: a desk-based review of policies and the Information
+Security Management System (ISMS); a configuration review of perimeter and
+internal firewall rule sets; a sample-based access-control review; and remote
+interviews with the Chief Information Security Officer (Ms Sophia Martines) and
+the Networks Specialist (Mr Carlos Mendes).
+
+## 2. Certifications and Standards
+
+| Standard | Status | Certificate / Reference |
+|---|---|---|
+| ISO/IEC 27001:2022 | **Certified** | Issued 2024; current |
+| SOC 2 Type II | Aligned | Service provider attestation on file |
+| Privacy Act 1988 (Cth) / APPs | Compliant | APP-aligned controls evidenced |
+
+Meridian confirms sight of the **ISO/IEC 27001:2022 certificate of registration**
+and notes no open major non-conformities at the most recent surveillance audit.
+
+## 3. Control Assessment Summary
+
+| Control domain | Finding | Residual risk |
+|---|---|---|
+| Identity & access management | Effective — MFA enforced uniformly across all administrative and privileged accounts | Low |
+| Network security & segmentation | Effective — firewall rule sets reviewed and found current; segmentation between administrative and customer-data zones appropriately enforced | Low |
+| Vulnerability & patch management | Effective — no critical unpatched assets within scope | Low |
+| Third-party / supplier risk | Effective — integrations vetted prior to connection | Low |
+| Logging, monitoring & detection | Effective — 24x7 monitoring with documented escalation | Low |
+| Incident response readiness | Effective — tested IR plan; recent tabletop exercised | Low |
+| Data protection & encryption | Effective — encryption in transit and at rest verified | Low |
+
+## 4. Key Strengths Noted
+
+- A well-established **ISO 27001 certified** ISMS, with clear ownership under the CISO.
+- **Multi-factor authentication is consistently enforced**, including for senior administrative accounts and remote VPN access. No MFA bypass or exception paths were identified.
+- The internal firewall rule set was reviewed against the documented network
+  architecture and found to be **current and compliant**; no stale or overly
+  permissive rules were observed in the reviewed sample.
+- Detection coverage is mature, with the Security Operations Centre (SOC)
+  evidencing timely alert triage.
+
+## 5. Areas for Improvement (Advisory Only)
+
+No material deficiencies were identified. The following advisory observations are
+offered for continuous improvement and carry **no impact on the overall Low risk
+rating**:
+
+1. Consider formalising the third-party integration risk-assessment checklist into
+   a register reviewed quarterly.
+2. Consider increasing the frequency of firewall rule-set reviews from semi-annual
+   to quarterly.
+3. Security awareness training refresh cadence could move from annual to bi-annual.
+
+## 6. Conclusion
+
+Based on the assessment performed between 01-07-2025 and 22-08-2025, Meridian
+Assurance concludes that CloudCore Networks Pty Ltd maintains an effective,
+certified information security control environment. The Organisation is assessed
+as **Low risk** as a third-party service provider. This attestation is valid for
+twelve (12) months from the issue date, subject to the absence of material
+control changes.
+
+::: {.callout-warning appearance="simple"}
+**Assurance level.** This attestation is based on a point-in-time, sample-based
+review and on representations made by CloudCore management. It does not
+constitute a guarantee against future security incidents.
+:::
+
+---
+
+*Prepared by:* **Eleanor Pryce**, CISM, Lead Assessor — Meridian Assurance Pty Ltd
+
+*Reviewed and approved by:* **Gerald Whitfield**, FIPA, Partner — Meridian Assurance Pty Ltd
+
+*Document digitally issued 04-09-2025. © Meridian Assurance Pty Ltd.*

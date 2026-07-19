@@ -1,5 +1,6 @@
 ---
-title: ""
+title: "Enterprise Cloud Infrastructure for Australian Business"
+description: "CloudCore Networks delivers enterprise cloud hosting, managed services, and ISO 27001-certified security from local Perth data centres — with a 99.9% uptime SLA."
 toc: false
 ---
 
@@ -31,7 +32,11 @@ Support
 :::
 
 [Schedule a Demo](contact.qmd){.btn .btn-primary .btn-lg role="button"}
-[View Solutions](#solutions){.btn .btn-outline-primary .btn-lg role="button"}
+[View Solutions](solutions.qmd){.btn .btn-outline-primary .btn-lg role="button"}
+:::
+
+::: {.hero-band}
+![Enterprise-grade cloud infrastructure, engineered for performance and resilience](assets/hero-datacenter.jpg)
 :::
 
 ## Why CloudCore Networks?
@@ -40,17 +45,17 @@ We combine enterprise-grade infrastructure with innovative cloud solutions to po
 
 ::: {layout-ncol=3 #solutions}
 
-::: {.feature-card}
+::: {.feature-card #cloud-hosting}
 {{< li evyuuwna trigger=loop delay=1000 class=small >}} **Cloud Hosting**  
 Enterprise-grade infrastructure with automated scaling, load balancing, and global CDN distribution for optimal performance.
 :::
 
-::: {.feature-card}
+::: {.feature-card #managed-services}
 {{< li lzgmgrnn trigger=loop delay=1000 class=small >}} **Managed Services**  
 Full-stack management including 24/7 monitoring, automated backups, security patches, and dedicated support team.
 :::
 
-::: {.feature-card}
+::: {.feature-card #security-compliance}
 {{< li yxyampao trigger=loop delay=1000 class=small >}} **Security & Compliance**  
 ISO 27001 certified with end-to-end encryption, DDoS protection, and compliance with GDPR, HIPAA, and SOC 2.
 :::
@@ -71,16 +76,38 @@ Dedicated account managers, 24/7 technical support, and access to cloud architec
 :::
 :::
 
-## Trusted by Industry Leaders
+## What Our Clients Say
+
+::: {.testimonials}
 
 ::: {.testimonial-section}
-> "CloudCore transformed our infrastructure, reducing costs by 40% while improving performance. Their team's expertise and 24/7 support have been invaluable."
+> "CloudCore transformed our infrastructure, reducing costs by 40% while improving performance. Their 24/7 support has been invaluable."
 
 **Sarah Mitchell**  
 *CTO, TechVentures Inc.*
 :::
 
+::: {.testimonial-section}
+> "The migration was seamless. CloudCore's managed services team handled everything — zero unplanned downtime in 18 months."
+
+**David Chen**  
+*IT Director, Helena Industries*
+:::
+
+::: {.testimonial-section}
+> "Their security expertise gave our board real confidence. The ISO 27001 audit was straightforward with CloudCore's documentation."
+
+**Priya Nair**  
+*Head of Data, Modus Retail*
+:::
+
+:::
+
 ## Security & Compliance
+
+Our infrastructure meets the highest international security and compliance standards — protecting your data from the physical data center to the application edge.
+
+::: {layout-ncol=2}
 
 ::: {.certifications}
 - **ISO 27001:2013** Certified Information Security Management
@@ -88,4 +115,10 @@ Dedicated account managers, 24/7 technical support, and access to cloud architec
 - **GDPR** Compliant Data Protection
 - **HIPAA** Healthcare Information Security
 - **PCI DSS** Payment Card Industry Standards
+:::
+
+::: {.section-figure}
+![End-to-end encryption, continuous compliance monitoring, and 24/7 threat detection](assets/security-compliance.jpg)
+:::
+
 :::

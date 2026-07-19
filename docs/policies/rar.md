@@ -12,7 +12,7 @@ title: Roles, Responsibilities and Training
 | **Title**    | Roles, Responsibilities and Training             |
 | **Doc#**     | POL-SECU-002 |
 | **Version**  | 1.0                                 |
-| **Date**     | 01-04-2023                              |
+| **Date**     | 01-04-2024                              |
 
 Security and compliance is everyone's responsibility.  CloudCore is committed to
 ensuring all workforce members actively address security and compliance in their

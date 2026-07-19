@@ -12,7 +12,7 @@ title: Security Architecture and Operating Model
 | **Title**    | Security Architecture and Operating Model             |
 | **Doc#**     | POL-ITMA-026 |
 | **Version**  | 1.0                                 |
-| **Date**     | 07-06-2023                              |
+| **Date**     | 07-06-2024                              |
 
 In the digital age, cyber attacks are inevitable. At CloudCore, we are taking a
 “zero trust”, “minimal infrastructure” approach to managing risk and information

@@ -1,0 +1,21 @@
+---
+title: "Designing for 99.99% Uptime: High-Availability Patterns in Practice"
+author: "David Wilson"
+date: "2026-01-22"
+categories: [architecture, reliability]
+image: ../../../assets/hero-datacenter.jpg
+---
+
+Promising 99.99% uptime is easy. Delivering it across years of hardware failures, network outages, and planned maintenance windows is the hard part. For Australian businesses that depend on always-on services, that four-nines figure — roughly 52 minutes of allowable downtime a year — sets the engineering bar for everything we build at CloudCore Networks.
+
+### Design for Failure, Not Against It
+
+Availability is a product of redundancy at every layer. We distribute workloads across multiple availability zones with independent power, cooling, and network uplinks, and front them with load balancers that drain unhealthy targets automatically. Stateful components are replicated synchronously within a region and asynchronously to a secondary site, so a single-zone failure degrades nothing the customer can see.
+
+### Automated Failover, Not Heroics
+
+Human operators are too slow for four-nines targets. Failover between zones and regions is automated and continuously rehearsed: we inject failures on a regular cadence to confirm that traffic shifts within our recovery objectives and that DNS health checks converge quickly. Capacity is headroom-planned so that surviving zones absorb load without queueing or throttling.
+
+### Observable and Tested
+
+You cannot meet an SLA you cannot measure. End-to-end synthetic probes track availability against our service-level objectives in real time, and every incident produces a post-mortem that feeds back into the architecture. The result is infrastructure that treats failure as routine — because when a disk, switch, or availability zone inevitably fails, the system has already routed around it before anyone notices.

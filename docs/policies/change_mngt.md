@@ -28,7 +28,7 @@ format:
 | **Version**  | 1.1                                 |
 | **Date**     | 05-05-2024                         |
 | **Supersedes** | POL-CHANGE-001 v1.0 (12-02-2024) |
-| **Next Review** | 05-11-2024                       |
+| **Next Review** | 05-05-2025                       |
 | **Owner**    | Chief Technology Officer            |
 | **Approved By** | Chief Information Officer         |
 

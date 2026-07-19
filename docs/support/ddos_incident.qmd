@@ -1,0 +1,68 @@
+---
+title: "Incident Report — DDoS Event (CCN-DDoS-0825)"
+categories:
+  - Incident Response
+  - Security Operations
+description: "Incident report for a distributed denial-of-service event affecting CloudCore's public edge in August 2025."
+---
+
+|              |                                              |
+|--------------|----------------------------------------------|
+| **Incident ID** | CCN-DDoS-0825                            |
+| **Reported by** | Security Operations Centre (SOC)        |
+| **Severity** | Medium (degraded service, no data impact)   |
+| **Affected systems** | Public website; CloudSync edge nodes (edge-01, edge-02) |
+| **Status** | Contained and Closed                        |
+| **Opened** | 05-08-2025 02:14 (AWST)                     |
+| **Closed** | 06-08-2025 09:40 (AWST)                     |
+
+## 1. Overview
+
+At approximately 02:14 AWST on 05-08-2025, the SOC detected a sustained increase
+in inbound traffic to CloudCore's public-facing edge infrastructure, peaking at
+approximately **4.2 Gbps**. The traffic pattern was consistent with a
+volumetric distributed denial-of-service (DDoS) attack combining UDP reflection
+and HTTP GET floods. The attack targeted the customer portal (`portal.cloudcore.net`)
+and the CloudSync file-sync endpoints.
+
+## 2. Timeline
+
+| Time (AWST) | Event |
+|---|---|
+| 05-08-2025 02:14 | SOC alert: inbound bandwidth on edge-01 at 92% utilisation |
+| 05-08-2025 02:18 | DDoS mitigation service (scrubbing centre) engaged; traffic diverted |
+| 05-08-2025 02:31 | Attack signature identified (NTP amplification + HTTP flood) |
+| 05-08-2025 03:05 | Mitigation rules propagated; customer-facing latency returning to baseline |
+| 05-08-2025 06:50 | Secondary smaller burst (~1.1 Gbps) observed and absorbed |
+| 06-08-2025 09:40 | No further anomalous traffic for 24 hours; incident closed |
+
+## 3. Impact
+
+- **Availability:** Brief latency and intermittent 503 responses on the customer
+  portal for approximately 20 minutes at peak. No full outage.
+- **Confidentiality / Integrity:** None. No unauthorised access to internal
+  systems or customer data was identified. This was a purely volumetric,
+  availability-targeting event.
+- **Data:** No records accessed, modified, or exfiltrated.
+
+## 4. Root Cause and Attribution
+
+The attack was assessed as an unsophisticated, opportunistic volumetric attack.
+No specific threat actor has been attributed. There is no indication this event
+was connected to any other ongoing security activity.
+
+## 5. Actions Taken
+
+1. DDoS scrubbing service engaged and traffic diverted within ~4 minutes of detection.
+2. Rate-limiting tightened on CloudSync endpoints.
+3. Post-incident review scheduled; lessons logged in the SOC knowledge base.
+
+## 6. Conclusion
+
+The event was contained quickly with no lasting impact. The DDoS mitigation
+service performed as expected. No further action is recommended beyond the
+routine tuning already scheduled. This incident is recorded as **CLOSED**.
+
+---
+
+*Prepared by the SOC. Filed under CCN-DDoS-0825. Status: Closed 06-08-2025.*

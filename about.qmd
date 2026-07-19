@@ -11,7 +11,7 @@ To empower Australian businesses with world-class cloud infrastructure and manag
 
 ## Our Story
 
-Founded in 2019, CloudCore Networks emerged from a vision to provide enterprise-grade cloud solutions tailored for the Australian market. With two state-of-the-art data centers in Perth and a team of certified cloud experts, we've grown to serve over 500 organizations across diverse industries.
+Founded in 2010, CloudCore Networks emerged from a vision to provide enterprise-grade cloud solutions tailored for the Australian market. From our headquarters in Perth and primary data centre in Malaga, backed by a Sydney disaster-recovery site, we've grown to serve over 500 organisations across diverse industries.
 
 ## Why Choose CloudCore?
 
@@ -27,8 +27,7 @@ Founded in 2019, CloudCore Networks emerged from a vision to provide enterprise-
 ::: {layout-ncol=3}
 
 ::: { .card }
-![](assets/marcell_ziemann.webp){ .rounded }
-
+![Portrait of Marcell Ziemann, Chief Executive Officer](assets/marcell_ziemann.webp){ .rounded }
 **Marcell Ziemann**  
 *Chief Executive Officer*
 
@@ -36,8 +35,7 @@ Founded in 2019, CloudCore Networks emerged from a vision to provide enterprise-
 :::
 
 ::: { .card }
-![](assets/mark_gonzalez.webp){ .rounded }
-
+![Portrait of Mark Gonzalez, Chief Information Officer](assets/mark_gonzalez.webp){ .rounded }
 **Mark Gonzalez**  
 *Chief Information Officer*
 
@@ -45,7 +43,7 @@ Cloud architecture expert with 15+ years experience. AWS and Azure certified sol
 :::
 
 ::: { .card }
-![](assets/sarah_thompson.webp){ .rounded }
+![Portrait of Sarah Thompson, Chief Operations Officer](assets/sarah_thompson.webp){ .rounded }
 **Sarah Thompson**  
 *Chief Operations Officer*
 

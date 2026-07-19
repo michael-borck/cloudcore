@@ -1,3 +1,14 @@
 CLAUDE.md
 CODE_OF_CONDUCT.md
 CONTRIBUTING.md
+docs/access-demo.qmd
+docs/staged-content-example.qmd
+_instructor/
+docs/registry.qmd
+
+# macOS AppleDouble sidecars — this repo lives on an exFAT volume, which has no
+# resource forks, so Finder writes ._* alongside every file. Without this they
+# get copied into _site/ via `resources:` and deployed to gh-pages.
+._*
+.__*
+.DS_Store

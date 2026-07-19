@@ -13,7 +13,7 @@ title: Privacy and Consent
 | **Title**    | Privacy and Consent             |
 | **Doc#**     | POL-DATA-023 |
 | **Version**  | 1.0                                 |
-| **Date**     | 06-02-2023                              |
+| **Date**     | 06-02-2024                              |
 
 ## Policy Statements
 

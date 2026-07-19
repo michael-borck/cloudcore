@@ -2,6 +2,15 @@
 /_site/
 /_wip/.DS_Store
 .DS_Store
+._*
+.__*
+**/._*
+**/.__*
 backups/
 
 **/*.quarto_ipynb
+__pycache__/
+*.pyc
+
+# Instructor-only material — must never be pushed to the public repo
+_instructor/

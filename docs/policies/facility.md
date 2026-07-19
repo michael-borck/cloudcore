@@ -13,7 +13,7 @@ title: Facility Access and Physical Security
 | **Title**    | Facility Access and Physical Security             |
 | **Doc#**     | POL-SECU-003 |
 | **Version**  | 1.0                                 |
-| **Date**     | 03-08-2023                              |
+| **Date**     | 03-08-2024                              |
 
 It is the goal of CloudCore to provide a safe and secure environment for all
 employees. Access to the CloudCore facilities is limited to authorised

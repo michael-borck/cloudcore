@@ -1,0 +1,75 @@
+---
+title: "Enterprise Cloud Solutions"
+toc: false
+---
+
+CloudCore Networks delivers the infrastructure, management, and security your organisation needs to scale with confidence — hosted locally in our Perth and Malaga data centres, with a 99.9% uptime SLA.
+
+::: {.section-figure}
+![CloudCore enterprise data infrastructure, engineered for performance and resilience](assets/hero-datacenter.jpg)
+:::
+
+## Cloud Hosting {#cloud-hosting}
+
+Enterprise-grade compute, storage, and networking with automated scaling, global CDN distribution, and infrastructure-as-code support for optimal performance.
+
+- Auto-scaling compute and elastic block storage
+- Global CDN and multi-region deployment
+- Kubernetes-native container orchestration
+- Infrastructure-as-code (Terraform) support
+- Transparent status monitoring and metered billing
+
+[Discuss your hosting needs](contact.qmd){.btn .btn-primary role="button"}
+
+## Managed Services {#managed-services}
+
+Full-stack management of your cloud environment — 24/7 monitoring, automated backups, security patching, and a dedicated support team.
+
+- 24/7 monitoring and incident response
+- Automated, regularly tested backups and disaster recovery
+- Patch management and operating-system hardening
+- Dedicated account manager and cloud architect
+- ITIL-aligned service delivery and reporting
+
+[Explore managed services](contact.qmd){.btn .btn-primary role="button"}
+
+## Security & Compliance {#security-compliance}
+
+ISO 27001:2013 certified security with end-to-end encryption, managed DDoS protection, and the compliance frameworks regulated industries rely on.
+
+- ISO 27001:2013, SOC 2 Type II, and ISO 9001:2015
+- End-to-end encryption and managed DDoS mitigation
+- GDPR, HIPAA, and PCI DSS compliance support
+- Regular penetration testing and audit reporting
+- Australian data sovereignty guarantee
+
+[Talk to our security team](contact.qmd){.btn .btn-primary role="button"}
+
+::: {.section-figure}
+![Continuous compliance monitoring and 24/7 threat detection](assets/security-compliance.jpg)
+:::
+
+## Additional Capabilities
+
+::: {layout-ncol=3}
+
+::: {.feature-card}
+**DevOps Integration**  
+CI/CD pipelines, container orchestration with Kubernetes, and infrastructure-as-code workflows.
+:::
+
+::: {.feature-card}
+**High Availability**  
+Multi-region deployment, automatic failover, and 99.9%+ uptime SLAs with transparent status monitoring.
+:::
+
+::: {.feature-card}
+**Expert Support**  
+Dedicated account managers, 24/7 technical support, and access to certified cloud architects.
+:::
+
+:::
+
+## Ready to modernise your infrastructure?
+
+[Schedule a Demo](contact.qmd){.btn .btn-primary .btn-lg role="button"} [View Pricing](pricing.qmd){.btn .btn-outline-primary .btn-lg role="button"}

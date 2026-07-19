@@ -4,10 +4,13 @@ toc: false
 ---
 # Transparent Pricing for Every Scale
 
-Choose the plan that fits your needs. All plans include our core security features and 24/7 monitoring. 
+Choose the plan that fits your needs. All plans include our core security features and 24/7 monitoring.
 
-::: {layout-ncol=3}
+::: {.section-figure}
+![CloudCore multi-region network — infrastructure built to scale with your business](assets/cloud-network.jpg)
+:::
 
+::: {.pricing-grid}
 
 ::: { .card .pricing-card }
 <div class="plan-header">
@@ -16,21 +19,15 @@ Choose the plan that fits your needs. All plans include our core security featur
 <p class="plan-description">Perfect for small businesses and startups</p>
 </div>
 
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Up to 10 Virtual Machines
-
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} 1TB SSD Storage
-
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} 10TB Monthly Transfer
-
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Daily Automated Backups
-
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Business Hours Support
-
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} 99.5% Uptime SLA
+- Up to 10 Virtual Machines
+- 1TB SSD Storage
+- 10TB Monthly Transfer
+- Daily Automated Backups
+- Business Hours Support
+- 99.5% Uptime SLA
 
 [Start Free Trial](contact.qmd){.btn .btn-outline-primary .btn-block role="button"}
 :::
-
 
 ::: { .card .pricing-card .featured }
 <div class="badge-popular">MOST POPULAR</div>
@@ -40,25 +37,17 @@ Choose the plan that fits your needs. All plans include our core security featur
 <p class="plan-description">Ideal for growing businesses</p>
 </div>
 
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Up to 50 Virtual Machines
-
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} 5TB SSD Storage
-
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} 50TB Monthly Transfer
-
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Hourly Automated Backups
-
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} 24/7 Priority Support
-
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} 99.9% Uptime SLA
-
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Load Balancing Included
-
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Advanced Security Suite
+- Up to 50 Virtual Machines
+- 5TB SSD Storage
+- 50TB Monthly Transfer
+- Hourly Automated Backups
+- 24/7 Priority Support
+- 99.9% Uptime SLA
+- Load Balancing Included
+- Advanced Security Suite
 
 [Get Started](contact.qmd){.btn .btn-primary .btn-block role="button"}
 :::
-
 
 ::: { .card .pricing-card }
 <div class="plan-header">
@@ -67,23 +56,18 @@ Choose the plan that fits your needs. All plans include our core security featur
 <p class="plan-description">Tailored solutions for large organizations</p>
 </div>
 
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Unlimited Resources
-
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Custom Storage Solutions
-
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Unlimited Transfer
-
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Real-time Replication
-
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Dedicated Account Manager
-
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} 99.99% Uptime SLA
-
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} Custom Integrations
-
-{{< li oqdmuxru trigger=loop delay=1000 class=small >}} On-Premise Options
+- Unlimited Resources
+- Custom Storage Solutions
+- Unlimited Transfer
+- Real-time Replication
+- Dedicated Account Manager
+- 99.99% Uptime SLA
+- Custom Integrations
+- On-Premise Options
 
 [Contact Sales](contact.qmd){.btn .btn-outline-primary .btn-block role="button"}
+:::
+
 :::
 
 ## All Plans Include
@@ -138,5 +122,3 @@ We accept all major credit cards, bank transfers, and can arrange enterprise inv
 
 **Do you offer discounts for annual billing?**  
 Yes, save 20% when you pay annually. Contact our sales team for details.
-
-:::

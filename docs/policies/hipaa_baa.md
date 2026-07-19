@@ -15,7 +15,7 @@ title: HIPPA
 | **Title**    | HIPPA             |
 | **Doc#**     | POL-DATA-024 |
 | **Version**  | 1.0                                 |
-| **Date**     | 15-07-2023                              |
+| **Date**     | 15-07-2024                              |
 
 ## CloudCore HIPAA Business Associate Agreement ("BAA")
 

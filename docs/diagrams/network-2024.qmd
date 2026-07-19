@@ -1,0 +1,60 @@
+---
+title: "Network Architecture — v2.1"
+---
+
+*Network architecture reference, v2.1. CloudCore Infrastructure Engineering. Reviewed 14-02-2024.*
+
+## Architecture (v2.1)
+
+```{mermaid}
+flowchart TB
+    Internet(["Internet<br/>Clients · Remote Staff"])
+
+    subgraph PDC ["Perth Data Centre"]
+      direction TB
+      ASA["Cisco ASA 5525-X"]
+      CORE["Core Switch<br/>Cisco Catalyst 4500"]
+
+      subgraph DMZ ["DMZ"]
+        VPN["Cisco ASA VPN"]
+        WEB["Web Tier<br/>IIS on ESXi 6.0"]
+      end
+
+      subgraph INTERNAL ["Internal Network — shared VLAN"]
+        APPS["VMware ESXi 6.0 Cluster"]
+        DB[("Customer DB<br/>SQL Server 2014")]
+        FILES["File / Sync Server"]
+      end
+
+      subgraph MGMT ["Management"]
+        VCENTER["vCenter 6.0"]
+        MON["Nagios Monitoring"]
+      end
+    end
+
+    subgraph COL0 ["Colocation Rack — Perth"]
+      TAPE["Tape Library"]
+    end
+
+    Internet --> ASA
+    ASA --> CORE
+    CORE --> DMZ
+    CORE --> INTERNAL
+    CORE --> MGMT
+    VPN --> WEB
+    WEB --> APPS
+    APPS --> DB
+    APPS --> FILES
+    VCENTER --> APPS
+    MON --> APPS
+    INTERNAL --> TAPE
+```
+
+## Notes
+
+- Single-site Perth estate; all production systems run from the Perth data centre.
+- Perimeter firewalling is provided by Cisco ASA 5525-X appliances; remote access terminates on an ASA SSL VPN.
+- Compute runs on a VMware ESXi 6.0 cluster managed by vCenter 6.0; application and database workloads share the host cluster.
+- Nightly backups are written to tape in the Perth colocation rack.
+
+*Currency: AUD. Document v2.1, 14-02-2024.*
