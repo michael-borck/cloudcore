@@ -17,28 +17,28 @@ let UNIT_SCHEDULES = {};
 // Legacy fallback configuration - used if JSON config fails to load
 const LEGACY_UNIT_SCHEDULES = {
     // ISYS6018 - Information Security Audit and Control
-    'SecurityAudit2025': {
+    'SecurityAudit2026-dwom7B': {
         unit: 'ISYS6018 - Information Security Audit and Control',
         consultantDate: '2025-07-29T00:00:00',
         auditorDate: '2025-09-16T00:00:00'
     },
     
     // ISYS2002 - Systems Analysis and Design
-    'SystemsAnalysisDesign2025': {
+    'SystemsAnalysisDesign2026-4x5BLs': {
         unit: 'ISYS2002 - Systems Analysis and Design', 
         consultantDate: '2025-08-05T00:00:00',
         auditorDate: '2025-09-23T00:00:00'
     },
     
     // ISYS6014 - Knowledge Management and Intelligent Systems
-    'KnowledgeManagement2025': {
+    'KnowledgeManagement2026-FYHKzQ': {
         unit: 'ISYS6014 - Knowledge Management and Intelligent Systems',
         consultantDate: '2025-08-12T00:00:00',
         auditorDate: '2025-10-07T00:00:00'
     },
     
     // ISAD5001 - Information Systems Analysis and Design
-    'InfoSystemsAnalysis2025': {
+    'InfoSystemsAnalysis2026-oy2QMN': {
         unit: 'ISAD5001 - Information Systems Analysis and Design',
         consultantDate: '2025-08-05T00:00:00',
         auditorDate: '2025-09-23T00:00:00'
