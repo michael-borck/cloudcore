@@ -31,7 +31,30 @@ if not API_KEY:
     raise SystemExit("Set ANYTHINGLLM_API_KEY in the environment before running.")
 BASE_URL = os.environ.get("ANYTHINGLLM_BASE_URL", "https://chat.eduserver.au/api/v1")
 BOTS_DIR = Path("chatbots/bots")
-BACKSTORIES_DIR = Path("chatbots/_backstories")
+
+# Persona ground truth lives in the PRIVATE simulation-staff repo (this repo is
+# public and no longer tracks it). Default assumes a sibling checkout:
+#   sites/
+#     cloudcore/            <- this repo (run from its root)
+#     simulation-staff/     <- private repo (canonical backstories)
+# Override with BACKSTORIES_DIR, or fall back to a local untracked copy.
+def _find_backstories_dir() -> Path:
+    candidates = [
+        os.environ.get("BACKSTORIES_DIR", ""),
+        "../simulation-staff/cloudcore/_backstories",
+        "../../simulation-staff/cloudcore/_backstories",  # sites/cloudcore/cloudcore layout
+        "chatbots/_backstories",  # legacy local copy (untracked)
+    ]
+    for c in candidates:
+        if c and Path(c).is_dir():
+            return Path(c)
+    raise SystemExit(
+        "Backstories not found. Clone the private simulation-staff repo as a "
+        "sibling of this repo, or set BACKSTORIES_DIR to its "
+        "cloudcore/_backstories path."
+    )
+
+BACKSTORIES_DIR = _find_backstories_dir()
 
 HEADERS = {
     "Authorization": f"Bearer {API_KEY}",
