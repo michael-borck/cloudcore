@@ -1,0 +1,8 @@
+# PUBLIC PROFILE — fast facade-only build (quarto render --profile public).
+# Purely an optimisation: profile render arrays MERGE with the default, so
+# these excludes reliably apply here. Safety does not depend on this file —
+# the post-render scrub removes gated dirs from any non-GATED_BUILD output.
+project:
+  render:
+    - "!docs/**"
+    - "!chatbots/**"

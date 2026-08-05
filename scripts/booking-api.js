@@ -9,57 +9,46 @@ const BookingAPI = {
         ? (typeof CloudCoreConfig !== 'undefined' ? CloudCoreConfig.bookingApiLocalUrl : 'http://localhost:8080/api')
         : (typeof CloudCoreConfig !== 'undefined' ? CloudCoreConfig.bookingApiUrl : 'https://booking-api.eduserver.au/api'),
 
-    // Student identification (set during booking flow)
-    studentEmail: null,
-    studentName: null,
+    // Student identification: an issued "contractor badge" code — no emails
+    // or names anywhere. localStorage (not session) so it survives the tab.
+    badgeCode: null,
     unitCode: null,
 
     /**
-     * Set student info for booking requests
+     * Set the badge for booking requests
      */
-    setStudent(email, name = null, unitCode = null) {
-        this.studentEmail = email;
-        this.studentName = name;
+    setStudent(badge, unitCode = null) {
+        this.badgeCode = badge.trim().toUpperCase();
         this.unitCode = unitCode;
-
-        // Persist to sessionStorage
-        sessionStorage.setItem('booking_student', JSON.stringify({
-            email, name, unitCode
+        localStorage.setItem('booking_badge', JSON.stringify({
+            badge: this.badgeCode, unitCode
         }));
     },
 
     /**
-     * Get stored student info
+     * Get stored badge info ({badge, unitCode} or null)
      */
     getStudent() {
-        if (this.studentEmail) {
-            return {
-                email: this.studentEmail,
-                name: this.studentName,
-                unitCode: this.unitCode
-            };
+        if (this.badgeCode) {
+            return { badge: this.badgeCode, unitCode: this.unitCode };
         }
-
-        const stored = sessionStorage.getItem('booking_student');
+        const stored = localStorage.getItem('booking_badge');
         if (stored) {
             const data = JSON.parse(stored);
-            this.studentEmail = data.email;
-            this.studentName = data.name;
+            this.badgeCode = data.badge;
             this.unitCode = data.unitCode;
             return data;
         }
-
         return null;
     },
 
     /**
-     * Clear student info
+     * Clear badge info
      */
     clearStudent() {
-        this.studentEmail = null;
-        this.studentName = null;
+        this.badgeCode = null;
         this.unitCode = null;
-        sessionStorage.removeItem('booking_student');
+        localStorage.removeItem('booking_badge');
     },
 
     /**
@@ -123,8 +112,8 @@ const BookingAPI = {
     /**
      * Get a student's meeting usage with an employee (drives the "use wisely" note)
      */
-    async getMeetingStatus(employeeId, email) {
-        return this.request(`/employees/${employeeId}/meeting-status?email=${encodeURIComponent(email)}`);
+    async getMeetingStatus(employeeId, badge) {
+        return this.request(`/employees/${employeeId}/meeting-status?badge=${encodeURIComponent(badge)}`);
     },
 
     /**
@@ -136,7 +125,7 @@ const BookingAPI = {
 
     /**
      * Link the student to the AnythingLLM embed session they're using, so their
-     * transcript can be retrieved later by email.
+     * transcript can be retrieved later by badge code.
      */
     async recordSession(payload) {
         return this.request('/conversations/record', {
@@ -146,11 +135,11 @@ const BookingAPI = {
     },
 
     /**
-     * Fetch a student's stored transcript(s) from AnythingLLM by email.
+     * Fetch a student's stored transcript(s) from AnythingLLM by badge code.
      * STAFF-ONLY (needs the analytics key) — for grading/recovery, not students.
      */
-    async getConversation(email, employeeId = '') {
-        const q = `email=${encodeURIComponent(email)}` +
+    async getConversation(badge, employeeId = '') {
+        const q = `badge=${encodeURIComponent(badge)}` +
                   (employeeId ? `&employee_id=${encodeURIComponent(employeeId)}` : '');
         return this.request(`/conversations?${q}`);
     },
@@ -175,11 +164,10 @@ const BookingAPI = {
     async requestAppointment(employeeId, proposedTimes, options = {}) {
         const student = this.getStudent();
         if (!student) {
-            throw new Error('Please enter your student email before booking.');
+            throw new Error('Please enter your badge code before booking.');
         }
         const payload = {
-            student_email: student.email,
-            student_name: student.name,
+            badge_code: student.badge,
             unit_code: student.unitCode,
             employee_id: employeeId,
             proposed_times: proposedTimes,
@@ -204,12 +192,11 @@ const BookingAPI = {
     async bookAppointment(employeeId, slotStart, options = {}) {
         const student = this.getStudent();
         if (!student) {
-            throw new Error('Please enter your student email before booking.');
+            throw new Error('Please enter your badge code before booking.');
         }
 
         const payload = {
-            student_email: student.email,
-            student_name: student.name,
+            badge_code: student.badge,
             unit_code: student.unitCode,
             employee_id: employeeId,
             slot_start: slotStart,
@@ -235,13 +222,13 @@ const BookingAPI = {
     async cancelAppointment(appointmentId, reason = null) {
         const student = this.getStudent();
         if (!student) {
-            throw new Error('Student email required to cancel.');
+            throw new Error('Badge code required to cancel.');
         }
 
         return this.request(`/appointments/${appointmentId}`, {
             method: 'DELETE',
             body: JSON.stringify({
-                student_email: student.email,
+                badge_code: student.badge,
                 reason: reason
             })
         });
@@ -250,8 +237,8 @@ const BookingAPI = {
     /**
      * Get calendar invite URL for an appointment
      */
-    getCalendarUrl(appointmentId, email) {
-        return `${this.baseUrl}/appointments/${appointmentId}/calendar?email=${encodeURIComponent(email)}`;
+    getCalendarUrl(appointmentId) {
+        return `${this.baseUrl}/appointments/${appointmentId}/calendar`;
     },
 
     // =========================================================================
@@ -266,16 +253,16 @@ const BookingAPI = {
         if (!student) {
             return {
                 access: 'needs_booking',
-                message: 'Please enter your student email to check access.'
+                message: 'Please enter your badge code to check access.'
             };
         }
 
         return this.request('/access/check', {
             method: 'POST',
             body: JSON.stringify({
-                student_email: student.email,
+                badge_code: student.badge,
                 employee_id: employeeId,
-                unit_code: student.unitCode
+                unit_code: student.unitCode || ''
             })
         });
     },

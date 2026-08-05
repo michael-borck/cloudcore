@@ -24,3 +24,18 @@ chatbots/_backstories/
 # private simulation-staff repo. Same rule as _instructor/ and _backstories/.
 scenario-analysis.md
 config/registry-manifest.yml
+
+# Tier-2 gated content: canonical in the private simulation-staff repo.
+# scripts/build-site.sh copies it here for the full (VPS) render only.
+docs/interviews.qmd
+docs/interviews/
+docs/logs.qmd
+docs/support/logs/
+docs/support/incident_report.md
+docs/articles/data_breach_*.md
+docs/support/letter_*.md
+docs/support/network_logical.qmd
+docs/support/erd.qmd
+docs/policies/breach.md
+docs/support/approved_software.md
+_site-full/

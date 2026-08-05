@@ -337,12 +337,12 @@ const BookingModal = {
         // Create modal HTML
         this.createModal();
 
-        // Show email step or slots step based on stored student
+        // Show badge step or slots step based on stored badge
         const student = BookingAPI.getStudent();
         if (student) {
             this.showSlotsStep();
         } else {
-            this.showEmailStep();
+            this.showBadgeStep();
         }
     },
 
@@ -364,19 +364,17 @@ const BookingModal = {
                     <button class="booking-close" onclick="BookingModal.close()">&times;</button>
                 </div>
                 <div class="booking-body">
-                    <!-- Step 1: Email -->
-                    <div id="booking-step-email" class="booking-step">
+                    <!-- Step 1: Badge -->
+                    <div id="booking-step-badge" class="booking-step">
                         <div class="booking-message info">
-                            To book an appointment, please enter your student email.
+                            To book an appointment, present your contractor badge
+                            (issued by your unit coordinator).
                         </div>
-                        <form id="booking-email-form" onsubmit="BookingModal.submitEmail(event)">
+                        <form id="booking-badge-form" onsubmit="BookingModal.submitBadge(event)">
                             <div class="booking-form-group">
-                                <label for="booking-email">Student Email</label>
-                                <input type="email" id="booking-email" placeholder="your.email@student.edu" required>
-                            </div>
-                            <div class="booking-form-group">
-                                <label for="booking-name">Name (optional)</label>
-                                <input type="text" id="booking-name" placeholder="Your name">
+                                <label for="booking-badge">Badge Code</label>
+                                <input type="text" id="booking-badge" placeholder="CC-XXXX-XXXX" required
+                                       autocomplete="off" autocapitalize="characters" spellcheck="false">
                             </div>
                             <button type="submit" class="booking-btn booking-btn-primary" style="width: 100%;">
                                 Continue
@@ -433,38 +431,27 @@ const BookingModal = {
     },
 
     /**
-     * Show the email input step
+     * Show the badge input step
      */
-    showEmailStep() {
+    showBadgeStep() {
         document.querySelectorAll('.booking-step').forEach(s => s.classList.remove('active'));
-        document.getElementById('booking-step-email').classList.add('active');
-        document.getElementById('booking-email').focus();
+        document.getElementById('booking-step-badge').classList.add('active');
+        document.getElementById('booking-badge').focus();
     },
 
     /**
-     * Handle email form submission
+     * Handle badge form submission
      */
-    async submitEmail(event) {
+    async submitBadge(event) {
         event.preventDefault();
 
-        const email = document.getElementById('booking-email').value.trim();
-        const name = document.getElementById('booking-name').value.trim();
+        const badge = document.getElementById('booking-badge').value.trim().toUpperCase();
+        if (!/^[A-Z0-9][A-Z0-9-]{3,31}$/.test(badge)) return;
 
-        if (!email) return;
+        // Unit code comes from the unit gate's session, when present
+        const unitCode = localStorage.getItem('cloudcore_unit_code') || null;
 
-        // Get unit code from cloudcore token if available
-        let unitCode = null;
-        try {
-            const token = localStorage.getItem('cloudcore_token');
-            if (token) {
-                const parsed = JSON.parse(token);
-                unitCode = parsed.unit;
-            }
-        } catch (e) {
-            // No token
-        }
-
-        BookingAPI.setStudent(email, name || null, unitCode);
+        BookingAPI.setStudent(badge, unitCode);
         this.showSlotsStep();
     },
 
@@ -490,8 +477,8 @@ const BookingModal = {
             // Senior staff are capped ("use wisely"); regular staff are unlimited.
             let status = null;
             try {
-                if (student && student.email) {
-                    status = await BookingAPI.getMeetingStatus(this.employeeId, student.email);
+                if (student && student.badge) {
+                    status = await BookingAPI.getMeetingStatus(this.employeeId, student.badge);
                 }
             } catch (e) { /* non-fatal — propose-3 still works without the note */ }
 
@@ -531,8 +518,8 @@ const BookingModal = {
                     <label>Option 3 <input type="datetime-local" class="booking-propose-time" min="${minAttr}"></label>
                 </div>
                 <div style="margin-top: 20px; display: flex; gap: 10px;">
-                    <button class="booking-btn booking-btn-secondary" onclick="BookingAPI.clearStudent(); BookingModal.showEmailStep();">
-                        Change Email
+                    <button class="booking-btn booking-btn-secondary" onclick="BookingAPI.clearStudent(); BookingModal.showBadgeStep();">
+                        Change Badge
                     </button>
                     <button id="booking-confirm-btn" class="booking-btn booking-btn-primary"
                             onclick="BookingModal.requestTimes()">
@@ -654,7 +641,7 @@ const BookingModal = {
 
         const apt = result.appointment;
         const student = BookingAPI.getStudent();
-        const calendarUrl = result.ics_url || BookingAPI.getCalendarUrl(apt.id, student.email);
+        const calendarUrl = result.ics_url || BookingAPI.getCalendarUrl(apt.id);
 
         document.getElementById('booking-confirm-content').innerHTML = `
             <div class="booking-confirmation">

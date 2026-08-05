@@ -13,9 +13,16 @@ const CloudCoreConfig = {
     chatApiUrl: 'https://chat.eduserver.au/api/embed',
     chatWidgetSrc: 'https://chat.eduserver.au/embed/anythingllm-chat-widget.min.js',
 
+    // CloudCore API (unit sessions / access config)
+    apiUrl: 'https://api.cloudcore.eduserver.au',
+
+    // Gated content host (docs + chatbots, behind the unit session)
+    gatedHost: 'gated.cloudcore.eduserver.au',
+    gatedUrl: 'https://gated.cloudcore.eduserver.au',
+
     // Booking API server
-    bookingDomain: 'booking-api.eduserver.au',
-    bookingApiUrl: 'https://booking-api.eduserver.au/api',
+    bookingDomain: 'booking.cloudcore.eduserver.au',
+    bookingApiUrl: 'https://booking.cloudcore.eduserver.au/api',
     bookingApiLocalUrl: 'http://localhost:8080/api',
 
     // Brand image URL (used in chatbot embeds)

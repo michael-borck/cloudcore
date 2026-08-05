@@ -1,5 +1,12 @@
 project:
   type: website
+  post-render: scripts/scrub-public-build.py
+  # The render list includes the gated sections (docs/, chatbots/), but the
+  # post-render scrub DELETES them from the output unless GATED_BUILD=1 is
+  # set (scripts/build-site.sh sets it for the VPS build only). A bare
+  # `quarto render` or `quarto publish` therefore always produces the safe
+  # public build. Quarto merges profile render arrays, so excludes cannot be
+  # un-done per profile — the scrub is the enforcement point, not this list.
   render:
     - "!CLAUDE.md"
     - "!CODE_OF_CONDUCT.md"
@@ -99,17 +106,22 @@ format:
           <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
       - text: |
           <script src="/scripts/config.js"></script>
-          <script src="/scripts/simple-timeline-access.js"></script>
+          <script src="/scripts/session-gate.js"></script>
           <script src="/scripts/booking-api.js"></script>
           <script src="/scripts/booking-modal.js"></script>
           <script src="/scripts/chatbot-booking.js"></script>
           <script src="/scripts/educational-notice.js"></script>
 
+# NB: files excluded from render are still COPIED into _site as resources
+# unless negated here too — without these, the public build would publish the
+# raw gated .qmd/.md sources verbatim.
 resources:
   - admin/
   - CNAME
   - scripts/
   - data/
+  - "!docs/**"
+  - "!chatbots/**"
 
 
 

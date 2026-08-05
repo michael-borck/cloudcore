@@ -10,7 +10,8 @@ CloudCore Networks is an educational platform built with Quarto static site gene
 
 ### Development
 - `quarto preview` - Start local development server with live reload
-- `quarto render` - Build the static site for production
+- `quarto render` - Build the PUBLIC site (gated sections are scrubbed from the output)
+- `scripts/build-site.sh` - Build both variants: `_site/` (public, GitHub Pages) and `_site-full/` (gated, rsync to the VPS). Requires a private `simulation-staff` checkout as a sibling.
 
 ### Git Operations
 - Standard git workflow applies - no pre-commit hooks detected
@@ -23,7 +24,7 @@ CloudCore Networks is an educational platform built with Quarto static site gene
 - **Styling**: Custom CSS design system (`styles.css`) layered over the Cosmo theme — "Refined Light" direction with an Electric Blue accent (#2563eb / #06b6d4)
 - **Typography**: Inter (sans) + JetBrains Mono (code), loaded via Google Fonts in `_quarto.yml` `include-in-header`
 - **Brand mark**: `assets/logo.svg` (network/constellation glyph); set via `website.navbar.logo`, wordmark injected by `.navbar-brand-logo::after` in CSS
-- **Scripts**: Custom JavaScript for access control (`scripts/simple-timeline-access.js` — the only gating script actually loaded; see Access Control below)
+- **Scripts**: `scripts/session-gate.js` (unit gate UX; enforcement is server-side, see Access Control below), plus the badge-keyed booking trio (`booking-api.js`, `booking-modal.js`, `chatbot-booking.js`)
 - **Chatbot Integration**: AnythingLLM embedded widgets
 
 ### Project Structure
@@ -37,7 +38,7 @@ CloudCore Networks is an educational platform built with Quarto static site gene
 - `/_extensions/` - Quarto extensions (lordicon for animated icons)
 
 ### Key Implementation Details
-1. **Access Control**: JavaScript-based time restrictions (business hours only) and password gating on `/docs/` and `/chatbots/`. Client-side only and trivially bypassed — see Security Considerations before relying on it
+1. **Access Control**: SERVER-SIDE since Aug 2026. The public Pages build contains no `/docs/` or `/chatbots/` at all; those live on `gated.cloudcore.eduserver.au`, served from the VPS behind Caddy `forward_auth` → cloudcore-api `/session/verify` (unit password → HttpOnly cookie via `POST /session`; per-unit visibility rules and staged release evaluated server-side). Bookings/chat identity is an issued badge code via sim-booking-api. `session-gate.js` is UX only
 2. **Content Organization**: Uses Quarto's listing feature for blog and chatbot directories
 3. **Navigation**: Multi-level navbar with dropdown menus for documentation sections
 4. **Chatbot Integration**: Each character has an embedded AnythingLLM chat widget with unique embed IDs
@@ -65,25 +66,21 @@ All visual styling is driven by CSS custom properties at `:root` (tokens for col
    served live off `gh-pages`, and required a full history rewrite. The migrate
    scripts now read `ANYTHINGLLM_API_KEY` from the environment; keep it that way.
 
-**Access control is presentational, not enforcement.** `simple-timeline-access.js`
-stashes `document.body.innerHTML`, then overwrites the body with a login form —
-the full protected content is already in the delivered HTML. View-source,
-disabling JS, or restoring `window.originalContent` from the console bypasses it
-completely. The password check is an object lookup against a list shipped in the
-same file, and the auth token is a forgeable client-side timestamp in
-`localStorage`. Treat it as a workflow speed-bump for students following the
-scenario. **Anything that must not be read must not be rendered into `_site/` at
-all.**
+**Access control is server-side (Aug 2026 cutover).** The old client-side gate
+(`simple-timeline-access.js`, `unit-access.js`, `staged-access.js`) and
+`config/unit-access.json` are deleted and purged from history. No passwords ship
+in any JS. Tier-2 sources (interviews, logs, incident report, breach articles,
+letters, diagrams) are canonical in the private `simulation-staff` repo under
+`cloudcore/site-gated/`; `scripts/build-site.sh` copies them in (gitignored
+paths) for the full render only, and `scripts/scrub-public-build.py`
+(post-render) deletes `docs/` and `chatbots/` from any output built without
+`GATED_BUILD=1` — that scrub is the enforcement point, because Quarto merges
+profile render arrays AND copies unrendered sources into the output as
+resources. Do not weaken either behaviour.
 
-**Known bug:** `loadAccessConfig()` fetches `/config/unit-access.json`, but
-`config/` is not in `_quarto.yml` `resources:` and so is absent from `_site/`.
-That fetch 404s in production and the site always falls back to
-`LEGACY_UNIT_SCHEDULES`. The per-unit allow/deny rules in the JSON never take
-effect on the deployed site.
-
-Unit passwords are duplicated in `config/unit-access.json` and as the fallback in
-`simple-timeline-access.js` — change both, and note they are shared with students
-by design and unavoidably public in the deployed JS.
+Unit passwords now live only in cloudcore-api's database (managed by lecturers,
+rotated per semester). Student identity for bookings is an issued badge code
+(sim-booking-api); the system stores no student PII.
 
 Educational platform — some security weaknesses are intentional teaching
 artifacts (e.g. the SQL-injection payload in `docs/scenarios/`). Distinguish those

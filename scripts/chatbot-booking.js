@@ -5,7 +5,7 @@
  * Flow:
  * 1. Chat widget is hidden by default
  * 2. Student chooses "Attend Interview" or "Schedule Interview"
- * 3. For "Attend": verify email has active appointment, then show chat
+ * 3. For "Attend": verify the badge has an active appointment, then show chat
  * 4. For "Schedule": open booking modal to book a slot
  */
 
@@ -192,10 +192,11 @@ const ChatbotBooking = {
                 <div id="attend-form" style="display: none; max-width: 400px; margin: 0 auto;">
                     <form onsubmit="ChatbotBooking.verifyAccess(event)">
                         <div style="margin-bottom: 15px; text-align: left;">
-                            <label for="attend-email" style="display: block; font-weight: 500; margin-bottom: 6px; color: #333;">
-                                Student Email
+                            <label for="attend-badge" style="display: block; font-weight: 500; margin-bottom: 6px; color: #333;">
+                                Badge Code
                             </label>
-                            <input type="email" id="attend-email" required placeholder="your.email@student.edu" style="
+                            <input type="text" id="attend-badge" required placeholder="CC-XXXX-XXXX"
+                                   autocomplete="off" autocapitalize="characters" spellcheck="false" style="
                                 width: 100%;
                                 padding: 12px;
                                 border: 2px solid #e9ecef;
@@ -301,13 +302,13 @@ const ChatbotBooking = {
         document.getElementById('access-options').style.display = 'none';
         document.getElementById('attend-form').style.display = 'block';
 
-        // Pre-fill email if stored
+        // Pre-fill badge if stored
         const student = BookingAPI.getStudent();
         if (student) {
-            document.getElementById('attend-email').value = student.email;
+            document.getElementById('attend-badge').value = student.badge;
         }
 
-        document.getElementById('attend-email').focus();
+        document.getElementById('attend-badge').focus();
     },
 
     /**
@@ -316,8 +317,8 @@ const ChatbotBooking = {
     async verifyAccess(event) {
         event.preventDefault();
 
-        const email = document.getElementById('attend-email').value.trim();
-        if (!email) return;
+        const badge = document.getElementById('attend-badge').value.trim().toUpperCase();
+        if (!badge) return;
 
         const verifyBtn = document.getElementById('verify-btn');
         const statusDiv = document.getElementById('access-status');
@@ -327,8 +328,8 @@ const ChatbotBooking = {
         statusDiv.innerHTML = '';
 
         try {
-            // Store email for future use
-            BookingAPI.setStudent(email);
+            // Store badge for future use (unit code from the unit gate if present)
+            BookingAPI.setStudent(badge, localStorage.getItem('cloudcore_unit_code') || null);
 
             const access = await BookingAPI.checkAccess(this.employeeId);
 
@@ -387,7 +388,7 @@ const ChatbotBooking = {
                         </p>
                         <p style="margin: 10px 0 0 0; font-size: 13px;">
                             Please return at your scheduled time.
-                            <a href="${BookingAPI.getCalendarUrl(apt.id, email)}" download style="color: #856404;">
+                            <a href="${BookingAPI.getCalendarUrl(apt.id)}" download style="color: #856404;">
                                 Add to calendar
                             </a>
                         </p>
@@ -469,7 +470,7 @@ const ChatbotBooking = {
         // Store access in session
         sessionStorage.setItem('chatbot_access', JSON.stringify({
             employeeId: this.employeeId,
-            email: student.email,
+            badge: student.badge,
             appointmentId: apt.id,
             grantedAt: Date.now(),
             expiresAt: new Date(apt.scheduled_end).getTime()
@@ -511,7 +512,7 @@ const ChatbotBooking = {
             }
 
             // Re-verify with server
-            BookingAPI.setStudent(access.email);
+            BookingAPI.setStudent(access.badge, localStorage.getItem('cloudcore_unit_code') || null);
             const check = await BookingAPI.checkAccess(this.employeeId);
 
             if (check.access === 'granted') {
@@ -526,7 +527,7 @@ const ChatbotBooking = {
     },
 
     /**
-     * Link this chat to the student so their transcript is retrievable by email
+     * Link this chat to the student so their transcript is retrievable by badge
      * later (durable, survives a cache clear). The AnythingLLM widget stores its
      * session id at localStorage `allm_{embedId}_session_id`.
      */
@@ -541,11 +542,11 @@ const ChatbotBooking = {
 
             const access = JSON.parse(sessionStorage.getItem('chatbot_access') || '{}');
             const student = (typeof BookingAPI !== 'undefined' && BookingAPI.getStudent()) || {};
-            const email = student.email || access.email;
-            if (!email) return;
+            const badge = student.badge || access.badge;
+            if (!badge) return;
 
             BookingAPI.recordSession({
-                student_email: email,
+                badge_code: badge,
                 employee_id: this.employeeId || access.employeeId,
                 embed_id: embedId,
                 session_id: sessionId,
@@ -591,7 +592,7 @@ const ChatbotBooking = {
         }
         const sessions = (data && data.sessions) || [];
         if (sessions.length <= 1) {
-            this._downloadText(data.transcript || '', {}, this._email());
+            this._downloadText(data.transcript || '', {}, this._badge());
             return;
         }
         this._showChooser(sessions, data.transcript);
@@ -622,7 +623,7 @@ const ChatbotBooking = {
     },
 
     _downloadCombined() {
-        if (this._chooserData) this._downloadText(this._chooserData.combined, {}, this._email());
+        if (this._chooserData) this._downloadText(this._chooserData.combined, {}, this._badge());
     },
 
     _downloadOne(i) {
@@ -631,13 +632,13 @@ const ChatbotBooking = {
         const body = s.turns.map(t =>
             (String(t.role).toLowerCase() === 'user' ? 'Student' : s.employee_name)
             + ': ' + t.content).join('\n');
-        this._downloadText(`=== ${s.employee_name} ===\n${body}`, {}, this._email());
+        this._downloadText(`=== ${s.employee_name} ===\n${body}`, {}, this._badge());
     },
 
-    _email() {
+    _badge() {
         const access = JSON.parse(sessionStorage.getItem('chatbot_access') || '{}');
         const student = (typeof BookingAPI !== 'undefined' && BookingAPI.getStudent()) || {};
-        return student.email || access.email || '';
+        return student.badge || access.badge || '';
     },
 
     _downloadOnScreen() {
@@ -653,13 +654,13 @@ const ChatbotBooking = {
                 + 'cache, ask your lecturer to retrieve them for you.');
             return;
         }
-        this._downloadText(text, {}, this._email());
+        this._downloadText(text, {}, this._badge());
     },
 
-    _downloadText(body, access, email) {
+    _downloadText(body, access, badge) {
         const header = 'CloudCore Networks — interview transcript\n'
             + `Employee: ${access.employeeId || this.employeeId || ''}\n`
-            + `Student: ${email || ''}\n`
+            + `Badge: ${badge || ''}\n`
             + `Downloaded: ${new Date().toLocaleString()}\n`
             + '\n----------------------------------------\n\n';
         const blob = new Blob([header + body], { type: 'text/plain' });
@@ -686,8 +687,9 @@ const ChatbotBooking = {
                 await BookingAPI.request('/access/end-session', {
                     method: 'POST',
                     body: JSON.stringify({
-                        student_email: access.email,
-                        employee_id: this.employeeId
+                        badge_code: access.badge,
+                        employee_id: this.employeeId,
+                        unit_code: localStorage.getItem('cloudcore_unit_code') || ''
                     })
                 });
             } catch (e) {

@@ -1,0 +1,27 @@
+---
+title: "Staff Portal Access"
+toc: false
+---
+
+Access to CloudCore's internal documentation and staff directory is limited
+to authorised project teams. Enter the access details provided by your unit
+coordinator.
+
+::: {.card style="max-width: 26rem; margin: 2rem auto; padding: 2rem;"}
+<form id="unit-gate-form">
+  <div style="margin-bottom: 1rem;">
+    <label for="unit-gate-code" style="display:block; font-weight:600; margin-bottom:.4rem;">Unit Code</label>
+    <input type="text" id="unit-gate-code" class="form-control" placeholder="e.g. ISYS6018"
+           autocomplete="off" autocapitalize="characters" spellcheck="false" required>
+  </div>
+  <div style="margin-bottom: 1.25rem;">
+    <label for="unit-gate-password" style="display:block; font-weight:600; margin-bottom:.4rem;">Access Password</label>
+    <input type="password" id="unit-gate-password" class="form-control" required>
+  </div>
+  <button type="submit" class="btn btn-primary" style="width:100%;">Enter Portal</button>
+  <p id="unit-gate-error" style="color:#dc2626; margin-top:.75rem; min-height:1.25rem;"></p>
+</form>
+:::
+
+<small>Trouble signing in? Contact your unit coordinator. Sessions last the
+teaching period on this browser.</small>
