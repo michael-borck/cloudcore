@@ -8,6 +8,12 @@ project:
     - "!docs/access-demo.qmd"
     - "!docs/staged-content-example.qmd"
     - "!docs/registry.qmd"
+    # Design docs. scenario-analysis.md was MISSING from this list and was
+    # therefore rendered and published — it names the breach specifics and
+    # lists the designed teaching scenarios. The client-side gate is a
+    # deliberate teaching artefact, but the render boundary is the real one:
+    # anything genuinely private must not be rendered at all.
+    - "!scenario-analysis.md"
     - "!_instructor"
     - "*"
 

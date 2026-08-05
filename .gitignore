@@ -18,3 +18,9 @@ _instructor/
 # Character persona ground-truth — students must discover this by interviewing
 # the bots, not by reading the repo. Public repo: must stay untracked.
 chatbots/_backstories/
+
+# Design docs: scenario map and the artefact registry manifest (which flags
+# which artefacts are planted distractors). Answer material — lives in the
+# private simulation-staff repo. Same rule as _instructor/ and _backstories/.
+scenario-analysis.md
+config/registry-manifest.yml
