@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" role="img" aria-label="CloudCore Networks">
+  <defs>
+    <linearGradient id="ccg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#ccg)"/>
+  <g stroke="#ffffff" stroke-width="1.7" stroke-linecap="round" opacity="0.9">
+    <line x1="10.5" y1="11.5" x2="21.5" y2="9.5"/>
+    <line x1="10.5" y1="11.5" x2="16" y2="21.5"/>
+    <line x1="21.5" y1="9.5" x2="16" y2="21.5"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="10.5" cy="11.5" r="2.6"/>
+    <circle cx="21.5" cy="9.5" r="2.6"/>
+    <circle cx="16" cy="21.5" r="2.6"/>
+  </g>
+</svg>

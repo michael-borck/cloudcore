@@ -1,0 +1,11 @@
+[
+  {
+    "listing": "/blog/index.html",
+    "items": [
+      "/blog/posts/securing-cloud-workloads-zero-trust/index.html",
+      "/blog/posts/designing-for-high-availability/index.html",
+      "/blog/posts/finops-cost-optimisation-australia/index.html",
+      "/blog/posts/data-sovereignty-australian-businesses/index.html"
+    ]
+  }
+]

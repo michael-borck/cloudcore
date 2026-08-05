@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Open Source Credits – CloudCore Networks</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-bc9a97dc4e76b89d1773373e7c9b5fe1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="./scripts/config.js"></script>
+<script src="./scripts/session-gate.js"></script>
+<script src="./scripts/booking-api.js"></script>
+<script src="./scripts/booking-modal.js"></script>
+<script src="./scripts/chatbot-booking.js"></script>
+<script src="./scripts/educational-notice.js"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./assets/logo.svg" alt="CloudCore Networks" class="navbar-logo light-content">
+    <img src="./assets/logo.svg" alt="CloudCore Networks" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">CloudCore Networks</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-solutions" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Solutions</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-solutions">    
+        <li>
+    <a class="dropdown-item" href="./solutions.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./solutions.html#cloud-hosting">
+ <span class="dropdown-text">Cloud Hosting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./solutions.html#managed-services">
+ <span class="dropdown-text">Managed Services</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./solutions.html#security-compliance">
+ <span class="dropdown-text">Security &amp; Compliance</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./pricing.html"> 
+<span class="menu-text">Pricing</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Resources</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
+        <li>
+    <a class="dropdown-item" href="./docs/policies.qmd">
+ <span class="dropdown-text">Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./docs/support.qmd">
+ <span class="dropdown-text">Support Center</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./blog/index.html">
+ <span class="dropdown-text">Blog</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./chatbots/index.qmd">
+ <span class="dropdown-text">Meet the Team</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./docs/interviews.qmd">
+ <span class="dropdown-text">Interviews</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./docs/articles.qmd">
+ <span class="dropdown-text">Articles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./docs/logs.qmd">
+ <span class="dropdown-text">System Logs</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./docs/data-dictionary.qmd">
+ <span class="dropdown-text">Data Dictionary</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./docs/strategy/ai-opportunity-pipeline.qmd">
+ <span class="dropdown-text">AI Strategy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./docs/systems-analysis/crm-current-state.qmd">
+ <span class="dropdown-text">Systems Analysis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./docs/diagrams/network-current.qmd">
+ <span class="dropdown-text">Network &amp; Org Diagrams</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./contact.html"> 
+<span class="menu-text">Contact</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./legal.html"> 
+<span class="menu-text">About This Site</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link active" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
+  <li><a href="#core-technologies" id="toc-core-technologies" class="nav-link" data-scroll-target="#core-technologies">Core Technologies</a>
+  <ul class="collapse">
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
+  <li><a href="#bootstrap" id="toc-bootstrap" class="nav-link" data-scroll-target="#bootstrap">Bootstrap</a></li>
+  <li><a href="#github-pages" id="toc-github-pages" class="nav-link" data-scroll-target="#github-pages">GitHub Pages</a></li>
+  </ul></li>
+  <li><a href="#javascript-libraries" id="toc-javascript-libraries" class="nav-link" data-scroll-target="#javascript-libraries">JavaScript Libraries</a>
+  <ul class="collapse">
+  <li><a href="#lordicon" id="toc-lordicon" class="nav-link" data-scroll-target="#lordicon">Lordicon</a></li>
+  </ul></li>
+  <li><a href="#development-tools" id="toc-development-tools" class="nav-link" data-scroll-target="#development-tools">Development Tools</a>
+  <ul class="collapse">
+  <li><a href="#visual-studio-code" id="toc-visual-studio-code" class="nav-link" data-scroll-target="#visual-studio-code">Visual Studio Code</a></li>
+  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git">Git</a></li>
+  <li><a href="#node.js" id="toc-node.js" class="nav-link" data-scroll-target="#node.js">Node.js</a></li>
+  </ul></li>
+  <li><a href="#ai-assistance" id="toc-ai-assistance" class="nav-link" data-scroll-target="#ai-assistance">AI Assistance</a>
+  <ul class="collapse">
+  <li><a href="#claude-anthropic" id="toc-claude-anthropic" class="nav-link" data-scroll-target="#claude-anthropic">Claude (Anthropic)</a></li>
+  <li><a href="#chatgpt-openai" id="toc-chatgpt-openai" class="nav-link" data-scroll-target="#chatgpt-openai">ChatGPT (OpenAI)</a></li>
+  <li><a href="#github-copilot" id="toc-github-copilot" class="nav-link" data-scroll-target="#github-copilot">GitHub Copilot</a></li>
+  </ul></li>
+  <li><a href="#educational-inspiration" id="toc-educational-inspiration" class="nav-link" data-scroll-target="#educational-inspiration">Educational Inspiration</a>
+  <ul class="collapse">
+  <li><a href="#owasp-webgoat" id="toc-owasp-webgoat" class="nav-link" data-scroll-target="#owasp-webgoat">OWASP WebGoat</a></li>
+  <li><a href="#dvwa-damn-vulnerable-web-application" id="toc-dvwa-damn-vulnerable-web-application" class="nav-link" data-scroll-target="#dvwa-damn-vulnerable-web-application">DVWA (Damn Vulnerable Web Application)</a></li>
+  </ul></li>
+  <li><a href="#image-resources" id="toc-image-resources" class="nav-link" data-scroll-target="#image-resources">Image Resources</a>
+  <ul class="collapse">
+  <li><a href="#stock-photography" id="toc-stock-photography" class="nav-link" data-scroll-target="#stock-photography">Stock Photography</a></li>
+  <li><a href="#icons-and-graphics" id="toc-icons-and-graphics" class="nav-link" data-scroll-target="#icons-and-graphics">Icons and Graphics</a></li>
+  </ul></li>
+  <li><a href="#fonts" id="toc-fonts" class="nav-link" data-scroll-target="#fonts">Fonts</a>
+  <ul class="collapse">
+  <li><a href="#system-font-stack" id="toc-system-font-stack" class="nav-link" data-scroll-target="#system-font-stack">System Font Stack</a></li>
+  </ul></li>
+  <li><a href="#contributing" id="toc-contributing" class="nav-link" data-scroll-target="#contributing">Contributing</a></li>
+  <li><a href="#license-compliance" id="toc-license-compliance" class="nav-link" data-scroll-target="#license-compliance">License Compliance</a></li>
+  <li><a href="#special-thanks" id="toc-special-thanks" class="nav-link" data-scroll-target="#special-thanks">Special Thanks</a></li>
+  <li><a href="#how-to-give-attribution" id="toc-how-to-give-attribution" class="nav-link" data-scroll-target="#how-to-give-attribution">How to Give Attribution</a></li>
+  <li><a href="#updates" id="toc-updates" class="nav-link" data-scroll-target="#updates">Updates</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Open Source Credits</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="acknowledgments" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgments">Acknowledgments</h2>
+<p>CloudCore Networks (Educational Project) is built on the shoulders of giants. We gratefully acknowledge the following open source projects and their contributors.</p>
+</section>
+<section id="core-technologies" class="level2">
+<h2 class="anchored" data-anchor-id="core-technologies">Core Technologies</h2>
+<section id="quarto" class="level3">
+<h3 class="anchored" data-anchor-id="quarto">Quarto</h3>
+<ul>
+<li><strong>Project:</strong> <a href="https://quarto.org/">quarto.org</a></li>
+<li><strong>License:</strong> MIT</li>
+<li><strong>GitHub:</strong> <a href="https://github.com/quarto-dev/quarto-cli">github.com/quarto-dev/quarto-cli</a></li>
+<li><strong>Usage:</strong> Static site generation, markdown processing, and document rendering</li>
+</ul>
+</section>
+<section id="bootstrap" class="level3">
+<h3 class="anchored" data-anchor-id="bootstrap">Bootstrap</h3>
+<ul>
+<li><strong>Project:</strong> <a href="https://getbootstrap.com/">getbootstrap.com</a></li>
+<li><strong>License:</strong> MIT</li>
+<li><strong>GitHub:</strong> <a href="https://github.com/twbs/bootstrap">github.com/twbs/bootstrap</a></li>
+<li><strong>Usage:</strong> CSS framework and responsive design components</li>
+</ul>
+</section>
+<section id="github-pages" class="level3">
+<h3 class="anchored" data-anchor-id="github-pages">GitHub Pages</h3>
+<ul>
+<li><strong>Project:</strong> <a href="https://pages.github.com/">pages.github.com</a></li>
+<li><strong>License:</strong> GitHub Terms of Service</li>
+<li><strong>Usage:</strong> Static website hosting and deployment</li>
+</ul>
+</section>
+</section>
+<section id="javascript-libraries" class="level2">
+<h2 class="anchored" data-anchor-id="javascript-libraries">JavaScript Libraries</h2>
+<section id="lordicon" class="level3">
+<h3 class="anchored" data-anchor-id="lordicon">Lordicon</h3>
+<ul>
+<li><strong>Project:</strong> <a href="https://lordicon.com/">lordicon.com</a></li>
+<li><strong>License:</strong> Free tier with attribution</li>
+<li><strong>Usage:</strong> Animated icons throughout the site</li>
+</ul>
+</section>
+</section>
+<section id="development-tools" class="level2">
+<h2 class="anchored" data-anchor-id="development-tools">Development Tools</h2>
+<section id="visual-studio-code" class="level3">
+<h3 class="anchored" data-anchor-id="visual-studio-code">Visual Studio Code</h3>
+<ul>
+<li><strong>Project:</strong> <a href="https://code.visualstudio.com/">code.visualstudio.com</a></li>
+<li><strong>License:</strong> MIT</li>
+<li><strong>GitHub:</strong> <a href="https://github.com/microsoft/vscode">github.com/microsoft/vscode</a></li>
+<li><strong>Usage:</strong> Primary development environment</li>
+</ul>
+</section>
+<section id="git" class="level3">
+<h3 class="anchored" data-anchor-id="git">Git</h3>
+<ul>
+<li><strong>Project:</strong> <a href="https://git-scm.com/">git-scm.com</a></li>
+<li><strong>License:</strong> GPL v2</li>
+<li><strong>GitHub:</strong> <a href="https://github.com/git/git">github.com/git/git</a></li>
+<li><strong>Usage:</strong> Version control</li>
+</ul>
+</section>
+<section id="node.js" class="level3">
+<h3 class="anchored" data-anchor-id="node.js">Node.js</h3>
+<ul>
+<li><strong>Project:</strong> <a href="https://nodejs.org/">nodejs.org</a></li>
+<li><strong>License:</strong> MIT</li>
+<li><strong>GitHub:</strong> <a href="https://github.com/nodejs/node">github.com/nodejs/node</a></li>
+<li><strong>Usage:</strong> JavaScript runtime for build tools</li>
+</ul>
+</section>
+</section>
+<section id="ai-assistance" class="level2">
+<h2 class="anchored" data-anchor-id="ai-assistance">AI Assistance</h2>
+<section id="claude-anthropic" class="level3">
+<h3 class="anchored" data-anchor-id="claude-anthropic">Claude (Anthropic)</h3>
+<ul>
+<li><strong>Project:</strong> <a href="https://www.anthropic.com/">anthropic.com</a></li>
+<li><strong>Usage:</strong> Content generation, code development, and site architecture</li>
+</ul>
+</section>
+<section id="chatgpt-openai" class="level3">
+<h3 class="anchored" data-anchor-id="chatgpt-openai">ChatGPT (OpenAI)</h3>
+<ul>
+<li><strong>Project:</strong> <a href="https://www.openai.com/">openai.com</a></li>
+<li><strong>Usage:</strong> Additional content creation and ideation</li>
+</ul>
+</section>
+<section id="github-copilot" class="level3">
+<h3 class="anchored" data-anchor-id="github-copilot">GitHub Copilot</h3>
+<ul>
+<li><strong>Project:</strong> <a href="https://github.com/features/copilot">github.com/features/copilot</a></li>
+<li><strong>Usage:</strong> Code suggestions and completion</li>
+</ul>
+</section>
+</section>
+<section id="educational-inspiration" class="level2">
+<h2 class="anchored" data-anchor-id="educational-inspiration">Educational Inspiration</h2>
+<section id="owasp-webgoat" class="level3">
+<h3 class="anchored" data-anchor-id="owasp-webgoat">OWASP WebGoat</h3>
+<ul>
+<li><strong>Project:</strong> <a href="https://owasp.org/www-project-webgoat/">owasp.org/www-project-webgoat</a></li>
+<li><strong>License:</strong> GNU GPL v2</li>
+<li><strong>Usage:</strong> Inspiration for educational security scenarios</li>
+</ul>
+</section>
+<section id="dvwa-damn-vulnerable-web-application" class="level3">
+<h3 class="anchored" data-anchor-id="dvwa-damn-vulnerable-web-application">DVWA (Damn Vulnerable Web Application)</h3>
+<ul>
+<li><strong>Project:</strong> <a href="https://dvwa.co.uk/">dvwa.co.uk</a></li>
+<li><strong>License:</strong> GPL v3</li>
+<li><strong>Usage:</strong> Vulnerable application design patterns</li>
+</ul>
+</section>
+</section>
+<section id="image-resources" class="level2">
+<h2 class="anchored" data-anchor-id="image-resources">Image Resources</h2>
+<section id="stock-photography" class="level3">
+<h3 class="anchored" data-anchor-id="stock-photography">Stock Photography</h3>
+<p>All profile images are AI-generated or from royalty-free sources: - Generated using DALL-E and Midjourney - No real person’s likeness is used</p>
+</section>
+<section id="icons-and-graphics" class="level3">
+<h3 class="anchored" data-anchor-id="icons-and-graphics">Icons and Graphics</h3>
+<ul>
+<li>Lordicon animated icons (with attribution)</li>
+<li>Custom SVG graphics</li>
+<li>Bootstrap Icons (MIT License)</li>
+</ul>
+</section>
+</section>
+<section id="fonts" class="level2">
+<h2 class="anchored" data-anchor-id="fonts">Fonts</h2>
+<section id="system-font-stack" class="level3">
+<h3 class="anchored" data-anchor-id="system-font-stack">System Font Stack</h3>
+<p>Using native system fonts for optimal performance: - -apple-system (macOS/iOS) - BlinkMacSystemFont (macOS Chrome) - Segoe UI (Windows) - Roboto (Android) - Helvetica Neue, Arial (fallbacks)</p>
+</section>
+</section>
+<section id="contributing" class="level2">
+<h2 class="anchored" data-anchor-id="contributing">Contributing</h2>
+<p>This educational project welcomes contributions. If you’d like to add your project to these credits or contribute to CloudCore:</p>
+<ol type="1">
+<li>Fork the repository</li>
+<li>Add your acknowledgment</li>
+<li>Submit a pull request</li>
+</ol>
+</section>
+<section id="license-compliance" class="level2">
+<h2 class="anchored" data-anchor-id="license-compliance">License Compliance</h2>
+<p>We take open source licenses seriously. If you believe we’ve used your project incorrectly or without proper attribution, please contact us immediately at the repository issues page.</p>
+</section>
+<section id="special-thanks" class="level2">
+<h2 class="anchored" data-anchor-id="special-thanks">Special Thanks</h2>
+<ul>
+<li><strong>University Teaching Staff</strong> who use this platform for education</li>
+<li><strong>Students</strong> who provide feedback and find creative vulnerabilities</li>
+<li><strong>Open Source Community</strong> for making projects like this possible</li>
+<li><strong>Security Researchers</strong> who inspire better security education</li>
+</ul>
+</section>
+<section id="how-to-give-attribution" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-give-attribution">How to Give Attribution</h2>
+<p>If you fork or use this project:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Based on CloudCore Networks Educational Project</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>https://github.com/michael-borck/cloudcore</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>MIT License - Educational Use</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="updates" class="level2">
+<h2 class="anchored" data-anchor-id="updates">Updates</h2>
+<p>This credits page was last updated: November 2024</p>
+<p>To suggest additions or corrections, please open an issue on <a href="https://github.com/michael-borck/cloudcore/issues">GitHub</a>.</p>
+<hr>
+<p><em>“If I have seen further it is by standing on the shoulders of Giants” - Isaac Newton</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><strong>CloudCore Networks</strong><br>
+Enterprise cloud infrastructure solutions<br>
+ISO 27001:2013 Certified</p>
+</div>   
+    <div class="nav-footer-center">
+<p><strong>Contact</strong><br>
+Perth: 11 Newcastle St, WA 6000<br>
+Malaga: 4 Millrose Dr, WA 6090<br>
+Sydney (DR): 100 Harris St, Pyrmont NSW 2009<br>
+Email: info@cloudcore.com.au<br>
+Phone: +61 (8) 4587 8990</p>
+</div>
+    <div class="nav-footer-right">
+<p><strong>Legal &amp; Credits</strong><br>
+<a href="./legal.html">Legal &amp; Educational Disclaimer</a> | <a href="./legal.html#privacy-data-collection">Privacy</a><br>
+<a href="./legal.html#license">MIT License</a> | <a href="./legal.html#security-notice">Security Notice</a></p>
+<p>© 2026 CloudCore Networks (Fictional). All rights reserved.<br>
+<a href="./credits.html">Open Source Credits</a> | <a href="https://lordicon.com/">Icons by Lordicon.com</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -1,0 +1,422 @@
+[
+  {
+    "objectID": "solutions.html",
+    "href": "solutions.html",
+    "title": "Enterprise Cloud Solutions",
+    "section": "",
+    "text": "CloudCore Networks delivers the infrastructure, management, and security your organisation needs to scale with confidence — hosted locally in our Perth and Malaga data centres, with a 99.9% uptime SLA."
+  },
+  {
+    "objectID": "solutions.html#cloud-hosting",
+    "href": "solutions.html#cloud-hosting",
+    "title": "Enterprise Cloud Solutions",
+    "section": "Cloud Hosting",
+    "text": "Cloud Hosting\nEnterprise-grade compute, storage, and networking with automated scaling, global CDN distribution, and infrastructure-as-code support for optimal performance.\n\nAuto-scaling compute and elastic block storage\nGlobal CDN and multi-region deployment\nKubernetes-native container orchestration\nInfrastructure-as-code (Terraform) support\nTransparent status monitoring and metered billing\n\nDiscuss your hosting needs"
+  },
+  {
+    "objectID": "solutions.html#managed-services",
+    "href": "solutions.html#managed-services",
+    "title": "Enterprise Cloud Solutions",
+    "section": "Managed Services",
+    "text": "Managed Services\nFull-stack management of your cloud environment — 24/7 monitoring, automated backups, security patching, and a dedicated support team.\n\n24/7 monitoring and incident response\nAutomated, regularly tested backups and disaster recovery\nPatch management and operating-system hardening\nDedicated account manager and cloud architect\nITIL-aligned service delivery and reporting\n\nExplore managed services"
+  },
+  {
+    "objectID": "solutions.html#security-compliance",
+    "href": "solutions.html#security-compliance",
+    "title": "Enterprise Cloud Solutions",
+    "section": "Security & Compliance",
+    "text": "Security & Compliance\nISO 27001:2013 certified security with end-to-end encryption, managed DDoS protection, and the compliance frameworks regulated industries rely on.\n\nISO 27001:2013, SOC 2 Type II, and ISO 9001:2015\nEnd-to-end encryption and managed DDoS mitigation\nGDPR, HIPAA, and PCI DSS compliance support\nRegular penetration testing and audit reporting\nAustralian data sovereignty guarantee\n\nTalk to our security team\n\n\n\n\nContinuous compliance monitoring and 24/7 threat detection"
+  },
+  {
+    "objectID": "solutions.html#additional-capabilities",
+    "href": "solutions.html#additional-capabilities",
+    "title": "Enterprise Cloud Solutions",
+    "section": "Additional Capabilities",
+    "text": "Additional Capabilities\n\n\n\nDevOps Integration\nCI/CD pipelines, container orchestration with Kubernetes, and infrastructure-as-code workflows.\n\n\nHigh Availability\nMulti-region deployment, automatic failover, and 99.9%+ uptime SLAs with transparent status monitoring.\n\n\nExpert Support\nDedicated account managers, 24/7 technical support, and access to certified cloud architects."
+  },
+  {
+    "objectID": "solutions.html#ready-to-modernise-your-infrastructure",
+    "href": "solutions.html#ready-to-modernise-your-infrastructure",
+    "title": "Enterprise Cloud Solutions",
+    "section": "Ready to modernise your infrastructure?",
+    "text": "Ready to modernise your infrastructure?\nSchedule a Demo View Pricing"
+  },
+  {
+    "objectID": "legal.html",
+    "href": "legal.html",
+    "title": "Legal Disclaimer & About This Site",
+    "section": "",
+    "text": "IMPORTANT NOTICE: CloudCore Networks is a fictional company created solely for educational purposes. This website is used as a teaching tool for information security, systems analysis, and technology courses at various Australian universities.\n\n\n\nAll company information, services, and claims are entirely fictional\nAll employees, executives, and testimonials are fictitious characters\nAny resemblance to real persons, living or dead, or actual companies is purely coincidental\nThe offices, data centers, and contact information listed do not exist\nThis is NOT a real cloud services provider"
+  },
+  {
+    "objectID": "legal.html#educational-disclaimer",
+    "href": "legal.html#educational-disclaimer",
+    "title": "Legal Disclaimer & About This Site",
+    "section": "",
+    "text": "IMPORTANT NOTICE: CloudCore Networks is a fictional company created solely for educational purposes. This website is used as a teaching tool for information security, systems analysis, and technology courses at various Australian universities.\n\n\n\nAll company information, services, and claims are entirely fictional\nAll employees, executives, and testimonials are fictitious characters\nAny resemblance to real persons, living or dead, or actual companies is purely coincidental\nThe offices, data centers, and contact information listed do not exist\nThis is NOT a real cloud services provider"
+  },
+  {
+    "objectID": "legal.html#educational-purpose",
+    "href": "legal.html#educational-purpose",
+    "title": "Legal Disclaimer & About This Site",
+    "section": "Educational Purpose",
+    "text": "Educational Purpose\nThis simulated corporate website is designed to provide students with:\n\nA realistic environment for security auditing exercises\nPractice in information security assessment and compliance\nExperience with vulnerability identification\nUnderstanding of corporate website structures\nTraining in professional documentation review\n\n\nCourse Usage\nThis site is currently used in: - ISYS6018 - Information Security Audit and Control - ISYS2002 - Systems Analysis and Design\n- ISYS6014 - Knowledge Management and Intelligent Systems - ISAD5001 - Information Systems Analysis and Design"
+  },
+  {
+    "objectID": "legal.html#ai-generated-content",
+    "href": "legal.html#ai-generated-content",
+    "title": "Legal Disclaimer & About This Site",
+    "section": "AI-Generated Content",
+    "text": "AI-Generated Content\n\nLarge Language Model Disclosure\nSignificant portions of this website, including text content, code, and chatbot personalities, were generated with the assistance of: - Claude (Anthropic) - Primary content generation and code development - ChatGPT (OpenAI) - Additional content creation - GitHub Copilot - Code suggestions and completion\n\n\nChatbot Disclaimer\nThe employee interview chatbots on this site: - Are powered by AI language models - May generate unpredictable or incorrect responses - Do not represent real people or actual company positions - May occasionally produce inappropriate content despite safeguards - Should not be relied upon for factual information\nIf you encounter inappropriate, offensive, or concerning content from any chatbot, please report it immediately to your course coordinator."
+  },
+  {
+    "objectID": "legal.html#technology-stack",
+    "href": "legal.html#technology-stack",
+    "title": "Legal Disclaimer & About This Site",
+    "section": "Technology Stack",
+    "text": "Technology Stack\nThis website demonstrates modern web development practices using:\n\nCore Technologies\n\nQuarto - Open source scientific and technical publishing system\nGitHub Pages - Static website hosting\nHTML5/CSS3/JavaScript - Frontend technologies\nBootstrap - CSS framework (via Quarto)\n\n\n\nThird-Party Services\n\nAnythingLLM - Chatbot integration platform\nLordicon - Animated icon library\n\n\n\nHosting & Deployment\n\nStatic Site Generation - No server-side processing\nClient-side Access Control - JavaScript-based authentication (intentionally weak for educational purposes)\nVersion Control - Git/GitHub for source management"
+  },
+  {
+    "objectID": "legal.html#open-source-acknowledgments",
+    "href": "legal.html#open-source-acknowledgments",
+    "title": "Legal Disclaimer & About This Site",
+    "section": "Open Source Acknowledgments",
+    "text": "Open Source Acknowledgments\nThis project is built on and gratefully acknowledges the following open source projects:\n\nDirect Dependencies\n\nQuarto - MIT License\nBootstrap - MIT License\nLordicon Library - Free tier icons\n\n\n\nDevelopment Tools\n\nVisual Studio Code - Development environment\nGit - Version control\nNode.js - JavaScript runtime\n\n\n\nInspiration & Learning\n\nOWASP WebGoat Project - Security education methodology\nDVWA (Damn Vulnerable Web Application) - Vulnerable app design patterns\nVarious security education platforms"
+  },
+  {
+    "objectID": "legal.html#security-notice",
+    "href": "legal.html#security-notice",
+    "title": "Legal Disclaimer & About This Site",
+    "section": "Security Notice",
+    "text": "Security Notice\n\nIntentional Vulnerabilities\nThis website intentionally contains security vulnerabilities for educational purposes, including but not limited to: - Weak client-side authentication - Exposed credentials in JavaScript - Information disclosure vulnerabilities - Insufficient access controls - Missing security headers\nDO NOT use any code, patterns, or techniques from this site in production applications.\n\n\nResponsible Disclosure\nWhile vulnerabilities are intentional, if you discover a security issue that could: - Compromise the GitHub repository - Affect other GitHub Pages sites - Impact the hosting infrastructure\nPlease responsibly disclose it to: [course coordinator email]"
+  },
+  {
+    "objectID": "legal.html#privacy-data-collection",
+    "href": "legal.html#privacy-data-collection",
+    "title": "Legal Disclaimer & About This Site",
+    "section": "Privacy & Data Collection",
+    "text": "Privacy & Data Collection\n\nWhat We Collect\n\nNo personal data is intentionally collected\nNo cookies are used for tracking\nNo analytics services are implemented\n\n\n\nWhat GitHub May Collect\nAs this site is hosted on GitHub Pages, GitHub may collect: - Basic visitor analytics - IP addresses for security - Standard web server logs\nRefer to GitHub’s Privacy Policy for details."
+  },
+  {
+    "objectID": "legal.html#license",
+    "href": "legal.html#license",
+    "title": "Legal Disclaimer & About This Site",
+    "section": "License",
+    "text": "License\n\nMIT License\nCopyright (c) 2024 CloudCore Networks (Educational Project)\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\n\nAdditional Terms for Educational Use\n\nStudents may fork and modify this project for course assignments\nInstructors may adapt this project for teaching purposes\nCommercial use of the CloudCore brand or identity is prohibited\nThe fictional nature of the company must be clearly maintained"
+  },
+  {
+    "objectID": "legal.html#contact",
+    "href": "legal.html#contact",
+    "title": "Legal Disclaimer & About This Site",
+    "section": "Contact",
+    "text": "Contact\nFor questions about this educational project:\nCourse Coordinators: - ISYS6018: [Coordinator Contact] - ISYS2002: [Coordinator Contact] - ISYS6014: [Coordinator Contact] - ISAD5001: [Coordinator Contact]\nTechnical Issues: - GitHub Repository: github.com/michael-borck/cloudcore - Report Issues: GitHub Issues"
+  },
+  {
+    "objectID": "legal.html#accessibility",
+    "href": "legal.html#accessibility",
+    "title": "Legal Disclaimer & About This Site",
+    "section": "Accessibility",
+    "text": "Accessibility\nWe strive to make this educational resource accessible to all students. If you encounter accessibility barriers, please contact your course coordinator for assistance or alternative materials."
+  },
+  {
+    "objectID": "legal.html#last-updated",
+    "href": "legal.html#last-updated",
+    "title": "Legal Disclaimer & About This Site",
+    "section": "Last Updated",
+    "text": "Last Updated\nThis legal disclaimer was last updated: November 2024\n\nRemember: This is a fictional company website created for educational purposes. Do not attempt to purchase services or contact the listed business addresses."
+  },
+  {
+    "objectID": "gate.html",
+    "href": "gate.html",
+    "title": "Staff Portal Access",
+    "section": "",
+    "text": "Access to CloudCore’s internal documentation and staff directory is limited to authorised project teams. Enter the access details provided by your unit coordinator.\n\n\n\n&lt;label for=\"unit-gate-code\" style=\"display:block; font-weight:600; margin-bottom:.4rem;\"&gt;Unit Code&lt;/label&gt;\n&lt;input type=\"text\" id=\"unit-gate-code\" class=\"form-control\" placeholder=\"e.g. ISYS6018\"\n       autocomplete=\"off\" autocapitalize=\"characters\" spellcheck=\"false\" required&gt;\n\n\n&lt;label for=\"unit-gate-password\" style=\"display:block; font-weight:600; margin-bottom:.4rem;\"&gt;Access Password&lt;/label&gt;\n&lt;input type=\"password\" id=\"unit-gate-password\" class=\"form-control\" required&gt;\n\n\nEnter Portal\n\n\n\n\n\nTrouble signing in? Contact your unit coordinator. Sessions last the teaching period on this browser."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact CloudCore Networks",
+    "section": "",
+    "text": "Our team is ready to help you transform your cloud infrastructure. Choose the best way to reach us.\n\n\n\n\nReady to discuss your cloud needs? Our solution architects are standing by.\nEmail: sales@cloudcore.com.au\nPhone: +61 (8) 4587 8991\nHours: Monday-Friday, 9:00 AM - 6:00 PM AWST\nSchedule a Demo\n\n\n\nExisting customers can access 24/7 support through our portal.\nEmail: support@cloudcore.com.au\nPhone: +61 (8) 4587 8999\nHours: 24/7/365\nOpen Support Ticket\n\n\n\n\n\n\n\n\n\nHead Office\n11 Newcastle Street\nPerth, WA 6000\nAustralia\nReception: +61 (8) 4587 8990\nHours: Mon-Fri, 8:30 AM - 5:30 PM\n\n\n\nTechnical Operations\n4 Millrose Drive\nMalaga, WA 6090\nAustralia\nNOC: +61 (8) 4587 8999\nHours: 24/7 Secure Facility\n\n\n\nDisaster Recovery\nLevel 12, 100 Harris Street\nPyrmont, NSW 2009\nAustralia\nOn-call: +61 (2) 8231 4600\nHours: Unstaffed — automated failover\n\n\n\n\n\n\n\n  \n  \n    \n      Full Name *\n      \n    \n    \n      Business Email *\n      \n    \n  \n  \n  \n    \n      Company Name *\n      \n    \n    \n      Phone Number\n      \n    \n  \n  \n  \n    Service Interest\n    \n      Select a service...\n      Cloud Hosting\n      Managed Services\n      Security & Compliance\n      Cloud Migration\n      Custom Solution\n    \n  \n  \n  \n    How can we help? *\n    \n  \n  \n  Send Message\n\n\n\n\nStay updated with CloudCore news and insights.\n\nLinkedIn | Twitter | GitHub | Blog\n\n\n\n\nCheck the current status of all CloudCore services: status.cloudcore.com.au\n\nCloudCore Networks acknowledges the Traditional Custodians of the land on which we operate, the Whadjuk people of the Noongar nation, and pay our respects to Elders past, present, and emerging."
+  },
+  {
+    "objectID": "contact.html#sales-inquiries",
+    "href": "contact.html#sales-inquiries",
+    "title": "Contact CloudCore Networks",
+    "section": "",
+    "text": "Ready to discuss your cloud needs? Our solution architects are standing by.\nEmail: sales@cloudcore.com.au\nPhone: +61 (8) 4587 8991\nHours: Monday-Friday, 9:00 AM - 6:00 PM AWST\nSchedule a Demo"
+  },
+  {
+    "objectID": "contact.html#technical-support",
+    "href": "contact.html#technical-support",
+    "title": "Contact CloudCore Networks",
+    "section": "",
+    "text": "Existing customers can access 24/7 support through our portal.\nEmail: support@cloudcore.com.au\nPhone: +61 (8) 4587 8999\nHours: 24/7/365\nOpen Support Ticket"
+  },
+  {
+    "objectID": "contact.html#our-offices",
+    "href": "contact.html#our-offices",
+    "title": "Contact CloudCore Networks",
+    "section": "",
+    "text": "Head Office\n11 Newcastle Street\nPerth, WA 6000\nAustralia\nReception: +61 (8) 4587 8990\nHours: Mon-Fri, 8:30 AM - 5:30 PM\n\n\n\nTechnical Operations\n4 Millrose Drive\nMalaga, WA 6090\nAustralia\nNOC: +61 (8) 4587 8999\nHours: 24/7 Secure Facility\n\n\n\nDisaster Recovery\nLevel 12, 100 Harris Street\nPyrmont, NSW 2009\nAustralia\nOn-call: +61 (2) 8231 4600\nHours: Unstaffed — automated failover"
+  },
+  {
+    "objectID": "contact.html#request-a-consultation",
+    "href": "contact.html#request-a-consultation",
+    "title": "Contact CloudCore Networks",
+    "section": "",
+    "text": "Full Name *\n      \n    \n    \n      Business Email *\n      \n    \n  \n  \n  \n    \n      Company Name *\n      \n    \n    \n      Phone Number\n      \n    \n  \n  \n  \n    Service Interest\n    \n      Select a service...\n      Cloud Hosting\n      Managed Services\n      Security & Compliance\n      Cloud Migration\n      Custom Solution\n    \n  \n  \n  \n    How can we help? *\n    \n  \n  \n  Send Message"
+  },
+  {
+    "objectID": "contact.html#connect-with-us",
+    "href": "contact.html#connect-with-us",
+    "title": "Contact CloudCore Networks",
+    "section": "",
+    "text": "Stay updated with CloudCore news and insights.\n\nLinkedIn | Twitter | GitHub | Blog"
+  },
+  {
+    "objectID": "contact.html#service-status",
+    "href": "contact.html#service-status",
+    "title": "Contact CloudCore Networks",
+    "section": "",
+    "text": "Check the current status of all CloudCore services: status.cloudcore.com.au\n\nCloudCore Networks acknowledges the Traditional Custodians of the land on which we operate, the Whadjuk people of the Noongar nation, and pay our respects to Elders past, present, and emerging."
+  },
+  {
+    "objectID": "blog/posts/data-sovereignty-australian-businesses/index.html",
+    "href": "blog/posts/data-sovereignty-australian-businesses/index.html",
+    "title": "Data Sovereignty for Australian Businesses: Why Local Infrastructure Matters",
+    "section": "",
+    "text": "Where your data lives is not a technical footnote — it is a legal, commercial, and reputational decision. For Australian businesses, hosting customer and operational data on local infrastructure is increasingly the difference between straightforward compliance and a growing regulatory exposure. At CloudCore Networks, data sovereignty is engineered into our platform from the ground up.\n\nJurisdiction Starts with Geography\nData hosted offshore is subject to the laws of its host country, which may compel disclosure in ways that surprise Australian customers. By keeping workloads in our Perth and Malaga facilities, customer data remains under Australian jurisdiction and the protections of the Privacy Act 1988 and the Australian Privacy Principles (APPs). Cross-border transfers, where they happen, are explicit and governed — never accidental.\n\n\nCompliance Requires Provable Custody\nRegulators and enterprise customers increasingly demand evidence, not assurances. Our environment is operated under ISO 27001, with Annex A controls covering physical security, access management, and cryptographic key handling. Logging and audit trails stay in-country, so incident investigations and legal discovery do not depend on foreign data centres or unfamiliar legal processes.\n\n\nSovereignty as a Feature, Not a Constraint\nLocal infrastructure also delivers concrete performance gains — lower latency to Australian users and fewer network hops for inspection. Sovereignty is not a cost of doing business in Australia; it is a competitive advantage. When your data, your provider, and your regulators all sit within the same jurisdiction, compliance stops being a project and becomes the default state of operations."
+  },
+  {
+    "objectID": "blog/posts/designing-for-high-availability/index.html",
+    "href": "blog/posts/designing-for-high-availability/index.html",
+    "title": "Designing for 99.99% Uptime: High-Availability Patterns in Practice",
+    "section": "",
+    "text": "Promising 99.99% uptime is easy. Delivering it across years of hardware failures, network outages, and planned maintenance windows is the hard part. For Australian businesses that depend on always-on services, that four-nines figure — roughly 52 minutes of allowable downtime a year — sets the engineering bar for everything we build at CloudCore Networks.\n\nDesign for Failure, Not Against It\nAvailability is a product of redundancy at every layer. We distribute workloads across multiple availability zones with independent power, cooling, and network uplinks, and front them with load balancers that drain unhealthy targets automatically. Stateful components are replicated synchronously within a region and asynchronously to a secondary site, so a single-zone failure degrades nothing the customer can see.\n\n\nAutomated Failover, Not Heroics\nHuman operators are too slow for four-nines targets. Failover between zones and regions is automated and continuously rehearsed: we inject failures on a regular cadence to confirm that traffic shifts within our recovery objectives and that DNS health checks converge quickly. Capacity is headroom-planned so that surviving zones absorb load without queueing or throttling.\n\n\nObservable and Tested\nYou cannot meet an SLA you cannot measure. End-to-end synthetic probes track availability against our service-level objectives in real time, and every incident produces a post-mortem that feeds back into the architecture. The result is infrastructure that treats failure as routine — because when a disk, switch, or availability zone inevitably fails, the system has already routed around it before anyone notices."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About CloudCore Networks",
+    "section": "",
+    "text": "To empower Australian businesses with world-class cloud infrastructure and managed services that drive digital transformation, ensure security compliance, and deliver exceptional value.\n\n\n\nFounded in 2010, CloudCore Networks emerged from a vision to provide enterprise-grade cloud solutions tailored for the Australian market. From our headquarters in Perth and primary data centre in Malaga, backed by a Sydney disaster-recovery site, we’ve grown to serve over 500 organisations across diverse industries.\n\n\n\n\nLocal Expertise: Australian-owned and operated with data sovereignty guarantee\nProven Track Record: 99.9% uptime SLA consistently exceeded for 5 years\nSecurity First: ISO 27001:2013 certified with comprehensive compliance\n24/7 Support: Local support team available round the clock\nInnovation Driven: Continuous investment in cutting-edge technologies\n\n\n\n\n\n\n\n Marcell Ziemann\nChief Executive Officer\n20+ years in enterprise technology leadership. Former CTO at major Australian telco. MBA from AGSM.\n\n\n Mark Gonzalez\nChief Information Officer\nCloud architecture expert with 15+ years experience. AWS and Azure certified solutions architect.\n\n\n Sarah Thompson\nChief Operations Officer\nSpecializes in operational excellence and service delivery. ITIL Master certified with proven SLA track record.\n\n\n\n\n\n\n\n\nISO 27001:2013 - Information Security Management\nSOC 2 Type II - Security & Availability\nISO 9001:2015 - Quality Management Systems\nAWS Advanced Partner - Cloud Solutions\nMicrosoft Gold Partner - Azure Infrastructure\nVMware Principal Partner - Virtualization\n\n\n\n\n\n\n\n\nSecurity First\nEvery decision prioritizes data protection and compliance\n\n\nCustomer Success\nYour growth drives our innovation\n\n\nContinuous Innovation\nInvesting in tomorrow’s technology today"
+  },
+  {
+    "objectID": "about.html#our-mission",
+    "href": "about.html#our-mission",
+    "title": "About CloudCore Networks",
+    "section": "",
+    "text": "To empower Australian businesses with world-class cloud infrastructure and managed services that drive digital transformation, ensure security compliance, and deliver exceptional value."
+  },
+  {
+    "objectID": "about.html#our-story",
+    "href": "about.html#our-story",
+    "title": "About CloudCore Networks",
+    "section": "",
+    "text": "Founded in 2010, CloudCore Networks emerged from a vision to provide enterprise-grade cloud solutions tailored for the Australian market. From our headquarters in Perth and primary data centre in Malaga, backed by a Sydney disaster-recovery site, we’ve grown to serve over 500 organisations across diverse industries."
+  },
+  {
+    "objectID": "about.html#why-choose-cloudcore",
+    "href": "about.html#why-choose-cloudcore",
+    "title": "About CloudCore Networks",
+    "section": "",
+    "text": "Local Expertise: Australian-owned and operated with data sovereignty guarantee\nProven Track Record: 99.9% uptime SLA consistently exceeded for 5 years\nSecurity First: ISO 27001:2013 certified with comprehensive compliance\n24/7 Support: Local support team available round the clock\nInnovation Driven: Continuous investment in cutting-edge technologies"
+  },
+  {
+    "objectID": "about.html#leadership-team",
+    "href": "about.html#leadership-team",
+    "title": "About CloudCore Networks",
+    "section": "",
+    "text": "Marcell Ziemann\nChief Executive Officer\n20+ years in enterprise technology leadership. Former CTO at major Australian telco. MBA from AGSM.\n\n\n Mark Gonzalez\nChief Information Officer\nCloud architecture expert with 15+ years experience. AWS and Azure certified solutions architect.\n\n\n Sarah Thompson\nChief Operations Officer\nSpecializes in operational excellence and service delivery. ITIL Master certified with proven SLA track record."
+  },
+  {
+    "objectID": "about.html#our-certifications-partnerships",
+    "href": "about.html#our-certifications-partnerships",
+    "title": "About CloudCore Networks",
+    "section": "",
+    "text": "ISO 27001:2013 - Information Security Management\nSOC 2 Type II - Security & Availability\nISO 9001:2015 - Quality Management Systems\nAWS Advanced Partner - Cloud Solutions\nMicrosoft Gold Partner - Azure Infrastructure\nVMware Principal Partner - Virtualization"
+  },
+  {
+    "objectID": "about.html#our-values",
+    "href": "about.html#our-values",
+    "title": "About CloudCore Networks",
+    "section": "",
+    "text": "Security First\nEvery decision prioritizes data protection and compliance\n\n\nCustomer Success\nYour growth drives our innovation\n\n\nContinuous Innovation\nInvesting in tomorrow’s technology today"
+  },
+  {
+    "objectID": "blog/posts/securing-cloud-workloads-zero-trust/index.html",
+    "href": "blog/posts/securing-cloud-workloads-zero-trust/index.html",
+    "title": "Securing Cloud Workloads with a Zero-Trust Architecture",
+    "section": "",
+    "text": "The traditional security perimeter is gone. With workloads spanning on-premises systems, multiple cloud regions, and SaaS dependencies, defending the network edge no longer keeps Australian organisations safe. At CloudCore Networks, we have re-architected our hosted environments around a zero-trust model: never trust, always verify, and assume breach.\n\nAssume Breach, Segment Everything\nZero-trust starts with the admission that an attacker may already be inside. We isolate every workload using micro-segmentation, so a compromised virtual machine cannot pivot laterally to its neighbours. East-west traffic is authenticated and encrypted by default, and each service-to-service call is gated by short-lived credentials issued through a central identity provider rather than long-lived API keys that quietly accumulate risk.\n\n\nIdentity as the New Perimeter\nEvery request — human or machine — is evaluated against identity, device posture, and context before access is granted. We enforce least-privilege using role-based access tied to the ISO 27001 Annex A.8 asset and access controls, with multi-factor authentication mandatory for all administrative paths. Secrets are rotated automatically and never stored alongside the workloads that consume them.\n\n\nContinuous Verification\nStatic trust does not exist. Telemetry from hosts, network flows, and authentication events feeds into continuous monitoring, with anomalous behaviour triggering automatic isolation. Combined with immutable, off-site backups and a regularly rehearsed incident response runbook, this layered posture means a single compromised credential can no longer escalate into a full-scale breach. Zero-trust is not a product you buy — it is a discipline we practise across every layer of the stack."
+  },
+  {
+    "objectID": "blog/posts/finops-cost-optimisation-australia/index.html",
+    "href": "blog/posts/finops-cost-optimisation-australia/index.html",
+    "title": "FinOps on Australian Cloud Infrastructure: Cutting Costs Without Cutting Corners",
+    "section": "",
+    "text": "Cloud spend has a way of creeping upward until it quietly becomes one of an organisation’s largest line items. Through our work hosting Australian business workloads, we see the same pattern repeatedly: environments sized for peak load, forgotten development instances, and storage tiers that never get revisited. A disciplined FinOps practice brings that spend back under control without throttling the teams that depend on it.\n\nVisibility Before Optimisation\nYou cannot optimise what you cannot see. The first step is always attribution — tagging every resource by team, environment, and business unit so costs land where the decisions are made. With per-tenant cost dashboards, our customers can see exactly which workload drives each dollar and forecast spend before the monthly invoice arrives.\n\n\nRight-Size, Then Commit\nMost waste comes from over-provisioning. We profile utilisation and right-size instances to actual demand, replacing fixed allocations with autoscaling where traffic is variable. For predictable baseline load, committed-use discounts and reserved capacity lower unit cost materially. The combination — elastic for the spikes, reserved for the floor — typically trims 20 to 30 percent from a mature footprint.\n\n\nOptimise Without Cutting Corners\nCost reduction must never erode reliability or security. We preserve multi-zone redundancy, immutable backups, and encryption everywhere, and we evaluate every change against its availability impact. FinOps done well is not about spending less — it is about spending deliberately, so every dollar funds capacity that genuinely serves the business."
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Securing Cloud Workloads with a Zero-Trust Architecture\n\n\n\nsecurity\n\nzero-trust\n\n\n\n\n\n\n\nSophia Martines\n\n\nFeb 18, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nDesigning for 99.99% Uptime: High-Availability Patterns in Practice\n\n\n\narchitecture\n\nreliability\n\n\n\n\n\n\n\nDavid Wilson\n\n\nJan 22, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nFinOps on Australian Cloud Infrastructure: Cutting Costs Without Cutting Corners\n\n\n\nfinops\n\ncost-optimisation\n\n\n\n\n\n\n\nAisha Rahman\n\n\nDec 8, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Sovereignty for Australian Businesses: Why Local Infrastructure Matters\n\n\n\ncompliance\n\ndata-sovereignty\n\n\n\n\n\n\n\nEmily Chen\n\n\nNov 14, 2025\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "credits.html",
+    "href": "credits.html",
+    "title": "Open Source Credits",
+    "section": "",
+    "text": "CloudCore Networks (Educational Project) is built on the shoulders of giants. We gratefully acknowledge the following open source projects and their contributors."
+  },
+  {
+    "objectID": "credits.html#acknowledgments",
+    "href": "credits.html#acknowledgments",
+    "title": "Open Source Credits",
+    "section": "",
+    "text": "CloudCore Networks (Educational Project) is built on the shoulders of giants. We gratefully acknowledge the following open source projects and their contributors."
+  },
+  {
+    "objectID": "credits.html#core-technologies",
+    "href": "credits.html#core-technologies",
+    "title": "Open Source Credits",
+    "section": "Core Technologies",
+    "text": "Core Technologies\n\nQuarto\n\nProject: quarto.org\nLicense: MIT\nGitHub: github.com/quarto-dev/quarto-cli\nUsage: Static site generation, markdown processing, and document rendering\n\n\n\nBootstrap\n\nProject: getbootstrap.com\nLicense: MIT\nGitHub: github.com/twbs/bootstrap\nUsage: CSS framework and responsive design components\n\n\n\nGitHub Pages\n\nProject: pages.github.com\nLicense: GitHub Terms of Service\nUsage: Static website hosting and deployment"
+  },
+  {
+    "objectID": "credits.html#javascript-libraries",
+    "href": "credits.html#javascript-libraries",
+    "title": "Open Source Credits",
+    "section": "JavaScript Libraries",
+    "text": "JavaScript Libraries\n\nLordicon\n\nProject: lordicon.com\nLicense: Free tier with attribution\nUsage: Animated icons throughout the site"
+  },
+  {
+    "objectID": "credits.html#development-tools",
+    "href": "credits.html#development-tools",
+    "title": "Open Source Credits",
+    "section": "Development Tools",
+    "text": "Development Tools\n\nVisual Studio Code\n\nProject: code.visualstudio.com\nLicense: MIT\nGitHub: github.com/microsoft/vscode\nUsage: Primary development environment\n\n\n\nGit\n\nProject: git-scm.com\nLicense: GPL v2\nGitHub: github.com/git/git\nUsage: Version control\n\n\n\nNode.js\n\nProject: nodejs.org\nLicense: MIT\nGitHub: github.com/nodejs/node\nUsage: JavaScript runtime for build tools"
+  },
+  {
+    "objectID": "credits.html#ai-assistance",
+    "href": "credits.html#ai-assistance",
+    "title": "Open Source Credits",
+    "section": "AI Assistance",
+    "text": "AI Assistance\n\nClaude (Anthropic)\n\nProject: anthropic.com\nUsage: Content generation, code development, and site architecture\n\n\n\nChatGPT (OpenAI)\n\nProject: openai.com\nUsage: Additional content creation and ideation\n\n\n\nGitHub Copilot\n\nProject: github.com/features/copilot\nUsage: Code suggestions and completion"
+  },
+  {
+    "objectID": "credits.html#educational-inspiration",
+    "href": "credits.html#educational-inspiration",
+    "title": "Open Source Credits",
+    "section": "Educational Inspiration",
+    "text": "Educational Inspiration\n\nOWASP WebGoat\n\nProject: owasp.org/www-project-webgoat\nLicense: GNU GPL v2\nUsage: Inspiration for educational security scenarios\n\n\n\nDVWA (Damn Vulnerable Web Application)\n\nProject: dvwa.co.uk\nLicense: GPL v3\nUsage: Vulnerable application design patterns"
+  },
+  {
+    "objectID": "credits.html#image-resources",
+    "href": "credits.html#image-resources",
+    "title": "Open Source Credits",
+    "section": "Image Resources",
+    "text": "Image Resources\n\nStock Photography\nAll profile images are AI-generated or from royalty-free sources: - Generated using DALL-E and Midjourney - No real person’s likeness is used\n\n\nIcons and Graphics\n\nLordicon animated icons (with attribution)\nCustom SVG graphics\nBootstrap Icons (MIT License)"
+  },
+  {
+    "objectID": "credits.html#fonts",
+    "href": "credits.html#fonts",
+    "title": "Open Source Credits",
+    "section": "Fonts",
+    "text": "Fonts\n\nSystem Font Stack\nUsing native system fonts for optimal performance: - -apple-system (macOS/iOS) - BlinkMacSystemFont (macOS Chrome) - Segoe UI (Windows) - Roboto (Android) - Helvetica Neue, Arial (fallbacks)"
+  },
+  {
+    "objectID": "credits.html#contributing",
+    "href": "credits.html#contributing",
+    "title": "Open Source Credits",
+    "section": "Contributing",
+    "text": "Contributing\nThis educational project welcomes contributions. If you’d like to add your project to these credits or contribute to CloudCore:\n\nFork the repository\nAdd your acknowledgment\nSubmit a pull request"
+  },
+  {
+    "objectID": "credits.html#license-compliance",
+    "href": "credits.html#license-compliance",
+    "title": "Open Source Credits",
+    "section": "License Compliance",
+    "text": "License Compliance\nWe take open source licenses seriously. If you believe we’ve used your project incorrectly or without proper attribution, please contact us immediately at the repository issues page."
+  },
+  {
+    "objectID": "credits.html#special-thanks",
+    "href": "credits.html#special-thanks",
+    "title": "Open Source Credits",
+    "section": "Special Thanks",
+    "text": "Special Thanks\n\nUniversity Teaching Staff who use this platform for education\nStudents who provide feedback and find creative vulnerabilities\nOpen Source Community for making projects like this possible\nSecurity Researchers who inspire better security education"
+  },
+  {
+    "objectID": "credits.html#how-to-give-attribution",
+    "href": "credits.html#how-to-give-attribution",
+    "title": "Open Source Credits",
+    "section": "How to Give Attribution",
+    "text": "How to Give Attribution\nIf you fork or use this project:\nBased on CloudCore Networks Educational Project\nhttps://github.com/michael-borck/cloudcore\nMIT License - Educational Use"
+  },
+  {
+    "objectID": "credits.html#updates",
+    "href": "credits.html#updates",
+    "title": "Open Source Credits",
+    "section": "Updates",
+    "text": "Updates\nThis credits page was last updated: November 2024\nTo suggest additions or corrections, please open an issue on GitHub.\n\n“If I have seen further it is by standing on the shoulders of Giants” - Isaac Newton"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Enterprise Cloud Infrastructure for Australian Business",
+    "section": "",
+    "text": "500+ Active Clients\n\n\n99.9% Uptime SLA\n\n\n2 Data Centers\n\n\n24/7 Support\n\n\nSchedule a Demo View Solutions"
+  },
+  {
+    "objectID": "index.html#why-cloudcore-networks",
+    "href": "index.html#why-cloudcore-networks",
+    "title": "Enterprise Cloud Infrastructure for Australian Business",
+    "section": "Why CloudCore Networks?",
+    "text": "Why CloudCore Networks?\nWe combine enterprise-grade infrastructure with innovative cloud solutions to power your digital transformation.\n\n\n\n Cloud Hosting\nEnterprise-grade infrastructure with automated scaling, load balancing, and global CDN distribution for optimal performance.\n\n\n Managed Services\nFull-stack management including 24/7 monitoring, automated backups, security patches, and dedicated support team.\n\n\n Security & Compliance\nISO 27001 certified with end-to-end encryption, DDoS protection, and compliance with GDPR, HIPAA, and SOC 2.\n\n\n\n\n DevOps Integration\nSeamless CI/CD pipelines, container orchestration with Kubernetes, and infrastructure as code support.\n\n\n High Availability\nMulti-region deployment, automatic failover, and 99.9% uptime SLA with transparent status monitoring.\n\n\n Expert Support\nDedicated account managers, 24/7 technical support, and access to cloud architects for optimization."
+  },
+  {
+    "objectID": "index.html#what-our-clients-say",
+    "href": "index.html#what-our-clients-say",
+    "title": "Enterprise Cloud Infrastructure for Australian Business",
+    "section": "What Our Clients Say",
+    "text": "What Our Clients Say\n\n\n\n“CloudCore transformed our infrastructure, reducing costs by 40% while improving performance. Their 24/7 support has been invaluable.”\n\nSarah Mitchell\nCTO, TechVentures Inc.\n\n\n\n“The migration was seamless. CloudCore’s managed services team handled everything — zero unplanned downtime in 18 months.”\n\nDavid Chen\nIT Director, Helena Industries\n\n\n\n“Their security expertise gave our board real confidence. The ISO 27001 audit was straightforward with CloudCore’s documentation.”\n\nPriya Nair\nHead of Data, Modus Retail"
+  },
+  {
+    "objectID": "index.html#security-compliance",
+    "href": "index.html#security-compliance",
+    "title": "Enterprise Cloud Infrastructure for Australian Business",
+    "section": "Security & Compliance",
+    "text": "Security & Compliance\nOur infrastructure meets the highest international security and compliance standards — protecting your data from the physical data center to the application edge.\n\n\n\n\nISO 27001:2013 Certified Information Security Management\nSOC 2 Type II Audited Security Controls\nGDPR Compliant Data Protection\nHIPAA Healthcare Information Security\nPCI DSS Payment Card Industry Standards\n\n\n\n\n\n\nEnd-to-end encryption, continuous compliance monitoring, and 24/7 threat detection"
+  },
+  {
+    "objectID": "pricing.html",
+    "href": "pricing.html",
+    "title": "Plans & Pricing",
+    "section": "",
+    "text": "Choose the plan that fits your needs. All plans include our core security features and 24/7 monitoring.\n\n\n\n\nCloudCore multi-region network — infrastructure built to scale with your business\n\n\n\n\n\n\n\nStarter\n\n\n\nPerfect for small businesses and startups\n\n\n\nUp to 10 Virtual Machines\n1TB SSD Storage\n10TB Monthly Transfer\nDaily Automated Backups\nBusiness Hours Support\n99.5% Uptime SLA\n\nStart Free Trial\n\n\n\nMOST POPULAR\n\n\n\nProfessional\n\n\n\nIdeal for growing businesses\n\n\n\nUp to 50 Virtual Machines\n5TB SSD Storage\n50TB Monthly Transfer\nHourly Automated Backups\n24/7 Priority Support\n99.9% Uptime SLA\nLoad Balancing Included\nAdvanced Security Suite\n\nGet Started\n\n\n\n\nEnterprise\n\n\n\nTailored solutions for large organizations\n\n\n\nUnlimited Resources\nCustom Storage Solutions\nUnlimited Transfer\nReal-time Replication\nDedicated Account Manager\n99.99% Uptime SLA\nCustom Integrations\nOn-Premise Options\n\nContact Sales\n\n\n\n\n\n\n\n✓ SSL Certificates\nFree SSL for all domains\n\n\n✓ DDoS Protection\nAdvanced threat mitigation\n\n\n✓ Global CDN\nFast content delivery\n\n\n✓ API Access\nFull REST API\n\n\n\n\n\n\n\n\n\nFeature\nStarter\nProfessional\nEnterprise\n\n\n\n\nVirtual Machines\nUp to 10\nUp to 50\nUnlimited\n\n\nStorage\n1TB SSD\n5TB SSD\nCustom\n\n\nMonthly Transfer\n10TB\n50TB\nUnlimited\n\n\nBackup Frequency\nDaily\nHourly\nReal-time\n\n\nSupport Level\nBusiness Hours\n24/7 Priority\nDedicated Team\n\n\nUptime SLA\n99.5%\n99.9%\n99.99%\n\n\nLoad Balancing\n-\n✓\n✓\n\n\nMulti-Region\n-\nOptional\n✓\n\n\nCompliance Reports\n-\nMonthly\nWeekly\n\n\nCustom Integrations\n-\n-\n✓\n\n\n\n\n\n\nCan I change plans anytime?\nYes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.\nIs there a setup fee?\nNo, we don’t charge any setup fees. You only pay for the resources you use.\nWhat payment methods do you accept?\nWe accept all major credit cards, bank transfers, and can arrange enterprise invoicing.\nDo you offer discounts for annual billing?\nYes, save 20% when you pay annually. Contact our sales team for details."
+  },
+  {
+    "objectID": "pricing.html#all-plans-include",
+    "href": "pricing.html#all-plans-include",
+    "title": "Plans & Pricing",
+    "section": "",
+    "text": "✓ SSL Certificates\nFree SSL for all domains\n\n\n✓ DDoS Protection\nAdvanced threat mitigation\n\n\n✓ Global CDN\nFast content delivery\n\n\n✓ API Access\nFull REST API"
+  },
+  {
+    "objectID": "pricing.html#compare-plans",
+    "href": "pricing.html#compare-plans",
+    "title": "Plans & Pricing",
+    "section": "",
+    "text": "Feature\nStarter\nProfessional\nEnterprise\n\n\n\n\nVirtual Machines\nUp to 10\nUp to 50\nUnlimited\n\n\nStorage\n1TB SSD\n5TB SSD\nCustom\n\n\nMonthly Transfer\n10TB\n50TB\nUnlimited\n\n\nBackup Frequency\nDaily\nHourly\nReal-time\n\n\nSupport Level\nBusiness Hours\n24/7 Priority\nDedicated Team\n\n\nUptime SLA\n99.5%\n99.9%\n99.99%\n\n\nLoad Balancing\n-\n✓\n✓\n\n\nMulti-Region\n-\nOptional\n✓\n\n\nCompliance Reports\n-\nMonthly\nWeekly\n\n\nCustom Integrations\n-\n-\n✓"
+  },
+  {
+    "objectID": "pricing.html#frequently-asked-questions",
+    "href": "pricing.html#frequently-asked-questions",
+    "title": "Plans & Pricing",
+    "section": "",
+    "text": "Can I change plans anytime?\nYes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.\nIs there a setup fee?\nNo, we don’t charge any setup fees. You only pay for the resources you use.\nWhat payment methods do you accept?\nWe accept all major credit cards, bank transfers, and can arrange enterprise invoicing.\nDo you offer discounts for annual billing?\nYes, save 20% when you pay annually. Contact our sales team for details."
+  }
+]

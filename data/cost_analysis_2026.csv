@@ -1,0 +1,14 @@
+Category,Item,Total_Cost_AUD,Cost_Type,Quantity,Unit_Cost_AUD,Accounting,Notes
+Personnel,Engineering & operations headcount,2180000,Fixed,20,109000,Opex,~47 FTE company-wide; 20 in engineering & ops
+Personnel,Incident-response retainers & overtime,310000,Variable,1,310000,Opex,Breach-driven surge
+Infrastructure,Primary DC (Malaga) rack & power,640000,Fixed,8,80000,Opex,"8 racks, 12-month run-rate"
+Infrastructure,Sydney DR site (Pyrmont),215000,Fixed,1,215000,Opex,DR failover capability
+Infrastructure,Post-breach infrastructure rebuild,420000,Capex,1,420000,Capex,Hardened storage rebuild
+Software,Core platform licences,760000,Fixed,1,760000,Opex,DataVault/Analytics Pro/CloudSync
+Software,"Security tooling (SIEM, EDR, MFA)",285000,Fixed,1,285000,Opex,Expanded after breach
+Security,Digital forensics & incident response,240000,Variable,1,240000,Opex,External IR firm
+Security,Credit monitoring & customer notifications,185000,Variable,1,185000,Opex,~250k affected records
+Compliance,ISO 27001 certification programme,165000,Fixed,1,165000,Opex,Currently *pursuing* certification
+Compliance,Regulator & legal response,220000,Variable,1,220000,Opex,OAIC + counsel
+Insurance,Cyber liability premium (tripled),840000,Fixed,1,840000,Opex,Tripled post-breach
+Facilities,Office leases (Perth HQ + Sydney),188000,Fixed,2,94000,Opex,Perth + Sydney DR

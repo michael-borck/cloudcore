@@ -1,0 +1,401 @@
+customer_id,company_name,industry,region,tenure_months,products,monthly_recurring_revenue,support_tier,support_tickets_6m,satisfaction_score,churn_flag
+CC0001,Gippsland Digital,Hospitality,QLD,22,DataVault,11956.40,Premium,2,3.30,0
+CC0002,Goldfields Trading,Mining & Resources,QLD,50,CloudSync,5175.13,Standard,1,3.30,0
+CC0003,Fremantle Logistics,Real Estate,NSW,56,DataVault + Analytics Pro + CloudSync,44955.66,Enterprise,3,3.00,1
+CC0004,Murray River Group,Manufacturing,NSW,28,Analytics Pro,5843.19,Standard,4,2.00,0
+CC0005,Swan River Group,Agriculture,VIC,25,CloudSync,5371.91,Standard,4,2.40,0
+CC0006,Adelaide Hills Industries,Government,VIC,32,DataVault + Analytics Pro + CloudSync,13848.37,Premium,5,2.80,0
+CC0007,Harbour Logistics,Agriculture,VIC,18,DataVault,2326.32,Basic,5,2.50,1
+CC0008,Wannon Consulting,Construction,QLD,39,DataVault + Analytics Pro + CloudSync,15102.43,Premium,6,2.90,0
+CC0009,Wagga Consulting,Finance & Insurance,QLD,40,Analytics Pro,8985.80,Premium,1,4.00,0
+CC0010,Flinders Trading,Technology,NSW,6,CloudSync,5618.35,Standard,2,2.30,0
+CC0011,Fremantle Capital,Retail,QLD,20,DataVault,5552.18,Standard,1,3.00,0
+CC0012,Red Centre Holdings,Professional Services,QLD,19,CloudSync,30355.78,Enterprise,1,3.20,0
+CC0013,Margaret Industries,Construction,VIC,27,CloudSync,25402.38,Enterprise,1,3.10,0
+CC0014,Esperance Solutions,Agriculture,SA,43,DataVault,6212.36,Standard,4,4.10,0
+CC0015,Coral Sea Holdings,Hospitality,VIC,31,DataVault,11944.20,Premium,1,3.50,0
+CC0016,Darwin Harbour Industries,Finance & Insurance,NSW,34,Analytics Pro,2193.82,Basic,6,2.30,0
+CC0017,Adelaide Hills Holdings,Retail,VIC,11,DataVault + Analytics Pro,6957.46,Standard,2,2.10,0
+CC0018,Goldfields Capital,Logistics & Transport,NSW,14,DataVault + Analytics Pro,2279.81,Basic,5,1.90,1
+CC0019,Coral Coast Technologies,Professional Services,VIC,42,Analytics Pro,4865.37,Standard,2,3.00,0
+CC0020,Swan River Logistics,Professional Services,NSW,23,DataVault + Analytics Pro + CloudSync,8398.06,Standard,7,1.70,1
+CC0021,Limestone Group,Retail,VIC,41,DataVault,21444.65,Enterprise,3,4.30,0
+CC0022,Wannon Logistics,Logistics & Transport,WA,27,DataVault + CloudSync,2034.96,Basic,11,1.00,1
+CC0023,Red Centre Enterprises,Construction,QLD,7,DataVault + Analytics Pro + CloudSync,2825.88,Basic,6,1.60,0
+CC0024,Murray River Logistics,Government,VIC,11,DataVault + Analytics Pro,6684.24,Standard,7,1.00,0
+CC0025,Torres Services,Technology,QLD,14,DataVault + CloudSync,38589.52,Enterprise,1,2.40,0
+CC0026,Hunter Valley Digital,Government,QLD,54,DataVault + Analytics Pro + CloudSync,15332.89,Premium,4,3.80,0
+CC0027,Coorong Industries,Media & Communications,NSW,48,DataVault + Analytics Pro + CloudSync,33507.53,Enterprise,2,3.50,0
+CC0028,Kimberley Technologies,Manufacturing,SA,34,Analytics Pro,1804.90,Basic,6,2.50,1
+CC0029,Barrier Reef Systems,Mining & Resources,VIC,24,Analytics Pro + CloudSync,7428.16,Standard,3,2.50,0
+CC0030,Barrier Reef Industries,Hospitality,WA,37,CloudSync,8647.07,Premium,2,2.30,0
+CC0031,Kangaroo Digital,Agriculture,QLD,20,Analytics Pro,2103.50,Basic,8,1.80,0
+CC0032,Wannon Enterprises,Finance & Insurance,NSW,13,DataVault + Analytics Pro + CloudSync,3139.40,Basic,7,1.90,1
+CC0033,Red Centre Trading,Finance & Insurance,NSW,63,CloudSync,2349.20,Basic,5,3.20,0
+CC0034,Bondi Services,Professional Services,QLD,36,DataVault,11304.24,Premium,2,3.70,0
+CC0035,Glasshouse Services,Technology,WA,8,Analytics Pro,4863.50,Standard,3,2.70,0
+CC0036,Wagga Trading,Professional Services,SA,52,DataVault,10604.92,Premium,3,3.30,0
+CC0037,Coorong Trading,Hospitality,SA,5,Analytics Pro,5787.78,Standard,1,2.70,1
+CC0038,Coorong Capital,Hospitality,WA,53,DataVault,5779.75,Standard,1,2.50,0
+CC0039,Red Centre Solutions,Healthcare,WA,43,DataVault + Analytics Pro,5700.72,Standard,4,2.10,0
+CC0040,Mallee Digital,Construction,VIC,24,DataVault,6098.66,Standard,2,3.10,1
+CC0041,Goldfields Enterprises,Retail,WA,15,DataVault + CloudSync,5822.01,Standard,2,2.70,1
+CC0042,Capricorn Consulting,Real Estate,WA,14,CloudSync,11967.01,Premium,1,2.10,1
+CC0043,Esperance Partners,Media & Communications,VIC,7,CloudSync,2052.82,Basic,2,2.10,0
+CC0044,Torres Systems,Hospitality,SA,42,Analytics Pro + CloudSync,6774.17,Standard,4,3.10,0
+CC0045,Harbour Group,Manufacturing,NSW,28,CloudSync,2249.26,Basic,3,3.80,0
+CC0046,Kimberley Systems,Real Estate,NSW,19,Analytics Pro + CloudSync,14897.97,Premium,2,3.00,0
+CC0047,Glasshouse Group,Manufacturing,SA,20,DataVault + Analytics Pro,7556.46,Standard,6,2.10,1
+CC0048,Tasman Logistics,Manufacturing,QLD,8,CloudSync,1665.93,Basic,5,2.20,0
+CC0049,Red Centre Systems,Logistics & Transport,VIC,58,Analytics Pro + CloudSync,7888.24,Standard,4,3.60,1
+CC0050,Yarra Services,Manufacturing,SA,32,DataVault,2060.01,Basic,3,3.50,0
+CC0051,Limestone Capital,Manufacturing,SA,22,DataVault + Analytics Pro,7065.04,Standard,3,3.20,0
+CC0052,Coorong Digital,Government,NSW,47,DataVault + Analytics Pro,2605.14,Basic,4,2.60,1
+CC0053,Mallee Solutions,Hospitality,WA,32,Analytics Pro,26672.47,Enterprise,3,2.70,1
+CC0054,Southern Cross Logistics,Mining & Resources,WA,14,Analytics Pro,10981.64,Premium,1,3.50,0
+CC0055,Wannon Capital,Hospitality,VIC,6,CloudSync,11408.08,Premium,3,3.20,0
+CC0056,Southern Cross Cooperative,Real Estate,NSW,17,DataVault,1840.65,Basic,3,2.70,0
+CC0057,Limestone Services,Healthcare,QLD,35,CloudSync,29992.46,Enterprise,3,3.90,0
+CC0058,Hunter Valley Technologies,Construction,NSW,36,DataVault + Analytics Pro,2861.83,Basic,6,2.50,0
+CC0059,Wagga Logistics,Media & Communications,NSW,47,CloudSync,4539.09,Standard,4,2.40,0
+CC0060,Carnarvon Technologies,Professional Services,SA,16,DataVault,4440.52,Standard,4,3.70,0
+CC0061,Carnarvon Digital,Finance & Insurance,NSW,90,Analytics Pro,5616.88,Standard,3,4.00,0
+CC0062,Hunter Valley Systems,Manufacturing,NSW,3,Analytics Pro + CloudSync,2205.56,Basic,4,2.10,0
+CC0063,Goldfields Cooperative,Construction,VIC,45,DataVault + CloudSync,2431.45,Basic,5,2.90,0
+CC0064,Glasshouse Trading,Agriculture,VIC,27,DataVault + Analytics Pro + CloudSync,14724.84,Premium,3,3.00,0
+CC0065,Torres Logistics,Media & Communications,NSW,44,CloudSync,5388.35,Standard,4,3.20,0
+CC0066,Southern Cross Digital,Healthcare,VIC,10,Analytics Pro + CloudSync,32771.16,Enterprise,2,2.70,0
+CC0067,Coral Coast Digital,Professional Services,NSW,50,DataVault + Analytics Pro + CloudSync,3373.36,Basic,6,2.40,0
+CC0068,Southern Cross Partners,Agriculture,NSW,28,CloudSync,1765.92,Basic,4,3.10,0
+CC0069,Red Centre Consulting,Hospitality,WA,21,DataVault + Analytics Pro + CloudSync,3640.21,Basic,7,1.70,1
+CC0070,Wannon Industries,Government,WA,20,DataVault + Analytics Pro,6459.58,Standard,4,2.30,0
+CC0071,Yarra Solutions,Hospitality,VIC,62,DataVault,4800.16,Standard,2,3.80,0
+CC0072,Harbour Digital,Manufacturing,WA,80,Analytics Pro,10100.39,Premium,3,4.20,0
+CC0073,Kangaroo Logistics,Media & Communications,WA,25,CloudSync,11631.22,Premium,0,2.80,0
+CC0074,Southern Cross Holdings,Construction,VIC,14,CloudSync,11324.55,Premium,1,3.80,0
+CC0075,Murray River Solutions,Logistics & Transport,VIC,28,DataVault + Analytics Pro + CloudSync,3555.08,Basic,5,2.20,1
+CC0076,Yarra Technologies,Agriculture,VIC,16,DataVault + Analytics Pro + CloudSync,3198.06,Basic,5,2.30,0
+CC0077,Bondi Trading,Agriculture,WA,9,DataVault,1916.74,Basic,2,1.30,0
+CC0078,Pilbara Digital,Manufacturing,NSW,14,Analytics Pro + CloudSync,13122.88,Premium,4,3.10,0
+CC0079,Harbour Enterprises,Real Estate,VIC,32,DataVault + Analytics Pro + CloudSync,14023.59,Premium,6,2.40,1
+CC0080,Red Centre Services,Manufacturing,NSW,26,DataVault,4512.18,Standard,2,2.40,0
+CC0081,Kangaroo Holdings,Professional Services,SA,46,CloudSync,8476.97,Premium,4,3.40,0
+CC0082,Gippsland Enterprises,Education,QLD,33,DataVault + CloudSync,7867.59,Standard,6,2.40,0
+CC0083,Gippsland Consulting,Technology,VIC,53,DataVault + CloudSync,7635.54,Standard,6,1.70,0
+CC0084,Yarra Consulting,Finance & Insurance,WA,27,CloudSync,5257.54,Standard,2,2.50,0
+CC0085,Eucalypt Trading,Construction,NSW,9,Analytics Pro,1279.95,Basic,6,1.70,1
+CC0086,Daintree Holdings,Retail,NSW,32,DataVault,1995.12,Basic,6,2.10,0
+CC0087,Flinders Services,Education,NSW,15,DataVault + CloudSync,2518.94,Basic,6,1.50,0
+CC0088,Hunter Valley Consulting,Professional Services,NSW,27,DataVault + Analytics Pro + CloudSync,3291.56,Basic,3,2.10,0
+CC0089,Sunshine Coast Solutions,Construction,NSW,6,CloudSync,24335.15,Enterprise,1,2.60,0
+CC0090,Yarra Group,Logistics & Transport,QLD,32,DataVault,29205.48,Enterprise,0,3.00,0
+CC0091,Flinders Logistics,Mining & Resources,NSW,40,CloudSync,6563.19,Standard,3,2.40,0
+CC0092,Torres Trading,Manufacturing,SA,26,DataVault + Analytics Pro + CloudSync,6376.89,Standard,8,2.20,1
+CC0093,Sunshine Coast Group,Construction,VIC,16,Analytics Pro + CloudSync,2720.97,Basic,5,2.20,0
+CC0094,Carnarvon Holdings,Finance & Insurance,NSW,15,Analytics Pro,4060.77,Standard,2,2.50,0
+CC0095,Limestone Cooperative,Agriculture,SA,28,CloudSync,30310.41,Enterprise,3,3.00,0
+CC0096,Capricorn Cooperative,Manufacturing,NSW,4,DataVault + CloudSync,5559.31,Standard,3,2.90,1
+CC0097,Darwin Harbour Trading,Mining & Resources,VIC,24,DataVault + Analytics Pro,7172.42,Standard,2,3.40,0
+CC0098,Esperance Systems,Government,WA,27,Analytics Pro,4765.20,Standard,3,1.60,0
+CC0099,Eucalypt Solutions,Education,SA,61,DataVault,1802.14,Basic,4,2.70,0
+CC0100,Adelaide Hills Capital,Retail,VIC,21,DataVault + CloudSync,6595.87,Standard,4,1.70,0
+CC0101,Bondi Enterprises,Finance & Insurance,QLD,17,DataVault,1895.97,Basic,2,2.10,1
+CC0102,Wannon Systems,Government,NSW,41,CloudSync,2213.92,Basic,1,3.10,0
+CC0103,Coral Sea Services,Real Estate,NSW,4,DataVault,11906.84,Premium,3,2.40,0
+CC0104,Southern Cross Services,Agriculture,VIC,4,DataVault + CloudSync,7205.94,Standard,5,2.40,1
+CC0105,Limestone Consulting,Healthcare,WA,26,DataVault,2267.86,Basic,2,2.10,0
+CC0106,Margaret Digital,Technology,VIC,29,DataVault,33202.27,Enterprise,1,4.60,0
+CC0107,Red Centre Technologies,Retail,QLD,57,DataVault + Analytics Pro,6242.61,Standard,4,3.10,0
+CC0108,Barossa Group,Hospitality,VIC,41,CloudSync,26271.16,Enterprise,1,3.40,0
+CC0109,Margaret Capital,Real Estate,NSW,64,DataVault + CloudSync,6765.64,Standard,4,3.60,0
+CC0110,Daintree Cooperative,Education,VIC,96,Analytics Pro + CloudSync,5199.68,Standard,8,2.90,0
+CC0111,Darwin Harbour Digital,Finance & Insurance,NSW,56,Analytics Pro,11156.37,Premium,1,3.30,0
+CC0112,Flinders Industries,Real Estate,VIC,60,CloudSync,10809.26,Premium,0,3.60,0
+CC0113,Tasman Holdings,Retail,VIC,25,DataVault + Analytics Pro + CloudSync,7302.10,Standard,3,3.20,0
+CC0114,Tasman Solutions,Agriculture,WA,49,Analytics Pro + CloudSync,2107.14,Basic,5,2.00,0
+CC0115,Margaret Solutions,Real Estate,NSW,39,Analytics Pro + CloudSync,7002.37,Standard,2,3.70,0
+CC0116,Mallee Logistics,Education,QLD,14,DataVault + Analytics Pro + CloudSync,7908.64,Standard,7,1.40,0
+CC0117,Margaret Technologies,Hospitality,VIC,58,DataVault + Analytics Pro + CloudSync,6574.86,Standard,5,2.70,0
+CC0118,Capricorn Digital,Mining & Resources,QLD,22,DataVault,12207.96,Premium,3,2.30,0
+CC0119,Outback Systems,Manufacturing,VIC,36,DataVault + CloudSync,6735.84,Standard,3,2.80,1
+CC0120,Daintree Technologies,Construction,QLD,28,Analytics Pro,30057.87,Enterprise,2,3.10,0
+CC0121,Kimberley Holdings,Manufacturing,NSW,26,Analytics Pro + CloudSync,29224.73,Enterprise,5,2.50,1
+CC0122,Eucalypt Partners,Healthcare,VIC,8,DataVault + Analytics Pro + CloudSync,15748.48,Premium,6,2.00,0
+CC0123,Darwin Harbour Partners,Media & Communications,SA,51,DataVault + Analytics Pro,15833.16,Premium,1,4.20,0
+CC0124,Bluegum Enterprises,Government,VIC,8,DataVault + Analytics Pro + CloudSync,34738.00,Enterprise,2,2.10,1
+CC0125,Glasshouse Partners,Education,NSW,5,DataVault + Analytics Pro + CloudSync,15142.57,Premium,5,1.60,1
+CC0126,Grampians Trading,Construction,QLD,27,DataVault + CloudSync,5214.80,Standard,2,2.60,0
+CC0127,Snowy Mountain Digital,Agriculture,NSW,26,DataVault,29510.54,Enterprise,3,3.10,0
+CC0128,Coorong Technologies,Hospitality,VIC,5,DataVault + Analytics Pro + CloudSync,3392.64,Basic,3,1.40,0
+CC0129,Coral Coast Services,Education,WA,48,DataVault,4298.95,Standard,0,2.90,0
+CC0130,Swan River Consulting,Technology,VIC,21,DataVault,2216.14,Basic,9,1.20,1
+CC0131,Esperance Holdings,Agriculture,NSW,46,DataVault + Analytics Pro,5439.46,Standard,6,3.00,0
+CC0132,Snowy Mountain Consulting,Real Estate,SA,13,DataVault + Analytics Pro + CloudSync,19486.70,Premium,2,2.20,0
+CC0133,Glasshouse Digital,Logistics & Transport,QLD,56,DataVault + CloudSync,2476.37,Basic,4,3.80,0
+CC0134,Snowy Mountain Systems,Manufacturing,NSW,20,DataVault + Analytics Pro,5974.58,Standard,7,2.30,1
+CC0135,Coral Sea Systems,Mining & Resources,VIC,23,DataVault + Analytics Pro,5939.74,Standard,3,2.50,0
+CC0136,Tasman Systems,Retail,NSW,8,DataVault + Analytics Pro + CloudSync,6458.58,Standard,8,1.00,1
+CC0137,Red Centre Cooperative,Finance & Insurance,NSW,47,DataVault + Analytics Pro,13071.37,Premium,2,3.80,0
+CC0138,Carnarvon Industries,Education,QLD,36,DataVault + Analytics Pro + CloudSync,8801.64,Standard,5,2.00,1
+CC0139,Wannon Services,Healthcare,QLD,9,DataVault,1815.52,Basic,5,2.00,1
+CC0140,Outback Industries,Healthcare,NSW,10,DataVault,5924.67,Standard,3,3.20,1
+CC0141,Wannon Group,Finance & Insurance,VIC,40,Analytics Pro,5645.55,Standard,2,3.30,0
+CC0142,Southern Cross Consulting,Hospitality,SA,52,Analytics Pro,13029.18,Premium,2,4.00,0
+CC0143,Mallee Partners,Healthcare,QLD,53,DataVault + Analytics Pro + CloudSync,11752.28,Premium,6,2.70,0
+CC0144,Darwin Harbour Technologies,Logistics & Transport,WA,21,DataVault + Analytics Pro,5643.78,Standard,3,3.10,0
+CC0145,Barossa Consulting,Hospitality,VIC,21,CloudSync,4850.39,Standard,4,2.80,0
+CC0146,Darwin Harbour Systems,Hospitality,SA,21,DataVault + Analytics Pro,2313.01,Basic,2,2.10,0
+CC0147,Capricorn Systems,Retail,QLD,30,CloudSync,2278.50,Basic,4,2.90,0
+CC0148,Harbour Cooperative,Mining & Resources,QLD,39,DataVault + Analytics Pro,7219.37,Standard,3,2.10,0
+CC0149,Esperance Logistics,Construction,VIC,34,Analytics Pro + CloudSync,7792.94,Standard,4,2.20,0
+CC0150,Barrier Reef Services,Media & Communications,QLD,35,DataVault + Analytics Pro,6971.80,Standard,3,3.20,0
+CC0151,Limestone Digital,Government,NSW,24,Analytics Pro,11161.21,Premium,1,2.80,0
+CC0152,Eucalypt Capital,Manufacturing,VIC,23,Analytics Pro + CloudSync,7191.58,Standard,4,2.40,0
+CC0153,Gippsland Trading,Construction,VIC,65,CloudSync,5515.25,Standard,4,3.40,0
+CC0154,Darwin Harbour Cooperative,Government,VIC,18,DataVault + Analytics Pro,6785.53,Standard,4,2.30,0
+CC0155,Margaret Holdings,Education,VIC,10,Analytics Pro,5644.10,Standard,4,2.40,0
+CC0156,Red Centre Partners,Professional Services,VIC,24,Analytics Pro,6506.55,Standard,5,2.50,0
+CC0157,Bluegum Logistics,Mining & Resources,QLD,46,DataVault + Analytics Pro,5411.01,Standard,7,2.30,0
+CC0158,Goldfields Solutions,Mining & Resources,NSW,6,Analytics Pro + CloudSync,7243.04,Standard,3,3.10,0
+CC0159,Carnarvon Consulting,Education,WA,17,DataVault + CloudSync,36838.67,Enterprise,9,1.40,0
+CC0160,Barrier Reef Solutions,Manufacturing,WA,25,DataVault + Analytics Pro + CloudSync,3652.98,Basic,6,1.60,1
+CC0161,Daintree Capital,Logistics & Transport,NSW,26,DataVault + Analytics Pro,2911.07,Basic,1,2.80,1
+CC0162,Adelaide Hills Consulting,Logistics & Transport,NSW,30,CloudSync,5846.87,Standard,3,3.00,1
+CC0163,Gippsland Capital,Finance & Insurance,NSW,16,DataVault + Analytics Pro + CloudSync,36899.40,Enterprise,7,2.30,1
+CC0164,Kimberley Consulting,Healthcare,QLD,20,DataVault + Analytics Pro,12771.63,Premium,0,3.00,0
+CC0165,Esperance Capital,Mining & Resources,NSW,96,DataVault,30814.78,Enterprise,2,5.00,0
+CC0166,Coorong Group,Real Estate,VIC,27,DataVault + CloudSync,13775.73,Premium,3,2.70,0
+CC0167,Carnarvon Capital,Logistics & Transport,VIC,12,Analytics Pro,5869.88,Standard,4,1.90,0
+CC0168,Carnarvon Trading,Government,QLD,16,DataVault,12527.70,Premium,1,3.20,0
+CC0169,Fremantle Consulting,Manufacturing,QLD,25,DataVault,5365.03,Standard,1,2.90,0
+CC0170,Swan River Capital,Media & Communications,NSW,32,DataVault + Analytics Pro + CloudSync,33421.77,Enterprise,1,3.40,1
+CC0171,Daintree Digital,Technology,QLD,37,DataVault + Analytics Pro + CloudSync,7271.46,Standard,5,2.00,0
+CC0172,Limestone Logistics,Professional Services,QLD,18,DataVault + Analytics Pro + CloudSync,8996.13,Standard,9,1.40,0
+CC0173,Bluegum Partners,Manufacturing,NSW,5,Analytics Pro,5429.67,Standard,2,2.30,1
+CC0174,Tasman Group,Technology,VIC,37,CloudSync,12469.42,Premium,2,3.10,0
+CC0175,Yarra Enterprises,Government,NSW,26,CloudSync,10341.96,Premium,2,3.00,0
+CC0176,Sunshine Coast Technologies,Media & Communications,NSW,19,DataVault + CloudSync,6315.71,Standard,1,3.50,1
+CC0177,Bondi Capital,Manufacturing,VIC,52,DataVault + Analytics Pro,6170.06,Standard,4,3.80,0
+CC0178,Red Centre Industries,Retail,QLD,23,DataVault + Analytics Pro + CloudSync,9066.57,Standard,1,2.30,0
+CC0179,Esperance Technologies,Mining & Resources,SA,26,Analytics Pro,4566.10,Standard,1,3.20,0
+CC0180,Darwin Harbour Group,Education,SA,23,Analytics Pro + CloudSync,7433.97,Standard,3,2.90,0
+CC0181,Limestone Solutions,Professional Services,NSW,22,Analytics Pro,4755.65,Standard,5,1.90,0
+CC0182,Goldfields Logistics,Healthcare,QLD,52,DataVault,11125.72,Premium,3,3.50,0
+CC0183,Capricorn Trading,Finance & Insurance,VIC,13,CloudSync,5106.47,Standard,1,3.00,0
+CC0184,Outback Group,Technology,VIC,22,DataVault + Analytics Pro + CloudSync,32602.77,Enterprise,0,3.90,0
+CC0185,Eucalypt Services,Manufacturing,NSW,21,DataVault,4789.36,Standard,4,3.10,0
+CC0186,Red Centre Group,Education,WA,39,Analytics Pro + CloudSync,13439.03,Premium,2,2.60,1
+CC0187,Glasshouse Consulting,Healthcare,VIC,13,Analytics Pro,12542.04,Premium,4,2.80,0
+CC0188,Coral Coast Holdings,Logistics & Transport,NSW,44,DataVault + Analytics Pro,15216.76,Premium,1,4.60,0
+CC0189,Fremantle Holdings,Government,VIC,60,DataVault + Analytics Pro,2902.27,Basic,2,3.30,0
+CC0190,Daintree Partners,Professional Services,QLD,68,CloudSync,28206.07,Enterprise,0,4.50,0
+CC0191,Limestone Industries,Finance & Insurance,NSW,25,Analytics Pro,11384.62,Premium,1,3.70,0
+CC0192,Yarra Capital,Construction,QLD,16,CloudSync,11612.81,Premium,4,2.40,0
+CC0193,Margaret Enterprises,Finance & Insurance,WA,45,DataVault + CloudSync,10976.76,Premium,7,1.60,0
+CC0194,Coorong Holdings,Media & Communications,WA,48,DataVault + Analytics Pro + CloudSync,6555.43,Standard,4,3.40,0
+CC0195,Coral Sea Solutions,Government,NSW,36,DataVault + CloudSync,41884.25,Enterprise,5,2.50,0
+CC0196,Wagga Digital,Professional Services,NSW,12,DataVault + CloudSync,6369.17,Standard,7,2.20,0
+CC0197,Capricorn Technologies,Logistics & Transport,VIC,26,DataVault,10082.21,Premium,2,3.20,0
+CC0198,Kimberley Logistics,Manufacturing,SA,45,DataVault + Analytics Pro + CloudSync,15553.40,Premium,7,2.50,0
+CC0199,Coorong Consulting,Manufacturing,WA,19,DataVault + CloudSync,6725.24,Standard,1,2.50,0
+CC0200,Coral Sea Capital,Manufacturing,VIC,68,Analytics Pro,2095.40,Basic,5,2.50,0
+CC0201,Kangaroo Cooperative,Agriculture,NSW,17,DataVault,5342.13,Standard,7,2.20,0
+CC0202,Murray River Holdings,Government,NSW,55,CloudSync,8151.62,Premium,4,3.30,1
+CC0203,Daintree Industries,Professional Services,QLD,54,Analytics Pro + CloudSync,2759.01,Basic,6,2.30,1
+CC0204,Coral Coast Industries,Retail,VIC,15,Analytics Pro,6005.71,Standard,5,2.80,0
+CC0205,Mallee Holdings,Professional Services,VIC,4,Analytics Pro,4908.82,Standard,3,2.10,1
+CC0206,Grampians Group,Media & Communications,SA,34,CloudSync,1581.89,Basic,4,2.10,1
+CC0207,Tasman Capital,Healthcare,VIC,88,DataVault + CloudSync,13022.60,Premium,1,3.60,0
+CC0208,Bluegum Consulting,Real Estate,QLD,31,DataVault,5562.76,Standard,3,2.50,0
+CC0209,Grampians Logistics,Education,SA,73,DataVault,11169.30,Premium,2,4.10,0
+CC0210,Fremantle Enterprises,Real Estate,VIC,7,DataVault,3982.42,Standard,0,2.80,0
+CC0211,Bluegum Holdings,Retail,NSW,59,DataVault + CloudSync,2744.02,Basic,4,2.90,0
+CC0212,Mallee Technologies,Hospitality,QLD,32,CloudSync,1972.30,Basic,4,2.30,0
+CC0213,Swan River Digital,Education,VIC,33,CloudSync,6178.62,Standard,4,1.80,0
+CC0214,Pilbara Trading,Manufacturing,WA,82,DataVault,9992.20,Premium,2,3.50,0
+CC0215,Bluegum Services,Real Estate,NSW,20,Analytics Pro + CloudSync,11637.00,Premium,3,2.50,0
+CC0216,Harbour Capital,Real Estate,NSW,53,Analytics Pro + CloudSync,6088.75,Standard,4,3.50,0
+CC0217,Harbour Solutions,Media & Communications,VIC,61,DataVault,12557.63,Premium,4,3.40,0
+CC0218,Bondi Holdings,Retail,VIC,22,Analytics Pro,26758.94,Enterprise,3,4.00,0
+CC0219,Wagga Systems,Finance & Insurance,VIC,31,DataVault + CloudSync,25679.38,Enterprise,3,3.40,0
+CC0220,Grampians Industries,Retail,NSW,43,DataVault + Analytics Pro + CloudSync,6748.06,Standard,5,2.40,0
+CC0221,Coral Coast Enterprises,Government,WA,17,DataVault + Analytics Pro + CloudSync,7995.02,Standard,5,1.90,0
+CC0222,Bondi Consulting,Finance & Insurance,VIC,23,Analytics Pro,5812.49,Standard,2,3.00,0
+CC0223,Sunshine Coast Trading,Healthcare,WA,42,DataVault,11762.56,Premium,2,3.00,0
+CC0224,Yarra Holdings,Retail,VIC,17,DataVault,12124.29,Premium,3,3.00,0
+CC0225,Eucalypt Technologies,Education,NSW,20,Analytics Pro,12105.81,Premium,2,2.60,0
+CC0226,Hunter Valley Group,Technology,WA,12,Analytics Pro + CloudSync,2807.31,Basic,9,1.00,1
+CC0227,Flinders Systems,Logistics & Transport,NSW,32,DataVault,5433.92,Standard,6,2.30,0
+CC0228,Wagga Industries,Healthcare,QLD,30,DataVault,6079.80,Standard,4,2.60,0
+CC0229,Coral Sea Enterprises,Healthcare,QLD,80,DataVault + CloudSync,14082.30,Premium,3,4.60,0
+CC0230,Southern Cross Enterprises,Technology,QLD,53,CloudSync,34584.58,Enterprise,1,3.80,0
+CC0231,Limestone Technologies,Construction,NSW,19,Analytics Pro,1925.71,Basic,2,2.70,1
+CC0232,Yarra Digital,Logistics & Transport,VIC,50,CloudSync,10679.88,Premium,4,3.30,1
+CC0233,Torres Holdings,Professional Services,WA,13,CloudSync,1936.65,Basic,11,1.00,1
+CC0234,Gippsland Partners,Retail,NSW,53,Analytics Pro,5255.60,Standard,4,2.80,1
+CC0235,Snowy Mountain Technologies,Education,VIC,55,DataVault,1864.59,Basic,3,3.90,0
+CC0236,Snowy Mountain Solutions,Education,QLD,16,DataVault + Analytics Pro + CloudSync,3379.77,Basic,7,2.20,1
+CC0237,Fremantle Cooperative,Education,NSW,22,Analytics Pro + CloudSync,28105.99,Enterprise,5,3.20,0
+CC0238,Outback Trading,Real Estate,VIC,61,DataVault,4676.45,Standard,1,4.20,0
+CC0239,Gippsland Systems,Education,QLD,26,Analytics Pro + CloudSync,34449.54,Enterprise,3,3.50,0
+CC0240,Darwin Harbour Consulting,Retail,VIC,12,Analytics Pro,10875.96,Premium,2,2.90,0
+CC0241,Wagga Enterprises,Agriculture,QLD,16,DataVault + Analytics Pro + CloudSync,2264.38,Basic,9,1.00,1
+CC0242,Red Centre Capital,Manufacturing,SA,26,Analytics Pro,5540.16,Standard,0,3.70,0
+CC0243,Coral Coast Consulting,Manufacturing,QLD,56,DataVault + Analytics Pro + CloudSync,15638.44,Premium,3,3.70,0
+CC0244,Gippsland Logistics,Professional Services,SA,26,CloudSync,2249.65,Basic,3,2.10,1
+CC0245,Torres Solutions,Government,NSW,28,DataVault + CloudSync,6034.53,Standard,6,1.40,1
+CC0246,Grampians Technologies,Agriculture,SA,21,DataVault + CloudSync,7179.17,Standard,3,2.50,0
+CC0247,Grampians Holdings,Mining & Resources,VIC,27,DataVault + CloudSync,13265.25,Premium,2,2.40,0
+CC0248,Torres Partners,Logistics & Transport,SA,5,CloudSync,1686.69,Basic,6,1.60,0
+CC0249,Sunshine Coast Cooperative,Construction,WA,19,DataVault + Analytics Pro + CloudSync,3240.96,Basic,8,1.80,1
+CC0250,Pilbara Holdings,Hospitality,NSW,16,DataVault + Analytics Pro + CloudSync,8052.19,Standard,7,1.80,0
+CC0251,Yarra Partners,Professional Services,QLD,27,DataVault + CloudSync,5964.67,Standard,4,1.90,0
+CC0252,Tasman Technologies,Hospitality,QLD,32,Analytics Pro,5518.43,Standard,0,3.90,0
+CC0253,Hunter Valley Logistics,Hospitality,NSW,25,Analytics Pro,11326.71,Premium,2,3.00,0
+CC0254,Harbour Partners,Healthcare,QLD,14,Analytics Pro,5166.28,Standard,2,2.90,0
+CC0255,Barossa Industries,Hospitality,NSW,22,CloudSync,6236.68,Standard,2,2.40,0
+CC0256,Daintree Systems,Manufacturing,VIC,96,CloudSync,9758.79,Premium,7,2.90,0
+CC0257,Goldfields Holdings,Real Estate,VIC,7,DataVault + Analytics Pro + CloudSync,3195.50,Basic,1,2.70,0
+CC0258,Coral Coast Capital,Construction,NSW,14,Analytics Pro,5606.44,Standard,2,3.50,1
+CC0259,Fremantle Services,Education,NSW,31,DataVault,5783.29,Standard,4,2.60,0
+CC0260,Adelaide Hills Trading,Media & Communications,SA,17,DataVault + Analytics Pro + CloudSync,3402.45,Basic,4,2.10,1
+CC0261,Carnarvon Services,Agriculture,WA,13,CloudSync,4918.32,Standard,0,3.30,0
+CC0262,Kimberley Capital,Real Estate,QLD,37,DataVault + Analytics Pro + CloudSync,15201.35,Premium,8,1.70,0
+CC0263,Murray River Technologies,Hospitality,QLD,42,DataVault + Analytics Pro + CloudSync,6420.65,Standard,4,3.00,0
+CC0264,Fremantle Solutions,Finance & Insurance,QLD,22,Analytics Pro,4418.41,Standard,4,2.30,0
+CC0265,Barrier Reef Cooperative,Agriculture,NSW,29,DataVault + Analytics Pro,2643.35,Basic,3,2.90,0
+CC0266,Outback Logistics,Mining & Resources,NSW,21,CloudSync,30214.58,Enterprise,0,4.00,0
+CC0267,Barossa Solutions,Hospitality,WA,14,DataVault,12712.56,Premium,1,3.10,0
+CC0268,Kimberley Group,Hospitality,WA,96,DataVault + Analytics Pro,11848.15,Premium,5,2.40,0
+CC0269,Murray River Enterprises,Finance & Insurance,NSW,12,CloudSync,1824.11,Basic,4,2.20,0
+CC0270,Wannon Trading,Construction,NSW,70,CloudSync,10174.71,Premium,2,4.30,0
+CC0271,Wagga Partners,Technology,NSW,9,DataVault,9181.17,Premium,2,2.90,1
+CC0272,Snowy Mountain Partners,Media & Communications,NSW,12,Analytics Pro,5517.08,Standard,2,1.90,0
+CC0273,Bondi Digital,Construction,SA,13,DataVault + Analytics Pro + CloudSync,7512.01,Standard,3,2.50,1
+CC0274,Outback Enterprises,Retail,SA,61,CloudSync,5166.98,Standard,2,3.60,0
+CC0275,Harbour Trading,Government,VIC,30,DataVault,9214.60,Premium,2,3.20,0
+CC0276,Outback Partners,Logistics & Transport,SA,9,DataVault,4261.28,Standard,3,2.50,0
+CC0277,Pilbara Group,Finance & Insurance,VIC,13,DataVault,28437.46,Enterprise,0,3.40,0
+CC0278,Eucalypt Consulting,Mining & Resources,VIC,13,CloudSync,12333.80,Premium,2,2.90,0
+CC0279,Swan River Systems,Hospitality,NSW,9,Analytics Pro,4594.27,Standard,3,2.90,0
+CC0280,Bondi Systems,Technology,VIC,83,Analytics Pro,4592.07,Standard,2,4.70,0
+CC0281,Margaret Consulting,Mining & Resources,NSW,19,DataVault + Analytics Pro + CloudSync,14717.42,Premium,4,1.90,0
+CC0282,Margaret Logistics,Professional Services,QLD,24,DataVault + Analytics Pro,6291.69,Standard,7,2.40,0
+CC0283,Sunshine Coast Services,Technology,QLD,15,CloudSync,12496.50,Premium,1,2.90,0
+CC0284,Mallee Trading,Agriculture,VIC,33,CloudSync,2153.00,Basic,7,2.40,1
+CC0285,Swan River Enterprises,Healthcare,NSW,30,CloudSync,1791.64,Basic,3,3.10,0
+CC0286,Carnarvon Group,Manufacturing,WA,21,DataVault,1980.46,Basic,4,2.10,1
+CC0287,Pilbara Industries,Real Estate,NSW,41,DataVault,1961.13,Basic,4,2.50,1
+CC0288,Daintree Group,Professional Services,WA,84,Analytics Pro,30840.42,Enterprise,1,3.90,0
+CC0289,Bondi Technologies,Media & Communications,NSW,45,DataVault + CloudSync,33213.44,Enterprise,2,2.80,0
+CC0290,Murray River Consulting,Finance & Insurance,WA,21,DataVault,23918.26,Enterprise,1,2.60,0
+CC0291,Capricorn Solutions,Professional Services,NSW,66,DataVault + CloudSync,6155.40,Standard,5,3.10,0
+CC0292,Hunter Valley Enterprises,Professional Services,WA,54,Analytics Pro + CloudSync,14145.02,Premium,2,3.30,0
+CC0293,Tasman Digital,Professional Services,SA,28,CloudSync,6114.56,Standard,1,3.60,0
+CC0294,Coral Sea Group,Agriculture,NSW,32,CloudSync,12419.12,Premium,7,2.20,1
+CC0295,Barrier Reef Capital,Media & Communications,SA,67,DataVault + Analytics Pro + CloudSync,8023.71,Standard,5,3.90,0
+CC0296,Eucalypt Systems,Agriculture,QLD,89,DataVault + Analytics Pro + CloudSync,3306.02,Basic,8,2.40,0
+CC0297,Barossa Logistics,Healthcare,NSW,12,Analytics Pro + CloudSync,35619.39,Enterprise,2,2.20,0
+CC0298,Adelaide Hills Cooperative,Mining & Resources,NSW,21,DataVault + Analytics Pro + CloudSync,8019.04,Standard,3,3.60,0
+CC0299,Tasman Trading,Logistics & Transport,NSW,15,Analytics Pro,10483.76,Premium,3,3.10,1
+CC0300,Pilbara Partners,Real Estate,VIC,55,DataVault + Analytics Pro + CloudSync,7233.28,Standard,11,1.80,0
+CC0301,Bluegum Solutions,Real Estate,VIC,24,CloudSync,1986.56,Basic,4,1.90,1
+CC0302,Flinders Solutions,Mining & Resources,NSW,25,DataVault + Analytics Pro + CloudSync,6712.34,Standard,3,2.90,0
+CC0303,Grampians Partners,Manufacturing,NSW,28,DataVault + Analytics Pro + CloudSync,36048.54,Enterprise,4,2.60,0
+CC0304,Swan River Services,Government,NSW,42,CloudSync,1978.09,Basic,3,3.40,0
+CC0305,Esperance Cooperative,Manufacturing,QLD,60,DataVault + Analytics Pro + CloudSync,10507.56,Premium,3,2.70,0
+CC0306,Coorong Solutions,Mining & Resources,NSW,41,CloudSync,5267.88,Standard,2,2.90,0
+CC0307,Adelaide Hills Services,Agriculture,VIC,27,DataVault,4926.00,Standard,3,3.20,0
+CC0308,Wagga Group,Real Estate,WA,40,CloudSync,4955.96,Standard,2,2.50,0
+CC0309,Bondi Cooperative,Technology,WA,23,DataVault + Analytics Pro,32942.51,Enterprise,3,2.40,0
+CC0310,Sunshine Coast Consulting,Logistics & Transport,NSW,14,DataVault,5594.04,Standard,1,2.90,0
+CC0311,Bluegum Capital,Logistics & Transport,NSW,41,DataVault + CloudSync,12390.20,Premium,0,4.40,0
+CC0312,Snowy Mountain Industries,Mining & Resources,NSW,96,DataVault + CloudSync,7003.98,Standard,4,4.10,0
+CC0313,Coral Sea Trading,Technology,SA,26,DataVault,10508.30,Premium,4,3.60,0
+CC0314,Darwin Harbour Enterprises,Professional Services,NSW,45,Analytics Pro,33424.44,Enterprise,1,4.00,0
+CC0315,Swan River Industries,Government,WA,29,Analytics Pro + CloudSync,35399.55,Enterprise,4,2.60,0
+CC0316,Snowy Mountain Trading,Construction,NSW,18,DataVault + Analytics Pro,3113.63,Basic,4,1.80,0
+CC0317,Snowy Mountain Logistics,Finance & Insurance,VIC,15,Analytics Pro + CloudSync,2366.09,Basic,2,3.10,0
+CC0318,Barrier Reef Partners,Finance & Insurance,WA,35,DataVault + Analytics Pro,6726.52,Standard,8,2.10,1
+CC0319,Pilbara Cooperative,Healthcare,NSW,55,Analytics Pro,12259.34,Premium,3,3.40,0
+CC0320,Pilbara Capital,Professional Services,SA,54,DataVault,4524.70,Standard,8,3.00,0
+CC0321,Glasshouse Cooperative,Healthcare,QLD,41,DataVault + Analytics Pro + CloudSync,3085.83,Basic,9,2.70,0
+CC0322,Snowy Mountain Enterprises,Healthcare,SA,21,DataVault,9724.70,Premium,0,3.30,1
+CC0323,Grampians Capital,Professional Services,NSW,34,Analytics Pro,2099.34,Basic,1,3.20,0
+CC0324,Capricorn Industries,Education,NSW,52,Analytics Pro,12188.79,Premium,2,3.30,0
+CC0325,Grampians Enterprises,Mining & Resources,QLD,31,Analytics Pro,2102.24,Basic,3,2.10,0
+CC0326,Southern Cross Systems,Hospitality,NSW,19,Analytics Pro,4025.49,Standard,4,2.80,0
+CC0327,Gippsland Services,Agriculture,VIC,41,Analytics Pro,8591.48,Premium,3,2.90,0
+CC0328,Coral Sea Partners,Technology,NSW,38,DataVault + Analytics Pro + CloudSync,13811.05,Premium,3,3.80,0
+CC0329,Darwin Harbour Solutions,Mining & Resources,VIC,31,DataVault + Analytics Pro,3246.79,Basic,5,2.60,0
+CC0330,Southern Cross Group,Logistics & Transport,NSW,19,DataVault + Analytics Pro + CloudSync,14536.46,Premium,4,2.60,1
+CC0331,Barrier Reef Holdings,Education,WA,53,DataVault,4886.01,Standard,3,2.70,0
+CC0332,Kimberley Industries,Manufacturing,VIC,12,DataVault,3842.50,Standard,1,2.90,0
+CC0333,Gippsland Cooperative,Manufacturing,NSW,31,CloudSync,5606.91,Standard,3,2.70,0
+CC0334,Harbour Industries,Mining & Resources,WA,28,Analytics Pro + CloudSync,6088.98,Standard,6,1.50,1
+CC0335,Swan River Cooperative,Retail,QLD,35,DataVault + Analytics Pro + CloudSync,7752.23,Standard,4,2.60,0
+CC0336,Outback Consulting,Finance & Insurance,SA,18,DataVault + CloudSync,27868.55,Enterprise,2,3.40,1
+CC0337,Swan River Holdings,Logistics & Transport,SA,23,DataVault,33575.39,Enterprise,0,3.90,0
+CC0338,Flinders Holdings,Agriculture,WA,16,CloudSync,9757.88,Premium,1,3.30,0
+CC0339,Outback Digital,Media & Communications,NSW,17,CloudSync,5248.02,Standard,4,2.70,0
+CC0340,Carnarvon Partners,Agriculture,SA,28,CloudSync,4864.32,Standard,5,2.10,1
+CC0341,Tasman Services,Education,NSW,96,DataVault + Analytics Pro + CloudSync,14013.75,Premium,6,3.00,0
+CC0342,Sunshine Coast Systems,Finance & Insurance,VIC,14,DataVault,10897.11,Premium,0,3.20,0
+CC0343,Grampians Systems,Government,VIC,22,Analytics Pro + CloudSync,6780.09,Standard,8,1.90,0
+CC0344,Southern Cross Industries,Hospitality,SA,10,CloudSync,27905.32,Enterprise,2,3.10,0
+CC0345,Capricorn Enterprises,Hospitality,SA,38,Analytics Pro + CloudSync,13377.34,Premium,4,2.30,0
+CC0346,Goldfields Services,Logistics & Transport,VIC,25,Analytics Pro + CloudSync,2560.90,Basic,8,2.40,1
+CC0347,Yarra Industries,Technology,QLD,8,DataVault + Analytics Pro,7991.92,Standard,4,2.10,1
+CC0348,Murray River Services,Retail,QLD,30,CloudSync,11265.27,Premium,8,1.80,0
+CC0349,Barossa Capital,Hospitality,QLD,30,Analytics Pro,2038.10,Basic,1,2.50,0
+CC0350,Murray River Systems,Mining & Resources,NSW,19,CloudSync,12113.82,Premium,3,3.00,0
+CC0351,Barossa Trading,Manufacturing,NSW,5,DataVault + CloudSync,7159.20,Standard,4,2.60,1
+CC0352,Mallee Capital,Retail,VIC,30,DataVault + Analytics Pro + CloudSync,17025.18,Premium,7,1.40,0
+CC0353,Kangaroo Solutions,Education,NSW,20,Analytics Pro,2073.29,Basic,4,3.20,0
+CC0354,Daintree Enterprises,Media & Communications,NSW,14,DataVault,1824.10,Basic,2,3.50,0
+CC0355,Flinders Enterprises,Mining & Resources,VIC,6,DataVault + Analytics Pro + CloudSync,7636.88,Standard,3,2.20,0
+CC0356,Capricorn Holdings,Real Estate,QLD,30,Analytics Pro,1957.16,Basic,5,2.90,1
+CC0357,Sunshine Coast Industries,Professional Services,VIC,30,CloudSync,10275.99,Premium,2,3.30,0
+CC0358,Barrier Reef Technologies,Professional Services,NSW,8,DataVault,13042.88,Premium,4,2.40,1
+CC0359,Hunter Valley Services,Healthcare,WA,50,DataVault + Analytics Pro + CloudSync,14967.52,Premium,3,3.10,0
+CC0360,Daintree Consulting,Government,QLD,96,DataVault + Analytics Pro,13655.08,Premium,4,3.50,0
+CC0361,Outback Services,Education,WA,43,DataVault + Analytics Pro + CloudSync,34468.02,Enterprise,5,2.30,0
+CC0362,Gippsland Industries,Government,SA,11,DataVault + CloudSync,6508.46,Standard,2,2.80,0
+CC0363,Capricorn Capital,Technology,VIC,35,Analytics Pro + CloudSync,34477.62,Enterprise,2,3.50,0
+CC0364,Hunter Valley Partners,Real Estate,QLD,46,Analytics Pro,6345.42,Standard,3,2.50,0
+CC0365,Outback Cooperative,Real Estate,NSW,17,DataVault,1935.09,Basic,4,2.60,1
+CC0366,Wannon Solutions,Healthcare,SA,39,DataVault + Analytics Pro + CloudSync,13667.60,Premium,6,3.20,0
+CC0367,Tasman Enterprises,Logistics & Transport,NSW,69,DataVault + Analytics Pro + CloudSync,3550.51,Basic,6,2.50,0
+CC0368,Esperance Industries,Hospitality,SA,22,CloudSync,9096.52,Premium,1,3.30,0
+CC0369,Margaret Services,Manufacturing,WA,40,Analytics Pro,5592.91,Standard,3,2.50,0
+CC0370,Carnarvon Systems,Media & Communications,NSW,18,CloudSync,5347.60,Standard,1,2.70,0
+CC0371,Glasshouse Solutions,Education,VIC,25,DataVault,6165.89,Standard,2,3.40,0
+CC0372,Sunshine Coast Holdings,Retail,QLD,28,Analytics Pro,2362.10,Basic,2,2.90,1
+CC0373,Murray River Industries,Manufacturing,QLD,39,DataVault,1853.76,Basic,5,2.70,1
+CC0374,Harbour Consulting,Professional Services,VIC,28,DataVault + Analytics Pro + CloudSync,6143.16,Standard,6,2.20,0
+CC0375,Esperance Group,Media & Communications,NSW,15,CloudSync,6197.31,Standard,3,2.50,1
+CC0376,Snowy Mountain Capital,Hospitality,VIC,3,DataVault + Analytics Pro + CloudSync,3378.74,Basic,6,2.10,0
+CC0377,Goldfields Systems,Healthcare,QLD,4,CloudSync,11861.69,Premium,4,2.10,0
+CC0378,Glasshouse Systems,Mining & Resources,WA,15,Analytics Pro,5814.32,Standard,3,2.10,1
+CC0379,Goldfields Industries,Logistics & Transport,WA,42,CloudSync,12253.14,Premium,3,3.30,0
+CC0380,Yarra Cooperative,Manufacturing,WA,26,DataVault + CloudSync,2499.27,Basic,7,1.80,1
+CC0381,Bluegum Systems,Manufacturing,WA,43,Analytics Pro,6209.93,Standard,2,1.90,1
+CC0382,Eucalypt Industries,Mining & Resources,SA,30,DataVault + Analytics Pro,2528.39,Basic,5,3.00,0
+CC0383,Eucalypt Logistics,Hospitality,QLD,17,DataVault + Analytics Pro + CloudSync,2790.86,Basic,2,2.00,1
+CC0384,Glasshouse Logistics,Finance & Insurance,QLD,8,Analytics Pro,11158.55,Premium,1,2.40,0
+CC0385,Coral Coast Logistics,Technology,QLD,21,Analytics Pro + CloudSync,1904.24,Basic,6,2.00,0
+CC0386,Hunter Valley Solutions,Mining & Resources,VIC,28,DataVault,10528.66,Premium,2,2.70,0
+CC0387,Bluegum Industries,Logistics & Transport,QLD,4,CloudSync,33925.92,Enterprise,0,2.80,0
+CC0388,Wagga Capital,Hospitality,VIC,13,DataVault + Analytics Pro + CloudSync,3520.96,Basic,7,2.10,1
+CC0389,Grampians Services,Mining & Resources,QLD,23,DataVault + Analytics Pro,2492.27,Basic,7,2.40,0
+CC0390,Bondi Group,Real Estate,VIC,20,DataVault,5041.43,Standard,4,2.50,1
+CC0391,Gippsland Technologies,Manufacturing,VIC,9,DataVault + Analytics Pro,6359.41,Standard,5,2.30,0
+CC0392,Tasman Partners,Mining & Resources,NSW,13,Analytics Pro + CloudSync,6468.65,Standard,6,1.90,0
+CC0393,Margaret Trading,Manufacturing,QLD,11,CloudSync,10493.95,Premium,0,2.40,0
+CC0394,Barossa Digital,Real Estate,VIC,41,CloudSync,2089.50,Basic,3,3.40,0
+CC0395,Mallee Systems,Healthcare,NSW,51,CloudSync,5597.68,Standard,3,2.90,0
+CC0396,Torres Industries,Hospitality,QLD,56,Analytics Pro,31354.61,Enterprise,1,3.80,0
+CC0397,Margaret Systems,Real Estate,VIC,25,DataVault,33392.06,Enterprise,0,3.30,0
+CC0398,Kangaroo Trading,Media & Communications,SA,27,CloudSync,5727.89,Standard,1,2.80,0
+CC0399,Kimberley Cooperative,Hospitality,NSW,51,DataVault,1931.65,Basic,4,2.40,1
+CC0400,Coral Sea Consulting,Construction,NSW,16,Analytics Pro,11471.79,Premium,4,3.40,1

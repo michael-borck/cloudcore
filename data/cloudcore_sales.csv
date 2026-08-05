@@ -1,0 +1,181 @@
+region,product,quarter,year,revenue_aud,units_sold,sales_rep,customer_segment
+WA,DataVault,Q1,2024,118193.17,107,Hamish Drummond,Enterprise
+WA,Analytics Pro,Q1,2024,88633.32,104,Hamish Drummond,Enterprise
+WA,CloudSync,Q1,2024,79703.47,190,Hamish Drummond,Mid-Market
+NSW,DataVault,Q1,2024,295982.81,269,Liam Whitfield,Enterprise
+NSW,Analytics Pro,Q1,2024,206651.73,243,Liam Whitfield,SMB
+NSW,CloudSync,Q1,2024,169717.61,404,Sarah Chen,SMB
+VIC,DataVault,Q1,2024,251265.83,228,Marcus Boyle,Mid-Market
+VIC,Analytics Pro,Q1,2024,192997.71,227,Marcus Boyle,Enterprise
+VIC,CloudSync,Q1,2024,131232.52,312,Marcus Boyle,Mid-Market
+QLD,DataVault,Q1,2024,188152.92,171,Tahlia Pearson,Enterprise
+QLD,Analytics Pro,Q1,2024,151012.83,178,Tahlia Pearson,Mid-Market
+QLD,CloudSync,Q1,2024,116894.84,278,Tahlia Pearson,Mid-Market
+SA,DataVault,Q1,2024,103855.77,94,Daniel Kostas,SMB
+SA,Analytics Pro,Q1,2024,80084.34,94,Daniel Kostas,Enterprise
+SA,CloudSync,Q1,2024,65005.77,155,Daniel Kostas,Mid-Market
+WA,DataVault,Q2,2024,147138.01,134,Olivia Park,SMB
+WA,Analytics Pro,Q2,2024,126579.09,149,Olivia Park,SMB
+WA,CloudSync,Q2,2024,99730.56,237,Olivia Park,Enterprise
+NSW,DataVault,Q2,2024,342851.75,312,Liam Whitfield,Mid-Market
+NSW,Analytics Pro,Q2,2024,263144.09,310,Sarah Chen,SMB
+NSW,CloudSync,Q2,2024,178941.48,426,Liam Whitfield,SMB
+VIC,DataVault,Q2,2024,312453.10,284,Priya Nair,Mid-Market
+VIC,Analytics Pro,Q2,2024,238383.37,280,Marcus Boyle,SMB
+VIC,CloudSync,Q2,2024,172959.90,412,Marcus Boyle,Mid-Market
+QLD,DataVault,Q2,2024,235831.68,214,Tahlia Pearson,SMB
+QLD,Analytics Pro,Q2,2024,190363.08,224,Tahlia Pearson,Mid-Market
+QLD,CloudSync,Q2,2024,138588.58,330,Tahlia Pearson,Mid-Market
+SA,DataVault,Q2,2024,117153.11,107,Daniel Kostas,Enterprise
+SA,Analytics Pro,Q2,2024,87421.92,103,Daniel Kostas,Mid-Market
+SA,CloudSync,Q2,2024,78369.23,187,Daniel Kostas,Enterprise
+WA,DataVault,Q3,2024,176082.93,160,Hamish Drummond,SMB
+WA,Analytics Pro,Q3,2024,118391.19,139,Hamish Drummond,SMB
+WA,CloudSync,Q3,2024,104414.05,249,Hamish Drummond,Enterprise
+NSW,DataVault,Q3,2024,429828.47,391,Sarah Chen,Mid-Market
+NSW,Analytics Pro,Q3,2024,288532.80,339,Sarah Chen,Mid-Market
+NSW,CloudSync,Q3,2024,204652.92,487,Sarah Chen,Mid-Market
+VIC,DataVault,Q3,2024,336206.55,306,Priya Nair,SMB
+VIC,Analytics Pro,Q3,2024,255245.85,300,Marcus Boyle,Mid-Market
+VIC,CloudSync,Q3,2024,182158.92,434,Marcus Boyle,Enterprise
+QLD,DataVault,Q3,2024,273428.64,249,Tahlia Pearson,SMB
+QLD,Analytics Pro,Q3,2024,187300.35,220,Tahlia Pearson,SMB
+QLD,CloudSync,Q3,2024,142942.85,340,Tahlia Pearson,Enterprise
+SA,DataVault,Q3,2024,122944.30,112,Daniel Kostas,Mid-Market
+SA,Analytics Pro,Q3,2024,109579.32,129,Daniel Kostas,SMB
+SA,CloudSync,Q3,2024,87139.86,207,Daniel Kostas,SMB
+WA,DataVault,Q4,2024,169265.12,154,Hamish Drummond,Enterprise
+WA,Analytics Pro,Q4,2024,117765.38,139,Hamish Drummond,SMB
+WA,CloudSync,Q4,2024,107517.29,256,Olivia Park,Mid-Market
+NSW,DataVault,Q4,2024,394038.83,358,Liam Whitfield,Mid-Market
+NSW,Analytics Pro,Q4,2024,267757.80,315,Liam Whitfield,Enterprise
+NSW,CloudSync,Q4,2024,197796.27,471,Sarah Chen,Enterprise
+VIC,DataVault,Q4,2024,310851.42,283,Marcus Boyle,SMB
+VIC,Analytics Pro,Q4,2024,229427.28,270,Marcus Boyle,Mid-Market
+VIC,CloudSync,Q4,2024,182177.97,434,Priya Nair,Enterprise
+QLD,DataVault,Q4,2024,263670.52,240,Tahlia Pearson,Mid-Market
+QLD,Analytics Pro,Q4,2024,195170.98,230,Tahlia Pearson,Mid-Market
+QLD,CloudSync,Q4,2024,136094.47,324,Tahlia Pearson,SMB
+SA,DataVault,Q4,2024,136174.51,124,Daniel Kostas,Mid-Market
+SA,Analytics Pro,Q4,2024,101253.44,119,Daniel Kostas,SMB
+SA,CloudSync,Q4,2024,91344.01,217,Daniel Kostas,Mid-Market
+WA,DataVault,Q1,2025,156767.16,143,Olivia Park,Mid-Market
+WA,Analytics Pro,Q1,2025,120642.07,142,Hamish Drummond,Mid-Market
+WA,CloudSync,Q1,2025,102215.38,243,Hamish Drummond,SMB
+NSW,DataVault,Q1,2025,383365.84,349,Liam Whitfield,Mid-Market
+NSW,Analytics Pro,Q1,2025,286944.21,338,Liam Whitfield,Enterprise
+NSW,CloudSync,Q1,2025,225156.02,536,Sarah Chen,SMB
+VIC,DataVault,Q1,2025,332903.63,303,Priya Nair,SMB
+VIC,Analytics Pro,Q1,2025,254887.02,300,Marcus Boyle,SMB
+VIC,CloudSync,Q1,2025,194436.13,463,Priya Nair,Mid-Market
+QLD,DataVault,Q1,2025,247195.94,225,Tahlia Pearson,Mid-Market
+QLD,Analytics Pro,Q1,2025,199407.35,235,Tahlia Pearson,Mid-Market
+QLD,CloudSync,Q1,2025,156777.87,373,Tahlia Pearson,Mid-Market
+SA,DataVault,Q1,2025,137395.28,125,Daniel Kostas,Mid-Market
+SA,Analytics Pro,Q1,2025,102697.27,121,Daniel Kostas,Mid-Market
+SA,CloudSync,Q1,2025,80699.07,192,Daniel Kostas,Mid-Market
+WA,DataVault,Q2,2025,200244.43,182,Olivia Park,Mid-Market
+WA,Analytics Pro,Q2,2025,132446.54,156,Hamish Drummond,Mid-Market
+WA,CloudSync,Q2,2025,126083.53,300,Olivia Park,SMB
+NSW,DataVault,Q2,2025,454583.65,413,Sarah Chen,SMB
+NSW,Analytics Pro,Q2,2025,344379.38,405,Liam Whitfield,Mid-Market
+NSW,CloudSync,Q2,2025,261246.83,622,Sarah Chen,Enterprise
+VIC,DataVault,Q2,2025,399405.61,363,Marcus Boyle,Mid-Market
+VIC,Analytics Pro,Q2,2025,330674.67,389,Priya Nair,Mid-Market
+VIC,CloudSync,Q2,2025,213649.24,509,Priya Nair,SMB
+QLD,DataVault,Q2,2025,287547.51,261,Tahlia Pearson,Mid-Market
+QLD,Analytics Pro,Q2,2025,240952.07,283,Tahlia Pearson,Mid-Market
+QLD,CloudSync,Q2,2025,179060.95,426,Tahlia Pearson,Mid-Market
+SA,DataVault,Q2,2025,168634.88,153,Daniel Kostas,SMB
+SA,Analytics Pro,Q2,2025,116818.65,137,Daniel Kostas,Mid-Market
+SA,CloudSync,Q2,2025,106847.03,254,Daniel Kostas,Mid-Market
+WA,DataVault,Q3,2025,247158.41,225,Hamish Drummond,Mid-Market
+WA,Analytics Pro,Q3,2025,162777.67,192,Olivia Park,SMB
+WA,CloudSync,Q3,2025,136244.24,324,Hamish Drummond,Enterprise
+NSW,DataVault,Q3,2025,505985.85,460,Liam Whitfield,Enterprise
+NSW,Analytics Pro,Q3,2025,383871.88,452,Liam Whitfield,Mid-Market
+NSW,CloudSync,Q3,2025,285630.36,680,Liam Whitfield,SMB
+VIC,DataVault,Q3,2025,473741.13,431,Priya Nair,SMB
+VIC,Analytics Pro,Q3,2025,360438.16,424,Marcus Boyle,SMB
+VIC,CloudSync,Q3,2025,246030.01,586,Priya Nair,Mid-Market
+QLD,DataVault,Q3,2025,351914.11,320,Tahlia Pearson,SMB
+QLD,Analytics Pro,Q3,2025,283470.85,333,Tahlia Pearson,Mid-Market
+QLD,CloudSync,Q3,2025,203132.86,484,Tahlia Pearson,SMB
+SA,DataVault,Q3,2025,181326.95,165,Daniel Kostas,SMB
+SA,Analytics Pro,Q3,2025,145603.50,171,Daniel Kostas,Mid-Market
+SA,CloudSync,Q3,2025,122462.18,292,Daniel Kostas,SMB
+WA,DataVault,Q4,2025,157184.82,143,Olivia Park,Mid-Market
+WA,Analytics Pro,Q4,2025,121400.22,143,Olivia Park,Mid-Market
+WA,CloudSync,Q4,2025,102688.31,244,Olivia Park,SMB
+NSW,DataVault,Q4,2025,366253.46,333,Sarah Chen,Mid-Market
+NSW,Analytics Pro,Q4,2025,294408.69,346,Sarah Chen,SMB
+NSW,CloudSync,Q4,2025,190397.20,453,Sarah Chen,Enterprise
+VIC,DataVault,Q4,2025,302957.13,275,Marcus Boyle,Mid-Market
+VIC,Analytics Pro,Q4,2025,230232.67,271,Marcus Boyle,Mid-Market
+VIC,CloudSync,Q4,2025,172106.39,410,Marcus Boyle,SMB
+QLD,DataVault,Q4,2025,228469.68,208,Tahlia Pearson,Enterprise
+QLD,Analytics Pro,Q4,2025,170438.54,201,Tahlia Pearson,SMB
+QLD,CloudSync,Q4,2025,135995.34,324,Tahlia Pearson,Enterprise
+SA,DataVault,Q4,2025,121621.26,111,Daniel Kostas,SMB
+SA,Analytics Pro,Q4,2025,96618.19,114,Daniel Kostas,Mid-Market
+SA,CloudSync,Q4,2025,85994.06,205,Daniel Kostas,SMB
+WA,DataVault,Q1,2026,171497.84,156,Olivia Park,SMB
+WA,Analytics Pro,Q1,2026,136111.55,160,Olivia Park,SMB
+WA,CloudSync,Q1,2026,121359.28,289,Olivia Park,Mid-Market
+NSW,DataVault,Q1,2026,418881.84,381,Liam Whitfield,Mid-Market
+NSW,Analytics Pro,Q1,2026,311785.04,367,Liam Whitfield,SMB
+NSW,CloudSync,Q1,2026,240443.35,572,Sarah Chen,Mid-Market
+VIC,DataVault,Q1,2026,354794.78,323,Marcus Boyle,Mid-Market
+VIC,Analytics Pro,Q1,2026,283569.94,334,Priya Nair,Mid-Market
+VIC,CloudSync,Q1,2026,208737.20,497,Priya Nair,SMB
+QLD,DataVault,Q1,2026,279562.86,254,Tahlia Pearson,SMB
+QLD,Analytics Pro,Q1,2026,223601.68,263,Tahlia Pearson,Mid-Market
+QLD,CloudSync,Q1,2026,157281.60,374,Tahlia Pearson,Enterprise
+SA,DataVault,Q1,2026,137964.21,125,Daniel Kostas,Enterprise
+SA,Analytics Pro,Q1,2026,105252.47,124,Daniel Kostas,Enterprise
+SA,CloudSync,Q1,2026,97010.88,231,Daniel Kostas,Mid-Market
+WA,DataVault,Q2,2026,245949.07,224,Hamish Drummond,Mid-Market
+WA,Analytics Pro,Q2,2026,175386.15,206,Hamish Drummond,Enterprise
+WA,CloudSync,Q2,2026,162910.04,388,Hamish Drummond,SMB
+NSW,DataVault,Q2,2026,611392.13,556,Sarah Chen,SMB
+NSW,Analytics Pro,Q2,2026,407075.57,479,Liam Whitfield,Mid-Market
+NSW,CloudSync,Q2,2026,302567.90,720,Sarah Chen,Mid-Market
+VIC,DataVault,Q2,2026,471490.95,429,Marcus Boyle,Enterprise
+VIC,Analytics Pro,Q2,2026,358335.99,422,Marcus Boyle,Mid-Market
+VIC,CloudSync,Q2,2026,261610.50,623,Marcus Boyle,SMB
+QLD,DataVault,Q2,2026,381165.92,347,Tahlia Pearson,SMB
+QLD,Analytics Pro,Q2,2026,289150.12,340,Tahlia Pearson,Enterprise
+QLD,CloudSync,Q2,2026,230366.83,548,Tahlia Pearson,Mid-Market
+SA,DataVault,Q2,2026,202998.07,185,Daniel Kostas,Enterprise
+SA,Analytics Pro,Q2,2026,152148.09,179,Daniel Kostas,SMB
+SA,CloudSync,Q2,2026,127933.46,305,Daniel Kostas,Mid-Market
+WA,DataVault,Q3,2026,330553.28,301,Hamish Drummond,SMB
+WA,Analytics Pro,Q3,2026,213324.04,251,Olivia Park,Mid-Market
+WA,CloudSync,Q3,2026,177143.27,422,Hamish Drummond,SMB
+NSW,DataVault,Q3,2026,701495.18,638,Sarah Chen,Mid-Market
+NSW,Analytics Pro,Q3,2026,515492.95,606,Sarah Chen,Mid-Market
+NSW,CloudSync,Q3,2026,387972.66,924,Sarah Chen,Mid-Market
+VIC,DataVault,Q3,2026,579186.99,527,Priya Nair,Mid-Market
+VIC,Analytics Pro,Q3,2026,439391.16,517,Priya Nair,Mid-Market
+VIC,CloudSync,Q3,2026,303352.87,722,Marcus Boyle,SMB
+QLD,DataVault,Q3,2026,473417.13,430,Tahlia Pearson,Mid-Market
+QLD,Analytics Pro,Q3,2026,299661.46,353,Tahlia Pearson,Mid-Market
+QLD,CloudSync,Q3,2026,268204.50,639,Tahlia Pearson,Enterprise
+SA,DataVault,Q3,2026,236920.83,215,Daniel Kostas,Mid-Market
+SA,Analytics Pro,Q3,2026,171166.06,201,Daniel Kostas,Enterprise
+SA,CloudSync,Q3,2026,154339.90,367,Daniel Kostas,SMB
+WA,DataVault,Q4,2026,275900.02,251,Olivia Park,Enterprise
+WA,Analytics Pro,Q4,2026,204746.61,241,Olivia Park,Enterprise
+WA,CloudSync,Q4,2026,184023.34,438,Hamish Drummond,Mid-Market
+NSW,DataVault,Q4,2026,643446.37,585,Liam Whitfield,Mid-Market
+NSW,Analytics Pro,Q4,2026,530472.81,624,Sarah Chen,SMB
+NSW,CloudSync,Q4,2026,390936.45,931,Liam Whitfield,SMB
+VIC,DataVault,Q4,2026,605568.28,551,Marcus Boyle,SMB
+VIC,Analytics Pro,Q4,2026,440859.00,519,Marcus Boyle,Mid-Market
+VIC,CloudSync,Q4,2026,320631.54,763,Priya Nair,Enterprise
+QLD,DataVault,Q4,2026,456270.91,415,Tahlia Pearson,Enterprise
+QLD,Analytics Pro,Q4,2026,325214.18,383,Tahlia Pearson,SMB
+QLD,CloudSync,Q4,2026,262052.00,624,Tahlia Pearson,Mid-Market
+SA,DataVault,Q4,2026,226973.04,206,Daniel Kostas,Enterprise
+SA,Analytics Pro,Q4,2026,188326.73,222,Daniel Kostas,Mid-Market
+SA,CloudSync,Q4,2026,143198.67,341,Daniel Kostas,Mid-Market

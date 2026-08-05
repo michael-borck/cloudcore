@@ -1,0 +1,251 @@
+review_id,customer_id,product,region,rating,review_text
+RV0002,CC0386,DataVault,VIC,5,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0021,CC0207,DataVault,VIC,5,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0025,CC0297,Analytics Pro,NSW,5,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0034,CC0142,Analytics Pro,SA,5,"Consistently dependable, we trust them with our most important workloads."
+RV0035,CC0154,Analytics Pro,VIC,5,"Consistently dependable, we trust them with our most important workloads."
+RV0039,CC0099,DataVault,SA,5,Great value for money and the onboarding was smooth and well organised.
+RV0040,CC0208,DataVault,QLD,5,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0043,CC0028,Analytics Pro,SA,5,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0063,CC0100,DataVault,VIC,5,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0065,CC0341,Analytics Pro,NSW,5,"Consistently dependable, we trust them with our most important workloads."
+RV0067,CC0205,Analytics Pro,VIC,5,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0070,CC0208,DataVault,QLD,5,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0073,CC0051,DataVault,SA,5,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0079,CC0033,CloudSync,NSW,5,Great value for money and the onboarding was smooth and well organised.
+RV0083,CC0070,Analytics Pro,WA,5,Great value for money and the onboarding was smooth and well organised.
+RV0095,CC0342,DataVault,VIC,5,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0098,CC0158,Analytics Pro,NSW,5,Great value for money and the onboarding was smooth and well organised.
+RV0106,CC0231,Analytics Pro,NSW,5,"Consistently dependable, we trust them with our most important workloads."
+RV0111,CC0254,Analytics Pro,QLD,5,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0130,CC0318,DataVault,WA,5,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0135,CC0178,DataVault,QLD,5,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0136,CC0259,DataVault,NSW,5,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0142,CC0132,DataVault,SA,5,"Consistently dependable, we trust them with our most important workloads."
+RV0146,CC0335,DataVault,QLD,5,Great value for money and the onboarding was smooth and well organised.
+RV0149,CC0158,Analytics Pro,NSW,5,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0160,CC0310,DataVault,NSW,5,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0162,CC0189,DataVault,VIC,5,Great value for money and the onboarding was smooth and well organised.
+RV0172,CC0325,Analytics Pro,QLD,5,"Consistently dependable, we trust them with our most important workloads."
+RV0194,CC0313,DataVault,SA,5,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0212,CC0400,Analytics Pro,NSW,5,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0217,CC0254,Analytics Pro,QLD,5,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0218,CC0088,CloudSync,NSW,5,"Consistently dependable, we trust them with our most important workloads."
+RV0219,CC0309,DataVault,WA,5,Great value for money and the onboarding was smooth and well organised.
+RV0224,CC0095,CloudSync,SA,5,"Consistently dependable, we trust them with our most important workloads."
+RV0226,CC0150,DataVault,QLD,5,"Consistently dependable, we trust them with our most important workloads."
+RV0229,CC0201,DataVault,NSW,5,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0236,CC0218,Analytics Pro,VIC,5,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0241,CC0140,DataVault,NSW,5,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0245,CC0351,DataVault,NSW,5,"Consistently dependable, we trust them with our most important workloads."
+RV0004,CC0376,DataVault,VIC,4,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0008,CC0380,DataVault,WA,4,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0013,CC0034,DataVault,QLD,4,Great value for money and the onboarding was smooth and well organised.
+RV0015,CC0110,Analytics Pro,VIC,4,Great value for money and the onboarding was smooth and well organised.
+RV0017,CC0109,CloudSync,NSW,4,"Consistently dependable, we trust them with our most important workloads."
+RV0018,CC0077,DataVault,WA,4,Great value for money and the onboarding was smooth and well organised.
+RV0020,CC0099,DataVault,SA,4,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0026,CC0187,Analytics Pro,VIC,4,Great value for money and the onboarding was smooth and well organised.
+RV0027,CC0106,DataVault,VIC,4,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0028,CC0328,Analytics Pro,NSW,4,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0032,CC0158,Analytics Pro,NSW,4,Great value for money and the onboarding was smooth and well organised.
+RV0033,CC0011,DataVault,QLD,4,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0041,CC0018,DataVault,NSW,4,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0042,CC0158,Analytics Pro,NSW,4,Great value for money and the onboarding was smooth and well organised.
+RV0047,CC0196,DataVault,NSW,4,Great value for money and the onboarding was smooth and well organised.
+RV0050,CC0260,Analytics Pro,SA,4,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0051,CC0124,Analytics Pro,VIC,4,"Consistently dependable, we trust them with our most important workloads."
+RV0052,CC0232,CloudSync,VIC,4,"Consistently dependable, we trust them with our most important workloads."
+RV0053,CC0271,DataVault,NSW,4,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0057,CC0049,Analytics Pro,VIC,4,Great value for money and the onboarding was smooth and well organised.
+RV0058,CC0211,DataVault,NSW,4,"Consistently dependable, we trust them with our most important workloads."
+RV0059,CC0215,Analytics Pro,NSW,4,Great value for money and the onboarding was smooth and well organised.
+RV0061,CC0332,DataVault,VIC,4,"Consistently dependable, we trust them with our most important workloads."
+RV0064,CC0107,Analytics Pro,QLD,4,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0069,CC0004,Analytics Pro,NSW,4,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0074,CC0024,Analytics Pro,VIC,4,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0075,CC0225,Analytics Pro,NSW,4,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0080,CC0335,DataVault,QLD,4,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0081,CC0242,Analytics Pro,SA,4,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0084,CC0189,DataVault,VIC,4,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0088,CC0052,DataVault,NSW,4,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0091,CC0151,Analytics Pro,NSW,4,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0096,CC0327,Analytics Pro,VIC,4,Great value for money and the onboarding was smooth and well organised.
+RV0097,CC0210,DataVault,VIC,4,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0099,CC0364,Analytics Pro,QLD,4,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0103,CC0235,DataVault,VIC,4,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0109,CC0341,DataVault,NSW,4,"Consistently dependable, we trust them with our most important workloads."
+RV0112,CC0038,DataVault,WA,4,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0115,CC0055,CloudSync,VIC,4,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0117,CC0039,DataVault,WA,4,"Consistently dependable, we trust them with our most important workloads."
+RV0120,CC0241,Analytics Pro,QLD,4,Great value for money and the onboarding was smooth and well organised.
+RV0124,CC0300,CloudSync,VIC,4,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0125,CC0044,Analytics Pro,SA,4,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0126,CC0072,Analytics Pro,WA,4,"Consistently dependable, we trust them with our most important workloads."
+RV0128,CC0063,DataVault,VIC,4,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0129,CC0222,Analytics Pro,VIC,4,"Consistently dependable, we trust them with our most important workloads."
+RV0132,CC0090,DataVault,QLD,4,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0133,CC0206,CloudSync,SA,4,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0134,CC0345,Analytics Pro,SA,4,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0144,CC0148,Analytics Pro,QLD,4,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0145,CC0259,DataVault,NSW,4,Great value for money and the onboarding was smooth and well organised.
+RV0147,CC0203,Analytics Pro,QLD,4,"Consistently dependable, we trust them with our most important workloads."
+RV0148,CC0365,DataVault,NSW,4,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0150,CC0148,Analytics Pro,QLD,4,"Consistently dependable, we trust them with our most important workloads."
+RV0152,CC0114,Analytics Pro,WA,4,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0156,CC0024,DataVault,VIC,4,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0157,CC0392,Analytics Pro,NSW,4,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0158,CC0182,DataVault,QLD,4,Great value for money and the onboarding was smooth and well organised.
+RV0159,CC0299,Analytics Pro,NSW,4,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0161,CC0314,Analytics Pro,NSW,4,Great value for money and the onboarding was smooth and well organised.
+RV0166,CC0383,Analytics Pro,QLD,4,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0167,CC0227,DataVault,NSW,4,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0173,CC0228,DataVault,QLD,4,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0176,CC0219,CloudSync,VIC,4,Great value for money and the onboarding was smooth and well organised.
+RV0178,CC0077,DataVault,WA,4,"Consistently dependable, we trust them with our most important workloads."
+RV0179,CC0122,DataVault,VIC,4,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0188,CC0204,Analytics Pro,VIC,4,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0195,CC0351,DataVault,NSW,4,Great value for money and the onboarding was smooth and well organised.
+RV0198,CC0055,CloudSync,VIC,4,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0205,CC0249,DataVault,WA,4,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0208,CC0389,Analytics Pro,QLD,4,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0210,CC0295,DataVault,SA,4,"Consistently dependable, we trust them with our most important workloads."
+RV0213,CC0142,Analytics Pro,SA,4,"Consistently dependable, we trust them with our most important workloads."
+RV0214,CC0248,CloudSync,SA,4,"Really happy with the service, it just works and has scaled with our business effortlessly."
+RV0215,CC0034,DataVault,QLD,4,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0220,CC0081,CloudSync,SA,4,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0227,CC0009,Analytics Pro,QLD,4,"Consistently dependable, we trust them with our most important workloads."
+RV0228,CC0353,Analytics Pro,NSW,4,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0232,CC0111,Analytics Pro,NSW,4,"Excellent product and support, we have recommended CloudCore to several partners."
+RV0233,CC0380,DataVault,WA,4,"Consistently dependable, we trust them with our most important workloads."
+RV0235,CC0078,Analytics Pro,NSW,4,CloudCore has been rock solid for us; the platform is reliable and the team is responsive.
+RV0244,CC0037,Analytics Pro,SA,4,"Consistently dependable, we trust them with our most important workloads."
+RV0246,CC0188,DataVault,NSW,4,Great value for money and the onboarding was smooth and well organised.
+RV0248,CC0381,Analytics Pro,WA,4,Great value for money and the onboarding was smooth and well organised.
+RV0250,CC0092,CloudSync,SA,4,Great value for money and the onboarding was smooth and well organised.
+RV0007,CC0206,CloudSync,SA,3,"Works as advertised, pricing feels a touch high for what we use."
+RV0009,CC0207,DataVault,VIC,3,"Works as advertised, pricing feels a touch high for what we use."
+RV0010,CC0049,Analytics Pro,VIC,3,"Decent service overall, though there is room for improvement on a few features."
+RV0012,CC0162,CloudSync,NSW,3,"Works as advertised, pricing feels a touch high for what we use."
+RV0014,CC0259,DataVault,NSW,3,"Works as advertised, pricing feels a touch high for what we use."
+RV0022,CC0296,CloudSync,QLD,3,"It does the job, nothing exceptional but no major complaints either."
+RV0024,CC0002,CloudSync,QLD,3,"It does the job, nothing exceptional but no major complaints either."
+RV0029,CC0335,Analytics Pro,QLD,3,"Works as advertised, pricing feels a touch high for what we use."
+RV0031,CC0281,Analytics Pro,NSW,3,"Decent service overall, though there is room for improvement on a few features."
+RV0037,CC0278,CloudSync,VIC,3,"Average experience, some modules are great while others feel half-finished."
+RV0038,CC0109,CloudSync,NSW,3,"Generally fine, support can be hit and miss depending on who you reach."
+RV0045,CC0043,CloudSync,VIC,3,"Works as advertised, pricing feels a touch high for what we use."
+RV0046,CC0386,DataVault,VIC,3,"Works as advertised, pricing feels a touch high for what we use."
+RV0048,CC0253,Analytics Pro,NSW,3,"Decent service overall, though there is room for improvement on a few features."
+RV0049,CC0227,DataVault,NSW,3,"Generally fine, support can be hit and miss depending on who you reach."
+RV0054,CC0249,Analytics Pro,WA,3,"Works as advertised, pricing feels a touch high for what we use."
+RV0055,CC0052,DataVault,NSW,3,"Generally fine, support can be hit and miss depending on who you reach."
+RV0062,CC0033,CloudSync,NSW,3,"It does the job, nothing exceptional but no major complaints either."
+RV0066,CC0233,CloudSync,WA,3,"It does the job, nothing exceptional but no major complaints either."
+RV0072,CC0068,CloudSync,NSW,3,"Average experience, some modules are great while others feel half-finished."
+RV0076,CC0098,Analytics Pro,WA,3,"It does the job, nothing exceptional but no major complaints either."
+RV0078,CC0066,CloudSync,VIC,3,"It does the job, nothing exceptional but no major complaints either."
+RV0082,CC0057,CloudSync,QLD,3,"Generally fine, support can be hit and miss depending on who you reach."
+RV0085,CC0132,DataVault,SA,3,"Works as advertised, pricing feels a touch high for what we use."
+RV0087,CC0387,CloudSync,QLD,3,"Generally fine, support can be hit and miss depending on who you reach."
+RV0090,CC0101,DataVault,QLD,3,"Generally fine, support can be hit and miss depending on who you reach."
+RV0093,CC0015,DataVault,VIC,3,"Generally fine, support can be hit and miss depending on who you reach."
+RV0094,CC0010,CloudSync,NSW,3,"Generally fine, support can be hit and miss depending on who you reach."
+RV0100,CC0053,Analytics Pro,WA,3,"Decent service overall, though there is room for improvement on a few features."
+RV0102,CC0090,DataVault,QLD,3,"It does the job, nothing exceptional but no major complaints either."
+RV0107,CC0154,DataVault,VIC,3,"Average experience, some modules are great while others feel half-finished."
+RV0108,CC0295,Analytics Pro,SA,3,"Works as advertised, pricing feels a touch high for what we use."
+RV0110,CC0274,CloudSync,SA,3,"Decent service overall, though there is room for improvement on a few features."
+RV0114,CC0250,CloudSync,NSW,3,"It does the job, nothing exceptional but no major complaints either."
+RV0119,CC0284,CloudSync,VIC,3,"It does the job, nothing exceptional but no major complaints either."
+RV0127,CC0383,Analytics Pro,QLD,3,"Decent service overall, though there is room for improvement on a few features."
+RV0137,CC0190,CloudSync,QLD,3,"Decent service overall, though there is room for improvement on a few features."
+RV0138,CC0131,Analytics Pro,NSW,3,"Works as advertised, pricing feels a touch high for what we use."
+RV0141,CC0011,DataVault,QLD,3,"Generally fine, support can be hit and miss depending on who you reach."
+RV0143,CC0200,Analytics Pro,VIC,3,"Generally fine, support can be hit and miss depending on who you reach."
+RV0155,CC0062,CloudSync,NSW,3,"Works as advertised, pricing feels a touch high for what we use."
+RV0165,CC0046,CloudSync,NSW,3,"Average experience, some modules are great while others feel half-finished."
+RV0170,CC0023,Analytics Pro,QLD,3,"Decent service overall, though there is room for improvement on a few features."
+RV0171,CC0395,CloudSync,NSW,3,"Generally fine, support can be hit and miss depending on who you reach."
+RV0174,CC0206,CloudSync,SA,3,"Decent service overall, though there is room for improvement on a few features."
+RV0180,CC0098,Analytics Pro,WA,3,"Generally fine, support can be hit and miss depending on who you reach."
+RV0182,CC0130,DataVault,VIC,3,"It does the job, nothing exceptional but no major complaints either."
+RV0183,CC0315,Analytics Pro,WA,3,"Average experience, some modules are great while others feel half-finished."
+RV0184,CC0396,Analytics Pro,QLD,3,"It does the job, nothing exceptional but no major complaints either."
+RV0185,CC0232,CloudSync,VIC,3,"Works as advertised, pricing feels a touch high for what we use."
+RV0186,CC0006,Analytics Pro,VIC,3,"Average experience, some modules are great while others feel half-finished."
+RV0187,CC0274,CloudSync,SA,3,"Works as advertised, pricing feels a touch high for what we use."
+RV0189,CC0070,Analytics Pro,WA,3,"Decent service overall, though there is room for improvement on a few features."
+RV0190,CC0237,CloudSync,NSW,3,"Generally fine, support can be hit and miss depending on who you reach."
+RV0191,CC0171,DataVault,QLD,3,"Decent service overall, though there is room for improvement on a few features."
+RV0192,CC0163,Analytics Pro,NSW,3,"Decent service overall, though there is room for improvement on a few features."
+RV0193,CC0270,CloudSync,NSW,3,"Works as advertised, pricing feels a touch high for what we use."
+RV0196,CC0034,DataVault,QLD,3,"Works as advertised, pricing feels a touch high for what we use."
+RV0203,CC0400,Analytics Pro,NSW,3,"Generally fine, support can be hit and miss depending on who you reach."
+RV0206,CC0399,DataVault,NSW,3,"Decent service overall, though there is room for improvement on a few features."
+RV0207,CC0064,Analytics Pro,VIC,3,"It does the job, nothing exceptional but no major complaints either."
+RV0209,CC0155,Analytics Pro,VIC,3,"Decent service overall, though there is room for improvement on a few features."
+RV0211,CC0386,DataVault,VIC,3,"Generally fine, support can be hit and miss depending on who you reach."
+RV0222,CC0329,Analytics Pro,VIC,3,"Works as advertised, pricing feels a touch high for what we use."
+RV0223,CC0329,Analytics Pro,VIC,3,"Decent service overall, though there is room for improvement on a few features."
+RV0225,CC0292,CloudSync,WA,3,"Generally fine, support can be hit and miss depending on who you reach."
+RV0231,CC0237,CloudSync,NSW,3,"It does the job, nothing exceptional but no major complaints either."
+RV0237,CC0024,Analytics Pro,VIC,3,"Generally fine, support can be hit and miss depending on who you reach."
+RV0238,CC0091,CloudSync,NSW,3,"Decent service overall, though there is room for improvement on a few features."
+RV0239,CC0331,DataVault,WA,3,"Works as advertised, pricing feels a touch high for what we use."
+RV0240,CC0015,DataVault,VIC,3,"Works as advertised, pricing feels a touch high for what we use."
+RV0247,CC0142,Analytics Pro,SA,3,"It does the job, nothing exceptional but no major complaints either."
+RV0249,CC0093,CloudSync,VIC,3,"Generally fine, support can be hit and miss depending on who you reach."
+RV0001,CC0089,CloudSync,NSW,2,We are actively evaluating alternatives after a string of frustrating incidents.
+RV0003,CC0372,Analytics Pro,QLD,2,We are actively evaluating alternatives after a string of frustrating incidents.
+RV0005,CC0368,CloudSync,SA,2,"Not impressed, the platform feels clunky and support takes too long to engage."
+RV0011,CC0092,CloudSync,SA,2,"Poor experience post-incident, communication was lacking when we needed it most."
+RV0016,CC0002,CloudSync,QLD,2,Frustrated with the recent disruptions and the lack of proactive updates.
+RV0019,CC0030,CloudSync,WA,2,"Disappointing reliability lately, we have had several outages and slow responses. The breach handling left a lot to be desired and we lost confidence."
+RV0023,CC0349,Analytics Pro,QLD,2,"Disappointing reliability lately, we have had several outages and slow responses."
+RV0030,CC0230,CloudSync,QLD,2,"Disappointing reliability lately, we have had several outages and slow responses."
+RV0044,CC0202,CloudSync,NSW,2,We are actively evaluating alternatives after a string of frustrating incidents.
+RV0071,CC0153,CloudSync,VIC,2,"Poor experience post-incident, communication was lacking when we needed it most."
+RV0086,CC0383,CloudSync,QLD,2,"Poor experience post-incident, communication was lacking when we needed it most."
+RV0092,CC0062,CloudSync,NSW,2,"Poor experience post-incident, communication was lacking when we needed it most."
+RV0104,CC0341,CloudSync,NSW,2,Frustrated with the recent disruptions and the lack of proactive updates.
+RV0113,CC0206,CloudSync,SA,2,We are actively evaluating alternatives after a string of frustrating incidents.
+RV0116,CC0104,CloudSync,VIC,2,"Not impressed, the platform feels clunky and support takes too long to engage."
+RV0118,CC0339,CloudSync,NSW,2,Frustrated with the recent disruptions and the lack of proactive updates.
+RV0121,CC0190,CloudSync,QLD,2,"Poor experience post-incident, communication was lacking when we needed it most."
+RV0122,CC0350,CloudSync,NSW,2,Frustrated with the recent disruptions and the lack of proactive updates.
+RV0123,CC0105,DataVault,WA,2,"Disappointing reliability lately, we have had several outages and slow responses."
+RV0131,CC0315,Analytics Pro,WA,2,We are actively evaluating alternatives after a string of frustrating incidents. The breach handling left a lot to be desired and we lost confidence.
+RV0139,CC0356,Analytics Pro,QLD,2,"Poor experience post-incident, communication was lacking when we needed it most."
+RV0140,CC0012,CloudSync,QLD,2,"Not impressed, the platform feels clunky and support takes too long to engage."
+RV0151,CC0133,CloudSync,QLD,2,"Poor experience post-incident, communication was lacking when we needed it most."
+RV0153,CC0095,CloudSync,SA,2,Frustrated with the recent disruptions and the lack of proactive updates.
+RV0154,CC0005,CloudSync,VIC,2,Frustrated with the recent disruptions and the lack of proactive updates.
+RV0163,CC0233,CloudSync,WA,2,"Poor experience post-incident, communication was lacking when we needed it most. After the security incident we are reconsidering whether to renew at all."
+RV0164,CC0159,DataVault,WA,2,"Poor experience post-incident, communication was lacking when we needed it most. The September data breach has severely eroded our trust in CloudCore."
+RV0168,CC0380,CloudSync,WA,2,"Disappointing reliability lately, we have had several outages and slow responses."
+RV0169,CC0283,CloudSync,QLD,2,Frustrated with the recent disruptions and the lack of proactive updates.
+RV0175,CC0102,CloudSync,NSW,2,"Poor experience post-incident, communication was lacking when we needed it most."
+RV0177,CC0065,CloudSync,NSW,2,"Disappointing reliability lately, we have had several outages and slow responses."
+RV0181,CC0136,CloudSync,NSW,2,Frustrated with the recent disruptions and the lack of proactive updates.
+RV0197,CC0199,DataVault,WA,2,"Poor experience post-incident, communication was lacking when we needed it most. The breach handling left a lot to be desired and we lost confidence."
+RV0200,CC0260,CloudSync,SA,2,We are actively evaluating alternatives after a string of frustrating incidents.
+RV0201,CC0229,CloudSync,QLD,2,Frustrated with the recent disruptions and the lack of proactive updates.
+RV0202,CC0378,Analytics Pro,WA,2,"Disappointing reliability lately, we have had several outages and slow responses."
+RV0204,CC0092,Analytics Pro,SA,2,Frustrated with the recent disruptions and the lack of proactive updates.
+RV0216,CC0321,CloudSync,QLD,2,We are actively evaluating alternatives after a string of frustrating incidents.
+RV0221,CC0098,Analytics Pro,WA,2,"Disappointing reliability lately, we have had several outages and slow responses. After the security incident we are reconsidering whether to renew at all."
+RV0230,CC0040,DataVault,VIC,2,"Disappointing reliability lately, we have had several outages and slow responses."
+RV0234,CC0074,CloudSync,VIC,2,"Poor experience post-incident, communication was lacking when we needed it most."
+RV0242,CC0328,Analytics Pro,NSW,2,We are actively evaluating alternatives after a string of frustrating incidents.
+RV0243,CC0357,CloudSync,VIC,2,"Poor experience post-incident, communication was lacking when we needed it most."
+RV0006,CC0081,CloudSync,SA,1,"Disappointing reliability lately, we have had several outages and slow responses."
+RV0036,CC0261,CloudSync,WA,1,We are actively evaluating alternatives after a string of frustrating incidents.
+RV0056,CC0112,CloudSync,VIC,1,We are actively evaluating alternatives after a string of frustrating incidents.
+RV0060,CC0030,CloudSync,WA,1,We are actively evaluating alternatives after a string of frustrating incidents. The September data breach has severely eroded our trust in CloudCore.
+RV0068,CC0249,CloudSync,WA,1,"Poor experience post-incident, communication was lacking when we needed it most. The breach handling left a lot to be desired and we lost confidence."
+RV0077,CC0002,CloudSync,QLD,1,Frustrated with the recent disruptions and the lack of proactive updates.
+RV0089,CC0114,CloudSync,WA,1,Frustrated with the recent disruptions and the lack of proactive updates.
+RV0101,CC0119,CloudSync,VIC,1,"Not impressed, the platform feels clunky and support takes too long to engage."
+RV0105,CC0186,CloudSync,WA,1,"Disappointing reliability lately, we have had several outages and slow responses."
+RV0199,CC0081,CloudSync,SA,1,Frustrated with the recent disruptions and the lack of proactive updates.
