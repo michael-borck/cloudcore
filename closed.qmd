@@ -1,0 +1,20 @@
+---
+title: "Offices Closed"
+toc: false
+---
+
+::: {.card style="max-width: 30rem; margin: 2rem auto; padding: 2rem; text-align: center;"}
+## CloudCore's offices are currently closed
+
+Our staff and systems are available during business hours:
+
+**Monday – Friday, 7:00 am – 7:00 pm** (Perth time)
+*excluding WA public holidays*
+
+Please return during business hours to access documentation
+and meet with our staff.
+:::
+
+<small style="display:block; text-align:center;">Just like a real client
+engagement — plan your document reviews and interviews within the
+working day.</small>
