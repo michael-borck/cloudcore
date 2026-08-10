@@ -30,7 +30,7 @@ This simulated corporate website is designed to provide students with:
 This site is currently used in:
 - ISYS6018 - Information Security Audit and Control
 - ISYS2002 - Systems Analysis and Design  
-- ISYS6014 - Knowledge Management and Intelligent Systems
+- ISYS6014 - AI-Driven Knowledge Systems
 - ISAD5001 - Information Systems Analysis and Design
 
 ## AI-Generated Content

@@ -26,7 +26,7 @@ CloudCore Networks simulates a fictional cloud services company experiencing a s
 
 - **Information Security Audit and Control (ISYS6018)**
 - **Systems Analysis and Design (ISYS2002)**
-- **Knowledge Management and Intelligent Systems (ISYS6014)**
+- **AI-Driven Knowledge Systems (ISYS6014)**
 - **Information Systems Analysis and Design (ISAD5001)**
 
 ## 🔧 For Developers
