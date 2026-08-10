@@ -31,6 +31,9 @@
                 const u = new URL(a.getAttribute('href'), window.location.href);
                 if (u.hostname === PUBLIC_HOST && PROTECTED.test(u.pathname)) {
                     u.hostname = GATED_HOST;
+                    // the public build can't resolve gated .qmd targets, so
+                    // nav links arrive raw — point them at the rendered page
+                    u.pathname = u.pathname.replace(/\.qmd$/, '.html');
                     a.href = u.toString();
                 }
             } catch (e) { /* not a URL we care about */ }
