@@ -7,7 +7,7 @@ const BookingAPI = {
     // API base URL - switches between local dev and production
     baseUrl: window.location.hostname === 'localhost'
         ? (typeof CloudCoreConfig !== 'undefined' ? CloudCoreConfig.bookingApiLocalUrl : 'http://localhost:8080/api')
-        : (typeof CloudCoreConfig !== 'undefined' ? CloudCoreConfig.bookingApiUrl : 'https://booking-api.eduserver.au/api'),
+        : (typeof CloudCoreConfig !== 'undefined' ? CloudCoreConfig.bookingApiUrl : 'https://booking.cloudcore.eduserver.au/api'),
 
     // Student identification: an issued "contractor badge" code — no emails
     // or names anywhere. localStorage (not session) so it survives the tab.
