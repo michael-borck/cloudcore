@@ -83,6 +83,9 @@ SLUG_MAP = {
     "mark_gonzalez": "mark_gonzalez",
     "sarah_thompson": "sarah_thompson",
     "marcell_ziemann": "marcell_ziemann",
+    # Prompt-only bot: no backstory, no documents — must NOT learn CloudCore
+    # internals. Included here so phase2 keeps its live prompt in sync.
+    "help_bot": "help_bot",
 }
 
 # Backstory filename mapping
@@ -319,6 +322,13 @@ def phase4_upload_documents():
         slug = SLUG_MAP.get(bot)
         if not slug:
             fail(f"{bot}: no slug mapping, skipping")
+            continue
+
+        # Prompt-only bots (e.g. help_bot) have no backstory and must receive
+        # NO documents — they are not CloudCore personas.
+        if bot not in BACKSTORY_MAP:
+            print(f"\n  [{bot}] (slug: {slug})")
+            print("    Prompt-only bot — skipping document assignment")
             continue
 
         print(f"\n  [{bot}] (slug: {slug})")

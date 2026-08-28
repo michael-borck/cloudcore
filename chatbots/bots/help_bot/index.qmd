@@ -7,7 +7,7 @@ about:
 categories: ['Help', 'Guide']
 ---
 
-**CloudCore Help Bot** — Your guide to using the interview and booking system. This bot is freely accessible — no appointment needed.
+**CloudCore Help Bot** — Your guide to using the interview and booking system. No appointment needed — just open the chat and ask.
 
 **Ask me about:**
 
@@ -22,7 +22,7 @@ categories: ['Help', 'Guide']
 *Note: The Help Bot can assist with platform navigation only. For questions about CloudCore operations, book an interview with the relevant staff member.*
 
 <!--
-Help Bot - freely accessible, no booking required
+Help Bot - no booking required
 -->
 <script
   data-embed-id="9aa8e6d1-ca4a-437e-8b51-44b9535ef18d"
