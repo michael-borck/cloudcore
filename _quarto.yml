@@ -65,6 +65,8 @@ website:
           - text: "---"
           - text: Data Dictionary
             href: docs/data-dictionary.qmd
+          - text: Client Data Extracts
+            href: docs/consultant-data.qmd
           - text: AI Strategy
             href: docs/strategy/ai-opportunity-pipeline.qmd
           - text: Systems Analysis

@@ -1,0 +1,141 @@
+---
+title: "Client Data Extracts"
+---
+
+# Client Data Extracts
+
+::: {.callout-important}
+## Contractor access required
+
+These extracts are provisioned for **active consulting engagements only**.
+They are not part of CloudCore's public portfolio. Log in with your
+engagement credentials to download.
+:::
+
+The four files below are the **operational data extracts** referenced in your
+engagement brief. They describe the **same 280 CloudCore customers**, joined on
+`customer_id`, so a finding in one file can be checked against the others.
+Each file is small (280 rows or fewer, no missing values) and loads directly
+into an Orange **File** widget or `pandas.read_csv()`.
+
+| File | Rows | Contents |
+|------|-----:|----------|
+| [`cloudcore_customers.csv`](data/cloudcore_customers.csv) | 280 | Customer profile, tenure, product mix, churn flag |
+| [`cloudcore_transactions.csv`](data/cloudcore_transactions.csv) | 280 | Usage and billing signals (2026-05 snapshot) |
+| [`cloudcore_support_tickets.csv`](data/cloudcore_support_tickets.csv) | 360 | Ticket text, product, region, satisfaction |
+| [`cloudcore_reviews.csv`](data/cloudcore_reviews.csv) | 240 | Free-text product reviews and ratings |
+
+::: {.callout-note}
+## These extracts, not the public portfolio
+
+CloudCore also publishes a public [data portfolio](/data-dictionary.html)
+(financial disclosures and market-facing figures). That portfolio is **not**
+the operational data for your engagement: different reporting basis, different
+figures. Quote the client's public numbers only when the brief asks for
+market context; analyse the extracts on this page for everything else.
+:::
+
+## `cloudcore_customers.csv`
+
+One row per customer. The customer master table.
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `customer_id` | string (key) | Stable identifier, `C0001`-`C0280`. Join key for all other files. |
+| `company_name` | string | Customer name (quasi-identifier; treat as re-identifiable). |
+| `industry` | categorical (9) | Finance, Healthcare, Retail, Manufacturing, Technology, Education, Logistics, Energy, Media. |
+| `region` | categorical (3) | `Sydney`, `Singapore`, `San Francisco`. |
+| `tenure_months` | numeric (int) | Months since onboarding, 1-60. |
+| `products` | string | Product mix joined by ` + ` (e.g. `DataVault + CloudSync`). |
+| `monthly_recurring_revenue` | numeric (USD) | Current MRR. Equals `billing_amount` in the transactions file. |
+| `support_tier` | ordinal (4) | `Basic` < `Standard` < `Premium` < `Enterprise`. |
+| `churn_flag` | binary (0/1) | 1 = churned or flagged at-risk in the observation window. About 25% positive. |
+
+::: {.callout-tip}
+## Signal worth finding
+
+Churn is a **combination**, not a lookup. One region churns at roughly
+two-to-three times the rate of the others; `support_tier` and `tenure_months`
+carry strong signal but also correlate with spend. Product count is not
+ready-made: it must be derived from the `products` string. No single column
+separates churners from everyone else.
+:::
+
+## `cloudcore_transactions.csv`
+
+One row per customer: a point-in-time usage and billing snapshot for the
+`2026-05` billing month.
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `transaction_id` | string (key) | `T00001`-`T00280`. |
+| `customer_id` | string (key) | Foreign key to the customers file. |
+| `billing_month` | string (date) | `2026-05` for all rows (provenance field). |
+| `storage_gb` | numeric | Storage consumed, GB. |
+| `api_calls` | numeric | API calls in the month (values reach millions). |
+| `seats` | numeric (int) | Licensed user seats. |
+| `billing_amount` | numeric (USD) | Billed amount; equals MRR in the customers file. |
+
+::: {.callout-warning}
+## Standardise before clustering
+
+`storage_gb`, `api_calls` and `seats` are on wildly different scales. Run them
+through **Preprocess** (standardise) before **k-Means**, or `api_calls` will
+dominate every distance calculation. The file clusters cleanly into about four
+behavioural groups; joining the cluster id back to the customer profile tells
+you who those groups are.
+:::
+
+## `cloudcore_support_tickets.csv`
+
+One row per support interaction; multiple tickets per customer. Date range
+June 2025 to May 2026.
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `ticket_id` | string (key) | `TK00001`-`TK00360`. |
+| `customer_id` | string (key) | Foreign key to the customers file. |
+| `product` | categorical (4) | `DataVault`, `Analytics Pro`, `CloudSync`, `Account`. |
+| `region` | categorical (3) | Customer's region. |
+| `date` | date (ISO) | Ticket date. |
+| `channel` | categorical (4) | `Email`, `Portal`, `Chat`, `Phone`. |
+| `satisfaction_score` | ordinal (1-5) | Post-resolution CSAT. |
+| `ticket_text` | free text | Short customer message; tone tracks the score. |
+
+::: {.callout-tip}
+## Signal worth finding
+
+Satisfaction is not uniform: one product and one region sit clearly below the
+rest. The text column supports preprocess, TF-IDF, hierarchical clustering
+(clusters track product) and sentiment analysis (compare model sentiment
+against the recorded score). Requires the **Orange3-Text** add-on.
+:::
+
+## `cloudcore_reviews.csv`
+
+One row per product review, roughly one per sampled customer. Free text plus a
+clean ordinal label.
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `review_id` | string (key) | `R00001`-`R00240`. |
+| `customer_id` | string (key) | Foreign key to the customers file. |
+| `product` | categorical (3) | `DataVault`, `Analytics Pro`, `CloudSync`. |
+| `region` | categorical (3) | Customer's region. |
+| `rating` | ordinal (1-5) | Reviewer rating. |
+| `review_text` | free text | Review body. |
+
+::: {.callout-tip}
+## Signal worth finding
+
+Review sentiment tracks `rating`; one product reads clearly worse than the
+others and the same under-performing region shows up here too. Text alone
+partly separates happy from unhappy customers; check the first two principal
+components coloured by rating.
+:::
+
+## A note on anonymisation
+
+`company_name` is fabricated but realistic. No real person, email or address
+appears anywhere in these files. Treat it as re-identifiable when you reason
+about privacy: that is the point.
