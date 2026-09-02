@@ -141,11 +141,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
         <li>
-    <a class="dropdown-item" href="./docs/policies.qmd">
+    <a class="dropdown-item" href="./docs/policies.html">
  <span class="dropdown-text">Documentation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/support.qmd">
+    <a class="dropdown-item" href="./docs/support.html">
  <span class="dropdown-text">Support Center</span></a>
   </li>  
         <li>
@@ -154,36 +154,40 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
-    <a class="dropdown-item" href="./chatbots/index.qmd">
+    <a class="dropdown-item" href="./chatbots/index.html">
  <span class="dropdown-text">Meet the Team</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/interviews.qmd">
+    <a class="dropdown-item" href="./docs/interviews.html">
  <span class="dropdown-text">Interviews</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/articles.qmd">
+    <a class="dropdown-item" href="./docs/articles.html">
  <span class="dropdown-text">Articles</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/logs.qmd">
+    <a class="dropdown-item" href="./docs/logs.html">
  <span class="dropdown-text">System Logs</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
-    <a class="dropdown-item" href="./docs/data-dictionary.qmd">
+    <a class="dropdown-item" href="./docs/data-dictionary.html">
  <span class="dropdown-text">Data Dictionary</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/strategy/ai-opportunity-pipeline.qmd">
+    <a class="dropdown-item" href="./docs/consultant-data.html">
+ <span class="dropdown-text">Client Data Extracts</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./docs/strategy/ai-opportunity-pipeline.html">
  <span class="dropdown-text">AI Strategy</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/systems-analysis/crm-current-state.qmd">
+    <a class="dropdown-item" href="./docs/systems-analysis/crm-current-state.html">
  <span class="dropdown-text">Systems Analysis</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/diagrams/network-current.qmd">
+    <a class="dropdown-item" href="./docs/diagrams/network-current.html">
  <span class="dropdown-text">Network &amp; Org Diagrams</span></a>
   </li>  
     </ul>
@@ -384,7 +388,7 @@ Investing in tomorrow’s technology today</p>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/cloudcore\.eduserver\.au");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

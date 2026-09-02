@@ -83,6 +83,9 @@ SLUG_MAP = {
     "mark_gonzalez": "mark_gonzalez",
     "sarah_thompson": "sarah_thompson",
     "marcell_ziemann": "marcell_ziemann",
+    # Prompt-only bot: no backstory, no documents — must NOT learn CloudCore
+    # internals. Included here so phase2 keeps its live prompt in sync.
+    "help_bot": "help_bot",
 }
 
 # Backstory filename mapping
@@ -119,6 +122,11 @@ UNIVERSAL_DOCS = [
     "unit-employee-guide.md",
     "student_focus.md",
 ]
+
+# Public-only documents for non-persona bots (no backstory, no internal docs)
+PUBLIC_ONLY_DOCS = {
+    "help_bot": ["help_bot_staff_directory.md"],
+}
 
 # Selective document assignments
 DOC_ASSIGNMENTS = {
@@ -321,6 +329,10 @@ def phase4_upload_documents():
             fail(f"{bot}: no slug mapping, skipping")
             continue
 
+        # Non-persona bots (e.g. help_bot) have no backstory and must never
+        # receive internal docs — only whitelisted PUBLIC documents.
+        persona = bot in BACKSTORY_MAP
+
         print(f"\n  [{bot}] (slug: {slug})")
 
         # First, get current documents in this workspace
@@ -341,23 +353,30 @@ def phase4_upload_documents():
         # Build list of new docs for this bot
         docs_to_add = []
 
-        # Personal backstory
-        backstory = BACKSTORY_MAP.get(bot)
-        if backstory and backstory in uploaded:
-            docs_to_add.append(uploaded[backstory])
-            ok(f"personal: {backstory}")
+        if persona:
+            # Personal backstory
+            backstory = BACKSTORY_MAP.get(bot)
+            if backstory and backstory in uploaded:
+                docs_to_add.append(uploaded[backstory])
+                ok(f"personal: {backstory}")
 
-        # Universal docs
-        for udoc in UNIVERSAL_DOCS:
-            if udoc in uploaded:
-                docs_to_add.append(uploaded[udoc])
-                ok(f"universal: {udoc}")
+            # Universal docs
+            for udoc in UNIVERSAL_DOCS:
+                if udoc in uploaded:
+                    docs_to_add.append(uploaded[udoc])
+                    ok(f"universal: {udoc}")
 
-        # Selective docs
-        for doc, bots_list in DOC_ASSIGNMENTS.items():
-            if bot in bots_list and doc in uploaded:
-                docs_to_add.append(uploaded[doc])
-                ok(f"selective: {doc}")
+            # Selective docs
+            for doc, bots_list in DOC_ASSIGNMENTS.items():
+                if bot in bots_list and doc in uploaded:
+                    docs_to_add.append(uploaded[doc])
+                    ok(f"selective: {doc}")
+        else:
+            # Public docs only — never backstories, universal, or selective docs
+            for doc in PUBLIC_ONLY_DOCS.get(bot, []):
+                if doc in uploaded:
+                    docs_to_add.append(uploaded[doc])
+                    ok(f"public: {doc}")
 
         # Apply: remove old, add new
         if docs_to_add or old_docpaths:
