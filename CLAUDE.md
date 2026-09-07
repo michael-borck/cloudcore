@@ -38,7 +38,14 @@ CloudCore Networks is an educational platform built with Quarto static site gene
 - `/_extensions/` - Quarto extensions (lordicon for animated icons)
 
 ### Key Implementation Details
-1. **Access Control**: SERVER-SIDE since Aug 2026. The public Pages build contains no `/docs/` or `/chatbots/` at all; those live on `gated.cloudcore.eduserver.au`, served from the VPS behind Caddy `forward_auth` → cloudcore-api `/session/verify` (unit password → HttpOnly cookie via `POST /session`; per-unit visibility rules and staged release evaluated server-side). Bookings/chat identity is an issued badge code via sim-booking-api. `session-gate.js` is UX only
+1. **Access Control**: SERVER-SIDE since Aug 2026; since Sep 2026 (ADR 0001 in
+   cloudcore-api `docs/adr/`) **cloudcore-api IS the gated origin** — Caddy
+   reverse-proxies `gated.*` straight to the API (no `forward_auth` hop), which
+   enforces session, business hours, and per-unit visibility rules while serving
+   each page; listings are filtered per unit at render time, so a unit is never
+   sent content it cannot see. The unit password buys an HttpOnly cookie via
+   `POST /session`. Bookings/chat identity is an issued badge code via
+   sim-booking-api. `session-gate.js` is UX only
 2. **Content Organization**: Uses Quarto's listing feature for blog and chatbot directories
 3. **Navigation**: Multi-level navbar with dropdown menus for documentation sections
 4. **Chatbot Integration**: Each character has an embedded AnythingLLM chat widget with unique embed IDs
