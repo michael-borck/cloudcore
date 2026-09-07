@@ -112,6 +112,7 @@ format:
           <script src="/scripts/booking-api.js"></script>
           <script src="/scripts/booking-modal.js"></script>
           <script src="/scripts/chatbot-booking.js"></script>
+          <script src="/scripts/visibility.js"></script>
           <script src="/scripts/educational-notice.js"></script>
 
 # NB: files excluded from render are still COPIED into _site as resources
