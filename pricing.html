@@ -76,7 +76,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="./scripts/booking-api.js"></script>
 <script src="./scripts/booking-modal.js"></script>
 <script src="./scripts/chatbot-booking.js"></script>
-<script src="./scripts/visibility.js"></script>
 <script src="./scripts/educational-notice.js"></script>
 
 
@@ -142,11 +141,11 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
         <li>
-    <a class="dropdown-item" href="./docs/policies.html">
+    <a class="dropdown-item" href="./docs/policies.qmd">
  <span class="dropdown-text">Documentation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/support.html">
+    <a class="dropdown-item" href="./docs/support.qmd">
  <span class="dropdown-text">Support Center</span></a>
   </li>  
         <li>
@@ -155,40 +154,40 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
-    <a class="dropdown-item" href="./chatbots/index.html">
+    <a class="dropdown-item" href="./chatbots/index.qmd">
  <span class="dropdown-text">Meet the Team</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/interviews.html">
+    <a class="dropdown-item" href="./docs/interviews.qmd">
  <span class="dropdown-text">Interviews</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/articles.html">
+    <a class="dropdown-item" href="./docs/articles.qmd">
  <span class="dropdown-text">Articles</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/logs.html">
+    <a class="dropdown-item" href="./docs/logs.qmd">
  <span class="dropdown-text">System Logs</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
-    <a class="dropdown-item" href="./docs/data-dictionary.html">
+    <a class="dropdown-item" href="./docs/data-dictionary.qmd">
  <span class="dropdown-text">Data Dictionary</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/consultant-data.html">
+    <a class="dropdown-item" href="./docs/consultant-data.qmd">
  <span class="dropdown-text">Client Data Extracts</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/strategy/ai-opportunity-pipeline.html">
+    <a class="dropdown-item" href="./docs/strategy/ai-opportunity-pipeline.qmd">
  <span class="dropdown-text">AI Strategy</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/systems-analysis/crm-current-state.html">
+    <a class="dropdown-item" href="./docs/systems-analysis/crm-current-state.qmd">
  <span class="dropdown-text">Systems Analysis</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./docs/diagrams/network-current.html">
+    <a class="dropdown-item" href="./docs/diagrams/network-current.qmd">
  <span class="dropdown-text">Network &amp; Org Diagrams</span></a>
   </li>  
     </ul>
@@ -510,7 +509,7 @@ Yes, save 20% when you pay annually. Contact our sales team for details.</p>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/cloudcore\.eduserver\.au");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

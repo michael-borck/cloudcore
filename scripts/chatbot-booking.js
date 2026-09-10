@@ -292,7 +292,6 @@ const ChatbotBooking = {
     showOptions() {
         document.getElementById('access-options').style.display = 'flex';
         document.getElementById('attend-form').style.display = 'none';
-        document.getElementById('access-status').innerHTML = '';
     },
 
     /**
@@ -301,6 +300,7 @@ const ChatbotBooking = {
     showAttendForm() {
         document.getElementById('access-options').style.display = 'none';
         document.getElementById('attend-form').style.display = 'block';
+        document.getElementById('access-status').innerHTML = '';
 
         // Pre-fill badge if stored
         const student = BookingAPI.getStudent();
