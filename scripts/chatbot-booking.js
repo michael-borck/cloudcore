@@ -381,11 +381,16 @@ const ChatbotBooking = {
                         border-radius: 8px;
                         text-align: left;
                     ">
-                        <strong>Your appointment is not active yet</strong>
+                        <strong>You have an upcoming appointment</strong>
                         <p style="margin: 10px 0 0 0;">
                             Your interview with ${this.escapeHtml(access.employee_name)} is scheduled for:<br>
                             <strong>${BookingAPI.formatDateTime(apt.scheduled_start)}</strong>
                         </p>
+                        ${apt.reschedule_count > 0 ? `
+                        <p style="margin: 10px 0 0 0; font-size: 13px; color: #856404;">
+                            Please note: our office moved this booking — the date and time above is the current one.
+                            If you kept an earlier confirmation email or screenshot, it may be out of date.
+                        </p>` : ""}
                         <p style="margin: 10px 0 0 0; font-size: 13px;">
                             Please return at your scheduled time.
                             <a href="${BookingAPI.getCalendarUrl(apt.id)}" download style="color: #856404;">
