@@ -397,6 +397,18 @@ const ChatbotBooking = {
                                 Add to calendar
                             </a>
                         </p>
+                        <p style="margin: 10px 0 0 0; font-size: 13px;">
+                            Need a different time?
+                            <button onclick="ChatbotBooking.cancelAppointment('${apt.id}')" style="
+                                background: none;
+                                border: 1px solid #dc3545;
+                                color: #dc3545;
+                                padding: 3px 10px;
+                                border-radius: 6px;
+                                cursor: pointer;
+                                font-size: 12px;
+                            ">Cancel appointment</button>
+                        </p>
                     </div>
                 `;
                 this.showOptions();
@@ -730,6 +742,22 @@ const ChatbotBooking = {
         const div = document.createElement('div');
         div.textContent = text;
         return div.innerHTML;
+    },
+
+    /**
+     * Cancel the student's upcoming appointment, then re-check access so the
+     * panel flips to the rebook flow. Cancelling frees the meeting allowance.
+     */
+    async cancelAppointment(appointmentId) {
+        if (!confirm('Cancel this interview? Your meeting allowance is freed and you can rebook another time.')) {
+            return;
+        }
+        try {
+            await BookingAPI.cancelAppointment(appointmentId, 'Cancelled by student from booking page');
+            await this.verifyAccess({ preventDefault() {} });
+        } catch (e) {
+            alert('Could not cancel the appointment: ' + e.message);
+        }
     }
 };
 
