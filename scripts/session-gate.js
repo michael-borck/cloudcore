@@ -108,14 +108,68 @@
         });
     }
 
+    // --- navbar login / logout button ---------------------------------------
+    // Makes the session state visible: "Unit Login" when anonymous, a
+    // "Logout (UNIT)" button once a session cookie is live. The cookie is
+    // HttpOnly, so /session/me is the only way to know.
+    function injectAuthButton(me) {
+        if (document.getElementById('cc-auth-btn')) return;
+        const nav = document.querySelector('.navbar .navbar-container')
+            || document.querySelector('.navbar');
+        if (!nav) return;
+        const style = document.createElement('style');
+        style.textContent = '.cc-auth-btn{display:inline-block;margin-left:.75rem;'
+            + 'padding:.35rem .9rem;font-size:.875rem;font-weight:600;border-radius:6px;'
+            + 'border:1px solid rgba(15,23,42,.35);background:transparent;color:inherit;'
+            + 'cursor:pointer;text-decoration:none;white-space:nowrap}'
+            + '.cc-auth-btn:hover{border-color:#2563eb;color:#2563eb}';
+        document.head.appendChild(style);
+
+        const next = PROTECTED.test(window.location.pathname)
+            ? window.location.pathname + window.location.search : '/';
+        if (me) {
+            const btn = document.createElement('button');
+            btn.id = 'cc-auth-btn';
+            btn.className = 'cc-auth-btn';
+            btn.type = 'button';
+            btn.textContent = 'Logout (' + me.unit_code + ')';
+            btn.title = 'Logged in as ' + me.unit_name
+                + (me.business_hours ? ' — ' + me.business_hours : '');
+            btn.addEventListener('click', async function () {
+                try {
+                    await fetch(API + '/session', { method: 'DELETE', credentials: 'include' });
+                } catch (e) { /* clear local state regardless */ }
+                localStorage.removeItem(UNIT_KEY);
+                window.location.href = '/';
+            });
+            nav.appendChild(btn);
+        } else {
+            const a = document.createElement('a');
+            a.id = 'cc-auth-btn';
+            a.className = 'cc-auth-btn';
+            a.textContent = 'Unit Login';
+            a.href = (host === GATED_HOST ? '/gate.html?next='
+                : 'https://' + GATED_HOST + '/gate.html?next=') + encodeURIComponent(next);
+            nav.appendChild(a);
+        }
+    }
+
+    function setupAuthButton() {
+        fetch(API + '/session/me', { credentials: 'include' })
+            .then(function (r) { return r.ok ? r.json() : null; })
+            .then(function (me) { injectAuthButton(me || null); })
+            .catch(function () { injectAuthButton(null); });
+    }
+
     function init() {
         if (onGatePage) { wireGateForm(); return; }
-        if (host === PUBLIC_HOST) { rewriteProtectedLinks(); return; }
+        if (host === PUBLIC_HOST) { rewriteProtectedLinks(); setupAuthButton(); return; }
         if (host === GATED_HOST && PROTECTED.test(window.location.pathname)) {
             // Server-side forward_auth already decided whether this page was
             // served; this only catches the no-session case for friendlier UX.
             checkSession().then(function (ok) { if (!ok) redirectToGate(); });
         }
+        setupAuthButton();
     }
 
     if (document.readyState === 'loading') {
