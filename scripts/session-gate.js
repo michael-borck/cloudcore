@@ -25,7 +25,41 @@
     const onGatePage = /\/gate(\.html)?$/.test(window.location.pathname);
 
     // --- public host: protected sections live on the gated host -------------
+    function injectSharedStyles() {
+        if (document.getElementById('cc-gate-styles')) return;
+        const style = document.createElement('style');
+        style.id = 'cc-gate-styles';
+        style.textContent =
+            // padlock marker on links that lead to gated pages
+            '.cc-gated::after{content:"";display:inline-block;width:9px;height:11px;'
+            + 'margin-left:5px;vertical-align:-1px;opacity:.55;'
+            + 'background:#0f172a;-webkit-mask:url("data:image/svg+xml;utf8,'
+            + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M144 144v48H240V144c0-26.5 21.5-48 48-48s48 21.5 48 48v48h16c26.5 0 48 21.5 48 48v192c0 26.5-21.5 48-48 48H32c-26.5 0-48-21.5-48-48V240c0-26.5 21.5-48 48-48h16V144C48 64.5 112.5 0 192 0s144 64.5 144 144zM80 240v192h224V240H80z"/></svg>')
+            + '") center/contain no-repeat;mask:url("data:image/svg+xml;utf8,'
+            + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M144 144v48H240V144c0-26.5 21.5-48 48-48s48 21.5 48 48v48h16c26.5 0 48 21.5 48 48v192c0 26.5-21.5 48-48 48H32c-26.5 0-48-21.5-48-48V240c0-26.5 21.5-48 48-48h16V144C48 64.5 112.5 0 192 0s144 64.5 144 144zM80 240v192h224V240H80z"/></svg>')
+            + '") center/contain no-repeat}'
+            // "My interviews" overlay
+            + '.cc-overlay{position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:99999;'
+            + 'display:flex;align-items:center;justify-content:center;padding:16px}'
+            + '.cc-modal{background:#fff;border-radius:12px;max-width:560px;width:100%;'
+            + 'max-height:80vh;overflow:auto;padding:22px 24px;box-shadow:0 20px 60px rgba(0,0,0,.3);'
+            + 'font-family:system-ui,-apple-system,sans-serif;color:#0f172a}'
+            + '.cc-modal h3{margin:0 0 4px;font-size:1.15rem}'
+            + '.cc-modal .cc-sub{margin:0 0 14px;font-size:.85rem;color:#64748b}'
+            + '.cc-apt{border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;margin-bottom:10px}'
+            + '.cc-apt .cc-who{font-weight:600}.cc-apt .cc-when{font-size:.9rem;color:#475569;margin:2px 0 8px}'
+            + '.cc-apt .cc-note{font-size:.78rem;color:#b45309;margin:2px 0 8px}'
+            + '.cc-apt a,.cc-apt button{font-size:.82rem;padding:4px 10px;border-radius:6px;'
+            + 'margin-right:6px;text-decoration:none;cursor:pointer}'
+            + '.cc-apt .cc-join{background:#2563eb;color:#fff;border:1px solid #2563eb}'
+            + '.cc-apt .cc-ics{background:#fff;color:#2563eb;border:1px solid #cbd5e1}'
+            + '.cc-apt .cc-cancel{background:#fff;color:#dc3545;border:1px solid #f1b3b8}'
+            + '.cc-close{float:right;background:none;border:none;font-size:1.3rem;cursor:pointer;color:#64748b}';
+        document.head.appendChild(style);
+    }
+
     function rewriteProtectedLinks() {
+        injectSharedStyles();
         document.querySelectorAll('a[href]').forEach(function (a) {
             try {
                 const u = new URL(a.getAttribute('href'), window.location.href);
@@ -35,6 +69,8 @@
                     // nav links arrive raw — point them at the rendered page
                     u.pathname = u.pathname.replace(/\.qmd$/, '.html');
                     a.href = u.toString();
+                    a.classList.add('cc-gated');
+                    a.title = (a.title ? a.title + ' ' : '') + 'Requires unit login';
                 }
             } catch (e) { /* not a URL we care about */ }
         });
@@ -108,6 +144,110 @@
         });
     }
 
+    // --- "My interviews" overlay ---------------------------------------------
+    // Lists every upcoming appointment for the visitor's badge (any employee)
+    // with join / add-to-calendar / cancel. The badge code is the credential.
+    const BOOKING_API = 'https://booking.cloudcore.eduserver.au/api';
+
+    function storedBadge() {
+        try {
+            const s = JSON.parse(localStorage.getItem('booking_badge') || 'null');
+            return s && s.badge ? String(s.badge).toUpperCase() : null;
+        } catch (e) { return null; }
+    }
+
+    function esc(text) {
+        const div = document.createElement('div');
+        div.textContent = text == null ? '' : String(text);
+        return div.innerHTML;
+    }
+
+    function fmtWhen(iso) {
+        try {
+            return new Date(iso).toLocaleString(undefined, {
+                weekday: 'short', day: 'numeric', month: 'short',
+                hour: '2-digit', minute: '2-digit'
+            });
+        } catch (e) { return iso; }
+    }
+
+    function injectStylesOnce() { injectSharedStyles(); }
+
+    function openInterviewsOverlay() {
+        injectStylesOnce();
+        document.getElementById('cc-overlay')?.remove();
+        const wrap = document.createElement('div');
+        wrap.id = 'cc-overlay';
+        wrap.className = 'cc-overlay';
+        wrap.innerHTML = '<div class="cc-modal">'
+            + '<button class="cc-close" title="Close" onclick="this.closest(\'.cc-overlay\').remove()">×</button>'
+            + '<h3>Your upcoming interviews</h3>'
+            + '<p class="cc-sub">Across all CloudCore staff. Join opens the staff member\'s page at your booked time.</p>'
+            + '<div id="cc-apt-list"><p class="cc-sub">Loading…</p></div>'
+            + '</div>';
+        wrap.addEventListener('click', function (e) {
+            if (e.target === wrap) wrap.remove();
+        });
+        document.body.appendChild(wrap);
+        loadInterviews();
+    }
+
+    async function loadInterviews() {
+        const list = document.getElementById('cc-apt-list');
+        if (!list) return;
+        let badge = storedBadge();
+        if (!badge) {
+            badge = (prompt('Enter your badge code (e.g. CC-XXXX-XXXX):') || '')
+                .trim().toUpperCase();
+            if (!badge) { list.innerHTML = '<p class="cc-sub">No badge entered.</p>'; return; }
+            localStorage.setItem('booking_badge', JSON.stringify({ badge: badge }));
+        }
+        try {
+            const r = await fetch(BOOKING_API + '/appointments/mine?badge_code='
+                + encodeURIComponent(badge));
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            const appts = await r.json();
+            if (!appts.length) {
+                list.innerHTML = '<p class="cc-sub">No upcoming interviews. Book one from '
+                    + 'any staff member\'s page on <a href="https://' + GATED_HOST
+                    + '/chatbots/index.html">the chatbots page</a>.</p>';
+                return;
+            }
+            list.innerHTML = appts.map(function (a) {
+                const join = 'https://' + GATED_HOST + '/chatbots/bots/'
+                    + encodeURIComponent(a.employee_id) + '/';
+                return '<div class="cc-apt">'
+                    + '<div class="cc-who">' + esc(a.employee_name) + '</div>'
+                    + '<div class="cc-when">' + esc(fmtWhen(a.scheduled_start)) + '</div>'
+                    + (a.reschedule_count > 0
+                        ? '<div class="cc-note">Time was moved by our office — this is the current slot.</div>'
+                        : '')
+                    + '<a class="cc-join" href="' + join + '">Join</a>'
+                    + '<a class="cc-ics" href="' + BOOKING_API + '/appointments/'
+                        + encodeURIComponent(a.id) + '/calendar" download>Add to calendar</a>'
+                    + '<button class="cc-cancel" data-apt="' + esc(a.id) + '">Cancel</button>'
+                    + '</div>';
+            }).join('');
+            list.querySelectorAll('.cc-cancel').forEach(function (btn) {
+                btn.addEventListener('click', async function () {
+                    if (!confirm('Cancel this interview? Your meeting allowance is freed.')) return;
+                    btn.disabled = true;
+                    try {
+                        await fetch(BOOKING_API + '/appointments/'
+                            + encodeURIComponent(btn.dataset.apt), {
+                            method: 'DELETE',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ badge_code: badge, reason: 'Cancelled by student' })
+                        });
+                    } catch (e) { /* reload list regardless */ }
+                    loadInterviews();
+                });
+            });
+        } catch (e) {
+            list.innerHTML = '<p class="cc-sub">Could not load bookings — please try again later.</p>';
+        }
+    }
+
     // --- navbar login / logout button ---------------------------------------
     // Makes the session state visible: "Unit Login" when anonymous, a
     // "Logout (UNIT)" button once a session cookie is live. The cookie is
@@ -117,13 +257,15 @@
         const nav = document.querySelector('.navbar .navbar-container')
             || document.querySelector('.navbar');
         if (!nav) return;
-        const style = document.createElement('style');
-        style.textContent = '.cc-auth-btn{display:inline-block;margin-left:.75rem;'
-            + 'padding:.35rem .9rem;font-size:.875rem;font-weight:600;border-radius:6px;'
-            + 'border:1px solid rgba(15,23,42,.35);background:transparent;color:inherit;'
-            + 'cursor:pointer;text-decoration:none;white-space:nowrap}'
-            + '.cc-auth-btn:hover{border-color:#2563eb;color:#2563eb}';
-        document.head.appendChild(style);
+        const myBtn = document.createElement('button');
+        myBtn.id = 'cc-interviews-btn';
+        myBtn.className = 'cc-auth-btn';
+        myBtn.type = 'button';
+        myBtn.textContent = 'My interviews';
+        myBtn.title = 'See your upcoming interviews';
+        myBtn.addEventListener('click', openInterviewsOverlay);
+        nav.appendChild(myBtn);
+        injectStylesOnce();
 
         const next = PROTECTED.test(window.location.pathname)
             ? window.location.pathname + window.location.search : '/';
