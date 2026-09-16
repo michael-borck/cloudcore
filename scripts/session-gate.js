@@ -203,17 +203,37 @@
             localStorage.setItem('booking_badge', JSON.stringify({ badge: badge }));
         }
         try {
-            const r = await fetch(BOOKING_API + '/appointments/mine?badge_code='
-                + encodeURIComponent(badge));
-            if (!r.ok) throw new Error('HTTP ' + r.status);
-            const appts = await r.json();
+            const [apptsRes, usageRes] = await Promise.all([
+                fetch(BOOKING_API + '/appointments/mine?badge_code=' + encodeURIComponent(badge)),
+                fetch(BOOKING_API + '/appointments/usage?badge_code=' + encodeURIComponent(badge))
+            ]);
+            if (!apptsRes.ok) throw new Error('HTTP ' + apptsRes.status);
+            const appts = await apptsRes.json();
+            const usage = usageRes.ok ? await usageRes.json() : [];
+
+            let usageHtml = '';
+            if (usage.length) {
+                usageHtml = '<div style="margin-bottom:14px;">'
+                    + '<div style="font-size:.8rem;font-weight:600;color:#475569;'
+                    + 'text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;">'
+                    + 'Senior staff meeting allowances</div>'
+                    + usage.map(function (u) {
+                        const bonus = u.bonus > 0 ? ' (includes ' + u.bonus + ' granted extra)' : '';
+                        return '<div style="font-size:.88rem;margin-bottom:3px;">'
+                            + esc(u.employee_name) + ' — <strong>' + u.used + ' of ' + u.allowance
+                            + '</strong> used · ' + (u.left > 0 ? u.left + ' left' : 'none left')
+                            + esc(bonus) + '</div>';
+                    }).join('') + '</div>';
+            }
+
             if (!appts.length) {
-                list.innerHTML = '<p class="cc-sub">No upcoming interviews. Book one from '
+                list.innerHTML = usageHtml
+                    + '<p class="cc-sub">No upcoming interviews. Book one from '
                     + 'any staff member\'s page on <a href="https://' + GATED_HOST
                     + '/chatbots/index.html">the chatbots page</a>.</p>';
                 return;
             }
-            list.innerHTML = appts.map(function (a) {
+            list.innerHTML = usageHtml + appts.map(function (a) {
                 const join = 'https://' + GATED_HOST + '/chatbots/bots/'
                     + encodeURIComponent(a.employee_id) + '/';
                 return '<div class="cc-apt">'
