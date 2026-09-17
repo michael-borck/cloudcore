@@ -203,6 +203,24 @@ const ChatbotBooking = {
                         <span style="font-size: 20px;">&#128197;</span>
                         Schedule Interview
                     </button>
+
+                    <button onclick="ChatbotBooking.downloadConversation(this)" title="Downloads interviews held in this browser" style="
+                        padding: 14px 28px;
+                        background: #fff;
+                        color: #495057;
+                        border: 1px solid #ced4da;
+                        border-radius: 8px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: all 0.2s;
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                    " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+                        <span style="font-size: 20px;">&#11015;</span>
+                        Download conversations
+                    </button>
                 </div>
 
                 <!-- Attend Form (hidden initially) -->
@@ -268,7 +286,7 @@ const ChatbotBooking = {
                     <p style="color: #666; font-size: 14px; margin: 0;">
                         Click the <strong>+</strong> button in the lower right corner to open the chat.
                     </p>
-                    <button onclick="ChatbotBooking.downloadConversation()" style="
+                    <button onclick="ChatbotBooking.downloadConversation(this)" style="
                         margin-top: 15px;
                         margin-right: 8px;
                         padding: 8px 16px;
@@ -620,24 +638,37 @@ const ChatbotBooking = {
      * sessions). One conversation → download it; several → show a chooser with
      * "download all" + per-conversation links. Falls back to the on-screen text.
      */
-    async downloadConversation() {
+    async downloadConversation(btn) {
         this.recordChatSession();  // make sure the current session is linked first
 
-        const pairs = this.sweepSessions();
-        if (pairs.length === 0) return this._downloadOnScreen();
+        const note = (text, keep) => {
+            if (!btn) return;
+            const original = btn.innerHTML;
+            btn.innerHTML = text;
+            if (!keep) setTimeout(() => { btn.innerHTML = original; }, 2500);
+        };
 
+        const pairs = this.sweepSessions();
+        if (pairs.length === 0) {
+            alert('No saved conversations found in this browser. If you cleared your '
+                + 'cache, ask your unit coordinator to retrieve them for you.');
+            return;
+        }
+
+        note('Fetching…', true);
         let data;
         try {
             data = await BookingAPI.conversationsBySessions(pairs);
         } catch (e) {
-            return this._downloadOnScreen();
-        }
-        const sessions = (data && data.sessions) || [];
-        if (sessions.length <= 1) {
-            this._downloadText(data.transcript || '', {}, this._badge());
+            note('Could not download — try again later.');
             return;
         }
-        this._showChooser(sessions, data.transcript);
+        // One combined file, visible feedback on the button — the old flow
+        // rendered a chooser into a hidden panel, which read as "nothing
+        // happened".
+        this._downloadText(data.transcript || '', {}, this._badge(),
+            'cloudcore-interview-transcripts.txt');
+        note('Downloaded ✓');
     },
 
     _showChooser(sessions, combined) {
@@ -699,7 +730,7 @@ const ChatbotBooking = {
         this._downloadText(text, {}, this._badge());
     },
 
-    _downloadText(body, access, badge) {
+    _downloadText(body, access, badge, filename) {
         const header = 'CloudCore Networks — interview transcript\n'
             + `Employee: ${access.employeeId || this.employeeId || ''}\n`
             + `Badge: ${badge || ''}\n`
@@ -708,7 +739,8 @@ const ChatbotBooking = {
         const blob = new Blob([header + body], { type: 'text/plain' });
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
-        a.download = `cloudcore-interview-${access.employeeId || 'chat'}-`
+        a.download = filename
+            || `cloudcore-interview-${access.employeeId || 'chat'}-`
             + `${new Date().toISOString().slice(0, 10)}.txt`;
         document.body.appendChild(a);
         a.click();
