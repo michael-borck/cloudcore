@@ -57,6 +57,10 @@ const ChatbotBooking = {
         // Add the access control UI
         this.addAccessUI();
 
+        // Our own floating chat-style button: the single entry point students
+        // see (native '+' stays hidden until access is granted)
+        this.addFloatingButton();
+
         // Check if student already has verified access
         this.checkExistingAccess();
     },
@@ -97,10 +101,17 @@ const ChatbotBooking = {
             }
         };
 
-        // Run immediately and after a delay (widget loads async)
+        // Run immediately, then watch for the widget mounting asynchronously.
+        // Fixed timeouts raced the loader (the '+' flashed visible); the
+        // observer hides it the moment it enters the DOM.
         hideWidget();
-        setTimeout(hideWidget, 500);
-        setTimeout(hideWidget, 1500);
+        setTimeout(hideWidget, 800);
+        if (typeof MutationObserver !== 'undefined' && !this._widgetMo) {
+            this._widgetMo = new MutationObserver(() => {
+                if (this.chatWidgetHidden) hideWidget();
+            });
+            this._widgetMo.observe(document.body, { childList: true, subtree: true });
+        }
 
         this.chatWidgetHidden = true;
     },
@@ -109,6 +120,9 @@ const ChatbotBooking = {
      * Show the chat widget after access is verified
      */
     showChatWidget() {
+        // Stop racing the observer — the widget is allowed through now
+        if (this._widgetMo) { this._widgetMo.disconnect(); this._widgetMo = null; }
+
         // Show any hidden widget elements
         const widgets = document.querySelectorAll('[id*="anything-llm"], [class*="anything-llm"], #chat-widget, .chat-widget-container');
         widgets.forEach(w => w.style.display = '');
@@ -119,6 +133,9 @@ const ChatbotBooking = {
             floatingBtn.style.display = '';
         }
 
+        // The native '+' is back — retire our stand-in button
+        this.hideFab();
+
         this.chatWidgetHidden = false;
     },
 
@@ -126,10 +143,10 @@ const ChatbotBooking = {
      * Add the access control UI to the page
      */
     addAccessUI() {
-        // Find insertion point - before the chat widget or at end of content
-        const chatWidget = document.querySelector('script[data-embed-id]');
+        // Find insertion point - the card leads the content column and stays
+        // pinned (sticky) while the bio scrolls, so it is always reachable.
         const pageContent = document.querySelector('.quarto-body, main, article');
-        if (!chatWidget && !pageContent) return;
+        if (!pageContent) return;
 
         const accessSection = document.createElement('div');
         accessSection.id = 'chatbot-access-section';
@@ -185,6 +202,24 @@ const ChatbotBooking = {
                     " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
                         <span style="font-size: 20px;">&#128197;</span>
                         Schedule Interview
+                    </button>
+
+                    <button onclick="ChatbotBooking.downloadConversation()" title="Downloads interviews held in this browser" style="
+                        padding: 14px 28px;
+                        background: #fff;
+                        color: #495057;
+                        border: 1px solid #ced4da;
+                        border-radius: 8px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        cursor: pointer;
+                        transition: all 0.2s;
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                    " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+                        <span style="font-size: 20px;">&#11015;</span>
+                        Download conversation
                     </button>
                 </div>
 
@@ -279,10 +314,18 @@ const ChatbotBooking = {
             </div>
         `;
 
-        if (chatWidget && chatWidget.parentNode) {
-            chatWidget.parentNode.insertBefore(accessSection, chatWidget);
-        } else if (pageContent) {
-            pageContent.appendChild(accessSection);
+        // Lead the content column — combined with sticky CSS (below) the card
+        // stays on screen while the bio scrolls past on desktop.
+        pageContent.insertBefore(accessSection, pageContent.firstChild);
+
+        // Sticky pinning on tablet/desktop; natural flow on phones (the card
+        // is already the first thing under the title there).
+        if (!document.getElementById('cc-access-card-style')) {
+            const style = document.createElement('style');
+            style.id = 'cc-access-card-style';
+            style.textContent = '@media(min-width:768px){#chatbot-access-section'
+                + '{position:sticky;top:85px;z-index:40;}}';
+            document.head.appendChild(style);
         }
     },
 
@@ -732,6 +775,58 @@ const ChatbotBooking = {
         }
 
         BookingModal.open(this.employeeId, this.employeeName);
+    },
+
+    /**
+     * Our stand-in for the AnythingLLM '+' launcher. Always visible while the
+     * native widget is hidden; clicking routes by access state:
+     *   granted  → reveal the native widget and open the chat
+     *   not yet  → scroll to the Attend / Schedule card
+     */
+    addFloatingButton() {
+        if (document.getElementById('cc-chat-fab')) return;
+        const fab = document.createElement('button');
+        fab.id = 'cc-chat-fab';
+        fab.type = 'button';
+        fab.title = 'Interview access';
+        fab.setAttribute('aria-label', 'Interview access');
+        fab.style.cssText = 'position:fixed;bottom:22px;right:22px;width:56px;height:56px;'
+            + 'border-radius:50%;border:none;background:#2563eb;color:#fff;cursor:pointer;'
+            + 'box-shadow:0 4px 16px rgba(0,0,0,.28);z-index:99990;display:flex;'
+            + 'align-items:center;justify-content:center;transition:transform .15s;';
+        fab.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" '
+            + 'stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" '
+            + 'aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 '
+            + '8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 '
+            + '8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>';
+        fab.addEventListener('mouseenter', () => { fab.style.transform = 'scale(1.06)'; });
+        fab.addEventListener('mouseleave', () => { fab.style.transform = 'none'; });
+        fab.addEventListener('click', () => this.handleFabClick());
+        document.body.appendChild(fab);
+    },
+
+    hideFab() {
+        document.getElementById('cc-chat-fab')?.remove();
+    },
+
+    handleFabClick() {
+        if (!this.chatWidgetHidden) {
+            // Granted: hand over to the native widget, best-effort open
+            this.showChatWidget();
+            try {
+                if (window.AnythingLLM && typeof window.AnythingLLM.toggleOpenChat === 'function') {
+                    window.AnythingLLM.toggleOpenChat(true);
+                }
+            } catch (e) { /* student clicks the native '+' instead */ }
+            return;
+        }
+
+        // Not granted (yet): bring the Attend / Schedule card into view
+        const card = document.getElementById('chatbot-access-section');
+        if (!card) return;
+        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        card.style.boxShadow = '0 0 0 4px rgba(37,99,235,.35)';
+        setTimeout(() => { card.style.boxShadow = 'none'; }, 1400);
     },
 
     /**

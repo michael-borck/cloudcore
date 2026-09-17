@@ -184,6 +184,50 @@
         } catch (e) { return null; }
     }
 
+    function sweepChatSessions() {
+        // AnythingLLM stashes one session id per chatbot interviewed, in THIS
+        // browser. Possession of those ids is the download credential.
+        const out = [];
+        for (let i = 0; i < localStorage.length; i++) {
+            const k = localStorage.key(i);
+            const m = k && k.match(/^allm_(.+)_session_id$/);
+            if (m) {
+                const sid = localStorage.getItem(k);
+                if (sid) out.push({ embed_id: m[1], session_id: sid });
+            }
+        }
+        return out;
+    }
+
+    async function downloadTranscripts(link) {
+        const pairs = sweepChatSessions();
+        if (!pairs.length) {
+            link.textContent = 'No conversations found in this browser.';
+            return;
+        }
+        link.textContent = 'Fetching…';
+        try {
+            const r = await fetch(BOOKING_API + '/conversations/by-sessions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ sessions: pairs })
+            });
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            const data = await r.json();
+            const text = data.transcript || '(no content)';
+            const blob = new Blob([text], { type: 'text/plain' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'cloudcore-interview-transcripts.txt';
+            document.body.appendChild(a); a.click(); a.remove();
+            URL.revokeObjectURL(a.href);
+            link.textContent = 'Downloaded (' + pairs.length + ' conversation'
+                + (pairs.length === 1 ? '' : 's') + ').';
+        } catch (e) {
+            link.textContent = 'Could not download — please try again later.';
+        }
+    }
+
     function esc(text) {
         const div = document.createElement('div');
         div.textContent = text == null ? '' : String(text);
@@ -211,12 +255,18 @@
             + '<button class="cc-close" title="Close" onclick="this.closest(\'.cc-overlay\').remove()">×</button>'
             + '<h3>Your upcoming interviews</h3>'
             + '<p class="cc-sub">Across all CloudCore staff. Join opens the staff member\'s page at your booked time.</p>'
+            + '<a id="cc-transcript-link" href="#" style="display:inline-block;margin:0 0 14px;font-size:.85rem;'
+            + 'color:#2563eb;">Download my transcripts (this browser)</a>'
             + '<div id="cc-apt-list"><p class="cc-sub">Loading…</p></div>'
             + '</div>';
         wrap.addEventListener('click', function (e) {
             if (e.target === wrap) wrap.remove();
         });
         document.body.appendChild(wrap);
+        document.getElementById('cc-transcript-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            downloadTranscripts(e.target);
+        });
         loadInterviews();
     }
 
