@@ -16,7 +16,10 @@ coordinator.
 </div>
 <div style="margin-bottom: 1rem;">
 <label for="unit-gate-password" style="display:block; font-weight:600; margin-bottom:.4rem;">Access Password</label>
-<input type="password" id="unit-gate-password" class="form-control" required>
+<div class="cc-pwd-wrap">
+<input type="password" id="unit-gate-password" class="form-control" autocomplete="current-password" required>
+<button type="button" id="toggle-unit-gate-password" class="cc-pwd-toggle" aria-label="Show password"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+</div>
 </div>
 <div style="margin-bottom: 1.25rem;">
 <label for="unit-gate-badge" style="display:block; font-weight:600; margin-bottom:.4rem;">Contractor Badge ID</label>

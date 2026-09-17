@@ -54,7 +54,19 @@
             + '.cc-apt .cc-join{background:#2563eb;color:#fff;border:1px solid #2563eb}'
             + '.cc-apt .cc-ics{background:#fff;color:#2563eb;border:1px solid #cbd5e1}'
             + '.cc-apt .cc-cancel{background:#fff;color:#dc3545;border:1px solid #f1b3b8}'
-            + '.cc-close{float:right;background:none;border:none;font-size:1.3rem;cursor:pointer;color:#64748b}';
+            + '.cc-close{float:right;background:none;border:none;font-size:1.3rem;cursor:pointer;color:#64748b}'
+            // navbar buttons + gate password toggle
+            + '.cc-auth-btn{display:inline-block;padding:.32rem .85rem;font-size:.875rem;'
+            + 'font-weight:600;border-radius:6px;border:1px solid rgba(15,23,42,.35);'
+            + 'background:transparent;color:inherit;cursor:pointer;text-decoration:none;'
+            + 'white-space:nowrap;vertical-align:middle}'
+            + '.cc-auth-btn:hover{border-color:#2563eb;color:#2563eb}'
+            + '.cc-nav-item{display:flex;align-items:center;margin-left:.4rem}'
+            + '.cc-pwd-wrap{position:relative}.cc-pwd-wrap .form-control{padding-right:2.6rem}'
+            + '.cc-pwd-toggle{position:absolute;right:.6rem;top:50%;transform:translateY(-50%);'
+            + 'background:none;border:none;color:#64748b;cursor:pointer;padding:2px;'
+            + 'display:flex;align-items:center}'
+            + '.cc-pwd-toggle:hover{color:#2563eb}';
         document.head.appendChild(style);
     }
 
@@ -102,9 +114,25 @@
     }
 
     function wireGateForm() {
+        injectSharedStyles();
         const form = document.getElementById('unit-gate-form');
         if (!form) return;
         const errBox = document.getElementById('unit-gate-error');
+
+        // show/hide password toggle
+        const pwdInput = document.getElementById('unit-gate-password');
+        const pwdToggle = document.getElementById('toggle-unit-gate-password');
+        if (pwdInput && pwdToggle) {
+            const EYE = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
+            const EYE_OFF = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
+            pwdToggle.innerHTML = EYE;
+            pwdToggle.addEventListener('click', function () {
+                const show = pwdInput.type === 'password';
+                pwdInput.type = show ? 'text' : 'password';
+                pwdToggle.innerHTML = show ? EYE_OFF : EYE;
+                pwdToggle.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+            });
+        }
 
         form.addEventListener('submit', async function (e) {
             e.preventDefault();
@@ -274,9 +302,26 @@
     // HttpOnly, so /session/me is the only way to know.
     function injectAuthButton(me) {
         if (document.getElementById('cc-auth-btn')) return;
-        const nav = document.querySelector('.navbar .navbar-container')
+        injectStylesOnce();
+        // Prefer the right-hand icon list in the collapsed navbar (sits after
+        // the search icon); fall back to the container on odd layouts.
+        const iconNav = document.querySelector('.navbar-collapse .navbar-nav.ms-auto');
+        const nav = iconNav
+            || document.querySelector('.navbar .navbar-container')
             || document.querySelector('.navbar');
         if (!nav) return;
+
+        function place(el) {
+            if (iconNav) {
+                const li = document.createElement('li');
+                li.className = 'nav-item cc-nav-item';
+                li.appendChild(el);
+                nav.appendChild(li);
+            } else {
+                nav.appendChild(el);
+            }
+        }
+
         const myBtn = document.createElement('button');
         myBtn.id = 'cc-interviews-btn';
         myBtn.className = 'cc-auth-btn';
@@ -284,8 +329,7 @@
         myBtn.textContent = 'My interviews';
         myBtn.title = 'See your upcoming interviews';
         myBtn.addEventListener('click', openInterviewsOverlay);
-        nav.appendChild(myBtn);
-        injectStylesOnce();
+        place(myBtn);
 
         const next = PROTECTED.test(window.location.pathname)
             ? window.location.pathname + window.location.search : '/';
@@ -304,7 +348,7 @@
                 localStorage.removeItem(UNIT_KEY);
                 window.location.href = '/';
             });
-            nav.appendChild(btn);
+            place(btn);
         } else {
             const a = document.createElement('a');
             a.id = 'cc-auth-btn';
@@ -312,7 +356,7 @@
             a.textContent = 'Unit Login';
             a.href = (host === GATED_HOST ? '/gate.html?next='
                 : 'https://' + GATED_HOST + '/gate.html?next=') + encodeURIComponent(next);
-            nav.appendChild(a);
+            place(a);
         }
     }
 
