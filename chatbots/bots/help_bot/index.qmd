@@ -17,7 +17,7 @@ categories: ['Help', 'Guide']
 - Troubleshooting common issues
 - Tips for preparing your interviews
 
-**How to Chat:** Click the "+" icon in the lower right corner of your screen to open the chat interface. Type your question into the text box and press Enter to send.
+**How to Chat:** Click the chat button in the lower right corner of your screen. If you have not confirmed your interview yet, you will be taken to the interview panel; once your interview time is active, the chat opens right there. Type your question into the text box and press Enter to send.
 
 *Note: The Help Bot can assist with platform navigation only. For questions about CloudCore operations, book an interview with the relevant staff member.*
 
