@@ -214,18 +214,183 @@
             });
             if (!r.ok) throw new Error('HTTP ' + r.status);
             const data = await r.json();
-            const text = data.transcript || '(no content)';
-            const blob = new Blob([text], { type: 'text/plain' });
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = 'cloudcore-interview-transcripts.txt';
-            document.body.appendChild(a); a.click(); a.remove();
-            URL.revokeObjectURL(a.href);
-            link.textContent = 'Downloaded (' + pairs.length + ' conversation'
-                + (pairs.length === 1 ? '' : 's') + ').';
+            const sessions = data.sessions || [];
+            if (sessions.length <= 1) {
+                const text = sessions.length ? ccSessionText(sessions[0]) : '(no content)';
+                ccDlBlob('cloudcore-interview-transcript.txt', new Blob([text], { type: 'text/plain' }));
+                link.textContent = 'Downloaded.';
+                return;
+            }
+            link.textContent = 'Choose conversations ↓';
+            ccOpenDownloadChooser(data);
         } catch (e) {
             link.textContent = 'Could not download — please try again later.';
         }
+    }
+
+    function ccSessionText(s) {
+        const lines = ['=== ' + s.employee_name + ' ==='];
+        (s.turns || []).forEach(function (t) {
+            lines.push((String(t.role).toLowerCase() === 'user' ? 'Student' : s.employee_name)
+                + ': ' + (t.content || ''));
+        });
+        return lines.join('\n') + '\n';
+    }
+
+    function ccSafeName(name) {
+        return (name || 'chatbot').replace(/[^A-Za-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    }
+
+    function ccDlBlob(filename, blob) {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(a.href);
+    }
+
+    // Minimal ZIP (store, no compression) — mirrors the builder in
+    // chatbot-booking.js. Verified against Info-ZIP unzip.
+    function ccMakeZip(files) {
+        const enc = new TextEncoder();
+        const chunks = [], central = [];
+        let offset = 0;
+        const crcTable = (function () {
+            const t = new Uint32Array(256);
+            for (let n = 0; n < 256; n++) {
+                let c = n;
+                for (let k = 0; k < 8; k++) c = (c & 1) ? (0xEDB88320 ^ (c >>> 1)) : (c >>> 1);
+                t[n] = c >>> 0;
+            }
+            return t;
+        })();
+        const crc32 = function (bytes) {
+            let c = 0xFFFFFFFF;
+            for (let i = 0; i < bytes.length; i++) c = crcTable[(c ^ bytes[i]) & 0xFF] ^ (c >>> 8);
+            return (c ^ 0xFFFFFFFF) >>> 0;
+        };
+        const u16 = v => new Uint8Array([v & 0xFF, (v >> 8) & 0xFF]);
+        const u32 = v => new Uint8Array([v & 0xFF, (v >> 8) & 0xFF, (v >> 16) & 0xFF, (v >>> 24) & 0xFF]);
+        for (const f of files) {
+            const nameBytes = enc.encode(f.name);
+            const fileData = enc.encode(f.text);
+            const crc = crc32(fileData);
+            const local = new Uint8Array(30 + nameBytes.length);
+            local.set(u32(0x04034b50), 0);
+            local.set(u16(20), 4);
+            local.set(u16(0x0800), 6);
+            local.set(u16(0), 8);
+            local.set(u16(0), 10);
+            local.set(u16(0), 12);
+            local.set(u32(crc), 14);
+            local.set(u32(fileData.length), 18);
+            local.set(u32(fileData.length), 22);
+            local.set(u16(nameBytes.length), 26);
+            local.set(u16(0), 28);
+            local.set(nameBytes, 30);
+            chunks.push(local, fileData);
+            central.push({ nameBytes, crc, size: fileData.length, offset });
+            offset += local.length + fileData.length;
+        }
+        const centralStart = offset;
+        let centralSize = 0;
+        for (const c of central) {
+            const rec = new Uint8Array(46 + c.nameBytes.length);
+            rec.set(u32(0x02014b50), 0);
+            rec.set(u16(20), 4);
+            rec.set(u16(20), 6);
+            rec.set(u16(0x0800), 8);
+            rec.set(u16(0), 10);
+            rec.set(u16(0), 12);
+            rec.set(u16(0), 14);
+            rec.set(u32(c.crc), 16);
+            rec.set(u32(c.size), 20);
+            rec.set(u32(c.size), 24);
+            rec.set(u16(c.nameBytes.length), 28);
+            rec.set(u32(c.offset), 42);
+            rec.set(c.nameBytes, 46);
+            chunks.push(rec);
+            centralSize += rec.length;
+        }
+        const eocd = new Uint8Array(22);
+        eocd.set(u32(0x06054b50), 0);
+        eocd.set(u16(central.length), 8);
+        eocd.set(u16(central.length), 10);
+        eocd.set(u32(centralSize), 12);
+        eocd.set(u32(centralStart), 16);
+        chunks.push(eocd);
+        return new Blob(chunks, { type: 'application/zip' });
+    }
+
+    function ccOpenDownloadChooser(data) {
+        injectSharedStyles();
+        document.getElementById('cc-dl-chooser')?.remove();
+        const sessions = data.sessions || [];
+        const wrap = document.createElement('div');
+        wrap.id = 'cc-dl-chooser';
+        wrap.className = 'cc-overlay';
+        wrap.style.zIndex = '100000';
+        const rows = sessions.map(function (s, i) {
+            const n = (s.turns || []).length;
+            return '<label style="display:flex;align-items:center;gap:10px;border:1px solid #e2e8f0;'
+                + 'border-radius:8px;padding:10px 12px;margin-bottom:8px;cursor:pointer;">'
+                + '<input type="checkbox" class="cc-dl-check" data-i="' + i + '" checked style="width:auto;">'
+                + '<span><strong>' + esc(s.employee_name) + '</strong>'
+                + '<span style="color:#64748b;font-size:.8rem;"> — ' + n + ' message'
+                + (n === 1 ? '' : 's') + '</span></span></label>';
+        }).join('');
+        const btnCss = 'padding:.45rem .8rem;border-radius:6px;font-size:.85rem;cursor:pointer;';
+        wrap.innerHTML = '<div class="cc-modal">'
+            + '<h3>Choose conversations to download</h3>'
+            + '<p class="cc-sub">' + sessions.length + ' conversation(s) found in this browser.</p>'
+            + '<div id="cc-dl-list">' + rows + '</div>'
+            + '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;">'
+            + '<button id="cc-dl-zip" class="cc-pwd-toggle" style="position:static;transform:none;'
+            + 'background:#2563eb;color:#fff;border:1px solid #2563eb;border-radius:6px;">Selected as ZIP</button>'
+            + '<button id="cc-dl-txts" style="' + btnCss + 'background:#fff;color:#2563eb;'
+            + 'border:1px solid #cbd5e1;">Selected (.txt each)</button>'
+            + '<button id="cc-dl-all" style="' + btnCss + 'background:#fff;color:#495057;'
+            + 'border:1px solid #cbd5e1;">All combined (.txt)</button>'
+            + '<button id="cc-dl-cancel" style="' + btnCss + 'background:none;border:none;color:#64748b;">Cancel</button>'
+            + '</div></div>';
+        document.body.appendChild(wrap);
+
+        function selected() {
+            return Array.prototype.slice.call(wrap.querySelectorAll('.cc-dl-check'))
+                .filter(function (c) { return c.checked; })
+                .map(function (c) { return sessions[Number(c.dataset.i)]; });
+        }
+        function filesFor(list) {
+            return list.map(function (s) {
+                return {
+                    name: ccSafeName(s.employee_name) + '__' + s.session_id.slice(0, 8) + '.txt',
+                    text: ccSessionText(s)
+                };
+            });
+        }
+        wrap.querySelector('#cc-dl-cancel').onclick = function () { wrap.remove(); };
+        wrap.querySelector('#cc-dl-zip').onclick = function () {
+            const files = filesFor(selected());
+            if (!files.length) return;
+            ccDlBlob('cloudcore-interview-transcripts.zip', ccMakeZip(files));
+            wrap.remove();
+        };
+        wrap.querySelector('#cc-dl-txts').onclick = async function () {
+            const files = filesFor(selected());
+            if (!files.length) return;
+            for (const f of files) {
+                ccDlBlob(f.name, new Blob([f.text], { type: 'text/plain' }));
+                await new Promise(r => setTimeout(r, 350));
+            }
+            wrap.remove();
+        };
+        wrap.querySelector('#cc-dl-all').onclick = function () {
+            ccDlBlob('cloudcore-interview-transcripts.txt',
+                new Blob([data.transcript || ''], { type: 'text/plain' }));
+            wrap.remove();
+        };
     }
 
     function esc(text) {

@@ -204,7 +204,7 @@ const ChatbotBooking = {
                         Schedule Interview
                     </button>
 
-                    <button onclick="ChatbotBooking.downloadConversation()" title="Downloads interviews held in this browser" style="
+                    <button onclick="ChatbotBooking.downloadConversation(this)" title="Downloads interviews held in this browser" style="
                         padding: 14px 28px;
                         background: #fff;
                         color: #495057;
@@ -219,7 +219,7 @@ const ChatbotBooking = {
                         gap: 8px;
                     " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
                         <span style="font-size: 20px;">&#11015;</span>
-                        Download conversation
+                        Download conversations
                     </button>
                 </div>
 
@@ -286,7 +286,7 @@ const ChatbotBooking = {
                     <p style="color: #666; font-size: 14px; margin: 0;">
                         Click the <strong>+</strong> button in the lower right corner to open the chat.
                     </p>
-                    <button onclick="ChatbotBooking.downloadConversation()" style="
+                    <button onclick="ChatbotBooking.downloadConversation(this)" style="
                         margin-top: 15px;
                         margin-right: 8px;
                         padding: 8px 16px;
@@ -638,26 +638,186 @@ const ChatbotBooking = {
      * sessions). One conversation → download it; several → show a chooser with
      * "download all" + per-conversation links. Falls back to the on-screen text.
      */
-    async downloadConversation() {
+    async downloadConversation(btn) {
         this.recordChatSession();  // make sure the current session is linked first
 
         const pairs = this.sweepSessions();
-        if (pairs.length === 0) return this._downloadOnScreen();
+        if (pairs.length === 0) {
+            alert('No saved conversations found in this browser. If you cleared your '
+                + 'cache, ask your unit coordinator to retrieve them for you.');
+            return;
+        }
 
+        if (btn) { const o = btn.innerHTML; btn.innerHTML = 'Fetching…'; setTimeout(() => { btn.innerHTML = o; }, 4000); }
         let data;
         try {
             data = await BookingAPI.conversationsBySessions(pairs);
         } catch (e) {
-            return this._downloadOnScreen();
-        }
-        const sessions = (data && data.sessions) || [];
-        if (sessions.length <= 1) {
-            this._downloadText(data.transcript || '', {}, this._badge());
+            alert('Could not download — please try again later.');
             return;
         }
-        this._showChooser(sessions, data.transcript);
+        this._openDownloadChooser(data);
     },
 
+    /**
+     * Per-conversation chooser: select which interviews to download, as a ZIP
+     * (one .txt each), individual .txt files, or all combined.
+     */
+    _openDownloadChooser(data) {
+        document.getElementById('cc-dl-chooser')?.remove();
+        const sessions = data.sessions || [];
+        const wrap = document.createElement('div');
+        wrap.id = 'cc-dl-chooser';
+        wrap.style.cssText = 'position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:99995;'
+            + 'display:flex;align-items:center;justify-content:center;padding:16px;';
+        const rows = sessions.map((s, i) => {
+            const n = (s.turns || []).length;
+            return '<label style="display:flex;align-items:center;gap:10px;border:1px solid #e2e8f0;'
+                + 'border-radius:8px;padding:10px 12px;margin-bottom:8px;cursor:pointer;">'
+                + `<input type="checkbox" class="cc-dl-check" data-i="${i}" checked style="width:auto;">`
+                + `<span><strong>${this.escapeHtml(s.employee_name)}</strong>`
+                + `<span style="color:#64748b;font-size:.8rem;"> — ${n} message${n === 1 ? '' : 's'}</span></span></label>`;
+        }).join('');
+        const btnCss = 'padding:.45rem .8rem;border-radius:6px;font-size:.85rem;cursor:pointer;';
+        wrap.innerHTML = '<div style="background:#fff;border-radius:12px;max-width:520px;width:100%;'
+            + 'max-height:80vh;overflow:auto;padding:20px 22px;font-family:system-ui,sans-serif;color:#0f172a;">'
+            + '<h3 style="margin:0 0 4px;font-size:1.1rem;">Choose conversations to download</h3>'
+            + `<p style="margin:0 0 12px;color:#64748b;font-size:.85rem;">${sessions.length} conversation(s) found in this browser.</p>`
+            + `<div id="cc-dl-list">${rows}</div>`
+            + '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;">'
+            + `<button id="cc-dl-zip" style="${btnCss}background:#2563eb;color:#fff;border:1px solid #2563eb;">Selected as ZIP</button>`
+            + `<button id="cc-dl-txts" style="${btnCss}background:#fff;color:#2563eb;border:1px solid #cbd5e1;">Selected (.txt each)</button>`
+            + `<button id="cc-dl-all" style="${btnCss}background:#fff;color:#495057;border:1px solid #cbd5e1;">All combined (.txt)</button>`
+            + `<button id="cc-dl-cancel" style="${btnCss}background:none;border:none;color:#64748b;">Cancel</button>`
+            + '</div></div>';
+            + '</div></div>';
+        document.body.appendChild(wrap);
+
+        const selected = () => Array.from(wrap.querySelectorAll('.cc-dl-check'))
+            .filter(c => c.checked).map(c => sessions[Number(c.dataset.i)]);
+        const filesFor = list => list.map(s => ({
+            name: this._safeName(s.employee_name) + '__' + s.session_id.slice(0, 8) + '.txt',
+            text: this._sessionText(s)
+        }));
+        wrap.querySelector('#cc-dl-cancel').onclick = () => wrap.remove();
+        wrap.querySelector('#cc-dl-zip').onclick = async () => {
+            const files = filesFor(selected());
+            if (!files.length) return;
+            this._dlBlob('cloudcore-interview-transcripts.zip', this._makeZip(files));
+            wrap.remove();
+        };
+        wrap.querySelector('#cc-dl-txts').onclick = async () => {
+            const files = filesFor(selected());
+            if (!files.length) return;
+            for (const f of files) {
+                this._dlBlob(f.name, new Blob([f.text], { type: 'text/plain' }));
+                await new Promise(r => setTimeout(r, 350));
+            }
+            wrap.remove();
+        };
+        wrap.querySelector('#cc-dl-all').onclick = () => {
+            this._dlBlob('cloudcore-interview-transcripts.txt',
+                new Blob([data.transcript || ''], { type: 'text/plain' }));
+            wrap.remove();
+        };
+    },
+
+    _sessionText(s) {
+        const lines = [`=== ${s.employee_name} ===`];
+        (s.turns || []).forEach(t => {
+            lines.push(`${String(t.role).toLowerCase() === 'user' ? 'Student' : s.employee_name}: ${t.content || ''}`);
+        });
+        return lines.join('\n') + '\n';
+    },
+
+    _safeName(name) {
+        return (name || 'chatbot').replace(/[^A-Za-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    },
+
+    _dlBlob(filename, blob) {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(a.href);
+    },
+
+    /**
+     * Minimal ZIP (store, no compression) — one .txt per conversation without
+     * pulling in a dependency. Verified against Info-ZIP unzip.
+     */
+    _makeZip(files) {
+        const enc = new TextEncoder();
+        const chunks = [], central = [];
+        let offset = 0;
+        const crcTable = (() => {
+            const t = new Uint32Array(256);
+            for (let n = 0; n < 256; n++) {
+                let c = n;
+                for (let k = 0; k < 8; k++) c = (c & 1) ? (0xEDB88320 ^ (c >>> 1)) : (c >>> 1);
+                t[n] = c >>> 0;
+            }
+            return t;
+        })();
+        const crc32 = (bytes) => {
+            let c = 0xFFFFFFFF;
+            for (let i = 0; i < bytes.length; i++) c = crcTable[(c ^ bytes[i]) & 0xFF] ^ (c >>> 8);
+            return (c ^ 0xFFFFFFFF) >>> 0;
+        };
+        const u16 = v => new Uint8Array([v & 0xFF, (v >> 8) & 0xFF]);
+        const u32 = v => new Uint8Array([v & 0xFF, (v >> 8) & 0xFF, (v >> 16) & 0xFF, (v >>> 24) & 0xFF]);
+        for (const f of files) {
+            const nameBytes = enc.encode(f.name);
+            const fileData = enc.encode(f.text);
+            const crc = crc32(fileData);
+            const local = new Uint8Array(30 + nameBytes.length);
+            local.set(u32(0x04034b50), 0);
+            local.set(u16(20), 4);
+            local.set(u16(0x0800), 6);
+            local.set(u16(0), 8);
+            local.set(u16(0), 10);
+            local.set(u16(0), 12);
+            local.set(u32(crc), 14);
+            local.set(u32(fileData.length), 18);
+            local.set(u32(fileData.length), 22);
+            local.set(u16(nameBytes.length), 26);
+            local.set(u16(0), 28);
+            local.set(nameBytes, 30);
+            chunks.push(local, fileData);
+            central.push({ nameBytes, crc, size: fileData.length, offset });
+            offset += local.length + fileData.length;
+        }
+        const centralStart = offset;
+        let centralSize = 0;
+        for (const c of central) {
+            const rec = new Uint8Array(46 + c.nameBytes.length);
+            rec.set(u32(0x02014b50), 0);
+            rec.set(u16(20), 4);
+            rec.set(u16(20), 6);
+            rec.set(u16(0x0800), 8);
+            rec.set(u16(0), 10);
+            rec.set(u16(0), 12);
+            rec.set(u16(0), 14);
+            rec.set(u32(c.crc), 16);
+            rec.set(u32(c.size), 20);
+            rec.set(u32(c.size), 24);
+            rec.set(u16(c.nameBytes.length), 28);
+            rec.set(u32(c.offset), 42);
+            rec.set(c.nameBytes, 46);
+            chunks.push(rec);
+            centralSize += rec.length;
+        }
+        const eocd = new Uint8Array(22);
+        eocd.set(u32(0x06054b50), 0);
+        eocd.set(u16(central.length), 8);
+        eocd.set(u16(central.length), 10);
+        eocd.set(u32(centralSize), 12);
+        eocd.set(u32(centralStart), 16);
+        chunks.push(eocd);
+        return new Blob(chunks, { type: 'application/zip' });
+    },
     _showChooser(sessions, combined) {
         this._chooserData = { sessions, combined };
         const host = document.getElementById('active-session') || document.body;
@@ -717,7 +877,7 @@ const ChatbotBooking = {
         this._downloadText(text, {}, this._badge());
     },
 
-    _downloadText(body, access, badge) {
+    _downloadText(body, access, badge, filename) {
         const header = 'CloudCore Networks — interview transcript\n'
             + `Employee: ${access.employeeId || this.employeeId || ''}\n`
             + `Badge: ${badge || ''}\n`
@@ -726,7 +886,8 @@ const ChatbotBooking = {
         const blob = new Blob([header + body], { type: 'text/plain' });
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
-        a.download = `cloudcore-interview-${access.employeeId || 'chat'}-`
+        a.download = filename
+            || `cloudcore-interview-${access.employeeId || 'chat'}-`
             + `${new Date().toISOString().slice(0, 10)}.txt`;
         document.body.appendChild(a);
         a.click();
