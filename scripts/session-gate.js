@@ -220,15 +220,34 @@
         loadInterviews();
     }
 
+    function badgePromptHtml() {
+        return '<form id="cc-badge-form" style="display:flex;gap:8px;margin-bottom:14px;">'
+            + '<input id="cc-badge-input" class="form-control" placeholder="Badge code, e.g. CC-4XKQ-9M2T" '
+            + 'autocomplete="off" autocapitalize="characters" spellcheck="false" '
+            + 'style="flex:1;padding:.45rem .7rem;border:1px solid #cbd5e1;border-radius:6px;font-size:.9rem;">'
+            + '<button type="submit" style="padding:.45rem .9rem;border:1px solid #2563eb;'
+            + 'background:#2563eb;color:#fff;border-radius:6px;font-size:.85rem;cursor:pointer;">Load</button>'
+            + '</form>';
+    }
+
     async function loadInterviews() {
         const list = document.getElementById('cc-apt-list');
         if (!list) return;
-        let badge = storedBadge();
+        const badge = storedBadge();
         if (!badge) {
-            badge = (prompt('Enter your badge code (e.g. CC-XXXX-XXXX):') || '')
-                .trim().toUpperCase();
-            if (!badge) { list.innerHTML = '<p class="cc-sub">No badge entered.</p>'; return; }
-            localStorage.setItem('booking_badge', JSON.stringify({ badge: badge }));
+            list.innerHTML = badgePromptHtml()
+                + '<p class="cc-sub">Your badge code is the contractor ID issued for interviews '
+                + '(also in Blackboard under Grades).</p>';
+            const form = document.getElementById('cc-badge-form');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const value = document.getElementById('cc-badge-input').value.trim().toUpperCase();
+                if (!value) return;
+                localStorage.setItem('booking_badge', JSON.stringify({ badge: value }));
+                loadInterviews();
+            });
+            document.getElementById('cc-badge-input').focus();
+            return;
         }
         try {
             const [apptsRes, usageRes] = await Promise.all([
@@ -237,7 +256,9 @@
             ]);
             if (!apptsRes.ok) throw new Error('HTTP ' + apptsRes.status);
             const appts = await apptsRes.json();
-            const usage = usageRes.ok ? await usageRes.json() : [];
+            const ud = usageRes.ok ? await usageRes.json() : null;
+            const usage = ud ? ud.usage : [];
+            const visibilityKnown = ud ? ud.visibility_known === true : false;
 
             let usageHtml = '';
             if (usage.length) {
@@ -251,7 +272,12 @@
                             + esc(u.employee_name) + ' — <strong>' + u.used + ' of ' + u.allowance
                             + '</strong> used · ' + (u.left > 0 ? u.left + ' left' : 'none left')
                             + esc(bonus) + '</div>';
-                    }).join('') + '</div>';
+                    }).join('')
+                    + '<div style="font-size:.75rem;color:#94a3b8;margin-top:6px;">'
+                    + 'Shows staff available to your unit — your Unit Coordinator may '
+                    + 'restrict access to some senior staff.'
+                    + (visibilityKnown ? '' : ' List could not be filtered for your unit just now.')
+                    + '</div></div>';
             }
 
             if (!appts.length) {
@@ -345,7 +371,10 @@
                 try {
                     await fetch(API + '/session', { method: 'DELETE', credentials: 'include' });
                 } catch (e) { /* clear local state regardless */ }
+                // Shared machines: forget the visitor's badge and unit too, so
+                // the next person can't see their interviews or book as them.
                 localStorage.removeItem(UNIT_KEY);
+                localStorage.removeItem('booking_badge');
                 window.location.href = '/';
             });
             place(btn);
