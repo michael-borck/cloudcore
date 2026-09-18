@@ -110,6 +110,19 @@ const BookingAPI = {
             }
 
             if (!response.ok) {
+                // FastAPI validation errors carry an array-shaped detail —
+                // translate the common case (a mistyped badge) into English.
+                if (Array.isArray(data.detail)) {
+                    const fields = new Set(data.detail.flatMap(e => (e.loc || []).slice(-1)));
+                    if (fields.has('badge_code') || fields.has('badge') || fields.has('code')) {
+                        throw new Error("That badge code doesn't look right — it should look "
+                            + "like CC-XXXX-XXXX: capital letters and digits separated by "
+                            + "hyphens (not underscores). Check it against the email from "
+                            + "your unit coordinator and try again.");
+                    }
+                    throw new Error('Some details in the request were not valid — please '
+                        + 'check your entries and try again.');
+                }
                 const detail = data.detail || data.message;
                 if (_allowRetry && typeof detail === 'string' &&
                         detail.indexOf('Badge not recognised') === 0) {

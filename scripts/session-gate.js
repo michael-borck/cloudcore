@@ -137,9 +137,9 @@
         form.addEventListener('submit', async function (e) {
             e.preventDefault();
             errBox.textContent = '';
-            const unit = document.getElementById('unit-gate-code').value.trim().toUpperCase();
+            const unit = document.getElementById('unit-gate-code').value.normalize('NFKC').replace(/_/g, '-').trim().toUpperCase();
             const password = document.getElementById('unit-gate-password').value;
-            const badge = document.getElementById('unit-gate-badge').value.trim().toUpperCase();
+            const badge = document.getElementById('unit-gate-badge').value.normalize('NFKC').replace(/_/g, '-').trim().toUpperCase();
             if (!unit || !password || !badge) return;
 
             try {
@@ -445,6 +445,23 @@
             + '</form>';
     }
 
+    function appendChangeBadgeLink(list) {
+        // Allow retrying with a different badge (shared computer, typo, etc.)
+        const p = document.createElement('p');
+        p.style.margin = '10px 0 0';
+        const a = document.createElement('a');
+        a.href = '#';
+        a.textContent = 'Not you? Enter a different badge ID';
+        a.style.cssText = 'font-size:.8rem;color:#64748b;';
+        a.addEventListener('click', function (e) {
+            e.preventDefault();
+            localStorage.removeItem('booking_badge');
+            loadInterviews();
+        });
+        p.appendChild(a);
+        list.appendChild(p);
+    }
+
     async function loadInterviews() {
         const list = document.getElementById('cc-apt-list');
         if (!list) return;
@@ -456,7 +473,7 @@
             const form = document.getElementById('cc-badge-form');
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
-                const value = document.getElementById('cc-badge-input').value.trim().toUpperCase();
+                const value = document.getElementById('cc-badge-input').value.normalize('NFKC').replace(/_/g, '-').trim().toUpperCase();
                 if (!value) return;
                 localStorage.setItem('booking_badge', JSON.stringify({ badge: value }));
                 loadInterviews();
@@ -464,6 +481,7 @@
             document.getElementById('cc-badge-input').focus();
             return;
         }
+        appendChangeBadgeLink(list);
         try {
             const [apptsRes, usageRes] = await Promise.all([
                 fetch(BOOKING_API + '/appointments/mine?badge_code=' + encodeURIComponent(badge)),
