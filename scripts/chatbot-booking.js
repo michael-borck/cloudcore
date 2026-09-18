@@ -360,7 +360,7 @@ const ChatbotBooking = {
     async verifyAccess(event) {
         event.preventDefault();
 
-        const badge = document.getElementById('attend-badge').value.trim().toUpperCase();
+        const badge = document.getElementById('attend-badge').value.normalize('NFKC').trim().toUpperCase();
         if (!badge) return;
 
         const verifyBtn = document.getElementById('verify-btn');

@@ -137,9 +137,9 @@
         form.addEventListener('submit', async function (e) {
             e.preventDefault();
             errBox.textContent = '';
-            const unit = document.getElementById('unit-gate-code').value.trim().toUpperCase();
+            const unit = document.getElementById('unit-gate-code').value.normalize('NFKC').trim().toUpperCase();
             const password = document.getElementById('unit-gate-password').value;
-            const badge = document.getElementById('unit-gate-badge').value.trim().toUpperCase();
+            const badge = document.getElementById('unit-gate-badge').value.normalize('NFKC').trim().toUpperCase();
             if (!unit || !password || !badge) return;
 
             try {
@@ -456,7 +456,7 @@
             const form = document.getElementById('cc-badge-form');
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
-                const value = document.getElementById('cc-badge-input').value.trim().toUpperCase();
+                const value = document.getElementById('cc-badge-input').value.normalize('NFKC').trim().toUpperCase();
                 if (!value) return;
                 localStorage.setItem('booking_badge', JSON.stringify({ badge: value }));
                 loadInterviews();
