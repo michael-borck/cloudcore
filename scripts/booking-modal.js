@@ -445,7 +445,7 @@ const BookingModal = {
     async submitBadge(event) {
         event.preventDefault();
 
-        const badge = document.getElementById('booking-badge').value.normalize('NFKC').trim().toUpperCase();
+        const badge = document.getElementById('booking-badge').value.normalize('NFKC').replace(/_/g, '-').trim().toUpperCase();
         if (!/^[A-Z0-9][A-Z0-9-]{3,31}$/.test(badge)) return;
 
         // Unit code comes from the unit gate's session, when present
