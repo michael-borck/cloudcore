@@ -651,7 +651,7 @@ const ChatbotBooking = {
         if (btn) { const o = btn.innerHTML; btn.innerHTML = 'Fetching…'; setTimeout(() => { btn.innerHTML = o; }, 4000); }
         let data;
         try {
-            data = await BookingAPI.conversationsBySessions(pairs);
+            data = await BookingAPI.conversationsBySessions(pairs, this._badge());
         } catch (e) {
             alert('Could not download — please try again later.');
             return;

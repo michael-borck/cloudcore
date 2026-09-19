@@ -222,6 +222,10 @@
     }
 
     async function downloadTranscripts(link) {
+        const badgeInput = document.getElementById('cc-badge-input');
+        const badge = (badgeInput && badgeInput.value
+            ? badgeInput.value.normalize('NFKC').replace(/_/g, '-').trim().toUpperCase()
+            : storedBadge()) || storedBadge();
         const pairs = sweepChatSessions();
         if (!pairs.length) {
             link.textContent = 'No conversations found in this browser.';
@@ -232,11 +236,15 @@
             const r = await fetch(BOOKING_API + '/conversations/by-sessions', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ sessions: pairs })
+                body: JSON.stringify({ sessions: pairs, badge_code: badge || null })
             });
             if (!r.ok) throw new Error('HTTP ' + r.status);
             const data = await r.json();
             const sessions = data.sessions || [];
+            if (!sessions.length) {
+                link.textContent = 'No conversations found for badge ' + badge + '.';
+                return;
+            }
             if (sessions.length <= 1) {
                 const text = sessions.length ? ccSessionText(sessions[0]) : '(no content)';
                 ccDlBlob('cloudcore-interview-transcript.txt', new Blob([text], { type: 'text/plain' }));

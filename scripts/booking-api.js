@@ -222,10 +222,10 @@ const BookingAPI = {
      * browser holds. No key — possession of the session id is the credential.
      * Sent in the body so session ids don't land in server logs.
      */
-    async conversationsBySessions(sessions) {
+    async conversationsBySessions(sessions, badgeCode) {
         return this.request('/conversations/by-sessions', {
             method: 'POST',
-            body: JSON.stringify({ sessions })
+            body: JSON.stringify({ sessions, badge_code: badgeCode || null })
         });
     },
 
