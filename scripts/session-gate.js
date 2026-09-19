@@ -199,6 +199,28 @@
         return out;
     }
 
+    // The download affordance only appears when conversations exist — no point
+    // offering a link that ends in "nothing found".
+    function updateTranscriptLink() {
+        const slot = document.getElementById('cc-transcript-slot');
+        if (!slot) return;
+        const pairs = sweepChatSessions();
+        if (!pairs.length) {
+            slot.textContent = 'No conversations found in this browser.';
+            return;
+        }
+        slot.textContent = '';
+        const a = document.createElement('a');
+        a.href = '#';
+        a.textContent = 'Download conversations (' + pairs.length + ' in this browser)';
+        a.style.color = '#2563eb';
+        a.addEventListener('click', function (e) {
+            e.preventDefault();
+            downloadTranscripts(a);
+        });
+        slot.appendChild(a);
+    }
+
     async function downloadTranscripts(link) {
         const pairs = sweepChatSessions();
         if (!pairs.length) {
@@ -416,28 +438,29 @@
         const wrap = document.createElement('div');
         wrap.id = 'cc-overlay';
         wrap.className = 'cc-overlay';
+        const stored = storedBadge();
         wrap.innerHTML = '<div class="cc-modal">'
             + '<button class="cc-close" title="Close" onclick="this.closest(\'.cc-overlay\').remove()">×</button>'
             + '<h3>Your upcoming interviews</h3>'
             + '<p class="cc-sub">Across all CloudCore staff. Join opens the staff member\'s page at your booked time.</p>'
-            + '<a id="cc-transcript-link" href="#" style="display:inline-block;margin:0 0 14px;font-size:.85rem;'
-            + 'color:#2563eb;">Download my transcripts (this browser)</a>'
+            + badgeFormHtml(stored)
+            + '<p id="cc-transcript-slot" style="margin:0 0 14px;font-size:.85rem;color:#64748b;">Checking for saved conversations…</p>'
             + '<div id="cc-apt-list"><p class="cc-sub">Loading…</p></div>'
             + '</div>';
         wrap.addEventListener('click', function (e) {
             if (e.target === wrap) wrap.remove();
         });
         document.body.appendChild(wrap);
-        document.getElementById('cc-transcript-link').addEventListener('click', function (e) {
-            e.preventDefault();
-            downloadTranscripts(e.target);
-        });
-        loadInterviews();
+        wireBadgeForm(loadResults);
+        document.getElementById('cc-badge-input').focus();
+        updateTranscriptLink();
+        if (stored) loadResults(stored);
     }
 
-    function badgePromptHtml() {
+    function badgeFormHtml(prefill) {
         return '<form id="cc-badge-form" style="display:flex;gap:8px;margin-bottom:14px;">'
             + '<input id="cc-badge-input" class="form-control" placeholder="Badge code, e.g. CC-4XKQ-9M2T" '
+            + (prefill ? 'value="' + esc(prefill) + '" ' : '')
             + 'autocomplete="off" autocapitalize="characters" spellcheck="false" '
             + 'style="flex:1;padding:.45rem .7rem;border:1px solid #cbd5e1;border-radius:6px;font-size:.9rem;">'
             + '<button type="submit" style="padding:.45rem .9rem;border:1px solid #2563eb;'
@@ -445,43 +468,21 @@
             + '</form>';
     }
 
-    function appendChangeBadgeLink(list) {
-        // Allow retrying with a different badge (shared computer, typo, etc.)
-        const p = document.createElement('p');
-        p.style.margin = '10px 0 0';
-        const a = document.createElement('a');
-        a.href = '#';
-        a.textContent = 'Not you? Enter a different badge ID';
-        a.style.cssText = 'font-size:.8rem;color:#64748b;';
-        a.addEventListener('click', function (e) {
+    function wireBadgeForm(onLoad) {
+        const form = document.getElementById('cc-badge-form');
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
-            localStorage.removeItem('booking_badge');
-            loadInterviews();
+            const value = document.getElementById('cc-badge-input').value
+                .normalize('NFKC').replace(/_/g, '-').trim().toUpperCase();
+            if (!value) return;
+            localStorage.setItem('booking_badge', JSON.stringify({ badge: value }));
+            onLoad(value);
         });
-        p.appendChild(a);
-        list.appendChild(p);
     }
 
-    async function loadInterviews() {
+    async function loadResults(badge) {
         const list = document.getElementById('cc-apt-list');
-        if (!list) return;
-        const badge = storedBadge();
-        if (!badge) {
-            list.innerHTML = badgePromptHtml()
-                + '<p class="cc-sub">Your badge code is the contractor ID issued for interviews '
-                + '(also in Blackboard under Grades).</p>';
-            const form = document.getElementById('cc-badge-form');
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const value = document.getElementById('cc-badge-input').value.normalize('NFKC').replace(/_/g, '-').trim().toUpperCase();
-                if (!value) return;
-                localStorage.setItem('booking_badge', JSON.stringify({ badge: value }));
-                loadInterviews();
-            });
-            document.getElementById('cc-badge-input').focus();
-            return;
-        }
-        appendChangeBadgeLink(list);
+        if (!list || !badge) return;
         try {
             const [apptsRes, usageRes] = await Promise.all([
                 fetch(BOOKING_API + '/appointments/mine?badge_code=' + encodeURIComponent(badge)),
@@ -547,7 +548,7 @@
                             body: JSON.stringify({ badge_code: badge, reason: 'Cancelled by student' })
                         });
                     } catch (e) { /* reload list regardless */ }
-                    loadInterviews();
+                    loadResults(badge);
                 });
             });
         } catch (e) {
