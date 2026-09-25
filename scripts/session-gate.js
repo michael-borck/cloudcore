@@ -66,7 +66,11 @@
             + '.cc-pwd-toggle{position:absolute;right:.6rem;top:50%;transform:translateY(-50%);'
             + 'background:none;border:none;color:#64748b;cursor:pointer;padding:2px;'
             + 'display:flex;align-items:center}'
-            + '.cc-pwd-toggle:hover{color:#2563eb}';
+            + '.cc-pwd-toggle:hover{color:#2563eb}'
+            + '.cc-toast{position:fixed;top:72px;left:50%;transform:translateX(-50%);background:#0f172a;color:#fff;padding:12px 16px;border-radius:10px;z-index:100001;box-shadow:0 10px 30px rgba(0,0,0,.35);font-size:.9rem;max-width:540px;width:calc(100% - 32px);text-align:left}'
+            + '.cc-toast .cc-t-close{float:right;background:none;border:none;color:#94a3b8;font-size:1.1rem;cursor:pointer;margin-left:10px}'
+            + '.cc-toast .cc-t-ok{color:#4ade80;font-weight:600}'
+            + '.cc-toast .cc-t-warn{display:block;margin-top:6px;color:#fbbf24;font-size:.82rem;line-height:1.4}';
         document.head.appendChild(style);
     }
 
@@ -152,6 +156,7 @@
                 if (r.ok) {
                     const me = await r.json();
                     localStorage.setItem(UNIT_KEY, me.unit_code);
+                    sessionStorage.setItem('cc_login_toast', '1');
                     window.location.href = safeNext();
                 } else if (r.status === 429) {
                     errBox.textContent = 'Too many attempts — please wait a minute and try again.';
@@ -629,6 +634,31 @@
                 : 'https://' + GATED_HOST + '/gate.html?next=') + encodeURIComponent(next);
             place(a);
         }
+        showLoginToast(me);
+    }
+
+    // Explicit confirmation after the gate redirects — otherwise a successful
+    // login looks like nothing happened (just the button text changing), and
+    // outside business hours students conclude the login itself failed.
+    function showLoginToast(me) {
+        if (!me || !sessionStorage.getItem('cc_login_toast')) return;
+        sessionStorage.removeItem('cc_login_toast');
+        const badge = storedBadge();
+        const el = document.createElement('div');
+        el.className = 'cc-toast';
+        let html = '<button class="cc-t-close" title="Dismiss" '
+            + 'onclick="this.parentElement.remove()">×</button>'
+            + '<span class="cc-t-ok">✓ Logged in as ' + esc(me.unit_code) + '</span>'
+            + (badge ? ' <span style="color:#94a3b8;font-size:.8rem;">· badge ' + esc(badge) + '</span>' : '');
+        if (me.offices_open === false) {
+            html += '<span class="cc-t-warn">CloudCore offices are currently closed ('
+                + (me.business_hours || 'staffed hours') + '). Staff chat and gated documents '
+                + 'are unavailable until they reopen — My Interviews and your bookings '
+                + 'still work.</span>';
+        }
+        el.innerHTML = html;
+        document.body.appendChild(el);
+        setTimeout(function () { el.remove(); }, 15000);
     }
 
     function setupAuthButton() {
