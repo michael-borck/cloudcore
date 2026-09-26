@@ -550,10 +550,28 @@ const BookingModal = {
 
     // Offer-3: submit the proposed times; the office confirms one.
     async requestTimes() {
-        const times = Array.from(document.querySelectorAll('.booking-propose-time'))
-            .map(i => i.value).filter(Boolean);
+        const inputs = Array.from(document.querySelectorAll('.booking-propose-time'));
+        const times = inputs.map(i => i.value).filter(Boolean);
         if (times.length === 0) {
             alert('Please propose at least one time.');
+            return;
+        }
+
+        // Interviews run Mon-Fri 7:00-19:00 Perth time. datetime-local can't
+        // restrict the hour-of-day, so validate here with an exact pointer
+        // to the offending option.
+        const outside = [];
+        times.forEach((t, idx) => {
+            const hour = parseInt(t.slice(11, 13), 10);
+            const dow = new Date(Date.UTC(+t.slice(0, 4), +t.slice(5, 7) - 1,
+                +t.slice(8, 10))).getUTCDay();
+            if (dow === 0 || dow === 6 || hour < 7 || hour >= 19) {
+                outside.push('Option ' + (inputs.indexOf(inputs.filter(i => i.value === t)[0]) + 1));
+            }
+        });
+        if (outside.length) {
+            alert('Interviews run Monday to Friday, 7:00 am - 7:00 pm (Perth time). '
+                + 'Please fix ' + outside.join(', ') + ' - it is outside those hours.');
             return;
         }
 
