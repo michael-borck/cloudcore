@@ -513,9 +513,19 @@ const BookingModal = {
                     <small>Available: ${days} · ${hours}${notice}</small>
                 </div>
                 <div class="booking-propose">
-                    <label>Option 1 <input type="datetime-local" class="booking-propose-time" min="${minAttr}"></label>
-                    <label>Option 2 <input type="datetime-local" class="booking-propose-time" min="${minAttr}"></label>
-                    <label>Option 3 <input type="datetime-local" class="booking-propose-time" min="${minAttr}"></label>
+                    <div class="booking-weekend-hint" style="display:none;color:#b45309;font-size:.85rem;margin:6px 0;"></div>
+                    <div class="booking-propose-option" style="display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap;">
+                        <label>Option 1 — date <input type="date" class="booking-propose-date" min="${minAttr.slice(0, 10)}"></label>
+                        <label>time <select class="booking-propose-time">${this._timeOptions()}</select></label>
+                    </div>
+                    <div class="booking-propose-option" style="display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap;">
+                        <label>Option 2 — date <input type="date" class="booking-propose-date" min="${minAttr.slice(0, 10)}"></label>
+                        <label>time <select class="booking-propose-time">${this._timeOptions()}</select></label>
+                    </div>
+                    <div class="booking-propose-option" style="display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap;">
+                        <label>Option 3 — date <input type="date" class="booking-propose-date" min="${minAttr.slice(0, 10)}"></label>
+                        <label>time <select class="booking-propose-time">${this._timeOptions()}</select></label>
+                    </div>
                 </div>
                 <div style="margin-top: 20px; display: flex; gap: 10px;">
                     <button class="booking-btn booking-btn-secondary" onclick="BookingAPI.clearStudent(); BookingModal.showBadgeStep();">
@@ -528,6 +538,21 @@ const BookingModal = {
                 </div>
             `;
             content.innerHTML = html;
+            // Offices are closed on weekends — nudge a weekend pick to Monday
+            content.querySelectorAll('.booking-propose-date').forEach(inp => {
+                inp.addEventListener('change', function () {
+                    if (!this.value) return;
+                    const d = new Date(this.value + 'T12:00:00');
+                    const day = d.getUTCDay();
+                    if (day === 0 || day === 6) {
+                        d.setUTCDate(d.getUTCDate() + (day === 6 ? 2 : 1));
+                        this.value = d.toISOString().slice(0, 10);
+                        const hint = content.querySelector('.booking-weekend-hint');
+                        hint.textContent = 'The office is closed on weekends — moved to ' + this.value + '.';
+                        hint.style.display = 'block';
+                    }
+                });
+            });
 
         } catch (error) {
             content.innerHTML = `
@@ -549,11 +574,45 @@ const BookingModal = {
     },
 
     // Offer-3: submit the proposed times; the office confirms one.
+    _timeOptions() {
+        // 07:00 - 18:45 in 15-minute steps: every selectable start is inside
+        // business hours by construction, so no invalid time can be offered.
+        let html = '';
+        for (let m = 420; m <= 1125; m += 15) {
+            const hh = String(Math.floor(m / 60)).padStart(2, '0');
+            const mm = String(m % 60).padStart(2, '0');
+            html += `<option value="${hh}:${mm}">${hh}:${mm}</option>`;
+        }
+        return html;
+    },
+
     async requestTimes() {
-        const times = Array.from(document.querySelectorAll('.booking-propose-time'))
-            .map(i => i.value).filter(Boolean);
-        if (times.length === 0) {
-            alert('Please propose at least one time.');
+        const pairs = Array.from(document.querySelectorAll('.booking-propose-option'))
+            .map(div => ({
+                date: div.querySelector('.booking-propose-date').value,
+                time: div.querySelector('.booking-propose-time').value
+            }))
+            .filter(p => p.date)
+            .map(p => p.date + 'T' + p.time);
+        if (pairs.length === 0) {
+            alert('Please propose at least one date and time.');
+            return;
+        }
+
+        // Backstop only — the dropdowns already limit times to business hours,
+        // and weekend dates are nudged to Monday on selection.
+        const outside = [];
+        pairs.forEach((t, idx) => {
+            const hour = parseInt(t.slice(11, 13), 10);
+            const dow = new Date(Date.UTC(+t.slice(0, 4), +t.slice(5, 7) - 1,
+                +t.slice(8, 10))).getUTCDay();
+            if (dow === 0 || dow === 6 || hour < 7 || hour >= 19) {
+                outside.push('Option ' + (idx + 1));
+            }
+        });
+        if (outside.length) {
+            alert('Interviews run Monday to Friday, 7:00 am - 7:00 pm (Perth time). '
+                + 'Please fix ' + outside.join(', ') + ' - it is outside those hours.');
             return;
         }
 
