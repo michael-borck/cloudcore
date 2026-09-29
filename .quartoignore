@@ -12,3 +12,6 @@ docs/registry.qmd
 ._*
 .__*
 .DS_Store
+scripts/anythingllm-migrate.py
+scripts/anythingllm-audit.py
+scripts/__pycache__/
