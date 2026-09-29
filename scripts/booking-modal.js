@@ -621,7 +621,7 @@ const BookingModal = {
         btn.textContent = 'Requesting...';
 
         try {
-            const result = await BookingAPI.requestAppointment(this.employeeId, times);
+            const result = await BookingAPI.requestAppointment(this.employeeId, pairs);
             if (result.success) {
                 this.showConfirmation(result);
             } else {
