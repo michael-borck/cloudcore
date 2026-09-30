@@ -611,7 +611,7 @@ const BookingModal = {
             }
         });
         if (outside.length) {
-            alert('Interviews run Monday to Friday, 7:00 am - 7:00 pm (Perth time). '
+            alert('Interviews run Monday to Friday, 7:00 am - 7:00 pm (your campus\'s local time). '
                 + 'Please fix ' + outside.join(', ') + ' - it is outside those hours.');
             return;
         }
@@ -621,7 +621,7 @@ const BookingModal = {
         btn.textContent = 'Requesting...';
 
         try {
-            const result = await BookingAPI.requestAppointment(this.employeeId, times);
+            const result = await BookingAPI.requestAppointment(this.employeeId, pairs);
             if (result.success) {
                 this.showConfirmation(result);
             } else {

@@ -1,5 +1,5 @@
 ---
-title: "Cloud Service Operations Manager, Martin Nugyen"
+title: "Cloud Service Operations Manager, Martin Nguyen"
 image: "martin_nugyen.webp"
 about:
   template: trestles
@@ -31,7 +31,7 @@ https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
   data-embed-id="422c13cc-9cbd-495d-acfa-e4aeafb566b1"
   data-base-api-url="https://chat.eduserver.au/api/embed"
   data-brand-image-url="https://cloudcore.eduserver.au/assets/cloudcore_networks.png"
-  data-assistant-name="Martin Nugyen"
+  data-assistant-name="Martin Nguyen"
   data-assistant-icon="martin_nugyen.webp"
   src="https://chat.eduserver.au/embed/anythingllm-chat-widget.min.js">
 </script>
