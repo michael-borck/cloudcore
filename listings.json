@@ -1,11 +1,155 @@
 [
   {
+    "listing": "/docs/support.html",
+    "items": [
+      "/docs/support/logs/application_server_logs.html",
+      "/docs/support/approved_software.html",
+      "/docs/support/approved_vendors.html",
+      "/docs/support/board-memo-ai-assessment.html",
+      "/docs/support/letter_notification_customers.html",
+      "/docs/support/ISMS.html",
+      "/docs/support/logs/database_access_logs.html",
+      "/docs/support/document_register.html",
+      "/docs/support/employee_handbook.html",
+      "/docs/support/logs/edr_logs.html",
+      "/docs/support/erd.html",
+      "/docs/support/letter_exec_summary_board_of_directors.html",
+      "/docs/support/logs/firewall_logs.html",
+      "/docs/support/logs/firewall_log_summary.html",
+      "/docs/support/hipaa_mapping.html",
+      "/docs/support/preparing ISO27001.html",
+      "/docs/support/incident_report.html",
+      "/docs/support/ddos_incident.html",
+      "/docs/support/letter_internal_eployees.html",
+      "/docs/support/definitions.html",
+      "/docs/support/legal_compliance_obligations.html",
+      "/docs/support/alternate_breach_theory_contractor.html",
+      "/docs/support/board_minutes_root_cause.html",
+      "/docs/support/nist_mapping.html",
+      "/docs/support/network_logical.html",
+      "/docs/support/org_chart.html",
+      "/docs/support/risk_assessment_frameworks.html",
+      "/docs/support/firewall_risk_closed.html",
+      "/docs/support/risk_register.html",
+      "/docs/support/logs/seim_alerts.html",
+      "/docs/support/security_posture.html",
+      "/docs/support/program.html",
+      "/docs/support/vendor_security_attestation.html",
+      "/docs/support/threat-intellegiance-feed.html",
+      "/docs/support/training.html",
+      "/docs/support/logs/vpn_access_log.html"
+    ]
+  },
+  {
+    "listing": "/chatbots/index.html",
+    "items": [
+      "/chatbots/bots/aisha_rahman/index.html",
+      "/chatbots/bots/carlos_mendes/index.html",
+      "/chatbots/bots/david_wilson/index.html",
+      "/chatbots/bots/dr_amina_chowdhury/index.html",
+      "/chatbots/bots/elena_chu/index.html",
+      "/chatbots/bots/emily_chen/index.html",
+      "/chatbots/bots/help_bot/index.html",
+      "/chatbots/bots/jamal_al_sayed/index.html",
+      "/chatbots/bots/jessica_lin/index.html",
+      "/chatbots/bots/karen_lee/index.html",
+      "/chatbots/bots/lisa_chen/index.html",
+      "/chatbots/bots/marcell_ziemann/index.html",
+      "/chatbots/bots/mark_gonzalez/index.html",
+      "/chatbots/bots/martin_nugyen/index.html",
+      "/chatbots/bots/michael_thompson/index.html",
+      "/chatbots/bots/raj_patel/index.html",
+      "/chatbots/bots/samantha_wong/index.html",
+      "/chatbots/bots/samuel_torres/index.html",
+      "/chatbots/bots/sarah_thompson/index.html",
+      "/chatbots/bots/sophia_martines/index.html",
+      "/chatbots/bots/tom_bradley/index.html"
+    ]
+  },
+  {
     "listing": "/blog/index.html",
     "items": [
       "/blog/posts/securing-cloud-workloads-zero-trust/index.html",
       "/blog/posts/designing-for-high-availability/index.html",
       "/blog/posts/finops-cost-optimisation-australia/index.html",
       "/blog/posts/data-sovereignty-australian-businesses/index.html"
+    ]
+  },
+  {
+    "listing": "/docs/articles.html",
+    "items": [
+      "/docs/articles/data_breach_risk_analysis.html",
+      "/docs/articles/data-breach_industry_analysis.html",
+      "/docs/articles/data_breach_technical_analysis.html",
+      "/docs/articles/data_breach_customer_reactions.html",
+      "/docs/articles/data_breach_recommendations_post_breach.html",
+      "/docs/articles/data_breach_initial_report.html"
+    ]
+  },
+  {
+    "listing": "/docs/policies.html",
+    "items": [
+      "/docs/policies/access.html",
+      "/docs/policies/approved_software.html",
+      "/docs/policies/approved_vendors.html",
+      "/docs/policies/asset_mgmt.html",
+      "/docs/policies/breach.html",
+      "/docs/policies/bcdr.html",
+      "/docs/policies/change_mngt.html",
+      "/docs/policies/compliance_audit.html",
+      "/docs/policies/ccm.html",
+      "/docs/policies/cookie_policy.html",
+      "/docs/policies/data_classification.html",
+      "/docs/policies/data_mgmt.html",
+      "/docs/policies/data_protection.html",
+      "/docs/policies/document_numbering.html",
+      "/docs/policies/facility.html",
+      "/docs/policies/gdpr_dpa.html",
+      "/docs/policies/hipaa_baa.html",
+      "/docs/policies/hr.html",
+      "/docs/policies/ir.html",
+      "/docs/policies/mdm.html",
+      "/docs/policies/policy_mgmt.html",
+      "/docs/policies/privacy_policy.html",
+      "/docs/policies/privacy.html",
+      "/docs/policies/risk_mgmt.html",
+      "/docs/policies/rar.html",
+      "/docs/policies/sdlc.html",
+      "/docs/policies/model.html",
+      "/docs/policies/system_audit.html",
+      "/docs/policies/vendor.html",
+      "/docs/policies/threat.html",
+      "/docs/policies/vuln_mgmt.html"
+    ]
+  },
+  {
+    "listing": "/docs/interviews.html",
+    "items": [
+      "/docs/interviews/interview_CISO.html",
+      "/docs/interviews/interview_data_breach_csio.html",
+      "/docs/interviews/interview_database_administrator.html",
+      "/docs/interviews/interview_data_protection_officer.html",
+      "/docs/interviews/interview_facilities_manager.html",
+      "/docs/interviews/interview_helpdesk.html",
+      "/docs/interviews/interview_infromation_security_manager.html",
+      "/docs/interviews/interview_data_breach_it_manager.html",
+      "/docs/interviews/interview_legal.html",
+      "/docs/interviews/interview_network_engineer.html",
+      "/docs/interviews/interview_system_administrator.html",
+      "/docs/interviews/interview_typical_employee.html",
+      "/docs/interviews/interview_vendor.html"
+    ]
+  },
+  {
+    "listing": "/docs/logs.html",
+    "items": [
+      "/docs/support/logs/application_server_logs.html",
+      "/docs/support/logs/database_access_logs.html",
+      "/docs/support/logs/edr_logs.html",
+      "/docs/support/logs/firewall_logs.html",
+      "/docs/support/logs/firewall_log_summary.html",
+      "/docs/support/logs/seim_alerts.html",
+      "/docs/support/logs/vpn_access_log.html"
     ]
   }
 ]

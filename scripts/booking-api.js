@@ -48,12 +48,18 @@ const BookingAPI = {
      * Set the badge for booking requests
      */
     setStudent(badge, unitCode = null) {
-        this.badgeCode = badge.trim().toUpperCase();
+        const b = badge.trim().toUpperCase();
+        // Same badge re-entered? Keep any learned campus routing (apiBase),
+        // otherwise a CC- Mauritius badge would fall back to Perth and hit
+        // Perth business hours at attendance time.
+        const prev = this.getStudent();
+        const keep = (prev && prev.badge === b && prev.apiBase) ? prev.apiBase : null;
+        this.badgeCode = b;
         this.unitCode = unitCode;
-        this.baseOverride = null;
-        localStorage.setItem('booking_badge', JSON.stringify({
-            badge: this.badgeCode, unitCode
-        }));
+        this.baseOverride = keep;
+        const record = { badge: b, unitCode };
+        if (keep) record.apiBase = keep;
+        localStorage.setItem('booking_badge', JSON.stringify(record));
     },
 
     /**
@@ -61,7 +67,7 @@ const BookingAPI = {
      */
     getStudent() {
         if (this.badgeCode) {
-            return { badge: this.badgeCode, unitCode: this.unitCode };
+            return { badge: this.badgeCode, unitCode: this.unitCode, apiBase: this.baseOverride || undefined };
         }
         const stored = localStorage.getItem('booking_badge');
         if (stored) {
