@@ -7,7 +7,7 @@ toc: false
 ::: {.hero-section}
 # Enterprise Cloud Infrastructure for Modern Business
 
-### Trusted by 500+ organizations worldwide with 99.9% uptime guarantee
+### Trusted by 500+ organizations across Australia and abroad with 99.9% uptime guarantee
 
 ::: {.trust-metrics}
 ::: {.metric}
