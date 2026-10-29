@@ -326,7 +326,16 @@ interviews elsewhere in the documentation.
 
 :::
 
-All files live in the [`/data/`](/data/) directory and are plain UTF-8 CSVs —
-loadable directly with `pandas.read_csv()`, R's `read.csv()`, or any
-spreadsheet tool. The generator script (`scripts/generate_site_data.py`) is the
+All files are plain UTF-8 CSVs, loadable directly with `pandas.read_csv()`,
+R's `read.csv()`, or any spreadsheet tool:
+
+- [cloudcore_customers.csv](/data/cloudcore_customers.csv)
+- [cloudcore_sales.csv](/data/cloudcore_sales.csv)
+- [cloudcore_support_tickets.csv](/data/cloudcore_support_tickets.csv)
+- [cloudcore_reviews.csv](/data/cloudcore_reviews.csv)
+- [budget_2026.csv](/data/budget_2026.csv)
+- [cost_analysis_2026.csv](/data/cost_analysis_2026.csv)
+- [financial_forecast_2026.csv](/data/financial_forecast_2026.csv)
+
+The generator script (`scripts/generate_site_data.py`) is the
 single source of truth for every value in this portfolio.

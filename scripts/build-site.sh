@@ -35,5 +35,5 @@ quarto render --profile public
 
 echo
 echo "Builds complete:"
-echo "  _site/       public  -> quarto publish gh-pages --no-render"
+echo "  _site/       public  -> scripts/publish-public.sh"
 echo "  _site-full/  gated   -> rsync -av --delete _site-full/ <vps>:<gated-site-root>/"
