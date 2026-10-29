@@ -1,0 +1,85 @@
+---
+title: "ISYS6018 — Audit Impact Lab"
+categories: ["ISYS6018", "Audit"]
+description: "Quantify the breach in AUD, test the control spend, and build an evidence trail."
+---
+
+# ISYS6018 — Audit Impact Lab
+
+You are the audit associate. The security failure happened; management wants
+to know what it *cost* and whether the remediation spend stacks up. The
+breach narrative is in the gated documentation — the numbers live in the
+financial extracts.
+
+## Brief 1 — Price the incident
+
+**Outcome:** an AUD impact table a partner could sign.
+
+**Data:** [financial_forecast_2026.csv](/data/financial_forecast_2026.csv)
+(monthly, with explicit breach-impact and remediation-spend columns)
+
+**Task**
+
+1. Identify the breach window: which months carry impact columns that differ
+   from baseline?
+2. Total the impact by column (lost revenue, incident response, customer
+   credits…). Which line hurts most?
+3. State your total, then state it as a range — what assumptions make it
+   move by 10%?
+
+```python
+import pandas as pd
+
+f = pd.read_csv("financial_forecast_2026.csv")
+impact_cols = [c for c in f.columns if "impact" in c.lower() or "breach" in c.lower()]
+print(f[impact_cols].sum())
+```
+
+**Deliverable:** impact table (line, AUD, months affected) plus your
+assumptions register — auditors are graded on the register, not the total.
+
+## Brief 2 — Was the control spend worth it?
+
+**Outcome:** a defensible yes/no on remediation investment.
+
+**Data:** [budget_2026.csv](/data/budget_2026.csv) (quarterly budget) and
+[cost_analysis_2026.csv](/data/cost_analysis_2026.csv) (itemised costs)
+
+**Task**
+
+1. From the cost analysis, isolate security/remediation lines. What is the
+   total control spend, and how does it spread across quarters against
+   budget?
+2. Compare spend to the loss you priced in Brief 1. Simple payback: if the
+   controls prevent a repeat, how many avoided-incident-years to break even?
+3. Write the "so what": one paragraph a board member reads without a
+   calculator.
+
+```python
+costs = pd.read_csv("cost_analysis_2026.csv")
+sec = costs[costs["category"].str.contains("secur|remediat|incident", case=False, na=False)]
+print(sec)
+```
+
+**Deliverable:** spend-vs-budget variance table, payback statement, and the
+board paragraph.
+
+## Brief 3 — Evidence trail
+
+**Outcome:** audit evidence that cross-references the operational record.
+
+**Data:** [cloudcore_support_tickets.csv](/data/cloudcore_support_tickets.csv)
+plus the incident report and system logs in
+[Support Center](/docs/support.html) and [System Logs](/docs/logs.html).
+
+**Task**
+
+1. Pull tickets in the breach window. Do ticket volumes and categories match
+   what the incident report describes?
+2. Find one claim in the incident documentation that the ticket data does
+   *not* support. Flag it exactly the way you would in a working paper.
+3. Note any figure in the financials that lacks a corroborating operational
+   record — those are your testing priorities.
+
+**Deliverable:** a short working-paper extract: claim → source → ticket
+evidence → conclusion (supported / exception noted).

@@ -1,0 +1,31 @@
+---
+title: "Practice Exercises"
+listing:
+  contents: exercises
+  sort: "title"
+  type: grid
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  image-height: "0"
+page-layout: full
+title-block-banner: true
+---
+
+Hands-on exercises built on the [Site Data Dictionary](/docs/data-dictionary.html)
+portfolio. Each brief is written for a specific unit and uses the same synthetic
+CloudCore datasets you can download from the dictionary — every link below works
+with `pandas.read_csv()`, R, or a spreadsheet.
+
+::: {.callout-note}
+## How to work through an exercise
+
+1. Download the linked CSV files (they are plain UTF-8).
+2. Do the work in pandas, R, or a spreadsheet — the starter code is a floor,
+   not a ceiling.
+3. Produce the deliverable as if CloudCore were your client: concise,
+   evidence-linked, and honest about uncertainty.
+
+There are no model answers on the site — the *designed relationships* in the
+data are what you are meant to interrogate.
+:::

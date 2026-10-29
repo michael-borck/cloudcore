@@ -1,0 +1,87 @@
+---
+title: "ISYS6014 — Support Operations Data Lab"
+categories: ["ISYS6014", "Data lab"]
+description: "Triage tickets, segment churn, and mine review themes from CloudCore's operational data."
+---
+
+# ISYS6014 — Support Operations Data Lab
+
+You are working the service desk at CloudCore Networks. Operations management
+wants evidence, not anecdotes. Three briefs below; each has a deliverable you
+could defend in a standup.
+
+## Brief 1 — Ticket triage under load
+
+**Outcome:** a prioritised escalation list with counts that reconcile.
+
+**Data:** [cloudcore_support_tickets.csv](/data/cloudcore_support_tickets.csv)
+(400 tickets: priority, category, dates, free-text description)
+
+**Task**
+
+1. Load the file and reconcile row counts by `priority` and by `category` —
+   do the totals match the 400 tickets? Any blanks or odd values?
+2. Tickets per week: which week spikes, and does the spike line up with the
+   breach reporting elsewhere on this site?
+3. Build the escalation list: high-priority tickets still unresolved past the
+   SLA for their priority tier.
+
+```python
+import pandas as pd
+
+t = pd.read_csv("cloudcore_support_tickets.csv", parse_dates=["created_at"])
+print(t["priority"].value_counts(dropna=False))
+print(t["status"].value_counts(dropna=False))
+```
+
+**Deliverable:** half-page triage memo — spike size, top three categories in
+the spike, and your ten-rows-max escalation table.
+
+**Check yourself:** can you reproduce the ticket count from two different
+groupings? If not, you have a data-quality finding — say so.
+
+## Brief 2 — Who is leaving, and why
+
+**Outcome:** churn segments a retention team could actually act on.
+
+**Data:** [cloudcore_customers.csv](/data/cloudcore_customers.csv)
+(400 clients: MRR, plan, region, churn label, tenure)
+
+**Task**
+
+1. Compute churn rate by `plan` and by `region`. Which segment is worst?
+2. Overlay revenue: is the worst-churning segment also the biggest MRR pool?
+   Rank segments by *churned MRR*, not churn rate alone.
+3. Pick one segment and write two sentences on what you would check first in
+   the ticket data to explain their churn.
+
+```python
+c = pd.read_csv("cloudcore_customers.csv")
+seg = c.groupby("plan")["churned"].agg(["mean", "count"])
+seg["churned_mrr"] = c[c["churned"]].groupby("plan")["mrr"].sum()
+```
+
+**Deliverable:** one table (churn rate, count, churned MRR per segment) plus
+your recommendation for the first segment to save.
+
+## Brief 3 — Themes in the reviews
+
+**Outcome:** theme counts from free text that survive scrutiny.
+
+**Data:** [cloudcore_reviews.csv](/data/cloudcore_reviews.csv)
+(250 reviews, free text) — then cross-reference with the staff interviews in
+[Interviews](/docs/interviews.html).
+
+**Task**
+
+1. Bucket reviews by recurring keywords (uptime, support, billing, security…).
+   Show your counting rule — someone *will* ask.
+2. Which theme grew after the breach disclosure date?
+3. Compare your themes against what staff claim in the interviews: where do
+   the numbers and the people disagree?
+
+**Deliverable:** theme table (keyword rule, count, trend) and one paragraph on
+the sharpest staff-versus-data contradiction.
+
+**Check yourself:** keyword buckets are crude. Name one review your rule
+misclassifies, and what you would do about it.

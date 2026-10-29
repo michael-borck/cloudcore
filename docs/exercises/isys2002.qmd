@@ -1,0 +1,84 @@
+---
+title: "ISYS2002 — Systems Analysis Workshop"
+categories: ["ISYS2002", "Systems analysis"]
+description: "Model CloudCore's CRM as-is, mine requirements from tickets, and argue the gaps."
+---
+
+# ISYS2002 — Systems Analysis Workshop
+
+CloudCore's CRM practice is documented in
+[Systems Analysis](/docs/systems-analysis/crm-current-state.html). Your job is
+to work *from the data* rather than from the documentation — and reconcile
+the two. Three workshop tasks.
+
+## Task 1 — Reverse-engineer the as-is model
+
+**Outcome:** an entity list and relationship sketch derived from evidence.
+
+**Data:** [cloudcore_customers.csv](/data/cloudcore_customers.csv),
+[cloudcore_sales.csv](/data/cloudcore_sales.csv)
+
+**Task**
+
+1. List every entity the two files imply (customer, product, sale, region…)
+   with the columns that describe it. Mark the identifier in each.
+2. Sketch the relationships: what joins customers to sales? Is the join key
+   clean — any orphaned sales or duplicate customer IDs?
+3. Compare your sketch with the published
+   [CRM current state](/docs/systems-analysis/crm-current-state.html) and
+   [ERD](/docs/support/erd.html). Where do the artefacts and the data
+   disagree?
+
+```python
+import pandas as pd
+
+c = pd.read_csv("cloudcore_customers.csv")
+s = pd.read_csv("cloudcore_sales.csv")
+print("orphaned sales:", (~s["customer_id"].isin(c["customer_id"])).sum())
+print("duplicate customer ids:", c["customer_id"].duplicated().sum())
+```
+
+**Deliverable:** one-page entity list + relationship sketch, and a
+discrepancy list against the published artefacts.
+
+## Task 2 — Requirements from the ticket log
+
+**Outcome:** functional and non-functional requirements traceable to raw
+operational text.
+
+**Data:** [cloudcore_support_tickets.csv](/data/cloudcore_support_tickets.csv)
+
+**Task**
+
+1. Read a sample of 30 ticket descriptions. Draft candidate requirements
+   they imply (e.g. "agents shall see a customer's open tickets on one
+   screen"). Tag each functional or non-functional.
+2. Which requirements appear repeatedly? Count the evidence per requirement —
+   frequency is your priority argument.
+3. Name one requirement the tickets *never* justify (sounds good, no
+   evidence). Keep it out of scope and say why.
+
+**Deliverable:** a requirements list (ID, statement, type, ticket evidence
+count, priority) — ten requirements maximum.
+
+**Check yourself:** every requirement ID should be traceable to at least one
+ticket. If you cannot cite one, it is an opinion, not a requirement.
+
+## Task 3 — The pain-point shortlist
+
+**Outcome:** a gap analysis that connects data, process, and people.
+
+**Data:** all of the above, plus
+[cloudcore_reviews.csv](/data/cloudcore_reviews.csv) for the customer view.
+
+**Task**
+
+1. From Tasks 1–2, shortlist the three worst process gaps (data quality,
+   workflow, visibility — your call).
+2. For each gap: what the data shows, what the process doc claims, and what
+   customers say in reviews. Three sources, three voices.
+3. Recommend one fix per gap. State what you would measure to know the fix
+   worked.
+
+**Deliverable:** three-row gap table (gap, evidence, fix, success measure)
+and your nomination for which fix goes first.

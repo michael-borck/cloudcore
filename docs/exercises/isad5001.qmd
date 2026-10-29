@@ -1,0 +1,89 @@
+---
+title: "ISAD5001 — From As-Is to Business Case"
+categories: ["ISAD5001", "Strategy"]
+description: "Postgraduate strand: rank AI opportunities, design the target state, and build the investment case."
+---
+
+# ISAD5001 — From As-Is to Business Case
+
+The postgraduate strand of the systems analysis work: move from evidence to
+*investment argument*. CloudCore's internal
+[AI Opportunity Pipeline](/docs/strategy/ai-opportunity-pipeline.html) sets
+the strategic context; your analysis decides what is actually worth funding.
+
+## Brief 1 — Rank the opportunities against data readiness
+
+**Outcome:** a ranked opportunity list with a stated scoring rule.
+
+**Data:** [cloudcore_customers.csv](/data/cloudcore_customers.csv),
+[cloudcore_support_tickets.csv](/data/cloudcore_support_tickets.csv),
+[cloudcore_reviews.csv](/data/cloudcore_reviews.csv)
+
+**Task**
+
+1. Propose three to five AI/opportunity candidates for CloudCore (churn
+   early-warning, ticket auto-triage, review mining, billing anomaly
+   detection — or your own).
+2. Score each candidate on data readiness: does the column set actually
+   support it? Check coverage, missingness, and label quality (e.g. is the
+   churn label reliable enough to train on?).
+3. Rank by (value to the breach-era business) × (data readiness). Show the
+   arithmetic — a rank without a rule is a vibe.
+
+```python
+import pandas as pd
+
+c = pd.read_csv("cloudcore_customers.csv")
+print(c.isna().mean().round(3))       # coverage per column
+print(c["churned"].value_counts())    # label balance
+```
+
+**Deliverable:** scoring table (candidate, value argument, readiness score,
+rank) and one paragraph defending your top pick.
+
+## Brief 2 — Design the target state
+
+**Outcome:** a to-be CRM fragment with measurable objectives.
+
+**Data:** [cloudcore_sales.csv](/data/cloudcore_sales.csv) plus your Task 1
+rankings, against the published
+[CRM current state](/docs/systems-analysis/crm-current-state.html) and
+[AI strategy](/docs/strategy/ai-opportunity-pipeline.html).
+
+**Task**
+
+1. Design the smallest CRM change that would unlock your top-ranked
+   opportunity: new data captured, new screens, new decision points.
+2. Give each element of the to-be design a measurable objective (baseline
+   from the data, target, timeframe).
+3. Name the biggest organisational (not technical) obstacle, using evidence
+   from the reviews or interviews.
+
+**Deliverable:** to-be fragment (diagram or structured list) with an
+objectives table: metric, baseline, target, source of baseline.
+
+## Brief 3 — Build the investment case
+
+**Outcome:** a go/no-go memo in the CFO's language.
+
+**Data:** [budget_2026.csv](/data/budget_2026.csv),
+[cost_analysis_2026.csv](/data/cost_analysis_2026.csv),
+[financial_forecast_2026.csv](/data/financial_forecast_2026.csv)
+
+**Task**
+
+1. Cost your Brief 2 design using realistic line items from the cost
+   analysis (licences scale with clients — model that scaling explicitly).
+2. Build a simple benefit case: churned MRR recovered, ticket handling time
+   saved, avoided incident cost. State every assumption on its own line.
+3. Run the sensitivity: which single assumption flips the go/no-go?
+
+```python
+budget = pd.read_csv("budget_2026.csv")
+costs = pd.read_csv("cost_analysis_2026.csv")
+print(costs.groupby("category")["amount"].sum())
+```
+
+**Deliverable:** one-page memo — recommendation, cost/benefit table,
+assumptions register, and the sensitivity finding. Postgraduate standard:
+uncertainty named, not hidden.

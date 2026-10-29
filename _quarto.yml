@@ -66,6 +66,8 @@ website:
           - text: "---"
           - text: Data Dictionary
             href: docs/data-dictionary.qmd
+          - text: Exercises
+            href: docs/exercises.qmd
           - text: Client Data Extracts
             href: docs/consultant-data.qmd
           - text: AI Strategy
