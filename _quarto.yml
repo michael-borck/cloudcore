@@ -26,6 +26,7 @@ project:
 
 website:
   title: "CloudCore Networks"
+  favicon: favicon.ico
   navbar:
     logo: assets/logo.svg
     logo-alt: "CloudCore Networks"
