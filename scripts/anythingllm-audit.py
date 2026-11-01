@@ -98,7 +98,9 @@ def main():
             missing.append(bot)
             print(f"MISSING   {bot} (slug {slug}): workspace not found")
             continue
-        live = data.get("openAiPrompt") or ""
+        # v1 GET wraps the workspace in a list under "workspace"
+        ws_list = data.get("workspace") if isinstance(data, dict) else None
+        live = (ws_list[0].get("openAiPrompt") or "") if isinstance(ws_list, list) and ws_list else ""
         if live == local:
             matched.append(bot)
             print(f"MATCH     {bot}")
@@ -120,7 +122,10 @@ def main():
             status, data = api(args.base_url, key, None, f"/workspace/{slug}",
                                {"openAiPrompt": local})
             ok = status == 200 and (isinstance(data, dict) and data.get("workspace"))
-            print(f"{'FIXED    ' if ok else 'FIX FAIL '} {bot} (slug {slug})")
+            if ok:
+                print(f"FIXED     {bot} (slug {slug})")
+            else:
+                print(f"FIX FAIL  {bot} (slug {slug}): HTTP {status} body={str(data)[:200]}")
         print("Re-run without --fix to confirm.")
     elif drift:
         print("Run again with --fix to push repo prompts to the drifted workspaces.")
