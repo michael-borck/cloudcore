@@ -63,10 +63,10 @@ The register below is ordered by Priority. **Effort is scored "high number = har
 ### 3.2 Customer churn prediction & retention targeting
 
 ::: {callout-important}
-**Problem.** The customer dataset (`data/cloudcore_customers.csv`, 400 clients) shows **148 clients (37%) carry `churn_flag = 1`** — an at-risk pool worth roughly **$14.6M in annualised recurring revenue**. Churned clients look measurably different *before* they leave: lower satisfaction (avg **2.49** vs **2.92** for retained), higher support load (**4.2** tickets/6mo vs **3.1**), and lower MRR (**$8,210** vs **$10,825**).
+**Problem.** The customer dataset (`data/cloudcore_customers.csv`, 400 clients) shows **88 clients (22%) carry `churn_flag = 1`** — a churned cohort worth roughly **$8.1M in annualised recurring revenue**. Churned clients differ from retained clients: lower satisfaction (avg **2.35** vs **2.87**), higher support load (**4.56** tickets/6mo vs **3.22**), and lower MRR (**$7,680** vs **$10,472**).
 :::
 
-- **Value (`V` = 5).** Retention is the single highest-leverage financial lever at a ~$45M ARR business: recovering even a tenth of the at-risk cohort protects ~$1.5M in annualised revenue.
+- **Value (`V` = 5).** Retention is the single highest-leverage financial lever at a ~$45M ARR business: preventing a tenth of comparable future churn protects roughly **$0.8M** in annualised revenue.
 - **Effort (`E` = 3).** A churn model needs feature engineering, a labelled outcome, and — critically — a *retention workflow* (offers, outreach) that does not yet exist as a managed process.
 - **Risk (`R` = 3).** Uses customer attributes (industry, size, tenure, usage) which may be personal/business-sensitive; predictions must inform outreach, not auto-cancel services.
 - **Data available (`D` = 4).** `satisfaction_score`, `support_tickets_6m`, `tenure_months`, `industry`, `region`, `monthly_recurring_revenue`, plus an explicit labelled `churn_flag` — a near-ideal supervised-learning schema, further enrichable by joining the free-text support and review (`data/cloudcore_reviews.csv`) datasets.
