@@ -1,6 +1,7 @@
 ---
 title: "Enterprise Cloud Infrastructure for Australian Business"
 description: "CloudCore Networks delivers enterprise cloud hosting, managed services, and ISO 27001-certified security from local Perth data centres — with a 99.9% uptime SLA."
+image: "https://raw.githubusercontent.com/michael-borck/cloudcore/main/social-preview.jpg"
 toc: false
 ---
 
